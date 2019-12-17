@@ -1,0 +1,22 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    package: 'testpackage0'
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'delete an IPv4 firewall policy'
+        fmgr_pm_config_pkg_pkg_firewall_policy_policy:
+            method: 'delete'
+            url_params:
+                adom: "{{ adom }}"
+                pkg: "{{ package }}"
+                policy: '7'
+    -   name: 'purge the package container'
+        fmgr_pm_pkg_pkg_path:
+            method: 'delete'
+            url_params:
+                adom: '{{ adom }}'
+                pkg_path: '{{ package }}'

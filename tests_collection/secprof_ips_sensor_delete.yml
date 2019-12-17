@@ -1,0 +1,14 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'delete a seurity profile IPS sensor entry'
+        fmgr_pm_config_obj_ips_sensor_sensor:
+            method: 'delete'
+            url_params:
+                adom: 'root'
+                sensor: 'secprof_ips_sensor0'

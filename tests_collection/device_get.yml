@@ -1,0 +1,11 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'add a device'
+        fmgr_dvmdb_device:
+            method: "get"

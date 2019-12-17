@@ -1,0 +1,33 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'login a user'
+        fmgr_generic:
+             method: 'exec'
+             params:
+                - url: 'sys/login/user'
+                  data:
+                   - user: 'APIUser'
+                     passwd: 'Fortinet1!'
+    -   name: 'login another user'
+        fmgr_generic:
+             json: |
+                  {
+                   "method":"exec",
+                   "params":[
+                    {
+                         "url":"sys/login/user",
+                         "data":[
+                            {
+                               "user":"APIUser",
+                               "passwd":"Fortinet1!"
+                            }
+                          ]
+                     }
+                    ]
+                  }

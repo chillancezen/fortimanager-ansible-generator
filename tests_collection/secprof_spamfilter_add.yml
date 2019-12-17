@@ -1,0 +1,23 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'add a seurity profile spam filter entry'
+        fmgr_pm_config_obj_spamfilter_profile:
+            method: 'add'
+            url_params:
+                adom: 'root'
+            params:
+                - data:
+                    - name: 'secprof_spam_filter0'
+                      comment: 'A seurity profile spam filter entry created by Ansible'
+                      options:
+                        - 'bannedword'
+                        - 'spamemailbwl'
+                        - 'spamfsphish'
+                      flow-based: 'enable'
+

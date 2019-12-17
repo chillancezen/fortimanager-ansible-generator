@@ -1,0 +1,19 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'add firewall vip object'
+        fmgr_pm_config_obj_firewall_vip:
+            method: 'add'
+            url_params:
+                adom: 'root'
+            params:
+                - data:
+                    - name: 'firewall_vip_object0'
+                      comment: 'A firewall vip object created by Ansible'
+                      arp-reply: 'enable'
+                      # other options are all empty .

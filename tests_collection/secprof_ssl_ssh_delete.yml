@@ -1,0 +1,14 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'delete a seurity profile ssl_ssh entry'
+        fmgr_pm_config_obj_firewall_ssl_ssh_profile_ssl_ssh_profile:
+            method: 'delete'
+            url_params:
+                adom: 'root'
+                ssl-ssh-profile: 'secprof_ssl_ssh0'

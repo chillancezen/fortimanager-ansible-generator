@@ -1,0 +1,60 @@
+#!/usr/bin/python
+from __future__ import absolute_import, division, print_function
+# Copyright 2019 Fortinet, Inc.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+__metaclass__ = type
+
+ANSIBLE_METADATA = {'status': ['preview'],
+                    'supported_by': 'community',
+                    'metadata_version': '1.1'}
+
+DOCUMENTATION = '''
+---
+module: {{ module_name }}
+description:
+    - This module is able to configure a FortiManager device by allowing the
+      user to [{%- for method in allowed_methods %} {{method}} {%- endfor %} ] the following apis:
+    {%- for url in jrpc_urls %}
+    - {{url}}
+    {%- endfor %}
+    - Examples include all parameters and values need to be adjusted to data 
+      sources before usage.
+     
+
+version_added: "2.10"
+author:
+    - Frank Shen (@fshen01)
+    - Link Zheng (@zhengl)
+notes:
+    - There are only three top-level parameters where 'method' is always required
+      while other two 'params' and 'url_params' can be optional
+    - Due to the complexity of fortimanager api schema, the validation is done
+      out of Ansible native parameter validation procedure.
+    - The syntax of OPTIONS doen not comply with the standard Ansible argument 
+      specification, but with the structure of fortimanager API schema, we need
+      a trivial transformation when we are filling the ansible playbook
+options:
+{{doc_options}}
+'''
+
+EXAMPLES = '''
+{{doc_examples}}
+'''
+
+RETURN = '''
+{{doc_return}}
+'''
+

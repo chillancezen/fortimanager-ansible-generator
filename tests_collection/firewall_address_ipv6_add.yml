@@ -1,0 +1,19 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'add an ipv6 address object'
+        fmgr_pm_config_obj_firewall_address6:
+            method: 'add'
+            url_params:
+                adom: 'root'
+            params:
+                - data:
+                    - name: 'firewall_ipv6_address_object0'
+                      comment: 'An ipv6 address object created by Ansible'
+                      type: 'ipprefix'
+                      ip6: '2001:0db8:85a3:0000:0000:8a2e:0370:7334'

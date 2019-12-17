@@ -1,0 +1,19 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'add an ipv4 address'
+        fmgr_pm_config_obj_firewall_address:
+            method: 'add'
+            url_params:
+                adom: 'root'
+            params:
+                - data:
+                    - name: 'firewall_ipv4_address_object0'
+                      comment: 'An ipv4 address object created by Ansible'
+                      type: 'ipmask'
+                      subnet: '11.22.33.44/24'

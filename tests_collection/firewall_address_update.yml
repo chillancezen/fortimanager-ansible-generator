@@ -1,0 +1,19 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'update an ipv4 address object'
+        fmgr_pm_config_obj_firewall_address:
+            method: 'update'
+            url_params:
+                adom: 'root'
+            params:
+                - data:
+                    - name: 'firewall_ipv4_address_object0'
+                      comment: 'An ipv4 address object updated by Ansible'
+                      type: 'ipmask'
+                      subnet: '11.22.33.45/24'

@@ -1,0 +1,18 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'get an ipv6 address object'
+        fmgr_pm_config_obj_firewall_address6:
+            method: 'get'
+            url_params:
+                adom: 'root'
+            params:
+                - filter:
+                    - 'name'
+                    - '=='
+                    - 'firewall_ipv6_address_object0'

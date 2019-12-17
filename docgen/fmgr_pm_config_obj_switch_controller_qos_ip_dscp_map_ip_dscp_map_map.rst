@@ -1,0 +1,218 @@
+:source: fmgr_pm_config_obj_switch_controller_qos_ip_dscp_map_ip_dscp_map_map.py
+
+:orphan:
+
+.. _fmgr_pm_config_obj_switch_controller_qos_ip_dscp_map_ip_dscp_map_map:
+
+fmgr_pm_config_obj_switch_controller_qos_ip_dscp_map_ip_dscp_map_map -- Maps between IP-DSCP value to COS queue.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. versionadded:: 2.10
+
+.. contents::
+   :local:
+   :depth: 1
+
+
+Synopsis
+--------
+
+- This module is able to configure a FortiManager device by allowing the user to **[add, get, set, update]** the following FortiManager json-rpc urls.
+- `/pm/config/adom/{adom}/obj/switch-controller/qos/ip-dscp-map/{ip-dscp-map}/map`
+- `/pm/config/global/obj/switch-controller/qos/ip-dscp-map/{ip-dscp-map}/map`
+- Examples include all parameters and values need to be adjusted to data sources before usage.
+- Tested with FortiManager v6.0.0
+
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- ansible>=2.10.0
+
+
+
+Parameters
+----------
+
+.. raw:: html
+
+ <ul>
+ <li><span class="li-head">url_params</span> - parameters in url path <span class="li-normal">type: dict</span> <span class="li-required">required: true</span></li>
+ <ul class="ul-self">
+ <li><span class="li-head">adom</span> - the domain prefix <span class="li-normal">type: str</span> <span class="li-normal"> choices: none, global, custom dom</span></li>
+ <li><span class="li-head">ip-dscp-map</span> - the object name <span class="li-normal">type: str</span> </li>
+ </ul>
+ <li><span class="li-head">parameters for method: [add, set, update]</span> - Maps between IP-DSCP value to COS queue.</li>
+ <ul class="ul-self">
+ <li><span class="li-head">data</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
+ <li><span class="li-head">cos-queue</span> - COS queue number. <span class="li-normal">type: int</span> </li>
+ <li><span class="li-head">diffserv</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
+ <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">choices: [CS0, CS1, AF11, AF12, AF13, CS2, AF21, AF22, AF23, CS3, AF31, AF32, AF33, CS4, AF41, AF42, AF43, CS5, EF, CS6, CS7]</span> </li>
+ </ul>
+ <li><span class="li-head">ip-precedence</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
+ <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">choices: [network-control, internetwork-control, critic-ecp, flashoverride, flash, immediate, priority, routine]</span> </li>
+ </ul>
+ <li><span class="li-head">name</span> - Dscp mapping entry name. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">value</span> - Raw values of DSCP (0 - 63). <span class="li-normal">type: str</span> </li>
+ </ul>
+ </ul>
+ <li><span class="li-head">parameters for method: [get]</span> - Maps between IP-DSCP value to COS queue.</li>
+ <ul class="ul-self">
+ <li><span class="li-head">attr</span> - The name of the attribute to retrieve its datasource. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">fields</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
+ <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
+ <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">choices: [cos-queue, diffserv, ip-precedence, name, value]</span> </li>
+ </ul>
+ </ul>
+ <li><span class="li-head">filter</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
+ <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span> </li>
+ </ul>
+ <li><span class="li-head">get used</span> - No description for the parameter <span class="li-normal">type: int</span> </li>
+ <li><span class="li-head">loadsub</span> - Enable or disable the return of any sub-objects. <span class="li-normal">type: int</span> </li>
+ <li><span class="li-head">option</span> - Set fetch option for the request. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [count, object member, datasrc, get reserved, syntax]</span> </li>
+ <li><span class="li-head">range</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
+ <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: int</span> </li>
+ </ul>
+ <li><span class="li-head">sortings</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
+ <li><span class="li-head">{attr_name}</span> - No description for the parameter <span class="li-normal">type: int</span>  <span class="li-normal">choices: [1, -1]</span> </li>
+ </ul>
+ </ul>
+ </ul>
+
+
+
+
+
+
+Notes
+-----
+.. note::
+
+   - The module may supports multiple method, every method has different parameters definition
+
+   - One method may also have more than one parameter definition collection, each collection is dedicated to one API endpoint
+
+   - The module may include domain dependent urls, the domain can be specified in url_params as adom
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+ - hosts: fortimanager-inventory
+   connection: httpapi
+   vars:
+      ansible_httpapi_use_ssl: True
+      ansible_httpapi_validate_certs: False
+      ansible_httpapi_port: 443
+   tasks:
+    - name: send request to /pm/config/obj/switch-controller/qos/ip-dscp-map/{ip-dscp-map}/map
+      fmgr_pm_config_obj_switch_controller_qos_ip_dscp_map_ip_dscp_map_map:
+         method: <value in [add, set, update]>
+         url_params:
+            adom: <value in [none, global, custom dom]>
+            ip-dscp-map: <value of string>
+         params:
+            - 
+               data: 
+                - 
+                     cos-queue: <value of integer>
+                     diffserv: 
+                      - <value in [CS0, CS1, AF11, ...]>
+                     ip-precedence: 
+                      - <value in [network-control, internetwork-control, critic-ecp, ...]>
+                     name: <value of string>
+                     value: <value of string>
+    - name: send request to /pm/config/obj/switch-controller/qos/ip-dscp-map/{ip-dscp-map}/map
+      fmgr_pm_config_obj_switch_controller_qos_ip_dscp_map_ip_dscp_map_map:
+         method: <value in [get]>
+         url_params:
+            adom: <value in [none, global, custom dom]>
+            ip-dscp-map: <value of string>
+         params:
+            - 
+               attr: <value of string>
+               fields: 
+                - 
+                   - <value in [cos-queue, diffserv, ip-precedence, ...]>
+               filter: 
+                - <value of string>
+               get used: <value of integer>
+               loadsub: <value of integer>
+               option: <value in [count, object member, datasrc, ...]>
+               range: 
+                - <value of integer>
+               sortings: 
+                - 
+                     \{attr_name\}: <value in [1, -1]>
+
+
+
+Return Values
+-------------
+
+
+Common return values are documented: https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values, the following are the fields unique to this module:
+
+
+.. raw:: html
+
+ <ul>
+ <li><span class="li-return"> return values for method: [add, set, update]</span> </li>
+ <ul class="ul-self">
+ <li><span class="li-return">status</span>
+ - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
+ <li> <span class="li-return"> code </span> - No description for the parameter <span class="li-normal">type: int</span>  </li>
+ <li> <span class="li-return"> message </span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
+ </ul>
+ <li><span class="li-return">url</span>
+ - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">example: /pm/config/adom/{adom}/obj/switch-controller/qos/ip-dscp-map/{ip-dscp-map}/map</span>  </li>
+ </ul>
+ <li><span class="li-return"> return values for method: [get]</span> </li>
+ <ul class="ul-self">
+ <li><span class="li-return">data</span>
+ - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
+ <li> <span class="li-return"> cos-queue </span> - COS queue number. <span class="li-normal">type: int</span>  </li>
+ <li> <span class="li-return"> diffserv </span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
+ <li><span class="li-return">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
+ </ul>
+ <li> <span class="li-return"> ip-precedence </span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
+ <li><span class="li-return">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
+ </ul>
+ <li> <span class="li-return"> name </span> - Dscp mapping entry name. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> value </span> - Raw values of DSCP (0 - 63). <span class="li-normal">type: str</span>  </li>
+ </ul>
+ <li><span class="li-return">status</span>
+ - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
+ <li> <span class="li-return"> code </span> - No description for the parameter <span class="li-normal">type: int</span>  </li>
+ <li> <span class="li-return"> message </span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
+ </ul>
+ <li><span class="li-return">url</span>
+ - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">example: /pm/config/adom/{adom}/obj/switch-controller/qos/ip-dscp-map/{ip-dscp-map}/map</span>  </li>
+ </ul>
+ </ul>
+
+
+
+
+
+Status
+------
+
+- This module is not guaranteed to have a backwards compatible interface.
+
+
+Authors
+-------
+
+- Frank Shen (@fshen01)
+- Link Zheng (@zhengl)
+
+
+.. hint::
+
+    If you notice any issues in this documentation, you can create a pull request to improve it.
+
+
+

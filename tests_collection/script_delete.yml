@@ -1,0 +1,14 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'delete a script'
+        fmgr_dvmdb_script_script:
+            method: "delete"
+            url_params:
+                adom: 'none'
+                script: 'add_firewall_policy0'

@@ -1,0 +1,20 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'add a seurity profile application control entry'
+        fmgr_pm_config_obj_application_list:
+            method: 'add'
+            url_params:
+                adom: 'root'
+            params:
+                - data:
+                    - name: 'secprof_application_control0'
+                      comment: 'A seurity profile application control entry created by Ansible'
+                      options:
+                        - 'allow-icmp'
+                        - 'allow-http'

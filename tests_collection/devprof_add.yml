@@ -1,0 +1,18 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'add a device profile entry'
+        fmgr_pm_devprof_adom_adom:
+            method: 'add'
+            url_params:
+                adom: 'root'
+            params:
+                - data:
+                    - name: 'device_profile0'
+                      description: 'a device profile created by Ansible'
+                      type: 'devprof'

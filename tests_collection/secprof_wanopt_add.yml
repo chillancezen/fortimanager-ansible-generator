@@ -1,0 +1,19 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'add a seurity profile wanopt entry'
+        fmgr_pm_config_obj_wanopt_profile:
+            method: 'add'
+            url_params:
+                adom: 'root'
+            params:
+                - data:
+                    - name: 'secprof_wanopt0'
+                      comments: 'A seurity profile wanopt entry created by Ansible'
+                      transparent: 'disable'
+

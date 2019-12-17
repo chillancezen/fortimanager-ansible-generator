@@ -1,0 +1,15 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'delete a device'
+        fmgr_dvm_cmd_del_device:
+            method: "exec"
+            params:
+                - data:
+                    adom: 'root'
+                    device: 'FGVM04TM19006963'

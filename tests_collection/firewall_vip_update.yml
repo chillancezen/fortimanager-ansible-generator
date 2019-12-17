@@ -1,0 +1,22 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'update firewall vip object'
+        fmgr_pm_config_obj_firewall_vip:
+            method: 'update'
+            url_params:
+                adom: 'root'
+            params:
+                - data:
+                    - name: 'firewall_vip_object0'
+                      comment: 'A firewall vip object updated by Ansible'
+                      arp-reply: 'disable'
+                      type: 'static-nat'
+                      color: 2
+                      weblogic-server: 'disable'
+                      extintf: 'port1'

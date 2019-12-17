@@ -1,0 +1,20 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'Update a firewall service'
+        fmgr_pm_config_obj_firewall_service_custom:
+            method: 'update'
+            url_params:
+                adom: "{{ adom }}"
+            params:
+                - data:
+                    - name: 'firewall_demo_service0'
+                      comment: 'An Firewall Service updated by Ansible'
+                      protocol: 'TCP/UDP/SCTP'
+                      tcp-portrange: '66-88'
+

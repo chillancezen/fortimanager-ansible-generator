@@ -1,0 +1,20 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'exec a script'
+        #Not Able To work: invalid data content
+        fmgr_dvmdb_script_execute:
+            method: "exec"
+            params:
+                - workflow:
+                    adom: 'root'
+                    package: 'labpolicy'
+                    script: 'add_firewall_policy0'
+                    scope:
+                        - name: 'FGVM04TM19006963'
+                          vdom: 'root'

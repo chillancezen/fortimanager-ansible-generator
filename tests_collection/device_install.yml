@@ -1,0 +1,19 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'install a device'
+        fmgr_securityconsole_install_device:
+            method: "exec"
+            params:
+                - data:
+                    adom: 'root'
+                    dev_rev_comments: 'This is to install the FGT device'
+                    scope:
+                        - name: 'FGVM04TM19006963'
+                          vdom: 'root'
+

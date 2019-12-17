@@ -1,0 +1,14 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'delete an ipv6 ippool'
+        fmgr_pm_config_obj_firewall_ippool6_ippool6:
+            method: 'delete'
+            url_params:
+                adom: 'root'
+                ippool6: 'firewall_ipv6_ippool_object0'

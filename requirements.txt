@@ -1,0 +1,2 @@
+jinja2
+ansible==2.8.0

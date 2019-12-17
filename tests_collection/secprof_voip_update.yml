@@ -1,0 +1,17 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'update a seurity profile voip entry'
+        fmgr_pm_config_obj_voip_profile:
+            method: 'update'
+            url_params:
+                adom: 'root'
+            params:
+                - data:
+                    - name: 'secprof_voip0'
+                      comment: 'A voip security profile updated by Ansible'

@@ -1,0 +1,14 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'delete a seurity profile application control entry'
+        fmgr_pm_config_obj_application_list_list:
+            method: 'delete'
+            url_params:
+                adom: 'root'
+                list: 'secprof_application_control0'

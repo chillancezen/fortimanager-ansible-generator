@@ -1,0 +1,95 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    devprof_name: 'device_profile1'
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'create a device profile entry'
+        fmgr_pm_devprof_adom_adom:
+            method: 'add'
+            url_params:
+                adom: 'root'
+            params:
+                - data:
+                    - name: '{{ devprof_name }}'
+                      type: 'devprof'
+    -    name: 'modify the dns setting'
+         fmgr_pm_config_devprof_devprof_system_dns:
+            method: 'set'
+            url_params:
+                adom: '{{ adom }}'
+                devprof: '{{ devprof_name }}'
+            params:
+                - data:
+                    domain: 'foo.bar.baz'
+                    primary: '4.4.4.4'
+                    secondary: '8.8.8.8'
+    -    name: 'modify the alert mail'
+         fmgr_pm_config_devprof_devprof_system_email_server:
+            method: 'set'
+            url_params:
+                adom: '{{ adom }}'
+                devprof: '{{ devprof_name }}'
+            params:
+                - data:
+                    username: 'USERNAME'
+                    password:
+                        - 'PASSWORD'
+                    authenticate: 'enable'
+                    server: 'smtp.foo.bar.baz'
+    -    name: 'modify the ntp setting'
+         fmgr_pm_config_devprof_devprof_system_ntp:
+            method: 'set'
+            url_params:
+                adom: '{{ adom }}'
+                devprof: '{{ devprof_name }}'
+            params:
+                - data:
+                    ntpsync: 'enable'
+                    ntpserver:
+                        - authentication: 'disable'
+                          server: 'ntp.foo.bar.baz'
+                    type: 'custom'
+
+    -    name: 'modify the admin setting'
+         fmgr_pm_config_devprof_devprof_system_global:
+            method: 'set'
+            url_params:
+                adom: '{{ adom }}'
+                devprof: '{{ devprof_name }}'
+            params:
+                - data:
+                    gui-theme: 'melongene'
+                    language: 'spanish'
+                    switch-controller: 'enable'
+                    admin-scp: 'enable'
+                    admin-https-redirect: 'disable'
+    -    name: 'modify the snmp v1/v2 community entry'
+         fmgr_pm_config_devprof_devprof_system_snmp_community:
+            method: 'set'
+            url_params:
+                adom: '{{ adom }}'
+                devprof: '{{ devprof_name }}'
+            params:
+                - data:
+                    - name: 'community_name0'
+                      status: 'enable'
+                      events:
+                        - 'cpu-high'
+                        - 'mem-low'
+    -    name: 'modify the snmp v3 user entry'
+         fmgr_pm_config_devprof_devprof_system_snmp_user:
+            method: 'set'
+            url_params:
+                adom: '{{ adom }}'
+                devprof: '{{ devprof_name }}'
+            params:
+                - data:
+                    - name: 'user_name0'
+                      status: 'enable'
+                      events:
+                        - 'intf-ip'
+                        - 'log-full'

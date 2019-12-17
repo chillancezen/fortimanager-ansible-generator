@@ -1,0 +1,21 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'update an ipv4 ippool'
+        fmgr_pm_config_obj_firewall_ippool:
+            method: 'update'
+            url_params:
+                adom: 'root'
+            params:
+                - data:
+                    - name: 'firewall_ipv4_ippool_object0'
+                      comments: 'An ipv4 ippool object updated by Ansible'
+                      type: 'one-to-one'
+                      startip: '192.168.190.110'
+                      endip: '192.168.190.150'
+                      arp-reply: 'disable'

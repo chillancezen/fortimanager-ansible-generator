@@ -1,0 +1,20 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'Add a firewall service'
+        fmgr_pm_config_obj_firewall_service_custom:
+            method: 'add'
+            url_params:
+                adom: "{{ adom }}"
+            params:
+                - data:
+                    - name: 'firewall_demo_service0'
+                      comment: 'An Firewall Service created by Ansible'
+                      protocol: 'TCP/UDP/SCTP'
+                      tcp-portrange: '55-87'
+

@@ -1,0 +1,19 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'update a seurity profile dns filter entry'
+        fmgr_pm_config_obj_dnsfilter_profile:
+            method: 'update'
+            url_params:
+                adom: 'root'
+            params:
+                - data:
+                    - name: 'secprof_dns_filter0'
+                      comment: 'A seurity profile dns filter updated by Ansible'
+                      block-action: 'block'
+                      safe-search: 'disable'

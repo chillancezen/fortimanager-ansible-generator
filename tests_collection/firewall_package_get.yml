@@ -1,0 +1,14 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'get a firewall package'
+        fmgr_pm_pkg_adom_adom:
+            method: 'get'
+            url_params:
+                adom: 'root'
+

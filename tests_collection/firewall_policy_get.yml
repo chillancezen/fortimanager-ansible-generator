@@ -1,0 +1,20 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    package: 'testpackage0'
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'Get an IPv4 firewall policy'
+        fmgr_pm_config_pkg_pkg_firewall_policy:
+            method: 'get'
+            url_params:
+                adom: "{{ adom }}"
+                pkg: "{{ package }}"
+            params:
+                - filter:
+                    - 'name'
+                    - '=='
+                    - 'firewall_ipv4_policy0'

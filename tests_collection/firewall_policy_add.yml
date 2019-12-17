@@ -1,0 +1,38 @@
+- hosts: fortimanager01
+  connection: httpapi
+  vars:
+    adom: "root"
+    package: 'testpackage0'
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'prerequisite: add a firewall package'
+        fmgr_pm_pkg_adom_adom:
+            method: 'add'
+            url_params:
+                adom: "{{ adom }}"
+            params:
+                - data:
+                    - name: "{{ package }}"
+                      'obj ver': 1
+                      type: 'pkg'
+    -   name: 'Add an IPv4 firewall policy'
+        fmgr_pm_config_pkg_pkg_firewall_policy:
+            method: 'add'
+            url_params:
+                adom: "{{ adom }}"
+                pkg: "{{ package }}"
+            params:
+                - data:
+                    - name: 'firewall_ipv4_policy0'
+                      srcintf: 'port1'
+                      srcaddr: 'all'
+                      dstintf: 'port1'
+                      dstaddr: 'all'
+                      action: 'accept'
+                      service: 'ALL'
+                      schedule: 'always'
+                      comments: 'An IPv4 policy created by ansible'
+                      
+
