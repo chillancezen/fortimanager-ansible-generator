@@ -4,7 +4,7 @@
 # still belong to the author of the module, and may assign their own license
 # to the complete work.
 #
-# (c) 2017 Fortinet, Inc
+# (c) 2017-2020 Fortinet, Inc
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification,
@@ -250,57 +250,92 @@ class FMGRCommon(object):
             pass
 
     def _report_schema_violation(self, param, schema, detail):
-        return False, 'param:%s does not match schema:%s, detail:%s'%(param, schema, detail)
+        """
+        the helper function which fortmats the error message.
+
+        :param param: the parameters which are going to be matched.
+        :type param: dict
+        :param schema: the schemas which are going to be matched with.
+        :type schema: dict
+        :param detail: the hint message which reveals the sort of violation message.
+        :type detail: string
+
+        :return: the status along with formatted error message string
+        :rtype: tuple
+        """
+        return False, 'param:%s does not match schema:%s, detail:%s' % (param, schema, detail)
 
     def _validate_param_recursivly(self, param, schema):
-        param_key = None if type(param) is not dict else list(param.keys())[0]
-        param_value = param if type(param) is not dict else param[param_key]
+        """
+        the routine which recursively validate the provided parameters and schemas.
+
+        :param param: the parameters which are going to be matched.
+        :type param: dict
+        :param schema: the schemas which are going to be matched with.
+        :type schema: dict
+
+        :return: the status along with formatted error message string
+        :rtype: tuple
+                """
+        param_key = None if not isinstance(param, dict) else list(param.keys())[0]
+        param_value = param if not isinstance(param, dict) else param[param_key]
 
         if 'type' not in schema or schema['type'] not in ['string', 'integer', 'array', 'dict']:
-            if type(param) is not dict or type(schema) is not dict:
+            if not isinstance(param, dict) or not isinstance(schema, dict):
                 return self._report_schema_violation(param, schema, 'unrecognized failure')
             for discrete_param_key in param:
                 discrete_param_value = param[discrete_param_key]
-                if discrete_param_key not in schema and (len(schema) != 1 or \
-                    not list(schema.keys())[0].startswith('{') or \
-                    not list(schema.keys())[0].endswith('}')):
+                if discrete_param_key not in schema and (len(schema) != 1 or
+                                                         not list(schema.keys())[0].startswith('{') or
+                                                         not list(schema.keys())[0].endswith('}')):
                     return self._report_schema_violation(discrete_param_key, schema, 'no available schema found')
                 per_param_schema = schema[list(schema.keys())[0]]
                 if discrete_param_key in schema:
-                        per_param_schema = schema[discrete_param_key]
+                    per_param_schema = schema[discrete_param_key]
                 result, message = self._validate_param_recursivly(discrete_param_value, per_param_schema)
                 if not result:
                     return result, message
             return True, ''
 
         if schema['type'] == 'string':
-            if type(param_value) is not str:
+            if not isinstance(param_value, str):
                 return self._report_schema_violation(param, schema, 'type mismatch')
             if 'enum' in schema and param_value not in schema['enum']:
                 return self._report_schema_violation(param, schema, 'enum value mismatch')
         elif schema['type'] == 'integer':
-            if type(param_value) is not int:
+            if not isinstance(param_value, int):
                 return self._report_schema_violation(param, schema, 'type mismatch')
             if 'enum' in schema and param_value not in schema['enum']:
                 return self._report_schema_violation(param, schema, 'enum value mismatch')
         elif schema['type'] == 'array':
             assert('items' in schema)
-            if type(param_value) is not list:
+            if not isinstance(param_value, list):
                 return self._report_schema_violation(param, schema, 'type mismatch')
             for elem in param_value:
                 result, message = self._validate_param_recursivly(elem, schema['items'])
                 if not result:
                     return result, message
         elif schema['type'] == 'dict':
-            if type(param) is not dict:
+            if not isinstance(param, dict):
                 return self._report_schema_violation(param, schema, 'type mismatch')
             if len(list(param.keys())) != 1 or list(param.keys())[0] != schema['name']:
                 return self._report_schema_violation(param, schema, 'schema content mismatch')
             assert('dict' in schema)
             return self._validate_param_recursivly(param[schema['name']], schema['dict'])
         return True, ''
-    
+
     def _validate_param_block(self, param_block, tagged_schema):
+        """
+        the subordinate routines to validate a tagged parameter block
+
+        :param param_block: the tagged parameters block which are going to be matched.
+        :type param_block: dict
+        :param tagged_schema: the tagged schemas which are going to be matched with.
+        :type tagged_schema: dict
+
+        :return: the status along with formatted error message string
+        :rtype: tuple
+        """
         for param_item_name in param_block:
             param_item = {param_item_name: param_block[param_item_name]}
             schema_item = None
@@ -309,18 +344,28 @@ class FMGRCommon(object):
                     schema_item = schema_desc
                     break
             if not schema_item:
-                return False, 'unrecognized parameter: %s'%(param_item_name)
+                return False, 'unrecognized parameter: %s' % (param_item_name)
             result, message = self._validate_param_recursivly(param_item,
                                                               schema_item)
             if not result:
                 return result, message
         return True, 'parameter block validation succeeds'
 
-    
     def validate_module_params(self, module, schemas):
+        """
+        the routine to validate input parameters.
+
+        :param module: the Ansible module structure.
+        :type module: AnsibleModule
+        :param schemas: the schemas which are going to be matched with.
+        :type schemas: dict
+
+        :return: the status along with formatted error message string
+        :rtype: tuple
+        """
         method = module.params['method']
-       
-        # categorize schema item according to its api_tag. 
+
+        # categorize schema item according to its api_tag.
         if method not in schemas['method_mapping']:
             raise FMGBaseException('method:%s not supported in schema' % (method))
         schema = schemas['schema_objects'][schemas['method_mapping'][method]]
@@ -338,8 +383,8 @@ class FMGRCommon(object):
             return
 
         for param_block in module.params['params']:
-            #in case there are more than one api tag for the url, we check it one by one
-            #until we encounter an explicit failure
+            # in case there are more than one api tag for the url, we check it one by one
+            # until we encounter an explicit failure
             validation_result = False
             validation_message = None
             for tagged_schema_key in tagged_schemas:
@@ -353,8 +398,22 @@ class FMGRCommon(object):
                     break
             if not validation_result:
                 raise FMGBaseException('parameter validation fails: %s'
-                                       %(validation_message))
+                                       % (validation_message))
+
     def validate_module_url_params(self, module, jrpc_urls, raw_url_schema):
+        """
+        validate whether the given paramters in url match their schema counterpart.
+
+        :param module: the Ansible module structure.
+        :type module: AnsibleModule
+        :param jrpc_urls: the parameters in url
+        :type jrpc_urls: list
+        :param raw_url_schema: the schemas to be matched with.
+        :type raw_url_schema: list
+
+        :return: None
+        :rtype: Exception maybe raised.
+        """
         raw_url_params = module.params['url_params']
         url_custom_domain = None
         url_global_domain = None
@@ -372,7 +431,7 @@ class FMGRCommon(object):
                 raise FMGBaseException('the module expects no url params')
             else:
                 return
-        
+
         # if there are multiple urls, adom must be there in params.
         if not raw_url_params or 'adom' not in raw_url_params:
             raise FMGBaseException('the param \'adom\' is expected in url params')
@@ -397,12 +456,12 @@ class FMGRCommon(object):
             return
 
         if not url_params or len(url_params) != len(url_schema):
-            raise FMGBaseException('mismatched pameters, full list:%s'%(
+            raise FMGBaseException('mismatched pameters, full list:%s' % (
                                    [item['name'] for item in url_schema]))
         param_key_set = set(list(url_params.keys()))
         schema_key_set = set([item['name'] for item in url_schema])
         if param_key_set != schema_key_set:
-            raise FMGBaseException('url parameter %s does not match schema %s'%(
+            raise FMGBaseException('url parameter %s does not match schema %s' % (
                                    param_key_set, schema_key_set))
         for param_key in url_params:
             param = url_params[param_key]
@@ -412,12 +471,23 @@ class FMGRCommon(object):
                     schema = schema_item
                     break
             assert(schema)
-            if schema['type'] == 'string' and type(param) is not str or \
-               schema['type'] == 'integer' and type(param) is not int:
-               raise FMGBaseException('url parameter %s does not schema %s'%(
-                                      param, schema))
-    
+            if schema['type'] == 'string' and not isinstance(param, str) or \
+               schema['type'] == 'integer' and not isinstance(param, int):
+                raise FMGBaseException('url parameter %s does not schema %s' % (
+                                       param, schema))
+
     def get_full_url_path(self, module, jrpc_urls):
+        """
+        format the full url string for json-rpc.
+
+        :param module: the Ansible module structure.
+        :type module: AnsibleModule
+        :param jrpc_urls: the parameters in url
+        :type jrpc_urls: list
+
+        :return: the url string.
+        :rtype: string
+        """
         url_params = module.params['url_params']
         url_custom_domain = None
         url_global_domain = None
@@ -442,8 +512,18 @@ class FMGRCommon(object):
         return url_format if not url_params else url_format.format(**url_params)
 
     def get_full_payload(self, module, full_url):
-        payload_list = list()
+        """
+        construct the full payload including url for json-rpc
 
+        :param module: the Ansible module structure.
+        :type module: AnsibleModule
+        :param jrpc_urls: the parameters in url
+        :type jrpc_urls: list
+
+        :return: the payload list
+        :rtype: list
+        """
+        payload_list = list()
         params_blocks = module.params['params']
         if params_blocks:
             for params_block in params_blocks:
@@ -457,7 +537,6 @@ class FMGRCommon(object):
             # There is one exception that no params is provided, the url is only one in the request
             payload_list.append({'url': full_url})
         return payload_list
-
 
 
 # RECURSIVE FUNCTIONS START
