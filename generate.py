@@ -223,7 +223,7 @@ def generate_schema_document_options(
             options_data += ' ' * 12 + url_param['name'] + ':\n'
             options_data += ' ' * 16 + 'type: ' + ('int' if url_param['type']
                                                    == 'integer' else 'str') + '\n'
-            if  url_param['name'] == 'adom':
+            if url_param['name'] == 'adom':
                 options_data += ' ' * 16 + 'description: the domain prefix, the none and global are reserved\n'
                 options_data += ' ' * 16 + 'choices:\n'
                 options_data += ' ' * 16 + '  - none\n'
@@ -255,12 +255,14 @@ def generate_schema_document_options(
                 options_data += ' ' * 12 + param['name'] + ':\n'
                 options_data += _generate_schema_document_options_recursilve(param, 4)
     return options_data
+
+
 def _generate_docgen_paramters_recursively(schema):
     params_data = ''
     if 'type' not in schema or schema['type'] not in ['string', 'integer', 'array', 'dict']:
         for discrete_schema_key in schema:
             discrete_schema = schema[discrete_schema_key]
-            params_data +=  ' <li><span class="li-head">%s</span>'%(discrete_schema_key)
+            params_data += ' <li><span class="li-head">%s</span>' % (discrete_schema_key)
             params_data += _generate_docgen_paramters_recursively(discrete_schema)
         return params_data
 
@@ -271,14 +273,14 @@ def _generate_docgen_paramters_recursively(schema):
             first_dot_pos = the_desc.find('.')
             if first_dot_pos >= 0:
                 the_desc = the_desc[: first_dot_pos + 1]
-            params_data += ' - %s'%(the_desc)
+            params_data += ' - %s' % (the_desc)
         else:
             params_data += ' - No description for the parameter'
-        params_data += ' <span class="li-normal">type: %s</span> '%(schematype_displayname_mapping[schema['type']])
+        params_data += ' <span class="li-normal">type: %s</span> ' % (schematype_displayname_mapping[schema['type']])
         if 'enum' in schema:
-            params_data += ' <span class="li-normal">choices: %s</span> '%(str([str(item) for item in schema['enum']]).replace('\'', ''))
+            params_data += ' <span class="li-normal">choices: %s</span> ' % (str([str(item) for item in schema['enum']]).replace('\'', ''))
         if 'default' in schema:
-            params_data += ' <span class="li-normal">default: %s</span> '%(schema['default'])
+            params_data += ' <span class="li-normal">default: %s</span> ' % (schema['default'])
         params_data += '</li>\n'
     elif schema['type'] is 'dict':
         fold = 'type' not in schema['dict'] or schema['dict']['type'] not in ['string', 'integer', 'array', 'dict']
@@ -292,10 +294,11 @@ def _generate_docgen_paramters_recursively(schema):
         params_data += ' <span class="li-normal">type: array</span>'
         params_data += ' <ul class="ul-self">\n'
         if 'type' in schema['items'] and schema['items']['type'] in ['string', 'integer', 'array', 'dict']:
-            params_data +=  ' <li><span class="li-head">{no-name}</span>'
+            params_data += ' <li><span class="li-head">{no-name}</span>'
         params_data += _generate_docgen_paramters_recursively(schema['items'])
         params_data += ' </ul>\n'
     return params_data
+
 
 def generate_docgen_parameters(raw_body_schemas, in_path_params, api_endpoint_tags):
     params_data = ' <ul>\n'
@@ -305,7 +308,7 @@ def generate_docgen_parameters(raw_body_schemas, in_path_params, api_endpoint_ta
         for url_param in in_path_params:
             params_data += ' <li><span class="li-head">' + url_param['name']
             params_data += '</span> - ' + ('the domain prefix' if url_param['name'] == 'adom' else 'the object name') + ' <span class="li-normal">'
-            params_data += 'type: '+ ('int' if url_param['type'] == 'integer' else 'str') + '</span> '
+            params_data += 'type: ' + ('int' if url_param['type'] == 'integer' else 'str') + '</span> '
             params_data += ('<span class="li-normal"> choices: none, global, custom dom</span>' if url_param['name'] == 'adom' else '') + '</li>\n'
         params_data += ' </ul>\n'
     body_schema = transform_schema(raw_body_schemas)
@@ -314,7 +317,8 @@ def generate_docgen_parameters(raw_body_schemas, in_path_params, api_endpoint_ta
         schema_object = body_schema['schema_objects'][schema_object_key]
         method_list = [method for method in body_schema['method_mapping'] if
                        body_schema['method_mapping'][method] == schema_object_key]
-        params_data += ' <li><span class="li-head">parameters for method: %s</span> - %s</li>\n'%(str(method_list).replace('\'', ''), api_endpoint_tags[method_list[0]])
+        params_data += ' <li><span class="li-head">parameters for method: %s</span> - %s</li>\n' % (
+            str(method_list).replace('\'', ''), api_endpoint_tags[method_list[0]])
 
         tagged_params = dict()
         for param in schema_object:
@@ -330,12 +334,12 @@ def generate_docgen_parameters(raw_body_schemas, in_path_params, api_endpoint_ta
         for tag in tagged_params:
             if has_multi_tags:
                 params_data += ' <ul class="ul-self">\n'
-                params_data += ' <li><span class="li-head">parameter collection %s</span></li>\n'%(tag)
+                params_data += ' <li><span class="li-head">parameter collection %s</span></li>\n' % (tag)
                 params_data += ' <ul class="ul-self">\n'
             for param in tagged_params[tag]:
                 if param['name'] == 'url':
                     continue
-                params_data +=  ' <li><span class="li-head">%s</span>'%(param['name'])
+                params_data += ' <li><span class="li-head">%s</span>' % (param['name'])
                 params_data += _generate_docgen_paramters_recursively(param)
                 #params_data += '</li>\n'
             if has_multi_tags:
@@ -508,12 +512,13 @@ def generate_schema_document_return(raw_results_schemas):
                 return_data += _generate_schema_document_return_recursive(param, 4)
     return return_data
 
+
 def _generate_docgen_return_value_recursive(schema):
     return_data = ''
     if 'type' not in schema or schema['type'] not in ['string', 'integer', 'array', 'dict']:
         for discrete_schema_key in schema:
             discrete_schema = schema[discrete_schema_key]
-            return_data +=  ' <li> <span class="li-return"> %s </span>'%(discrete_schema_key)
+            return_data += ' <li> <span class="li-return"> %s </span>' % (discrete_schema_key)
             return_data += _generate_docgen_return_value_recursive(discrete_schema)
         return return_data
     if schema['type'] in ['string', 'integer']:
@@ -523,12 +528,12 @@ def _generate_docgen_return_value_recursive(schema):
             first_dot_pos = the_desc.find('.')
             if first_dot_pos >= 0:
                 the_desc = the_desc[: first_dot_pos + 1]
-            return_data += ' - %s'%(the_desc)
+            return_data += ' - %s' % (the_desc)
         else:
             return_data += ' - No description for the parameter'
-        return_data += ' <span class="li-normal">type: %s</span> '%(schematype_displayname_mapping[schema['type']])
+        return_data += ' <span class="li-normal">type: %s</span> ' % (schematype_displayname_mapping[schema['type']])
         if 'example' in schema:
-            return_data += ' <span class="li-normal">example: %s</span> '%(schema['example'])
+            return_data += ' <span class="li-normal">example: %s</span> ' % (schema['example'])
         return_data += ' </li>\n'
     elif schema['type'] is 'dict':
         fold = 'type' not in schema['dict'] or schema['dict']['type'] not in ['string', 'integer', 'array', 'dict']
@@ -542,11 +547,12 @@ def _generate_docgen_return_value_recursive(schema):
         return_data += ' <span class="li-normal">type: array</span>'
         return_data += ' <ul class="ul-self">\n'
         if 'type' in schema['items'] and schema['items']['type'] in ['string', 'integer', 'array', 'dict']:
-            return_data +=  ' <li><span class="li-return">{no-name}</span>'
+            return_data += ' <li><span class="li-return">{no-name}</span>'
         return_data += _generate_docgen_return_value_recursive(schema['items'])
         return_data += ' </ul>\n'
 
     return return_data
+
 
 def generate_docgen_return_value(raw_results_schemas):
     return_data = ' <ul>\n'
@@ -567,10 +573,10 @@ def generate_docgen_return_value(raw_results_schemas):
         for tag in tagged_params:
             if has_multi_tags:
                 return_data += ' <ul class="ul-self">\n'
-                return_data += ' <li><span class="li-return">return values collection %s</span></li>\n'%(tag)
+                return_data += ' <li><span class="li-return">return values collection %s</span></li>\n' % (tag)
                 return_data += ' <ul class="ul-self">\n'
             for param in tagged_params[tag]:
-                return_data += ' <li><span class="li-return">%s</span>\n'%(param['name'])
+                return_data += ' <li><span class="li-return">%s</span>\n' % (param['name'])
                 return_data += _generate_docgen_return_value_recursive(param)
             if has_multi_tags:
                 return_data += ' </ul>\n'
@@ -579,10 +585,12 @@ def generate_docgen_return_value(raw_results_schemas):
     return_data += ' </ul>\n'
     return return_data
 
+
 def resolve_schema_file(schema_path, per_schema_except, doc_template, code_template):
     schema = load_schema(schema_path, per_schema_except)
     for url in schema._digest:
         resolve_schema(url, schema, doc_template, code_template, [(url, schema)])
+
 
 def validate_multiurls_schema(url, schema, multiurls):
     # Validate schemas which have multiple domains dependent urls.
@@ -632,8 +640,9 @@ def validate_multiurls_schema(url, schema, multiurls):
             else:
                 assert(the_one_result_schema == result_schema)
         assert(len(per_method_api_endpoint_tags) == 1)
-    
-def resolve_schema(url, schema, doc_template, code_template, multiurls):  
+
+
+def resolve_schema(url, schema, doc_template, code_template, multiurls):
     validate_multiurls_schema(url, schema, multiurls)
     body_schemas = dict()
     raw_body_schemas = dict()
@@ -657,7 +666,7 @@ def resolve_schema(url, schema, doc_template, code_template, multiurls):
             multiurls_in_path_params[url] = in_body_params_without_apitags
         else:
             assert(multiurls_in_path_params[url] == in_body_params_without_apitags)
-        
+
     for _url, _schema in multiurls[1:]:
         for _method in _schema._digest[_url]:
             in_path_params, in_body_params, result_schema, api_endpoint_tag = schema.get_function_schema(_url, _method)
@@ -690,18 +699,18 @@ def resolve_schema(url, schema, doc_template, code_template, multiurls):
     # Now we have all the parameters in path for all the urls which can be merged
     # dump lots of useful information to screen.
     mutiurls_names = [_url for _url, _schema in multiurls]
-    print('\t\033[36mmodule.name:\033[0m \033[37m%s\033[0m'%(canonical_path))
-    print('\t\033[36mfull.url.params:\033[0m \033[37m%s\033[0m'%(str([item['name'] for item in the_one_in_path_params]).replace('\'', '')))
-    print('\t\033[36msupported.method:\033[0m \033[37m%s\033[0m'%(str(supported_methods).replace('\'', '')))
+    print('\t\033[36mmodule.name:\033[0m \033[37m%s\033[0m' % (canonical_path))
+    print('\t\033[36mfull.url.params:\033[0m \033[37m%s\033[0m' % (str([item['name'] for item in the_one_in_path_params]).replace('\'', '')))
+    print('\t\033[36msupported.method:\033[0m \033[37m%s\033[0m' % (str(supported_methods).replace('\'', '')))
     if len(multiurls) > 1:
         for _url in mutiurls_names:
-            print('\t\033[36msub.url:\033[0m \033[37m%s\033[0m'%(_url))
+            print('\t\033[36msub.url:\033[0m \033[37m%s\033[0m' % (_url))
     code_rdata = {'supported_methods': supported_methods,
                   'in_path_params': the_one_in_path_params,
                   'jrpc_urls': mutiurls_names,
                   'body_schemas': schema_beautify(transform_schema(body_schemas), 4, 1, False, True)}
     code_body = code_template.render(**code_rdata)
-    
+
     doc_examples = generate_schema_document_examples(raw_body_schemas, canonical_path, url, the_one_in_path_params)
     doc_rdata = {'module_name': canonical_path,
                  'jrpc_urls': mutiurls_names,
@@ -709,7 +718,7 @@ def resolve_schema(url, schema, doc_template, code_template, multiurls):
                  'doc_options': generate_schema_document_options(raw_body_schemas, the_one_in_path_params, api_endpoint_tags),
                  'doc_examples': doc_examples,
                  'doc_return': generate_schema_document_return(results_schemas)
-    }
+                 }
     doc_body = doc_template.render(**doc_rdata)
 
     with open('modules/%s.py' % (canonical_path), 'w') as f:
@@ -767,7 +776,7 @@ def resolve_schema(url, schema, doc_template, code_template, multiurls):
     docgen_data += '.. raw:: html\n\n'
     docgen_data += generate_docgen_parameters(raw_body_schemas, the_one_in_path_params, api_endpoint_tags)
     docgen_data += '\n\n\n\n\n\n'
-    #NOTES IN DOCGEN
+    # NOTES IN DOCGEN
     docgen_data += 'Notes\n'
     docgen_data += '-----\n'
     docgen_data += '.. note::\n\n'
@@ -778,7 +787,7 @@ def resolve_schema(url, schema, doc_template, code_template, multiurls):
     docgen_data += 'Examples\n' + '--------\n\n'
     docgen_data += '.. code-block:: yaml+jinja\n\n'
     docgen_data += doc_examples + '\n\n\n'
-    
+
     # RETURN VALUE IN DOCGEN
     docgen_data += 'Return Values\n'
     docgen_data += '-------------\n\n\n'
@@ -791,18 +800,19 @@ def resolve_schema(url, schema, doc_template, code_template, multiurls):
     docgen_data += 'Status\n'
     docgen_data += '------\n\n'
     docgen_data += '- This module is not guaranteed to have a backwards compatible interface.\n\n\n'
-    #AUTHORS IN DOCGEN
+    # AUTHORS IN DOCGEN
     docgen_data += 'Authors\n'
     docgen_data += '-------\n\n'
     docgen_data += '- Frank Shen (@fshen01)\n'
     docgen_data += '- Link Zheng (@zhengl)\n\n\n'
-    #HINT IN DOCGEN
+    # HINT IN DOCGEN
     docgen_data += '.. hint::\n\n'
     docgen_data += '    If you notice any issues in this documentation, you can create a pull request to improve it.\n'
     docgen_data += '\n\n\n'
-    with open('docgen/%s.rst' %(canonical_path), 'w') as f:
+    with open('docgen/%s.rst' % (canonical_path), 'w') as f:
         f.write(docgen_data)
         f.flush()
+
 
 if __name__ == '__main__':
     jinja2_file_loader = FileSystemLoader('templates')
