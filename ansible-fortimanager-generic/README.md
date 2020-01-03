@@ -5,7 +5,7 @@
 The generic module is to fill the gap which exists between FortiManager features being published and Ansible modules reflecting those features.
 
 ### Setup the environment 
-make sure you have `ansible>=2.8.0` installed with python2 or python3. run the `setup.py` to copy the generic module to ansible module directory.
+Make sure you have `ansible>=2.8.0` installed with python2 or python3, then run the `setup.py` to copy the generic module to ansible module directory.
 
 ```sh
 $python3 setup.py 
@@ -14,7 +14,7 @@ $python2 setup.py # if you are using python2
 
 ### module usage
 
-the generic module utilizes existing fortimanager plugin to encapsulate data to request FortiManager device. In specific, one request includes below payload skeleton:
+The generic module utilizes existing fortimanager plugin to encapsulate data to request FortiManager device. In specific, one request includes the following payload skeleton:
 
 ```
 {
@@ -24,13 +24,13 @@ the generic module utilizes existing fortimanager plugin to encapsulate data to 
     "session": "..."
 }
 ```
-with the generic fortimanager ansible module, the `id` and `session` are taken over by fortimanager httpapi plugin, users should ignore them, only `method` and `params` are user input. 
+With the generic fortimanager ansible module, the `id` and `session` are taken over by fortimanager httpapi plugin, users should ignore them, only `method` and `params` are user input. 
 
-there are two ways to write an ansible playbook with the generic fortimananger module.
+There are two ways to write an ansible playbook with the generic fortimananger module.
 
 #### `json` with plain string
 
-the `json` is defined as a string, user must provide the json-formatted string, one example of this sort is given as below: 
+The `json` is defined as a string, user must provide the json-formatted string, one example of this sort is given as below: 
 ```
 - hosts: fortimanager01
   connection: httpapi
@@ -62,9 +62,9 @@ the `json` is defined as a string, user must provide the json-formatted string, 
 ```
 
 #### `method` and `params` with hierarchies
-we also provide another way to write the ansible playbook which is less error-prone. Basically, a yaml-json conversion is done in playbook. In the module schema, only top-level parameters `method` and `params` are defined. 
+We also provide another way to write the ansible playbook which is less error-prone. Basically, a yaml-json conversion is done in playbook. In the module schema, only top-level parameters `method` and `params` are defined. 
 
-the following example is written in `method` and `params` style:
+The following example is written in `method` and `params` style:
 ```
 - hosts: fortimanager01
   connection: httpapi
@@ -89,7 +89,7 @@ the following example is written in `method` and `params` style:
 
 __caveats: when all three parameters are given at the same time, `json` has higher priority over `method`&`params` to be selected.__ 
 
-to run the above examples , the ansible inventory must include the right fortimanager device and credentials:
+To run the above examples , the ansible inventory must include the right fortimanager device and credentials:
 ```
 $cat hosts
 [myfortimanagers]
@@ -99,4 +99,4 @@ fortimanager01 ansible_host=fortimanager01_address ansible_user=APIUser ansible_
 ansible_network_os=fortimanager
 
 $ansible-playbook -i hosts script_add.yml
-``
+```
