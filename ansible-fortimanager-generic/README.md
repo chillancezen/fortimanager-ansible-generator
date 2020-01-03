@@ -14,7 +14,7 @@ $python2 setup.py # if you are using python2
 
 ### module usage
 
-the generic module utilizes existing fortimanager plugin to encapsulate data to request FortiManager device. In specific, one request contains the payload with skeleton as below:
+the generic module utilizes existing fortimanager plugin to encapsulate data to request FortiManager device. In specific, one request includes below payload skeleton:
 
 ```
 {
@@ -24,7 +24,7 @@ the generic module utilizes existing fortimanager plugin to encapsulate data to 
     "session": "..."
 }
 ```
-with the generic fortimanager ansible module, the `id` and `session` are taken over by fortimanager httpapi plugin, users should ignore them, only `method` and `params` are from user input. 
+with the generic fortimanager ansible module, the `id` and `session` are taken over by fortimanager httpapi plugin, users should ignore them, only `method` and `params` are user input. 
 
 there are two ways to write an ansible playbook with the generic fortimananger module.
 
@@ -64,7 +64,7 @@ the `json` is defined as a string, user must provide the json-formatted string, 
 #### `method` and `params` with hierarchies
 we also provide another way to write the ansible playbook which is less error-prone. Basically, a yaml-json conversion is done in playbook. In the module schema, only top-level parameters `method` and `params` are defined. 
 
-the following example is written in `method` and `params`:
+the following example is written in `method` and `params` style:
 ```
 - hosts: fortimanager01
   connection: httpapi
@@ -89,7 +89,7 @@ the following example is written in `method` and `params`:
 
 __caveats: when all three parameters are given at the same time, `json` has higher priority over `method`&`params` to be selected.__ 
 
-to run the above examples , the ansible inventory must contain the right fortimanager device and credentials:
+to run the above examples , the ansible inventory must include the right fortimanager device and credentials:
 ```
 $cat hosts
 [myfortimanagers]
