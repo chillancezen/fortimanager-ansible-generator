@@ -11,7 +11,7 @@ Make sure you have `ansible>=2.8.0` installed with python2 or python3, then run 
 $python3 setup.py 
 $python2 setup.py # if you are using python2
 ```
-By the way, this script also applies to Python virtual env.
+This script also applies to Python virtual env.
 ### module usage
 
 The generic module utilizes existing fortimanager plugin to encapsulate data to request FortiManager device. In specific, one request includes the following payload skeleton:
