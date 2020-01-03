@@ -87,7 +87,7 @@ The following example is written in `method` and `params` style:
 ```
 
 
-__caveats: when all three parameters are given at the same time, `json` has higher priority over `method`&`params` to be selected.__ 
+__caveats: when all three parameters are given at the same time, `json` has higher priority over `method`&`params` to be chosen.__ 
 
 To run the above examples , the ansible inventory must include the right fortimanager device and credentials:
 ```
