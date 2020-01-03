@@ -51,9 +51,9 @@ the `json` is defined as a string, user must provide the json-formatted string, 
                          "data":[
                             {
                                "name": "user_script0",
-                               "type": "cli", 
-                               "desc": "The script is created by ansible fortimanager generic module",
-                               "content": "the script content to be executed on FortiGate"
+                               "type": "cli",
+                               "desc": "The script is created by ansible",
+                               "content": "the script content to be executed"
                             }
                           ]
                      }
