@@ -1,5 +1,5 @@
 # ansible-fortimanager-generic
-
+__The generic module has been moved to https://github.com/fortinet/ansible-fortimanager-generic__
 ### What's the generic module?
 
 The generic module is to fill the gap which exists between FortiManager features being published and Ansible modules reflecting those features.
