@@ -69,15 +69,15 @@ options:
                     default-mapping:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     defmap-intf:
                         type: str
                     defmap-intrazone-deny:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     defmap-zonemember:
                         -
                             type: str
@@ -96,8 +96,8 @@ options:
                             intrazone-deny:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             local-intf:
                                 -
                                     type: str
@@ -107,10 +107,10 @@ options:
                         type: str
                     single-intf:
                         type: str
-                        default: enable
+                        default: 'enable'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: ''
@@ -124,15 +124,15 @@ options:
                     -
                         type: str
                         choices:
-                            - color
-                            - default-mapping
-                            - defmap-intf
-                            - defmap-intrazone-deny
-                            - defmap-zonemember
-                            - description
-                            - egress-shaping-profile
-                            - name
-                            - single-intf
+                            - 'color'
+                            - 'default-mapping'
+                            - 'defmap-intf'
+                            - 'defmap-intrazone-deny'
+                            - 'defmap-zonemember'
+                            - 'description'
+                            - 'egress-shaping-profile'
+                            - 'name'
+                            - 'single-intf'
             filter:
                 -
                     type: str
@@ -151,11 +151,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

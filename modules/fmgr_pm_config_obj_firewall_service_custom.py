@@ -71,9 +71,9 @@ options:
                         type: str
                         description: 'Application service type.'
                         choices:
-                            - disable
-                            - app-id
-                            - app-category
+                            - 'disable'
+                            - 'app-id'
+                            - 'app-category'
                     application:
                         -
                             type: int
@@ -84,9 +84,9 @@ options:
                         type: str
                         description: 'Configure the type of ICMP error message verification.'
                         choices:
-                            - disable
-                            - default
-                            - strict
+                            - 'disable'
+                            - 'default'
+                            - 'strict'
                     color:
                         type: int
                         description: 'Color of icon on the GUI.'
@@ -99,26 +99,26 @@ options:
                         type: str
                         description: 'Helper name.'
                         choices:
-                            - disable
-                            - auto
-                            - ftp
-                            - tftp
-                            - ras
-                            - h323
-                            - tns
-                            - mms
-                            - sip
-                            - pptp
-                            - rtsp
-                            - dns-udp
-                            - dns-tcp
-                            - pmap
-                            - rsh
-                            - dcerpc
-                            - mgcp
-                            - gtp-c
-                            - gtp-u
-                            - gtp-b
+                            - 'disable'
+                            - 'auto'
+                            - 'ftp'
+                            - 'tftp'
+                            - 'ras'
+                            - 'h323'
+                            - 'tns'
+                            - 'mms'
+                            - 'sip'
+                            - 'pptp'
+                            - 'rtsp'
+                            - 'dns-udp'
+                            - 'dns-tcp'
+                            - 'pmap'
+                            - 'rsh'
+                            - 'dcerpc'
+                            - 'mgcp'
+                            - 'gtp-c'
+                            - 'gtp-u'
+                            - 'gtp-b'
                     icmpcode:
                         type: int
                         description: 'ICMP code.'
@@ -135,17 +135,17 @@ options:
                         type: str
                         description: 'Protocol type based on IANA numbers.'
                         choices:
-                            - ICMP
-                            - IP
-                            - TCP/UDP/SCTP
-                            - ICMP6
-                            - HTTP
-                            - FTP
-                            - CONNECT
-                            - SOCKS
-                            - ALL
-                            - SOCKS-TCP
-                            - SOCKS-UDP
+                            - 'ICMP'
+                            - 'IP'
+                            - 'TCP/UDP/SCTP'
+                            - 'ICMP6'
+                            - 'HTTP'
+                            - 'FTP'
+                            - 'CONNECT'
+                            - 'SOCKS'
+                            - 'ALL'
+                            - 'SOCKS-TCP'
+                            - 'SOCKS-UDP'
                     protocol-number:
                         type: int
                         description: 'IP protocol number.'
@@ -153,8 +153,8 @@ options:
                         type: str
                         description: 'Enable/disable web proxy service.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     sctp-portrange:
                         type: str
                         description: 'Multiple SCTP port ranges.'
@@ -183,8 +183,8 @@ options:
                         type: str
                         description: 'Enable/disable the visibility of the service on the GUI.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure custom services.'
@@ -198,30 +198,30 @@ options:
                     -
                         type: str
                         choices:
-                            - app-category
-                            - app-service-type
-                            - application
-                            - category
-                            - check-reset-range
-                            - color
-                            - fqdn
-                            - helper
-                            - icmpcode
-                            - icmptype
-                            - iprange
-                            - name
-                            - protocol
-                            - protocol-number
-                            - proxy
-                            - sctp-portrange
-                            - session-ttl
-                            - tcp-halfclose-timer
-                            - tcp-halfopen-timer
-                            - tcp-portrange
-                            - tcp-timewait-timer
-                            - udp-idle-timer
-                            - udp-portrange
-                            - visibility
+                            - 'app-category'
+                            - 'app-service-type'
+                            - 'application'
+                            - 'category'
+                            - 'check-reset-range'
+                            - 'color'
+                            - 'fqdn'
+                            - 'helper'
+                            - 'icmpcode'
+                            - 'icmptype'
+                            - 'iprange'
+                            - 'name'
+                            - 'protocol'
+                            - 'protocol-number'
+                            - 'proxy'
+                            - 'sctp-portrange'
+                            - 'session-ttl'
+                            - 'tcp-halfclose-timer'
+                            - 'tcp-halfopen-timer'
+                            - 'tcp-portrange'
+                            - 'tcp-timewait-timer'
+                            - 'udp-idle-timer'
+                            - 'udp-portrange'
+                            - 'visibility'
             filter:
                 -
                     type: str
@@ -240,11 +240,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

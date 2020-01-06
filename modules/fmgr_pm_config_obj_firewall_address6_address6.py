@@ -97,8 +97,8 @@ options:
                         host-type:
                             type: str
                             choices:
-                                - any
-                                - specific
+                                - 'any'
+                                - 'specific'
                         ip6:
                             type: str
                         obj-id:
@@ -106,7 +106,7 @@ options:
                         sdn:
                             type: str
                             choices:
-                                - nsx
+                                - 'nsx'
                         start-ip:
                             type: str
                         tags:
@@ -116,19 +116,19 @@ options:
                         type:
                             type: str
                             choices:
-                                - ipprefix
-                                - iprange
-                                - nsx
-                                - dynamic
-                                - fqdn
-                                - template
+                                - 'ipprefix'
+                                - 'iprange'
+                                - 'nsx'
+                                - 'dynamic'
+                                - 'fqdn'
+                                - 'template'
                         uuid:
                             type: str
                         visibility:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                 end-ip:
                     type: str
                     description: 'Final IP address (inclusive) in the range for the address (format: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx).'
@@ -142,8 +142,8 @@ options:
                     type: str
                     description: 'Host type.'
                     choices:
-                        - any
-                        - specific
+                        - 'any'
+                        - 'specific'
                 ip6:
                     type: str
                     description: 'IPv6 address prefix (format: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx/xxx).'
@@ -162,7 +162,7 @@ options:
                     type: str
                     description: 'SDN.'
                     choices:
-                        - nsx
+                        - 'nsx'
                 start-ip:
                     type: str
                     description: 'First IP address (inclusive) in the range for the address (format: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx).'
@@ -175,8 +175,8 @@ options:
                             type: str
                             description: 'Subnet segment type.'
                             choices:
-                                - any
-                                - specific
+                                - 'any'
+                                - 'specific'
                         value:
                             type: str
                             description: 'Subnet segment value.'
@@ -198,12 +198,12 @@ options:
                     type: str
                     description: 'Type of IPv6 address object (default = ipprefix).'
                     choices:
-                        - ipprefix
-                        - iprange
-                        - nsx
-                        - dynamic
-                        - fqdn
-                        - template
+                        - 'ipprefix'
+                        - 'iprange'
+                        - 'nsx'
+                        - 'dynamic'
+                        - 'fqdn'
+                        - 'template'
                 uuid:
                     type: str
                     description: 'Universally Unique Identifier (UUID; automatically assigned but can be manually reset).'
@@ -211,8 +211,8 @@ options:
                     type: str
                     description: 'Enable/disable the visibility of the object in the GUI.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'Configure IPv6 firewall addresses.'
@@ -230,9 +230,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

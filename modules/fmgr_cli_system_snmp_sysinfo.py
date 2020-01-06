@@ -69,14 +69,14 @@ options:
                     description: 'System location.'
                 status:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable SNMP.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 trap-cpu-high-exclude-nice-threshold:
                     type: int
                     default: 80

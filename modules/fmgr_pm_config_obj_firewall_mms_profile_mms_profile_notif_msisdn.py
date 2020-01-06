@@ -73,12 +73,12 @@ options:
                         -
                             type: str
                             choices:
-                                - flood-thresh-1
-                                - flood-thresh-2
-                                - flood-thresh-3
-                                - dupe-thresh-1
-                                - dupe-thresh-2
-                                - dupe-thresh-3
+                                - 'flood-thresh-1'
+                                - 'flood-thresh-2'
+                                - 'flood-thresh-3'
+                                - 'dupe-thresh-1'
+                                - 'dupe-thresh-2'
+                                - 'dupe-thresh-3'
     schema_object1:
         methods: [get]
         description: 'Notification for MSISDNs.'
@@ -92,8 +92,8 @@ options:
                     -
                         type: str
                         choices:
-                            - msisdn
-                            - threshold
+                            - 'msisdn'
+                            - 'threshold'
             filter:
                 -
                     type: str
@@ -112,11 +112,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

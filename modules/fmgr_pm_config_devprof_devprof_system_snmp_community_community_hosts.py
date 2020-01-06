@@ -71,15 +71,15 @@ options:
                         type: str
                         description: 'Enable/disable direct management of HA cluster members.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     host-type:
                         type: str
                         description: 'Control whether the SNMP manager sends SNMP queries, receives SNMP traps, or both.'
                         choices:
-                            - any
-                            - query
-                            - trap
+                            - 'any'
+                            - 'query'
+                            - 'trap'
                     id:
                         type: int
                         description: 'Host entry ID.'
@@ -102,11 +102,11 @@ options:
                     -
                         type: str
                         choices:
-                            - ha-direct
-                            - host-type
-                            - id
-                            - ip
-                            - source-ip
+                            - 'ha-direct'
+                            - 'host-type'
+                            - 'id'
+                            - 'ip'
+                            - 'source-ip'
             filter:
                 -
                     type: str
@@ -125,11 +125,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

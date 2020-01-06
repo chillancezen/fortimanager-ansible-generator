@@ -79,8 +79,8 @@ options:
                                 type: str
                                 description: 'Enable/disable exclusive value.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             id:
                                 type: int
                                 description: 'Subnet segment ID.'
@@ -111,9 +111,9 @@ options:
                     -
                         type: str
                         choices:
-                            - ip6
-                            - name
-                            - subnet-segment-count
+                            - 'ip6'
+                            - 'name'
+                            - 'subnet-segment-count'
             filter:
                 -
                     type: str
@@ -132,11 +132,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

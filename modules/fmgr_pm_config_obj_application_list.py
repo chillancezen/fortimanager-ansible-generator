@@ -68,8 +68,8 @@ options:
                         type: str
                         description: 'Enable/disable replacement messages for blocked applications.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     comment:
                         type: str
                         description: 'comments'
@@ -77,17 +77,17 @@ options:
                         type: str
                         description: 'Enable/disable deep application inspection.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     entries:
                         -
                             action:
                                 type: str
                                 description: 'Pass or block traffic, or reset connection for traffic from this application.'
                                 choices:
-                                    - pass
-                                    - block
-                                    - reset
+                                    - 'pass'
+                                    - 'block'
+                                    - 'reset'
                             application:
                                 -
                                     type: int
@@ -104,14 +104,14 @@ options:
                                 type: str
                                 description: 'Enable/disable logging for this application list.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             log-packet:
                                 type: str
                                 description: 'Enable/disable packet logging.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             parameters:
                                 -
                                     id:
@@ -127,11 +127,11 @@ options:
                                 -
                                     type: str
                                     choices:
-                                        - 1
-                                        - 2
-                                        - 3
-                                        - 4
-                                        - 5
+                                        - '1'
+                                        - '2'
+                                        - '3'
+                                        - '4'
+                                        - '5'
                             protocols:
                                 -
                                     type: str
@@ -139,8 +139,8 @@ options:
                                 type: str
                                 description: 'Quarantine method.'
                                 choices:
-                                    - none
-                                    - attacker
+                                    - 'none'
+                                    - 'attacker'
                             quarantine-expiry:
                                 type: str
                                 description: 'Duration of quarantine. (Format ###d##h##m, minimum 1m, maximum 364d23h59m, default = 5m). Requires quarantine set to attacker.'
@@ -148,8 +148,8 @@ options:
                                 type: str
                                 description: 'Enable/disable quarantine logging.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             rate-count:
                                 type: int
                                 description: 'Count of the rate.'
@@ -160,17 +160,17 @@ options:
                                 type: str
                                 description: 'Rate limit mode.'
                                 choices:
-                                    - periodical
-                                    - continuous
+                                    - 'periodical'
+                                    - 'continuous'
                             rate-track:
                                 type: str
                                 description: 'Track the packet protocol field.'
                                 choices:
-                                    - none
-                                    - src-ip
-                                    - dest-ip
-                                    - dhcp-client-mac
-                                    - dns-domain
+                                    - 'none'
+                                    - 'src-ip'
+                                    - 'dest-ip'
+                                    - 'dhcp-client-mac'
+                                    - 'dns-domain'
                             risk:
                                 -
                                     type: int
@@ -196,8 +196,8 @@ options:
                         type: str
                         description: 'Enable/disable extended logging.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     name:
                         type: str
                         description: 'List name.'
@@ -205,30 +205,30 @@ options:
                         -
                             type: str
                             choices:
-                                - allow-dns
-                                - allow-icmp
-                                - allow-http
-                                - allow-ssl
-                                - allow-quic
+                                - 'allow-dns'
+                                - 'allow-icmp'
+                                - 'allow-http'
+                                - 'allow-ssl'
+                                - 'allow-quic'
                     other-application-action:
                         type: str
                         description: 'Action for other applications.'
                         choices:
-                            - pass
-                            - block
+                            - 'pass'
+                            - 'block'
                     other-application-log:
                         type: str
                         description: 'Enable/disable logging for other applications.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     p2p-black-list:
                         -
                             type: str
                             choices:
-                                - skype
-                                - edonkey
-                                - bittorrent
+                                - 'skype'
+                                - 'edonkey'
+                                - 'bittorrent'
                     replacemsg-group:
                         type: str
                         description: 'Replacement message group.'
@@ -236,14 +236,14 @@ options:
                         type: str
                         description: 'Pass or block traffic from unknown applications.'
                         choices:
-                            - pass
-                            - block
+                            - 'pass'
+                            - 'block'
                     unknown-application-log:
                         type: str
                         description: 'Enable/disable logging for unknown applications.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure application control lists.'
@@ -257,18 +257,18 @@ options:
                     -
                         type: str
                         choices:
-                            - app-replacemsg
-                            - comment
-                            - deep-app-inspection
-                            - extended-log
-                            - name
-                            - options
-                            - other-application-action
-                            - other-application-log
-                            - p2p-black-list
-                            - replacemsg-group
-                            - unknown-application-action
-                            - unknown-application-log
+                            - 'app-replacemsg'
+                            - 'comment'
+                            - 'deep-app-inspection'
+                            - 'extended-log'
+                            - 'name'
+                            - 'options'
+                            - 'other-application-action'
+                            - 'other-application-log'
+                            - 'p2p-black-list'
+                            - 'replacemsg-group'
+                            - 'unknown-application-action'
+                            - 'unknown-application-log'
             filter:
                 -
                     type: str
@@ -287,11 +287,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

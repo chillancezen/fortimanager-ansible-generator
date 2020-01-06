@@ -43,7 +43,7 @@ Parameters
  <li><span class="li-head">parameters for method: [set, update]</span> - FortiView settings.</li>
  <ul class="ul-self">
  <li><span class="li-head">data</span> - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
- <li><span class="li-head">not-scanned-apps</span> - Include/Exclude 'Not. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [exclude, include]</span>  <span class="li-normal">default: include</span> </li>
+ <li><span class="li-head">not-scanned-apps</span> - Include/Exclude Not. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [exclude, include]</span>  <span class="li-normal">default: include</span> </li>
  <li><span class="li-head">resolve-ip</span> - Enable or disable resolving IP address to hostname in FortiView. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span>  <span class="li-normal">default: disable</span> </li>
  </ul>
  </ul>
@@ -101,7 +101,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <ul class="ul-self">
  <li><span class="li-return">data</span>
  - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
- <li> <span class="li-return"> not-scanned-apps </span> - Include/Exclude 'Not. <span class="li-normal">type: str</span>  <span class="li-normal">example: include</span>  </li>
+ <li> <span class="li-return"> not-scanned-apps </span> - Include/Exclude Not. <span class="li-normal">type: str</span>  <span class="li-normal">example: include</span>  </li>
  <li> <span class="li-return"> resolve-ip </span> - Enable or disable resolving IP address to hostname in FortiView. <span class="li-normal">type: str</span>  <span class="li-normal">example: disable</span>  </li>
  </ul>
  <li><span class="li-return">status</span>

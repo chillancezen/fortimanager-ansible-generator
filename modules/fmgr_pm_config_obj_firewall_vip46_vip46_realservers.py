@@ -73,9 +73,9 @@ options:
                         type: str
                         description: 'Per server health check.'
                         choices:
-                            - disable
-                            - enable
-                            - vip
+                            - 'disable'
+                            - 'enable'
+                            - 'vip'
                     holddown-interval:
                         type: int
                         description: 'Hold down interval.'
@@ -98,9 +98,9 @@ options:
                         type: str
                         description: 'Server administrative status.'
                         choices:
-                            - active
-                            - standby
-                            - disable
+                            - 'active'
+                            - 'standby'
+                            - 'disable'
                     weight:
                         type: int
     schema_object1:
@@ -116,16 +116,16 @@ options:
                     -
                         type: str
                         choices:
-                            - client-ip
-                            - healthcheck
-                            - holddown-interval
-                            - id
-                            - ip
-                            - max-connections
-                            - monitor
-                            - port
-                            - status
-                            - weight
+                            - 'client-ip'
+                            - 'healthcheck'
+                            - 'holddown-interval'
+                            - 'id'
+                            - 'ip'
+                            - 'max-connections'
+                            - 'monitor'
+                            - 'port'
+                            - 'status'
+                            - 'weight'
             filter:
                 -
                     type: str
@@ -144,11 +144,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

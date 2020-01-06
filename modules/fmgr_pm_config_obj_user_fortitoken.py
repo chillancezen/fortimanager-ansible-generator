@@ -83,8 +83,8 @@ options:
                         type: str
                         description: 'Status'
                         choices:
-                            - lock
-                            - active
+                            - 'lock'
+                            - 'active'
     schema_object1:
         methods: [get]
         description: 'Configure FortiToken.'
@@ -98,12 +98,12 @@ options:
                     -
                         type: str
                         choices:
-                            - comments
-                            - license
-                            - os-ver
-                            - reg-id
-                            - serial-number
-                            - status
+                            - 'comments'
+                            - 'license'
+                            - 'os-ver'
+                            - 'reg-id'
+                            - 'serial-number'
+                            - 'status'
             filter:
                 -
                     type: str
@@ -122,11 +122,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

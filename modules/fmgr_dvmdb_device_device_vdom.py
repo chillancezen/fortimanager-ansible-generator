@@ -72,10 +72,10 @@ options:
                         type: str
                     opmode:
                         type: str
-                        default: nat
+                        default: 'nat'
                         choices:
-                            - nat
-                            - transparent
+                            - 'nat'
+                            - 'transparent'
                     rtm_prof_id:
                         type: int
                     status:
@@ -93,11 +93,11 @@ options:
                     -
                         type: str
                         choices:
-                            - comments
-                            - name
-                            - opmode
-                            - rtm_prof_id
-                            - status
+                            - 'comments'
+                            - 'name'
+                            - 'opmode'
+                            - 'rtm_prof_id'
+                            - 'status'
             filter:
                 -
                     type: str
@@ -112,9 +112,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'syntax'
             range:
                 -
                     type: int

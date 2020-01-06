@@ -57,24 +57,24 @@ options:
             data:
                 not-scanned-apps:
                     type: str
-                    default: include
+                    default: 'include'
                     description:
-                     - 'Include/Exclude 'Not.Scanned' applications in FortiView. Set as 'exclude' if you want to filter out never scanned applications.'
-                     - 'exclude - Exclude 'Not.Scanned' applications in FortiView.'
-                     - 'include - Include 'Not.Scanned' applications in FortiView.'
+                     - 'Include/Exclude Not.Scanned applications in FortiView. Set as exclude if you want to filter out never scanned applications.'
+                     - 'exclude - Exclude Not.Scanned applications in FortiView.'
+                     - 'include - Include Not.Scanned applications in FortiView.'
                     choices:
-                        - exclude
-                        - include
+                        - 'exclude'
+                        - 'include'
                 resolve-ip:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable or disable resolving IP address to hostname in FortiView.'
                      - 'disable - Disable resolving IP address to hostname.'
                      - 'enable - Enable resolving IP address to hostname.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 
@@ -109,9 +109,9 @@ return_of_api_category_0:
             not-scanned-apps:
                type: str
                description: |
-                  'Include/Exclude 'Not.Scanned' applications in FortiView. Set as 'exclude' if you want to filter out never scanned applications.'
-                  'exclude - Exclude 'Not.Scanned' applications in FortiView.'
-                  'include - Include 'Not.Scanned' applications in FortiView.'
+                  'Include/Exclude Not.Scanned applications in FortiView. Set as exclude if you want to filter out never scanned applications.'
+                  'exclude - Exclude Not.Scanned applications in FortiView.'
+                  'include - Include Not.Scanned applications in FortiView.'
                example: include
             resolve-ip:
                type: str

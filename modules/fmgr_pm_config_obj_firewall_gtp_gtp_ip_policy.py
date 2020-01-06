@@ -70,8 +70,8 @@ options:
                         type: str
                         description: 'Action.'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     dstaddr:
                         type: str
                         description: 'Destination address name.'
@@ -94,10 +94,10 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - dstaddr
-                            - id
-                            - srcaddr
+                            - 'action'
+                            - 'dstaddr'
+                            - 'id'
+                            - 'srcaddr'
             filter:
                 -
                     type: str
@@ -116,11 +116,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

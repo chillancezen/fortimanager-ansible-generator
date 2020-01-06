@@ -54,7 +54,7 @@ Parameters
  <li><span class="li-head">http-host</span> - HTTP server domain name in HTTP header. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">ip</span> - IP address of the real server. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">max-connections</span> - Max number of active connections that can be directed to the real server. <span class="li-normal">type: int</span> </li>
- <li><span class="li-head">monitor</span> - Name of the health check monitor to use when polling to determine a virtual server's connectivity status. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">monitor</span> - Name of the health check monitor to use when polling to determine a virtual servers connectivity status. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">port</span> - Port for communicating with the real server. <span class="li-normal">type: int</span> </li>
  <li><span class="li-head">seq</span> - No description for the parameter <span class="li-normal">type: int</span> </li>
  <li><span class="li-head">status</span> - Set the status of the real server to active so that it can accept traffic, or on standby or disabled so no traffic is sent. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [active, standby, disable]</span> </li>
@@ -194,7 +194,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> http-host </span> - HTTP server domain name in HTTP header. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> ip </span> - IP address of the real server. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> max-connections </span> - Max number of active connections that can be directed to the real server. <span class="li-normal">type: int</span>  </li>
- <li> <span class="li-return"> monitor </span> - Name of the health check monitor to use when polling to determine a virtual server's connectivity status. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> monitor </span> - Name of the health check monitor to use when polling to determine a virtual servers connectivity status. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> port </span> - Port for communicating with the real server. <span class="li-normal">type: int</span>  </li>
  <li> <span class="li-return"> seq </span> - No description for the parameter <span class="li-normal">type: int</span>  </li>
  <li> <span class="li-return"> status </span> - Set the status of the real server to active so that it can accept traffic, or on standby or disabled so no traffic is sent. <span class="li-normal">type: str</span>  </li>

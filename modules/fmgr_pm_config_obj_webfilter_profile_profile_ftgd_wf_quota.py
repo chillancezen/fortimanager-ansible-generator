@@ -82,16 +82,16 @@ options:
                         type: str
                         description: 'Quota type.'
                         choices:
-                            - time
-                            - traffic
+                            - 'time'
+                            - 'traffic'
                     unit:
                         type: str
                         description: 'Traffic quota unit of measurement.'
                         choices:
-                            - B
-                            - KB
-                            - MB
-                            - GB
+                            - 'B'
+                            - 'KB'
+                            - 'MB'
+                            - 'GB'
                     value:
                         type: int
                         description: 'Traffic quota value.'
@@ -108,13 +108,13 @@ options:
                     -
                         type: str
                         choices:
-                            - category
-                            - duration
-                            - id
-                            - override-replacemsg
-                            - type
-                            - unit
-                            - value
+                            - 'category'
+                            - 'duration'
+                            - 'id'
+                            - 'override-replacemsg'
+                            - 'type'
+                            - 'unit'
+                            - 'value'
             filter:
                 -
                     type: str
@@ -133,11 +133,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

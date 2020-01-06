@@ -72,15 +72,15 @@ options:
                     type: str
                     description: 'Enable/disable direct management of HA cluster members.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 host-type:
                     type: str
                     description: 'Control whether the SNMP manager sends SNMP queries, receives SNMP traps, or both.'
                     choices:
-                        - any
-                        - query
-                        - trap
+                        - 'any'
+                        - 'query'
+                        - 'trap'
                 id:
                     type: int
                     description: 'Host6 entry ID.'
@@ -107,9 +107,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

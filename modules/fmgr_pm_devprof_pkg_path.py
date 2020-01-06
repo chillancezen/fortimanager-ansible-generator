@@ -73,12 +73,12 @@ options:
                     -
                         type: str
                         choices:
-                            - description
-                            - enabled options
-                            - name
-                            - oid
-                            - scope member
-                            - type
+                            - 'description'
+                            - 'enabled options'
+                            - 'name'
+                            - 'oid'
+                            - 'scope member'
+                            - 'type'
     schema_object2:
         methods: [set, update]
         description: ''
@@ -91,15 +91,15 @@ options:
                     -
                         type: str
                         choices:
-                            - none
-                            - dns
-                            - ntp
-                            - email
-                            - admin
-                            - snmp
-                            - repmsg
-                            - ftgd
-                            - log
+                            - 'none'
+                            - 'dns'
+                            - 'ntp'
+                            - 'email'
+                            - 'admin'
+                            - 'snmp'
+                            - 'repmsg'
+                            - 'ftgd'
+                            - 'log'
                 name:
                     type: str
                 oid:
@@ -113,7 +113,7 @@ options:
                 type:
                     type: str
                     choices:
-                        - devprof
+                        - 'devprof'
 
 '''
 

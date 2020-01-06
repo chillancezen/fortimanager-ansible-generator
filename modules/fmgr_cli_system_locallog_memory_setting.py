@@ -57,17 +57,17 @@ options:
             data:
                 diskfull:
                     type: str
-                    default: overwrite
+                    default: 'overwrite'
                     description:
                      - 'Action upon disk full.'
                      - 'overwrite - Overwrite oldest log when disk is full.'
                      - 'nolog - Stop logging when disk is full.'
                     choices:
-                        - overwrite
-                        - nolog
+                        - 'overwrite'
+                        - 'nolog'
                 severity:
                     type: str
-                    default: notification
+                    default: 'notification'
                     description:
                      - 'Least severity level to log.'
                      - 'emergency - Emergency level.'
@@ -79,24 +79,24 @@ options:
                      - 'information - Information level.'
                      - 'debug - Debug level.'
                     choices:
-                        - emergency
-                        - alert
-                        - critical
-                        - error
-                        - warning
-                        - notification
-                        - information
-                        - debug
+                        - 'emergency'
+                        - 'alert'
+                        - 'critical'
+                        - 'error'
+                        - 'warning'
+                        - 'notification'
+                        - 'information'
+                        - 'debug'
                 status:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable memory buffer log.'
                      - 'disable - Do not log to memory buffer.'
                      - 'enable - Log to memory buffer.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

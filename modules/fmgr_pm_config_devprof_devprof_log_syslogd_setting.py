@@ -70,9 +70,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Global settings for remote syslog server.'
@@ -86,45 +86,45 @@ options:
                     type: str
                     description: 'Enable/disable reliable syslogging with TLS encryption.'
                     choices:
-                        - high
-                        - low
-                        - disable
-                        - high-medium
+                        - 'high'
+                        - 'low'
+                        - 'disable'
+                        - 'high-medium'
                 facility:
                     type: str
                     description: 'Remote syslog facility.'
                     choices:
-                        - kernel
-                        - user
-                        - mail
-                        - daemon
-                        - auth
-                        - syslog
-                        - lpr
-                        - news
-                        - uucp
-                        - cron
-                        - authpriv
-                        - ftp
-                        - ntp
-                        - audit
-                        - alert
-                        - clock
-                        - local0
-                        - local1
-                        - local2
-                        - local3
-                        - local4
-                        - local5
-                        - local6
-                        - local7
+                        - 'kernel'
+                        - 'user'
+                        - 'mail'
+                        - 'daemon'
+                        - 'auth'
+                        - 'syslog'
+                        - 'lpr'
+                        - 'news'
+                        - 'uucp'
+                        - 'cron'
+                        - 'authpriv'
+                        - 'ftp'
+                        - 'ntp'
+                        - 'audit'
+                        - 'alert'
+                        - 'clock'
+                        - 'local0'
+                        - 'local1'
+                        - 'local2'
+                        - 'local3'
+                        - 'local4'
+                        - 'local5'
+                        - 'local6'
+                        - 'local7'
                 mode:
                     type: str
                     description: 'Remote syslog logging over UDP/Reliable TCP.'
                     choices:
-                        - udp
-                        - legacy-reliable
-                        - reliable
+                        - 'udp'
+                        - 'legacy-reliable'
+                        - 'reliable'
                 port:
                     type: int
                     description: 'Server listen port.'
@@ -135,17 +135,17 @@ options:
                     type: str
                     description: 'Minimum supported protocol version for SSL/TLS connections (default is to follow system global setting).'
                     choices:
-                        - default
-                        - TLSv1-1
-                        - TLSv1-2
-                        - SSLv3
-                        - TLSv1
+                        - 'default'
+                        - 'TLSv1-1'
+                        - 'TLSv1-2'
+                        - 'SSLv3'
+                        - 'TLSv1'
                 status:
                     type: str
                     description: 'Enable/disable remote syslog logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

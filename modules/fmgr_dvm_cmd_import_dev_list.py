@@ -58,10 +58,10 @@ options:
                     -
                         type: str
                         choices:
-                            - none
-                            - create_task
-                            - nonblocking
-                            - log_dev
+                            - 'none'
+                            - 'create_task'
+                            - 'nonblocking'
+                            - 'log_dev'
                 import-adom-members:
                     -
                         adom:
@@ -79,17 +79,17 @@ options:
                             -
                                 type: str
                                 choices:
-                                    - migration
-                                    - db_export
-                                    - no_vpn_console
-                                    - backup
-                                    - other_devices
-                                    - central_sdwan
-                                    - is_autosync
-                                    - per_device_wtp
-                                    - policy_check_on_install
-                                    - install_on_policy_check_fail
-                                    - auto_push_cfg
+                                    - 'migration'
+                                    - 'db_export'
+                                    - 'no_vpn_console'
+                                    - 'backup'
+                                    - 'other_devices'
+                                    - 'central_sdwan'
+                                    - 'is_autosync'
+                                    - 'per_device_wtp'
+                                    - 'policy_check_on_install'
+                                    - 'install_on_policy_check_fail'
+                                    - 'auto_push_cfg'
                         log_db_retention_hours:
                             type: int
                             default: 1440
@@ -111,26 +111,26 @@ options:
                             default: 2
                         mig_os_ver:
                             type: str
-                            default: 6.0
+                            default: '6.0'
                             choices:
-                                - unknown
-                                - 0.0
-                                - 1.0
-                                - 2.0
-                                - 3.0
-                                - 4.0
-                                - 5.0
-                                - 6.0
+                                - 'unknown'
+                                - '0.0'
+                                - '1.0'
+                                - '2.0'
+                                - '3.0'
+                                - '4.0'
+                                - '5.0'
+                                - '6.0'
                         mode:
                             type: str
-                            default: gms
+                            default: 'gms'
                             description:
                              - 'ems - (Value no longer used as of 4.3)'
                              - 'provider - Global database.'
                             choices:
-                                - ems
-                                - gms
-                                - provider
+                                - 'ems'
+                                - 'gms'
+                                - 'provider'
                         mr:
                             type: int
                             default: 2
@@ -138,34 +138,34 @@ options:
                             type: str
                         os_ver:
                             type: str
-                            default: 6.0
+                            default: '6.0'
                             choices:
-                                - unknown
-                                - 0.0
-                                - 1.0
-                                - 2.0
-                                - 3.0
-                                - 4.0
-                                - 5.0
-                                - 6.0
+                                - 'unknown'
+                                - '0.0'
+                                - '1.0'
+                                - '2.0'
+                                - '3.0'
+                                - '4.0'
+                                - '5.0'
+                                - '6.0'
                         restricted_prds:
                             -
                                 type: str
                                 choices:
-                                    - fos
-                                    - foc
-                                    - fml
-                                    - fch
-                                    - fwb
-                                    - log
-                                    - fct
-                                    - faz
-                                    - fsa
-                                    - fsw
-                                    - fmg
-                                    - fdd
-                                    - fac
-                                    - fpx
+                                    - 'fos'
+                                    - 'foc'
+                                    - 'fml'
+                                    - 'fch'
+                                    - 'fwb'
+                                    - 'log'
+                                    - 'fct'
+                                    - 'faz'
+                                    - 'fsa'
+                                    - 'fsw'
+                                    - 'fmg'
+                                    - 'fdd'
+                                    - 'fac'
+                                    - 'fpx'
                         state:
                             type: int
                             default: 1
@@ -192,53 +192,53 @@ options:
                             type: str
                         conf_status:
                             type: str
-                            default: unknown
+                            default: 'unknown'
                             choices:
-                                - unknown
-                                - insync
-                                - outofsync
+                                - 'unknown'
+                                - 'insync'
+                                - 'outofsync'
                         conn_mode:
                             type: str
-                            default: passive
+                            default: 'passive'
                             choices:
-                                - active
-                                - passive
+                                - 'active'
+                                - 'passive'
                         conn_status:
                             type: str
-                            default: UNKNOWN
+                            default: 'UNKNOWN'
                             choices:
-                                - UNKNOWN
-                                - up
-                                - down
+                                - 'UNKNOWN'
+                                - 'up'
+                                - 'down'
                         db_status:
                             type: str
-                            default: unknown
+                            default: 'unknown'
                             choices:
-                                - unknown
-                                - nomod
-                                - mod
+                                - 'unknown'
+                                - 'nomod'
+                                - 'mod'
                         desc:
                             type: str
                         dev_status:
                             type: str
-                            default: unknown
+                            default: 'unknown'
                             choices:
-                                - none
-                                - unknown
-                                - checkedin
-                                - inprogress
-                                - installed
-                                - aborted
-                                - sched
-                                - retry
-                                - canceled
-                                - pending
-                                - retrieved
-                                - changed_conf
-                                - sync_fail
-                                - timeout
-                                - rev_revert
-                                - auto_updated
+                                - 'none'
+                                - 'unknown'
+                                - 'checkedin'
+                                - 'inprogress'
+                                - 'installed'
+                                - 'aborted'
+                                - 'sched'
+                                - 'retry'
+                                - 'canceled'
+                                - 'pending'
+                                - 'retrieved'
+                                - 'changed_conf'
+                                - 'sync_fail'
+                                - 'timeout'
+                                - 'rev_revert'
+                                - 'auto_updated'
                         fap_cnt:
                             type: int
                         faz.full_act:
@@ -255,27 +255,27 @@ options:
                             -
                                 type: str
                                 choices:
-                                    - has_hdd
-                                    - vdom_enabled
-                                    - discover
-                                    - reload
-                                    - interim_build
-                                    - offline_mode
-                                    - is_model
-                                    - fips_mode
-                                    - linked_to_model
-                                    - ip-conflict
-                                    - faz-autosync
+                                    - 'has_hdd'
+                                    - 'vdom_enabled'
+                                    - 'discover'
+                                    - 'reload'
+                                    - 'interim_build'
+                                    - 'offline_mode'
+                                    - 'is_model'
+                                    - 'fips_mode'
+                                    - 'linked_to_model'
+                                    - 'ip-conflict'
+                                    - 'faz-autosync'
                         foslic_cpu:
                             type: int
                             description: 'VM Meter vCPU count.'
                         foslic_dr_site:
                             type: str
-                            default: disable
+                            default: 'disable'
                             description: 'VM Meter DR Site status.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         foslic_inst_time:
                             type: int
                             description: 'VM Meter first deployment time (in UNIX timestamp).'
@@ -287,24 +287,24 @@ options:
                             description: 'VM Meter device RAM size (in MB).'
                         foslic_type:
                             type: str
-                            default: temporary
+                            default: 'temporary'
                             description: 'VM Meter license type.'
                             choices:
-                                - temporary
-                                - trial
-                                - regular
-                                - trial_expired
+                                - 'temporary'
+                                - 'trial'
+                                - 'regular'
+                                - 'trial_expired'
                         foslic_utm:
                             -
                                 type: str
                                 choices:
-                                    - fw
-                                    - av
-                                    - ips
-                                    - app
-                                    - url
-                                    - utm
-                                    - fwb
+                                    - 'fw'
+                                    - 'av'
+                                    - 'ips'
+                                    - 'app'
+                                    - 'url'
+                                    - 'utm'
+                                    - 'fwb'
                         fsw_cnt:
                             type: int
                         ha_group_id:
@@ -313,16 +313,16 @@ options:
                             type: str
                         ha_mode:
                             type: str
-                            default: standalone
+                            default: 'standalone'
                             description: 'enabled - Value reserved for non-FOS HA devices.'
                             choices:
-                                - standalone
-                                - AP
-                                - AA
-                                - ELBC
-                                - DUAL
-                                - enabled
-                                - unknown
+                                - 'standalone'
+                                - 'AP'
+                                - 'AA'
+                                - 'ELBC'
+                                - 'DUAL'
+                                - 'enabled'
+                                - 'unknown'
                         ha_slave:
                             -
                                 idx:
@@ -333,10 +333,10 @@ options:
                                     type: int
                                 role:
                                     type: str
-                                    default: slave
+                                    default: 'slave'
                                     choices:
-                                        - slave
-                                        - master
+                                        - 'slave'
+                                        - 'master'
                                 sn:
                                     type: str
                                 status:
@@ -382,12 +382,12 @@ options:
                             type: str
                         mgmt_mode:
                             type: str
-                            default: unreg
+                            default: 'unreg'
                             choices:
-                                - unreg
-                                - fmg
-                                - faz
-                                - fmgfaz
+                                - 'unreg'
+                                - 'fmg'
+                                - 'faz'
+                                - 'fmgfaz'
                         mgt_vdom:
                             type: str
                         mr:
@@ -398,35 +398,35 @@ options:
                             description: 'Unique name for the device.'
                         os_type:
                             type: str
-                            default: unknown
+                            default: 'unknown'
                             choices:
-                                - unknown
-                                - fos
-                                - fsw
-                                - foc
-                                - fml
-                                - faz
-                                - fwb
-                                - fch
-                                - fct
-                                - log
-                                - fmg
-                                - fsa
-                                - fdd
-                                - fac
-                                - fpx
+                                - 'unknown'
+                                - 'fos'
+                                - 'fsw'
+                                - 'foc'
+                                - 'fml'
+                                - 'faz'
+                                - 'fwb'
+                                - 'fch'
+                                - 'fct'
+                                - 'log'
+                                - 'fmg'
+                                - 'fsa'
+                                - 'fdd'
+                                - 'fac'
+                                - 'fpx'
                         os_ver:
                             type: str
-                            default: unknown
+                            default: 'unknown'
                             choices:
-                                - unknown
-                                - 0.0
-                                - 1.0
-                                - 2.0
-                                - 3.0
-                                - 4.0
-                                - 5.0
-                                - 6.0
+                                - 'unknown'
+                                - '0.0'
+                                - '1.0'
+                                - '2.0'
+                                - '3.0'
+                                - '4.0'
+                                - '5.0'
+                                - '6.0'
                         patch:
                             type: int
                         platform_str:
@@ -444,10 +444,10 @@ options:
                                     type: str
                                 opmode:
                                     type: str
-                                    default: nat
+                                    default: 'nat'
                                     choices:
-                                        - nat
-                                        - transparent
+                                        - 'nat'
+                                        - 'transparent'
                                 rtm_prof_id:
                                     type: int
                                 status:

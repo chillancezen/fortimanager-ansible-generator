@@ -57,18 +57,18 @@ options:
             data:
                 change-4-characters:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable changing at least 4 characters for new password.'
                      - 'disable - Disable changing at least 4 characters for new password.'
                      - 'enable - Enable changing at least 4 characters for new password.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 expire:
                     type: int
                     default: 0
-                    description: 'Number of days after which admin users' password will expire (0 - 3650, 0 = never expire).'
+                    description: 'Number of days after which admin users password will expire (0 - 3650, 0 = never expire).'
                 minimum-length:
                     type: int
                     default: 8
@@ -77,20 +77,20 @@ options:
                     -
                         type: str
                         choices:
-                            - upper-case-letter
-                            - lower-case-letter
-                            - number
-                            - non-alphanumeric
+                            - 'upper-case-letter'
+                            - 'lower-case-letter'
+                            - 'number'
+                            - 'non-alphanumeric'
                 status:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable password policy.'
                      - 'disable - Disable password policy.'
                      - 'enable - Enable password policy.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 
@@ -135,7 +135,7 @@ return_of_api_category_0:
                example: disable
             expire:
                type: int
-               description: 'Number of days after which admin users' password will expire (0 - 3650, 0 = never expire).'
+               description: 'Number of days after which admin users password will expire (0 - 3650, 0 = never expire).'
                example: 0
             minimum-length:
                type: int

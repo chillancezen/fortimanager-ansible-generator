@@ -69,21 +69,21 @@ options:
                     type: str
                     description: 'IPv4 address type.'
                     choices:
-                        - not-available
-                        - not-known
-                        - public
-                        - port-restricted
-                        - single-NATed-private
-                        - double-NATed-private
-                        - port-restricted-and-single-NATed
-                        - port-restricted-and-double-NATed
+                        - 'not-available'
+                        - 'not-known'
+                        - 'public'
+                        - 'port-restricted'
+                        - 'single-NATed-private'
+                        - 'double-NATed-private'
+                        - 'port-restricted-and-single-NATed'
+                        - 'port-restricted-and-double-NATed'
                 ipv6-address-type:
                     type: str
                     description: 'IPv6 address type.'
                     choices:
-                        - not-available
-                        - available
-                        - not-known
+                        - 'not-available'
+                        - 'available'
+                        - 'not-known'
                 name:
                     type: str
                     description: 'IP type name.'
@@ -104,9 +104,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

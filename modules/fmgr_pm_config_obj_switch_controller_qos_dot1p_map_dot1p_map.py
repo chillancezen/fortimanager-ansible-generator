@@ -75,98 +75,98 @@ options:
                     type: str
                     description: 'COS queue mapped to dot1p priority number.'
                     choices:
-                        - queue-0
-                        - queue-1
-                        - queue-2
-                        - queue-3
-                        - queue-4
-                        - queue-5
-                        - queue-6
-                        - queue-7
+                        - 'queue-0'
+                        - 'queue-1'
+                        - 'queue-2'
+                        - 'queue-3'
+                        - 'queue-4'
+                        - 'queue-5'
+                        - 'queue-6'
+                        - 'queue-7'
                 priority-1:
                     type: str
                     description: 'COS queue mapped to dot1p priority number.'
                     choices:
-                        - queue-0
-                        - queue-1
-                        - queue-2
-                        - queue-3
-                        - queue-4
-                        - queue-5
-                        - queue-6
-                        - queue-7
+                        - 'queue-0'
+                        - 'queue-1'
+                        - 'queue-2'
+                        - 'queue-3'
+                        - 'queue-4'
+                        - 'queue-5'
+                        - 'queue-6'
+                        - 'queue-7'
                 priority-2:
                     type: str
                     description: 'COS queue mapped to dot1p priority number.'
                     choices:
-                        - queue-0
-                        - queue-1
-                        - queue-2
-                        - queue-3
-                        - queue-4
-                        - queue-5
-                        - queue-6
-                        - queue-7
+                        - 'queue-0'
+                        - 'queue-1'
+                        - 'queue-2'
+                        - 'queue-3'
+                        - 'queue-4'
+                        - 'queue-5'
+                        - 'queue-6'
+                        - 'queue-7'
                 priority-3:
                     type: str
                     description: 'COS queue mapped to dot1p priority number.'
                     choices:
-                        - queue-0
-                        - queue-1
-                        - queue-2
-                        - queue-3
-                        - queue-4
-                        - queue-5
-                        - queue-6
-                        - queue-7
+                        - 'queue-0'
+                        - 'queue-1'
+                        - 'queue-2'
+                        - 'queue-3'
+                        - 'queue-4'
+                        - 'queue-5'
+                        - 'queue-6'
+                        - 'queue-7'
                 priority-4:
                     type: str
                     description: 'COS queue mapped to dot1p priority number.'
                     choices:
-                        - queue-0
-                        - queue-1
-                        - queue-2
-                        - queue-3
-                        - queue-4
-                        - queue-5
-                        - queue-6
-                        - queue-7
+                        - 'queue-0'
+                        - 'queue-1'
+                        - 'queue-2'
+                        - 'queue-3'
+                        - 'queue-4'
+                        - 'queue-5'
+                        - 'queue-6'
+                        - 'queue-7'
                 priority-5:
                     type: str
                     description: 'COS queue mapped to dot1p priority number.'
                     choices:
-                        - queue-0
-                        - queue-1
-                        - queue-2
-                        - queue-3
-                        - queue-4
-                        - queue-5
-                        - queue-6
-                        - queue-7
+                        - 'queue-0'
+                        - 'queue-1'
+                        - 'queue-2'
+                        - 'queue-3'
+                        - 'queue-4'
+                        - 'queue-5'
+                        - 'queue-6'
+                        - 'queue-7'
                 priority-6:
                     type: str
                     description: 'COS queue mapped to dot1p priority number.'
                     choices:
-                        - queue-0
-                        - queue-1
-                        - queue-2
-                        - queue-3
-                        - queue-4
-                        - queue-5
-                        - queue-6
-                        - queue-7
+                        - 'queue-0'
+                        - 'queue-1'
+                        - 'queue-2'
+                        - 'queue-3'
+                        - 'queue-4'
+                        - 'queue-5'
+                        - 'queue-6'
+                        - 'queue-7'
                 priority-7:
                     type: str
                     description: 'COS queue mapped to dot1p priority number.'
                     choices:
-                        - queue-0
-                        - queue-1
-                        - queue-2
-                        - queue-3
-                        - queue-4
-                        - queue-5
-                        - queue-6
-                        - queue-7
+                        - 'queue-0'
+                        - 'queue-1'
+                        - 'queue-2'
+                        - 'queue-3'
+                        - 'queue-4'
+                        - 'queue-5'
+                        - 'queue-6'
+                        - 'queue-7'
     schema_object1:
         methods: [delete]
         description: 'Configure FortiSwitch QoS 802.1p.'
@@ -184,9 +184,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

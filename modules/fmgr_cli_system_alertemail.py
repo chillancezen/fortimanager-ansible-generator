@@ -57,14 +57,14 @@ options:
             data:
                 authentication:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable authentication.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fromaddress:
                     type: str
                     description: 'SMTP from address.'
@@ -74,7 +74,7 @@ options:
                 smtppassword:
                     -
                         type: str
-                        default: ENC Njc5MTA0OTM4MjgwOTg5NtX0ToVkdnZh0YWA1a11KmRILNzX/SvsNRI6eyvfnHjApM/z3EzMK7RIz4Tk2qBPs5S0q5zHQLjfAJSzBe2Yfs2kceCgazkW3ea31MNNUFHVxVSESpf5MmEMfwrNNUVLeMDdcUJG4FPu7GyP9/KnOBGte1dA
+                        default: 'ENC Njc5MTA0OTM4MjgwOTg5NtX0ToVkdnZh0YWA1a11KmRILNzX/SvsNRI6eyvfnHjApM/z3EzMK7RIz4Tk2qBPs5S0q5zHQLjfAJSzBe2Yfs2kceCgazkW3ea31MNNUFHVxVSESpf5MmEMfwrNNUVLeMDdcUJG4FPu7GyP9/KnOBGte1dA'
                 smtpport:
                     type: int
                     default: 25

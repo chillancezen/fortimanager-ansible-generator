@@ -47,7 +47,7 @@ Parameters
  <li><span class="li-head">parameters for method: [set, update]</span> - Log-fetch client profile settings.</li>
  <ul class="ul-self">
  <li><span class="li-head">data</span> - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
- <li><span class="li-head">client-adom</span> - Log-fetch client side's adom name. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">client-adom</span> - Log-fetch client sides adom name. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">data-range</span> - Data-range for fetched logs. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [custom]</span>  <span class="li-normal">default: custom</span> </li>
  <li><span class="li-head">data-range-value</span> - Last n days or hours. <span class="li-normal">type: int</span>  <span class="li-normal">default: 10</span> </li>
  <li><span class="li-head">device-filter</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
@@ -74,7 +74,7 @@ Parameters
  <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">default: ENC NzkzMDg4MDc2MTgwNjUzNhwvJBDjPF8MRvYpIukmL7G++XrKmHYTQF5zcGV+Ss3GXWsKe9F9Ie2B55rWFdty9EbQ6aAhGObDlAP7FQ7Otz0SNL49BDP1poSzSg2PuvFul8YYBSll3W/AAKoDgHm+llvtNz/qEJFyG6JzkDaGLy1ebMpO</span> </li>
  </ul>
  <li><span class="li-head">secure-connection</span> - Enable/Disable protecting log-fetch connection with TLS/SSL. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span>  <span class="li-normal">default: enable</span> </li>
- <li><span class="li-head">server-adom</span> - Log-fetch server side's adom name. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">server-adom</span> - Log-fetch server sides adom name. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">server-ip</span> - Log-fetch server IP address. <span class="li-normal">type: str</span>  <span class="li-normal">default: 0.0.0.0</span> </li>
  <li><span class="li-head">start-time</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span> </li>
@@ -178,7 +178,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <ul class="ul-self">
  <li><span class="li-return">data</span>
  - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
- <li> <span class="li-return"> client-adom </span> - Log-fetch client side's adom name. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> client-adom </span> - Log-fetch client sides adom name. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> data-range </span> - Data-range for fetched logs. <span class="li-normal">type: str</span>  <span class="li-normal">example: custom</span>  </li>
  <li> <span class="li-return"> data-range-value </span> - Last n days or hours. <span class="li-normal">type: int</span>  <span class="li-normal">example: 10</span>  </li>
  <li> <span class="li-return"> device-filter </span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
@@ -205,7 +205,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li><span class="li-return">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">example: ENC NzkzMDg4MDc2MTgwNjUzNhwvJBDjPF8MRvYpIukmL7G++XrKmHYTQF5zcGV+Ss3GXWsKe9F9Ie2B55rWFdty9EbQ6aAhGObDlAP7FQ7Otz0SNL49BDP1poSzSg2PuvFul8YYBSll3W/AAKoDgHm+llvtNz/qEJFyG6JzkDaGLy1ebMpO</span>  </li>
  </ul>
  <li> <span class="li-return"> secure-connection </span> - Enable/Disable protecting log-fetch connection with TLS/SSL. <span class="li-normal">type: str</span>  <span class="li-normal">example: enable</span>  </li>
- <li> <span class="li-return"> server-adom </span> - Log-fetch server side's adom name. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> server-adom </span> - Log-fetch server sides adom name. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> server-ip </span> - Log-fetch server IP address. <span class="li-normal">type: str</span>  <span class="li-normal">example: 0.0.0.0</span>  </li>
  <li> <span class="li-return"> start-time </span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li><span class="li-return">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span>  </li>

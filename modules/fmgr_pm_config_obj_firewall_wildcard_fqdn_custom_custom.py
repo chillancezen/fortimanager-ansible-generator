@@ -81,8 +81,8 @@ options:
                     type: str
                     description: 'Enable/disable address visibility.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 wildcard-fqdn:
                     type: str
                     description: 'Wildcard FQDN.'
@@ -103,9 +103,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

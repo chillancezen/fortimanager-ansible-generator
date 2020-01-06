@@ -68,14 +68,14 @@ options:
                         type: str
                         description: 'Action to take for blocked domains.'
                         choices:
-                            - block
-                            - redirect
+                            - 'block'
+                            - 'redirect'
                     block-botnet:
                         type: str
                         description: 'Enable/disable blocking botnet C&C DNS lookups.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     comment:
                         type: str
                         description: 'Comment.'
@@ -86,8 +86,8 @@ options:
                         type: str
                         description: 'Enable/disable logging of all domains visited (detailed DNS logging).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     name:
                         type: str
                         description: 'Profile name.'
@@ -98,26 +98,26 @@ options:
                         type: str
                         description: 'Enable/disable Google, Bing, and YouTube safe search.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     sdns-domain-log:
                         type: str
                         description: 'Enable/disable domain filtering and botnet domain logging.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     sdns-ftgd-err-log:
                         type: str
                         description: 'Enable/disable FortiGuard SDNS rating error logging.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     youtube-restrict:
                         type: str
                         description: 'Set safe search for YouTube restriction level.'
                         choices:
-                            - strict
-                            - moderate
+                            - 'strict'
+                            - 'moderate'
     schema_object1:
         methods: [get]
         description: 'Configure DNS domain filter profiles.'
@@ -131,17 +131,17 @@ options:
                     -
                         type: str
                         choices:
-                            - block-action
-                            - block-botnet
-                            - comment
-                            - external-ip-blocklist
-                            - log-all-domain
-                            - name
-                            - redirect-portal
-                            - safe-search
-                            - sdns-domain-log
-                            - sdns-ftgd-err-log
-                            - youtube-restrict
+                            - 'block-action'
+                            - 'block-botnet'
+                            - 'comment'
+                            - 'external-ip-blocklist'
+                            - 'log-all-domain'
+                            - 'name'
+                            - 'redirect-portal'
+                            - 'safe-search'
+                            - 'sdns-domain-log'
+                            - 'sdns-ftgd-err-log'
+                            - 'youtube-restrict'
             filter:
                 -
                     type: str
@@ -160,11 +160,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

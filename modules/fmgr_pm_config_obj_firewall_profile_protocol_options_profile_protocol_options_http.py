@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Configure HTTP protocol options.'
@@ -93,8 +93,8 @@ options:
                     type: str
                     description: 'Enable/disable Fortinet bar on HTML content.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fortinet-bar-port:
                     type: int
                     description: 'Port for use by Fortinet Bar (1 - 65535, default = 8011).'
@@ -102,23 +102,23 @@ options:
                     type: str
                     description: 'Enable/disable HTTP policy check.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 inspect-all:
                     type: str
                     description: 'Enable/disable the inspection of all ports for the protocol.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 options:
                     -
                         type: str
                         choices:
-                            - oversize
-                            - chunkedbypass
-                            - clientcomfort
-                            - no-content-summary
-                            - servercomfort
+                            - 'oversize'
+                            - 'chunkedbypass'
+                            - 'clientcomfort'
+                            - 'no-content-summary'
+                            - 'servercomfort'
                 oversize-limit:
                     type: int
                     description: 'Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).'
@@ -129,33 +129,33 @@ options:
                     -
                         type: str
                         choices:
-                            - jisx0201
-                            - jisx0208
-                            - jisx0212
-                            - gb2312
-                            - ksc5601-ex
-                            - euc-jp
-                            - sjis
-                            - iso2022-jp
-                            - iso2022-jp-1
-                            - iso2022-jp-2
-                            - euc-cn
-                            - ces-gbk
-                            - hz
-                            - ces-big5
-                            - euc-kr
-                            - iso2022-jp-3
-                            - iso8859-1
-                            - tis620
-                            - cp874
-                            - cp1252
-                            - cp1251
+                            - 'jisx0201'
+                            - 'jisx0208'
+                            - 'jisx0212'
+                            - 'gb2312'
+                            - 'ksc5601-ex'
+                            - 'euc-jp'
+                            - 'sjis'
+                            - 'iso2022-jp'
+                            - 'iso2022-jp-1'
+                            - 'iso2022-jp-2'
+                            - 'euc-cn'
+                            - 'ces-gbk'
+                            - 'hz'
+                            - 'ces-big5'
+                            - 'euc-kr'
+                            - 'iso2022-jp-3'
+                            - 'iso8859-1'
+                            - 'tis620'
+                            - 'cp874'
+                            - 'cp1252'
+                            - 'cp1251'
                 range-block:
                     type: str
                     description: 'Enable/disable blocking of partial downloads.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 retry-count:
                     type: int
                     description: 'Number of attempts to retry HTTP connection (0 - 100, default = 0).'
@@ -163,32 +163,32 @@ options:
                     type: str
                     description: 'Enable/disable scanning of BZip2 compressed files.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 status:
                     type: str
                     description: 'Enable/disable the active status of scanning for this protocol.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 streaming-content-bypass:
                     type: str
                     description: 'Enable/disable bypassing of streaming content from buffering.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 strip-x-forwarded-for:
                     type: str
                     description: 'Enable/disable stripping of HTTP X-Forwarded-For header.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 switching-protocols:
                     type: str
                     description: 'Bypass from scanning, or block a connection that attempts to switch protocol.'
                     choices:
-                        - bypass
-                        - block
+                        - 'bypass'
+                        - 'block'
                 uncompressed-nest-limit:
                     type: int
                     description: 'Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12).'

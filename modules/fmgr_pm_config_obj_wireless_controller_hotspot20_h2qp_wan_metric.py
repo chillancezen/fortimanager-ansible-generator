@@ -74,15 +74,15 @@ options:
                         type: str
                         description: 'Link at capacity.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     link-status:
                         type: str
                         description: 'Link status.'
                         choices:
-                            - down
-                            - up
-                            - in-test
+                            - 'down'
+                            - 'up'
+                            - 'in-test'
                     load-measurement-duration:
                         type: int
                         description: 'Load measurement duration (in tenths of a second).'
@@ -93,8 +93,8 @@ options:
                         type: str
                         description: 'WAN link symmetry.'
                         choices:
-                            - asymmetric
-                            - symmetric
+                            - 'asymmetric'
+                            - 'symmetric'
                     uplink-load:
                         type: int
                         description: 'Uplink load.'
@@ -114,15 +114,15 @@ options:
                     -
                         type: str
                         choices:
-                            - downlink-load
-                            - downlink-speed
-                            - link-at-capacity
-                            - link-status
-                            - load-measurement-duration
-                            - name
-                            - symmetric-wan-link
-                            - uplink-load
-                            - uplink-speed
+                            - 'downlink-load'
+                            - 'downlink-speed'
+                            - 'link-at-capacity'
+                            - 'link-status'
+                            - 'load-measurement-duration'
+                            - 'name'
+                            - 'symmetric-wan-link'
+                            - 'uplink-load'
+                            - 'uplink-speed'
             filter:
                 -
                     type: str
@@ -141,11 +141,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

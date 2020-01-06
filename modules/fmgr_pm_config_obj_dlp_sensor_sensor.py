@@ -72,36 +72,36 @@ options:
                     type: str
                     description: 'Enable/disable DLP logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 extended-log:
                     type: str
                     description: 'Enable/disable extended logging for data leak prevention.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 filter:
                     -
                         action:
                             type: str
                             description: 'Action to take with content that this DLP sensor matches.'
                             choices:
-                                - log-only
-                                - block
-                                - exempt
-                                - ban
-                                - ban-sender
-                                - quarantine-ip
-                                - quarantine-port
-                                - none
-                                - allow
+                                - 'log-only'
+                                - 'block'
+                                - 'exempt'
+                                - 'ban'
+                                - 'ban-sender'
+                                - 'quarantine-ip'
+                                - 'quarantine-port'
+                                - 'none'
+                                - 'allow'
                         archive:
                             type: str
                             description: 'Enable/disable DLP archiving.'
                             choices:
-                                - disable
-                                - enable
-                                - summary-only
+                                - 'disable'
+                                - 'enable'
+                                - 'summary-only'
                         company-identifier:
                             type: str
                             description: 'Enter a company identifier watermark to match. Only watermarks that your company has placed on the files are matched.'
@@ -118,14 +118,14 @@ options:
                             type: str
                             description: 'Select the type of content to match.'
                             choices:
-                                - credit-card
-                                - ssn
-                                - regexp
-                                - file-type
-                                - file-size
-                                - fingerprint
-                                - watermark
-                                - encrypted
+                                - 'credit-card'
+                                - 'ssn'
+                                - 'regexp'
+                                - 'file-type'
+                                - 'file-size'
+                                - 'fingerprint'
+                                - 'watermark'
+                                - 'encrypted'
                         fp-sensitivity:
                             type: str
                             description: 'Select a DLP file pattern sensitivity to match.'
@@ -142,22 +142,22 @@ options:
                             -
                                 type: str
                                 choices:
-                                    - imap
-                                    - smtp
-                                    - pop3
-                                    - ftp
-                                    - nntp
-                                    - mm1
-                                    - mm3
-                                    - mm4
-                                    - mm7
-                                    - mapi
-                                    - aim
-                                    - icq
-                                    - msn
-                                    - yahoo
-                                    - http-get
-                                    - http-post
+                                    - 'imap'
+                                    - 'smtp'
+                                    - 'pop3'
+                                    - 'ftp'
+                                    - 'nntp'
+                                    - 'mm1'
+                                    - 'mm3'
+                                    - 'mm4'
+                                    - 'mm7'
+                                    - 'mapi'
+                                    - 'aim'
+                                    - 'icq'
+                                    - 'msn'
+                                    - 'yahoo'
+                                    - 'http-get'
+                                    - 'http-post'
                         regexp:
                             type: str
                             description: 'Enter a regular expression to match (max. 255 characters).'
@@ -165,49 +165,49 @@ options:
                             type: str
                             description: 'Select the severity or threat level that matches this filter.'
                             choices:
-                                - info
-                                - low
-                                - medium
-                                - high
-                                - critical
+                                - 'info'
+                                - 'low'
+                                - 'medium'
+                                - 'high'
+                                - 'critical'
                         type:
                             type: str
                             description: 'Select whether to check the content of messages (an email message) or files (downloaded files or email attachments).'
                             choices:
-                                - file
-                                - message
+                                - 'file'
+                                - 'message'
                 flow-based:
                     type: str
                     description: 'Enable/disable flow-based DLP.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 full-archive-proto:
                     -
                         type: str
                         choices:
-                            - imap
-                            - smtp
-                            - pop3
-                            - ftp
-                            - nntp
-                            - mm1
-                            - mm3
-                            - mm4
-                            - mm7
-                            - mapi
-                            - aim
-                            - icq
-                            - msn
-                            - yahoo
-                            - http-get
-                            - http-post
+                            - 'imap'
+                            - 'smtp'
+                            - 'pop3'
+                            - 'ftp'
+                            - 'nntp'
+                            - 'mm1'
+                            - 'mm3'
+                            - 'mm4'
+                            - 'mm7'
+                            - 'mapi'
+                            - 'aim'
+                            - 'icq'
+                            - 'msn'
+                            - 'yahoo'
+                            - 'http-get'
+                            - 'http-post'
                 nac-quar-log:
                     type: str
                     description: 'Enable/disable NAC quarantine logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 name:
                     type: str
                     description: 'Name of the DLP sensor.'
@@ -215,7 +215,7 @@ options:
                     type: str
                     description: 'Configure DLP options.'
                     choices:
-                        - strict-file
+                        - 'strict-file'
                 replacemsg-group:
                     type: str
                     description: 'Replacement message group used by this DLP sensor.'
@@ -223,22 +223,22 @@ options:
                     -
                         type: str
                         choices:
-                            - imap
-                            - smtp
-                            - pop3
-                            - ftp
-                            - nntp
-                            - mm1
-                            - mm3
-                            - mm4
-                            - mm7
-                            - mapi
-                            - aim
-                            - icq
-                            - msn
-                            - yahoo
-                            - http-get
-                            - http-post
+                            - 'imap'
+                            - 'smtp'
+                            - 'pop3'
+                            - 'ftp'
+                            - 'nntp'
+                            - 'mm1'
+                            - 'mm3'
+                            - 'mm4'
+                            - 'mm7'
+                            - 'mapi'
+                            - 'aim'
+                            - 'icq'
+                            - 'msn'
+                            - 'yahoo'
+                            - 'http-get'
+                            - 'http-post'
     schema_object1:
         methods: [delete]
         description: 'Configure DLP sensors.'
@@ -256,9 +256,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

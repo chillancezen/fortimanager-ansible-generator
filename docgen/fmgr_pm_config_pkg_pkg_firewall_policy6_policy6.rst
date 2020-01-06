@@ -57,10 +57,10 @@ Parameters
  <li><span class="li-head">comments</span> - Comment. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">custom-log-fields</span> - Log field index numbers to append custom log fields to log messages for this policy. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">devices</span> - Names of devices or device groups that can be matched by the policy. <span class="li-normal">type: str</span> </li>
- <li><span class="li-head">diffserv-forward</span> - Enable to change packet's DiffServ values to the specified diffservcode-forward value. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
- <li><span class="li-head">diffserv-reverse</span> - Enable to change packet's reverse (reply) DiffServ values to the specified diffservcode-rev value. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
- <li><span class="li-head">diffservcode-forward</span> - Change packet's DiffServ to this value. <span class="li-normal">type: str</span> </li>
- <li><span class="li-head">diffservcode-rev</span> - Change packet's reverse (reply) DiffServ to this value. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">diffserv-forward</span> - Enable to change packets DiffServ values to the specified diffservcode-forward value. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
+ <li><span class="li-head">diffserv-reverse</span> - Enable to change packets reverse (reply) DiffServ values to the specified diffservcode-rev value. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
+ <li><span class="li-head">diffservcode-forward</span> - Change packets DiffServ to this value. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">diffservcode-rev</span> - Change packets reverse (reply) DiffServ to this value. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">dlp-sensor</span> - Name of an existing DLP sensor. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">dscp-match</span> - Enable DSCP check. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">dscp-negate</span> - Enable negated DSCP match. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
@@ -70,7 +70,7 @@ Parameters
  <li><span class="li-head">dstaddr-negate</span> - When enabled dstaddr specifies what the destination address must NOT be. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">dstintf</span> - Outgoing (egress) interface. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">firewall-session-dirty</span> - How to handle sessions if the configuration of this firewall policy changes. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [check-all, check-new]</span> </li>
- <li><span class="li-head">fixedport</span> - Enable to prevent source NAT from changing a session's source port. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
+ <li><span class="li-head">fixedport</span> - Enable to prevent source NAT from changing a sessions source port. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">global-label</span> - Label for the policy that appears when the GUI is in Global View mode. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">groups</span> - Names of user groups that can authenticate with this policy. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">icap-profile</span> - Name of an existing ICAP profile. <span class="li-normal">type: str</span> </li>
@@ -169,10 +169,10 @@ Parameters
  <li><span class="li-head">comments</span> - Comment. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">custom-log-fields</span> - Log field index numbers to append custom log fields to log messages for this policy. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">devices</span> - Names of devices or device groups that can be matched by the policy. <span class="li-normal">type: str</span> </li>
- <li><span class="li-head">diffserv-forward</span> - Enable to change packet's DiffServ values to the specified diffservcode-forward value. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
- <li><span class="li-head">diffserv-reverse</span> - Enable to change packet's reverse (reply) DiffServ values to the specified diffservcode-rev value. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
- <li><span class="li-head">diffservcode-forward</span> - Change packet's DiffServ to this value. <span class="li-normal">type: str</span> </li>
- <li><span class="li-head">diffservcode-rev</span> - Change packet's reverse (reply) DiffServ to this value. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">diffserv-forward</span> - Enable to change packets DiffServ values to the specified diffservcode-forward value. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
+ <li><span class="li-head">diffserv-reverse</span> - Enable to change packets reverse (reply) DiffServ values to the specified diffservcode-rev value. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
+ <li><span class="li-head">diffservcode-forward</span> - Change packets DiffServ to this value. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">diffservcode-rev</span> - Change packets reverse (reply) DiffServ to this value. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">dlp-sensor</span> - Name of an existing DLP sensor. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">dscp-match</span> - Enable DSCP check. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">dscp-negate</span> - Enable negated DSCP match. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
@@ -182,7 +182,7 @@ Parameters
  <li><span class="li-head">dstaddr-negate</span> - When enabled dstaddr specifies what the destination address must NOT be. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">dstintf</span> - Outgoing (egress) interface. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">firewall-session-dirty</span> - How to handle sessions if the configuration of this firewall policy changes. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [check-all, check-new]</span> </li>
- <li><span class="li-head">fixedport</span> - Enable to prevent source NAT from changing a session's source port. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
+ <li><span class="li-head">fixedport</span> - Enable to prevent source NAT from changing a sessions source port. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">global-label</span> - Label for the policy that appears when the GUI is in Global View mode. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">groups</span> - Names of user groups that can authenticate with this policy. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">icap-profile</span> - Name of an existing ICAP profile. <span class="li-normal">type: str</span> </li>
@@ -566,10 +566,10 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> comments </span> - Comment. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> custom-log-fields </span> - Log field index numbers to append custom log fields to log messages for this policy. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> devices </span> - Names of devices or device groups that can be matched by the policy. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> diffserv-forward </span> - Enable to change packet's DiffServ values to the specified diffservcode-forward value. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> diffserv-reverse </span> - Enable to change packet's reverse (reply) DiffServ values to the specified diffservcode-rev value. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> diffservcode-forward </span> - Change packet's DiffServ to this value. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> diffservcode-rev </span> - Change packet's reverse (reply) DiffServ to this value. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> diffserv-forward </span> - Enable to change packets DiffServ values to the specified diffservcode-forward value. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> diffserv-reverse </span> - Enable to change packets reverse (reply) DiffServ values to the specified diffservcode-rev value. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> diffservcode-forward </span> - Change packets DiffServ to this value. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> diffservcode-rev </span> - Change packets reverse (reply) DiffServ to this value. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> dlp-sensor </span> - Name of an existing DLP sensor. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> dscp-match </span> - Enable DSCP check. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> dscp-negate </span> - Enable negated DSCP match. <span class="li-normal">type: str</span>  </li>
@@ -579,7 +579,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> dstaddr-negate </span> - When enabled dstaddr specifies what the destination address must NOT be. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> dstintf </span> - Outgoing (egress) interface. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> firewall-session-dirty </span> - How to handle sessions if the configuration of this firewall policy changes. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> fixedport </span> - Enable to prevent source NAT from changing a session's source port. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> fixedport </span> - Enable to prevent source NAT from changing a sessions source port. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> global-label </span> - Label for the policy that appears when the GUI is in Global View mode. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> groups </span> - Names of user groups that can authenticate with this policy. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> icap-profile </span> - Name of an existing ICAP profile. <span class="li-normal">type: str</span>  </li>

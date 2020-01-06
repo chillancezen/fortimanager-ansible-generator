@@ -68,27 +68,27 @@ options:
                     -
                         type: str
                         choices:
-                            - log
-                            - fortiview
-                            - alert
-                            - ueba
-                            - all
+                            - 'log'
+                            - 'fortiview'
+                            - 'alert'
+                            - 'ueba'
+                            - 'all'
                 field-name:
                     type: str
                     description: 'Field name.'
                 field-status:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Field status.'
                      - 'disable - Disable field.'
                      - 'enable - Enable field.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 field-type:
                     type: str
-                    default: string
+                    default: 'string'
                     description:
                      - 'Field type.'
                      - 'string - String.'
@@ -97,11 +97,11 @@ options:
                      - 'email - Email address.'
                      - 'unknown - Unknown.'
                     choices:
-                        - string
-                        - ip
-                        - mac
-                        - email
-                        - unknown
+                        - 'string'
+                        - 'ip'
+                        - 'mac'
+                        - 'email'
+                        - 'unknown'
 
 '''
 

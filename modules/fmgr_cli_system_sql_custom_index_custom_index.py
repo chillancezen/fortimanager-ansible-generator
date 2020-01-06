@@ -64,17 +64,17 @@ options:
             data:
                 case-sensitive:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Disable/Enable case sensitive index.'
                      - 'disable - Build a case insensitive index.'
                      - 'enable - Build a case sensitive index.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 device-type:
                     type: str
-                    default: FortiGate
+                    default: 'FortiGate'
                     description:
                      - 'Device type.'
                      - 'FortiGate - Device type to FortiGate.'
@@ -88,16 +88,16 @@ options:
                      - 'FortiAuthenticator - Set device type to FortiAuthenticator'
                      - 'FortiProxy - Set device type to FortiProxy'
                     choices:
-                        - FortiGate
-                        - FortiManager
-                        - FortiClient
-                        - FortiMail
-                        - FortiWeb
-                        - FortiCache
-                        - FortiSandbox
-                        - FortiDDoS
-                        - FortiAuthenticator
-                        - FortiProxy
+                        - 'FortiGate'
+                        - 'FortiManager'
+                        - 'FortiClient'
+                        - 'FortiMail'
+                        - 'FortiWeb'
+                        - 'FortiCache'
+                        - 'FortiSandbox'
+                        - 'FortiDDoS'
+                        - 'FortiAuthenticator'
+                        - 'FortiProxy'
                 id:
                     type: int
                     default: 0
@@ -107,7 +107,7 @@ options:
                     description: 'Log field name to be indexed.'
                 log-type:
                     type: str
-                    default: traffic
+                    default: 'traffic'
                     description:
                      - 'Log type.'
                      - 'none - none'
@@ -133,28 +133,28 @@ options:
                      - 'ssh '
                      - 'ssl '
                     choices:
-                        - none
-                        - app-ctrl
-                        - attack
-                        - content
-                        - dlp
-                        - emailfilter
-                        - event
-                        - generic
-                        - history
-                        - traffic
-                        - virus
-                        - voip
-                        - webfilter
-                        - netscan
-                        - fct-event
-                        - fct-traffic
-                        - fct-netscan
-                        - waf
-                        - gtp
-                        - dns
-                        - ssh
-                        - ssl
+                        - 'none'
+                        - 'app-ctrl'
+                        - 'attack'
+                        - 'content'
+                        - 'dlp'
+                        - 'emailfilter'
+                        - 'event'
+                        - 'generic'
+                        - 'history'
+                        - 'traffic'
+                        - 'virus'
+                        - 'voip'
+                        - 'webfilter'
+                        - 'netscan'
+                        - 'fct-event'
+                        - 'fct-traffic'
+                        - 'fct-netscan'
+                        - 'waf'
+                        - 'gtp'
+                        - 'dns'
+                        - 'ssh'
+                        - 'ssl'
 
 '''
 

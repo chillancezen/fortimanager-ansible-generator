@@ -68,8 +68,8 @@ options:
                     address-type:
                         type: str
                         choices:
-                            - ipv4
-                            - ipv6
+                            - 'ipv4'
+                            - 'ipv6'
                     application-list:
                         type: str
                         description: 'Application list name.'
@@ -77,8 +77,8 @@ options:
                         type: str
                         description: 'Enable/disable application control.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     av-profile:
                         type: str
                         description: 'Antivirus profile.'
@@ -86,8 +86,8 @@ options:
                         type: str
                         description: 'Enable/disable antivirus.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     comments:
                         type: str
                         description: 'Comments.'
@@ -98,14 +98,14 @@ options:
                         type: str
                         description: 'Enable/disable DLP.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dsri:
                         type: str
                         description: 'Enable/disable DSRI.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dstaddr6:
                         type: str
                         description: 'IPv6 address object to limit traffic monitoring to network traffic sent to the specified address or range.'
@@ -119,8 +119,8 @@ options:
                         type: str
                         description: 'Enable/disable IPS.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     label:
                         type: str
                         description: 'Label.'
@@ -128,9 +128,9 @@ options:
                         type: str
                         description: 'Logging type to be used in this policy (Options: all | utm | disable, Default: utm).'
                         choices:
-                            - disable
-                            - all
-                            - utm
+                            - 'disable'
+                            - 'all'
+                            - 'utm'
                     policyid:
                         type: int
                         description: 'Policy ID.'
@@ -138,9 +138,9 @@ options:
                         type: str
                         description: 'Enable/disable scanning for connections to Botnet servers.'
                         choices:
-                            - disable
-                            - block
-                            - monitor
+                            - 'disable'
+                            - 'block'
+                            - 'monitor'
                     service6:
                         type: str
                         description: 'Service name.'
@@ -151,8 +151,8 @@ options:
                         type: str
                         description: 'Enable/disable antispam.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     srcaddr6:
                         type: str
                         description: 'IPv6 address object to limit traffic monitoring to network traffic sent from the specified address or range.'
@@ -160,8 +160,8 @@ options:
                         type: str
                         description: 'Enable/disable this policy.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     webfilter-profile:
                         type: str
                         description: 'Web filter profile.'
@@ -169,8 +169,8 @@ options:
                         type: str
                         description: 'Enable/disable web filtering.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure IPv6 interface policies.'
@@ -184,30 +184,30 @@ options:
                     -
                         type: str
                         choices:
-                            - address-type
-                            - application-list
-                            - application-list-status
-                            - av-profile
-                            - av-profile-status
-                            - comments
-                            - dlp-sensor
-                            - dlp-sensor-status
-                            - dsri
-                            - dstaddr6
-                            - interface
-                            - ips-sensor
-                            - ips-sensor-status
-                            - label
-                            - logtraffic
-                            - policyid
-                            - scan-botnet-connections
-                            - service6
-                            - spamfilter-profile
-                            - spamfilter-profile-status
-                            - srcaddr6
-                            - status
-                            - webfilter-profile
-                            - webfilter-profile-status
+                            - 'address-type'
+                            - 'application-list'
+                            - 'application-list-status'
+                            - 'av-profile'
+                            - 'av-profile-status'
+                            - 'comments'
+                            - 'dlp-sensor'
+                            - 'dlp-sensor-status'
+                            - 'dsri'
+                            - 'dstaddr6'
+                            - 'interface'
+                            - 'ips-sensor'
+                            - 'ips-sensor-status'
+                            - 'label'
+                            - 'logtraffic'
+                            - 'policyid'
+                            - 'scan-botnet-connections'
+                            - 'service6'
+                            - 'spamfilter-profile'
+                            - 'spamfilter-profile-status'
+                            - 'srcaddr6'
+                            - 'status'
+                            - 'webfilter-profile'
+                            - 'webfilter-profile-status'
             filter:
                 -
                     type: str
@@ -226,11 +226,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

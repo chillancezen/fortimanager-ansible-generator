@@ -70,8 +70,8 @@ options:
                     type: str
                     description: 'Action performed on traffic matching the policy (default = deny).'
                     choices:
-                        - deny
-                        - accept
+                        - 'deny'
+                        - 'accept'
                 dstaddr:
                     type: str
                     description: 'Destination address object from available options.'
@@ -94,8 +94,8 @@ options:
                     type: str
                     description: 'Enable/disable this local-in policy.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'Configure user defined IPv6 local-in policies.'
@@ -113,9 +113,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object3:
         methods: [move]
         description: 'Configure user defined IPv6 local-in policies.'
@@ -124,8 +124,8 @@ options:
             option:
                 type: str
                 choices:
-                    - before
-                    - after
+                    - 'before'
+                    - 'after'
             target:
                 type: str
                 description: 'Key to the target entry.'

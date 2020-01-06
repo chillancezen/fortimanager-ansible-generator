@@ -69,8 +69,8 @@ options:
                         type: str
                         description: 'Accept or deny traffic matching the policy.'
                         choices:
-                            - deny
-                            - accept
+                            - 'deny'
+                            - 'accept'
                     comments:
                         type: str
                         description: 'Comment.'
@@ -84,14 +84,14 @@ options:
                         type: str
                         description: 'Enable/disable fixed port for this policy.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     logtraffic:
                         type: str
                         description: 'Enable/disable traffic logging for this policy.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     per-ip-shaper:
                         type: str
                         description: 'Per IP traffic shaper.'
@@ -99,8 +99,8 @@ options:
                         type: str
                         description: 'Enable/disable allowing any host.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     policyid:
                         type: int
                         description: 'Policy ID.'
@@ -120,8 +120,8 @@ options:
                         type: str
                         description: 'Enable/disable this policy.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     tags:
                         type: str
                         description: 'Applied object tags.'
@@ -153,26 +153,26 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - comments
-                            - dstaddr
-                            - dstintf
-                            - fixedport
-                            - logtraffic
-                            - per-ip-shaper
-                            - permit-any-host
-                            - policyid
-                            - schedule
-                            - service
-                            - srcaddr
-                            - srcintf
-                            - status
-                            - tags
-                            - tcp-mss-receiver
-                            - tcp-mss-sender
-                            - traffic-shaper
-                            - traffic-shaper-reverse
-                            - uuid
+                            - 'action'
+                            - 'comments'
+                            - 'dstaddr'
+                            - 'dstintf'
+                            - 'fixedport'
+                            - 'logtraffic'
+                            - 'per-ip-shaper'
+                            - 'permit-any-host'
+                            - 'policyid'
+                            - 'schedule'
+                            - 'service'
+                            - 'srcaddr'
+                            - 'srcintf'
+                            - 'status'
+                            - 'tags'
+                            - 'tcp-mss-receiver'
+                            - 'tcp-mss-sender'
+                            - 'traffic-shaper'
+                            - 'traffic-shaper-reverse'
+                            - 'uuid'
             filter:
                 -
                     type: str
@@ -191,11 +191,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

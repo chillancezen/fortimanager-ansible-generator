@@ -56,11 +56,11 @@ options:
                         description: 'Gateway out interface.'
                     dst:
                         type: str
-                        default: ::/0
+                        default: '::/0'
                         description: 'Destination IP and mask for this route.'
                     gateway:
                         type: str
-                        default: ::
+                        default: '::'
                         description: 'Gateway IP for this route.'
                     prio:
                         type: int
@@ -76,10 +76,10 @@ options:
                     -
                         type: str
                         choices:
-                            - device
-                            - dst
-                            - gateway
-                            - prio
+                            - 'device'
+                            - 'dst'
+                            - 'gateway'
+                            - 'prio'
             filter:
                 -
                     type: str
@@ -93,8 +93,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

@@ -70,22 +70,22 @@ options:
                         type: str
                         description: 'add message encapsulation'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     charset:
                         type: str
                         description: 'character encoding used for replacement message'
                         choices:
-                            - us-ascii
-                            - utf-8
+                            - 'us-ascii'
+                            - 'utf-8'
                     format:
                         type: str
                         description: 'Format flag.'
                         choices:
-                            - none
-                            - text
-                            - html
-                            - wml
+                            - 'none'
+                            - 'text'
+                            - 'html'
+                            - 'wml'
                     from:
                         type: str
                         description: 'from address'
@@ -93,15 +93,15 @@ options:
                         type: str
                         description: 'notification message sent from recipient'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     header:
                         type: str
                         description: 'Header flag.'
                         choices:
-                            - none
-                            - http
-                            - 8bit
+                            - 'none'
+                            - 'http'
+                            - '8bit'
                     html-part:
                         type: str
                         description: 'message encapsulation text'
@@ -118,10 +118,10 @@ options:
                         type: str
                         description: 'message priority'
                         choices:
-                            - low
-                            - normal
-                            - high
-                            - not-included
+                            - 'low'
+                            - 'normal'
+                            - 'high'
+                            - 'not-included'
                     subject:
                         type: str
                         description: 'subject text string'
@@ -138,18 +138,18 @@ options:
                     -
                         type: str
                         choices:
-                            - add-html
-                            - charset
-                            - format
-                            - from
-                            - from-sender
-                            - header
-                            - html-part
-                            - image
-                            - message
-                            - msg-type
-                            - priority
-                            - subject
+                            - 'add-html'
+                            - 'charset'
+                            - 'format'
+                            - 'from'
+                            - 'from-sender'
+                            - 'header'
+                            - 'html-part'
+                            - 'image'
+                            - 'message'
+                            - 'msg-type'
+                            - 'priority'
+                            - 'subject'
             filter:
                 -
                     type: str
@@ -168,11 +168,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

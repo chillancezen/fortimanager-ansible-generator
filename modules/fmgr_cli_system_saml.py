@@ -78,24 +78,24 @@ options:
                     description: 'IDP single sign-on URL.'
                 login-auto-redirect:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/Disable auto redirect to IDP login page.'
                      - 'disable - Disable auto redirect to IDP Login Page.'
                      - 'enable - Enable auto redirect to IDP Login Page.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 role:
                     type: str
-                    default: SP
+                    default: 'SP'
                     description:
                      - 'SAML role.'
                      - 'IDP - IDentiy Provider.'
                      - 'SP - Service Provider.'
                     choices:
-                        - IDP
-                        - SP
+                        - 'IDP'
+                        - 'SP'
                 server-address:
                     type: str
                     description: 'server address.'
@@ -133,14 +133,14 @@ options:
                     description: 'SP SLS(logout) URL.'
                 status:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable SAML authentication (default = disable).'
                      - 'disable - Disable SAML authentication.'
                      - 'enable - Enabld SAML authentication.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

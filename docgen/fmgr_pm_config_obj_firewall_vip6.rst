@@ -134,7 +134,7 @@ Parameters
  <li><span class="li-head">mappedip</span> - Mapped IP address range in the format startIP-endIP. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">mappedport</span> - Port number range on the destination network to which the external port number range is mapped. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">max-embryonic-connections</span> - Maximum number of incomplete connections. <span class="li-normal">type: int</span> </li>
- <li><span class="li-head">monitor</span> - Name of the health check monitor to use when polling to determine a virtual server's connectivity status. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">monitor</span> - Name of the health check monitor to use when polling to determine a virtual servers connectivity status. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">name</span> - Virtual ip6 name. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">outlook-web-access</span> - Enable to add the Front-End-Https header for Microsoft Outlook Web Access. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">persistence</span> - Configure how to make sure that clients connect to the same server every time they make a request that is part of the same session. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [none, http-cookie, ssl-session-id]</span> </li>
@@ -148,7 +148,7 @@ Parameters
  <li><span class="li-head">id</span> - Real server ID. <span class="li-normal">type: int</span> </li>
  <li><span class="li-head">ip</span> - IPv6 address of the real server. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">max-connections</span> - Max number of active connections that can directed to the real server. <span class="li-normal">type: int</span> </li>
- <li><span class="li-head">monitor</span> - Name of the health check monitor to use when polling to determine a virtual server's connectivity status. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">monitor</span> - Name of the health check monitor to use when polling to determine a virtual servers connectivity status. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">port</span> - Port for communicating with the real server. <span class="li-normal">type: int</span> </li>
  <li><span class="li-head">status</span> - Set the status of the real server to active so that it can accept traffic, or on standby or disabled so no traffic is sent. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [active, standby, disable]</span> </li>
  <li><span class="li-head">weight</span> - Weight of the real server. <span class="li-normal">type: int</span> </li>
@@ -181,7 +181,7 @@ Parameters
  <li><span class="li-head">ssl-hsts</span> - Enable/disable including HSTS header in response. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">ssl-hsts-age</span> - Number of seconds the client should honour the HSTS setting. <span class="li-normal">type: int</span> </li>
  <li><span class="li-head">ssl-hsts-include-subdomains</span> - Indicate that HSTS header applies to all subdomains. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
- <li><span class="li-head">ssl-http-location-conversion</span> - Enable to replace HTTP with HTTPS in the reply's Location HTTP header field. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
+ <li><span class="li-head">ssl-http-location-conversion</span> - Enable to replace HTTP with HTTPS in the replys Location HTTP header field. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">ssl-http-match-host</span> - Enable/disable HTTP host matching for location conversion. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">ssl-max-version</span> - Highest SSL/TLS version acceptable from a client. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [ssl-3.0, tls-1.0, tls-1.1, tls-1.2]</span> </li>
  <li><span class="li-head">ssl-min-version</span> - Lowest SSL/TLS version acceptable from a client. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [ssl-3.0, tls-1.0, tls-1.1, tls-1.2]</span> </li>
@@ -559,7 +559,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> mappedip </span> - Mapped IP address range in the format startIP-endIP. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> mappedport </span> - Port number range on the destination network to which the external port number range is mapped. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> max-embryonic-connections </span> - Maximum number of incomplete connections. <span class="li-normal">type: int</span>  </li>
- <li> <span class="li-return"> monitor </span> - Name of the health check monitor to use when polling to determine a virtual server's connectivity status. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> monitor </span> - Name of the health check monitor to use when polling to determine a virtual servers connectivity status. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> name </span> - Virtual ip6 name. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> outlook-web-access </span> - Enable to add the Front-End-Https header for Microsoft Outlook Web Access. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> persistence </span> - Configure how to make sure that clients connect to the same server every time they make a request that is part of the same session. <span class="li-normal">type: str</span>  </li>
@@ -573,7 +573,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> id </span> - Real server ID. <span class="li-normal">type: int</span>  </li>
  <li> <span class="li-return"> ip </span> - IPv6 address of the real server. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> max-connections </span> - Max number of active connections that can directed to the real server. <span class="li-normal">type: int</span>  </li>
- <li> <span class="li-return"> monitor </span> - Name of the health check monitor to use when polling to determine a virtual server's connectivity status. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> monitor </span> - Name of the health check monitor to use when polling to determine a virtual servers connectivity status. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> port </span> - Port for communicating with the real server. <span class="li-normal">type: int</span>  </li>
  <li> <span class="li-return"> status </span> - Set the status of the real server to active so that it can accept traffic, or on standby or disabled so no traffic is sent. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> weight </span> - Weight of the real server. <span class="li-normal">type: int</span>  </li>
@@ -606,7 +606,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> ssl-hsts </span> - Enable/disable including HSTS header in response. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> ssl-hsts-age </span> - Number of seconds the client should honour the HSTS setting. <span class="li-normal">type: int</span>  </li>
  <li> <span class="li-return"> ssl-hsts-include-subdomains </span> - Indicate that HSTS header applies to all subdomains. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> ssl-http-location-conversion </span> - Enable to replace HTTP with HTTPS in the reply's Location HTTP header field. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> ssl-http-location-conversion </span> - Enable to replace HTTP with HTTPS in the replys Location HTTP header field. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> ssl-http-match-host </span> - Enable/disable HTTP host matching for location conversion. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> ssl-max-version </span> - Highest SSL/TLS version acceptable from a client. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> ssl-min-version </span> - Lowest SSL/TLS version acceptable from a client. <span class="li-normal">type: str</span>  </li>

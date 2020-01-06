@@ -70,9 +70,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Global FortiAnalyzer settings.'
@@ -89,24 +89,24 @@ options:
                     type: str
                     description: 'Enable/disable sending FortiAnalyzer log data with SSL encryption.'
                     choices:
-                        - default
-                        - high
-                        - low
-                        - disable
-                        - high-medium
-                        - low-medium
+                        - 'default'
+                        - 'high'
+                        - 'low'
+                        - 'disable'
+                        - 'high-medium'
+                        - 'low-medium'
                 hmac-algorithm:
                     type: str
                     description: 'FortiAnalyzer IPsec tunnel HMAC algorithm.'
                     choices:
-                        - sha256
-                        - sha1
+                        - 'sha256'
+                        - 'sha1'
                 ips-archive:
                     type: str
                     description: 'Enable/disable IPS packet archive logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 monitor-failure-retry-period:
                     type: int
                     description: 'Time between FortiAnalyzer connection retries in seconds (for status and log buffer).'
@@ -117,17 +117,17 @@ options:
                     type: str
                     description: 'Enable/disable reliable logging to FortiAnalyzer.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ssl-min-proto-version:
                     type: str
                     description: 'Minimum supported protocol version for SSL/TLS connections (default is to follow system global setting).'
                     choices:
-                        - default
-                        - TLSv1
-                        - TLSv1-1
-                        - TLSv1-2
-                        - SSLv3
+                        - 'default'
+                        - 'TLSv1'
+                        - 'TLSv1-1'
+                        - 'TLSv1-2'
+                        - 'SSLv3'
                 upload-day:
                     type: str
                     description: 'Day of week (month) to upload logs.'
@@ -135,17 +135,17 @@ options:
                     type: str
                     description: 'Frequency to upload log files to FortiAnalyzer.'
                     choices:
-                        - daily
-                        - weekly
-                        - monthly
+                        - 'daily'
+                        - 'weekly'
+                        - 'monthly'
                 upload-option:
                     type: str
                     description: 'Enable/disable logging to hard disk and then uploading to FortiAnalyzer.'
                     choices:
-                        - store-and-upload
-                        - realtime
-                        - 1-minute
-                        - 5-minute
+                        - 'store-and-upload'
+                        - 'realtime'
+                        - '1-minute'
+                        - '5-minute'
                 upload-time:
                     type: str
                     description: 'Time to upload logs (hh:mm).'

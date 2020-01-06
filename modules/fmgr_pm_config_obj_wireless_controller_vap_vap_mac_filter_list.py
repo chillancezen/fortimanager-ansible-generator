@@ -76,8 +76,8 @@ options:
                         type: str
                         description: 'Deny or allow the client with this MAC address.'
                         choices:
-                            - deny
-                            - allow
+                            - 'deny'
+                            - 'allow'
     schema_object1:
         methods: [get]
         description: 'Create a list of MAC addresses for MAC address filtering.'
@@ -91,9 +91,9 @@ options:
                     -
                         type: str
                         choices:
-                            - id
-                            - mac
-                            - mac-filter-policy
+                            - 'id'
+                            - 'mac'
+                            - 'mac-filter-policy'
             filter:
                 -
                     type: str
@@ -112,11 +112,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -85,14 +85,14 @@ options:
                     description: 'FGFM protocol keep alive interval (30 - 600 sec).'
                 force-remote-diff:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Always use remote diff when installing.'
                      - 'disable - Disable.'
                      - 'enable - Enable.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fortiap-refresh-cnt:
                     type: int
                     default: 500
@@ -123,64 +123,64 @@ options:
                     description: 'Number of retries.'
                 retry:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable configuration install retry.'
                      - 'disable - Disable.'
                      - 'enable - Enable.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 retry-intvl:
                     type: int
                     default: 15
                     description: 'Retry interval.'
                 rollback-allow-reboot:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable FortiGate reboot to rollback when installing script/config.'
                      - 'disable - Disable.'
                      - 'enable - Enable.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 script-logsize:
                     type: int
                     default: 100
                     description: 'Maximum script log size per device (1 - 10000K).'
                 skip-scep-check:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable installing scep related objects even if scep url is configured.'
                      - 'disable - Disable.'
                      - 'enable - Enable.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 skip-tunnel-fcp-req:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable skip the fcp request sent from fgfm tunnel'
                      - 'disable - Disable.'
                      - 'enable - Enable.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 verify-install:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Verify install against remote configuration.'
                      - 'disable - Disable.'
                      - 'optimal - Verify installation for command errors.'
                      - 'enable - Always verify installation.'
                     choices:
-                        - disable
-                        - optimal
-                        - enable
+                        - 'disable'
+                        - 'optimal'
+                        - 'enable'
 
 '''
 

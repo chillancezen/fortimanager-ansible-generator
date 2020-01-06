@@ -62,7 +62,7 @@ Parameters
  <li><span class="li-head">ekahau-tag</span> - WiFi frame MAC address or WiFi Tag. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">erc-server-ip</span> - IP address of Ekahua RTLS Controller (ERC). <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">erc-server-port</span> - Ekahua RTLS Controller (ERC) UDP listening port. <span class="li-normal">type: int</span> </li>
- <li><span class="li-head">fortipresence</span> - Enable/disable FortiPresence to monitor the location and activity of WiFi clients even if they don't connect to this WiFi network (default = disable). <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable, enable2, foreign, both]</span> </li>
+ <li><span class="li-head">fortipresence</span> - Enable/disable FortiPresence to monitor the location and activity of WiFi clients even if they dont connect to this WiFi network (default = disable). <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable, enable2, foreign, both]</span> </li>
  <li><span class="li-head">fortipresence-frequency</span> - FortiPresence report transmit frequency (5 - 65535 sec, default = 30). <span class="li-normal">type: int</span> </li>
  <li><span class="li-head">fortipresence-port</span> - FortiPresence server UDP listening port (default = 3000). <span class="li-normal">type: int</span> </li>
  <li><span class="li-head">fortipresence-project</span> - FortiPresence project name (max. <span class="li-normal">type: str</span> </li>
@@ -173,7 +173,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> ekahau-tag </span> - WiFi frame MAC address or WiFi Tag. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> erc-server-ip </span> - IP address of Ekahua RTLS Controller (ERC). <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> erc-server-port </span> - Ekahua RTLS Controller (ERC) UDP listening port. <span class="li-normal">type: int</span>  </li>
- <li> <span class="li-return"> fortipresence </span> - Enable/disable FortiPresence to monitor the location and activity of WiFi clients even if they don't connect to this WiFi network (default = disable). <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> fortipresence </span> - Enable/disable FortiPresence to monitor the location and activity of WiFi clients even if they dont connect to this WiFi network (default = disable). <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> fortipresence-frequency </span> - FortiPresence report transmit frequency (5 - 65535 sec, default = 30). <span class="li-normal">type: int</span>  </li>
  <li> <span class="li-return"> fortipresence-port </span> - FortiPresence server UDP listening port (default = 3000). <span class="li-normal">type: int</span>  </li>
  <li> <span class="li-return"> fortipresence-project </span> - FortiPresence project name (max. <span class="li-normal">type: str</span>  </li>

@@ -94,64 +94,64 @@ options:
                     description: 'Maximum number of log files for each log browse attempt for each Adom.'
                 dns-resolve-dstip:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/Disable resolving destination IP by DNS.'
                      - 'disable - Disable resolving destination IP by DNS.'
                      - 'enable - Enable resolving destination IP by DNS.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 download-max-logs:
                     type: int
                     default: 500000
                     description: 'Maximum number of logs for each log download attempt.'
                 ha-auto-migrate:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
-                     - 'Enabled/Disable automatically merging HA member's logs to HA cluster.'
-                     - 'disable - Disable automatically merging HA member's logs to HA cluster.'
-                     - 'enable - Enable automatically merging HA member's logs to HA cluster.'
+                     - 'Enabled/Disable automatically merging HA members logs to HA cluster.'
+                     - 'disable - Disable automatically merging HA members logs to HA cluster.'
+                     - 'enable - Enable automatically merging HA members logs to HA cluster.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 import-max-logfiles:
                     type: int
                     default: 10000
                     description: 'Maximum number of log files for each log import attempt.'
                 log-file-archive-name:
                     type: str
-                    default: basic
+                    default: 'basic'
                     description:
                      - 'Log file name format for archiving, such as backup, upload or download.'
                      - 'basic - Basic format for log archive file name, e.g. FGT20C0000000001.tlog.1417797247.log.'
                      - 'extended - Extended format for log archive file name, e.g. FGT20C0000000001.2014-12-05-08:34:58.tlog.1417797247.log.'
                     choices:
-                        - basic
-                        - extended
+                        - 'basic'
+                        - 'extended'
                 rolling-analyzer:
                     days:
                         -
                             type: str
                             choices:
-                                - sun
-                                - mon
-                                - tue
-                                - wed
-                                - thu
-                                - fri
-                                - sat
+                                - 'sun'
+                                - 'mon'
+                                - 'tue'
+                                - 'wed'
+                                - 'thu'
+                                - 'fri'
+                                - 'sat'
                     del-files:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable log file deletion after uploading.'
                          - 'disable - Disable log file deletion.'
                          - 'enable - Enable log file deletion.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     directory:
                         type: str
                         description: 'Upload server directory, for Unix server, use absolute'
@@ -161,42 +161,42 @@ options:
                         description: 'Roll log files when they reach this size (MB).'
                     gzip-format:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable compression of uploaded log files.'
                          - 'disable - Disable compression.'
                          - 'enable - Enable compression.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     hour:
                         type: int
                         default: 0
                         description: 'Log files rolling schedule (hour).'
                     ip:
                         type: str
-                        default: 0.0.0.0
+                        default: '0.0.0.0'
                         description: 'Upload server IP address.'
                     ip2:
                         type: str
-                        default: 0.0.0.0
+                        default: '0.0.0.0'
                         description: 'Upload server IP2 address.'
                     ip3:
                         type: str
-                        default: 0.0.0.0
+                        default: '0.0.0.0'
                         description: 'Upload server IP3 address.'
                     log-format:
                         type: str
-                        default: native
+                        default: 'native'
                         description:
                          - 'Format of uploaded log files.'
                          - 'native - Native format (text or compact).'
                          - 'text - Text format (convert if necessary).'
                          - 'csv - CSV (comma-separated value) format.'
                         choices:
-                            - native
-                            - text
-                            - csv
+                            - 'native'
+                            - 'text'
+                            - 'csv'
                     min:
                         type: int
                         default: 0
@@ -204,61 +204,61 @@ options:
                     password:
                         -
                             type: str
-                            default: ENC MzQ3NjYyODIxOTc1MTg3NhVVByJnhjVIRIq22N8+MG0by/Mxs5TUnkVnhHtwoRdEVnaNNj6P9rGxNsGaBAn2SVhBLt6V9QWnTm1fbC1hAWycBDzkxK37kTzWEwu5NE66yvC4sVh53l+CSOPZabxA2n7XCNB9Kce1X8EeGUr4PqPCtCej
+                            default: 'ENC MzQ3NjYyODIxOTc1MTg3NhVVByJnhjVIRIq22N8+MG0by/Mxs5TUnkVnhHtwoRdEVnaNNj6P9rGxNsGaBAn2SVhBLt6V9QWnTm1fbC1hAWycBDzkxK37kTzWEwu5NE66yvC4sVh53l+CSOPZabxA2n7XCNB9Kce1X8EeGUr4PqPCtCej'
                     password2:
                         -
                             type: str
-                            default: ENC MTAwODg0NTQxNDE5OTQwMaPdJv8JESXhogoJmBIvID8+U03pvD8I9Yr/Q1NGxPnlvLKVEOISmJ/IRPZauTQ/oJ5KlJE3LSzrXEOWAhn2mNaoS+nFbu0seQqMEhUdLbx41Q0yi4dCM9n3PF8RETPiFayOQ5sWWPRD7ALjlthRLogqkua5
+                            default: 'ENC MTAwODg0NTQxNDE5OTQwMaPdJv8JESXhogoJmBIvID8+U03pvD8I9Yr/Q1NGxPnlvLKVEOISmJ/IRPZauTQ/oJ5KlJE3LSzrXEOWAhn2mNaoS+nFbu0seQqMEhUdLbx41Q0yi4dCM9n3PF8RETPiFayOQ5sWWPRD7ALjlthRLogqkua5'
                     password3:
                         -
                             type: str
-                            default: ENC MTMyOTA3MjY4MTgxMTk2N1UB1GKpBMmb5vgQRJTsjWS9sBfCvYmhBhdgf+ipyNKwY43YcyKBx3TaUcf6QLEdeVgFD2ymJHzfX99dusp8IfxNYj7ITnobzP+GcHYMOyPtjtcORJqwHTpEy9rnqCfy6nKz2Sdj1D1SnqOfRhn0R8sonnED
+                            default: 'ENC MTMyOTA3MjY4MTgxMTk2N1UB1GKpBMmb5vgQRJTsjWS9sBfCvYmhBhdgf+ipyNKwY43YcyKBx3TaUcf6QLEdeVgFD2ymJHzfX99dusp8IfxNYj7ITnobzP+GcHYMOyPtjtcORJqwHTpEy9rnqCfy6nKz2Sdj1D1SnqOfRhn0R8sonnED'
                     server-type:
                         type: str
-                        default: ftp
+                        default: 'ftp'
                         description:
                          - 'Upload server type.'
                          - 'ftp - Upload via FTP.'
                          - 'sftp - Upload via SFTP.'
                          - 'scp - Upload via SCP.'
                         choices:
-                            - ftp
-                            - sftp
-                            - scp
+                            - 'ftp'
+                            - 'sftp'
+                            - 'scp'
                     upload:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable log file uploads.'
                          - 'disable - Disable log files uploading.'
                          - 'enable - Enable log files uploading.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     upload-hour:
                         type: int
                         default: 0
                         description: 'Log files upload schedule (hour).'
                     upload-mode:
                         type: str
-                        default: backup
+                        default: 'backup'
                         description:
                          - 'Upload mode with multiple servers.'
                          - 'backup - Servers are attempted and used one after the other upon failure to connect.'
                          - 'mirror - All configured servers are attempted and used.'
                         choices:
-                            - backup
-                            - mirror
+                            - 'backup'
+                            - 'mirror'
                     upload-trigger:
                         type: str
-                        default: on-roll
+                        default: 'on-roll'
                         description:
                          - 'Event triggering log files upload.'
                          - 'on-roll - Upload log files after they are rolled.'
                          - 'on-schedule - Upload log files daily.'
                         choices:
-                            - on-roll
-                            - on-schedule
+                            - 'on-roll'
+                            - 'on-schedule'
                     username:
                         type: str
                         description: 'Upload server login username.'
@@ -270,38 +270,38 @@ options:
                         description: 'Upload server login username3.'
                     when:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Roll log files periodically.'
                          - 'none - Do not roll log files periodically.'
                          - 'daily - Roll log files daily.'
                          - 'weekly - Roll log files on certain days of week.'
                         choices:
-                            - none
-                            - daily
-                            - weekly
+                            - 'none'
+                            - 'daily'
+                            - 'weekly'
                 rolling-local:
                     days:
                         -
                             type: str
                             choices:
-                                - sun
-                                - mon
-                                - tue
-                                - wed
-                                - thu
-                                - fri
-                                - sat
+                                - 'sun'
+                                - 'mon'
+                                - 'tue'
+                                - 'wed'
+                                - 'thu'
+                                - 'fri'
+                                - 'sat'
                     del-files:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable log file deletion after uploading.'
                          - 'disable - Disable log file deletion.'
                          - 'enable - Enable log file deletion.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     directory:
                         type: str
                         description: 'Upload server directory, for Unix server, use absolute'
@@ -311,42 +311,42 @@ options:
                         description: 'Roll log files when they reach this size (MB).'
                     gzip-format:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable compression of uploaded log files.'
                          - 'disable - Disable compression.'
                          - 'enable - Enable compression.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     hour:
                         type: int
                         default: 0
                         description: 'Log files rolling schedule (hour).'
                     ip:
                         type: str
-                        default: 0.0.0.0
+                        default: '0.0.0.0'
                         description: 'Upload server IP address.'
                     ip2:
                         type: str
-                        default: 0.0.0.0
+                        default: '0.0.0.0'
                         description: 'Upload server IP2 address.'
                     ip3:
                         type: str
-                        default: 0.0.0.0
+                        default: '0.0.0.0'
                         description: 'Upload server IP3 address.'
                     log-format:
                         type: str
-                        default: native
+                        default: 'native'
                         description:
                          - 'Format of uploaded log files.'
                          - 'native - Native format (text or compact).'
                          - 'text - Text format (convert if necessary).'
                          - 'csv - CSV (comma-separated value) format.'
                         choices:
-                            - native
-                            - text
-                            - csv
+                            - 'native'
+                            - 'text'
+                            - 'csv'
                     min:
                         type: int
                         default: 0
@@ -354,61 +354,61 @@ options:
                     password:
                         -
                             type: str
-                            default: ENC MTA3MjA4MzMzNDU1NjUyNKTuKbF8PktnhHOXsSkxjhxlHjwIE22BP2ak2RRotV+wsRkGD/HamAdeTJyxk8NUM5OZPMpAHhPZssCynPvryOwf6S7Bq6wiH2BSRxNp+JDC+OcO7KbXMy+0JRgHFegouXqd2l9n+MweBcSP4qsn/P2nZEbm
+                            default: 'ENC MTA3MjA4MzMzNDU1NjUyNKTuKbF8PktnhHOXsSkxjhxlHjwIE22BP2ak2RRotV+wsRkGD/HamAdeTJyxk8NUM5OZPMpAHhPZssCynPvryOwf6S7Bq6wiH2BSRxNp+JDC+OcO7KbXMy+0JRgHFegouXqd2l9n+MweBcSP4qsn/P2nZEbm'
                     password2:
                         -
                             type: str
-                            default: ENC NjYyODA3OTExODQ2OTQ0N1452tPlCQK0/AvB5jye7GpFLLpArdcOazRo1BOGPYnKcgz2Iqn/Nt+7ZZereH6gM4nFNmsLipjwaznrIUtA2dAogsuYgiTXfCbK5hwOSXo5AniueUP1/fJcBeU7xnIUqTCWf8OBrStYnmyEHg0QHHzSmvRq
+                            default: 'ENC NjYyODA3OTExODQ2OTQ0N1452tPlCQK0/AvB5jye7GpFLLpArdcOazRo1BOGPYnKcgz2Iqn/Nt+7ZZereH6gM4nFNmsLipjwaznrIUtA2dAogsuYgiTXfCbK5hwOSXo5AniueUP1/fJcBeU7xnIUqTCWf8OBrStYnmyEHg0QHHzSmvRq'
                     password3:
                         -
                             type: str
-                            default: ENC Mzk3ODgxMDA2MjU0NzUwNft3N0w+quBucyAJLuI78/qyOQAkHkRQnCPqX7Crikas/93czxOX2okFGGyPN7MhHEFPwsNyxKziYau12Szy5r5kYxSVnovhsE6m4D9uMiOEfqIm+ZM8t8x0vvZiERLvbNCwn8E4nMkDvz09rKXJdDK1lelu
+                            default: 'ENC Mzk3ODgxMDA2MjU0NzUwNft3N0w+quBucyAJLuI78/qyOQAkHkRQnCPqX7Crikas/93czxOX2okFGGyPN7MhHEFPwsNyxKziYau12Szy5r5kYxSVnovhsE6m4D9uMiOEfqIm+ZM8t8x0vvZiERLvbNCwn8E4nMkDvz09rKXJdDK1lelu'
                     server-type:
                         type: str
-                        default: ftp
+                        default: 'ftp'
                         description:
                          - 'Upload server type.'
                          - 'ftp - Upload via FTP.'
                          - 'sftp - Upload via SFTP.'
                          - 'scp - Upload via SCP.'
                         choices:
-                            - ftp
-                            - sftp
-                            - scp
+                            - 'ftp'
+                            - 'sftp'
+                            - 'scp'
                     upload:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable log file uploads.'
                          - 'disable - Disable log files uploading.'
                          - 'enable - Enable log files uploading.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     upload-hour:
                         type: int
                         default: 0
                         description: 'Log files upload schedule (hour).'
                     upload-mode:
                         type: str
-                        default: backup
+                        default: 'backup'
                         description:
                          - 'Upload mode with multiple servers.'
                          - 'backup - Servers are attempted and used one after the other upon failure to connect.'
                          - 'mirror - All configured servers are attempted and used.'
                         choices:
-                            - backup
-                            - mirror
+                            - 'backup'
+                            - 'mirror'
                     upload-trigger:
                         type: str
-                        default: on-roll
+                        default: 'on-roll'
                         description:
                          - 'Event triggering log files upload.'
                          - 'on-roll - Upload log files after they are rolled.'
                          - 'on-schedule - Upload log files daily.'
                         choices:
-                            - on-roll
-                            - on-schedule
+                            - 'on-roll'
+                            - 'on-schedule'
                     username:
                         type: str
                         description: 'Upload server login username.'
@@ -420,38 +420,38 @@ options:
                         description: 'Upload server login username3.'
                     when:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Roll log files periodically.'
                          - 'none - Do not roll log files periodically.'
                          - 'daily - Roll log files daily.'
                          - 'weekly - Roll log files on certain days of week.'
                         choices:
-                            - none
-                            - daily
-                            - weekly
+                            - 'none'
+                            - 'daily'
+                            - 'weekly'
                 rolling-regular:
                     days:
                         -
                             type: str
                             choices:
-                                - sun
-                                - mon
-                                - tue
-                                - wed
-                                - thu
-                                - fri
-                                - sat
+                                - 'sun'
+                                - 'mon'
+                                - 'tue'
+                                - 'wed'
+                                - 'thu'
+                                - 'fri'
+                                - 'sat'
                     del-files:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable log file deletion after uploading.'
                          - 'disable - Disable log file deletion.'
                          - 'enable - Enable log file deletion.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     directory:
                         type: str
                         description: 'Upload server directory, for Unix server, use absolute'
@@ -461,42 +461,42 @@ options:
                         description: 'Roll log files when they reach this size (MB).'
                     gzip-format:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable compression of uploaded log files.'
                          - 'disable - Disable compression.'
                          - 'enable - Enable compression.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     hour:
                         type: int
                         default: 0
                         description: 'Log files rolling schedule (hour).'
                     ip:
                         type: str
-                        default: 0.0.0.0
+                        default: '0.0.0.0'
                         description: 'Upload server IP address.'
                     ip2:
                         type: str
-                        default: 0.0.0.0
+                        default: '0.0.0.0'
                         description: 'Upload server IP2 address.'
                     ip3:
                         type: str
-                        default: 0.0.0.0
+                        default: '0.0.0.0'
                         description: 'Upload server IP3 address.'
                     log-format:
                         type: str
-                        default: native
+                        default: 'native'
                         description:
                          - 'Format of uploaded log files.'
                          - 'native - Native format (text or compact).'
                          - 'text - Text format (convert if necessary).'
                          - 'csv - CSV (comma-separated value) format.'
                         choices:
-                            - native
-                            - text
-                            - csv
+                            - 'native'
+                            - 'text'
+                            - 'csv'
                     min:
                         type: int
                         default: 0
@@ -504,61 +504,61 @@ options:
                     password:
                         -
                             type: str
-                            default: ENC ODAwOTQ3NjUzMDIwNzk1OIPHW/nEK7BO24JYo1Em7rYn7CdH7TdDmHCHkrjwr+SVjdV8BYqBZBky2+zlZseWknPUDVeGjpRxz5S4sOpVJpepIlmEWlA52qtz+8yR98QYwq7x6zet0/xPAsnFJfQ5hkw+glg4dEZe8dYhZqUIpBTG3A1f
+                            default: 'ENC ODAwOTQ3NjUzMDIwNzk1OIPHW/nEK7BO24JYo1Em7rYn7CdH7TdDmHCHkrjwr+SVjdV8BYqBZBky2+zlZseWknPUDVeGjpRxz5S4sOpVJpepIlmEWlA52qtz+8yR98QYwq7x6zet0/xPAsnFJfQ5hkw+glg4dEZe8dYhZqUIpBTG3A1f'
                     password2:
                         -
                             type: str
-                            default: ENC NDI4MzA1MDAwNDc5MDM1NCgaDuO8BbylW468/v7rkRIUl/sgtzU4EClw6xY77UANoEcktN7+aT2a+gQ1XwPLrlWn+8x5CURG3MmkJULSMu2wqfWLPA7C1rIwlHY7Z22A1SW04YvTiPiKK/LY7OjYalTgHqL33VerBXP7/Sgyn5dlEZnu
+                            default: 'ENC NDI4MzA1MDAwNDc5MDM1NCgaDuO8BbylW468/v7rkRIUl/sgtzU4EClw6xY77UANoEcktN7+aT2a+gQ1XwPLrlWn+8x5CURG3MmkJULSMu2wqfWLPA7C1rIwlHY7Z22A1SW04YvTiPiKK/LY7OjYalTgHqL33VerBXP7/Sgyn5dlEZnu'
                     password3:
                         -
                             type: str
-                            default: ENC MTI4Mzk5OTgyODM4NjQ2NbWPjK9Eo8bsyoRiMK1soj62ZQgC0L38apk7ls82V9kbFawm+/xT594RzdZD3WU8luDAAvtCGVOECxVPu4I9owGyeS2ioYrWcqFmjTCrgZrM9D0Vb4UvHpENCMz/qImwFE+ka+Y/f8+c79d9b0unoAUgOi6M
+                            default: 'ENC MTI4Mzk5OTgyODM4NjQ2NbWPjK9Eo8bsyoRiMK1soj62ZQgC0L38apk7ls82V9kbFawm+/xT594RzdZD3WU8luDAAvtCGVOECxVPu4I9owGyeS2ioYrWcqFmjTCrgZrM9D0Vb4UvHpENCMz/qImwFE+ka+Y/f8+c79d9b0unoAUgOi6M'
                     server-type:
                         type: str
-                        default: ftp
+                        default: 'ftp'
                         description:
                          - 'Upload server type.'
                          - 'ftp - Upload via FTP.'
                          - 'sftp - Upload via SFTP.'
                          - 'scp - Upload via SCP.'
                         choices:
-                            - ftp
-                            - sftp
-                            - scp
+                            - 'ftp'
+                            - 'sftp'
+                            - 'scp'
                     upload:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable log file uploads.'
                          - 'disable - Disable log files uploading.'
                          - 'enable - Enable log files uploading.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     upload-hour:
                         type: int
                         default: 0
                         description: 'Log files upload schedule (hour).'
                     upload-mode:
                         type: str
-                        default: backup
+                        default: 'backup'
                         description:
                          - 'Upload mode with multiple servers.'
                          - 'backup - Servers are attempted and used one after the other upon failure to connect.'
                          - 'mirror - All configured servers are attempted and used.'
                         choices:
-                            - backup
-                            - mirror
+                            - 'backup'
+                            - 'mirror'
                     upload-trigger:
                         type: str
-                        default: on-roll
+                        default: 'on-roll'
                         description:
                          - 'Event triggering log files upload.'
                          - 'on-roll - Upload log files after they are rolled.'
                          - 'on-schedule - Upload log files daily.'
                         choices:
-                            - on-roll
-                            - on-schedule
+                            - 'on-roll'
+                            - 'on-schedule'
                     username:
                         type: str
                         description: 'Upload server login username.'
@@ -570,16 +570,16 @@ options:
                         description: 'Upload server login username3.'
                     when:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Roll log files periodically.'
                          - 'none - Do not roll log files periodically.'
                          - 'daily - Roll log files daily.'
                          - 'weekly - Roll log files on certain days of week.'
                         choices:
-                            - none
-                            - daily
-                            - weekly
+                            - 'none'
+                            - 'daily'
+                            - 'weekly'
                 sync-search-timeout:
                     type: int
                     default: 60
@@ -766,9 +766,9 @@ return_of_api_category_0:
             ha-auto-migrate:
                type: str
                description: |
-                  'Enabled/Disable automatically merging HA member's logs to HA cluster.'
-                  'disable - Disable automatically merging HA member's logs to HA cluster.'
-                  'enable - Enable automatically merging HA member's logs to HA cluster.'
+                  'Enabled/Disable automatically merging HA members logs to HA cluster.'
+                  'disable - Disable automatically merging HA members logs to HA cluster.'
+                  'enable - Enable automatically merging HA members logs to HA cluster.'
                example: disable
             import-max-logfiles:
                type: int

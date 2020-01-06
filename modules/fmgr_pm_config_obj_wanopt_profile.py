@@ -77,8 +77,8 @@ options:
                         type: str
                         description: 'Enable/disable transparent mode.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure WAN optimization profiles.'
@@ -92,10 +92,10 @@ options:
                     -
                         type: str
                         choices:
-                            - auth-group
-                            - comments
-                            - name
-                            - transparent
+                            - 'auth-group'
+                            - 'comments'
+                            - 'name'
+                            - 'transparent'
             filter:
                 -
                     type: str
@@ -114,11 +114,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

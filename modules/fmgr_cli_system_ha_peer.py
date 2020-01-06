@@ -57,25 +57,25 @@ options:
                         description: 'Id.'
                     ip:
                         type: str
-                        default: 0.0.0.0
+                        default: '0.0.0.0'
                         description: 'IP address of peer.'
                     ip6:
                         type: str
-                        default: ::
+                        default: '::'
                         description: 'IP address (V6) of peer.'
                     serial-number:
                         type: str
                         description: 'Serial number of peer.'
                     status:
                         type: str
-                        default: enable
+                        default: 'enable'
                         description:
                          - 'Peer admin status.'
                          - 'disable - Disable.'
                          - 'enable - Enable.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Peer.'
@@ -86,11 +86,11 @@ options:
                     -
                         type: str
                         choices:
-                            - id
-                            - ip
-                            - ip6
-                            - serial-number
-                            - status
+                            - 'id'
+                            - 'ip'
+                            - 'ip6'
+                            - 'serial-number'
+                            - 'status'
             filter:
                 -
                     type: str
@@ -104,8 +104,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

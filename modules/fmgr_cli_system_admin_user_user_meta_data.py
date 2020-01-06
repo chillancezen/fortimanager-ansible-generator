@@ -70,24 +70,24 @@ options:
                         description: 'Field value.'
                     importance:
                         type: str
-                        default: optional
+                        default: 'optional'
                         description:
                          - 'Importance.'
                          - 'optional - This field is optional.'
                          - 'required - This field is required.'
                         choices:
-                            - optional
-                            - required
+                            - 'optional'
+                            - 'required'
                     status:
                         type: str
-                        default: enabled
+                        default: 'enabled'
                         description:
                          - 'Status.'
                          - 'disabled - This field is disabled.'
                          - 'enabled - This field is enabled.'
                         choices:
-                            - disabled
-                            - enabled
+                            - 'disabled'
+                            - 'enabled'
     schema_object1:
         methods: [get]
         description: 'Configure meta data.'
@@ -98,11 +98,11 @@ options:
                     -
                         type: str
                         choices:
-                            - fieldlength
-                            - fieldname
-                            - fieldvalue
-                            - importance
-                            - status
+                            - 'fieldlength'
+                            - 'fieldname'
+                            - 'fieldvalue'
+                            - 'importance'
+                            - 'status'
             filter:
                 -
                     type: str
@@ -116,8 +116,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

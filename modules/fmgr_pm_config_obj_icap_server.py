@@ -71,8 +71,8 @@ options:
                         type: str
                         description: 'IP version.'
                         choices:
-                            - 4
-                            - 6
+                            - '4'
+                            - '6'
                     ip6-address:
                         type: str
                         description: 'IPv6 address of the ICAP server.'
@@ -98,12 +98,12 @@ options:
                     -
                         type: str
                         choices:
-                            - ip-address
-                            - ip-version
-                            - ip6-address
-                            - max-connections
-                            - name
-                            - port
+                            - 'ip-address'
+                            - 'ip-version'
+                            - 'ip6-address'
+                            - 'max-connections'
+                            - 'name'
+                            - 'port'
             filter:
                 -
                     type: str
@@ -122,11 +122,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

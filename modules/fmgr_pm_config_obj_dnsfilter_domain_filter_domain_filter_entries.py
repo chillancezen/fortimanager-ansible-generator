@@ -70,9 +70,9 @@ options:
                         type: str
                         description: 'Action to take for domain filter matches.'
                         choices:
-                            - block
-                            - allow
-                            - monitor
+                            - 'block'
+                            - 'allow'
+                            - 'monitor'
                     domain:
                         type: str
                         description: 'Domain entries to be filtered.'
@@ -83,15 +83,15 @@ options:
                         type: str
                         description: 'Enable/disable this domain filter.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     type:
                         type: str
                         description: 'DNS domain filter type.'
                         choices:
-                            - simple
-                            - regex
-                            - wildcard
+                            - 'simple'
+                            - 'regex'
+                            - 'wildcard'
     schema_object1:
         methods: [get]
         description: 'DNS domain filter entries.'
@@ -105,11 +105,11 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - domain
-                            - id
-                            - status
-                            - type
+                            - 'action'
+                            - 'domain'
+                            - 'id'
+                            - 'status'
+                            - 'type'
             filter:
                 -
                     type: str
@@ -128,11 +128,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'WTP, FortiAP, or AP platform.'
@@ -84,68 +84,68 @@ options:
                     type: str
                     description: 'WTP, FortiAP or AP platform type. There are built-in WTP profiles for all supported FortiAP models. You can select a built-in profile and customize it or create a new profile.'
                     choices:
-                        - 30B-50B
-                        - 60B
-                        - 80CM-81CM
-                        - 220A
-                        - 220B
-                        - 210B
-                        - 60C
-                        - 222B
-                        - 112B
-                        - 320B
-                        - 11C
-                        - 14C
-                        - 223B
-                        - 28C
-                        - 320C
-                        - 221C
-                        - 25D
-                        - 222C
-                        - 224D
-                        - 214B
-                        - 21D
-                        - 24D
-                        - 112D
-                        - 223C
-                        - 321C
-                        - C220C
-                        - C225C
-                        - S321C
-                        - S323C
-                        - FWF
-                        - S311C
-                        - S313C
-                        - AP-11N
-                        - S322C
-                        - S321CR
-                        - S322CR
-                        - S323CR
-                        - S421E
-                        - S422E
-                        - S423E
-                        - 421E
-                        - 423E
-                        - C221E
-                        - C226E
-                        - C23JD
-                        - C24JE
-                        - C21D
-                        - U421E
-                        - U423E
-                        - 221E
-                        - 222E
-                        - 223E
-                        - S221E
-                        - S223E
-                        - U221EV
-                        - U223EV
-                        - U321EV
-                        - U323EV
-                        - 224E
-                        - U422EV
-                        - U24JEV
-                        - 321E
+                        - '30B-50B'
+                        - '60B'
+                        - '80CM-81CM'
+                        - '220A'
+                        - '220B'
+                        - '210B'
+                        - '60C'
+                        - '222B'
+                        - '112B'
+                        - '320B'
+                        - '11C'
+                        - '14C'
+                        - '223B'
+                        - '28C'
+                        - '320C'
+                        - '221C'
+                        - '25D'
+                        - '222C'
+                        - '224D'
+                        - '214B'
+                        - '21D'
+                        - '24D'
+                        - '112D'
+                        - '223C'
+                        - '321C'
+                        - 'C220C'
+                        - 'C225C'
+                        - 'S321C'
+                        - 'S323C'
+                        - 'FWF'
+                        - 'S311C'
+                        - 'S313C'
+                        - 'AP-11N'
+                        - 'S322C'
+                        - 'S321CR'
+                        - 'S322CR'
+                        - 'S323CR'
+                        - 'S421E'
+                        - 'S422E'
+                        - 'S423E'
+                        - '421E'
+                        - '423E'
+                        - 'C221E'
+                        - 'C226E'
+                        - 'C23JD'
+                        - 'C24JE'
+                        - 'C21D'
+                        - 'U421E'
+                        - 'U423E'
+                        - '221E'
+                        - '222E'
+                        - '223E'
+                        - 'S221E'
+                        - 'S223E'
+                        - 'U221EV'
+                        - 'U223EV'
+                        - 'U321EV'
+                        - 'U323EV'
+                        - '224E'
+                        - 'U422EV'
+                        - 'U24JEV'
+                        - '321E'
 
 '''
 

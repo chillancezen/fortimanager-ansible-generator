@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'POP3.'
@@ -84,14 +84,14 @@ options:
                     type: str
                     description: 'Action for spam email.'
                     choices:
-                        - pass
-                        - tag
+                        - 'pass'
+                        - 'tag'
                 log:
                     type: str
                     description: 'Enable/disable logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 tag-msg:
                     type: str
                     description: 'Subject text or header added to spam email.'
@@ -99,9 +99,9 @@ options:
                     -
                         type: str
                         choices:
-                            - subject
-                            - header
-                            - spaminfo
+                            - 'subject'
+                            - 'header'
+                            - 'spaminfo'
 
 '''
 

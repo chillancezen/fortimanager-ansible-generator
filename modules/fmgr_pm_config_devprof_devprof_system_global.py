@@ -70,9 +70,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Configure global attributes.'
@@ -83,8 +83,8 @@ options:
                     type: str
                     description: 'Enable/disable redirection of HTTP administration access to HTTPS.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 admin-port:
                     type: int
                     description: 'Administrative access port for HTTP. (1 - 65535, default = 80).'
@@ -92,8 +92,8 @@ options:
                     type: str
                     description: 'Enable/disable using SCP to download the system configuration. You can use SCP as an alternative method for backing up the configuration.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 admin-sport:
                     type: int
                     description: 'Administrative access port for HTTPS. (1 - 65535, default = 443).'
@@ -104,8 +104,8 @@ options:
                     type: str
                     description: 'Enable/disable SSH v1 compatibility.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 admin-telnet-port:
                     type: int
                     description: 'Administrative access port for TELNET. (1 - 65535, default = 23).'
@@ -116,8 +116,8 @@ options:
                     type: str
                     description: 'Enable/disable IPv6 settings on the GUI.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 gui-lines-per-page:
                     type: int
                     description: 'Number of lines to display per page for web administration.'
@@ -125,29 +125,29 @@ options:
                     type: str
                     description: 'Color scheme for the administration GUI.'
                     choices:
-                        - blue
-                        - green
-                        - melongene
-                        - red
-                        - mariner
+                        - 'blue'
+                        - 'green'
+                        - 'melongene'
+                        - 'red'
+                        - 'mariner'
                 language:
                     type: str
                     description: 'GUI display language.'
                     choices:
-                        - english
-                        - simch
-                        - japanese
-                        - korean
-                        - spanish
-                        - trach
-                        - french
-                        - portuguese
+                        - 'english'
+                        - 'simch'
+                        - 'japanese'
+                        - 'korean'
+                        - 'spanish'
+                        - 'trach'
+                        - 'french'
+                        - 'portuguese'
                 switch-controller:
                     type: str
                     description: 'Enable/disable switch controller feature. Switch controller allows you to manage FortiSwitch from the FortiGate itself.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

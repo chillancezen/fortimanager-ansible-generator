@@ -68,68 +68,68 @@ options:
                         type: str
                         description: 'Bearer resource (command 68, failure indication 69).'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     change-notification:
                         type: str
                         description: 'Change notification (req 38, resp 39).'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     create-bearer:
                         type: str
                         description: 'Create bearer (req 95, resp 96).'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     create-session:
                         type: str
                         description: 'Create session (req 32, resp 33).'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     delete-bearer-cmd-fail:
                         type: str
                         description: 'Delete bearer (command 66, failure indication 67).'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     delete-bearer-req-resp:
                         type: str
                         description: 'Delete bearer (req 99, resp 100).'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     delete-pdn-connection-set:
                         type: str
                         description: 'Delete PDN connection set (req 101, resp 102).'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     delete-session:
                         type: str
                         description: 'Delete session (req 36, resp 37).'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     echo:
                         type: str
                         description: 'Echo (req 1, resp 2).'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     modify-bearer-cmd-fail:
                         type: str
                         description: 'Modify bearer (command 64 , failure indication 65).'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     modify-bearer-req-resp:
                         type: str
                         description: 'Modify bearer (req 34, resp 35).'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     name:
                         type: str
                         description: 'Message filter name.'
@@ -137,26 +137,26 @@ options:
                         type: str
                         description: 'Resume (notify 164 , ack 165).'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     suspend:
                         type: str
                         description: 'Suspend (notify 162, ack 163).'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     trace-session:
                         type: str
                         description: 'Trace session (activation 71, deactivation 72).'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     unknown-message:
                         type: str
                         description: 'Allow or Deny unknown messages.'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     unknown-message-white-list:
                         -
                             type: int
@@ -164,20 +164,20 @@ options:
                         type: str
                         description: 'Update bearer (req 97, resp 98).'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     update-pdn-connection-set:
                         type: str
                         description: 'Update PDN connection set (req 200, resp 201).'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     version-not-support:
                         type: str
                         description: 'Version not supported (3).'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
     schema_object1:
         methods: [get]
         description: 'Message filter for GTPv2 messages.'
@@ -191,26 +191,26 @@ options:
                     -
                         type: str
                         choices:
-                            - bearer-resource-cmd-fail
-                            - change-notification
-                            - create-bearer
-                            - create-session
-                            - delete-bearer-cmd-fail
-                            - delete-bearer-req-resp
-                            - delete-pdn-connection-set
-                            - delete-session
-                            - echo
-                            - modify-bearer-cmd-fail
-                            - modify-bearer-req-resp
-                            - name
-                            - resume
-                            - suspend
-                            - trace-session
-                            - unknown-message
-                            - unknown-message-white-list
-                            - update-bearer
-                            - update-pdn-connection-set
-                            - version-not-support
+                            - 'bearer-resource-cmd-fail'
+                            - 'change-notification'
+                            - 'create-bearer'
+                            - 'create-session'
+                            - 'delete-bearer-cmd-fail'
+                            - 'delete-bearer-req-resp'
+                            - 'delete-pdn-connection-set'
+                            - 'delete-session'
+                            - 'echo'
+                            - 'modify-bearer-cmd-fail'
+                            - 'modify-bearer-req-resp'
+                            - 'name'
+                            - 'resume'
+                            - 'suspend'
+                            - 'trace-session'
+                            - 'unknown-message'
+                            - 'unknown-message-white-list'
+                            - 'update-bearer'
+                            - 'update-pdn-connection-set'
+                            - 'version-not-support'
             filter:
                 -
                     type: str
@@ -229,11 +229,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

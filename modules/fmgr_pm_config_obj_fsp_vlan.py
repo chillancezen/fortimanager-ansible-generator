@@ -67,13 +67,13 @@ options:
                     _dhcp-status:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     auth:
                         type: str
                         choices:
-                            - radius
-                            - usergroup
+                            - 'radius'
+                            - 'usergroup'
                     color:
                         type: int
                     comments:
@@ -83,8 +83,8 @@ options:
                             _dhcp-status:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             _scope:
                                 -
                                     name:
@@ -100,9 +100,9 @@ options:
                     security:
                         type: str
                         choices:
-                            - open
-                            - captive-portal
-                            - 8021x
+                            - 'open'
+                            - 'captive-portal'
+                            - '8021x'
                     selected-usergroups:
                         type: str
                     usergroup:
@@ -124,18 +124,18 @@ options:
                     -
                         type: str
                         choices:
-                            - _dhcp-status
-                            - auth
-                            - color
-                            - comments
-                            - name
-                            - portal-message-override-group
-                            - radius-server
-                            - security
-                            - selected-usergroups
-                            - usergroup
-                            - vdom
-                            - vlanid
+                            - '_dhcp-status'
+                            - 'auth'
+                            - 'color'
+                            - 'comments'
+                            - 'name'
+                            - 'portal-message-override-group'
+                            - 'radius-server'
+                            - 'security'
+                            - 'selected-usergroups'
+                            - 'usergroup'
+                            - 'vdom'
+                            - 'vlanid'
             filter:
                 -
                     type: str
@@ -154,11 +154,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

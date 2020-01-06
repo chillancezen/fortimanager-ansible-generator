@@ -93,10 +93,10 @@ options:
                     type: str
                     description: 'Select the Monitor type used by the health check monitor to check the health of the server (PING | TCP | HTTP).'
                     choices:
-                        - ping
-                        - tcp
-                        - http
-                        - passive-sip
+                        - 'ping'
+                        - 'tcp'
+                        - 'http'
+                        - 'passive-sip'
     schema_object1:
         methods: [delete]
         description: 'Configure server load balancing health monitors.'
@@ -114,9 +114,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

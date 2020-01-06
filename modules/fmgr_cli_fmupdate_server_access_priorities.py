@@ -57,24 +57,24 @@ options:
             data:
                 access-public:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable FortiGates to Access Public FortiGuard Servers when Private Servers are Unavailable (default = disable).'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 av-ips:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable Antivirus and IPS Update Service for Private Server(default = disable).'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 private-server:
                     -
                         id:
@@ -83,11 +83,11 @@ options:
                             description: 'Private server ID (1 - 10).'
                         ip:
                             type: str
-                            default: 0.0.0.0
+                            default: '0.0.0.0'
                             description: 'IPv4 address of the FortiManager unit or private server.'
                         ip6:
                             type: str
-                            default: ::
+                            default: '::'
                             description: 'IPv6 address of the FortiManager unit or private server.'
                         time_zone:
                             type: int
@@ -95,14 +95,14 @@ options:
                             description: 'Time zone of the private server (-24 = local time zone, default = -24).'
                 web-spam:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable Web Filter and Email Filter Update Service for Private Server (default = enable).'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

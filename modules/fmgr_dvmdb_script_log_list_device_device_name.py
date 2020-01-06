@@ -61,7 +61,7 @@ options:
                 type: str
     schema_object0:
         methods: [get]
-        description: 'Get the latest of script logs of a device. The amount of data to retrieve can be controlled by the <b>range</b> option.<br/><br/>This API call return the full script run result; however, retrieve all result may be slow and result in a large response. It is suggested to retrieve the summary list first to determine the proper range.'
+        description: 'Get the latest of script logs of a device. The amount of data to retrieve can be controlled by the range option.<br/><br/>This API call return the full script run result; however, retrieve all result may be slow and result in a large response. It is suggested to retrieve the summary list first to determine the proper range.'
         api_categories: [api_tag0]
         api_tag0:
 

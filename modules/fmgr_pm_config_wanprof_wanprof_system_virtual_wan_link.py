@@ -70,9 +70,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Configure redundant internet connections using SD-WAN (formerly virtual WAN link).'
@@ -83,8 +83,8 @@ options:
                     type: str
                     description: 'Enable/disable SD-WAN Internet connection status checking (failure detection).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 health-check:
                     -
                         _dynamic-server:
@@ -93,8 +93,8 @@ options:
                             type: str
                             description: 'Address mode (IPv4 or IPv6).'
                             choices:
-                                - ipv4
-                                - ipv6
+                                - 'ipv4'
+                                - 'ipv6'
                         failtime:
                             type: int
                             description: 'Number of failures before server is considered lost (1 - 3600, default = 5).'
@@ -129,12 +129,12 @@ options:
                             type: str
                             description: 'Protocol used to determine if the FortiGate can communicate with the server.'
                             choices:
-                                - ping
-                                - tcp-echo
-                                - udp-echo
-                                - http
-                                - twamp
-                                - ping6
+                                - 'ping'
+                                - 'tcp-echo'
+                                - 'udp-echo'
+                                - 'http'
+                                - 'twamp'
+                                - 'ping6'
                         recoverytime:
                             type: int
                             description: 'Number of successful responses received before server is considered recovered (1 - 3600, default = 5).'
@@ -142,8 +142,8 @@ options:
                             type: str
                             description: 'Twamp controller security mode.'
                             choices:
-                                - none
-                                - authentication
+                                - 'none'
+                                - 'authentication'
                         server:
                             -
                                 type: str
@@ -162,9 +162,9 @@ options:
                                     -
                                         type: str
                                         choices:
-                                            - latency
-                                            - jitter
-                                            - packet-loss
+                                            - 'latency'
+                                            - 'jitter'
+                                            - 'packet-loss'
                                 packetloss-threshold:
                                     type: int
                                     description: 'Packet loss for SLA to make decision in percentage. (0 - 100, default = 0).'
@@ -190,23 +190,23 @@ options:
                             type: str
                             description: 'Enable/disable update cascade interface.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         update-static-route:
                             type: str
                             description: 'Enable/disable updating the static route.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                 load-balance-mode:
                     type: str
                     description: 'Algorithm or mode to use for load balancing Internet traffic to SD-WAN members.'
                     choices:
-                        - source-ip-based
-                        - weight-based
-                        - usage-based
-                        - source-dest-ip-based
-                        - measured-volume-based
+                        - 'source-ip-based'
+                        - 'weight-based'
+                        - 'usage-based'
+                        - 'source-dest-ip-based'
+                        - 'measured-volume-based'
                 members:
                     -
                         _dynamic-member:
@@ -245,8 +245,8 @@ options:
                             type: str
                             description: 'Enable/disable this interface in the SD-WAN.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         volume-ratio:
                             type: int
                             description: 'Measured volume ratio (this value / sum of all values = percentage of link volume, 0 - 255).'
@@ -259,8 +259,8 @@ options:
                             type: str
                             description: 'Address mode (IPv4 or IPv6).'
                             choices:
-                                - ipv4
-                                - ipv6
+                                - 'ipv4'
+                                - 'ipv6'
                         bandwidth-weight:
                             type: int
                             description: 'Coefficient of reciprocal of available bidirectional bandwidth in the formula of custom-profile-1.'
@@ -268,14 +268,14 @@ options:
                             type: str
                             description: 'Enable/disable use of SD-WAN as default service.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         dscp-forward:
                             type: str
                             description: 'Enable/disable forward traffic DSCP tag.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         dscp-forward-tag:
                             type: str
                             description: 'Forward traffic DSCP tag.'
@@ -283,8 +283,8 @@ options:
                             type: str
                             description: 'Enable/disable reverse traffic DSCP tag.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         dscp-reverse-tag:
                             type: str
                             description: 'Reverse traffic DSCP tag.'
@@ -295,8 +295,8 @@ options:
                             type: str
                             description: 'Enable/disable negation of destination address match.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         dst6:
                             type: str
                             description: 'Destination address6 name.'
@@ -307,8 +307,8 @@ options:
                             type: str
                             description: 'Enable/disable SD-WAN service gateway.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         groups:
                             type: str
                             description: 'User groups.'
@@ -325,8 +325,8 @@ options:
                             type: str
                             description: 'Enable/disable use of Internet service for application-based load balancing.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         internet-service-ctrl:
                             -
                                 type: int
@@ -355,13 +355,13 @@ options:
                             type: str
                             description: 'Link cost factor.'
                             choices:
-                                - latency
-                                - jitter
-                                - packet-loss
-                                - inbandwidth
-                                - outbandwidth
-                                - bibandwidth
-                                - custom-profile-1
+                                - 'latency'
+                                - 'jitter'
+                                - 'packet-loss'
+                                - 'inbandwidth'
+                                - 'outbandwidth'
+                                - 'bibandwidth'
+                                - 'custom-profile-1'
                         link-cost-threshold:
                             type: int
                             description: 'Percentage threshold change of link cost values that will result in policy route regeneration (0 - 10000000, default = 10).'
@@ -372,11 +372,11 @@ options:
                             type: str
                             description: 'Control how the priority rule sets the priority of interfaces in the SD-WAN.'
                             choices:
-                                - auto
-                                - manual
-                                - priority
-                                - sla
-                                - load-balance
+                                - 'auto'
+                                - 'manual'
+                                - 'priority'
+                                - 'sla'
+                                - 'load-balance'
                         name:
                             type: str
                             description: 'Priority rule name.'
@@ -410,8 +410,8 @@ options:
                             type: str
                             description: 'Enable/disable negation of source address match.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         src6:
                             type: str
                             description: 'Source address6 name.'
@@ -422,8 +422,8 @@ options:
                             type: str
                             description: 'Enable/disable SD-WAN service.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         tos:
                             type: str
                             description: 'Type of service bit pattern.'
@@ -437,8 +437,8 @@ options:
                     type: str
                     description: 'Enable/disable SD-WAN.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

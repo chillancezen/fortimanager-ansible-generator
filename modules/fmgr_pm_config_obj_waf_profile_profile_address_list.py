@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Black address list and white address list.'
@@ -87,21 +87,21 @@ options:
                     type: str
                     description: 'Enable/disable logging on blocked addresses.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 severity:
                     type: str
                     description: 'Severity.'
                     choices:
-                        - low
-                        - medium
-                        - high
+                        - 'low'
+                        - 'medium'
+                        - 'high'
                 status:
                     type: str
                     description: 'Status.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 trusted-address:
                     type: str
                     description: 'Trusted address.'

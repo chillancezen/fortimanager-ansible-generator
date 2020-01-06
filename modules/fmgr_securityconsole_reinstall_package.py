@@ -57,18 +57,18 @@ options:
                     -
                         type: str
                         choices:
-                            - none
-                            - cp_all_objs
-                            - preview
-                            - generate_rev
-                            - copy_assigned_pkg
-                            - unassign
-                            - ifpolicy_only
-                            - no_ifpolicy
-                            - objs_only
-                            - auto_lock_ws
-                            - check_pkg_st
-                            - copy_only
+                            - 'none'
+                            - 'cp_all_objs'
+                            - 'preview'
+                            - 'generate_rev'
+                            - 'copy_assigned_pkg'
+                            - 'unassign'
+                            - 'ifpolicy_only'
+                            - 'no_ifpolicy'
+                            - 'objs_only'
+                            - 'auto_lock_ws'
+                            - 'check_pkg_st'
+                            - 'copy_only'
                 target:
                     -
                         pkg:

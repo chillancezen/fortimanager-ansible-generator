@@ -74,8 +74,8 @@ options:
                             type: str
                             description: 'Reject connection or mark as spam email.'
                             choices:
-                                - spam
-                                - reject
+                                - 'spam'
+                                - 'reject'
                         id:
                             type: int
                             description: 'DNSBL/ORBL entry ID.'
@@ -86,8 +86,8 @@ options:
                             type: str
                             description: 'Enable/disable status.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                 id:
                     type: int
                     description: 'ID.'
@@ -111,9 +111,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

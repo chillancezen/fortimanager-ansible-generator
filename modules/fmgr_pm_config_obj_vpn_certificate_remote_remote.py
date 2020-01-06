@@ -72,8 +72,8 @@ options:
                     type: str
                     description: 'Either the global or VDOM IP address range for the remote certificate.'
                     choices:
-                        - global
-                        - vdom
+                        - 'global'
+                        - 'vdom'
                 remote:
                     type: str
                     description: 'Remote certificate.'
@@ -81,10 +81,10 @@ options:
                     type: str
                     description: 'Remote certificate source type.'
                     choices:
-                        - factory
-                        - user
-                        - bundle
-                        - fortiguard
+                        - 'factory'
+                        - 'user'
+                        - 'bundle'
+                        - 'fortiguard'
     schema_object1:
         methods: [delete]
         description: 'Remote certificate as a PEM file.'
@@ -102,9 +102,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

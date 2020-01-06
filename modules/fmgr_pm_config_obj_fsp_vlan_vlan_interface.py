@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: ''
@@ -87,62 +87,62 @@ options:
                 algorithm:
                     type: str
                     choices:
-                        - L2
-                        - L3
-                        - L4
+                        - 'L2'
+                        - 'L3'
+                        - 'L4'
                 alias:
                     type: str
                 allowaccess:
                     -
                         type: str
                         choices:
-                            - https
-                            - ping
-                            - ssh
-                            - snmp
-                            - http
-                            - telnet
-                            - fgfm
-                            - auto-ipsec
-                            - radius-acct
-                            - probe-response
-                            - capwap
-                            - dnp
-                            - ftm
+                            - 'https'
+                            - 'ping'
+                            - 'ssh'
+                            - 'snmp'
+                            - 'http'
+                            - 'telnet'
+                            - 'fgfm'
+                            - 'auto-ipsec'
+                            - 'radius-acct'
+                            - 'probe-response'
+                            - 'capwap'
+                            - 'dnp'
+                            - 'ftm'
                 ap-discover:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 arpforward:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 atm-protocol:
                     type: str
                     choices:
-                        - none
-                        - ipoa
+                        - 'none'
+                        - 'ipoa'
                 auth-type:
                     type: str
                     choices:
-                        - auto
-                        - pap
-                        - chap
-                        - mschapv1
-                        - mschapv2
+                        - 'auto'
+                        - 'pap'
+                        - 'chap'
+                        - 'mschapv1'
+                        - 'mschapv2'
                 auto-auth-extension-device:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 bfd:
                     type: str
                     choices:
-                        - global
-                        - enable
-                        - disable
+                        - 'global'
+                        - 'enable'
+                        - 'disable'
                 bfd-desired-min-tx:
                     type: int
                 bfd-detect-mult:
@@ -152,13 +152,13 @@ options:
                 broadcast-forticlient-discovery:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 broadcast-forward:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 captive-portal:
                     type: int
                 cli-conn-status:
@@ -168,13 +168,13 @@ options:
                 ddns:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ddns-auth:
                     type: str
                     choices:
-                        - disable
-                        - tsig
+                        - 'disable'
+                        - 'tsig'
                 ddns-domain:
                     type: str
                 ddns-key:
@@ -187,16 +187,16 @@ options:
                 ddns-server:
                     type: str
                     choices:
-                        - dhs.org
-                        - dyndns.org
-                        - dyns.net
-                        - tzo.com
-                        - ods.org
-                        - vavic.com
-                        - now.net.cn
-                        - dipdns.net
-                        - easydns.com
-                        - genericDDNS
+                        - 'dhs.org'
+                        - 'dyndns.org'
+                        - 'dyns.net'
+                        - 'tzo.com'
+                        - 'ods.org'
+                        - 'vavic.com'
+                        - 'now.net.cn'
+                        - 'dipdns.net'
+                        - 'easydns.com'
+                        - 'genericDDNS'
                 ddns-server-ip:
                     type: str
                 ddns-sn:
@@ -210,13 +210,13 @@ options:
                 dedicated-to:
                     type: str
                     choices:
-                        - none
-                        - management
+                        - 'none'
+                        - 'management'
                 defaultgw:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 description:
                     type: str
                 detected-peer-mtu:
@@ -225,9 +225,9 @@ options:
                     -
                         type: str
                         choices:
-                            - ping
-                            - tcp-echo
-                            - udp-echo
+                            - 'ping'
+                            - 'tcp-echo'
+                            - 'udp-echo'
                 detectserver:
                     type: str
                 device-access-list:
@@ -235,23 +235,23 @@ options:
                 device-identification:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 device-identification-active-scan:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 device-netscan:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 device-user-identification:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 devindex:
                     type: int
                 dhcp-client-identifier:
@@ -259,21 +259,21 @@ options:
                 dhcp-relay-agent-option:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dhcp-relay-ip:
                     -
                         type: str
                 dhcp-relay-service:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dhcp-relay-type:
                     type: str
                     choices:
-                        - regular
-                        - ipsec
+                        - 'regular'
+                        - 'ipsec'
                 dhcp-renew-time:
                     type: int
                 disc-retry-timeout:
@@ -285,43 +285,43 @@ options:
                 dns-query:
                     type: str
                     choices:
-                        - disable
-                        - recursive
-                        - non-recursive
+                        - 'disable'
+                        - 'recursive'
+                        - 'non-recursive'
                 dns-server-override:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 drop-fragment:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 drop-overlapped-fragment:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 egress-cos:
                     type: str
                     choices:
-                        - disable
-                        - cos0
-                        - cos1
-                        - cos2
-                        - cos3
-                        - cos4
-                        - cos5
-                        - cos6
-                        - cos7
+                        - 'disable'
+                        - 'cos0'
+                        - 'cos1'
+                        - 'cos2'
+                        - 'cos3'
+                        - 'cos4'
+                        - 'cos5'
+                        - 'cos6'
+                        - 'cos7'
                 egress-shaping-profile:
                     type: str
                 endpoint-compliance:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 estimated-downstream-bandwidth:
                     type: int
                 estimated-upstream-bandwidth:
@@ -329,171 +329,171 @@ options:
                 explicit-ftp-proxy:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 explicit-web-proxy:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 external:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fail-action-on-extender:
                     type: str
                     choices:
-                        - soft-restart
-                        - hard-restart
-                        - reboot
+                        - 'soft-restart'
+                        - 'hard-restart'
+                        - 'reboot'
                 fail-alert-interfaces:
                     type: str
                 fail-alert-method:
                     type: str
                     choices:
-                        - link-failed-signal
-                        - link-down
+                        - 'link-failed-signal'
+                        - 'link-down'
                 fail-detect:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fail-detect-option:
                     -
                         type: str
                         choices:
-                            - detectserver
-                            - link-down
+                            - 'detectserver'
+                            - 'link-down'
                 fdp:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fortiheartbeat:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fortilink:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fortilink-backup-link:
                     type: int
                 fortilink-split-interface:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fortilink-stacking:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 forward-domain:
                     type: int
                 forward-error-correction:
                     type: str
                     choices:
-                        - disable
-                        - enable
-                        - rs-fec
-                        - base-r-fec
+                        - 'disable'
+                        - 'enable'
+                        - 'rs-fec'
+                        - 'base-r-fec'
                 fp-anomaly:
                     -
                         type: str
                         choices:
-                            - drop_tcp_fin_noack
-                            - pass_winnuke
-                            - pass_tcpland
-                            - pass_udpland
-                            - pass_icmpland
-                            - pass_ipland
-                            - pass_iprr
-                            - pass_ipssrr
-                            - pass_iplsrr
-                            - pass_ipstream
-                            - pass_ipsecurity
-                            - pass_iptimestamp
-                            - pass_ipunknown_option
-                            - pass_ipunknown_prot
-                            - pass_icmp_frag
-                            - pass_tcp_no_flag
-                            - pass_tcp_fin_noack
-                            - drop_winnuke
-                            - drop_tcpland
-                            - drop_udpland
-                            - drop_icmpland
-                            - drop_ipland
-                            - drop_iprr
-                            - drop_ipssrr
-                            - drop_iplsrr
-                            - drop_ipstream
-                            - drop_ipsecurity
-                            - drop_iptimestamp
-                            - drop_ipunknown_option
-                            - drop_ipunknown_prot
-                            - drop_icmp_frag
-                            - drop_tcp_no_flag
+                            - 'drop_tcp_fin_noack'
+                            - 'pass_winnuke'
+                            - 'pass_tcpland'
+                            - 'pass_udpland'
+                            - 'pass_icmpland'
+                            - 'pass_ipland'
+                            - 'pass_iprr'
+                            - 'pass_ipssrr'
+                            - 'pass_iplsrr'
+                            - 'pass_ipstream'
+                            - 'pass_ipsecurity'
+                            - 'pass_iptimestamp'
+                            - 'pass_ipunknown_option'
+                            - 'pass_ipunknown_prot'
+                            - 'pass_icmp_frag'
+                            - 'pass_tcp_no_flag'
+                            - 'pass_tcp_fin_noack'
+                            - 'drop_winnuke'
+                            - 'drop_tcpland'
+                            - 'drop_udpland'
+                            - 'drop_icmpland'
+                            - 'drop_ipland'
+                            - 'drop_iprr'
+                            - 'drop_ipssrr'
+                            - 'drop_iplsrr'
+                            - 'drop_ipstream'
+                            - 'drop_ipsecurity'
+                            - 'drop_iptimestamp'
+                            - 'drop_ipunknown_option'
+                            - 'drop_ipunknown_prot'
+                            - 'drop_icmp_frag'
+                            - 'drop_tcp_no_flag'
                 fp-disable:
                     -
                         type: str
                         choices:
-                            - all
-                            - ipsec
-                            - none
+                            - 'all'
+                            - 'ipsec'
+                            - 'none'
                 gateway-address:
                     type: str
                 gi-gk:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 gwaddr:
                     type: str
                 gwdetect:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ha-priority:
                     type: int
                 icmp-accept-redirect:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 icmp-redirect:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 icmp-send-redirect:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ident-accept:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 idle-timeout:
                     type: int
                 if-mdix:
                     type: str
                     choices:
-                        - auto
-                        - normal
-                        - crossover
+                        - 'auto'
+                        - 'normal'
+                        - 'crossover'
                 if-media:
                     type: str
                     choices:
-                        - auto
-                        - copper
-                        - fiber
+                        - 'auto'
+                        - 'copper'
+                        - 'fiber'
                 in-force-vlan-cos:
                     type: int
                 inbandwidth:
@@ -501,15 +501,15 @@ options:
                 ingress-cos:
                     type: str
                     choices:
-                        - disable
-                        - cos0
-                        - cos1
-                        - cos2
-                        - cos3
-                        - cos4
-                        - cos5
-                        - cos6
-                        - cos7
+                        - 'disable'
+                        - 'cos0'
+                        - 'cos1'
+                        - 'cos2'
+                        - 'cos3'
+                        - 'cos4'
+                        - 'cos5'
+                        - 'cos6'
+                        - 'cos7'
                 ingress-spillover-threshold:
                     type: int
                 internal:
@@ -519,40 +519,40 @@ options:
                 ipmac:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ips-sniffer-mode:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ipunnumbered:
                     type: str
                 ipv6:
                     autoconf:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dhcp6-client-options:
                         -
                             type: str
                             choices:
-                                - rapid
-                                - iapd
-                                - iana
-                                - dns
-                                - dnsname
+                                - 'rapid'
+                                - 'iapd'
+                                - 'iana'
+                                - 'dns'
+                                - 'dnsname'
                     dhcp6-information-request:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dhcp6-prefix-delegation:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dhcp6-prefix-hint:
                         type: str
                     dhcp6-prefix-hint-plt:
@@ -564,33 +564,33 @@ options:
                     dhcp6-relay-service:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dhcp6-relay-type:
                         type: str
                         choices:
-                            - regular
+                            - 'regular'
                     ip6-address:
                         type: str
                     ip6-allowaccess:
                         -
                             type: str
                             choices:
-                                - https
-                                - ping
-                                - ssh
-                                - snmp
-                                - http
-                                - telnet
-                                - fgfm
-                                - capwap
+                                - 'https'
+                                - 'ping'
+                                - 'ssh'
+                                - 'snmp'
+                                - 'http'
+                                - 'telnet'
+                                - 'fgfm'
+                                - 'capwap'
                     ip6-default-life:
                         type: int
                     ip6-dns-server-override:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ip6-hop-limit:
                         type: int
                     ip6-link-mtu:
@@ -598,8 +598,8 @@ options:
                     ip6-manage-flag:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ip6-max-interval:
                         type: int
                     ip6-min-interval:
@@ -607,15 +607,15 @@ options:
                     ip6-mode:
                         type: str
                         choices:
-                            - static
-                            - dhcp
-                            - pppoe
-                            - delegated
+                            - 'static'
+                            - 'dhcp'
+                            - 'pppoe'
+                            - 'delegated'
                     ip6-other-flag:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ip6-reachable-time:
                         type: int
                     ip6-retrans-time:
@@ -623,8 +623,8 @@ options:
                     ip6-send-adv:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ip6-subnet:
                         type: str
                     ip6-upstream-interface:
@@ -636,8 +636,8 @@ options:
                     nd-mode:
                         type: str
                         choices:
-                            - basic
-                            - SEND-compatible
+                            - 'basic'
+                            - 'SEND-compatible'
                     nd-security-level:
                         type: int
                     nd-timestamp-delta:
@@ -649,34 +649,34 @@ options:
                     vrrp-virtual-mac6:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                 l2forward:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 l2tp-client:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 lacp-ha-slave:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 lacp-mode:
                     type: str
                     choices:
-                        - static
-                        - passive
-                        - active
+                        - 'static'
+                        - 'passive'
+                        - 'active'
                 lacp-speed:
                     type: str
                     choices:
-                        - slow
-                        - fast
+                        - 'slow'
+                        - 'fast'
                 lcp-echo-interval:
                     type: int
                 lcp-max-echo-fails:
@@ -686,27 +686,27 @@ options:
                 listen-forticlient-connection:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 lldp-network-policy:
                     type: str
                 lldp-reception:
                     type: str
                     choices:
-                        - disable
-                        - enable
-                        - vdom
+                        - 'disable'
+                        - 'enable'
+                        - 'vdom'
                 lldp-transmission:
                     type: str
                     choices:
-                        - enable
-                        - disable
-                        - vdom
+                        - 'enable'
+                        - 'disable'
+                        - 'vdom'
                 log:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 macaddr:
                     type: str
                 management-ip:
@@ -718,17 +718,17 @@ options:
                 mediatype:
                     type: str
                     choices:
-                        - serdes-sfp
-                        - sgmii-sfp
-                        - cfp2-sr10
-                        - cfp2-lr4
-                        - serdes-copper-sfp
-                        - sr
-                        - cr
-                        - lr
-                        - qsfp28-sr4
-                        - qsfp28-lr4
-                        - qsfp28-cr4
+                        - 'serdes-sfp'
+                        - 'sgmii-sfp'
+                        - 'cfp2-sr10'
+                        - 'cfp2-lr4'
+                        - 'serdes-copper-sfp'
+                        - 'sr'
+                        - 'cr'
+                        - 'lr'
+                        - 'qsfp28-sr4'
+                        - 'qsfp28-lr4'
+                        - 'qsfp28-cr4'
                 member:
                     type: str
                 min-links:
@@ -736,58 +736,58 @@ options:
                 min-links-down:
                     type: str
                     choices:
-                        - operational
-                        - administrative
+                        - 'operational'
+                        - 'administrative'
                 mode:
                     type: str
                     choices:
-                        - static
-                        - dhcp
-                        - pppoe
-                        - pppoa
-                        - ipoa
-                        - eoa
+                        - 'static'
+                        - 'dhcp'
+                        - 'pppoe'
+                        - 'pppoa'
+                        - 'ipoa'
+                        - 'eoa'
                 mtu:
                     type: int
                 mtu-override:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mux-type:
                     type: str
                     choices:
-                        - llc-encaps
-                        - vc-encaps
+                        - 'llc-encaps'
+                        - 'vc-encaps'
                 name:
                     type: str
                 ndiscforward:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 netbios-forward:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 netflow-sampler:
                     type: str
                     choices:
-                        - disable
-                        - tx
-                        - rx
-                        - both
+                        - 'disable'
+                        - 'tx'
+                        - 'rx'
+                        - 'both'
                 npu-fastpath:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 nst:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 out-force-vlan-cos:
                     type: int
                 outbandwidth:
@@ -802,36 +802,36 @@ options:
                 phy-mode:
                     type: str
                     choices:
-                        - auto
-                        - adsl
-                        - vdsl
+                        - 'auto'
+                        - 'adsl'
+                        - 'vdsl'
                 ping-serv-status:
                     type: int
                 poe:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 polling-interval:
                     type: int
                 pppoe-unnumbered-negotiate:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 pptp-auth-type:
                     type: str
                     choices:
-                        - auto
-                        - pap
-                        - chap
-                        - mschapv1
-                        - mschapv2
+                        - 'auto'
+                        - 'pap'
+                        - 'chap'
+                        - 'mschapv1'
+                        - 'mschapv2'
                 pptp-client:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 pptp-password:
                     -
                         type: str
@@ -844,20 +844,20 @@ options:
                 preserve-session-route:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 priority:
                     type: int
                 priority-override:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 proxy-captive-portal:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 redundant-interface:
                     type: str
                 remote-ip:
@@ -867,67 +867,67 @@ options:
                 retransmission:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 role:
                     type: str
                     choices:
-                        - lan
-                        - wan
-                        - dmz
-                        - undefined
+                        - 'lan'
+                        - 'wan'
+                        - 'dmz'
+                        - 'undefined'
                 sample-direction:
                     type: str
                     choices:
-                        - rx
-                        - tx
-                        - both
+                        - 'rx'
+                        - 'tx'
+                        - 'both'
                 sample-rate:
                     type: int
                 scan-botnet-connections:
                     type: str
                     choices:
-                        - disable
-                        - block
-                        - monitor
+                        - 'disable'
+                        - 'block'
+                        - 'monitor'
                 secondary-IP:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 secondaryip:
                     -
                         allowaccess:
                             -
                                 type: str
                                 choices:
-                                    - https
-                                    - ping
-                                    - ssh
-                                    - snmp
-                                    - http
-                                    - telnet
-                                    - fgfm
-                                    - auto-ipsec
-                                    - radius-acct
-                                    - probe-response
-                                    - capwap
-                                    - dnp
-                                    - ftm
+                                    - 'https'
+                                    - 'ping'
+                                    - 'ssh'
+                                    - 'snmp'
+                                    - 'http'
+                                    - 'telnet'
+                                    - 'fgfm'
+                                    - 'auto-ipsec'
+                                    - 'radius-acct'
+                                    - 'probe-response'
+                                    - 'capwap'
+                                    - 'dnp'
+                                    - 'ftm'
                         detectprotocol:
                             -
                                 type: str
                                 choices:
-                                    - ping
-                                    - tcp-echo
-                                    - udp-echo
+                                    - 'ping'
+                                    - 'tcp-echo'
+                                    - 'udp-echo'
                         detectserver:
                             type: str
                         gwdetect:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         ha-priority:
                             type: int
                         id:
@@ -945,10 +945,10 @@ options:
                 security-8021x-mode:
                     type: str
                     choices:
-                        - default
-                        - dynamic-vlan
-                        - fallback
-                        - slave
+                        - 'default'
+                        - 'dynamic-vlan'
+                        - 'fallback'
+                        - 'slave'
                 security-exempt-list:
                     type: str
                 security-external-logout:
@@ -960,15 +960,15 @@ options:
                 security-mac-auth-bypass:
                     type: str
                     choices:
-                        - disable
-                        - enable
-                        - mac-auth-only
+                        - 'disable'
+                        - 'enable'
+                        - 'mac-auth-only'
                 security-mode:
                     type: str
                     choices:
-                        - none
-                        - captive-portal
-                        - 802.1X
+                        - 'none'
+                        - 'captive-portal'
+                        - '802.1X'
                 security-redirect-url:
                     type: str
                 service-name:
@@ -976,71 +976,71 @@ options:
                 sflow-sampler:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 speed:
                     type: str
                     choices:
-                        - auto
-                        - 10full
-                        - 10half
-                        - 100full
-                        - 100half
-                        - 1000full
-                        - 1000half
-                        - 10000full
-                        - 1000auto
-                        - 10000auto
-                        - 40000full
-                        - 100Gfull
-                        - 25000full
-                        - 40000auto
-                        - 25000auto
-                        - 100Gauto
+                        - 'auto'
+                        - '10full'
+                        - '10half'
+                        - '100full'
+                        - '100half'
+                        - '1000full'
+                        - '1000half'
+                        - '10000full'
+                        - '1000auto'
+                        - '10000auto'
+                        - '40000full'
+                        - '100Gfull'
+                        - '25000full'
+                        - '40000auto'
+                        - '25000auto'
+                        - '100Gauto'
                 spillover-threshold:
                     type: int
                 src-check:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 status:
                     type: str
                     choices:
-                        - down
-                        - up
+                        - 'down'
+                        - 'up'
                 stp:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 stp-ha-slave:
                     type: str
                     choices:
-                        - disable
-                        - enable
-                        - priority-adjust
+                        - 'disable'
+                        - 'enable'
+                        - 'priority-adjust'
                 stpforward:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 stpforward-mode:
                     type: str
                     choices:
-                        - rpl-all-ext-id
-                        - rpl-bridge-ext-id
-                        - rpl-nothing
+                        - 'rpl-all-ext-id'
+                        - 'rpl-bridge-ext-id'
+                        - 'rpl-nothing'
                 strip-priority-vlan-tag:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 subst:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 substitute-dst-mac:
                     type: str
                 switch:
@@ -1048,38 +1048,38 @@ options:
                 switch-controller-access-vlan:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 switch-controller-arp-inspection:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 switch-controller-auth:
                     type: str
                     choices:
-                        - radius
-                        - usergroup
+                        - 'radius'
+                        - 'usergroup'
                 switch-controller-dhcp-snooping:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 switch-controller-dhcp-snooping-option82:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 switch-controller-dhcp-snooping-verify-mac:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 switch-controller-igmp-snooping:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 switch-controller-learning-limit:
                     type: int
                 switch-controller-radius-server:
@@ -1089,15 +1089,15 @@ options:
                 tc-mode:
                     type: str
                     choices:
-                        - ptm
-                        - atm
+                        - 'ptm'
+                        - 'atm'
                 tcp-mss:
                     type: int
                 trunk:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 trust-ip-1:
                     type: str
                 trust-ip-2:
@@ -1113,26 +1113,26 @@ options:
                 type:
                     type: str
                     choices:
-                        - physical
-                        - vlan
-                        - aggregate
-                        - redundant
-                        - tunnel
-                        - wireless
-                        - vdom-link
-                        - loopback
-                        - switch
-                        - hard-switch
-                        - hdlc
-                        - vap-switch
-                        - wl-mesh
-                        - fortilink
-                        - switch-vlan
-                        - fctrl-trunk
-                        - tdm
-                        - fext-wan
-                        - vxlan
-                        - emac-vlan
+                        - 'physical'
+                        - 'vlan'
+                        - 'aggregate'
+                        - 'redundant'
+                        - 'tunnel'
+                        - 'wireless'
+                        - 'vdom-link'
+                        - 'loopback'
+                        - 'switch'
+                        - 'hard-switch'
+                        - 'hdlc'
+                        - 'vap-switch'
+                        - 'wl-mesh'
+                        - 'fortilink'
+                        - 'switch-vlan'
+                        - 'fctrl-trunk'
+                        - 'tdm'
+                        - 'fext-wan'
+                        - 'vxlan'
+                        - 'emac-vlan'
                 username:
                     type: str
                 vci:
@@ -1140,15 +1140,15 @@ options:
                 vectoring:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 vindex:
                     type: int
                 vlanforward:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 vlanid:
                     type: int
                 vpi:
@@ -1160,20 +1160,20 @@ options:
                         accept-mode:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         adv-interval:
                             type: int
                         ignore-default-route:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         preempt:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         priority:
                             type: int
                         start-time:
@@ -1181,13 +1181,13 @@ options:
                         status:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         version:
                             type: str
                             choices:
-                                - 2
-                                - 3
+                                - '2'
+                                - '3'
                         vrdst:
                             -
                                 type: str
@@ -1202,13 +1202,13 @@ options:
                 vrrp-virtual-mac:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 wccp:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 weight:
                     type: int
                 wifi-5g-threshold:
@@ -1216,41 +1216,41 @@ options:
                 wifi-acl:
                     type: str
                     choices:
-                        - deny
-                        - allow
+                        - 'deny'
+                        - 'allow'
                 wifi-ap-band:
                     type: str
                     choices:
-                        - any
-                        - 5g-preferred
-                        - 5g-only
+                        - 'any'
+                        - '5g-preferred'
+                        - '5g-only'
                 wifi-auth:
                     type: str
                     choices:
-                        - PSK
-                        - RADIUS
-                        - radius
-                        - usergroup
+                        - 'PSK'
+                        - 'RADIUS'
+                        - 'radius'
+                        - 'usergroup'
                 wifi-auto-connect:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 wifi-auto-save:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 wifi-broadcast-ssid:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 wifi-encrypt:
                     type: str
                     choices:
-                        - TKIP
-                        - AES
+                        - 'TKIP'
+                        - 'AES'
                 wifi-fragment-threshold:
                     type: int
                 wifi-key:
@@ -1261,8 +1261,8 @@ options:
                 wifi-mac-filter:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 wifi-passphrase:
                     -
                         type: str
@@ -1273,23 +1273,23 @@ options:
                 wifi-security:
                     type: str
                     choices:
-                        - None
-                        - WEP64
-                        - wep64
-                        - WEP128
-                        - wep128
-                        - WPA_PSK
-                        - WPA_RADIUS
-                        - WPA
-                        - WPA2
-                        - WPA2_AUTO
-                        - open
-                        - wpa-personal
-                        - wpa-enterprise
-                        - wpa-only-personal
-                        - wpa-only-enterprise
-                        - wpa2-only-personal
-                        - wpa2-only-enterprise
+                        - 'None'
+                        - 'WEP64'
+                        - 'wep64'
+                        - 'WEP128'
+                        - 'wep128'
+                        - 'WPA_PSK'
+                        - 'WPA_RADIUS'
+                        - 'WPA'
+                        - 'WPA2'
+                        - 'WPA2_AUTO'
+                        - 'open'
+                        - 'wpa-personal'
+                        - 'wpa-enterprise'
+                        - 'wpa-only-personal'
+                        - 'wpa-only-enterprise'
+                        - 'wpa2-only-personal'
+                        - 'wpa2-only-enterprise'
                 wifi-ssid:
                     type: str
                 wifi-usergroup:

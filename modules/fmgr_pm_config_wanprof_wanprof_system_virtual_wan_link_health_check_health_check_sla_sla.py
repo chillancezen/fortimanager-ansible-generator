@@ -81,9 +81,9 @@ options:
                     -
                         type: str
                         choices:
-                            - latency
-                            - jitter
-                            - packet-loss
+                            - 'latency'
+                            - 'jitter'
+                            - 'packet-loss'
                 packetloss-threshold:
                     type: int
                     description: 'Packet loss for SLA to make decision in percentage. (0 - 100, default = 0).'
@@ -104,9 +104,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

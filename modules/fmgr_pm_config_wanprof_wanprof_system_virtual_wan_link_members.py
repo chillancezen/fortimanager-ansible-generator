@@ -101,8 +101,8 @@ options:
                         type: str
                         description: 'Enable/disable this interface in the SD-WAN.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     volume-ratio:
                         type: int
                         description: 'Measured volume ratio (this value / sum of all values = percentage of link volume, 0 - 255).'
@@ -122,20 +122,20 @@ options:
                     -
                         type: str
                         choices:
-                            - _dynamic-member
-                            - comment
-                            - gateway
-                            - gateway6
-                            - ingress-spillover-threshold
-                            - interface
-                            - priority
-                            - seq-num
-                            - source
-                            - source6
-                            - spillover-threshold
-                            - status
-                            - volume-ratio
-                            - weight
+                            - '_dynamic-member'
+                            - 'comment'
+                            - 'gateway'
+                            - 'gateway6'
+                            - 'ingress-spillover-threshold'
+                            - 'interface'
+                            - 'priority'
+                            - 'seq-num'
+                            - 'source'
+                            - 'source6'
+                            - 'spillover-threshold'
+                            - 'status'
+                            - 'volume-ratio'
+                            - 'weight'
             filter:
                 -
                     type: str
@@ -154,11 +154,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

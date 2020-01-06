@@ -73,8 +73,8 @@ options:
                                 type: str
                                 description: 'Type of address.'
                                 choices:
-                                    - ipv4
-                                    - ipv6
+                                    - 'ipv4'
+                                    - 'ipv6'
                             id:
                                 type: int
                                 description: 'Trusted IP entry ID.'
@@ -88,8 +88,8 @@ options:
                                 type: str
                                 description: 'Enable/disable status.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                     id:
                         type: int
                         description: 'ID.'
@@ -109,9 +109,9 @@ options:
                     -
                         type: str
                         choices:
-                            - comment
-                            - id
-                            - name
+                            - 'comment'
+                            - 'id'
+                            - 'name'
             filter:
                 -
                     type: str
@@ -130,11 +130,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -71,7 +71,7 @@ Parameters
  <li><span class="li-head">bye-rate</span> - BYE request rate limit (per second, per policy). <span class="li-normal">type: int</span> </li>
  <li><span class="li-head">call-keepalive</span> - Continue tracking calls with no RTP for this many minutes. <span class="li-normal">type: int</span> </li>
  <li><span class="li-head">cancel-rate</span> - CANCEL request rate limit (per second, per policy). <span class="li-normal">type: int</span> </li>
- <li><span class="li-head">contact-fixup</span> - Fixup contact anyway even if contact's IP:port doesn't match session's IP:port. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
+ <li><span class="li-head">contact-fixup</span> - Fixup contact anyway even if contacts IP:port doesnt match sessions IP:port. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">hnt-restrict-source-ip</span> - Enable/disable restrict RTP source IP to be the same as SIP source IP when HNT is enabled. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">hosted-nat-traversal</span> - Hosted NAT Traversal (HNT). <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">info-rate</span> - INFO request rate limit (per second, per policy). <span class="li-normal">type: int</span> </li>
@@ -132,7 +132,7 @@ Parameters
  <li><span class="li-head">rtp</span> - Enable/disable create pinholes for RTP traffic to traverse firewall. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">ssl-algorithm</span> - Relative strength of encryption algorithms accepted in negotiation. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [high, medium, low]</span> </li>
  <li><span class="li-head">ssl-auth-client</span> - Require a client certificate and authenticate it with the peer/peergrp. <span class="li-normal">type: str</span> </li>
- <li><span class="li-head">ssl-auth-server</span> - Authenticate the server's certificate with the peer/peergrp. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">ssl-auth-server</span> - Authenticate the servers certificate with the peer/peergrp. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">ssl-client-certificate</span> - Name of Certificate to offer to server if requested. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">ssl-client-renegotiation</span> - Allow/block client renegotiation by server. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [allow, deny, secure]</span> </li>
  <li><span class="li-head">ssl-max-version</span> - Highest SSL/TLS version to negotiate. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [ssl-3.0, tls-1.0, tls-1.1, tls-1.2]</span> </li>
@@ -329,7 +329,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> bye-rate </span> - BYE request rate limit (per second, per policy). <span class="li-normal">type: int</span>  </li>
  <li> <span class="li-return"> call-keepalive </span> - Continue tracking calls with no RTP for this many minutes. <span class="li-normal">type: int</span>  </li>
  <li> <span class="li-return"> cancel-rate </span> - CANCEL request rate limit (per second, per policy). <span class="li-normal">type: int</span>  </li>
- <li> <span class="li-return"> contact-fixup </span> - Fixup contact anyway even if contact's IP:port doesn't match session's IP:port. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> contact-fixup </span> - Fixup contact anyway even if contacts IP:port doesnt match sessions IP:port. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> hnt-restrict-source-ip </span> - Enable/disable restrict RTP source IP to be the same as SIP source IP when HNT is enabled. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> hosted-nat-traversal </span> - Hosted NAT Traversal (HNT). <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> info-rate </span> - INFO request rate limit (per second, per policy). <span class="li-normal">type: int</span>  </li>
@@ -390,7 +390,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> rtp </span> - Enable/disable create pinholes for RTP traffic to traverse firewall. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> ssl-algorithm </span> - Relative strength of encryption algorithms accepted in negotiation. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> ssl-auth-client </span> - Require a client certificate and authenticate it with the peer/peergrp. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> ssl-auth-server </span> - Authenticate the server's certificate with the peer/peergrp. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> ssl-auth-server </span> - Authenticate the servers certificate with the peer/peergrp. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> ssl-client-certificate </span> - Name of Certificate to offer to server if requested. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> ssl-client-renegotiation </span> - Allow/block client renegotiation by server. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> ssl-max-version </span> - Highest SSL/TLS version to negotiate. <span class="li-normal">type: str</span>  </li>

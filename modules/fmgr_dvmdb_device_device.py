@@ -71,8 +71,8 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
+                    - 'object member'
+                    - 'chksum'
     schema_object1:
         methods: [set, update]
         description: 'Device table, most attributes are read-only and can only be changed internally. Refer to Device Manager Command module for API to add, delete, and manage devices.'
@@ -98,53 +98,53 @@ options:
                     type: str
                 conf_status:
                     type: str
-                    default: unknown
+                    default: 'unknown'
                     choices:
-                        - unknown
-                        - insync
-                        - outofsync
+                        - 'unknown'
+                        - 'insync'
+                        - 'outofsync'
                 conn_mode:
                     type: str
-                    default: passive
+                    default: 'passive'
                     choices:
-                        - active
-                        - passive
+                        - 'active'
+                        - 'passive'
                 conn_status:
                     type: str
-                    default: UNKNOWN
+                    default: 'UNKNOWN'
                     choices:
-                        - UNKNOWN
-                        - up
-                        - down
+                        - 'UNKNOWN'
+                        - 'up'
+                        - 'down'
                 db_status:
                     type: str
-                    default: unknown
+                    default: 'unknown'
                     choices:
-                        - unknown
-                        - nomod
-                        - mod
+                        - 'unknown'
+                        - 'nomod'
+                        - 'mod'
                 desc:
                     type: str
                 dev_status:
                     type: str
-                    default: unknown
+                    default: 'unknown'
                     choices:
-                        - none
-                        - unknown
-                        - checkedin
-                        - inprogress
-                        - installed
-                        - aborted
-                        - sched
-                        - retry
-                        - canceled
-                        - pending
-                        - retrieved
-                        - changed_conf
-                        - sync_fail
-                        - timeout
-                        - rev_revert
-                        - auto_updated
+                        - 'none'
+                        - 'unknown'
+                        - 'checkedin'
+                        - 'inprogress'
+                        - 'installed'
+                        - 'aborted'
+                        - 'sched'
+                        - 'retry'
+                        - 'canceled'
+                        - 'pending'
+                        - 'retrieved'
+                        - 'changed_conf'
+                        - 'sync_fail'
+                        - 'timeout'
+                        - 'rev_revert'
+                        - 'auto_updated'
                 fap_cnt:
                     type: int
                 faz.full_act:
@@ -161,27 +161,27 @@ options:
                     -
                         type: str
                         choices:
-                            - has_hdd
-                            - vdom_enabled
-                            - discover
-                            - reload
-                            - interim_build
-                            - offline_mode
-                            - is_model
-                            - fips_mode
-                            - linked_to_model
-                            - ip-conflict
-                            - faz-autosync
+                            - 'has_hdd'
+                            - 'vdom_enabled'
+                            - 'discover'
+                            - 'reload'
+                            - 'interim_build'
+                            - 'offline_mode'
+                            - 'is_model'
+                            - 'fips_mode'
+                            - 'linked_to_model'
+                            - 'ip-conflict'
+                            - 'faz-autosync'
                 foslic_cpu:
                     type: int
                     description: 'VM Meter vCPU count.'
                 foslic_dr_site:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description: 'VM Meter DR Site status.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 foslic_inst_time:
                     type: int
                     description: 'VM Meter first deployment time (in UNIX timestamp).'
@@ -193,24 +193,24 @@ options:
                     description: 'VM Meter device RAM size (in MB).'
                 foslic_type:
                     type: str
-                    default: temporary
+                    default: 'temporary'
                     description: 'VM Meter license type.'
                     choices:
-                        - temporary
-                        - trial
-                        - regular
-                        - trial_expired
+                        - 'temporary'
+                        - 'trial'
+                        - 'regular'
+                        - 'trial_expired'
                 foslic_utm:
                     -
                         type: str
                         choices:
-                            - fw
-                            - av
-                            - ips
-                            - app
-                            - url
-                            - utm
-                            - fwb
+                            - 'fw'
+                            - 'av'
+                            - 'ips'
+                            - 'app'
+                            - 'url'
+                            - 'utm'
+                            - 'fwb'
                 fsw_cnt:
                     type: int
                 ha_group_id:
@@ -219,16 +219,16 @@ options:
                     type: str
                 ha_mode:
                     type: str
-                    default: standalone
+                    default: 'standalone'
                     description: 'enabled - Value reserved for non-FOS HA devices.'
                     choices:
-                        - standalone
-                        - AP
-                        - AA
-                        - ELBC
-                        - DUAL
-                        - enabled
-                        - unknown
+                        - 'standalone'
+                        - 'AP'
+                        - 'AA'
+                        - 'ELBC'
+                        - 'DUAL'
+                        - 'enabled'
+                        - 'unknown'
                 hdisk_size:
                     type: int
                 hostname:
@@ -270,12 +270,12 @@ options:
                     type: str
                 mgmt_mode:
                     type: str
-                    default: unreg
+                    default: 'unreg'
                     choices:
-                        - unreg
-                        - fmg
-                        - faz
-                        - fmgfaz
+                        - 'unreg'
+                        - 'fmg'
+                        - 'faz'
+                        - 'fmgfaz'
                 mgt_vdom:
                     type: str
                 mr:
@@ -286,35 +286,35 @@ options:
                     description: 'Unique name for the device.'
                 os_type:
                     type: str
-                    default: unknown
+                    default: 'unknown'
                     choices:
-                        - unknown
-                        - fos
-                        - fsw
-                        - foc
-                        - fml
-                        - faz
-                        - fwb
-                        - fch
-                        - fct
-                        - log
-                        - fmg
-                        - fsa
-                        - fdd
-                        - fac
-                        - fpx
+                        - 'unknown'
+                        - 'fos'
+                        - 'fsw'
+                        - 'foc'
+                        - 'fml'
+                        - 'faz'
+                        - 'fwb'
+                        - 'fch'
+                        - 'fct'
+                        - 'log'
+                        - 'fmg'
+                        - 'fsa'
+                        - 'fdd'
+                        - 'fac'
+                        - 'fpx'
                 os_ver:
                     type: str
-                    default: unknown
+                    default: 'unknown'
                     choices:
-                        - unknown
-                        - 0.0
-                        - 1.0
-                        - 2.0
-                        - 3.0
-                        - 4.0
-                        - 5.0
-                        - 6.0
+                        - 'unknown'
+                        - '0.0'
+                        - '1.0'
+                        - '2.0'
+                        - '3.0'
+                        - '4.0'
+                        - '5.0'
+                        - '6.0'
                 patch:
                     type: int
                 platform_str:
@@ -332,10 +332,10 @@ options:
                             type: str
                         opmode:
                             type: str
-                            default: nat
+                            default: 'nat'
                             choices:
-                                - nat
-                                - transparent
+                                - 'nat'
+                                - 'transparent'
                         rtm_prof_id:
                             type: int
                         status:

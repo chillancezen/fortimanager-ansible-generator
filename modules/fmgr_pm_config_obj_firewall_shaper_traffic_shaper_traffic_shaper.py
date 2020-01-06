@@ -69,15 +69,15 @@ options:
                     type: str
                     description: 'Unit of measurement for guaranteed and maximum bandwidth for this shaper (Kbps, Mbps or Gbps).'
                     choices:
-                        - kbps
-                        - mbps
-                        - gbps
+                        - 'kbps'
+                        - 'mbps'
+                        - 'gbps'
                 diffserv:
                     type: str
                     description: 'Enable/disable changing the DiffServ setting applied to traffic accepted by this shaper.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 diffservcode:
                     type: str
                     description: 'DiffServ setting to be applied to traffic accepted by this shaper.'
@@ -94,15 +94,15 @@ options:
                     type: str
                     description: 'Enable/disable applying a separate shaper for each policy. For example, if enabled the guaranteed bandwidth is applied separately for each policy.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 priority:
                     type: str
                     description: 'Higher priority traffic is more likely to be forwarded without delays and without compromising the guaranteed bandwidth.'
                     choices:
-                        - high
-                        - medium
-                        - low
+                        - 'high'
+                        - 'medium'
+                        - 'low'
     schema_object1:
         methods: [delete]
         description: 'Configure shared traffic shaper.'
@@ -120,9 +120,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

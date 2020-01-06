@@ -73,11 +73,11 @@ options:
                         type: str
                         description: 'Azure server region.'
                         choices:
-                            - global
-                            - china
-                            - germany
-                            - usgov
-                            - local
+                            - 'global'
+                            - 'china'
+                            - 'germany'
+                            - 'usgov'
+                            - 'local'
                     client-id:
                         type: str
                         description: 'Azure client ID (application ID).'
@@ -129,11 +129,11 @@ options:
                         type: str
                         description: 'OCI server region.'
                         choices:
-                            - phoenix
-                            - ashburn
-                            - frankfurt
-                            - london
-                            - toronto
+                            - 'phoenix'
+                            - 'ashburn'
+                            - 'frankfurt'
+                            - 'london'
+                            - 'toronto'
                     password:
                         -
                             type: str
@@ -153,8 +153,8 @@ options:
                         type: str
                         description: 'Interface name for REST service to listen on.'
                         choices:
-                            - mgmt
-                            - sync
+                            - 'mgmt'
+                            - 'sync'
                     rest-password:
                         -
                             type: str
@@ -164,8 +164,8 @@ options:
                     rest-ssl:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     route:
                         -
                             name:
@@ -200,8 +200,8 @@ options:
                         type: str
                         description: 'Enable/disable connection to the remote SDN connector.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     subscription-id:
                         type: str
                         description: 'Azure subscription ID.'
@@ -212,18 +212,18 @@ options:
                         type: str
                         description: 'Type of SDN connector.'
                         choices:
-                            - aci
-                            - aws
-                            - nsx
-                            - nuage
-                            - azure
-                            - gcp
-                            - oci
-                            - openstack
-                            - kubernetes
-                            - vmware
-                            - acs
-                            - alicloud
+                            - 'aci'
+                            - 'aws'
+                            - 'nsx'
+                            - 'nuage'
+                            - 'azure'
+                            - 'gcp'
+                            - 'oci'
+                            - 'openstack'
+                            - 'kubernetes'
+                            - 'vmware'
+                            - 'acs'
+                            - 'alicloud'
                     update-interval:
                         type: int
                         description: 'Dynamic object update interval (0 - 3600 sec, 0 means disabled, default = 60).'
@@ -231,8 +231,8 @@ options:
                         type: str
                         description: 'Enable/disable using IAM role from metadata to call API.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     user-id:
                         type: str
                         description: 'User ID.'
@@ -261,44 +261,44 @@ options:
                     -
                         type: str
                         choices:
-                            - _local_cert
-                            - access-key
-                            - azure-region
-                            - client-id
-                            - client-secret
-                            - compartment-id
-                            - gcp-project
-                            - key-passwd
-                            - login-endpoint
-                            - name
-                            - nsx-cert-fingerprint
-                            - oci-cert
-                            - oci-fingerprint
-                            - oci-region
-                            - password
-                            - private-key
-                            - region
-                            - resource-group
-                            - resource-url
-                            - rest-interface
-                            - rest-password
-                            - rest-sport
-                            - rest-ssl
-                            - secret-key
-                            - server
-                            - server-port
-                            - service-account
-                            - status
-                            - subscription-id
-                            - tenant-id
-                            - type
-                            - update-interval
-                            - use-metadata-iam
-                            - user-id
-                            - username
-                            - vmx-image-url
-                            - vmx-service-name
-                            - vpc-id
+                            - '_local_cert'
+                            - 'access-key'
+                            - 'azure-region'
+                            - 'client-id'
+                            - 'client-secret'
+                            - 'compartment-id'
+                            - 'gcp-project'
+                            - 'key-passwd'
+                            - 'login-endpoint'
+                            - 'name'
+                            - 'nsx-cert-fingerprint'
+                            - 'oci-cert'
+                            - 'oci-fingerprint'
+                            - 'oci-region'
+                            - 'password'
+                            - 'private-key'
+                            - 'region'
+                            - 'resource-group'
+                            - 'resource-url'
+                            - 'rest-interface'
+                            - 'rest-password'
+                            - 'rest-sport'
+                            - 'rest-ssl'
+                            - 'secret-key'
+                            - 'server'
+                            - 'server-port'
+                            - 'service-account'
+                            - 'status'
+                            - 'subscription-id'
+                            - 'tenant-id'
+                            - 'type'
+                            - 'update-interval'
+                            - 'use-metadata-iam'
+                            - 'user-id'
+                            - 'username'
+                            - 'vmx-image-url'
+                            - 'vmx-service-name'
+                            - 'vpc-id'
             filter:
                 -
                     type: str
@@ -317,11 +317,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

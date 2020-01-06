@@ -74,20 +74,20 @@ options:
                     type: str
                     description: 'HTTP content length in request.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 header-length:
                     type: str
                     description: 'HTTP header length in request.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 hostname:
                     type: str
                     description: 'Enable/disable hostname check.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 id:
                     type: int
                     description: 'Exception ID.'
@@ -95,50 +95,50 @@ options:
                     type: str
                     description: 'HTTP line length in request.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 malformed:
                     type: str
                     description: 'Enable/disable malformed HTTP request check.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 max-cookie:
                     type: str
                     description: 'Maximum number of cookies in HTTP request.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 max-header-line:
                     type: str
                     description: 'Maximum number of HTTP header line.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 max-range-segment:
                     type: str
                     description: 'Maximum number of range segments in HTTP range line.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 max-url-param:
                     type: str
                     description: 'Maximum number of parameters in URL.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 method:
                     type: str
                     description: 'Enable/disable HTTP method check.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 param-length:
                     type: str
                     description: 'Maximum length of parameter in URL, HTTP POST request or HTTP body.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 pattern:
                     type: str
                     description: 'URL pattern.'
@@ -146,20 +146,20 @@ options:
                     type: str
                     description: 'Enable/disable regular expression based pattern match.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 url-param-length:
                     type: str
                     description: 'Maximum length of parameter in URL.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 version:
                     type: str
                     description: 'Enable/disable HTTP version check.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'HTTP constraint exception.'
@@ -177,9 +177,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

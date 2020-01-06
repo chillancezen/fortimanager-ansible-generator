@@ -92,10 +92,10 @@ options:
                         type: str
                         description: 'Select the Monitor type used by the health check monitor to check the health of the server (PING | TCP | HTTP).'
                         choices:
-                            - ping
-                            - tcp
-                            - http
-                            - passive-sip
+                            - 'ping'
+                            - 'tcp'
+                            - 'http'
+                            - 'passive-sip'
     schema_object1:
         methods: [get]
         description: 'Configure server load balancing health monitors.'
@@ -109,15 +109,15 @@ options:
                     -
                         type: str
                         choices:
-                            - http-get
-                            - http-match
-                            - http-max-redirects
-                            - interval
-                            - name
-                            - port
-                            - retry
-                            - timeout
-                            - type
+                            - 'http-get'
+                            - 'http-match'
+                            - 'http-max-redirects'
+                            - 'interval'
+                            - 'name'
+                            - 'port'
+                            - 'retry'
+                            - 'timeout'
+                            - 'type'
             filter:
                 -
                     type: str
@@ -136,11 +136,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

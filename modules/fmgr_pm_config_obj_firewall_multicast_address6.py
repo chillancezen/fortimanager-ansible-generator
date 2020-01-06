@@ -91,8 +91,8 @@ options:
                         type: str
                         description: 'Enable/disable visibility of the IPv6 multicast address on the GUI.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure IPv6 multicast address.'
@@ -106,11 +106,11 @@ options:
                     -
                         type: str
                         choices:
-                            - color
-                            - comment
-                            - ip6
-                            - name
-                            - visibility
+                            - 'color'
+                            - 'comment'
+                            - 'ip6'
+                            - 'name'
+                            - 'visibility'
             filter:
                 -
                     type: str
@@ -129,11 +129,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

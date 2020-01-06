@@ -75,13 +75,13 @@ options:
                     type: str
                     description: 'Device category.'
                     choices:
-                        - none
-                        - android-device
-                        - blackberry-device
-                        - fortinet-device
-                        - ios-device
-                        - windows-device
-                        - amazon-device
+                        - 'none'
+                        - 'android-device'
+                        - 'blackberry-device'
+                        - 'fortinet-device'
+                        - 'ios-device'
+                        - 'windows-device'
+                        - 'amazon-device'
                 comment:
                     type: str
                     description: 'Comment.'
@@ -98,13 +98,13 @@ options:
                         category:
                             type: str
                             choices:
-                                - none
-                                - android-device
-                                - blackberry-device
-                                - fortinet-device
-                                - ios-device
-                                - windows-device
-                                - amazon-device
+                                - 'none'
+                                - 'android-device'
+                                - 'blackberry-device'
+                                - 'fortinet-device'
+                                - 'ios-device'
+                                - 'windows-device'
+                                - 'amazon-device'
                         comment:
                             type: str
                         mac:
@@ -116,27 +116,27 @@ options:
                         type:
                             type: str
                             choices:
-                                - ipad
-                                - iphone
-                                - gaming-console
-                                - blackberry-phone
-                                - blackberry-playbook
-                                - linux-pc
-                                - mac
-                                - windows-pc
-                                - android-phone
-                                - android-tablet
-                                - media-streaming
-                                - windows-phone
-                                - fortinet-device
-                                - ip-phone
-                                - router-nat-device
-                                - other-network-device
-                                - windows-tablet
-                                - printer
-                                - forticam
-                                - fortifone
-                                - unknown
+                                - 'ipad'
+                                - 'iphone'
+                                - 'gaming-console'
+                                - 'blackberry-phone'
+                                - 'blackberry-playbook'
+                                - 'linux-pc'
+                                - 'mac'
+                                - 'windows-pc'
+                                - 'android-phone'
+                                - 'android-tablet'
+                                - 'media-streaming'
+                                - 'windows-phone'
+                                - 'fortinet-device'
+                                - 'ip-phone'
+                                - 'router-nat-device'
+                                - 'other-network-device'
+                                - 'windows-tablet'
+                                - 'printer'
+                                - 'forticam'
+                                - 'fortifone'
+                                - 'unknown'
                         user:
                             type: str
                 mac:
@@ -160,27 +160,27 @@ options:
                     type: str
                     description: 'Device type.'
                     choices:
-                        - ipad
-                        - iphone
-                        - gaming-console
-                        - blackberry-phone
-                        - blackberry-playbook
-                        - linux-pc
-                        - mac
-                        - windows-pc
-                        - android-phone
-                        - android-tablet
-                        - media-streaming
-                        - windows-phone
-                        - fortinet-device
-                        - ip-phone
-                        - router-nat-device
-                        - other-network-device
-                        - windows-tablet
-                        - printer
-                        - forticam
-                        - fortifone
-                        - unknown
+                        - 'ipad'
+                        - 'iphone'
+                        - 'gaming-console'
+                        - 'blackberry-phone'
+                        - 'blackberry-playbook'
+                        - 'linux-pc'
+                        - 'mac'
+                        - 'windows-pc'
+                        - 'android-phone'
+                        - 'android-tablet'
+                        - 'media-streaming'
+                        - 'windows-phone'
+                        - 'fortinet-device'
+                        - 'ip-phone'
+                        - 'router-nat-device'
+                        - 'other-network-device'
+                        - 'windows-tablet'
+                        - 'printer'
+                        - 'forticam'
+                        - 'fortifone'
+                        - 'unknown'
                 user:
                     type: str
                     description: 'User name.'
@@ -201,9 +201,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

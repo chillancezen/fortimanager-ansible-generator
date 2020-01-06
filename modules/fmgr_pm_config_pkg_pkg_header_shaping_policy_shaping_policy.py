@@ -73,13 +73,13 @@ options:
                 diffserv-forward:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 diffserv-reverse:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 diffservcode-forward:
                     type: str
                 diffservcode-rev:
@@ -97,8 +97,8 @@ options:
                 internet-service:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 internet-service-custom:
                     type: str
                 internet-service-custom-group:
@@ -110,8 +110,8 @@ options:
                 internet-service-src:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 internet-service-src-custom:
                     type: str
                 internet-service-src-custom-group:
@@ -123,8 +123,8 @@ options:
                 ip-version:
                     type: str
                     choices:
-                        - 4
-                        - 6
+                        - '4'
+                        - '6'
                 name:
                     type: str
                 per-ip-shaper:
@@ -142,8 +142,8 @@ options:
                 status:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 tos:
                     type: str
                 tos-mask:
@@ -151,8 +151,8 @@ options:
                 tos-negate:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 traffic-shaper:
                     type: str
                 traffic-shaper-reverse:
@@ -178,9 +178,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

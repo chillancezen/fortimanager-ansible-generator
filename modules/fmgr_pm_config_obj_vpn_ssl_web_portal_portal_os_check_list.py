@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'SSL VPN OS checks.'
@@ -84,9 +84,9 @@ options:
                     type: str
                     description: 'OS check options.'
                     choices:
-                        - allow
-                        - check-up-to-date
-                        - deny
+                        - 'allow'
+                        - 'check-up-to-date'
+                        - 'deny'
                 latest-patch-level:
                     type: str
                     description: 'Latest OS patch level.'

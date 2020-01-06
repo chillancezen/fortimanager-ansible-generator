@@ -113,10 +113,10 @@ options:
                     -
                         type: str
                         choices:
-                            - _if_unmanaged
-                            - comment
-                            - member
-                            - name
+                            - '_if_unmanaged'
+                            - 'comment'
+                            - 'member'
+                            - 'name'
             filter:
                 -
                     type: str
@@ -135,11 +135,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

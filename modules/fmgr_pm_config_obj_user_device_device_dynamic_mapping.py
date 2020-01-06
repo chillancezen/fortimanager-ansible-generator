@@ -77,13 +77,13 @@ options:
                     category:
                         type: str
                         choices:
-                            - none
-                            - android-device
-                            - blackberry-device
-                            - fortinet-device
-                            - ios-device
-                            - windows-device
-                            - amazon-device
+                            - 'none'
+                            - 'android-device'
+                            - 'blackberry-device'
+                            - 'fortinet-device'
+                            - 'ios-device'
+                            - 'windows-device'
+                            - 'amazon-device'
                     comment:
                         type: str
                     mac:
@@ -95,27 +95,27 @@ options:
                     type:
                         type: str
                         choices:
-                            - ipad
-                            - iphone
-                            - gaming-console
-                            - blackberry-phone
-                            - blackberry-playbook
-                            - linux-pc
-                            - mac
-                            - windows-pc
-                            - android-phone
-                            - android-tablet
-                            - media-streaming
-                            - windows-phone
-                            - fortinet-device
-                            - ip-phone
-                            - router-nat-device
-                            - other-network-device
-                            - windows-tablet
-                            - printer
-                            - forticam
-                            - fortifone
-                            - unknown
+                            - 'ipad'
+                            - 'iphone'
+                            - 'gaming-console'
+                            - 'blackberry-phone'
+                            - 'blackberry-playbook'
+                            - 'linux-pc'
+                            - 'mac'
+                            - 'windows-pc'
+                            - 'android-phone'
+                            - 'android-tablet'
+                            - 'media-streaming'
+                            - 'windows-phone'
+                            - 'fortinet-device'
+                            - 'ip-phone'
+                            - 'router-nat-device'
+                            - 'other-network-device'
+                            - 'windows-tablet'
+                            - 'printer'
+                            - 'forticam'
+                            - 'fortifone'
+                            - 'unknown'
                     user:
                         type: str
     schema_object1:
@@ -131,15 +131,15 @@ options:
                     -
                         type: str
                         choices:
-                            - _scope
-                            - avatar
-                            - category
-                            - comment
-                            - mac
-                            - master-device
-                            - tags
-                            - type
-                            - user
+                            - '_scope'
+                            - 'avatar'
+                            - 'category'
+                            - 'comment'
+                            - 'mac'
+                            - 'master-device'
+                            - 'tags'
+                            - 'type'
+                            - 'user'
             filter:
                 -
                     type: str
@@ -158,11 +158,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

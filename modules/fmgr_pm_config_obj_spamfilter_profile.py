@@ -71,14 +71,14 @@ options:
                         type: str
                         description: 'Enable/disable external Email inspection.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     flow-based:
                         type: str
                         description: 'Enable/disable flow-based spam filtering.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     name:
                         type: str
                         description: 'Profile name.'
@@ -86,19 +86,19 @@ options:
                         -
                             type: str
                             choices:
-                                - bannedword
-                                - spamemailbwl
-                                - spamfsip
-                                - spamfssubmit
-                                - spamfschksum
-                                - spamfsurl
-                                - spamhelodns
-                                - spamipbwl
-                                - spamraddrdns
-                                - spamrbl
-                                - spamhdrcheck
-                                - spamfsphish
-                                - spambwl
+                                - 'bannedword'
+                                - 'spamemailbwl'
+                                - 'spamfsip'
+                                - 'spamfssubmit'
+                                - 'spamfschksum'
+                                - 'spamfsurl'
+                                - 'spamhelodns'
+                                - 'spamipbwl'
+                                - 'spamraddrdns'
+                                - 'spamrbl'
+                                - 'spamhdrcheck'
+                                - 'spamfsphish'
+                                - 'spambwl'
                     replacemsg-group:
                         type: str
                         description: 'Replacement message group.'
@@ -115,8 +115,8 @@ options:
                         type: str
                         description: 'Enable/disable spam filtering.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     spam-iptrust-table:
                         type: str
                         description: 'Anti-spam IP trust table ID.'
@@ -124,14 +124,14 @@ options:
                         type: str
                         description: 'Enable/disable spam logging for email filtering.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     spam-log-fortiguard-response:
                         type: str
                         description: 'Enable/disable logging FortiGuard spam response.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     spam-mheader-table:
                         type: str
                         description: 'Anti-spam MIME header table ID.'
@@ -151,21 +151,21 @@ options:
                     -
                         type: str
                         choices:
-                            - comment
-                            - external
-                            - flow-based
-                            - name
-                            - options
-                            - replacemsg-group
-                            - spam-bwl-table
-                            - spam-bword-table
-                            - spam-bword-threshold
-                            - spam-filtering
-                            - spam-iptrust-table
-                            - spam-log
-                            - spam-log-fortiguard-response
-                            - spam-mheader-table
-                            - spam-rbl-table
+                            - 'comment'
+                            - 'external'
+                            - 'flow-based'
+                            - 'name'
+                            - 'options'
+                            - 'replacemsg-group'
+                            - 'spam-bwl-table'
+                            - 'spam-bword-table'
+                            - 'spam-bword-threshold'
+                            - 'spam-filtering'
+                            - 'spam-iptrust-table'
+                            - 'spam-log'
+                            - 'spam-log-fortiguard-response'
+                            - 'spam-mheader-table'
+                            - 'spam-rbl-table'
             filter:
                 -
                     type: str
@@ -184,11 +184,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

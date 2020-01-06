@@ -70,23 +70,23 @@ options:
                         type: str
                         description: 'add message encapsulation'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     charset:
                         type: str
                         description: 'character encoding used for replacement message'
                         choices:
-                            - us-ascii
-                            - utf-8
+                            - 'us-ascii'
+                            - 'utf-8'
                     class:
                         type: str
                         description: 'message class'
                         choices:
-                            - personal
-                            - advertisement
-                            - informational
-                            - auto
-                            - not-included
+                            - 'personal'
+                            - 'advertisement'
+                            - 'informational'
+                            - 'auto'
+                            - 'not-included'
                     domain:
                         type: str
                         description: 'from address domain'
@@ -94,10 +94,10 @@ options:
                         type: str
                         description: 'Format flag.'
                         choices:
-                            - none
-                            - text
-                            - html
-                            - wml
+                            - 'none'
+                            - 'text'
+                            - 'html'
+                            - 'wml'
                     from:
                         type: str
                         description: 'from address'
@@ -105,15 +105,15 @@ options:
                         type: str
                         description: 'notification message sent from recipient'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     header:
                         type: str
                         description: 'Header flag.'
                         choices:
-                            - none
-                            - http
-                            - 8bit
+                            - 'none'
+                            - 'http'
+                            - '8bit'
                     image:
                         type: str
                         description: 'Message string.'
@@ -127,22 +127,22 @@ options:
                         type: str
                         description: 'message priority'
                         choices:
-                            - low
-                            - normal
-                            - high
-                            - not-included
+                            - 'low'
+                            - 'normal'
+                            - 'high'
+                            - 'not-included'
                     rsp-status:
                         type: str
                         description: 'response status'
                         choices:
-                            - ok
-                            - err-unspecified
-                            - err-srv-denied
-                            - err-msg-fmt-corrupt
-                            - err-snd-addr-unresolv
-                            - err-net-prob
-                            - err-content-not-accept
-                            - err-unsupp-msg
+                            - 'ok'
+                            - 'err-unspecified'
+                            - 'err-srv-denied'
+                            - 'err-msg-fmt-corrupt'
+                            - 'err-snd-addr-unresolv'
+                            - 'err-net-prob'
+                            - 'err-content-not-accept'
+                            - 'err-unsupp-msg'
                     smil-part:
                         type: str
                         description: 'message encapsulation text'
@@ -162,21 +162,21 @@ options:
                     -
                         type: str
                         choices:
-                            - add-smil
-                            - charset
-                            - class
-                            - domain
-                            - format
-                            - from
-                            - from-sender
-                            - header
-                            - image
-                            - message
-                            - msg-type
-                            - priority
-                            - rsp-status
-                            - smil-part
-                            - subject
+                            - 'add-smil'
+                            - 'charset'
+                            - 'class'
+                            - 'domain'
+                            - 'format'
+                            - 'from'
+                            - 'from-sender'
+                            - 'header'
+                            - 'image'
+                            - 'message'
+                            - 'msg-type'
+                            - 'priority'
+                            - 'rsp-status'
+                            - 'smil-part'
+                            - 'subject'
             filter:
                 -
                     type: str
@@ -195,11 +195,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

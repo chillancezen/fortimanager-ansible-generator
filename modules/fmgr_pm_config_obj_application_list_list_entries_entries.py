@@ -71,9 +71,9 @@ options:
                     type: str
                     description: 'Pass or block traffic, or reset connection for traffic from this application.'
                     choices:
-                        - pass
-                        - block
-                        - reset
+                        - 'pass'
+                        - 'block'
+                        - 'reset'
                 application:
                     -
                         type: int
@@ -90,14 +90,14 @@ options:
                     type: str
                     description: 'Enable/disable logging for this application list.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 log-packet:
                     type: str
                     description: 'Enable/disable packet logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 parameters:
                     -
                         id:
@@ -113,11 +113,11 @@ options:
                     -
                         type: str
                         choices:
-                            - 1
-                            - 2
-                            - 3
-                            - 4
-                            - 5
+                            - '1'
+                            - '2'
+                            - '3'
+                            - '4'
+                            - '5'
                 protocols:
                     -
                         type: str
@@ -125,8 +125,8 @@ options:
                     type: str
                     description: 'Quarantine method.'
                     choices:
-                        - none
-                        - attacker
+                        - 'none'
+                        - 'attacker'
                 quarantine-expiry:
                     type: str
                     description: 'Duration of quarantine. (Format ###d##h##m, minimum 1m, maximum 364d23h59m, default = 5m). Requires quarantine set to attacker.'
@@ -134,8 +134,8 @@ options:
                     type: str
                     description: 'Enable/disable quarantine logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 rate-count:
                     type: int
                     description: 'Count of the rate.'
@@ -146,17 +146,17 @@ options:
                     type: str
                     description: 'Rate limit mode.'
                     choices:
-                        - periodical
-                        - continuous
+                        - 'periodical'
+                        - 'continuous'
                 rate-track:
                     type: str
                     description: 'Track the packet protocol field.'
                     choices:
-                        - none
-                        - src-ip
-                        - dest-ip
-                        - dhcp-client-mac
-                        - dns-domain
+                        - 'none'
+                        - 'src-ip'
+                        - 'dest-ip'
+                        - 'dhcp-client-mac'
+                        - 'dns-domain'
                 risk:
                     -
                         type: int
@@ -195,9 +195,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object3:
         methods: [move]
         description: 'Application list entries.'
@@ -206,8 +206,8 @@ options:
             option:
                 type: str
                 choices:
-                    - before
-                    - after
+                    - 'before'
+                    - 'after'
             target:
                 type: str
                 description: 'Key to the target entry.'

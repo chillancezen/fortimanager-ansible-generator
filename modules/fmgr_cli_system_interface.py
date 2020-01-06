@@ -58,46 +58,46 @@ options:
                         -
                             type: str
                             choices:
-                                - ping
-                                - https
-                                - ssh
-                                - snmp
-                                - http
-                                - webservice
-                                - https-logging
+                                - 'ping'
+                                - 'https'
+                                - 'ssh'
+                                - 'snmp'
+                                - 'http'
+                                - 'webservice'
+                                - 'https-logging'
                     description:
                         type: str
                         description: 'Description.'
                     ip:
                         type: str
-                        default: 0.0.0.0 0.0.0.0
+                        default: '0.0.0.0 0.0.0.0'
                         description: 'IP address of interface.'
                     ipv6:
                         ip6-address:
                             type: str
-                            default: ::/0
+                            default: '::/0'
                             description: 'IPv6 address/prefix of interface.'
                         ip6-allowaccess:
                             -
                                 type: str
                                 choices:
-                                    - ping
-                                    - https
-                                    - ssh
-                                    - snmp
-                                    - http
-                                    - webservice
-                                    - https-logging
+                                    - 'ping'
+                                    - 'https'
+                                    - 'ssh'
+                                    - 'snmp'
+                                    - 'http'
+                                    - 'webservice'
+                                    - 'https-logging'
                         ip6-autoconf:
                             type: str
-                            default: enable
+                            default: 'enable'
                             description:
                              - 'Enable/disable address auto config (SLAAC).'
                              - 'disable - Disable setting.'
                              - 'enable - Enable setting.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                     mtu:
                         type: int
                         default: 1500
@@ -109,12 +109,12 @@ options:
                         -
                             type: str
                             choices:
-                                - fgtupdates
-                                - fclupdates
-                                - webfilter-antispam
+                                - 'fgtupdates'
+                                - 'fclupdates'
+                                - 'webfilter-antispam'
                     speed:
                         type: str
-                        default: auto
+                        default: 'auto'
                         description:
                          - 'Speed.'
                          - 'auto - Auto adjust speed.'
@@ -125,23 +125,23 @@ options:
                          - '1000full - 1000M full-duplex.'
                          - '10000full - 10000M full-duplex.'
                         choices:
-                            - auto
-                            - 10full
-                            - 10half
-                            - 100full
-                            - 100half
-                            - 1000full
-                            - 10000full
+                            - 'auto'
+                            - '10full'
+                            - '10half'
+                            - '100full'
+                            - '100half'
+                            - '1000full'
+                            - '10000full'
                     status:
                         type: str
-                        default: up
+                        default: 'up'
                         description:
                          - 'Interface status.'
                          - 'down - Interface down.'
                          - 'up - Interface up.'
                         choices:
-                            - down
-                            - up
+                            - 'down'
+                            - 'up'
     schema_object1:
         methods: [get]
         description: 'Interface configuration.'
@@ -152,15 +152,15 @@ options:
                     -
                         type: str
                         choices:
-                            - alias
-                            - allowaccess
-                            - description
-                            - ip
-                            - mtu
-                            - name
-                            - serviceaccess
-                            - speed
-                            - status
+                            - 'alias'
+                            - 'allowaccess'
+                            - 'description'
+                            - 'ip'
+                            - 'mtu'
+                            - 'name'
+                            - 'serviceaccess'
+                            - 'speed'
+                            - 'status'
             filter:
                 -
                     type: str
@@ -174,8 +174,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

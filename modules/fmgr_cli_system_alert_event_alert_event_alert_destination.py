@@ -75,16 +75,16 @@ options:
                         description: 'Recipient email address to use in alert emails.'
                     type:
                         type: str
-                        default: mail
+                        default: 'mail'
                         description:
                          - 'Destination type.'
                          - 'mail - Send email alert.'
                          - 'snmp - Send SNMP trap.'
                          - 'syslog - Send syslog message.'
                         choices:
-                            - mail
-                            - snmp
-                            - syslog
+                            - 'mail'
+                            - 'snmp'
+                            - 'syslog'
     schema_object1:
         methods: [get]
         description: 'Alert destination.'
@@ -95,12 +95,12 @@ options:
                     -
                         type: str
                         choices:
-                            - from
-                            - smtp-name
-                            - snmp-name
-                            - syslog-name
-                            - to
-                            - type
+                            - 'from'
+                            - 'smtp-name'
+                            - 'snmp-name'
+                            - 'syslog-name'
+                            - 'to'
+                            - 'type'
             filter:
                 -
                     type: str
@@ -114,8 +114,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

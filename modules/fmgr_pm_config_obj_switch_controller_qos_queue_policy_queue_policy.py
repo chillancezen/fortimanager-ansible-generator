@@ -74,8 +74,8 @@ options:
                             type: str
                             description: 'COS queue drop policy.'
                             choices:
-                                - taildrop
-                                - weighted-random-early-detection
+                                - 'taildrop'
+                                - 'weighted-random-early-detection'
                         max-rate:
                             type: int
                             description: 'Maximum rate (0 - 4294967295 kbps, 0 to disable).'
@@ -95,9 +95,9 @@ options:
                     type: str
                     description: 'COS queue scheduling.'
                     choices:
-                        - strict
-                        - round-robin
-                        - weighted
+                        - 'strict'
+                        - 'round-robin'
+                        - 'weighted'
     schema_object1:
         methods: [delete]
         description: 'Configure FortiSwitch QoS egress queue policy.'
@@ -115,9 +115,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

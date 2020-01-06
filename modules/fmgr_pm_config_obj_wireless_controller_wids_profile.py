@@ -68,19 +68,19 @@ options:
                         type: str
                         description: 'Enable/disable on-wire rogue AP auto-suppression (default = disable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ap-bgscan-disable-day:
                         -
                             type: str
                             choices:
-                                - sunday
-                                - monday
-                                - tuesday
-                                - wednesday
-                                - thursday
-                                - friday
-                                - saturday
+                                - 'sunday'
+                                - 'monday'
+                                - 'tuesday'
+                                - 'wednesday'
+                                - 'thursday'
+                                - 'friday'
+                                - 'saturday'
                     ap-bgscan-disable-end:
                         type: str
                         description: 'End time, using a 24-hour clock in the format of hh:mm, for disabling background scanning (default = 00:00).'
@@ -109,20 +109,20 @@ options:
                         type: str
                         description: 'Enable/disable rogue AP detection.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ap-scan-passive:
                         type: str
                         description: 'Enable/disable passive scanning. Enable means do not send probe request on any channels (default = disable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     asleap-attack:
                         type: str
                         description: 'Enable/disable asleap attack detection (default = disable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     assoc-flood-thresh:
                         type: int
                         description: 'The threshold value for association frame flooding.'
@@ -133,8 +133,8 @@ options:
                         type: str
                         description: 'Enable/disable association frame flooding detection (default = disable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     auth-flood-thresh:
                         type: int
                         description: 'The threshold value for authentication frame flooding.'
@@ -145,8 +145,8 @@ options:
                         type: str
                         description: 'Enable/disable authentication frame flooding detection (default = disable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     comment:
                         type: str
                         description: 'Comment.'
@@ -154,8 +154,8 @@ options:
                         type: str
                         description: 'Enable/disable broadcasting de-authentication detection (default = disable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     deauth-unknown-src-thresh:
                         type: int
                         description: 'Threshold value per second to deauth unknown src for DoS attack (0: no limit).'
@@ -163,8 +163,8 @@ options:
                         type: str
                         description: 'Enable/disable EAPOL-Failure flooding (to AP) detection (default = disable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     eapol-fail-intv:
                         type: int
                         description: 'The detection interval for EAPOL-Failure flooding (1 - 3600 sec).'
@@ -175,8 +175,8 @@ options:
                         type: str
                         description: 'Enable/disable EAPOL-Logoff flooding (to AP) detection (default = disable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     eapol-logoff-intv:
                         type: int
                         description: 'The detection interval for EAPOL-Logoff flooding (1 - 3600 sec).'
@@ -187,8 +187,8 @@ options:
                         type: str
                         description: 'Enable/disable premature EAPOL-Failure flooding (to STA) detection (default = disable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     eapol-pre-fail-intv:
                         type: int
                         description: 'The detection interval for premature EAPOL-Failure flooding (1 - 3600 sec).'
@@ -199,8 +199,8 @@ options:
                         type: str
                         description: 'Enable/disable premature EAPOL-Success flooding (to STA) detection (default = disable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     eapol-pre-succ-intv:
                         type: int
                         description: 'The detection interval for premature EAPOL-Success flooding (1 - 3600 sec).'
@@ -211,8 +211,8 @@ options:
                         type: str
                         description: 'Enable/disable EAPOL-Start flooding (to AP) detection (default = disable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     eapol-start-intv:
                         type: int
                         description: 'The detection interval for EAPOL-Start flooding (1 - 3600 sec).'
@@ -223,8 +223,8 @@ options:
                         type: str
                         description: 'Enable/disable EAPOL-Success flooding (to AP) detection (default = disable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     eapol-succ-intv:
                         type: int
                         description: 'The detection interval for EAPOL-Success flooding (1 - 3600 sec).'
@@ -235,14 +235,14 @@ options:
                         type: str
                         description: 'Enable/disable invalid MAC OUI detection.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     long-duration-attack:
                         type: str
                         description: 'Enable/disable long duration attack detection based on user configured threshold (default = disable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     long-duration-thresh:
                         type: int
                         description: 'Threshold value for long duration attack detection (1000 - 32767 usec, default = 8200).'
@@ -253,33 +253,33 @@ options:
                         type: str
                         description: 'Enable/disable null SSID probe response detection (default = disable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     sensor-mode:
                         type: str
                         description: 'Scan WiFi nearby stations (default = disable).'
                         choices:
-                            - disable
-                            - foreign
-                            - both
+                            - 'disable'
+                            - 'foreign'
+                            - 'both'
                     spoofed-deauth:
                         type: str
                         description: 'Enable/disable spoofed de-authentication attack detection (default = disable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     weak-wep-iv:
                         type: str
                         description: 'Enable/disable weak WEP IV (Initialization Vector) detection (default = disable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     wireless-bridge:
                         type: str
                         description: 'Enable/disable wireless bridge detection (default = disable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure wireless intrusion detection system (WIDS) profiles.'
@@ -293,55 +293,55 @@ options:
                     -
                         type: str
                         choices:
-                            - ap-auto-suppress
-                            - ap-bgscan-disable-day
-                            - ap-bgscan-disable-end
-                            - ap-bgscan-disable-start
-                            - ap-bgscan-duration
-                            - ap-bgscan-idle
-                            - ap-bgscan-intv
-                            - ap-bgscan-period
-                            - ap-bgscan-report-intv
-                            - ap-fgscan-report-intv
-                            - ap-scan
-                            - ap-scan-passive
-                            - asleap-attack
-                            - assoc-flood-thresh
-                            - assoc-flood-time
-                            - assoc-frame-flood
-                            - auth-flood-thresh
-                            - auth-flood-time
-                            - auth-frame-flood
-                            - comment
-                            - deauth-broadcast
-                            - deauth-unknown-src-thresh
-                            - eapol-fail-flood
-                            - eapol-fail-intv
-                            - eapol-fail-thresh
-                            - eapol-logoff-flood
-                            - eapol-logoff-intv
-                            - eapol-logoff-thresh
-                            - eapol-pre-fail-flood
-                            - eapol-pre-fail-intv
-                            - eapol-pre-fail-thresh
-                            - eapol-pre-succ-flood
-                            - eapol-pre-succ-intv
-                            - eapol-pre-succ-thresh
-                            - eapol-start-flood
-                            - eapol-start-intv
-                            - eapol-start-thresh
-                            - eapol-succ-flood
-                            - eapol-succ-intv
-                            - eapol-succ-thresh
-                            - invalid-mac-oui
-                            - long-duration-attack
-                            - long-duration-thresh
-                            - name
-                            - null-ssid-probe-resp
-                            - sensor-mode
-                            - spoofed-deauth
-                            - weak-wep-iv
-                            - wireless-bridge
+                            - 'ap-auto-suppress'
+                            - 'ap-bgscan-disable-day'
+                            - 'ap-bgscan-disable-end'
+                            - 'ap-bgscan-disable-start'
+                            - 'ap-bgscan-duration'
+                            - 'ap-bgscan-idle'
+                            - 'ap-bgscan-intv'
+                            - 'ap-bgscan-period'
+                            - 'ap-bgscan-report-intv'
+                            - 'ap-fgscan-report-intv'
+                            - 'ap-scan'
+                            - 'ap-scan-passive'
+                            - 'asleap-attack'
+                            - 'assoc-flood-thresh'
+                            - 'assoc-flood-time'
+                            - 'assoc-frame-flood'
+                            - 'auth-flood-thresh'
+                            - 'auth-flood-time'
+                            - 'auth-frame-flood'
+                            - 'comment'
+                            - 'deauth-broadcast'
+                            - 'deauth-unknown-src-thresh'
+                            - 'eapol-fail-flood'
+                            - 'eapol-fail-intv'
+                            - 'eapol-fail-thresh'
+                            - 'eapol-logoff-flood'
+                            - 'eapol-logoff-intv'
+                            - 'eapol-logoff-thresh'
+                            - 'eapol-pre-fail-flood'
+                            - 'eapol-pre-fail-intv'
+                            - 'eapol-pre-fail-thresh'
+                            - 'eapol-pre-succ-flood'
+                            - 'eapol-pre-succ-intv'
+                            - 'eapol-pre-succ-thresh'
+                            - 'eapol-start-flood'
+                            - 'eapol-start-intv'
+                            - 'eapol-start-thresh'
+                            - 'eapol-succ-flood'
+                            - 'eapol-succ-intv'
+                            - 'eapol-succ-thresh'
+                            - 'invalid-mac-oui'
+                            - 'long-duration-attack'
+                            - 'long-duration-thresh'
+                            - 'name'
+                            - 'null-ssid-probe-resp'
+                            - 'sensor-mode'
+                            - 'spoofed-deauth'
+                            - 'weak-wep-iv'
+                            - 'wireless-bridge'
             filter:
                 -
                     type: str
@@ -360,11 +360,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

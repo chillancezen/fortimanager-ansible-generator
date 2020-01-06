@@ -80,9 +80,9 @@ options:
                         -
                             type: str
                             choices:
-                                - latency
-                                - jitter
-                                - packet-loss
+                                - 'latency'
+                                - 'jitter'
+                                - 'packet-loss'
                     packetloss-threshold:
                         type: int
                         description: 'Packet loss for SLA to make decision in percentage. (0 - 100, default = 0).'
@@ -99,11 +99,11 @@ options:
                     -
                         type: str
                         choices:
-                            - id
-                            - jitter-threshold
-                            - latency-threshold
-                            - link-cost-factor
-                            - packetloss-threshold
+                            - 'id'
+                            - 'jitter-threshold'
+                            - 'latency-threshold'
+                            - 'link-cost-factor'
+                            - 'packetloss-threshold'
             filter:
                 -
                     type: str
@@ -122,11 +122,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

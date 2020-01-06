@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Configure SSL options.'
@@ -84,36 +84,36 @@ options:
                     type: str
                     description: 'When enabled, allows SSL sessions whose server certificate validation failed.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 client-cert-request:
                     type: str
                     description: 'Action based on client certificate request.'
                     choices:
-                        - bypass
-                        - inspect
-                        - block
+                        - 'bypass'
+                        - 'inspect'
+                        - 'block'
                 inspect-all:
                     type: str
                     description: 'Level of SSL inspection.'
                     choices:
-                        - disable
-                        - certificate-inspection
-                        - deep-inspection
+                        - 'disable'
+                        - 'certificate-inspection'
+                        - 'deep-inspection'
                 unsupported-ssl:
                     type: str
                     description: 'Action based on the SSL encryption used being unsupported.'
                     choices:
-                        - bypass
-                        - inspect
-                        - block
+                        - 'bypass'
+                        - 'inspect'
+                        - 'block'
                 untrusted-cert:
                     type: str
                     description: 'Allow, ignore, or block the untrusted SSL session server certificate.'
                     choices:
-                        - allow
-                        - block
-                        - ignore
+                        - 'allow'
+                        - 'block'
+                        - 'ignore'
 
 '''
 

@@ -77,16 +77,16 @@ options:
                          - 'monthly: "DD hh:mm"'
                     day_of_week:
                         type: str
-                        default: sun
+                        default: 'sun'
                         choices:
-                            - unknown
-                            - sun
-                            - mon
-                            - tue
-                            - wed
-                            - thu
-                            - fri
-                            - sat
+                            - 'unknown'
+                            - 'sun'
+                            - 'mon'
+                            - 'tue'
+                            - 'wed'
+                            - 'thu'
+                            - 'fri'
+                            - 'sat'
                     device:
                         type: int
                         description: 'Name or id of an existing device in the database.'
@@ -94,19 +94,19 @@ options:
                         type: str
                     run_on_db:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description: 'Indicates if the scheduled script should be executed on device database. It should always be disable for tcl scripts.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     type:
                         type: str
                         choices:
-                            - auto
-                            - onetime
-                            - daily
-                            - weekly
-                            - monthly
+                            - 'auto'
+                            - 'onetime'
+                            - 'daily'
+                            - 'weekly'
+                            - 'monthly'
     schema_object1:
         methods: [get]
         description: 'Script schedule table.'
@@ -120,12 +120,12 @@ options:
                     -
                         type: str
                         choices:
-                            - datetime
-                            - day_of_week
-                            - device
-                            - name
-                            - run_on_db
-                            - type
+                            - 'datetime'
+                            - 'day_of_week'
+                            - 'device'
+                            - 'name'
+                            - 'run_on_db'
+                            - 'type'
             filter:
                 -
                     type: str
@@ -140,9 +140,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'syntax'
             range:
                 -
                     type: int

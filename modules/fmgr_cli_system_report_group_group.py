@@ -67,14 +67,14 @@ options:
                     description: 'Admin domain name.'
                 case-insensitive:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Case insensitive.'
                      - 'disable - Disable the case insensitive match.'
                      - 'enable - Enable the case insensitive match.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 chart-alternative:
                     -
                         chart-name:
@@ -93,7 +93,7 @@ options:
                             description: 'Variable name.'
                         var-type:
                             type: str
-                            default: string
+                            default: 'string'
                             description:
                              - 'Variable type.'
                              - 'integer - Integer.'
@@ -101,10 +101,10 @@ options:
                              - 'enum - Enum.'
                              - 'ip - IP.'
                             choices:
-                                - integer
-                                - string
-                                - enum
-                                - ip
+                                - 'integer'
+                                - 'string'
+                                - 'enum'
+                                - 'ip'
                 group-id:
                     type: int
                     default: 0

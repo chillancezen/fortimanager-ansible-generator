@@ -76,8 +76,8 @@ options:
                         type: str
                         description: 'apply this entry during attachment inspection'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'modify this MMS content checksum list'
@@ -91,9 +91,9 @@ options:
                     -
                         type: str
                         choices:
-                            - checksum
-                            - name
-                            - status
+                            - 'checksum'
+                            - 'name'
+                            - 'status'
             filter:
                 -
                     type: str
@@ -112,11 +112,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

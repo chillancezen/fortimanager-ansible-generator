@@ -83,8 +83,8 @@ options:
                         type: str
                         description: 'Enable/disable address visibility.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Config global Wildcard FQDN address groups.'
@@ -98,12 +98,12 @@ options:
                     -
                         type: str
                         choices:
-                            - color
-                            - comment
-                            - member
-                            - name
-                            - uuid
-                            - visibility
+                            - 'color'
+                            - 'comment'
+                            - 'member'
+                            - 'name'
+                            - 'uuid'
+                            - 'visibility'
             filter:
                 -
                     type: str
@@ -122,11 +122,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

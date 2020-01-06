@@ -73,20 +73,20 @@ options:
                     description: 'Heartbeat lost threshold (1 - 255).'
                 mode:
                     type: str
-                    default: standalone
+                    default: 'standalone'
                     description:
                      - 'Mode.'
                      - 'standalone - Standalone.'
                      - 'master - Master.'
                      - 'slave - Slave.'
                     choices:
-                        - standalone
-                        - master
-                        - slave
+                        - 'standalone'
+                        - 'master'
+                        - 'slave'
                 password:
                     -
                         type: str
-                        default: ENC Njg3MTI2ODY4ODEyMzY2NtF8Bgn7rP641A/Sf8QzaQhOnUfyVTFTNoFxfoZ5gzjrvXiDpQmIecJchwHMf6cMUMYR/EPxGUXBEohaVdi4YNK74+fWHu9m1Hd8UTU4tZ9UtBelMIOQUT1HMDGLFwqwKg/NXibio9aMJDW6WYPLMYpBnPng
+                        default: 'ENC Njg3MTI2ODY4ODEyMzY2NtF8Bgn7rP641A/Sf8QzaQhOnUfyVTFTNoFxfoZ5gzjrvXiDpQmIecJchwHMf6cMUMYR/EPxGUXBEohaVdi4YNK74+fWHu9m1Hd8UTU4tZ9UtBelMIOQUT1HMDGLFwqwKg/NXibio9aMJDW6WYPLMYpBnPng'
                 peer:
                     -
                         id:
@@ -95,25 +95,25 @@ options:
                             description: 'Id.'
                         ip:
                             type: str
-                            default: 0.0.0.0
+                            default: '0.0.0.0'
                             description: 'IP address of peer.'
                         ip6:
                             type: str
-                            default: ::
+                            default: '::'
                             description: 'IP address (V6) of peer.'
                         serial-number:
                             type: str
                             description: 'Serial number of peer.'
                         status:
                             type: str
-                            default: enable
+                            default: 'enable'
                             description:
                              - 'Peer admin status.'
                              - 'disable - Disable.'
                              - 'enable - Enable.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
 
 '''
 

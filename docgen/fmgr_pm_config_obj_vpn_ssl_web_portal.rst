@@ -129,7 +129,7 @@ Parameters
  <li><span class="li-head">name</span> - Portal name. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">os-check</span> - Enable to let the FortiGate decide action based on client OS. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">redir-url</span> - Client login redirect URL. <span class="li-normal">type: str</span> </li>
- <li><span class="li-head">save-password</span> - Enable/disable FortiClient saving the user's password. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
+ <li><span class="li-head">save-password</span> - Enable/disable FortiClient saving the users password. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">service-restriction</span> - Enable/disable tunnel service restriction. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">skip-check-for-unsupported-browser</span> - Enable to skip host check if browser does not support it. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">skip-check-for-unsupported-os</span> - Enable to skip host check if client OS does not support it. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
@@ -450,7 +450,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> name </span> - Portal name. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> os-check </span> - Enable to let the FortiGate decide action based on client OS. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> redir-url </span> - Client login redirect URL. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> save-password </span> - Enable/disable FortiClient saving the user's password. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> save-password </span> - Enable/disable FortiClient saving the users password. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> service-restriction </span> - Enable/disable tunnel service restriction. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> skip-check-for-unsupported-browser </span> - Enable to skip host check if browser does not support it. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> skip-check-for-unsupported-os </span> - Enable to skip host check if client OS does not support it. <span class="li-normal">type: str</span>  </li>

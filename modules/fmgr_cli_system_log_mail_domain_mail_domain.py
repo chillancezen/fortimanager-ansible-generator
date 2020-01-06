@@ -64,7 +64,7 @@ options:
             data:
                 devices:
                     type: str
-                    default: All_FortiMail
+                    default: 'All_FortiMail'
                     description: 'Devices for domain to vdom mapping'
                 domain:
                     type: str

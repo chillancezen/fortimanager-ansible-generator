@@ -68,44 +68,44 @@ options:
                         type: str
                         description: 'Set ESP port service (used by IPsec VPNs) status.'
                         choices:
-                            - closed
-                            - open
-                            - unknown
+                            - 'closed'
+                            - 'open'
+                            - 'unknown'
                     ftp-port:
                         type: str
                         description: 'Set FTP port service status.'
                         choices:
-                            - closed
-                            - open
-                            - unknown
+                            - 'closed'
+                            - 'open'
+                            - 'unknown'
                     http-port:
                         type: str
                         description: 'Set HTTP port service status.'
                         choices:
-                            - closed
-                            - open
-                            - unknown
+                            - 'closed'
+                            - 'open'
+                            - 'unknown'
                     icmp-port:
                         type: str
                         description: 'Set ICMP port service status.'
                         choices:
-                            - closed
-                            - open
-                            - unknown
+                            - 'closed'
+                            - 'open'
+                            - 'unknown'
                     ikev2-port:
                         type: str
                         description: 'Set IKEv2 port service for IPsec VPN status.'
                         choices:
-                            - closed
-                            - open
-                            - unknown
+                            - 'closed'
+                            - 'open'
+                            - 'unknown'
                     ikev2-xx-port:
                         type: str
                         description: 'Set UDP port 4500 (which may be used by IKEv2 for IPsec VPN) service status.'
                         choices:
-                            - closed
-                            - open
-                            - unknown
+                            - 'closed'
+                            - 'open'
+                            - 'unknown'
                     name:
                         type: str
                         description: 'Connection capability name.'
@@ -113,37 +113,37 @@ options:
                         type: str
                         description: 'Set Point to Point Tunneling Protocol (PPTP) VPN port service status.'
                         choices:
-                            - closed
-                            - open
-                            - unknown
+                            - 'closed'
+                            - 'open'
+                            - 'unknown'
                     ssh-port:
                         type: str
                         description: 'Set SSH port service status.'
                         choices:
-                            - closed
-                            - open
-                            - unknown
+                            - 'closed'
+                            - 'open'
+                            - 'unknown'
                     tls-port:
                         type: str
                         description: 'Set TLS VPN (HTTPS) port service status.'
                         choices:
-                            - closed
-                            - open
-                            - unknown
+                            - 'closed'
+                            - 'open'
+                            - 'unknown'
                     voip-tcp-port:
                         type: str
                         description: 'Set VoIP TCP port service status.'
                         choices:
-                            - closed
-                            - open
-                            - unknown
+                            - 'closed'
+                            - 'open'
+                            - 'unknown'
                     voip-udp-port:
                         type: str
                         description: 'Set VoIP UDP port service status.'
                         choices:
-                            - closed
-                            - open
-                            - unknown
+                            - 'closed'
+                            - 'open'
+                            - 'unknown'
     schema_object1:
         methods: [get]
         description: 'Configure connection capability.'
@@ -157,18 +157,18 @@ options:
                     -
                         type: str
                         choices:
-                            - esp-port
-                            - ftp-port
-                            - http-port
-                            - icmp-port
-                            - ikev2-port
-                            - ikev2-xx-port
-                            - name
-                            - pptp-vpn-port
-                            - ssh-port
-                            - tls-port
-                            - voip-tcp-port
-                            - voip-udp-port
+                            - 'esp-port'
+                            - 'ftp-port'
+                            - 'http-port'
+                            - 'icmp-port'
+                            - 'ikev2-port'
+                            - 'ikev2-xx-port'
+                            - 'name'
+                            - 'pptp-vpn-port'
+                            - 'ssh-port'
+                            - 'tls-port'
+                            - 'voip-tcp-port'
+                            - 'voip-udp-port'
             filter:
                 -
                     type: str
@@ -187,11 +187,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

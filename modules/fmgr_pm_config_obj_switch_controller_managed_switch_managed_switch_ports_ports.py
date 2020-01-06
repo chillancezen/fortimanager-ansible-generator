@@ -74,20 +74,20 @@ options:
                     type: str
                     description: 'Enable/disable all defined vlans on this port.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 arp-inspection-trust:
                     type: str
                     description: 'Trusted or untrusted dynamic ARP inspection.'
                     choices:
-                        - untrusted
-                        - trusted
+                        - 'untrusted'
+                        - 'trusted'
                 bundle:
                     type: str
                     description: 'Enable/disable Link Aggregation Group (LAG) bundling for non-FortiLink interfaces.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 description:
                     type: str
                     description: 'Description for port.'
@@ -95,51 +95,51 @@ options:
                     type: str
                     description: 'Enable/disable allowance of DHCP with option-82 on untrusted interface.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dhcp-snooping:
                     type: str
                     description: 'Trusted or untrusted DHCP-snooping interface.'
                     choices:
-                        - trusted
-                        - untrusted
+                        - 'trusted'
+                        - 'untrusted'
                 discard-mode:
                     type: str
                     description: 'Configure discard mode for port.'
                     choices:
-                        - none
-                        - all-untagged
-                        - all-tagged
+                        - 'none'
+                        - 'all-untagged'
+                        - 'all-tagged'
                 edge-port:
                     type: str
                     description: 'Enable/disable this interface as an edge port, bridging connections between workstations and/or computers.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 igmp-snooping:
                     type: str
                     description: 'Set IGMP snooping mode for the physical port interface.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 igmps-flood-reports:
                     type: str
                     description: 'Enable/disable flooding of IGMP reports to this interface when igmp-snooping enabled.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 igmps-flood-traffic:
                     type: str
                     description: 'Enable/disable flooding of IGMP snooping traffic to this interface.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 lacp-speed:
                     type: str
                     description: 'end Link Aggregation Control Protocol (LACP) messages every 30 seconds (slow) or every second (fast).'
                     choices:
-                        - slow
-                        - fast
+                        - 'slow'
+                        - 'fast'
                 learning-limit:
                     type: int
                     description: 'Limit the number of dynamic MAC addresses on this Port (1 - 128, 0 = no limit, default).'
@@ -150,16 +150,16 @@ options:
                     type: str
                     description: 'LLDP transmit and receive status.'
                     choices:
-                        - disable
-                        - rx-only
-                        - tx-only
-                        - tx-rx
+                        - 'disable'
+                        - 'rx-only'
+                        - 'tx-only'
+                        - 'tx-rx'
                 loop-guard:
                     type: str
                     description: 'Enable/disable loop-guard on this interface, an STP optimization used to prevent network loops.'
                     choices:
-                        - disabled
-                        - enabled
+                        - 'disabled'
+                        - 'enabled'
                 loop-guard-timeout:
                     type: int
                     description: 'Loop-guard timeout (0 - 120 min, default = 45).'
@@ -170,14 +170,14 @@ options:
                     type: str
                     description: 'Enable/disable multi-chassis link aggregation (MCLAG).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 member-withdrawal-behavior:
                     type: str
                     description: 'Port behavior after it withdraws because of loss of control packets.'
                     choices:
-                        - forward
-                        - block
+                        - 'forward'
+                        - 'block'
                 members:
                     -
                         type: str
@@ -188,21 +188,21 @@ options:
                     type: str
                     description: 'LACP mode: ignore and do not send control messages, or negotiate 802.3ad aggregation passively or actively.'
                     choices:
-                        - static
-                        - lacp-passive
-                        - lacp-active
+                        - 'static'
+                        - 'lacp-passive'
+                        - 'lacp-active'
                 poe-pre-standard-detection:
                     type: str
                     description: 'Enable/disable PoE pre-standard detection.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 poe-status:
                     type: str
                     description: 'Enable/disable PoE status.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 port-name:
                     type: str
                     description: 'Switch port name.'
@@ -216,12 +216,12 @@ options:
                     type: str
                     description: 'Algorithm for aggregate port selection.'
                     choices:
-                        - src-mac
-                        - dst-mac
-                        - src-dst-mac
-                        - src-ip
-                        - dst-ip
-                        - src-dst-ip
+                        - 'src-mac'
+                        - 'dst-mac'
+                        - 'src-dst-mac'
+                        - 'src-ip'
+                        - 'dst-ip'
+                        - 'src-dst-ip'
                 qos-policy:
                     type: str
                     description: 'Switch controller QoS policy from available options.'
@@ -229,9 +229,9 @@ options:
                     type: str
                     description: 'sFlow sample direction.'
                     choices:
-                        - rx
-                        - tx
-                        - both
+                        - 'rx'
+                        - 'tx'
+                        - 'both'
                 sflow-counter-interval:
                     type: int
                     description: 'sFlow sampler counter polling interval (1 - 255 sec).'
@@ -242,14 +242,14 @@ options:
                     type: str
                     description: 'Enable/disable sFlow protocol on this interface.'
                     choices:
-                        - disabled
-                        - enabled
+                        - 'disabled'
+                        - 'enabled'
                 stp-bpdu-guard:
                     type: str
                     description: 'Enable/disable STP BPDU guard on this interface.'
                     choices:
-                        - disabled
-                        - enabled
+                        - 'disabled'
+                        - 'enabled'
                 stp-bpdu-guard-timeout:
                     type: int
                     description: 'BPDU Guard disabling protection (0 - 120 min).'
@@ -257,20 +257,20 @@ options:
                     type: str
                     description: 'Enable/disable STP root guard on this interface.'
                     choices:
-                        - disabled
-                        - enabled
+                        - 'disabled'
+                        - 'enabled'
                 stp-state:
                     type: str
                     description: 'Enable/disable Spanning Tree Protocol (STP) on this interface.'
                     choices:
-                        - disabled
-                        - enabled
+                        - 'disabled'
+                        - 'enabled'
                 type:
                     type: str
                     description: 'Interface type: physical or trunk port.'
                     choices:
-                        - physical
-                        - trunk
+                        - 'physical'
+                        - 'trunk'
                 untagged-vlans:
                     type: str
                     description: 'Configure switch port untagged vlans'
@@ -294,9 +294,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

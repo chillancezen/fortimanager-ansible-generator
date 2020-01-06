@@ -71,22 +71,22 @@ options:
                     type: str
                     description: 'add message encapsulation'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 charset:
                     type: str
                     description: 'character encoding used for replacement message'
                     choices:
-                        - us-ascii
-                        - utf-8
+                        - 'us-ascii'
+                        - 'utf-8'
                 format:
                     type: str
                     description: 'Format flag.'
                     choices:
-                        - none
-                        - text
-                        - html
-                        - wml
+                        - 'none'
+                        - 'text'
+                        - 'html'
+                        - 'wml'
                 from:
                     type: str
                     description: 'from address'
@@ -94,15 +94,15 @@ options:
                     type: str
                     description: 'notification message sent from recipient'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 header:
                     type: str
                     description: 'Header flag.'
                     choices:
-                        - none
-                        - http
-                        - 8bit
+                        - 'none'
+                        - 'http'
+                        - '8bit'
                 html-part:
                     type: str
                     description: 'message encapsulation text'
@@ -119,10 +119,10 @@ options:
                     type: str
                     description: 'message priority'
                     choices:
-                        - low
-                        - normal
-                        - high
-                        - not-included
+                        - 'low'
+                        - 'normal'
+                        - 'high'
+                        - 'not-included'
                 subject:
                     type: str
                     description: 'subject text string'
@@ -143,9 +143,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

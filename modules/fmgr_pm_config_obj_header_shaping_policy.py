@@ -69,46 +69,46 @@ options:
                     -
                         type: str
                         choices:
-                            - app-category
-                            - app-group
-                            - application
-                            - class-id
-                            - comment
-                            - diffserv-forward
-                            - diffserv-reverse
-                            - diffservcode-forward
-                            - diffservcode-rev
-                            - dstaddr
-                            - dstaddr6
-                            - dstintf
-                            - groups
-                            - id
-                            - internet-service
-                            - internet-service-custom
-                            - internet-service-custom-group
-                            - internet-service-group
-                            - internet-service-id
-                            - internet-service-src
-                            - internet-service-src-custom
-                            - internet-service-src-custom-group
-                            - internet-service-src-group
-                            - internet-service-src-id
-                            - ip-version
-                            - name
-                            - per-ip-shaper
-                            - schedule
-                            - service
-                            - srcaddr
-                            - srcaddr6
-                            - srcintf
-                            - status
-                            - tos
-                            - tos-mask
-                            - tos-negate
-                            - traffic-shaper
-                            - traffic-shaper-reverse
-                            - url-category
-                            - users
+                            - 'app-category'
+                            - 'app-group'
+                            - 'application'
+                            - 'class-id'
+                            - 'comment'
+                            - 'diffserv-forward'
+                            - 'diffserv-reverse'
+                            - 'diffservcode-forward'
+                            - 'diffservcode-rev'
+                            - 'dstaddr'
+                            - 'dstaddr6'
+                            - 'dstintf'
+                            - 'groups'
+                            - 'id'
+                            - 'internet-service'
+                            - 'internet-service-custom'
+                            - 'internet-service-custom-group'
+                            - 'internet-service-group'
+                            - 'internet-service-id'
+                            - 'internet-service-src'
+                            - 'internet-service-src-custom'
+                            - 'internet-service-src-custom-group'
+                            - 'internet-service-src-group'
+                            - 'internet-service-src-id'
+                            - 'ip-version'
+                            - 'name'
+                            - 'per-ip-shaper'
+                            - 'schedule'
+                            - 'service'
+                            - 'srcaddr'
+                            - 'srcaddr6'
+                            - 'srcintf'
+                            - 'status'
+                            - 'tos'
+                            - 'tos-mask'
+                            - 'tos-negate'
+                            - 'traffic-shaper'
+                            - 'traffic-shaper-reverse'
+                            - 'url-category'
+                            - 'users'
             filter:
                 -
                     type: str
@@ -127,11 +127,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -46,7 +46,7 @@ Parameters
  <li><span class="li-head">parameters for method: [clone, set, update]</span> - Configure user password policy.</li>
  <ul class="ul-self">
  <li><span class="li-head">data</span> - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
- <li><span class="li-head">expire-days</span> - Time in days before the user's password expires. <span class="li-normal">type: int</span> </li>
+ <li><span class="li-head">expire-days</span> - Time in days before the users password expires. <span class="li-normal">type: int</span> </li>
  <li><span class="li-head">name</span> - Password policy name. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">warn-days</span> - Time in days before a password expiration warning message is displayed to the user upon login. <span class="li-normal">type: int</span> </li>
  </ul>
@@ -135,7 +135,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <ul class="ul-self">
  <li><span class="li-return">data</span>
  - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
- <li> <span class="li-return"> expire-days </span> - Time in days before the user's password expires. <span class="li-normal">type: int</span>  </li>
+ <li> <span class="li-return"> expire-days </span> - Time in days before the users password expires. <span class="li-normal">type: int</span>  </li>
  <li> <span class="li-return"> name </span> - Password policy name. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> warn-days </span> - Time in days before a password expiration warning message is displayed to the user upon login. <span class="li-normal">type: int</span>  </li>
  </ul>

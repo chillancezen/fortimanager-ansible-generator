@@ -75,17 +75,17 @@ options:
                     type: str
                     description: 'Peer certificate common name type.'
                     choices:
-                        - string
-                        - email
-                        - FQDN
-                        - ipv4
-                        - ipv6
+                        - 'string'
+                        - 'email'
+                        - 'FQDN'
+                        - 'ipv4'
+                        - 'ipv6'
                 ldap-mode:
                     type: str
                     description: 'Mode for LDAP peer authentication.'
                     choices:
-                        - password
-                        - principal-name
+                        - 'password'
+                        - 'principal-name'
                 ldap-password:
                     -
                         type: str
@@ -99,8 +99,8 @@ options:
                     type: str
                     description: 'Determine what happens to the peer if the CA certificate is not installed. Disable to automatically consider the peer certificate as valid.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 name:
                     type: str
                     description: 'Peer name.'
@@ -117,8 +117,8 @@ options:
                     type: str
                     description: 'Enable/disable two-factor authentication, applying certificate and password-based authentication.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'Configure peer users.'
@@ -136,9 +136,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

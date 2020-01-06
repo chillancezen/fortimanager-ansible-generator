@@ -71,31 +71,31 @@ options:
                     type: str
                     description: 'add message encapsulation'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 charset:
                     type: str
                     description: 'character encoding used for replacement message'
                     choices:
-                        - us-ascii
-                        - utf-8
+                        - 'us-ascii'
+                        - 'utf-8'
                 class:
                     type: str
                     description: 'message class'
                     choices:
-                        - personal
-                        - advertisement
-                        - information
-                        - automatic
-                        - not-included
+                        - 'personal'
+                        - 'advertisement'
+                        - 'information'
+                        - 'automatic'
+                        - 'not-included'
                 format:
                     type: str
                     description: 'Format flag.'
                     choices:
-                        - none
-                        - text
-                        - html
-                        - wml
+                        - 'none'
+                        - 'text'
+                        - 'html'
+                        - 'wml'
                 from:
                     type: str
                     description: 'from address'
@@ -103,15 +103,15 @@ options:
                     type: str
                     description: 'notification message sent from recipient'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 header:
                     type: str
                     description: 'Header flag.'
                     choices:
-                        - none
-                        - http
-                        - 8bit
+                        - 'none'
+                        - 'http'
+                        - '8bit'
                 image:
                     type: str
                     description: 'Message string.'
@@ -125,23 +125,23 @@ options:
                     type: str
                     description: 'message priority'
                     choices:
-                        - low
-                        - normal
-                        - high
-                        - not-included
+                        - 'low'
+                        - 'normal'
+                        - 'high'
+                        - 'not-included'
                 rsp-status:
                     type: str
                     description: 'response status code'
                     choices:
-                        - ok
-                        - err-unspecified
-                        - err-srv-denied
-                        - err-msg-fmt-corrupt
-                        - err-snd-addr-unresolv
-                        - err-msg-not-found
-                        - err-net-prob
-                        - err-content-not-accept
-                        - err-unsupp-msg
+                        - 'ok'
+                        - 'err-unspecified'
+                        - 'err-srv-denied'
+                        - 'err-msg-fmt-corrupt'
+                        - 'err-snd-addr-unresolv'
+                        - 'err-msg-not-found'
+                        - 'err-net-prob'
+                        - 'err-content-not-accept'
+                        - 'err-unsupp-msg'
                 rsp-text:
                     type: str
                     description: 'response text'
@@ -149,9 +149,9 @@ options:
                     type: str
                     description: 'sender visibility'
                     choices:
-                        - hide
-                        - show
-                        - not-specified
+                        - 'hide'
+                        - 'show'
+                        - 'not-specified'
                 smil-part:
                     type: str
                     description: 'message encapsulation text'
@@ -175,9 +175,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

@@ -60,11 +60,11 @@ options:
                 -
                     adom:
                         type: str
-                        default: *
+                        default: '*'
                         description: 'Adom name.'
                     device:
                         type: str
-                        default: *
+                        default: '*'
                         description: 'Device name or Serial number.'
                     id:
                         type: int
@@ -72,7 +72,7 @@ options:
                         description: 'Add or edit a device filter.'
                     vdom:
                         type: str
-                        default: *
+                        default: '*'
                         description: 'Vdom filters.'
     schema_object1:
         methods: [get]
@@ -84,10 +84,10 @@ options:
                     -
                         type: str
                         choices:
-                            - adom
-                            - device
-                            - id
-                            - vdom
+                            - 'adom'
+                            - 'device'
+                            - 'id'
+                            - 'vdom'
             filter:
                 -
                     type: str
@@ -101,8 +101,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

@@ -67,11 +67,11 @@ options:
                     description: 'Gateway out interface.'
                 dst:
                     type: str
-                    default: ::/0
+                    default: '::/0'
                     description: 'Destination IP and mask for this route.'
                 gateway:
                     type: str
-                    default: ::
+                    default: '::'
                     description: 'Gateway IP for this route.'
                 prio:
                     type: int

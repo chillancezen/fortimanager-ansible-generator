@@ -69,8 +69,8 @@ options:
                     type: str
                     description: 'Address type of the forwarding proxy server: IP or FQDN.'
                     choices:
-                        - fqdn
-                        - ip
+                        - 'fqdn'
+                        - 'ip'
                 comment:
                     type: str
                     description: 'Comment.'
@@ -81,8 +81,8 @@ options:
                     type: str
                     description: 'Enable/disable forward server health checking. Attempts to connect through the remote forwarding server to a destination to verify that the forwarding server is operating normally.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ip:
                     type: str
                     description: 'Forward proxy server IP address.'
@@ -99,8 +99,8 @@ options:
                     type: str
                     description: 'Action to take when the forward server is found to be down: block sessions until the server is back up or pass sessions to their destination.'
                     choices:
-                        - block
-                        - pass
+                        - 'block'
+                        - 'pass'
     schema_object1:
         methods: [delete]
         description: 'Configure forward-server addresses.'
@@ -118,9 +118,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

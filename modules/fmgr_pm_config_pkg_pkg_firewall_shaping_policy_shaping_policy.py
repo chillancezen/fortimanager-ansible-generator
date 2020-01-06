@@ -91,8 +91,8 @@ options:
                     type: str
                     description: 'Apply this traffic shaping policy to IPv4 or IPv6 traffic.'
                     choices:
-                        - 4
-                        - 6
+                        - '4'
+                        - '6'
                 per-ip-shaper:
                     type: str
                     description: 'Per-IP traffic shaper to apply with this policy.'
@@ -112,8 +112,8 @@ options:
                     type: str
                     description: 'Enable/disable this traffic shaping policy.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 traffic-shaper:
                     type: str
                     description: 'Traffic shaper to apply to traffic forwarded by the firewall policy.'
@@ -143,9 +143,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object3:
         methods: [move]
         description: 'Configure shaping policies.'
@@ -154,8 +154,8 @@ options:
             option:
                 type: str
                 choices:
-                    - before
-                    - after
+                    - 'before'
+                    - 'after'
             target:
                 type: str
                 description: 'Key to the target entry.'

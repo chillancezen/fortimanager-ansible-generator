@@ -86,9 +86,9 @@ options:
                     -
                         type: str
                         choices:
-                            - oma-dm
-                            - soap-xml-spp
-                            - reserved
+                            - 'oma-dm'
+                            - 'soap-xml-spp'
+                            - 'reserved'
                 osu-nai:
                     type: str
                     description: 'OSU NAI.'
@@ -123,9 +123,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

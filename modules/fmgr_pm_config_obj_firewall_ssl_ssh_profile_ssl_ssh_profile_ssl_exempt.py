@@ -85,11 +85,11 @@ options:
                         type: str
                         description: 'Type of address object (IPv4 or IPv6) or FortiGuard category.'
                         choices:
-                            - fortiguard-category
-                            - address
-                            - address6
-                            - wildcard-fqdn
-                            - regex
+                            - 'fortiguard-category'
+                            - 'address'
+                            - 'address6'
+                            - 'wildcard-fqdn'
+                            - 'regex'
                     wildcard-fqdn:
                         type: str
                         description: 'Exempt servers by wildcard FQDN.'
@@ -106,13 +106,13 @@ options:
                     -
                         type: str
                         choices:
-                            - address
-                            - address6
-                            - fortiguard-category
-                            - id
-                            - regex
-                            - type
-                            - wildcard-fqdn
+                            - 'address'
+                            - 'address6'
+                            - 'fortiguard-category'
+                            - 'id'
+                            - 'regex'
+                            - 'type'
+                            - 'wildcard-fqdn'
             filter:
                 -
                     type: str
@@ -131,11 +131,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

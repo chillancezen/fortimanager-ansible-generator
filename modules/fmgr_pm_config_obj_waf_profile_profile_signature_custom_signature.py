@@ -70,27 +70,27 @@ options:
                         type: str
                         description: 'Action.'
                         choices:
-                            - allow
-                            - block
-                            - erase
+                            - 'allow'
+                            - 'block'
+                            - 'erase'
                     case-sensitivity:
                         type: str
                         description: 'Case sensitivity in pattern.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     direction:
                         type: str
                         description: 'Traffic direction.'
                         choices:
-                            - request
-                            - response
+                            - 'request'
+                            - 'response'
                     log:
                         type: str
                         description: 'Enable/disable logging.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     name:
                         type: str
                         description: 'Signature name.'
@@ -101,32 +101,32 @@ options:
                         type: str
                         description: 'Severity.'
                         choices:
-                            - low
-                            - medium
-                            - high
+                            - 'low'
+                            - 'medium'
+                            - 'high'
                     status:
                         type: str
                         description: 'Status.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     target:
                         -
                             type: str
                             choices:
-                                - arg
-                                - arg-name
-                                - req-body
-                                - req-cookie
-                                - req-cookie-name
-                                - req-filename
-                                - req-header
-                                - req-header-name
-                                - req-raw-uri
-                                - req-uri
-                                - resp-body
-                                - resp-hdr
-                                - resp-status
+                                - 'arg'
+                                - 'arg-name'
+                                - 'req-body'
+                                - 'req-cookie'
+                                - 'req-cookie-name'
+                                - 'req-filename'
+                                - 'req-header'
+                                - 'req-header-name'
+                                - 'req-raw-uri'
+                                - 'req-uri'
+                                - 'resp-body'
+                                - 'resp-hdr'
+                                - 'resp-status'
     schema_object1:
         methods: [get]
         description: 'Custom signature.'
@@ -140,15 +140,15 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - case-sensitivity
-                            - direction
-                            - log
-                            - name
-                            - pattern
-                            - severity
-                            - status
-                            - target
+                            - 'action'
+                            - 'case-sensitivity'
+                            - 'direction'
+                            - 'log'
+                            - 'name'
+                            - 'pattern'
+                            - 'severity'
+                            - 'status'
+                            - 'target'
             filter:
                 -
                     type: str
@@ -167,11 +167,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

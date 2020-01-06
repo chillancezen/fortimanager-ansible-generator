@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Flood configuration.'
@@ -84,32 +84,32 @@ options:
                     -
                         type: str
                         choices:
-                            - log
-                            - archive
-                            - intercept
-                            - block
-                            - archive-first
-                            - alert-notif
+                            - 'log'
+                            - 'archive'
+                            - 'intercept'
+                            - 'block'
+                            - 'archive-first'
+                            - 'alert-notif'
                 action2:
                     -
                         type: str
                         choices:
-                            - log
-                            - archive
-                            - intercept
-                            - block
-                            - archive-first
-                            - alert-notif
+                            - 'log'
+                            - 'archive'
+                            - 'intercept'
+                            - 'block'
+                            - 'archive-first'
+                            - 'alert-notif'
                 action3:
                     -
                         type: str
                         choices:
-                            - log
-                            - archive
-                            - intercept
-                            - block
-                            - archive-first
-                            - alert-notif
+                            - 'log'
+                            - 'archive'
+                            - 'intercept'
+                            - 'block'
+                            - 'archive-first'
+                            - 'alert-notif'
                 block-time1:
                     type: int
                     description: 'Duration for which action takes effect (0 - 35791 min).'
@@ -135,20 +135,20 @@ options:
                     type: str
                     description: 'Enable/disable status1 detection.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 status2:
                     type: str
                     description: 'Enable/disable status2 detection.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 status3:
                     type: str
                     description: 'Enable/disable status3 detection.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 window1:
                     type: int
                     description: 'Window to count messages over (1 - 2880 min).'

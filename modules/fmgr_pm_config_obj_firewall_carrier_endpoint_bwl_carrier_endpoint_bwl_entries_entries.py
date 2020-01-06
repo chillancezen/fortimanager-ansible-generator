@@ -71,9 +71,9 @@ options:
                     -
                         type: str
                         choices:
-                            - block
-                            - exempt
-                            - exempt-mass-mms
+                            - 'block'
+                            - 'exempt'
+                            - 'exempt-mass-mms'
                 carrier-endpoint:
                     type: str
                     description: 'End point to act on.'
@@ -81,21 +81,21 @@ options:
                     -
                         type: str
                         choices:
-                            - archive
-                            - intercept
+                            - 'archive'
+                            - 'intercept'
                 pattern-type:
                     type: str
                     description: 'Wildcard pattern or regular expression.'
                     choices:
-                        - wildcard
-                        - regexp
-                        - simple
+                        - 'wildcard'
+                        - 'regexp'
+                        - 'simple'
                 status:
                     type: str
                     description: 'Enable/disable specified action(s) for this end point.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'Carrier end point black/white list.'
@@ -113,9 +113,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object3:
         methods: [move]
         description: 'Carrier end point black/white list.'
@@ -124,8 +124,8 @@ options:
             option:
                 type: str
                 choices:
-                    - before
-                    - after
+                    - 'before'
+                    - 'after'
             target:
                 type: str
                 description: 'Key to the target entry.'

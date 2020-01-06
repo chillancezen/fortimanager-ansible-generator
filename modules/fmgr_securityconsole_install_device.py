@@ -59,9 +59,9 @@ options:
                     -
                         type: str
                         choices:
-                            - none
-                            - preview
-                            - auto_lock_ws
+                            - 'none'
+                            - 'preview'
+                            - 'auto_lock_ws'
                 scope:
                     -
                         name:

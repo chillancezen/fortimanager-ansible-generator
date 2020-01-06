@@ -62,27 +62,27 @@ options:
                         -
                             type: str
                             choices:
-                                - log
-                                - fortiview
-                                - alert
-                                - ueba
-                                - all
+                                - 'log'
+                                - 'fortiview'
+                                - 'alert'
+                                - 'ueba'
+                                - 'all'
                     field-name:
                         type: str
                         description: 'Field name.'
                     field-status:
                         type: str
-                        default: enable
+                        default: 'enable'
                         description:
                          - 'Field status.'
                          - 'disable - Disable field.'
                          - 'enable - Enable field.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     field-type:
                         type: str
-                        default: string
+                        default: 'string'
                         description:
                          - 'Field type.'
                          - 'string - String.'
@@ -91,11 +91,11 @@ options:
                          - 'email - Email address.'
                          - 'unknown - Unknown.'
                         choices:
-                            - string
-                            - ip
-                            - mac
-                            - email
-                            - unknown
+                            - 'string'
+                            - 'ip'
+                            - 'mac'
+                            - 'email'
+                            - 'unknown'
     schema_object1:
         methods: [get]
         description: 'Customized datamask fields.'
@@ -106,10 +106,10 @@ options:
                     -
                         type: str
                         choices:
-                            - field-category
-                            - field-name
-                            - field-status
-                            - field-type
+                            - 'field-category'
+                            - 'field-name'
+                            - 'field-status'
+                            - 'field-type'
             filter:
                 -
                     type: str
@@ -123,8 +123,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

@@ -68,8 +68,8 @@ options:
                         type: str
                         description: 'Enable/disable overriding the policy-auth-concurrent under config system global.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     auth-concurrent-value:
                         type: int
                         description: 'Maximum number of concurrent logins permitted from the same user.'
@@ -78,10 +78,10 @@ options:
                         description: 'Time in minutes before the authentication timeout for a user is reached.'
                     email-to:
                         type: str
-                        description: 'Two-factor recipient's email address.'
+                        description: 'Two-factor recipients email address.'
                     fortitoken:
                         type: str
-                        description: 'Two-factor recipient's FortiToken serial number.'
+                        description: 'Two-factor recipients FortiToken serial number.'
                     id:
                         type: int
                         description: 'User ID.'
@@ -108,22 +108,22 @@ options:
                         description: 'Name of RADIUS server with which the user must authenticate.'
                     sms-custom-server:
                         type: str
-                        description: 'Two-factor recipient's SMS server.'
+                        description: 'Two-factor recipients SMS server.'
                     sms-phone:
                         type: str
-                        description: 'Two-factor recipient's mobile phone number.'
+                        description: 'Two-factor recipients mobile phone number.'
                     sms-server:
                         type: str
                         description: 'Send SMS through FortiGuard or other external server.'
                         choices:
-                            - fortiguard
-                            - custom
+                            - 'fortiguard'
+                            - 'custom'
                     status:
                         type: str
                         description: 'Enable/disable allowing the local user to authenticate with the FortiGate unit.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     tacacs+-server:
                         type: str
                         description: 'Name of TACACS+ server with which the user must authenticate.'
@@ -131,19 +131,19 @@ options:
                         type: str
                         description: 'Enable/disable two-factor authentication.'
                         choices:
-                            - disable
-                            - fortitoken
-                            - email
-                            - sms
-                            - fortitoken-cloud
+                            - 'disable'
+                            - 'fortitoken'
+                            - 'email'
+                            - 'sms'
+                            - 'fortitoken-cloud'
                     type:
                         type: str
                         description: 'Authentication method.'
                         choices:
-                            - password
-                            - radius
-                            - tacacs+
-                            - ldap
+                            - 'password'
+                            - 'radius'
+                            - 'tacacs+'
+                            - 'ldap'
                     workstation:
                         type: str
                         description: 'Name of the remote user workstation, if you want to limit the user to authenticate only from a particular workstation.'
@@ -160,27 +160,27 @@ options:
                     -
                         type: str
                         choices:
-                            - auth-concurrent-override
-                            - auth-concurrent-value
-                            - authtimeout
-                            - email-to
-                            - fortitoken
-                            - id
-                            - ldap-server
-                            - name
-                            - passwd
-                            - passwd-policy
-                            - ppk-identity
-                            - ppk-secret
-                            - radius-server
-                            - sms-custom-server
-                            - sms-phone
-                            - sms-server
-                            - status
-                            - tacacs+-server
-                            - two-factor
-                            - type
-                            - workstation
+                            - 'auth-concurrent-override'
+                            - 'auth-concurrent-value'
+                            - 'authtimeout'
+                            - 'email-to'
+                            - 'fortitoken'
+                            - 'id'
+                            - 'ldap-server'
+                            - 'name'
+                            - 'passwd'
+                            - 'passwd-policy'
+                            - 'ppk-identity'
+                            - 'ppk-secret'
+                            - 'radius-server'
+                            - 'sms-custom-server'
+                            - 'sms-phone'
+                            - 'sms-server'
+                            - 'status'
+                            - 'tacacs+-server'
+                            - 'two-factor'
+                            - 'type'
+                            - 'workstation'
             filter:
                 -
                     type: str
@@ -199,11 +199,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int
@@ -318,10 +318,10 @@ return_of_api_category_0:
                   description: 'Time in minutes before the authentication timeout for a user is reached.'
                email-to:
                   type: str
-                  description: 'Two-factor recipient's email address.'
+                  description: 'Two-factor recipients email address.'
                fortitoken:
                   type: str
-                  description: 'Two-factor recipient's FortiToken serial number.'
+                  description: 'Two-factor recipients FortiToken serial number.'
                id:
                   type: int
                   description: 'User ID.'
@@ -350,10 +350,10 @@ return_of_api_category_0:
                   description: 'Name of RADIUS server with which the user must authenticate.'
                sms-custom-server:
                   type: str
-                  description: 'Two-factor recipient's SMS server.'
+                  description: 'Two-factor recipients SMS server.'
                sms-phone:
                   type: str
-                  description: 'Two-factor recipient's mobile phone number.'
+                  description: 'Two-factor recipients mobile phone number.'
                sms-server:
                   type: str
                   description: 'Send SMS through FortiGuard or other external server.'

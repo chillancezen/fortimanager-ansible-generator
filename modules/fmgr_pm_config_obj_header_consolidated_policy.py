@@ -69,71 +69,71 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - app-category
-                            - app-group
-                            - application
-                            - application-list
-                            - auto-asic-offload
-                            - av-profile
-                            - cifs-profile
-                            - comments
-                            - diffserv-forward
-                            - diffserv-reverse
-                            - diffservcode-forward
-                            - diffservcode-rev
-                            - dlp-sensor
-                            - dnsfilter-profile
-                            - dstaddr4
-                            - dstaddr6
-                            - dstintf
-                            - emailfilter-profile
-                            - fixedport
-                            - groups
-                            - http-policy-redirect
-                            - icap-profile
-                            - inbound
-                            - inspection-mode
-                            - ippool
-                            - ips-sensor
-                            - logtraffic
-                            - logtraffic-start
-                            - mms-profile
-                            - name
-                            - nat
-                            - outbound
-                            - per-ip-shaper
-                            - policyid
-                            - poolname4
-                            - poolname6
-                            - profile-group
-                            - profile-protocol-options
-                            - profile-type
-                            - schedule
-                            - schedule-timeout
-                            - service
-                            - session-ttl
-                            - spamfilter-profile
-                            - srcaddr4
-                            - srcaddr6
-                            - srcintf
-                            - ssh-filter-profile
-                            - ssh-policy-redirect
-                            - ssl-ssh-profile
-                            - status
-                            - tcp-mss-receiver
-                            - tcp-mss-sender
-                            - traffic-shaper
-                            - traffic-shaper-reverse
-                            - url-category
-                            - users
-                            - utm-inspection-mode
-                            - utm-status
-                            - uuid
-                            - voip-profile
-                            - vpntunnel
-                            - waf-profile
-                            - webfilter-profile
+                            - 'action'
+                            - 'app-category'
+                            - 'app-group'
+                            - 'application'
+                            - 'application-list'
+                            - 'auto-asic-offload'
+                            - 'av-profile'
+                            - 'cifs-profile'
+                            - 'comments'
+                            - 'diffserv-forward'
+                            - 'diffserv-reverse'
+                            - 'diffservcode-forward'
+                            - 'diffservcode-rev'
+                            - 'dlp-sensor'
+                            - 'dnsfilter-profile'
+                            - 'dstaddr4'
+                            - 'dstaddr6'
+                            - 'dstintf'
+                            - 'emailfilter-profile'
+                            - 'fixedport'
+                            - 'groups'
+                            - 'http-policy-redirect'
+                            - 'icap-profile'
+                            - 'inbound'
+                            - 'inspection-mode'
+                            - 'ippool'
+                            - 'ips-sensor'
+                            - 'logtraffic'
+                            - 'logtraffic-start'
+                            - 'mms-profile'
+                            - 'name'
+                            - 'nat'
+                            - 'outbound'
+                            - 'per-ip-shaper'
+                            - 'policyid'
+                            - 'poolname4'
+                            - 'poolname6'
+                            - 'profile-group'
+                            - 'profile-protocol-options'
+                            - 'profile-type'
+                            - 'schedule'
+                            - 'schedule-timeout'
+                            - 'service'
+                            - 'session-ttl'
+                            - 'spamfilter-profile'
+                            - 'srcaddr4'
+                            - 'srcaddr6'
+                            - 'srcintf'
+                            - 'ssh-filter-profile'
+                            - 'ssh-policy-redirect'
+                            - 'ssl-ssh-profile'
+                            - 'status'
+                            - 'tcp-mss-receiver'
+                            - 'tcp-mss-sender'
+                            - 'traffic-shaper'
+                            - 'traffic-shaper-reverse'
+                            - 'url-category'
+                            - 'users'
+                            - 'utm-inspection-mode'
+                            - 'utm-status'
+                            - 'uuid'
+                            - 'voip-profile'
+                            - 'vpntunnel'
+                            - 'waf-profile'
+                            - 'webfilter-profile'
             filter:
                 -
                     type: str
@@ -152,11 +152,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

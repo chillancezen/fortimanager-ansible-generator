@@ -68,8 +68,8 @@ options:
                         type: str
                         description: 'Default action (pass or block) for this signature.'
                         choices:
-                            - block
-                            - pass
+                            - 'block'
+                            - 'pass'
                     application:
                         -
                             type: str
@@ -83,14 +83,14 @@ options:
                         type: str
                         description: 'Enable/disable logging.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     log-packet:
                         type: str
                         description: 'Enable/disable packet logging.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     os:
                         -
                             type: str
@@ -111,8 +111,8 @@ options:
                         type: str
                         description: 'Enable/disable this signature.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     tag:
                         type: str
                         description: 'Signature tag.'
@@ -129,20 +129,20 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - application
-                            - comment
-                            - location
-                            - log
-                            - log-packet
-                            - os
-                            - protocol
-                            - rule-id
-                            - severity
-                            - sig-name
-                            - signature
-                            - status
-                            - tag
+                            - 'action'
+                            - 'application'
+                            - 'comment'
+                            - 'location'
+                            - 'log'
+                            - 'log-packet'
+                            - 'os'
+                            - 'protocol'
+                            - 'rule-id'
+                            - 'severity'
+                            - 'sig-name'
+                            - 'signature'
+                            - 'status'
+                            - 'tag'
             filter:
                 -
                     type: str
@@ -161,11 +161,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

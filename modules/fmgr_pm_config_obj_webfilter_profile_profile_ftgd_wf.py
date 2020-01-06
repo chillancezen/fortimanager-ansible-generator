@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'FortiGuard Web Filter settings.'
@@ -89,10 +89,10 @@ options:
                             type: str
                             description: 'Action to take for matches.'
                             choices:
-                                - block
-                                - monitor
-                                - warning
-                                - authenticate
+                                - 'block'
+                                - 'monitor'
+                                - 'warning'
+                                - 'authenticate'
                         auth-usr-grp:
                             type: str
                             description: 'Groups with permission to authenticate.'
@@ -106,8 +106,8 @@ options:
                             type: str
                             description: 'Enable/disable logging.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         override-replacemsg:
                             type: str
                             description: 'Override replacement message.'
@@ -118,14 +118,14 @@ options:
                             type: str
                             description: 'Re-display warning after closing browser or after a timeout.'
                             choices:
-                                - session
-                                - timeout
+                                - 'session'
+                                - 'timeout'
                         warning-prompt:
                             type: str
                             description: 'Warning prompts in each category or each domain.'
                             choices:
-                                - per-domain
-                                - per-category
+                                - 'per-domain'
+                                - 'per-category'
                 max-quota-timeout:
                     type: int
                     description: 'Maximum FortiGuard quota used by single page view in seconds (excludes streams).'
@@ -133,15 +133,15 @@ options:
                     -
                         type: str
                         choices:
-                            - error-allow
-                            - http-err-detail
-                            - rate-image-urls
-                            - strict-blocking
-                            - rate-server-ip
-                            - redir-block
-                            - connect-request-bypass
-                            - log-all-url
-                            - ftgd-disable
+                            - 'error-allow'
+                            - 'http-err-detail'
+                            - 'rate-image-urls'
+                            - 'strict-blocking'
+                            - 'rate-server-ip'
+                            - 'redir-block'
+                            - 'connect-request-bypass'
+                            - 'log-all-url'
+                            - 'ftgd-disable'
                 ovrd:
                     type: str
                     description: 'Allow web filter profile overrides.'
@@ -163,16 +163,16 @@ options:
                             type: str
                             description: 'Quota type.'
                             choices:
-                                - time
-                                - traffic
+                                - 'time'
+                                - 'traffic'
                         unit:
                             type: str
                             description: 'Traffic quota unit of measurement.'
                             choices:
-                                - B
-                                - KB
-                                - MB
-                                - GB
+                                - 'B'
+                                - 'KB'
+                                - 'MB'
+                                - 'GB'
                         value:
                             type: int
                             description: 'Traffic quota value.'
@@ -180,26 +180,26 @@ options:
                     type: str
                     description: 'Enable/disable rating CRL by URL.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 rate-css-urls:
                     type: str
                     description: 'Enable/disable rating CSS by URL.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 rate-image-urls:
                     type: str
                     description: 'Enable/disable rating images by URL.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 rate-javascript-urls:
                     type: str
                     description: 'Enable/disable rating JavaScript by URL.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

@@ -59,8 +59,8 @@ options:
                     -
                         type: str
                         choices:
-                            - none
-                            - json
+                            - 'none'
+                            - 'json'
                 vdoms:
                     -
                         type: str

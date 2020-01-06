@@ -92,9 +92,9 @@ options:
                             type: str
                             description: 'Priority.'
                             choices:
-                                - low
-                                - medium
-                                - high
+                                - 'low'
+                                - 'medium'
+                                - 'high'
     schema_object1:
         methods: [delete]
         description: 'Configure shaping profiles.'
@@ -112,9 +112,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

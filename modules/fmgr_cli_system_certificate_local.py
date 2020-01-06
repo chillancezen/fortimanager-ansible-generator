@@ -66,7 +66,7 @@ options:
                     password:
                         -
                             type: str
-                            default: ENC MTU2NTY2MTI5MDA3MDkxNBB2U7GXAKMJnXNp1HA5qlMS8x60LYYPH59UftMARK2yBZSIyOKVdX6+LwsW+HCuCyxLGSjNDtDBuxlRE0O7Wq9sKZOknxG2S1rADC1fQWbul8eYa0wrzplnDD/u8OlHAf4q/+Ubo19o8BlFW8Pg8Fi+WhVP
+                            default: 'ENC MTU2NTY2MTI5MDA3MDkxNBB2U7GXAKMJnXNp1HA5qlMS8x60LYYPH59UftMARK2yBZSIyOKVdX6+LwsW+HCuCyxLGSjNDtDBuxlRE0O7Wq9sKZOknxG2S1rADC1fQWbul8eYa0wrzplnDD/u8OlHAf4q/+Ubo19o8BlFW8Pg8Fi+WhVP'
                     private-key:
                         -
                             type: str
@@ -80,12 +80,12 @@ options:
                     -
                         type: str
                         choices:
-                            - certificate
-                            - comment
-                            - csr
-                            - name
-                            - password
-                            - private-key
+                            - 'certificate'
+                            - 'comment'
+                            - 'csr'
+                            - 'name'
+                            - 'password'
+                            - 'private-key'
             filter:
                 -
                     type: str
@@ -99,8 +99,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

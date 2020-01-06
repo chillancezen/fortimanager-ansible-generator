@@ -69,9 +69,9 @@ options:
                         type: str
                         description: 'Indicate whether the FortiGate communicates with the override server using an IPv4 address, an IPv6 address or a FQDN.'
                         choices:
-                            - fqdn
-                            - ipv4
-                            - ipv6
+                            - 'fqdn'
+                            - 'ipv4'
+                            - 'ipv6'
                     fqdn:
                         type: str
                         description: 'FQDN address of override server.'
@@ -88,8 +88,8 @@ options:
                         -
                             type: str
                             choices:
-                                - update
-                                - rating
+                                - 'update'
+                                - 'rating'
     schema_object1:
         methods: [get]
         description: 'Additional severs that the FortiGate can use for updates (for AV, IPS, updates) and ratings (for web filter and antispam ratings) servers.'
@@ -103,12 +103,12 @@ options:
                     -
                         type: str
                         choices:
-                            - addr-type
-                            - fqdn
-                            - id
-                            - server-address
-                            - server-address6
-                            - server-type
+                            - 'addr-type'
+                            - 'fqdn'
+                            - 'id'
+                            - 'server-address'
+                            - 'server-address6'
+                            - 'server-type'
             filter:
                 -
                     type: str
@@ -127,11 +127,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

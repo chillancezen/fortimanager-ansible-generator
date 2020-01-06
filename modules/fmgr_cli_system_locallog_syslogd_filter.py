@@ -57,264 +57,264 @@ options:
             data:
                 devcfg:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log device configuration message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 devops:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Managered devices operations messages.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 diskquota:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log Fortianalyzer disk quota messages.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dm:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log deployment manager message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dvm:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log device manager messages.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ediscovery:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log Fortianalyzer ediscovery messages.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 epmgr:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log endpoint manager message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 event:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log event messages.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 eventmgmt:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log Fortianalyzer event handler messages.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 faz:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log Fortianalyzer messages.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fazha:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log Fortianalyzer HA messages.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fazsys:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log Fortianalyzer system messages.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fgd:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log FortiGuard service message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fgfm:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log FGFM protocol message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fips:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Whether to log fips messages.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fmgws:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log web service messages.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fmlmgr:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log FortiMail manager message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fmwmgr:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log firmware manager message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fortiview:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log Fortianalyzer FortiView messages.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 glbcfg:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log global database message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ha:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log HA message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 hcache:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log Fortianalyzer hcache messages.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 iolog:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log debug IO log message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 logd:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log the status of log daemon.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 logdb:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log Fortianalyzer log DB messages.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 logdev:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log Fortianalyzer log device messages.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 logfile:
                     type: str
                     description:
@@ -322,128 +322,128 @@ options:
                      - 'enable - Enable setting.'
                      - 'disable - Disable setting.'
                     choices:
-                        - enable
-                        - disable
+                        - 'enable'
+                        - 'disable'
                 logging:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log Fortianalyzer logging messages.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 lrmgr:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log log and report manager message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 objcfg:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log object configuration change message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 report:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log Fortianalyzer report messages.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 rev:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log revision history message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 rtmon:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log real-time monitor message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 scfw:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log firewall objects message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 scply:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log policy console message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 scrmgr:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log script manager message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 scvpn:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log VPN console message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 system:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log system manager message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 webport:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Log web portal message.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

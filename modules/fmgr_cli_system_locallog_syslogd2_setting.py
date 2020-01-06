@@ -57,17 +57,17 @@ options:
             data:
                 csv:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'CSV format.'
                      - 'disable - Disable CSV format.'
                      - 'enable - Enable CSV format.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 facility:
                     type: str
-                    default: local7
+                    default: 'local7'
                     description:
                      - 'Remote syslog facility.'
                      - 'kernel - Kernel messages.'
@@ -95,33 +95,33 @@ options:
                      - 'local6 - Reserved for local use.'
                      - 'local7 - Reserved for local use.'
                     choices:
-                        - kernel
-                        - user
-                        - ntp
-                        - audit
-                        - alert
-                        - clock
-                        - mail
-                        - daemon
-                        - auth
-                        - syslog
-                        - lpr
-                        - news
-                        - uucp
-                        - cron
-                        - authpriv
-                        - ftp
-                        - local0
-                        - local1
-                        - local2
-                        - local3
-                        - local4
-                        - local5
-                        - local6
-                        - local7
+                        - 'kernel'
+                        - 'user'
+                        - 'ntp'
+                        - 'audit'
+                        - 'alert'
+                        - 'clock'
+                        - 'mail'
+                        - 'daemon'
+                        - 'auth'
+                        - 'syslog'
+                        - 'lpr'
+                        - 'news'
+                        - 'uucp'
+                        - 'cron'
+                        - 'authpriv'
+                        - 'ftp'
+                        - 'local0'
+                        - 'local1'
+                        - 'local2'
+                        - 'local3'
+                        - 'local4'
+                        - 'local5'
+                        - 'local6'
+                        - 'local7'
                 severity:
                     type: str
-                    default: notification
+                    default: 'notification'
                     description:
                      - 'Least severity level to log.'
                      - 'emergency - Emergency level.'
@@ -133,24 +133,24 @@ options:
                      - 'information - Information level.'
                      - 'debug - Debug level.'
                     choices:
-                        - emergency
-                        - alert
-                        - critical
-                        - error
-                        - warning
-                        - notification
-                        - information
-                        - debug
+                        - 'emergency'
+                        - 'alert'
+                        - 'critical'
+                        - 'error'
+                        - 'warning'
+                        - 'notification'
+                        - 'information'
+                        - 'debug'
                 status:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Remote syslog log.'
                      - 'disable - Do not log to remote syslog server.'
                      - 'enable - Log to remote syslog server.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 syslog-name:
                     type: str
                     description: 'Remote syslog server name.'

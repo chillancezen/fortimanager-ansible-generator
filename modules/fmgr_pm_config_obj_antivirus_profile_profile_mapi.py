@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Configure MAPI AntiVirus options.'
@@ -84,55 +84,55 @@ options:
                     -
                         type: str
                         choices:
-                            - encrypted
-                            - corrupted
-                            - multipart
-                            - nested
-                            - mailbomb
-                            - unhandled
-                            - partiallycorrupted
-                            - fileslimit
-                            - timeout
+                            - 'encrypted'
+                            - 'corrupted'
+                            - 'multipart'
+                            - 'nested'
+                            - 'mailbomb'
+                            - 'unhandled'
+                            - 'partiallycorrupted'
+                            - 'fileslimit'
+                            - 'timeout'
                 archive-log:
                     -
                         type: str
                         choices:
-                            - encrypted
-                            - corrupted
-                            - multipart
-                            - nested
-                            - mailbomb
-                            - unhandled
-                            - partiallycorrupted
-                            - fileslimit
-                            - timeout
+                            - 'encrypted'
+                            - 'corrupted'
+                            - 'multipart'
+                            - 'nested'
+                            - 'mailbomb'
+                            - 'unhandled'
+                            - 'partiallycorrupted'
+                            - 'fileslimit'
+                            - 'timeout'
                 emulator:
                     type: str
                     description: 'Enable/disable the virus emulator.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 executables:
                     type: str
                     description: 'Treat Windows executable files as viruses for the purpose of blocking or monitoring.'
                     choices:
-                        - default
-                        - virus
+                        - 'default'
+                        - 'virus'
                 options:
                     -
                         type: str
                         choices:
-                            - scan
-                            - quarantine
-                            - avquery
-                            - avmonitor
+                            - 'scan'
+                            - 'quarantine'
+                            - 'avquery'
+                            - 'avmonitor'
                 outbreak-prevention:
                     type: str
                     description: 'Enable FortiGuard Virus Outbreak Prevention service.'
                     choices:
-                        - disabled
-                        - files
-                        - full-archive
+                        - 'disabled'
+                        - 'files'
+                        - 'full-archive'
 
 '''
 

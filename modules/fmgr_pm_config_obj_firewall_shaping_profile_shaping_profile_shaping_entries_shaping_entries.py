@@ -83,9 +83,9 @@ options:
                     type: str
                     description: 'Priority.'
                     choices:
-                        - low
-                        - medium
-                        - high
+                        - 'low'
+                        - 'medium'
+                        - 'high'
     schema_object1:
         methods: [delete]
         description: 'Define shaping entries of this shaping profile.'
@@ -103,9 +103,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object3:
         methods: [move]
         description: 'Define shaping entries of this shaping profile.'
@@ -114,8 +114,8 @@ options:
             option:
                 type: str
                 choices:
-                    - before
-                    - after
+                    - 'before'
+                    - 'after'
             target:
                 type: str
                 description: 'Key to the target entry.'

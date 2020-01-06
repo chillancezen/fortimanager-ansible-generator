@@ -72,8 +72,8 @@ options:
                 importance:
                     type: str
                     choices:
-                        - optional
-                        - required
+                        - 'optional'
+                        - 'required'
                 name:
                     type: str
     schema_object1:
@@ -93,9 +93,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

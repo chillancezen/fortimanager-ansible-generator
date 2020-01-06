@@ -107,7 +107,7 @@ Parameters
  <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span> </li>
  </ul>
  <li><span class="li-head">timezone</span> - Select the time zone to be assigned to DHCP clients. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [00, 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87]</span> </li>
- <li><span class="li-head">timezone-option</span> - Options for the DHCP server to set the client's time zone. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, default, specify]</span> </li>
+ <li><span class="li-head">timezone-option</span> - Options for the DHCP server to set the clients time zone. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, default, specify]</span> </li>
  <li><span class="li-head">vci-match</span> - Enable/disable vendor class identifier (VCI) matching. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">vci-string</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span> </li>
@@ -361,7 +361,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li><span class="li-return">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
  </ul>
  <li> <span class="li-return"> timezone </span> - Select the time zone to be assigned to DHCP clients. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> timezone-option </span> - Options for the DHCP server to set the client's time zone. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> timezone-option </span> - Options for the DHCP server to set the clients time zone. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> vci-match </span> - Enable/disable vendor class identifier (VCI) matching. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> vci-string </span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li><span class="li-return">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span>  </li>

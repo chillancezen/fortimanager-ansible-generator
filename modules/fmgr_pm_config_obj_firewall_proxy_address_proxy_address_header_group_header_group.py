@@ -71,8 +71,8 @@ options:
                     type: str
                     description: 'Case sensitivity in pattern.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 header:
                     type: str
                     description: 'HTTP header regular expression.'
@@ -99,9 +99,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

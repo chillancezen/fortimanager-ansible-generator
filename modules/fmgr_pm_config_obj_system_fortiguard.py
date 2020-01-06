@@ -69,9 +69,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Configure FortiGuard services.'
@@ -82,8 +82,8 @@ options:
                     type: str
                     description: 'Enable/disable FortiGuard antispam request caching. Uses a small amount of memory but improves performance.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 antispam-cache-mpercent:
                     type: int
                     description: 'Maximum percent of FortiGate memory the antispam cache is allowed to use (1 - 15%).'
@@ -96,8 +96,8 @@ options:
                     type: str
                     description: 'Enable/disable turning off the FortiGuard antispam service.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 antispam-license:
                     type: int
                 antispam-timeout:
@@ -107,8 +107,8 @@ options:
                     type: str
                     description: 'Automatically connect to and login to FortiCloud.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ddns-server-ip:
                     type: str
                     description: 'IP address of the FortiDDNS server.'
@@ -122,8 +122,8 @@ options:
                     type: str
                     description: 'Enable/disable FortiGuard Virus Outbreak Prevention cache.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 outbreak-prevention-cache-mpercent:
                     type: int
                     description: 'Maximum percent of memory FortiGuard Virus Outbreak Prevention cache can use (1 - 15%, default = 2).'
@@ -136,8 +136,8 @@ options:
                     type: str
                     description: 'Turn off FortiGuard Virus Outbreak Prevention service.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 outbreak-prevention-license:
                     type: int
                 outbreak-prevention-timeout:
@@ -147,9 +147,9 @@ options:
                     type: str
                     description: 'Port used to communicate with the FortiGuard servers.'
                     choices:
-                        - 53
-                        - 80
-                        - 8888
+                        - '53'
+                        - '80'
+                        - '8888'
                 sdns-server-ip:
                     -
                         type: str
@@ -169,14 +169,14 @@ options:
                     type: str
                     description: 'Signature update server location.'
                     choices:
-                        - any
-                        - usa
+                        - 'any'
+                        - 'usa'
                 webfilter-cache:
                     type: str
                     description: 'Enable/disable FortiGuard web filter caching.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 webfilter-cache-ttl:
                     type: int
                     description: 'Time-to-live for web filter cache entries in seconds (300 - 86400).'
@@ -186,8 +186,8 @@ options:
                     type: str
                     description: 'Enable/disable turning off the FortiGuard web filtering service.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 webfilter-license:
                     type: int
                 webfilter-timeout:

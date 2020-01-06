@@ -70,9 +70,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: ''
@@ -84,10 +84,10 @@ options:
                 target:
                     type: str
                     choices:
-                        - none
-                        - this-fmg
-                        - managed
-                        - others
+                        - 'none'
+                        - 'this-fmg'
+                        - 'managed'
+                        - 'others'
                 target-ip:
                     type: str
                 target-sn:

@@ -71,8 +71,8 @@ options:
                     type: str
                     description: 'Action.'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 dstaddr:
                     type: str
                     description: 'Destination address name.'
@@ -99,9 +99,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

@@ -74,9 +74,9 @@ options:
                             type: str
                             description: 'Action to take for domain filter matches.'
                             choices:
-                                - block
-                                - allow
-                                - monitor
+                                - 'block'
+                                - 'allow'
+                                - 'monitor'
                         domain:
                             type: str
                             description: 'Domain entries to be filtered.'
@@ -87,15 +87,15 @@ options:
                             type: str
                             description: 'Enable/disable this domain filter.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         type:
                             type: str
                             description: 'DNS domain filter type.'
                             choices:
-                                - simple
-                                - regex
-                                - wildcard
+                                - 'simple'
+                                - 'regex'
+                                - 'wildcard'
                 id:
                     type: int
                     description: 'ID.'
@@ -119,9 +119,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

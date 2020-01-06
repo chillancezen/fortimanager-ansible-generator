@@ -69,8 +69,8 @@ options:
                 address-type:
                     type: str
                     choices:
-                        - ipv4
-                        - ipv6
+                        - 'ipv4'
+                        - 'ipv6'
                 application-list:
                     type: str
                     description: 'Application list name.'
@@ -78,8 +78,8 @@ options:
                     type: str
                     description: 'Enable/disable application control.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 av-profile:
                     type: str
                     description: 'Antivirus profile.'
@@ -87,8 +87,8 @@ options:
                     type: str
                     description: 'Enable/disable antivirus.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 comments:
                     type: str
                     description: 'Comments.'
@@ -99,14 +99,14 @@ options:
                     type: str
                     description: 'Enable/disable DLP.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dsri:
                     type: str
                     description: 'Enable/disable DSRI.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dstaddr:
                     type: str
                     description: 'Address object to limit traffic monitoring to network traffic sent to the specified address or range.'
@@ -120,8 +120,8 @@ options:
                     type: str
                     description: 'Enable/disable IPS.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 label:
                     type: str
                     description: 'Label.'
@@ -129,9 +129,9 @@ options:
                     type: str
                     description: 'Logging type to be used in this policy (Options: all | utm | disable, Default: utm).'
                     choices:
-                        - disable
-                        - all
-                        - utm
+                        - 'disable'
+                        - 'all'
+                        - 'utm'
                 policyid:
                     type: int
                     description: 'Policy ID.'
@@ -139,9 +139,9 @@ options:
                     type: str
                     description: 'Enable/disable scanning for connections to Botnet servers.'
                     choices:
-                        - disable
-                        - block
-                        - monitor
+                        - 'disable'
+                        - 'block'
+                        - 'monitor'
                 service:
                     type: str
                     description: 'Service object from available options.'
@@ -152,8 +152,8 @@ options:
                     type: str
                     description: 'Enable/disable antispam.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 srcaddr:
                     type: str
                     description: 'Address object to limit traffic monitoring to network traffic sent from the specified address or range.'
@@ -161,8 +161,8 @@ options:
                     type: str
                     description: 'Enable/disable this policy.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 webfilter-profile:
                     type: str
                     description: 'Web filter profile.'
@@ -170,8 +170,8 @@ options:
                     type: str
                     description: 'Enable/disable web filtering.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'Configure IPv4 interface policies.'
@@ -182,8 +182,8 @@ options:
                 attr:
                     type: str
                     choices:
-                        - label
-                        - global-label
+                        - 'label'
+                        - 'global-label'
                 name:
                     type: str
     schema_object2:
@@ -198,9 +198,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object3:
         methods: [move]
         description: 'Configure IPv4 interface policies.'
@@ -209,8 +209,8 @@ options:
             option:
                 type: str
                 choices:
-                    - before
-                    - after
+                    - 'before'
+                    - 'after'
             target:
                 type: str
                 description: 'Key to the target entry.'
@@ -223,8 +223,8 @@ options:
                 address-type:
                     type: str
                     choices:
-                        - ipv4
-                        - ipv6
+                        - 'ipv4'
+                        - 'ipv6'
                 application-list:
                     type: str
                     description: 'Application list name.'
@@ -232,8 +232,8 @@ options:
                     type: str
                     description: 'Enable/disable application control.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 av-profile:
                     type: str
                     description: 'Antivirus profile.'
@@ -241,8 +241,8 @@ options:
                     type: str
                     description: 'Enable/disable antivirus.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 comments:
                     type: str
                     description: 'Comments.'
@@ -253,14 +253,14 @@ options:
                     type: str
                     description: 'Enable/disable DLP.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dsri:
                     type: str
                     description: 'Enable/disable DSRI.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dstaddr:
                     type: str
                     description: 'Address object to limit traffic monitoring to network traffic sent to the specified address or range.'
@@ -274,8 +274,8 @@ options:
                     type: str
                     description: 'Enable/disable IPS.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 label:
                     type: str
                     description: 'Label.'
@@ -283,9 +283,9 @@ options:
                     type: str
                     description: 'Logging type to be used in this policy (Options: all | utm | disable, Default: utm).'
                     choices:
-                        - disable
-                        - all
-                        - utm
+                        - 'disable'
+                        - 'all'
+                        - 'utm'
                 policyid:
                     type: int
                     description: 'Policy ID.'
@@ -293,9 +293,9 @@ options:
                     type: str
                     description: 'Enable/disable scanning for connections to Botnet servers.'
                     choices:
-                        - disable
-                        - block
-                        - monitor
+                        - 'disable'
+                        - 'block'
+                        - 'monitor'
                 service:
                     type: str
                     description: 'Service object from available options.'
@@ -306,8 +306,8 @@ options:
                     type: str
                     description: 'Enable/disable antispam.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 srcaddr:
                     type: str
                     description: 'Address object to limit traffic monitoring to network traffic sent from the specified address or range.'
@@ -315,8 +315,8 @@ options:
                     type: str
                     description: 'Enable/disable this policy.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 webfilter-profile:
                     type: str
                     description: 'Web filter profile.'
@@ -324,15 +324,15 @@ options:
                     type: str
                     description: 'Enable/disable web filtering.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
         api_tag1:
             data:
                 attr:
                     type: str
                     choices:
-                        - label
-                        - global-label
+                        - 'label'
+                        - 'global-label'
                 name:
                     type: str
 

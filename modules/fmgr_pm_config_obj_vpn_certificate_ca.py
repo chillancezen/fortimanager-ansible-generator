@@ -85,8 +85,8 @@ options:
                         type: str
                         description: 'Either global or VDOM IP address range for the CA certificate.'
                         choices:
-                            - global
-                            - vdom
+                            - 'global'
+                            - 'vdom'
                     scep-url:
                         type: str
                         description: 'URL of the SCEP server.'
@@ -94,10 +94,10 @@ options:
                         type: str
                         description: 'CA certificate source type.'
                         choices:
-                            - factory
-                            - user
-                            - bundle
-                            - fortiguard
+                            - 'factory'
+                            - 'user'
+                            - 'bundle'
+                            - 'fortiguard'
                     source-ip:
                         type: str
                         description: 'Source IP address for communications to the SCEP server.'
@@ -105,8 +105,8 @@ options:
                         type: str
                         description: 'Enable/disable as a trusted CA.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'CA certificate.'
@@ -120,17 +120,17 @@ options:
                     -
                         type: str
                         choices:
-                            - _private_key
-                            - auto-update-days
-                            - auto-update-days-warning
-                            - ca
-                            - last-updated
-                            - name
-                            - range
-                            - scep-url
-                            - source
-                            - source-ip
-                            - trusted
+                            - '_private_key'
+                            - 'auto-update-days'
+                            - 'auto-update-days-warning'
+                            - 'ca'
+                            - 'last-updated'
+                            - 'name'
+                            - 'range'
+                            - 'scep-url'
+                            - 'source'
+                            - 'source-ip'
+                            - 'trusted'
             filter:
                 -
                     type: str
@@ -149,11 +149,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

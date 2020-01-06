@@ -71,38 +71,38 @@ options:
                         type: str
                         description: 'Enable/disable additional step required for access (ASRA).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     access-network-esr:
                         type: str
                         description: 'Enable/disable emergency services reachable (ESR).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     access-network-internet:
                         type: str
                         description: 'Enable/disable connectivity to the Internet.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     access-network-type:
                         type: str
                         description: 'Access network type.'
                         choices:
-                            - private-network
-                            - private-network-with-guest-access
-                            - chargeable-public-network
-                            - free-public-network
-                            - personal-device-network
-                            - emergency-services-only-network
-                            - test-or-experimental
-                            - wildcard
+                            - 'private-network'
+                            - 'private-network-with-guest-access'
+                            - 'chargeable-public-network'
+                            - 'free-public-network'
+                            - 'personal-device-network'
+                            - 'emergency-services-only-network'
+                            - 'test-or-experimental'
+                            - 'wildcard'
                     access-network-uesa:
                         type: str
                         description: 'Enable/disable unauthenticated emergency service accessible (UESA).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     anqp-domain-id:
                         type: int
                         description: 'ANQP Domain ID (0-65535).'
@@ -110,8 +110,8 @@ options:
                         type: str
                         description: 'Enable/disable basic service set (BSS) transition Support.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     conn-cap:
                         type: str
                         description: 'Connection capability name.'
@@ -122,8 +122,8 @@ options:
                         type: str
                         description: 'Enable/disable downstream group-addressed forwarding (DGAF).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     domain-name:
                         type: str
                         description: 'Domain name.'
@@ -143,8 +143,8 @@ options:
                         type: str
                         description: 'Enable/disable Layer 2 traffic inspection and filtering.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     nai-realm:
                         type: str
                         description: 'NAI realm list name.'
@@ -167,14 +167,14 @@ options:
                         type: str
                         description: 'Enable/disable Pre-Association Message Exchange BSSID Independent (PAME-BI).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     proxy-arp:
                         type: str
                         description: 'Enable/disable Proxy ARP.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     qos-map:
                         type: str
                         description: 'QoS MAP set ID.'
@@ -185,18 +185,18 @@ options:
                         type: str
                         description: 'Venue group.'
                         choices:
-                            - unspecified
-                            - assembly
-                            - business
-                            - educational
-                            - factory
-                            - institutional
-                            - mercantile
-                            - residential
-                            - storage
-                            - utility
-                            - vehicular
-                            - outdoor
+                            - 'unspecified'
+                            - 'assembly'
+                            - 'business'
+                            - 'educational'
+                            - 'factory'
+                            - 'institutional'
+                            - 'mercantile'
+                            - 'residential'
+                            - 'storage'
+                            - 'utility'
+                            - 'vehicular'
+                            - 'outdoor'
                     venue-name:
                         type: str
                         description: 'Venue name.'
@@ -204,61 +204,61 @@ options:
                         type: str
                         description: 'Venue type.'
                         choices:
-                            - unspecified
-                            - arena
-                            - stadium
-                            - passenger-terminal
-                            - amphitheater
-                            - amusement-park
-                            - place-of-worship
-                            - convention-center
-                            - library
-                            - museum
-                            - restaurant
-                            - theater
-                            - bar
-                            - coffee-shop
-                            - zoo-or-aquarium
-                            - emergency-center
-                            - doctor-office
-                            - bank
-                            - fire-station
-                            - police-station
-                            - post-office
-                            - professional-office
-                            - research-facility
-                            - attorney-office
-                            - primary-school
-                            - secondary-school
-                            - university-or-college
-                            - factory
-                            - hospital
-                            - long-term-care-facility
-                            - rehab-center
-                            - group-home
-                            - prison-or-jail
-                            - retail-store
-                            - grocery-market
-                            - auto-service-station
-                            - shopping-mall
-                            - gas-station
-                            - private
-                            - hotel-or-motel
-                            - dormitory
-                            - boarding-house
-                            - automobile
-                            - airplane
-                            - bus
-                            - ferry
-                            - ship-or-boat
-                            - train
-                            - motor-bike
-                            - muni-mesh-network
-                            - city-park
-                            - rest-area
-                            - traffic-control
-                            - bus-stop
-                            - kiosk
+                            - 'unspecified'
+                            - 'arena'
+                            - 'stadium'
+                            - 'passenger-terminal'
+                            - 'amphitheater'
+                            - 'amusement-park'
+                            - 'place-of-worship'
+                            - 'convention-center'
+                            - 'library'
+                            - 'museum'
+                            - 'restaurant'
+                            - 'theater'
+                            - 'bar'
+                            - 'coffee-shop'
+                            - 'zoo-or-aquarium'
+                            - 'emergency-center'
+                            - 'doctor-office'
+                            - 'bank'
+                            - 'fire-station'
+                            - 'police-station'
+                            - 'post-office'
+                            - 'professional-office'
+                            - 'research-facility'
+                            - 'attorney-office'
+                            - 'primary-school'
+                            - 'secondary-school'
+                            - 'university-or-college'
+                            - 'factory'
+                            - 'hospital'
+                            - 'long-term-care-facility'
+                            - 'rehab-center'
+                            - 'group-home'
+                            - 'prison-or-jail'
+                            - 'retail-store'
+                            - 'grocery-market'
+                            - 'auto-service-station'
+                            - 'shopping-mall'
+                            - 'gas-station'
+                            - 'private'
+                            - 'hotel-or-motel'
+                            - 'dormitory'
+                            - 'boarding-house'
+                            - 'automobile'
+                            - 'airplane'
+                            - 'bus'
+                            - 'ferry'
+                            - 'ship-or-boat'
+                            - 'train'
+                            - 'motor-bike'
+                            - 'muni-mesh-network'
+                            - 'city-park'
+                            - 'rest-area'
+                            - 'traffic-control'
+                            - 'bus-stop'
+                            - 'kiosk'
                     wan-metrics:
                         type: str
                         description: 'WAN metric name.'
@@ -266,8 +266,8 @@ options:
                         type: str
                         description: 'Enable/disable wireless network management (WNM) sleep mode.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure hotspot profile.'
@@ -281,38 +281,38 @@ options:
                     -
                         type: str
                         choices:
-                            - 3gpp-plmn
-                            - access-network-asra
-                            - access-network-esr
-                            - access-network-internet
-                            - access-network-type
-                            - access-network-uesa
-                            - anqp-domain-id
-                            - bss-transition
-                            - conn-cap
-                            - deauth-request-timeout
-                            - dgaf
-                            - domain-name
-                            - gas-comeback-delay
-                            - gas-fragmentation-limit
-                            - hessid
-                            - ip-addr-type
-                            - l2tif
-                            - nai-realm
-                            - name
-                            - network-auth
-                            - oper-friendly-name
-                            - osu-provider
-                            - osu-ssid
-                            - pame-bi
-                            - proxy-arp
-                            - qos-map
-                            - roaming-consortium
-                            - venue-group
-                            - venue-name
-                            - venue-type
-                            - wan-metrics
-                            - wnm-sleep-mode
+                            - '3gpp-plmn'
+                            - 'access-network-asra'
+                            - 'access-network-esr'
+                            - 'access-network-internet'
+                            - 'access-network-type'
+                            - 'access-network-uesa'
+                            - 'anqp-domain-id'
+                            - 'bss-transition'
+                            - 'conn-cap'
+                            - 'deauth-request-timeout'
+                            - 'dgaf'
+                            - 'domain-name'
+                            - 'gas-comeback-delay'
+                            - 'gas-fragmentation-limit'
+                            - 'hessid'
+                            - 'ip-addr-type'
+                            - 'l2tif'
+                            - 'nai-realm'
+                            - 'name'
+                            - 'network-auth'
+                            - 'oper-friendly-name'
+                            - 'osu-provider'
+                            - 'osu-ssid'
+                            - 'pame-bi'
+                            - 'proxy-arp'
+                            - 'qos-map'
+                            - 'roaming-consortium'
+                            - 'venue-group'
+                            - 'venue-name'
+                            - 'venue-type'
+                            - 'wan-metrics'
+                            - 'wnm-sleep-mode'
             filter:
                 -
                     type: str
@@ -331,11 +331,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -71,36 +71,36 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - application-list
-                            - av-profile
-                            - deep-inspection-options
-                            - devices
-                            - dlp-sensor
-                            - endpoint-compliance
-                            - groups
-                            - icap-profile
-                            - id
-                            - ips-sensor
-                            - logtraffic
-                            - mms-profile
-                            - per-ip-shaper
-                            - profile-group
-                            - profile-protocol-options
-                            - profile-type
-                            - replacemsg-group
-                            - schedule
-                            - send-deny-packet
-                            - service
-                            - service-negate
-                            - spamfilter-profile
-                            - sslvpn-portal
-                            - sslvpn-realm
-                            - traffic-shaper
-                            - traffic-shaper-reverse
-                            - utm-status
-                            - voip-profile
-                            - webfilter-profile
+                            - 'action'
+                            - 'application-list'
+                            - 'av-profile'
+                            - 'deep-inspection-options'
+                            - 'devices'
+                            - 'dlp-sensor'
+                            - 'endpoint-compliance'
+                            - 'groups'
+                            - 'icap-profile'
+                            - 'id'
+                            - 'ips-sensor'
+                            - 'logtraffic'
+                            - 'mms-profile'
+                            - 'per-ip-shaper'
+                            - 'profile-group'
+                            - 'profile-protocol-options'
+                            - 'profile-type'
+                            - 'replacemsg-group'
+                            - 'schedule'
+                            - 'send-deny-packet'
+                            - 'service'
+                            - 'service-negate'
+                            - 'spamfilter-profile'
+                            - 'sslvpn-portal'
+                            - 'sslvpn-realm'
+                            - 'traffic-shaper'
+                            - 'traffic-shaper-reverse'
+                            - 'utm-status'
+                            - 'voip-profile'
+                            - 'webfilter-profile'
             filter:
                 -
                     type: str
@@ -119,11 +119,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

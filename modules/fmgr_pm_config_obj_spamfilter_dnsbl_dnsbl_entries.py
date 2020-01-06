@@ -70,8 +70,8 @@ options:
                         type: str
                         description: 'Reject connection or mark as spam email.'
                         choices:
-                            - spam
-                            - reject
+                            - 'spam'
+                            - 'reject'
                     id:
                         type: int
                         description: 'DNSBL/ORBL entry ID.'
@@ -82,8 +82,8 @@ options:
                         type: str
                         description: 'Enable/disable status.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Spam filter DNSBL and ORBL server.'
@@ -97,10 +97,10 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - id
-                            - server
-                            - status
+                            - 'action'
+                            - 'id'
+                            - 'server'
+                            - 'status'
             filter:
                 -
                     type: str
@@ -119,11 +119,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

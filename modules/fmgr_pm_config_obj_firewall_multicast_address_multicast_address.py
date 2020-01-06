@@ -101,14 +101,14 @@ options:
                     type: str
                     description: 'Type of address object: multicast IP address range or broadcast IP/mask to be treated as a multicast address.'
                     choices:
-                        - multicastrange
-                        - broadcastmask
+                        - 'multicastrange'
+                        - 'broadcastmask'
                 visibility:
                     type: str
                     description: 'Enable/disable visibility of the multicast address on the GUI.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'Configure multicast addresses.'
@@ -126,9 +126,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

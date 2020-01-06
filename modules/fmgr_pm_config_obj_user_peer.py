@@ -74,17 +74,17 @@ options:
                         type: str
                         description: 'Peer certificate common name type.'
                         choices:
-                            - string
-                            - email
-                            - FQDN
-                            - ipv4
-                            - ipv6
+                            - 'string'
+                            - 'email'
+                            - 'FQDN'
+                            - 'ipv4'
+                            - 'ipv6'
                     ldap-mode:
                         type: str
                         description: 'Mode for LDAP peer authentication.'
                         choices:
-                            - password
-                            - principal-name
+                            - 'password'
+                            - 'principal-name'
                     ldap-password:
                         -
                             type: str
@@ -98,8 +98,8 @@ options:
                         type: str
                         description: 'Determine what happens to the peer if the CA certificate is not installed. Disable to automatically consider the peer certificate as valid.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     name:
                         type: str
                         description: 'Peer name.'
@@ -116,8 +116,8 @@ options:
                         type: str
                         description: 'Enable/disable two-factor authentication, applying certificate and password-based authentication.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure peer users.'
@@ -131,19 +131,19 @@ options:
                     -
                         type: str
                         choices:
-                            - ca
-                            - cn
-                            - cn-type
-                            - ldap-mode
-                            - ldap-password
-                            - ldap-server
-                            - ldap-username
-                            - mandatory-ca-verify
-                            - name
-                            - ocsp-override-server
-                            - passwd
-                            - subject
-                            - two-factor
+                            - 'ca'
+                            - 'cn'
+                            - 'cn-type'
+                            - 'ldap-mode'
+                            - 'ldap-password'
+                            - 'ldap-server'
+                            - 'ldap-username'
+                            - 'mandatory-ca-verify'
+                            - 'name'
+                            - 'ocsp-override-server'
+                            - 'passwd'
+                            - 'subject'
+                            - 'two-factor'
             filter:
                 -
                     type: str
@@ -162,11 +162,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -68,9 +68,9 @@ options:
                         -
                             type: str
                             choices:
-                                - ibeacon
-                                - eddystone-uid
-                                - eddystone-url
+                                - 'ibeacon'
+                                - 'eddystone-uid'
+                                - 'eddystone-url'
                     beacon-interval:
                         type: int
                         description: 'Beacon interval (default = 100 msec).'
@@ -78,8 +78,8 @@ options:
                         type: str
                         description: 'Enable/disable Bluetooth Low Energy (BLE) scanning.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     comment:
                         type: str
                         description: 'Comment.'
@@ -111,19 +111,19 @@ options:
                         type: str
                         description: 'Transmit power level (default = 0).'
                         choices:
-                            - 0
-                            - 1
-                            - 2
-                            - 3
-                            - 4
-                            - 5
-                            - 6
-                            - 7
-                            - 8
-                            - 9
-                            - 10
-                            - 11
-                            - 12
+                            - '0'
+                            - '1'
+                            - '2'
+                            - '3'
+                            - '4'
+                            - '5'
+                            - '6'
+                            - '7'
+                            - '8'
+                            - '9'
+                            - '10'
+                            - '11'
+                            - '12'
     schema_object1:
         methods: [get]
         description: 'Configure Bluetooth Low Energy profile.'
@@ -137,19 +137,19 @@ options:
                     -
                         type: str
                         choices:
-                            - advertising
-                            - beacon-interval
-                            - ble-scanning
-                            - comment
-                            - eddystone-instance
-                            - eddystone-namespace
-                            - eddystone-url
-                            - eddystone-url-encode-hex
-                            - ibeacon-uuid
-                            - major-id
-                            - minor-id
-                            - name
-                            - txpower
+                            - 'advertising'
+                            - 'beacon-interval'
+                            - 'ble-scanning'
+                            - 'comment'
+                            - 'eddystone-instance'
+                            - 'eddystone-namespace'
+                            - 'eddystone-url'
+                            - 'eddystone-url-encode-hex'
+                            - 'ibeacon-uuid'
+                            - 'major-id'
+                            - 'minor-id'
+                            - 'name'
+                            - 'txpower'
             filter:
                 -
                     type: str
@@ -168,11 +168,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

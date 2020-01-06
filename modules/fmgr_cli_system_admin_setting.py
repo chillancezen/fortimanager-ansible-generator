@@ -57,82 +57,82 @@ options:
             data:
                 access-banner:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable access banner.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 admin-https-redirect:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable redirection of HTTP admin traffic to HTTPS.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 admin-login-max:
                     type: int
                     default: 256
                     description: 'Maximum number admin users logged in at one time (1 - 256).'
                 admin_server_cert:
                     type: str
-                    default: server.crt
+                    default: 'server.crt'
                     description: 'HTTPS & Web Service server certificate.'
                 allow_register:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable allowance of register an unregistered device.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 auto-update:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable FortiGate automatic update.'
                      - 'disable - Disable device automatic update.'
                      - 'enable - Enable device automatic update.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 banner-message:
                     type: str
                     description: 'Banner message.'
                 chassis-mgmt:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable or disable chassis management.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 chassis-update-interval:
                     type: int
                     default: 15
                     description: 'Chassis background update interval (4 - 1440 mins).'
                 device_sync_status:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable device synchronization status indication.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 gui-theme:
                     type: str
-                    default: blue
+                    default: 'blue'
                     description:
                      - 'Color scheme to use for the administration GUI.'
                      - 'blue - Blueberry'
@@ -161,31 +161,31 @@ options:
                      - 'parrot - Parrot'
                      - 'cave - Cave'
                     choices:
-                        - blue
-                        - green
-                        - red
-                        - melongene
-                        - spring
-                        - summer
-                        - autumn
-                        - winter
-                        - space
-                        - calla-lily
-                        - binary-tunnel
-                        - diving
-                        - dreamy
-                        - technology
-                        - landscape
-                        - twilight
-                        - canyon
-                        - northern-light
-                        - astronomy
-                        - fish
-                        - penguin
-                        - panda
-                        - polar-bear
-                        - parrot
-                        - cave
+                        - 'blue'
+                        - 'green'
+                        - 'red'
+                        - 'melongene'
+                        - 'spring'
+                        - 'summer'
+                        - 'autumn'
+                        - 'winter'
+                        - 'space'
+                        - 'calla-lily'
+                        - 'binary-tunnel'
+                        - 'diving'
+                        - 'dreamy'
+                        - 'technology'
+                        - 'landscape'
+                        - 'twilight'
+                        - 'canyon'
+                        - 'northern-light'
+                        - 'astronomy'
+                        - 'fish'
+                        - 'penguin'
+                        - 'panda'
+                        - 'polar-bear'
+                        - 'parrot'
+                        - 'cave'
                 http_port:
                     type: int
                     default: 80
@@ -200,14 +200,14 @@ options:
                     description: 'Idle timeout (1 - 480 min).'
                 install-ifpolicy-only:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Allow install interface policy only.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mgmt-addr:
                     type: str
                     description: 'IP of FortiManager used by FGFM.'
@@ -216,157 +216,157 @@ options:
                     description: 'FQDN of FortiManager used by FGFM.'
                 objects-force-deletion:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable used objects force deletion.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 offline_mode:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable offline mode.'
                      - 'disable - Disable offline mode.'
                      - 'enable - Enable offline mode.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 register_passwd:
                     -
                         type: str
-                        default: ENC ODA4MzI1MDExMjE4OTgxM/oYbnw5dOwHjdVIoziGMGql3I0Ddz+ewZZfbXj7YeX4ol/rqZveNL7pJsXB6fGh0Bfo+R+211AvBe4558gduEIjb2W9ApZLtp5OAzm78LkH4dyrXL9N/SySeIPG1Oh6i5wvEK4Ox22xdNQmN26CaAMZG9Jl
+                        default: 'ENC ODA4MzI1MDExMjE4OTgxM/oYbnw5dOwHjdVIoziGMGql3I0Ddz+ewZZfbXj7YeX4ol/rqZveNL7pJsXB6fGh0Bfo+R+211AvBe4558gduEIjb2W9ApZLtp5OAzm78LkH4dyrXL9N/SySeIPG1Oh6i5wvEK4Ox22xdNQmN26CaAMZG9Jl'
                 sdwan-monitor-history:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable hostname display in the GUI login page.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 shell-access:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable shell access.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 shell-password:
                     -
                         type: str
-                        default: ENC NDM0ODk3MTk5MDUyMTEzMUbHl/j5CmTEcBmvdfBvKn99O6PWsq0PdmnxFXT9hypS7GvefFaz0oVwvAJ5/jgxY3HaLJDNTuNDNZfGQBezH6DURHCF23i/UXtmSSMrrIS8g2oidOj6e593sP+BSfGpQie0tLXFnMb9Lrd4dUAgfnYZpYLh
+                        default: 'ENC NDM0ODk3MTk5MDUyMTEzMUbHl/j5CmTEcBmvdfBvKn99O6PWsq0PdmnxFXT9hypS7GvefFaz0oVwvAJ5/jgxY3HaLJDNTuNDNZfGQBezH6DURHCF23i/UXtmSSMrrIS8g2oidOj6e593sP+BSfGpQie0tLXFnMb9Lrd4dUAgfnYZpYLh'
                 show-add-multiple:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Show add multiple button.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 show-adom-devman:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Show ADOM device manager tools on GUI.'
                      - 'disable - Hide device manager tools on GUI.'
                      - 'enable - Show device manager tools on GUI.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 show-checkbox-in-table:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Show checkboxs in tables on GUI.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 show-device-import-export:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable import/export of ADOM, device, and group lists.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 show-hostname:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable hostname display in the GUI login page.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 show_automatic_script:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable automatic script.'
                      - 'disable - Disable script option.'
                      - 'enable - Enable script option.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 show_grouping_script:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable grouping script.'
                      - 'disable - Disable script option.'
                      - 'enable - Enable script option.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 show_schedule_script:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable or disable schedule script.'
                      - 'disable - Disable script option.'
                      - 'enable - Enable script option.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 show_tcl_script:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable TCL script.'
                      - 'disable - Disable script option.'
                      - 'enable - Enable script option.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 unreg_dev_opt:
                     type: str
-                    default: add_allow_service
+                    default: 'add_allow_service'
                     description:
                      - 'Action to take when unregistered device connects to FortiManager.'
                      - 'add_no_service - Add unregistered devices but deny service requests.'
                      - 'ignore - Ignore unregistered devices.'
                      - 'add_allow_service - Add unregistered devices and allow service requests.'
                     choices:
-                        - add_no_service
-                        - ignore
-                        - add_allow_service
+                        - 'add_no_service'
+                        - 'ignore'
+                        - 'add_allow_service'
                 webadmin_language:
                     type: str
-                    default: auto_detect
+                    default: 'auto_detect'
                     description:
                      - 'Web admin language.'
                      - 'auto_detect - Automatically detect language.'
@@ -377,13 +377,13 @@ options:
                      - 'korean - Korean.'
                      - 'spanish - Spanish.'
                     choices:
-                        - auto_detect
-                        - english
-                        - simplified_chinese
-                        - traditional_chinese
-                        - japanese
-                        - korean
-                        - spanish
+                        - 'auto_detect'
+                        - 'english'
+                        - 'simplified_chinese'
+                        - 'traditional_chinese'
+                        - 'japanese'
+                        - 'korean'
+                        - 'spanish'
 
 '''
 

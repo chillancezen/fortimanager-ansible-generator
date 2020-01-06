@@ -77,8 +77,8 @@ options:
                     type: str
                     description: 'Deny or allow the client with this MAC address.'
                     choices:
-                        - deny
-                        - allow
+                        - 'deny'
+                        - 'allow'
     schema_object1:
         methods: [delete]
         description: 'Create a list of MAC addresses for MAC address filtering.'
@@ -96,9 +96,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

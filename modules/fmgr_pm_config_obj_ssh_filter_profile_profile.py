@@ -69,30 +69,30 @@ options:
                     -
                         type: str
                         choices:
-                            - x11
-                            - shell
-                            - exec
-                            - port-forward
-                            - tun-forward
-                            - sftp
-                            - unknown
+                            - 'x11'
+                            - 'shell'
+                            - 'exec'
+                            - 'port-forward'
+                            - 'tun-forward'
+                            - 'sftp'
+                            - 'unknown'
                 default-command-log:
                     type: str
                     description: 'Enable/disable logging unmatched shell commands.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 log:
                     -
                         type: str
                         choices:
-                            - x11
-                            - shell
-                            - exec
-                            - port-forward
-                            - tun-forward
-                            - sftp
-                            - unknown
+                            - 'x11'
+                            - 'shell'
+                            - 'exec'
+                            - 'port-forward'
+                            - 'tun-forward'
+                            - 'sftp'
+                            - 'unknown'
                 name:
                     type: str
                     description: 'SSH filter profile name.'
@@ -102,14 +102,14 @@ options:
                             type: str
                             description: 'Action to take for URL filter matches.'
                             choices:
-                                - block
-                                - allow
+                                - 'block'
+                                - 'allow'
                         alert:
                             type: str
                             description: 'Enable/disable alert.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         id:
                             type: int
                             description: 'Id.'
@@ -117,8 +117,8 @@ options:
                             type: str
                             description: 'Enable/disable logging.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         pattern:
                             type: str
                             description: 'SSH shell command pattern.'
@@ -126,16 +126,16 @@ options:
                             type: str
                             description: 'Log severity.'
                             choices:
-                                - low
-                                - medium
-                                - high
-                                - critical
+                                - 'low'
+                                - 'medium'
+                                - 'high'
+                                - 'critical'
                         type:
                             type: str
                             description: 'Matching type.'
                             choices:
-                                - regex
-                                - simple
+                                - 'regex'
+                                - 'simple'
     schema_object1:
         methods: [delete]
         description: 'SSH filter profile.'
@@ -153,9 +153,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

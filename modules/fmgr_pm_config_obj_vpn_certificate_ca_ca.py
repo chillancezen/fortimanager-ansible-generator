@@ -86,8 +86,8 @@ options:
                     type: str
                     description: 'Either global or VDOM IP address range for the CA certificate.'
                     choices:
-                        - global
-                        - vdom
+                        - 'global'
+                        - 'vdom'
                 scep-url:
                     type: str
                     description: 'URL of the SCEP server.'
@@ -95,10 +95,10 @@ options:
                     type: str
                     description: 'CA certificate source type.'
                     choices:
-                        - factory
-                        - user
-                        - bundle
-                        - fortiguard
+                        - 'factory'
+                        - 'user'
+                        - 'bundle'
+                        - 'fortiguard'
                 source-ip:
                     type: str
                     description: 'Source IP address for communications to the SCEP server.'
@@ -106,8 +106,8 @@ options:
                     type: str
                     description: 'Enable/disable as a trusted CA.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'CA certificate.'
@@ -125,9 +125,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

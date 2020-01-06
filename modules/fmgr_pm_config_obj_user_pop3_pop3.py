@@ -75,9 +75,9 @@ options:
                     type: str
                     description: 'SSL connection.'
                     choices:
-                        - none
-                        - starttls
-                        - pop3s
+                        - 'none'
+                        - 'starttls'
+                        - 'pop3s'
                 server:
                     type: str
                     description: '{&lt;name_str|ip_str&gt;} server domain name or IP.'
@@ -85,11 +85,11 @@ options:
                     type: str
                     description: 'Minimum supported protocol version for SSL/TLS connections (default is to follow system global setting).'
                     choices:
-                        - default
-                        - TLSv1
-                        - TLSv1-1
-                        - TLSv1-2
-                        - SSLv3
+                        - 'default'
+                        - 'TLSv1'
+                        - 'TLSv1-1'
+                        - 'TLSv1-2'
+                        - 'SSLv3'
     schema_object1:
         methods: [delete]
         description: 'POP3 server entry configuration.'
@@ -107,9 +107,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

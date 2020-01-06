@@ -71,16 +71,16 @@ options:
                     type: str
                     description: 'Action based on client certificate request during the FTPS handshake.'
                     choices:
-                        - bypass
-                        - inspect
-                        - block
+                        - 'bypass'
+                        - 'inspect'
+                        - 'block'
                 https-client-cert-request:
                     type: str
                     description: 'Action based on client certificate request during the HTTPS handshake.'
                     choices:
-                        - bypass
-                        - inspect
-                        - block
+                        - 'bypass'
+                        - 'inspect'
+                        - 'block'
                 id:
                     type: int
                     description: 'SSL server ID.'
@@ -88,9 +88,9 @@ options:
                     type: str
                     description: 'Action based on client certificate request during the IMAPS handshake.'
                     choices:
-                        - bypass
-                        - inspect
-                        - block
+                        - 'bypass'
+                        - 'inspect'
+                        - 'block'
                 ip:
                     type: str
                     description: 'IPv4 address of the SSL server.'
@@ -98,23 +98,23 @@ options:
                     type: str
                     description: 'Action based on client certificate request during the POP3S handshake.'
                     choices:
-                        - bypass
-                        - inspect
-                        - block
+                        - 'bypass'
+                        - 'inspect'
+                        - 'block'
                 smtps-client-cert-request:
                     type: str
                     description: 'Action based on client certificate request during the SMTPS handshake.'
                     choices:
-                        - bypass
-                        - inspect
-                        - block
+                        - 'bypass'
+                        - 'inspect'
+                        - 'block'
                 ssl-other-client-cert-request:
                     type: str
                     description: 'Action based on client certificate request during an SSL protocol handshake.'
                     choices:
-                        - bypass
-                        - inspect
-                        - block
+                        - 'bypass'
+                        - 'inspect'
+                        - 'block'
     schema_object1:
         methods: [delete]
         description: 'SSL servers.'
@@ -132,9 +132,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

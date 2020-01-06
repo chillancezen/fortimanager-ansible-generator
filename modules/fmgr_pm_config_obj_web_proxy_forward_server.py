@@ -68,8 +68,8 @@ options:
                         type: str
                         description: 'Address type of the forwarding proxy server: IP or FQDN.'
                         choices:
-                            - fqdn
-                            - ip
+                            - 'fqdn'
+                            - 'ip'
                     comment:
                         type: str
                         description: 'Comment.'
@@ -80,8 +80,8 @@ options:
                         type: str
                         description: 'Enable/disable forward server health checking. Attempts to connect through the remote forwarding server to a destination to verify that the forwarding server is operating normally.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ip:
                         type: str
                         description: 'Forward proxy server IP address.'
@@ -98,8 +98,8 @@ options:
                         type: str
                         description: 'Action to take when the forward server is found to be down: block sessions until the server is back up or pass sessions to their destination.'
                         choices:
-                            - block
-                            - pass
+                            - 'block'
+                            - 'pass'
     schema_object1:
         methods: [get]
         description: 'Configure forward-server addresses.'
@@ -113,15 +113,15 @@ options:
                     -
                         type: str
                         choices:
-                            - addr-type
-                            - comment
-                            - fqdn
-                            - healthcheck
-                            - ip
-                            - monitor
-                            - name
-                            - port
-                            - server-down-option
+                            - 'addr-type'
+                            - 'comment'
+                            - 'fqdn'
+                            - 'healthcheck'
+                            - 'ip'
+                            - 'monitor'
+                            - 'name'
+                            - 'port'
+                            - 'server-down-option'
             filter:
                 -
                     type: str
@@ -140,11 +140,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

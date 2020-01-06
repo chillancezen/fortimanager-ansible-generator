@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'SIP.'
@@ -87,104 +87,104 @@ options:
                     type: str
                     description: 'Enable/disable block ACK requests.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 block-bye:
                     type: str
                     description: 'Enable/disable block BYE requests.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 block-cancel:
                     type: str
                     description: 'Enable/disable block CANCEL requests.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 block-geo-red-options:
                     type: str
                     description: 'Enable/disable block OPTIONS requests, but OPTIONS requests still notify for redundancy.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 block-info:
                     type: str
                     description: 'Enable/disable block INFO requests.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 block-invite:
                     type: str
                     description: 'Enable/disable block INVITE requests.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 block-long-lines:
                     type: str
                     description: 'Enable/disable block requests with headers exceeding max-line-length.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 block-message:
                     type: str
                     description: 'Enable/disable block MESSAGE requests.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 block-notify:
                     type: str
                     description: 'Enable/disable block NOTIFY requests.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 block-options:
                     type: str
                     description: 'Enable/disable block OPTIONS requests and no OPTIONS as notifying message for redundancy either.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 block-prack:
                     type: str
                     description: 'Enable/disable block prack requests.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 block-publish:
                     type: str
                     description: 'Enable/disable block PUBLISH requests.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 block-refer:
                     type: str
                     description: 'Enable/disable block REFER requests.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 block-register:
                     type: str
                     description: 'Enable/disable block REGISTER requests.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 block-subscribe:
                     type: str
                     description: 'Enable/disable block SUBSCRIBE requests.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 block-unknown:
                     type: str
                     description: 'Block unrecognized SIP requests (enabled by default).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 block-update:
                     type: str
                     description: 'Enable/disable block UPDATE requests.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 bye-rate:
                     type: int
                     description: 'BYE request rate limit (per second, per policy).'
@@ -196,22 +196,22 @@ options:
                     description: 'CANCEL request rate limit (per second, per policy).'
                 contact-fixup:
                     type: str
-                    description: 'Fixup contact anyway even if contact's IP:port doesn't match session's IP:port.'
+                    description: 'Fixup contact anyway even if contacts IP:port doesnt match sessions IP:port.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 hnt-restrict-source-ip:
                     type: str
                     description: 'Enable/disable restrict RTP source IP to be the same as SIP source IP when HNT is enabled.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 hosted-nat-traversal:
                     type: str
                     description: 'Hosted NAT Traversal (HNT).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 info-rate:
                     type: int
                     description: 'INFO request rate limit (per second, per policy).'
@@ -222,223 +222,223 @@ options:
                     type: str
                     description: 'Enable/disable allow IPS on RTP.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 log-call-summary:
                     type: str
                     description: 'Enable/disable logging of SIP call summary.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 log-violations:
                     type: str
                     description: 'Enable/disable logging of SIP violations.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 malformed-header-allow:
                     type: str
                     description: 'Action for malformed Allow header.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-call-id:
                     type: str
                     description: 'Action for malformed Call-ID header.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-contact:
                     type: str
                     description: 'Action for malformed Contact header.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-content-length:
                     type: str
                     description: 'Action for malformed Content-Length header.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-content-type:
                     type: str
                     description: 'Action for malformed Content-Type header.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-cseq:
                     type: str
                     description: 'Action for malformed CSeq header.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-expires:
                     type: str
                     description: 'Action for malformed Expires header.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-from:
                     type: str
                     description: 'Action for malformed From header.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-max-forwards:
                     type: str
                     description: 'Action for malformed Max-Forwards header.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-p-asserted-identity:
                     type: str
                     description: 'Action for malformed P-Asserted-Identity header.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-rack:
                     type: str
                     description: 'Action for malformed RAck header.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-record-route:
                     type: str
                     description: 'Action for malformed Record-Route header.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-route:
                     type: str
                     description: 'Action for malformed Route header.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-rseq:
                     type: str
                     description: 'Action for malformed RSeq header.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-sdp-a:
                     type: str
                     description: 'Action for malformed SDP a line.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-sdp-b:
                     type: str
                     description: 'Action for malformed SDP b line.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-sdp-c:
                     type: str
                     description: 'Action for malformed SDP c line.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-sdp-i:
                     type: str
                     description: 'Action for malformed SDP i line.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-sdp-k:
                     type: str
                     description: 'Action for malformed SDP k line.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-sdp-m:
                     type: str
                     description: 'Action for malformed SDP m line.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-sdp-o:
                     type: str
                     description: 'Action for malformed SDP o line.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-sdp-r:
                     type: str
                     description: 'Action for malformed SDP r line.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-sdp-s:
                     type: str
                     description: 'Action for malformed SDP s line.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-sdp-t:
                     type: str
                     description: 'Action for malformed SDP t line.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-sdp-v:
                     type: str
                     description: 'Action for malformed SDP v line.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-sdp-z:
                     type: str
                     description: 'Action for malformed SDP z line.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-to:
                     type: str
                     description: 'Action for malformed To header.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-header-via:
                     type: str
                     description: 'Action for malformed VIA header.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 malformed-request-line:
                     type: str
                     description: 'Action for malformed request line.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 max-body-length:
                     type: int
                     description: 'Maximum SIP message body length (0 meaning no limit).'
@@ -458,14 +458,14 @@ options:
                     type: str
                     description: 'Enable/disable preservation of original IP in SDP i line.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 no-sdp-fixup:
                     type: str
                     description: 'Enable/disable no SDP fix-up.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 notify-rate:
                     type: int
                     description: 'NOTIFY request rate limit (per second, per policy).'
@@ -473,26 +473,26 @@ options:
                     type: str
                     description: 'Enable/disable open pinhole for non-REGISTER Contact port.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 open-record-route-pinhole:
                     type: str
                     description: 'Enable/disable open pinhole for Record-Route port.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 open-register-pinhole:
                     type: str
                     description: 'Enable/disable open pinhole for REGISTER Contact port.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 open-via-pinhole:
                     type: str
                     description: 'Enable/disable open pinhole for Via port.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 options-rate:
                     type: int
                     description: 'OPTIONS request rate limit (per second, per policy).'
@@ -503,8 +503,8 @@ options:
                     type: str
                     description: 'Override i line to preserve original IPS (default: append).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 provisional-invite-expiry-time:
                     type: int
                     description: 'Expiry time for provisional INVITE (10 - 3600 sec).'
@@ -518,8 +518,8 @@ options:
                     type: str
                     description: 'Enable/disable trace original IP/port within the contact header of REGISTER requests.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 register-rate:
                     type: int
                     description: 'REGISTER request rate limit (per second, per policy).'
@@ -527,27 +527,27 @@ options:
                     type: str
                     description: 'Enable/disable support via branch compliant with RFC 2543.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 rtp:
                     type: str
                     description: 'Enable/disable create pinholes for RTP traffic to traverse firewall.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ssl-algorithm:
                     type: str
                     description: 'Relative strength of encryption algorithms accepted in negotiation.'
                     choices:
-                        - high
-                        - medium
-                        - low
+                        - 'high'
+                        - 'medium'
+                        - 'low'
                 ssl-auth-client:
                     type: str
                     description: 'Require a client certificate and authenticate it with the peer/peergrp.'
                 ssl-auth-server:
                     type: str
-                    description: 'Authenticate the server's certificate with the peer/peergrp.'
+                    description: 'Authenticate the servers certificate with the peer/peergrp.'
                 ssl-client-certificate:
                     type: str
                     description: 'Name of Certificate to offer to server if requested.'
@@ -555,44 +555,44 @@ options:
                     type: str
                     description: 'Allow/block client renegotiation by server.'
                     choices:
-                        - allow
-                        - deny
-                        - secure
+                        - 'allow'
+                        - 'deny'
+                        - 'secure'
                 ssl-max-version:
                     type: str
                     description: 'Highest SSL/TLS version to negotiate.'
                     choices:
-                        - ssl-3.0
-                        - tls-1.0
-                        - tls-1.1
-                        - tls-1.2
+                        - 'ssl-3.0'
+                        - 'tls-1.0'
+                        - 'tls-1.1'
+                        - 'tls-1.2'
                 ssl-min-version:
                     type: str
                     description: 'Lowest SSL/TLS version to negotiate.'
                     choices:
-                        - ssl-3.0
-                        - tls-1.0
-                        - tls-1.1
-                        - tls-1.2
+                        - 'ssl-3.0'
+                        - 'tls-1.0'
+                        - 'tls-1.1'
+                        - 'tls-1.2'
                 ssl-mode:
                     type: str
                     description: 'SSL/TLS mode for encryption & decryption of traffic.'
                     choices:
-                        - off
-                        - full
+                        - 'off'
+                        - 'full'
                 ssl-pfs:
                     type: str
                     description: 'SSL Perfect Forward Secrecy.'
                     choices:
-                        - require
-                        - deny
-                        - allow
+                        - 'require'
+                        - 'deny'
+                        - 'allow'
                 ssl-send-empty-frags:
                     type: str
                     description: 'Send empty fragments to avoid attack on CBC IV (SSL 3.0 & TLS 1.0 only).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ssl-server-certificate:
                     type: str
                     description: 'Name of Certificate return to the client in every SSL connection.'
@@ -600,14 +600,14 @@ options:
                     type: str
                     description: 'Enable/disable SIP.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 strict-register:
                     type: str
                     description: 'Enable/disable only allow the registrar to connect.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 subscribe-rate:
                     type: int
                     description: 'SUBSCRIBE request rate limit (per second, per policy).'
@@ -615,9 +615,9 @@ options:
                     type: str
                     description: 'Action for unknown SIP header.'
                     choices:
-                        - pass
-                        - discard
-                        - respond
+                        - 'pass'
+                        - 'discard'
+                        - 'respond'
                 update-rate:
                     type: int
                     description: 'UPDATE request rate limit (per second, per policy).'
@@ -823,7 +823,7 @@ return_of_api_category_0:
                description: 'CANCEL request rate limit (per second, per policy).'
             contact-fixup:
                type: str
-               description: 'Fixup contact anyway even if contact's IP:port doesn't match session's IP:port.'
+               description: 'Fixup contact anyway even if contacts IP:port doesnt match sessions IP:port.'
             hnt-restrict-source-ip:
                type: str
                description: 'Enable/disable restrict RTP source IP to be the same as SIP source IP when HNT is enabled.'
@@ -1006,7 +1006,7 @@ return_of_api_category_0:
                description: 'Require a client certificate and authenticate it with the peer/peergrp.'
             ssl-auth-server:
                type: str
-               description: 'Authenticate the server's certificate with the peer/peergrp.'
+               description: 'Authenticate the servers certificate with the peer/peergrp.'
             ssl-client-certificate:
                type: str
                description: 'Name of Certificate to offer to server if requested.'

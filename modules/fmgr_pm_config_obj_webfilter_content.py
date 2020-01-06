@@ -73,21 +73,21 @@ options:
                                 type: str
                                 description: 'Block or exempt word when a match is found.'
                                 choices:
-                                    - exempt
-                                    - block
+                                    - 'exempt'
+                                    - 'block'
                             lang:
                                 type: str
                                 description: 'Language of banned word.'
                                 choices:
-                                    - western
-                                    - simch
-                                    - trach
-                                    - japanese
-                                    - korean
-                                    - french
-                                    - thai
-                                    - spanish
-                                    - cyrillic
+                                    - 'western'
+                                    - 'simch'
+                                    - 'trach'
+                                    - 'japanese'
+                                    - 'korean'
+                                    - 'french'
+                                    - 'thai'
+                                    - 'spanish'
+                                    - 'cyrillic'
                             name:
                                 type: str
                                 description: 'Banned word.'
@@ -95,8 +95,8 @@ options:
                                 type: str
                                 description: 'Banned word pattern type: wildcard pattern or Perl regular expression.'
                                 choices:
-                                    - wildcard
-                                    - regexp
+                                    - 'wildcard'
+                                    - 'regexp'
                             score:
                                 type: int
                                 description: 'Score, to be applied every time the word appears on a web page (0 - 4294967295, default = 10).'
@@ -104,8 +104,8 @@ options:
                                 type: str
                                 description: 'Enable/disable banned word.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                     id:
                         type: int
                         description: 'ID.'
@@ -125,9 +125,9 @@ options:
                     -
                         type: str
                         choices:
-                            - comment
-                            - id
-                            - name
+                            - 'comment'
+                            - 'id'
+                            - 'name'
             filter:
                 -
                     type: str
@@ -146,11 +146,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

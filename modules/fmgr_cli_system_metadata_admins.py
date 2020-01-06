@@ -53,39 +53,39 @@ options:
                 -
                     fieldlength:
                         type: str
-                        default: 50
+                        default: '50'
                         description:
                          - 'Field length.'
                          - '20 - Field length of 20.'
                          - '50 - Field length of 50.'
                          - '255 - Field length of 255.'
                         choices:
-                            - 20
-                            - 50
-                            - 255
+                            - '20'
+                            - '50'
+                            - '255'
                     fieldname:
                         type: str
                         description: 'Field name.'
                     importance:
                         type: str
-                        default: required
+                        default: 'required'
                         description:
                          - 'Field importance.'
                          - 'optional - This field is optional.'
                          - 'required - This field is required.'
                         choices:
-                            - optional
-                            - required
+                            - 'optional'
+                            - 'required'
                     status:
                         type: str
-                        default: enabled
+                        default: 'enabled'
                         description:
                          - 'Field status.'
                          - 'disabled - This field is disabled.'
                          - 'enabled - This field is enabled.'
                         choices:
-                            - disabled
-                            - enabled
+                            - 'disabled'
+                            - 'enabled'
     schema_object1:
         methods: [get]
         description: 'Configure admins.'
@@ -96,10 +96,10 @@ options:
                     -
                         type: str
                         choices:
-                            - fieldlength
-                            - fieldname
-                            - importance
-                            - status
+                            - 'fieldlength'
+                            - 'fieldname'
+                            - 'importance'
+                            - 'status'
             filter:
                 -
                     type: str
@@ -113,8 +113,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

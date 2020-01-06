@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Configuration options for radio 2.'
@@ -84,14 +84,14 @@ options:
                     type: str
                     description: 'Enable/disable 802.11n AMSDU support. AMSDU can improve performance if supported by your WiFi clients (default = enable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ap-handoff:
                     type: str
                     description: 'Enable/disable AP handoff of clients to other APs (default = disable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ap-sniffer-addr:
                     type: str
                     description: 'MAC address to monitor.'
@@ -105,32 +105,32 @@ options:
                     type: str
                     description: 'Enable/disable sniffer on WiFi control frame (default = enable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ap-sniffer-data:
                     type: str
                     description: 'Enable/disable sniffer on WiFi data frame (default = enable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ap-sniffer-mgmt-beacon:
                     type: str
                     description: 'Enable/disable sniffer on WiFi management Beacon frames (default = enable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ap-sniffer-mgmt-other:
                     type: str
                     description: 'Enable/disable sniffer on WiFi management other frames  (default = enable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ap-sniffer-mgmt-probe:
                     type: str
                     description: 'Enable/disable sniffer on WiFi management probe frames (default = enable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 auto-power-high:
                     type: int
                     description: 'Automatic transmit power high limit in dBm (the actual range of transmit power depends on the AP platform type).'
@@ -138,8 +138,8 @@ options:
                     type: str
                     description: 'Enable/disable automatic power-level adjustment to prevent co-channel interference (default = disable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 auto-power-low:
                     type: int
                     description: 'Automatic transmission power low limit in dBm (the actual range of transmit power depends on the AP platform type).'
@@ -147,24 +147,24 @@ options:
                     type: str
                     description: 'WiFi band that Radio 2 operates on.'
                     choices:
-                        - 802.11b
-                        - 802.11a
-                        - 802.11g
-                        - 802.11n
-                        - 802.11ac
-                        - 802.11n-5G
-                        - 802.11g-only
-                        - 802.11n-only
-                        - 802.11n,g-only
-                        - 802.11ac-only
-                        - 802.11ac,n-only
-                        - 802.11n-5G-only
+                        - '802.11b'
+                        - '802.11a'
+                        - '802.11g'
+                        - '802.11n'
+                        - '802.11ac'
+                        - '802.11n-5G'
+                        - '802.11g-only'
+                        - '802.11n-only'
+                        - '802.11n,g-only'
+                        - '802.11ac-only'
+                        - '802.11ac,n-only'
+                        - '802.11n-5G-only'
                 bandwidth-admission-control:
                     type: str
                     description: 'Enable/disable WiFi multimedia (WMM) bandwidth admission control to optimize WiFi bandwidth use. A request to join the wireless network is only allowed if the access point has enough bandwidth to support it.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 bandwidth-capacity:
                     type: int
                     description: 'Maximum bandwidth capacity allowed (1 - 600000 Kbps, default = 2000).'
@@ -175,8 +175,8 @@ options:
                     type: str
                     description: 'Enable/disable WiFi multimedia (WMM) call admission control to optimize WiFi bandwidth use for VoIP calls. New VoIP calls are only accepted if there is enough bandwidth available to support them.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 call-capacity:
                     type: int
                     description: 'Maximum number of Voice over WLAN (VoWLAN) phones supported by the radio (0 - 60, default = 10).'
@@ -187,29 +187,29 @@ options:
                     type: str
                     description: 'Channel bandwidth: 80, 40, or 20MHz. Channels may use both 20 and 40 by enabling coexistence.'
                     choices:
-                        - disable
-                        - enable
-                        - 80MHz
-                        - 40MHz
-                        - 20MHz
+                        - 'disable'
+                        - 'enable'
+                        - '80MHz'
+                        - '40MHz'
+                        - '20MHz'
                 channel-utilization:
                     type: str
                     description: 'Enable/disable measuring channel utilization.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 coexistence:
                     type: str
                     description: 'Enable/disable allowing both HT20 and HT40 on the same radio (default = enable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 darrp:
                     type: str
                     description: 'Enable/disable Distributed Automatic Radio Resource Provisioning (DARRP) to make sure the radio is always using the most optimal channel (default = disable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dtim:
                     type: int
                     description: 'DTIM interval. The frequency to transmit Delivery Traffic Indication Message (or Map) (DTIM) messages (1 - 255, default = 1). Set higher to save client battery life.'
@@ -220,8 +220,8 @@ options:
                     type: str
                     description: 'Enable/disable frequency handoff of clients to other channels (default = disable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 max-clients:
                     type: int
                     description: 'Maximum number of stations (STAs) or WiFi clients supported by the radio. Range depends on the hardware.'
@@ -232,10 +232,10 @@ options:
                     type: str
                     description: 'Mode of radio 2. Radio 2 can be disabled, configured as an access point, a rogue AP monitor, or a sniffer.'
                     choices:
-                        - disabled
-                        - ap
-                        - monitor
-                        - sniffer
+                        - 'disabled'
+                        - 'ap'
+                        - 'monitor'
+                        - 'sniffer'
                 power-level:
                     type: int
                     description: 'Radio power level as a percentage of the maximum transmit power (0 - 100, default = 100).'
@@ -243,18 +243,18 @@ options:
                     -
                         type: str
                         choices:
-                            - tim
-                            - ac-vo
-                            - no-obss-scan
-                            - no-11b-rate
-                            - client-rate-follow
+                            - 'tim'
+                            - 'ac-vo'
+                            - 'no-obss-scan'
+                            - 'no-11b-rate'
+                            - 'client-rate-follow'
                 protection-mode:
                     type: str
                     description: 'Enable/disable 802.11g protection modes to support backwards compatibility with older clients (rtscts, ctsonly, disable).'
                     choices:
-                        - rtscts
-                        - ctsonly
-                        - disable
+                        - 'rtscts'
+                        - 'ctsonly'
+                        - 'disable'
                 radio-id:
                     type: int
                 rts-threshold:
@@ -264,29 +264,29 @@ options:
                     type: str
                     description: 'Use either the short guard interval (Short GI) of 400 ns or the long guard interval (Long GI) of 800 ns.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 spectrum-analysis:
                     type: str
                     description: 'Enable/disable spectrum analysis to find interference that would negatively impact wireless performance.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 transmit-optimize:
                     -
                         type: str
                         choices:
-                            - disable
-                            - power-save
-                            - aggr-limit
-                            - retry-limit
-                            - send-bar
+                            - 'disable'
+                            - 'power-save'
+                            - 'aggr-limit'
+                            - 'retry-limit'
+                            - 'send-bar'
                 vap-all:
                     type: str
                     description: 'Enable/disable the automatic inheritance of all Virtual Access Points (VAPs) (default = enable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 vaps:
                     type: str
                     description: 'Manually selected list of Virtual Access Points (VAPs).'

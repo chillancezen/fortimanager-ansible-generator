@@ -77,8 +77,8 @@ options:
                     arp-reply:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     associated-interface:
                         type: str
                     block-size:
@@ -94,8 +94,8 @@ options:
                     permit-any-host:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     source-endip:
                         type: str
                     source-startip:
@@ -105,10 +105,10 @@ options:
                     type:
                         type: str
                         choices:
-                            - overload
-                            - one-to-one
-                            - fixed-port-range
-                            - port-block-allocation
+                            - 'overload'
+                            - 'one-to-one'
+                            - 'fixed-port-range'
+                            - 'port-block-allocation'
     schema_object1:
         methods: [get]
         description: ''
@@ -122,20 +122,20 @@ options:
                     -
                         type: str
                         choices:
-                            - _scope
-                            - arp-intf
-                            - arp-reply
-                            - associated-interface
-                            - block-size
-                            - comments
-                            - endip
-                            - num-blocks-per-user
-                            - pba-timeout
-                            - permit-any-host
-                            - source-endip
-                            - source-startip
-                            - startip
-                            - type
+                            - '_scope'
+                            - 'arp-intf'
+                            - 'arp-reply'
+                            - 'associated-interface'
+                            - 'block-size'
+                            - 'comments'
+                            - 'endip'
+                            - 'num-blocks-per-user'
+                            - 'pba-timeout'
+                            - 'permit-any-host'
+                            - 'source-endip'
+                            - 'source-startip'
+                            - 'startip'
+                            - 'type'
             filter:
                 -
                     type: str
@@ -154,11 +154,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

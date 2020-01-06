@@ -73,9 +73,9 @@ options:
                         type: str
                         description: 'Enable to check the responsiveness of the real server before forwarding traffic.'
                         choices:
-                            - disable
-                            - enable
-                            - vip
+                            - 'disable'
+                            - 'enable'
+                            - 'vip'
                     holddown-interval:
                         type: int
                         description: 'Time in seconds that the health check monitor continues to monitor an unresponsive server that should be active.'
@@ -93,7 +93,7 @@ options:
                         description: 'Max number of active connections that can directed to the real server. When reached, sessions are sent to other real servers.'
                     monitor:
                         type: str
-                        description: 'Name of the health check monitor to use when polling to determine a virtual server's connectivity status.'
+                        description: 'Name of the health check monitor to use when polling to determine a virtual servers connectivity status.'
                     port:
                         type: int
                         description: 'Port for communicating with the real server. Required if port forwarding is enabled.'
@@ -101,9 +101,9 @@ options:
                         type: str
                         description: 'Set the status of the real server to active so that it can accept traffic, or on standby or disabled so no traffic is sent.'
                         choices:
-                            - active
-                            - standby
-                            - disable
+                            - 'active'
+                            - 'standby'
+                            - 'disable'
                     weight:
                         type: int
                         description: 'Weight of the real server. If weighted load balancing is enabled, the server with the highest weight gets more connections.'
@@ -120,17 +120,17 @@ options:
                     -
                         type: str
                         choices:
-                            - client-ip
-                            - healthcheck
-                            - holddown-interval
-                            - http-host
-                            - id
-                            - ip
-                            - max-connections
-                            - monitor
-                            - port
-                            - status
-                            - weight
+                            - 'client-ip'
+                            - 'healthcheck'
+                            - 'holddown-interval'
+                            - 'http-host'
+                            - 'id'
+                            - 'ip'
+                            - 'max-connections'
+                            - 'monitor'
+                            - 'port'
+                            - 'status'
+                            - 'weight'
             filter:
                 -
                     type: str
@@ -149,11 +149,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int
@@ -276,7 +276,7 @@ return_of_api_category_0:
                   description: 'Max number of active connections that can directed to the real server. When reached, sessions are sent to other real servers.'
                monitor:
                   type: str
-                  description: 'Name of the health check monitor to use when polling to determine a virtual server's connectivity status.'
+                  description: 'Name of the health check monitor to use when polling to determine a virtual servers connectivity status.'
                port:
                   type: int
                   description: 'Port for communicating with the real server. Required if port forwarding is enabled.'

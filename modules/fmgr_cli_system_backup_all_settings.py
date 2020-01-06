@@ -61,39 +61,39 @@ options:
                 crptpasswd:
                     -
                         type: str
-                        default: ENC MTMzMDc1MDgxNzQ0ODY0M2NSZUKD2VMvwzY+fu/IOqXefv5r84Cvz6X817vduD08gM1BG0K7muAtsALrSSvZjpqR08ZjShNGdhTR6Y7clcN6rnCh7jFAA9qF9cXracjbMmMkmLh2JuJH35O0EplcfinZKTXky8RCyig4J/DXAtiQpW7l
+                        default: 'ENC MTMzMDc1MDgxNzQ0ODY0M2NSZUKD2VMvwzY+fu/IOqXefv5r84Cvz6X817vduD08gM1BG0K7muAtsALrSSvZjpqR08ZjShNGdhTR6Y7clcN6rnCh7jFAA9qF9cXracjbMmMkmLh2JuJH35O0EplcfinZKTXky8RCyig4J/DXAtiQpW7l'
                 directory:
                     type: str
                     description: 'Directory in which file will be stored on backup server.'
                 passwd:
                     -
                         type: str
-                        default: ENC NjE1OTk5NjcxODE1MDYyOR9zgwo4rNRY0psUIe6ZdXfehJTrTnmzU4GJWXfob8IxqxmLrU/5rQxywxo85lXVAnrjLD1WUkUEls6PMhOwReIaAQVP0y0g8qNzjlHU+Tsm6L13KblsH7G+yJEdMMyVj8MNSwdwJiXw9s94q+hXRCAs4iwJ
+                        default: 'ENC NjE1OTk5NjcxODE1MDYyOR9zgwo4rNRY0psUIe6ZdXfehJTrTnmzU4GJWXfob8IxqxmLrU/5rQxywxo85lXVAnrjLD1WUkUEls6PMhOwReIaAQVP0y0g8qNzjlHU+Tsm6L13KblsH7G+yJEdMMyVj8MNSwdwJiXw9s94q+hXRCAs4iwJ'
                 protocol:
                     type: str
-                    default: sftp
+                    default: 'sftp'
                     description:
                      - 'Protocol used to backup.'
                      - 'sftp - SFTP.'
                      - 'ftp - FTP.'
                      - 'scp - SCP.'
                     choices:
-                        - sftp
-                        - ftp
-                        - scp
+                        - 'sftp'
+                        - 'ftp'
+                        - 'scp'
                 server:
                     type: str
                     description: 'Backup server name/IP.'
                 status:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable schedule backup.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 time:
                     type: str
                     description: 'Time to backup.'
@@ -104,13 +104,13 @@ options:
                     -
                         type: str
                         choices:
-                            - monday
-                            - tuesday
-                            - wednesday
-                            - thursday
-                            - friday
-                            - saturday
-                            - sunday
+                            - 'monday'
+                            - 'tuesday'
+                            - 'wednesday'
+                            - 'thursday'
+                            - 'friday'
+                            - 'saturday'
+                            - 'sunday'
 
 '''
 

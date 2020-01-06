@@ -53,7 +53,7 @@ options:
                 -
                     devices:
                         type: str
-                        default: All_FortiMail
+                        default: 'All_FortiMail'
                         description: 'Devices for domain to vdom mapping'
                     domain:
                         type: str
@@ -75,10 +75,10 @@ options:
                     -
                         type: str
                         choices:
-                            - devices
-                            - domain
-                            - id
-                            - vdom
+                            - 'devices'
+                            - 'domain'
+                            - 'id'
+                            - 'vdom'
             filter:
                 -
                     type: str
@@ -92,8 +92,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

@@ -71,14 +71,14 @@ options:
                         type: str
                         description: 'Enable/disable extended logging.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     external:
                         type: str
                         description: 'Disable/Enable external HTTP Inspection.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     name:
                         type: str
                         description: 'WAF Profile name.'
@@ -93,8 +93,8 @@ options:
                                         type: str
                                         description: 'Enable/disable match negation.'
                                         choices:
-                                            - disable
-                                            - enable
+                                            - 'disable'
+                                            - 'enable'
                                     pattern:
                                         type: str
                                         description: 'URL pattern.'
@@ -102,8 +102,8 @@ options:
                                         type: str
                                         description: 'Enable/disable regular expression based pattern match.'
                                         choices:
-                                            - disable
-                                            - enable
+                                            - 'disable'
+                                            - 'enable'
                                     srcaddr:
                                         type: str
                                         description: 'Source address.'
@@ -111,9 +111,9 @@ options:
                                 type: str
                                 description: 'Action.'
                                 choices:
-                                    - bypass
-                                    - permit
-                                    - block
+                                    - 'bypass'
+                                    - 'permit'
+                                    - 'block'
                             address:
                                 type: str
                                 description: 'Host address.'
@@ -124,15 +124,15 @@ options:
                                 type: str
                                 description: 'Enable/disable logging.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             severity:
                                 type: str
                                 description: 'Severity.'
                                 choices:
-                                    - low
-                                    - medium
-                                    - high
+                                    - 'low'
+                                    - 'medium'
+                                    - 'high'
     schema_object1:
         methods: [get]
         description: 'Web application firewall configuration.'
@@ -146,10 +146,10 @@ options:
                     -
                         type: str
                         choices:
-                            - comment
-                            - extended-log
-                            - external
-                            - name
+                            - 'comment'
+                            - 'extended-log'
+                            - 'external'
+                            - 'name'
             filter:
                 -
                     type: str
@@ -168,11 +168,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

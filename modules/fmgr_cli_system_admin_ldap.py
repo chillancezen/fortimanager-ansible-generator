@@ -61,14 +61,14 @@ options:
                         description: 'Attribute used to retrieve adom'
                     attributes:
                         type: str
-                        default: member,uniquemember,memberuid
+                        default: 'member,uniquemember,memberuid'
                         description: 'Attributes used for group searching.'
                     ca-cert:
                         type: str
                         description: 'CA certificate name.'
                     cnid:
                         type: str
-                        default: cn
+                        default: 'cn'
                         description: 'Common Name Identifier (default = CN).'
                     connect-timeout:
                         type: int
@@ -79,7 +79,7 @@ options:
                         description: 'Distinguished Name.'
                     filter:
                         type: str
-                        default: (objectclass=*)
+                        default: '(objectclass=*)'
                         description: 'Filter used for group searching.'
                     group:
                         type: str
@@ -93,7 +93,7 @@ options:
                     password:
                         -
                             type: str
-                            default: ENC MTEyODQwMzUzNTU5OTkxNiMZsnjCaX8v5NaNPmglZ1pwQh+wPb8bwCFjVP5hUgQnOleEpUJ7ARHGG9tpPDKAZE74Ep4RHCgPsKLw3wtuNG0kB3r6RBqrFQcvA/t/txyxY2LlhN4+ewvQsITXDVyOmmyE1tqgG/9GpJNNqPCgZsW36+Oo
+                            default: 'ENC MTEyODQwMzUzNTU5OTkxNiMZsnjCaX8v5NaNPmglZ1pwQh+wPb8bwCFjVP5hUgQnOleEpUJ7ARHGG9tpPDKAZE74Ep4RHCgPsKLw3wtuNG0kB3r6RBqrFQcvA/t/txyxY2LlhN4+ewvQsITXDVyOmmyE1tqgG/9GpJNNqPCgZsW36+Oo'
                     port:
                         type: int
                         default: 389
@@ -106,16 +106,16 @@ options:
                         description: '{<name_str|ip_str>} secondary LDAP server domain name or IP.'
                     secure:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'SSL connection.'
                          - 'disable - No SSL.'
                          - 'starttls - Use StartTLS.'
                          - 'ldaps - Use LDAPS.'
                         choices:
-                            - disable
-                            - starttls
-                            - ldaps
+                            - 'disable'
+                            - 'starttls'
+                            - 'ldaps'
                     server:
                         type: str
                         description: '{<name_str|ip_str>} LDAP server domain name or IP.'
@@ -124,16 +124,16 @@ options:
                         description: '{<name_str|ip_str>} tertiary LDAP server domain name or IP.'
                     type:
                         type: str
-                        default: simple
+                        default: 'simple'
                         description:
                          - 'Type of LDAP binding.'
                          - 'simple - Simple password authentication without search.'
                          - 'anonymous - Bind using anonymous user search.'
                          - 'regular - Bind using username/password and then search.'
                         choices:
-                            - simple
-                            - anonymous
-                            - regular
+                            - 'simple'
+                            - 'anonymous'
+                            - 'regular'
                     username:
                         type: str
                         description: 'Username (full DN) for initial binding.'
@@ -147,25 +147,25 @@ options:
                     -
                         type: str
                         choices:
-                            - adom-attr
-                            - attributes
-                            - ca-cert
-                            - cnid
-                            - connect-timeout
-                            - dn
-                            - filter
-                            - group
-                            - memberof-attr
-                            - name
-                            - password
-                            - port
-                            - profile-attr
-                            - secondary-server
-                            - secure
-                            - server
-                            - tertiary-server
-                            - type
-                            - username
+                            - 'adom-attr'
+                            - 'attributes'
+                            - 'ca-cert'
+                            - 'cnid'
+                            - 'connect-timeout'
+                            - 'dn'
+                            - 'filter'
+                            - 'group'
+                            - 'memberof-attr'
+                            - 'name'
+                            - 'password'
+                            - 'port'
+                            - 'profile-attr'
+                            - 'secondary-server'
+                            - 'secure'
+                            - 'server'
+                            - 'tertiary-server'
+                            - 'type'
+                            - 'username'
             filter:
                 -
                     type: str
@@ -179,8 +179,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

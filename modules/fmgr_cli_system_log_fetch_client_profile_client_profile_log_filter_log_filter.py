@@ -73,7 +73,7 @@ options:
                     description: 'Log filter ID.'
                 oper:
                     type: str
-                    default: =
+                    default: '='
                     description:
                      - 'Field filter operator.'
                      - '&lt; - =Less than or equal to'
@@ -82,15 +82,15 @@ options:
                      - 'not-contain - Not contain'
                      - 'match - Match (expression)'
                     choices:
-                        - =
-                        - !=
-                        - <
-                        - >
-                        - <=
-                        - >=
-                        - contain
-                        - not-contain
-                        - match
+                        - '='
+                        - '!='
+                        - '<'
+                        - '>'
+                        - '<='
+                        - '>='
+                        - 'contain'
+                        - 'not-contain'
+                        - 'match'
                 value:
                     type: str
                     description: 'Field filter operand or free-text matching expression.'

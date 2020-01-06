@@ -76,24 +76,24 @@ options:
                     description: 'Field value.'
                 importance:
                     type: str
-                    default: optional
+                    default: 'optional'
                     description:
                      - 'Importance.'
                      - 'optional - This field is optional.'
                      - 'required - This field is required.'
                     choices:
-                        - optional
-                        - required
+                        - 'optional'
+                        - 'required'
                 status:
                     type: str
-                    default: enabled
+                    default: 'enabled'
                     description:
                      - 'Status.'
                      - 'disabled - This field is disabled.'
                      - 'enabled - This field is enabled.'
                     choices:
-                        - disabled
-                        - enabled
+                        - 'disabled'
+                        - 'enabled'
 
 '''
 

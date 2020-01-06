@@ -70,20 +70,20 @@ options:
                 accept-mode:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 adv-interval:
                     type: int
                 ignore-default-route:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 preempt:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 priority:
                     type: int
                 start-time:
@@ -91,13 +91,13 @@ options:
                 status:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 version:
                     type: str
                     choices:
-                        - 2
-                        - 3
+                        - '2'
+                        - '3'
                 vrdst:
                     -
                         type: str
@@ -126,9 +126,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

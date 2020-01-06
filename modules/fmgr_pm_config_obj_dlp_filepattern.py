@@ -73,72 +73,72 @@ options:
                                 type: str
                                 description: 'Select a file type.'
                                 choices:
-                                    - unknown
-                                    - ignored
-                                    - exe
-                                    - elf
-                                    - bat
-                                    - javascript
-                                    - html
-                                    - hta
-                                    - msoffice
-                                    - gzip
-                                    - rar
-                                    - tar
-                                    - lzh
-                                    - upx
-                                    - zip
-                                    - cab
-                                    - bzip2
-                                    - bzip
-                                    - activemime
-                                    - mime
-                                    - hlp
-                                    - arj
-                                    - base64
-                                    - binhex
-                                    - uue
-                                    - fsg
-                                    - aspack
-                                    - msc
-                                    - petite
-                                    - jpeg
-                                    - gif
-                                    - tiff
-                                    - png
-                                    - bmp
-                                    - msi
-                                    - mpeg
-                                    - mov
-                                    - mp3
-                                    - wma
-                                    - wav
-                                    - pdf
-                                    - avi
-                                    - rm
-                                    - torrent
-                                    - hibun
-                                    - 7z
-                                    - xz
-                                    - msofficex
-                                    - mach-o
-                                    - dmg
-                                    - .net
-                                    - xar
-                                    - chm
-                                    - iso
-                                    - crx
-                                    - sis
-                                    - prc
-                                    - class
-                                    - jad
-                                    - cod
+                                    - 'unknown'
+                                    - 'ignored'
+                                    - 'exe'
+                                    - 'elf'
+                                    - 'bat'
+                                    - 'javascript'
+                                    - 'html'
+                                    - 'hta'
+                                    - 'msoffice'
+                                    - 'gzip'
+                                    - 'rar'
+                                    - 'tar'
+                                    - 'lzh'
+                                    - 'upx'
+                                    - 'zip'
+                                    - 'cab'
+                                    - 'bzip2'
+                                    - 'bzip'
+                                    - 'activemime'
+                                    - 'mime'
+                                    - 'hlp'
+                                    - 'arj'
+                                    - 'base64'
+                                    - 'binhex'
+                                    - 'uue'
+                                    - 'fsg'
+                                    - 'aspack'
+                                    - 'msc'
+                                    - 'petite'
+                                    - 'jpeg'
+                                    - 'gif'
+                                    - 'tiff'
+                                    - 'png'
+                                    - 'bmp'
+                                    - 'msi'
+                                    - 'mpeg'
+                                    - 'mov'
+                                    - 'mp3'
+                                    - 'wma'
+                                    - 'wav'
+                                    - 'pdf'
+                                    - 'avi'
+                                    - 'rm'
+                                    - 'torrent'
+                                    - 'hibun'
+                                    - '7z'
+                                    - 'xz'
+                                    - 'msofficex'
+                                    - 'mach-o'
+                                    - 'dmg'
+                                    - '.net'
+                                    - 'xar'
+                                    - 'chm'
+                                    - 'iso'
+                                    - 'crx'
+                                    - 'sis'
+                                    - 'prc'
+                                    - 'class'
+                                    - 'jad'
+                                    - 'cod'
                             filter-type:
                                 type: str
                                 description: 'Filter by file name pattern or by file type.'
                                 choices:
-                                    - pattern
-                                    - type
+                                    - 'pattern'
+                                    - 'type'
                             pattern:
                                 type: str
                                 description: 'Add a file name pattern.'
@@ -161,9 +161,9 @@ options:
                     -
                         type: str
                         choices:
-                            - comment
-                            - id
-                            - name
+                            - 'comment'
+                            - 'id'
+                            - 'name'
             filter:
                 -
                     type: str
@@ -182,11 +182,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

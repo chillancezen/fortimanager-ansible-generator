@@ -76,8 +76,8 @@ options:
                     type: str
                     description: 'Enable/disable match negation.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 pattern:
                     type: str
                     description: 'URL pattern.'
@@ -85,8 +85,8 @@ options:
                     type: str
                     description: 'Enable/disable regular expression based pattern match.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 srcaddr:
                     type: str
                     description: 'Source address.'
@@ -107,9 +107,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

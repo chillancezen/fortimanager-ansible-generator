@@ -72,7 +72,7 @@ options:
                     description: 'Variable name.'
                 var-type:
                     type: str
-                    default: string
+                    default: 'string'
                     description:
                      - 'Variable type.'
                      - 'integer - Integer.'
@@ -80,10 +80,10 @@ options:
                      - 'enum - Enum.'
                      - 'ip - IP.'
                     choices:
-                        - integer
-                        - string
-                        - enum
-                        - ip
+                        - 'integer'
+                        - 'string'
+                        - 'enum'
+                        - 'ip'
 
 '''
 

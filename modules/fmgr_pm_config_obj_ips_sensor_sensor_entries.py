@@ -70,10 +70,10 @@ options:
                         type: str
                         description: 'Action taken with traffic in which signatures are detected.'
                         choices:
-                            - pass
-                            - block
-                            - reset
-                            - default
+                            - 'pass'
+                            - 'block'
+                            - 'reset'
+                            - 'default'
                     application:
                         -
                             type: str
@@ -98,20 +98,20 @@ options:
                         type: str
                         description: 'Enable/disable logging of signatures included in filter.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     log-attack-context:
                         type: str
                         description: 'Enable/disable logging of attack context: URL buffer, header buffer, body buffer, packet buffer.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     log-packet:
                         type: str
                         description: 'Enable/disable packet logging. Enable to save the packet that triggers the filter. You can download the packets in pcap format for diagnostic use.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     os:
                         -
                             type: str
@@ -122,10 +122,10 @@ options:
                         type: str
                         description: 'Quarantine method.'
                         choices:
-                            - none
-                            - attacker
-                            - both
-                            - interface
+                            - 'none'
+                            - 'attacker'
+                            - 'both'
+                            - 'interface'
                     quarantine-expiry:
                         type: str
                         description: 'Duration of quarantine. (Format ###d##h##m, minimum 1m, maximum 364d23h59m, default = 5m). Requires quarantine set to attacker.'
@@ -133,8 +133,8 @@ options:
                         type: str
                         description: 'Enable/disable quarantine logging.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     rate-count:
                         type: int
                         description: 'Count of the rate.'
@@ -145,17 +145,17 @@ options:
                         type: str
                         description: 'Rate limit mode.'
                         choices:
-                            - periodical
-                            - continuous
+                            - 'periodical'
+                            - 'continuous'
                     rate-track:
                         type: str
                         description: 'Track the packet protocol field.'
                         choices:
-                            - none
-                            - src-ip
-                            - dest-ip
-                            - dhcp-client-mac
-                            - dns-domain
+                            - 'none'
+                            - 'src-ip'
+                            - 'dest-ip'
+                            - 'dhcp-client-mac'
+                            - 'dns-domain'
                     rule:
                         type: str
                         description: 'Identifies the predefined or custom IPS signatures to add to the sensor.'
@@ -166,9 +166,9 @@ options:
                         type: str
                         description: 'Status of the signatures included in filter. default enables the filter and only use filters with default status of enable. Filters with default status of disable will not be used.'
                         choices:
-                            - disable
-                            - enable
-                            - default
+                            - 'disable'
+                            - 'enable'
+                            - 'default'
     schema_object1:
         methods: [get]
         description: 'IPS sensor filter.'
@@ -182,25 +182,25 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - application
-                            - id
-                            - location
-                            - log
-                            - log-attack-context
-                            - log-packet
-                            - os
-                            - protocol
-                            - quarantine
-                            - quarantine-expiry
-                            - quarantine-log
-                            - rate-count
-                            - rate-duration
-                            - rate-mode
-                            - rate-track
-                            - rule
-                            - severity
-                            - status
+                            - 'action'
+                            - 'application'
+                            - 'id'
+                            - 'location'
+                            - 'log'
+                            - 'log-attack-context'
+                            - 'log-packet'
+                            - 'os'
+                            - 'protocol'
+                            - 'quarantine'
+                            - 'quarantine-expiry'
+                            - 'quarantine-log'
+                            - 'rate-count'
+                            - 'rate-duration'
+                            - 'rate-mode'
+                            - 'rate-track'
+                            - 'rule'
+                            - 'severity'
+                            - 'status'
             filter:
                 -
                     type: str
@@ -219,11 +219,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

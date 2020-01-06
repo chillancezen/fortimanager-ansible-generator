@@ -70,8 +70,8 @@ options:
                         type: str
                         description: 'Case sensitivity in pattern.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     header:
                         type: str
                         description: 'HTTP header regular expression.'
@@ -94,10 +94,10 @@ options:
                     -
                         type: str
                         choices:
-                            - case-sensitivity
-                            - header
-                            - header-name
-                            - id
+                            - 'case-sensitivity'
+                            - 'header'
+                            - 'header-name'
+                            - 'id'
             filter:
                 -
                     type: str
@@ -116,11 +116,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

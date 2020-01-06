@@ -67,7 +67,7 @@ options:
                         description: 'Log filter ID.'
                     oper:
                         type: str
-                        default: =
+                        default: '='
                         description:
                          - 'Field filter operator.'
                          - '&lt; - =Less than or equal to'
@@ -76,15 +76,15 @@ options:
                          - 'not-contain - Not contain'
                          - 'match - Match (expression)'
                         choices:
-                            - =
-                            - !=
-                            - <
-                            - >
-                            - <=
-                            - >=
-                            - contain
-                            - not-contain
-                            - match
+                            - '='
+                            - '!='
+                            - '<'
+                            - '>'
+                            - '<='
+                            - '>='
+                            - 'contain'
+                            - 'not-contain'
+                            - 'match'
                     value:
                         type: str
                         description: 'Field filter operand or free-text matching expression.'
@@ -98,10 +98,10 @@ options:
                     -
                         type: str
                         choices:
-                            - field
-                            - id
-                            - oper
-                            - value
+                            - 'field'
+                            - 'id'
+                            - 'oper'
+                            - 'value'
             filter:
                 -
                     type: str
@@ -115,8 +115,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

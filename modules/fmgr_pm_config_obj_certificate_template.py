@@ -70,32 +70,32 @@ options:
                         type: str
                     digest-type:
                         type: str
-                        default: sha1
+                        default: 'sha1'
                         choices:
-                            - sha1
-                            - sha256
+                            - 'sha1'
+                            - 'sha256'
                     email:
                         type: str
                     id-type:
                         type: str
-                        default: host-ip
+                        default: 'host-ip'
                         choices:
-                            - host-ip
-                            - domain-name
-                            - email
+                            - 'host-ip'
+                            - 'domain-name'
+                            - 'email'
                     key-size:
                         type: str
-                        default: 2048
+                        default: '2048'
                         choices:
-                            - 512
-                            - 1024
-                            - 1536
-                            - 2048
+                            - '512'
+                            - '1024'
+                            - '1536'
+                            - '2048'
                     key-type:
                         type: str
-                        default: rsa
+                        default: 'rsa'
                         choices:
-                            - rsa
+                            - 'rsa'
                     name:
                         type: str
                     organization:
@@ -114,10 +114,10 @@ options:
                         type: str
                     type:
                         type: str
-                        default: external
+                        default: 'external'
                         choices:
-                            - external
-                            - local
+                            - 'external'
+                            - 'local'
     schema_object1:
         methods: [get]
         description: ''
@@ -131,21 +131,21 @@ options:
                     -
                         type: str
                         choices:
-                            - city
-                            - country
-                            - digest-type
-                            - email
-                            - id-type
-                            - key-size
-                            - key-type
-                            - name
-                            - organization
-                            - organization-unit
-                            - scep-password
-                            - scep-server
-                            - state
-                            - subject-name
-                            - type
+                            - 'city'
+                            - 'country'
+                            - 'digest-type'
+                            - 'email'
+                            - 'id-type'
+                            - 'key-size'
+                            - 'key-type'
+                            - 'name'
+                            - 'organization'
+                            - 'organization-unit'
+                            - 'scep-password'
+                            - 'scep-server'
+                            - 'state'
+                            - 'subject-name'
+                            - 'type'
             filter:
                 -
                     type: str
@@ -164,11 +164,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

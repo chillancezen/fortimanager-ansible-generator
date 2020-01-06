@@ -69,128 +69,128 @@ options:
                     type: str
                     description: 'GTPv1 create MBMS context (req 100, resp 101).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 create-pdp:
                     type: str
                     description: 'Create PDP context (req 16, resp 17).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 data-record:
                     type: str
                     description: 'Data record transfer (req 240, resp 241).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 delete-aa-pdp:
                     type: str
                     description: 'GTPv0 delete AA PDP context (req 24, resp 25).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 delete-mbms:
                     type: str
                     description: 'GTPv1 delete MBMS context (req 104, resp 105).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 delete-pdp:
                     type: str
                     description: 'Delete PDP context (req 20, resp 21).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 echo:
                     type: str
                     description: 'Echo (req 1, resp 2).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 end-marker:
                     type: str
                     description: 'GTPv1 End marker (254).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 error-indication:
                     type: str
                     description: 'Error indication (26).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 failure-report:
                     type: str
                     description: 'Failure report (req 34, resp 35).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 fwd-relocation:
                     type: str
                     description: 'GTPv1 forward relocation (req 53, resp 54, complete 55, complete ack 59).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 fwd-srns-context:
                     type: str
                     description: 'GTPv1 forward SRNS (context 58, context ack 60).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 gtp-pdu:
                     type: str
                     description: 'PDU (255).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 identification:
                     type: str
                     description: 'Identification (req 48, resp 49).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 mbms-de-registration:
                     type: str
                     description: 'GTPv1 MBMS de-registration (req 114, resp 115).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 mbms-notification:
                     type: str
                     description: 'GTPv1 MBMS notification (req 96, resp 97, reject req 98. reject resp 99).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 mbms-registration:
                     type: str
                     description: 'GTPv1 MBMS registration (req 112, resp 113).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 mbms-session-start:
                     type: str
                     description: 'GTPv1 MBMS session start (req 116, resp 117).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 mbms-session-stop:
                     type: str
                     description: 'GTPv1 MBMS session stop (req 118, resp 119).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 mbms-session-update:
                     type: str
                     description: 'GTPv1 MBMS session update (req 120, resp 121).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 ms-info-change-notif:
                     type: str
                     description: 'GTPv1 MS info change notification (req 128, resp 129).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 name:
                     type: str
                     description: 'Message filter name.'
@@ -198,62 +198,62 @@ options:
                     type: str
                     description: 'Node alive (req 4, resp 5).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 note-ms-present:
                     type: str
                     description: 'Note MS GPRS present (req 36, resp 37).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 pdu-notification:
                     type: str
                     description: 'PDU notification (req 27, resp 28, reject req 29, reject resp 30).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 ran-info:
                     type: str
                     description: 'GTPv1 RAN information relay (70).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 redirection:
                     type: str
                     description: 'Redirection (req 6, resp 7).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 relocation-cancel:
                     type: str
                     description: 'GTPv1 relocation cancel (req 56, resp 57).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 send-route:
                     type: str
                     description: 'Send routing information for GPRS (req 32, resp 33).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 sgsn-context:
                     type: str
                     description: 'SGSN context (req 50, resp 51, ack 52).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 support-extension:
                     type: str
                     description: 'GTPv1 supported extension headers notify (31).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 unknown-message:
                     type: str
                     description: 'Allow or Deny unknown messages.'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 unknown-message-white-list:
                     -
                         type: int
@@ -261,26 +261,26 @@ options:
                     type: str
                     description: 'GTPv1 update MBMS context (req 102, resp 103).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 update-pdp:
                     type: str
                     description: 'Update PDP context (req 18, resp 19).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 v0-create-aa-pdp--v1-init-pdp-ctx:
                     type: str
                     description: 'GTPv0 create AA PDP context (req 22, resp 23); Or GTPv1 initiate PDP context (req 22, resp 23).'
                     choices:
-                        - deny
-                        - allow
+                        - 'deny'
+                        - 'allow'
                 version-not-support:
                     type: str
                     description: 'Version not supported (3).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
     schema_object1:
         methods: [delete]
         description: 'Message filter for GTPv0/v1 messages.'
@@ -298,9 +298,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

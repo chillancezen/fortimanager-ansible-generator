@@ -46,7 +46,7 @@ Parameters
  <li><span class="li-head">parameters for method: [clone, set, update]</span> - Configure a forward server group consisting or multiple forward servers. Supports failover and load balancing.</li>
  <ul class="ul-self">
  <li><span class="li-head">data</span> - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
- <li><span class="li-head">affinity</span> - Enable/disable affinity, attaching a source-ip's traffic to the assigned forwarding server until the forward-server-affinity-timeout is reached (under web-proxy global). <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
+ <li><span class="li-head">affinity</span> - Enable/disable affinity, attaching a source-ips traffic to the assigned forwarding server until the forward-server-affinity-timeout is reached (under web-proxy global). <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">group-down-option</span> - Action to take when all of the servers in the forward server group are down: block sessions until at least one server is back up or pass sessions to their destination. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [block, pass]</span> </li>
  <li><span class="li-head">ldb-method</span> - Load balance method: weighted or least-session. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [weighted, least-session]</span> </li>
  <li><span class="li-head">name</span> - Configure a forward server group consisting one or multiple forward servers. <span class="li-normal">type: str</span> </li>
@@ -145,7 +145,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <ul class="ul-self">
  <li><span class="li-return">data</span>
  - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
- <li> <span class="li-return"> affinity </span> - Enable/disable affinity, attaching a source-ip's traffic to the assigned forwarding server until the forward-server-affinity-timeout is reached (under web-proxy global). <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> affinity </span> - Enable/disable affinity, attaching a source-ips traffic to the assigned forwarding server until the forward-server-affinity-timeout is reached (under web-proxy global). <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> group-down-option </span> - Action to take when all of the servers in the forward server group are down: block sessions until at least one server is back up or pass sessions to their destination. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> ldb-method </span> - Load balance method: weighted or least-session. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> name </span> - Configure a forward server group consisting one or multiple forward servers. <span class="li-normal">type: str</span>  </li>

@@ -72,14 +72,14 @@ options:
                     type: str
                     description: 'Enable/disable external Email inspection.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 flow-based:
                     type: str
                     description: 'Enable/disable flow-based spam filtering.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 name:
                     type: str
                     description: 'Profile name.'
@@ -87,19 +87,19 @@ options:
                     -
                         type: str
                         choices:
-                            - bannedword
-                            - spamemailbwl
-                            - spamfsip
-                            - spamfssubmit
-                            - spamfschksum
-                            - spamfsurl
-                            - spamhelodns
-                            - spamipbwl
-                            - spamraddrdns
-                            - spamrbl
-                            - spamhdrcheck
-                            - spamfsphish
-                            - spambwl
+                            - 'bannedword'
+                            - 'spamemailbwl'
+                            - 'spamfsip'
+                            - 'spamfssubmit'
+                            - 'spamfschksum'
+                            - 'spamfsurl'
+                            - 'spamhelodns'
+                            - 'spamipbwl'
+                            - 'spamraddrdns'
+                            - 'spamrbl'
+                            - 'spamhdrcheck'
+                            - 'spamfsphish'
+                            - 'spambwl'
                 replacemsg-group:
                     type: str
                     description: 'Replacement message group.'
@@ -116,8 +116,8 @@ options:
                     type: str
                     description: 'Enable/disable spam filtering.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 spam-iptrust-table:
                     type: str
                     description: 'Anti-spam IP trust table ID.'
@@ -125,14 +125,14 @@ options:
                     type: str
                     description: 'Enable/disable spam logging for email filtering.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 spam-log-fortiguard-response:
                     type: str
                     description: 'Enable/disable logging FortiGuard spam response.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 spam-mheader-table:
                     type: str
                     description: 'Anti-spam MIME header table ID.'
@@ -156,9 +156,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

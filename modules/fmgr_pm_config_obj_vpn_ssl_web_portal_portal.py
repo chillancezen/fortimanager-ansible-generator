@@ -69,23 +69,23 @@ options:
                     -
                         type: str
                         choices:
-                            - web
-                            - ftp
-                            - telnet
-                            - smb
-                            - vnc
-                            - rdp
-                            - ssh
-                            - ping
-                            - citrix
-                            - portforward
-                            - sftp
+                            - 'web'
+                            - 'ftp'
+                            - 'telnet'
+                            - 'smb'
+                            - 'vnc'
+                            - 'rdp'
+                            - 'ssh'
+                            - 'ping'
+                            - 'citrix'
+                            - 'portforward'
+                            - 'sftp'
                 auto-connect:
                     type: str
                     description: 'Enable/disable automatic connect by client when system is up.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 bookmark-group:
                     -
                         bookmarks:
@@ -97,17 +97,17 @@ options:
                                     type: str
                                     description: 'Application type.'
                                     choices:
-                                        - web
-                                        - telnet
-                                        - ssh
-                                        - ftp
-                                        - smb
-                                        - vnc
-                                        - rdp
-                                        - citrix
-                                        - rdpnative
-                                        - portforward
-                                        - sftp
+                                        - 'web'
+                                        - 'telnet'
+                                        - 'ssh'
+                                        - 'ftp'
+                                        - 'smb'
+                                        - 'vnc'
+                                        - 'rdp'
+                                        - 'citrix'
+                                        - 'rdpnative'
+                                        - 'portforward'
+                                        - 'sftp'
                                 description:
                                     type: str
                                     description: 'Description.'
@@ -156,51 +156,51 @@ options:
                                     type: str
                                     description: 'Security mode for RDP connection.'
                                     choices:
-                                        - rdp
-                                        - nla
-                                        - tls
-                                        - any
+                                        - 'rdp'
+                                        - 'nla'
+                                        - 'tls'
+                                        - 'any'
                                 server-layout:
                                     type: str
                                     description: 'Server side keyboard layout.'
                                     choices:
-                                        - en-us-qwerty
-                                        - de-de-qwertz
-                                        - fr-fr-azerty
-                                        - it-it-qwerty
-                                        - sv-se-qwerty
-                                        - failsafe
-                                        - en-gb-qwerty
-                                        - es-es-qwerty
-                                        - fr-ch-qwertz
-                                        - ja-jp-qwerty
-                                        - pt-br-qwerty
-                                        - tr-tr-qwerty
+                                        - 'en-us-qwerty'
+                                        - 'de-de-qwertz'
+                                        - 'fr-fr-azerty'
+                                        - 'it-it-qwerty'
+                                        - 'sv-se-qwerty'
+                                        - 'failsafe'
+                                        - 'en-gb-qwerty'
+                                        - 'es-es-qwerty'
+                                        - 'fr-ch-qwertz'
+                                        - 'ja-jp-qwerty'
+                                        - 'pt-br-qwerty'
+                                        - 'tr-tr-qwerty'
                                 show-status-window:
                                     type: str
                                     description: 'Enable/disable showing of status window.'
                                     choices:
-                                        - disable
-                                        - enable
+                                        - 'disable'
+                                        - 'enable'
                                 sso:
                                     type: str
                                     description: 'Single Sign-On.'
                                     choices:
-                                        - disable
-                                        - static
-                                        - auto
+                                        - 'disable'
+                                        - 'static'
+                                        - 'auto'
                                 sso-credential:
                                     type: str
                                     description: 'Single sign-on credentials.'
                                     choices:
-                                        - sslvpn-login
-                                        - alternative
+                                        - 'sslvpn-login'
+                                        - 'alternative'
                                 sso-credential-sent-once:
                                     type: str
                                     description: 'Single sign-on credentials are only sent once to remote server.'
                                     choices:
-                                        - disable
-                                        - enable
+                                        - 'disable'
+                                        - 'enable'
                                 sso-password:
                                     -
                                         type: str
@@ -220,32 +220,32 @@ options:
                     type: str
                     description: 'Enable support of customized download URL for FortiClient.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 display-bookmark:
                     type: str
                     description: 'Enable to display the web portal bookmark widget.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 display-connection-tools:
                     type: str
                     description: 'Enable to display the web portal connection tools widget.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 display-history:
                     type: str
                     description: 'Enable to display the web portal user login history widget.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 display-status:
                     type: str
                     description: 'Enable to display the web portal status widget.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dns-server1:
                     type: str
                     description: 'IPv4 DNS server 1.'
@@ -259,20 +259,20 @@ options:
                     type: str
                     description: 'Enable/disable all traffic go through tunnel only.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 forticlient-download:
                     type: str
                     description: 'Enable/disable download option for FortiClient.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 forticlient-download-method:
                     type: str
                     description: 'FortiClient download method.'
                     choices:
-                        - direct
-                        - ssl-vpn
+                        - 'direct'
+                        - 'ssl-vpn'
                 heading:
                     type: str
                     description: 'Web portal heading message.'
@@ -280,17 +280,17 @@ options:
                     type: str
                     description: 'Enable to prevent SSO credential being sent to client.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 host-check:
                     type: str
                     description: 'Type of host checking performed on endpoints.'
                     choices:
-                        - none
-                        - av
-                        - fw
-                        - av-fw
-                        - custom
+                        - 'none'
+                        - 'av'
+                        - 'fw'
+                        - 'av-fw'
+                        - 'custom'
                 host-check-interval:
                     type: int
                     description: 'Periodic host check interval. Value of 0 means disabled and host checking only happens when the endpoint connects.'
@@ -301,8 +301,8 @@ options:
                     type: str
                     description: 'Method by which users of this SSL-VPN tunnel obtain IP addresses.'
                     choices:
-                        - range
-                        - user-group
+                        - 'range'
+                        - 'user-group'
                 ip-pools:
                     type: str
                     description: 'IPv4 firewall source address objects reserved for SSL-VPN tunnel mode clients.'
@@ -316,8 +316,8 @@ options:
                     type: str
                     description: 'Enable/disable all IPv6 traffic go through tunnel only.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ipv6-pools:
                     type: str
                     description: 'IPv4 firewall source address objects reserved for SSL-VPN tunnel mode clients.'
@@ -325,14 +325,14 @@ options:
                     type: str
                     description: 'Enable/disable IPv6 tunnel service restriction.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ipv6-split-tunneling:
                     type: str
                     description: 'Enable/disable IPv6 split tunneling.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ipv6-split-tunneling-routing-address:
                     type: str
                     description: 'IPv6 SSL-VPN tunnel mode firewall address objects that override firewall policy destination addresses to control split-tunneling access.'
@@ -340,8 +340,8 @@ options:
                     type: str
                     description: 'Enable/disable IPv6 SSL-VPN tunnel mode.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ipv6-wins-server1:
                     type: str
                     description: 'IPv6 WINS server 1.'
@@ -352,26 +352,26 @@ options:
                     type: str
                     description: 'Enable/disable automatic reconnect for FortiClient connections.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 limit-user-logins:
                     type: str
                     description: 'Enable to limit each user to one SSL-VPN session at a time.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mac-addr-action:
                     type: str
                     description: 'Client MAC address action.'
                     choices:
-                        - deny
-                        - allow
+                        - 'deny'
+                        - 'allow'
                 mac-addr-check:
                     type: str
                     description: 'Enable/disable MAC address host checking.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mac-addr-check-rule:
                     -
                         mac-addr-list:
@@ -393,47 +393,47 @@ options:
                     type: str
                     description: 'Enable to let the FortiGate decide action based on client OS.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 redir-url:
                     type: str
                     description: 'Client login redirect URL.'
                 save-password:
                     type: str
-                    description: 'Enable/disable FortiClient saving the user's password.'
+                    description: 'Enable/disable FortiClient saving the users password.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 service-restriction:
                     type: str
                     description: 'Enable/disable tunnel service restriction.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 skip-check-for-unsupported-browser:
                     type: str
                     description: 'Enable to skip host check if browser does not support it.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 skip-check-for-unsupported-os:
                     type: str
                     description: 'Enable to skip host check if client OS does not support it.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 smb-ntlmv1-auth:
                     type: str
                     description: 'Enable support of NTLMv1 for Samba authentication.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 smbv1:
                     type: str
                     description: 'Enable/disable support of SMBv1 for Samba.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 split-dns:
                     -
                         dns-server1:
@@ -458,8 +458,8 @@ options:
                     type: str
                     description: 'Enable/disable IPv4 split tunneling.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 split-tunneling-routing-address:
                     type: str
                     description: 'IPv4 SSL-VPN tunnel mode firewall address objects that override firewall policy destination addresses to control split-tunneling access.'
@@ -467,40 +467,40 @@ options:
                     type: str
                     description: 'Web portal color scheme.'
                     choices:
-                        - gray
-                        - blue
-                        - orange
-                        - crimson
-                        - steelblue
-                        - darkgrey
-                        - green
-                        - melongene
-                        - red
-                        - mariner
+                        - 'gray'
+                        - 'blue'
+                        - 'orange'
+                        - 'crimson'
+                        - 'steelblue'
+                        - 'darkgrey'
+                        - 'green'
+                        - 'melongene'
+                        - 'red'
+                        - 'mariner'
                 tunnel-mode:
                     type: str
                     description: 'Enable/disable IPv4 SSL-VPN tunnel mode.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 user-bookmark:
                     type: str
                     description: 'Enable to allow web portal users to create their own bookmarks.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 user-group-bookmark:
                     type: str
                     description: 'Enable to allow web portal users to create bookmarks for all users in the same user group.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 web-mode:
                     type: str
                     description: 'Enable/disable SSL VPN web mode.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 windows-forticlient-download-url:
                     type: str
                     description: 'Download URL for Windows FortiClient.'
@@ -527,9 +527,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 
@@ -912,7 +912,7 @@ return_of_api_category_0:
                description: 'Client login redirect URL.'
             save-password:
                type: str
-               description: 'Enable/disable FortiClient saving the user's password.'
+               description: 'Enable/disable FortiClient saving the users password.'
             service-restriction:
                type: str
                description: 'Enable/disable tunnel service restriction.'

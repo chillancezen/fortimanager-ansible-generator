@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Maximum number of cookies in HTTP request.'
@@ -84,14 +84,14 @@ options:
                     type: str
                     description: 'Action.'
                     choices:
-                        - allow
-                        - block
+                        - 'allow'
+                        - 'block'
                 log:
                     type: str
                     description: 'Enable/disable logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 max-cookie:
                     type: int
                     description: 'Maximum number of cookies in HTTP request (0 to 2147483647).'
@@ -99,15 +99,15 @@ options:
                     type: str
                     description: 'Severity.'
                     choices:
-                        - low
-                        - medium
-                        - high
+                        - 'low'
+                        - 'medium'
+                        - 'high'
                 status:
                     type: str
                     description: 'Enable/disable the constraint.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

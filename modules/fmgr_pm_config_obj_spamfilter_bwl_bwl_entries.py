@@ -70,15 +70,15 @@ options:
                         type: str
                         description: 'Reject, mark as spam or good email.'
                         choices:
-                            - spam
-                            - clear
-                            - reject
+                            - 'spam'
+                            - 'clear'
+                            - 'reject'
                     addr-type:
                         type: str
                         description: 'IP address type.'
                         choices:
-                            - ipv4
-                            - ipv6
+                            - 'ipv4'
+                            - 'ipv6'
                     email-pattern:
                         type: str
                         description: 'Email address pattern.'
@@ -95,20 +95,20 @@ options:
                         type: str
                         description: 'Wildcard pattern or regular expression.'
                         choices:
-                            - wildcard
-                            - regexp
+                            - 'wildcard'
+                            - 'regexp'
                     status:
                         type: str
                         description: 'Enable/disable status.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     type:
                         type: str
                         description: 'Entry type.'
                         choices:
-                            - ip
-                            - email
+                            - 'ip'
+                            - 'email'
     schema_object1:
         methods: [get]
         description: 'Anti-spam black/white list entries.'
@@ -122,15 +122,15 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - addr-type
-                            - email-pattern
-                            - id
-                            - ip4-subnet
-                            - ip6-subnet
-                            - pattern-type
-                            - status
-                            - type
+                            - 'action'
+                            - 'addr-type'
+                            - 'email-pattern'
+                            - 'id'
+                            - 'ip4-subnet'
+                            - 'ip6-subnet'
+                            - 'pattern-type'
+                            - 'status'
+                            - 'type'
             filter:
                 -
                     type: str
@@ -149,11 +149,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

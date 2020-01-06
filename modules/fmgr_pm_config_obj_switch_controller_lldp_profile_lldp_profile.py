@@ -69,18 +69,18 @@ options:
                     -
                         type: str
                         choices:
-                            - port-vlan-id
+                            - 'port-vlan-id'
                 802.3-tlvs:
                     -
                         type: str
                         choices:
-                            - max-frame-size
+                            - 'max-frame-size'
                 auto-isl:
                     type: str
                     description: 'Enable/disable auto inter-switch LAG.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 auto-isl-hello-timer:
                     type: int
                     description: 'Auto inter-switch LAG hello timer duration (1 - 30 sec, default = 3).'
@@ -119,8 +119,8 @@ options:
                             type: str
                             description: 'Enable or disable this TLV.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         vlan:
                             type: int
                             description: 'ID of VLAN to advertise, if configured on port (0 - 4094, 0 = priority tag).'
@@ -128,10 +128,10 @@ options:
                     -
                         type: str
                         choices:
-                            - inventory-management
-                            - network-policy
-                            - power-management
-                            - location-identification
+                            - 'inventory-management'
+                            - 'network-policy'
+                            - 'power-management'
+                            - 'location-identification'
                 name:
                     type: str
                     description: 'Profile name.'
@@ -152,9 +152,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

@@ -92,8 +92,8 @@ options:
                     type: str
                     description: 'Source or destination address group type.'
                     choices:
-                        - src
-                        - dst
+                        - 'src'
+                        - 'dst'
                 uuid:
                     type: str
                     description: 'Universally Unique Identifier (UUID; automatically assigned but can be manually reset).'
@@ -101,8 +101,8 @@ options:
                     type: str
                     description: 'Enable/disable visibility of the object in the GUI.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'Web proxy address group configuration.'
@@ -120,9 +120,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

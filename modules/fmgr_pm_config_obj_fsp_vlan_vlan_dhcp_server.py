@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: ''
@@ -83,15 +83,15 @@ options:
                 auto-configuration:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 conflicted-ip-timeout:
                     type: int
                 ddns-auth:
                     type: str
                     choices:
-                        - disable
-                        - tsig
+                        - 'disable'
+                        - 'tsig'
                 ddns-key:
                     type: str
                 ddns-keyname:
@@ -103,13 +103,13 @@ options:
                 ddns-update:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ddns-update-override:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ddns-zone:
                     type: str
                 default-gateway:
@@ -123,16 +123,16 @@ options:
                 dns-service:
                     type: str
                     choices:
-                        - default
-                        - specify
-                        - local
+                        - 'default'
+                        - 'specify'
+                        - 'local'
                 domain:
                     type: str
                 enable:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 exclude-range:
                     -
                         end-ip:
@@ -146,8 +146,8 @@ options:
                 forticlient-on-net-status:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 id:
                     type: int
                 interface:
@@ -155,8 +155,8 @@ options:
                 ip-mode:
                     type: str
                     choices:
-                        - range
-                        - usrgrp
+                        - 'range'
+                        - 'usrgrp'
                 ip-range:
                     -
                         end-ip:
@@ -172,8 +172,8 @@ options:
                 mac-acl-default-action:
                     type: str
                     choices:
-                        - assign
-                        - block
+                        - 'assign'
+                        - 'block'
                 netmask:
                     type: str
                 next-server:
@@ -187,9 +187,9 @@ options:
                 ntp-service:
                     type: str
                     choices:
-                        - default
-                        - specify
-                        - local
+                        - 'default'
+                        - 'specify'
+                        - 'local'
                 option1:
                     -
                         type: str
@@ -217,10 +217,10 @@ options:
                         type:
                             type: str
                             choices:
-                                - hex
-                                - string
-                                - ip
-                                - fqdn
+                                - 'hex'
+                                - 'string'
+                                - 'ip'
+                                - 'fqdn'
                         value:
                             type: str
                 reserved-address:
@@ -228,16 +228,16 @@ options:
                         action:
                             type: str
                             choices:
-                                - assign
-                                - block
-                                - reserved
+                                - 'assign'
+                                - 'block'
+                                - 'reserved'
                         circuit-id:
                             type: str
                         circuit-id-type:
                             type: str
                             choices:
-                                - hex
-                                - string
+                                - 'hex'
+                                - 'string'
                         description:
                             type: str
                         id:
@@ -251,128 +251,128 @@ options:
                         remote-id-type:
                             type: str
                             choices:
-                                - hex
-                                - string
+                                - 'hex'
+                                - 'string'
                         type:
                             type: str
                             choices:
-                                - mac
-                                - option82
+                                - 'mac'
+                                - 'option82'
                 server-type:
                     type: str
                     choices:
-                        - regular
-                        - ipsec
+                        - 'regular'
+                        - 'ipsec'
                 status:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 tftp-server:
                     -
                         type: str
                 timezone:
                     type: str
                     choices:
-                        - 00
-                        - 01
-                        - 02
-                        - 03
-                        - 04
-                        - 05
-                        - 06
-                        - 07
-                        - 08
-                        - 09
-                        - 10
-                        - 11
-                        - 12
-                        - 13
-                        - 14
-                        - 15
-                        - 16
-                        - 17
-                        - 18
-                        - 19
-                        - 20
-                        - 21
-                        - 22
-                        - 23
-                        - 24
-                        - 25
-                        - 26
-                        - 27
-                        - 28
-                        - 29
-                        - 30
-                        - 31
-                        - 32
-                        - 33
-                        - 34
-                        - 35
-                        - 36
-                        - 37
-                        - 38
-                        - 39
-                        - 40
-                        - 41
-                        - 42
-                        - 43
-                        - 44
-                        - 45
-                        - 46
-                        - 47
-                        - 48
-                        - 49
-                        - 50
-                        - 51
-                        - 52
-                        - 53
-                        - 54
-                        - 55
-                        - 56
-                        - 57
-                        - 58
-                        - 59
-                        - 60
-                        - 61
-                        - 62
-                        - 63
-                        - 64
-                        - 65
-                        - 66
-                        - 67
-                        - 68
-                        - 69
-                        - 70
-                        - 71
-                        - 72
-                        - 73
-                        - 74
-                        - 75
-                        - 76
-                        - 77
-                        - 78
-                        - 79
-                        - 80
-                        - 81
-                        - 82
-                        - 83
-                        - 84
-                        - 85
-                        - 86
-                        - 87
+                        - '00'
+                        - '01'
+                        - '02'
+                        - '03'
+                        - '04'
+                        - '05'
+                        - '06'
+                        - '07'
+                        - '08'
+                        - '09'
+                        - '10'
+                        - '11'
+                        - '12'
+                        - '13'
+                        - '14'
+                        - '15'
+                        - '16'
+                        - '17'
+                        - '18'
+                        - '19'
+                        - '20'
+                        - '21'
+                        - '22'
+                        - '23'
+                        - '24'
+                        - '25'
+                        - '26'
+                        - '27'
+                        - '28'
+                        - '29'
+                        - '30'
+                        - '31'
+                        - '32'
+                        - '33'
+                        - '34'
+                        - '35'
+                        - '36'
+                        - '37'
+                        - '38'
+                        - '39'
+                        - '40'
+                        - '41'
+                        - '42'
+                        - '43'
+                        - '44'
+                        - '45'
+                        - '46'
+                        - '47'
+                        - '48'
+                        - '49'
+                        - '50'
+                        - '51'
+                        - '52'
+                        - '53'
+                        - '54'
+                        - '55'
+                        - '56'
+                        - '57'
+                        - '58'
+                        - '59'
+                        - '60'
+                        - '61'
+                        - '62'
+                        - '63'
+                        - '64'
+                        - '65'
+                        - '66'
+                        - '67'
+                        - '68'
+                        - '69'
+                        - '70'
+                        - '71'
+                        - '72'
+                        - '73'
+                        - '74'
+                        - '75'
+                        - '76'
+                        - '77'
+                        - '78'
+                        - '79'
+                        - '80'
+                        - '81'
+                        - '82'
+                        - '83'
+                        - '84'
+                        - '85'
+                        - '86'
+                        - '87'
                 timezone-option:
                     type: str
                     choices:
-                        - disable
-                        - default
-                        - specify
+                        - 'disable'
+                        - 'default'
+                        - 'specify'
                 vci-match:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 vci-string:
                     -
                         type: str

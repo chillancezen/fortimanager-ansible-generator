@@ -52,11 +52,11 @@ options:
             data:
                 add_mappings:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description: 'Automatically add required dynamic mappings for the device during the search stages.<br/>When used in policy_search action, add dynamic interface and zone mappings; in obj_search action, add ADOM object mappings.<br/>This attribute is not available for the do action.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 adom:
                     type: str
                     description: 'Source ADOM name.'
@@ -68,37 +68,37 @@ options:
                     description: 'Path to the folder for the target package. If the package is to be placed in root, leave this field blank.'
                 if_all_objs:
                     type: str
-                    default: none
+                    default: 'none'
                     choices:
-                        - none
-                        - all
-                        - filter
+                        - 'none'
+                        - 'all'
+                        - 'filter'
                 if_all_policy:
                     type: str
-                    default: disable
+                    default: 'disable'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 import_action:
                     type: str
-                    default: do
+                    default: 'do'
                     description:
                      - 'do - Perform the policy and object import.'
                      - 'policy_search - Preprocess and scan through device database to gather information about policies that need to be imported. Can automatically add interface and zone mappings if add_mappings is enabled.'
                      - 'obj_search - Preprocess and scan through device database to collect objects that are required to be imported. Can automatically add object mappings if add_mappings is enabled.'
                     choices:
-                        - do
-                        - policy_search
-                        - obj_search
+                        - 'do'
+                        - 'policy_search'
+                        - 'obj_search'
                 name:
                     type: str
                     description: 'Source device name.'
                 position:
                     type: str
-                    default: top
+                    default: 'top'
                     choices:
-                        - bottom
-                        - top
+                        - 'bottom'
+                        - 'top'
                 vdom:
                     type: str
 

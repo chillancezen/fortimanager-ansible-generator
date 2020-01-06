@@ -70,9 +70,9 @@ options:
                         type: str
                         description: 'Options for the DHCP server to configure the client with the reserved MAC address.'
                         choices:
-                            - assign
-                            - block
-                            - reserved
+                            - 'assign'
+                            - 'block'
+                            - 'reserved'
                     description:
                         type: str
                         description: 'Description.'
@@ -98,11 +98,11 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - description
-                            - id
-                            - ip
-                            - mac
+                            - 'action'
+                            - 'description'
+                            - 'id'
+                            - 'ip'
+                            - 'mac'
             filter:
                 -
                     type: str
@@ -121,11 +121,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

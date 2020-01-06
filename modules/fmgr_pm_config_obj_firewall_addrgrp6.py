@@ -91,8 +91,8 @@ options:
                             visibility:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                     member:
                         type: str
                         description: 'Address objects contained within the group.'
@@ -117,8 +117,8 @@ options:
                         type: str
                         description: 'Enable/disable address group6 visibility in the GUI.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure IPv6 address groups.'
@@ -132,12 +132,12 @@ options:
                     -
                         type: str
                         choices:
-                            - color
-                            - comment
-                            - member
-                            - name
-                            - uuid
-                            - visibility
+                            - 'color'
+                            - 'comment'
+                            - 'member'
+                            - 'name'
+                            - 'uuid'
+                            - 'visibility'
             filter:
                 -
                     type: str
@@ -156,11 +156,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

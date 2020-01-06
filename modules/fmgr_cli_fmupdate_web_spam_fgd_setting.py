@@ -61,88 +61,88 @@ options:
                     description: 'Antispam service maximum memory usage in megabytes (Maximum = Physical memory-1024, 0: no limit, default = 300).'
                 as-log:
                     type: str
-                    default: nospam
+                    default: 'nospam'
                     description:
                      - 'Antispam log setting (default = nospam).'
                      - 'disable - Disable spam log.'
                      - 'nospam - Log non-spam events.'
                      - 'all - Log all spam lookups.'
                     choices:
-                        - disable
-                        - nospam
-                        - all
+                        - 'disable'
+                        - 'nospam'
+                        - 'all'
                 as-preload:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable preloading antispam database to memory (default = disable).'
                      - 'disable - Disable antispam database preload.'
                      - 'enable - Enable antispam database preload.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 av-cache:
                     type: int
                     default: 300
                     description: 'Antivirus service maximum memory usage, in megabytes (100 - 500, default = 300).'
                 av-log:
                     type: str
-                    default: novirus
+                    default: 'novirus'
                     description:
                      - 'Antivirus log setting (default = novirus).'
                      - 'disable - Disable virus log.'
                      - 'novirus - Log non-virus events.'
                      - 'all - Log all virus lookups.'
                     choices:
-                        - disable
-                        - novirus
-                        - all
+                        - 'disable'
+                        - 'novirus'
+                        - 'all'
                 av-preload:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable preloading antivirus database to memory (default = disable).'
                      - 'disable - Disable antivirus database preload.'
                      - 'enable - Enable antivirus database preload.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 av2-cache:
                     type: int
                     default: 800
                     description: 'Antispam service maximum memory usage in megabytes (Maximum = Physical memory-1024, 0: no limit, default = 800).'
                 av2-log:
                     type: str
-                    default: noav2
+                    default: 'noav2'
                     description:
                      - 'Outbreak prevention log setting (default = noav2).'
                      - 'disable - Disable av2 log.'
                      - 'noav2 - Log non-av2 events.'
                      - 'all - Log all av2 lookups.'
                     choices:
-                        - disable
-                        - noav2
-                        - all
+                        - 'disable'
+                        - 'noav2'
+                        - 'all'
                 av2-preload:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable preloading outbreak prevention database to memory (default = disable).'
                      - 'disable - Disable outbreak prevention database preload.'
                      - 'enable - Enable outbreak prevention database preload.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 eventlog-query:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable record query to event-log besides fgd-log (default = disable).'
                      - 'disable - Record query to event-log besides fgd-log.'
                      - 'enable - Do not log to event-log.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fgd-pull-interval:
                     type: int
                     default: 10
@@ -153,29 +153,29 @@ options:
                     description: 'File query service maximum memory usage, in megabytes (100 - 500, default = 300).'
                 fq-log:
                     type: str
-                    default: nofilequery
+                    default: 'nofilequery'
                     description:
                      - 'File query log setting (default = nofilequery).'
                      - 'disable - Disable file query log.'
                      - 'nofilequery - Log non-file query events.'
                      - 'all - Log all file query events.'
                     choices:
-                        - disable
-                        - nofilequery
-                        - all
+                        - 'disable'
+                        - 'nofilequery'
+                        - 'all'
                 fq-preload:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable preloading file query database to memory (default = disable).'
                      - 'disable - Disable file query db preload.'
                      - 'enable - Enable file query db preload.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 linkd-log:
                     type: str
-                    default: debug
+                    default: 'debug'
                     description:
                      - 'Linkd log setting (default = debug).'
                      - 'emergency - The unit is unusable.'
@@ -188,15 +188,15 @@ options:
                      - 'debug - Debug information.'
                      - 'disable - Linkd logging is disabled.'
                     choices:
-                        - emergency
-                        - alert
-                        - critical
-                        - error
-                        - warn
-                        - notice
-                        - info
-                        - debug
-                        - disable
+                        - 'emergency'
+                        - 'alert'
+                        - 'critical'
+                        - 'error'
+                        - 'warn'
+                        - 'notice'
+                        - 'info'
+                        - 'debug'
+                        - 'disable'
                 max-client-worker:
                     type: int
                     default: 0
@@ -239,11 +239,11 @@ options:
                                 description: 'Override server ID (1 - 10).'
                             ip:
                                 type: str
-                                default: 0.0.0.0
+                                default: '0.0.0.0'
                                 description: 'IPv4 address of the override server.'
                             ip6:
                                 type: str
-                                default: ::
+                                default: '::'
                                 description: 'IPv6 address of the override server.'
                             port:
                                 type: int
@@ -253,19 +253,19 @@ options:
                                 -
                                     type: str
                                     choices:
-                                        - fgd
-                                        - fgc
-                                        - fsa
+                                        - 'fgd'
+                                        - 'fgc'
+                                        - 'fsa'
                     status:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Override status.'
                          - 'disable - Disable setting.'
                          - 'enable - Enable setting.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                 stat-log-interval:
                     type: int
                     default: 60
@@ -280,14 +280,14 @@ options:
                     description: 'FortiGuard database update wait time if not enough delta files, in hours (2 - 24, default = 6).'
                 update-log:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable update log setting (default = enable).'
                      - 'disable - Disable update log.'
                      - 'enable - Enable update log.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 wf-cache:
                     type: int
                     default: 0
@@ -302,26 +302,26 @@ options:
                     description: 'Maximum number of Web filter DN cache (0 = disable, default = 10000).'
                 wf-log:
                     type: str
-                    default: nourl
+                    default: 'nourl'
                     description:
                      - 'Web filter log setting (default = nour1)'
                      - 'disable - Disable URL log.'
                      - 'nourl - Log non-URL events.'
                      - 'all - Log all URL lookups.'
                     choices:
-                        - disable
-                        - nourl
-                        - all
+                        - 'disable'
+                        - 'nourl'
+                        - 'all'
                 wf-preload:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable preloading the web filter database into memory (default = disable).'
                      - 'disable - Disable web filter database preload.'
                      - 'enable - Enable web filter database preload.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

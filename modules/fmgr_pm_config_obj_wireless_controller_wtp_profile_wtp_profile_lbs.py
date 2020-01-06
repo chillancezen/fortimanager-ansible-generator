@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Set various location based service (LBS) options.'
@@ -84,26 +84,26 @@ options:
                     type: str
                     description: 'Enable/disable AeroScout Real Time Location Service (RTLS) support.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 aeroscout-ap-mac:
                     type: str
                     description: 'Use BSSID or board MAC address as AP MAC address in the Aeroscout AP message.'
                     choices:
-                        - bssid
-                        - board-mac
+                        - 'bssid'
+                        - 'board-mac'
                 aeroscout-mmu-report:
                     type: str
                     description: 'Enable/disable MU compounded report.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 aeroscout-mu:
                     type: str
                     description: 'Enable/disable AeroScout support.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 aeroscout-mu-factor:
                     type: int
                     description: 'AeroScout Mobile Unit (MU) mode dilution factor (default = 20).'
@@ -120,8 +120,8 @@ options:
                     type: str
                     description: 'Enable/disable Ekahua blink mode (also called AiRISTA Flow Blink Mode) to find the location of devices connected to a wireless LAN (default = disable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ekahau-tag:
                     type: str
                     description: 'WiFi frame MAC address or WiFi Tag.'
@@ -133,13 +133,13 @@ options:
                     description: 'Ekahua RTLS Controller (ERC) UDP listening port.'
                 fortipresence:
                     type: str
-                    description: 'Enable/disable FortiPresence to monitor the location and activity of WiFi clients even if they don't connect to this WiFi network (default = disable).'
+                    description: 'Enable/disable FortiPresence to monitor the location and activity of WiFi clients even if they dont connect to this WiFi network (default = disable).'
                     choices:
-                        - disable
-                        - enable
-                        - enable2
-                        - foreign
-                        - both
+                        - 'disable'
+                        - 'enable'
+                        - 'enable2'
+                        - 'foreign'
+                        - 'both'
                 fortipresence-frequency:
                     type: int
                     description: 'FortiPresence report transmit frequency (5 - 65535 sec, default = 30).'
@@ -153,8 +153,8 @@ options:
                     type: str
                     description: 'Enable/disable FortiPresence finding and reporting rogue APs.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fortipresence-secret:
                     -
                         type: str
@@ -165,14 +165,14 @@ options:
                     type: str
                     description: 'Enable/disable FortiPresence finding and reporting unassociated stations.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 station-locate:
                     type: str
                     description: 'Enable/disable client station locating services for all clients, whether associated or not (default = disable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 
@@ -274,7 +274,7 @@ return_of_api_category_0:
                description: 'Ekahua RTLS Controller (ERC) UDP listening port.'
             fortipresence:
                type: str
-               description: 'Enable/disable FortiPresence to monitor the location and activity of WiFi clients even if they don't connect to this WiFi network (default = disable).'
+               description: 'Enable/disable FortiPresence to monitor the location and activity of WiFi clients even if they dont connect to this WiFi network (default = disable).'
             fortipresence-frequency:
                type: int
                description: 'FortiPresence report transmit frequency (5 - 65535 sec, default = 30).'

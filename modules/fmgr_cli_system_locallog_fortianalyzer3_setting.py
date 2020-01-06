@@ -57,31 +57,31 @@ options:
             data:
                 reliable:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable reliable realtime logging.'
                      - 'disable - Disable reliable realtime logging.'
                      - 'enable - Enable reliable realtime logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 secure-connection:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable connection secured by TLS/SSL.'
                      - 'disable - Disable SSL connection.'
                      - 'enable - Enable SSL connection.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 server-ip:
                     type: str
-                    default: 0.0.0.0
+                    default: '0.0.0.0'
                     description: 'Remote FortiAnalyzer server IP address.'
                 severity:
                     type: str
-                    default: notification
+                    default: 'notification'
                     description:
                      - 'Least severity level to log.'
                      - 'emergency - Emergency level.'
@@ -93,26 +93,26 @@ options:
                      - 'information - Information level.'
                      - 'debug - Debug level.'
                     choices:
-                        - emergency
-                        - alert
-                        - critical
-                        - error
-                        - warning
-                        - notification
-                        - information
-                        - debug
+                        - 'emergency'
+                        - 'alert'
+                        - 'critical'
+                        - 'error'
+                        - 'warning'
+                        - 'notification'
+                        - 'information'
+                        - 'debug'
                 status:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Log to FortiAnalyzer status.'
                      - 'disable - Log to FortiAnalyzer disabled.'
                      - 'realtime - Log to FortiAnalyzer in realtime.'
                      - 'upload - Log to FortiAnalyzer at schedule time.'
                     choices:
-                        - disable
-                        - realtime
-                        - upload
+                        - 'disable'
+                        - 'realtime'
+                        - 'upload'
                 upload-time:
                     -
                         type: str

@@ -64,28 +64,28 @@ options:
             data:
                 auth:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable authentication.'
                      - 'disable - Disable authentication.'
                      - 'enable - Enable authentication.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 id:
                     type: str
                     description: 'Mail Service ID.'
                 passwd:
                     -
                         type: str
-                        default: ENC MTI3MTE1Mzc2NTkxNzM3My6VraLxNsD7/K6FZ6oYkYSCjr1/h55a1R9hSJwHMCRyMEgllLUQEhRyvo6NfN3em5zkIyjoe2lL1IiVMHB7akT/z/3KthjsAi7XxuoMxrrTCD22xfmlCWUL9Ic7XgFbGqD4FPOGs6XKMCTZ0SdI+YEcf+pp
+                        default: 'ENC MTI3MTE1Mzc2NTkxNzM3My6VraLxNsD7/K6FZ6oYkYSCjr1/h55a1R9hSJwHMCRyMEgllLUQEhRyvo6NfN3em5zkIyjoe2lL1IiVMHB7akT/z/3KthjsAi7XxuoMxrrTCD22xfmlCWUL9Ic7XgFbGqD4FPOGs6XKMCTZ0SdI+YEcf+pp'
                 port:
                     type: int
                     default: 25
                     description: 'SMTP server port.'
                 secure-option:
                     type: str
-                    default: default
+                    default: 'default'
                     description:
                      - 'Communication secure option.'
                      - 'default - Try STARTTLS, proceed as plain text communication otherwise.'
@@ -93,10 +93,10 @@ options:
                      - 'smtps - Communication will be protected by SMTPS.'
                      - 'starttls - Communication will be protected by STARTTLS.'
                     choices:
-                        - default
-                        - none
-                        - smtps
-                        - starttls
+                        - 'default'
+                        - 'none'
+                        - 'smtps'
+                        - 'starttls'
                 server:
                     type: str
                     description: 'SMTP server.'

@@ -57,32 +57,32 @@ options:
             data:
                 aggressive-schedule:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable auto-cache on schedule reports aggressively.'
                      - 'disable - Disable the aggressive schedule auto-cache.'
                      - 'enable - Enable the aggressive schedule auto-cache.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 order:
                     type: str
-                    default: oldest-first
+                    default: 'oldest-first'
                     description:
                      - 'The order of which SQL log table is processed first.'
                      - 'oldest-first - The oldest SQL log table is processed first.'
                     choices:
-                        - oldest-first
+                        - 'oldest-first'
                 status:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable sql report auto cache.'
                      - 'disable - Disable the sql report auto-cache.'
                      - 'enable - Enable the sql report auto-cache.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

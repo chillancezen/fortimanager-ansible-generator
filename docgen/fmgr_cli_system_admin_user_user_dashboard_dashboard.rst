@@ -48,22 +48,22 @@ Parameters
  <li><span class="li-head">parameters for method: [set, update]</span> - Custom dashboard widgets.</li>
  <ul class="ul-self">
  <li><span class="li-head">data</span> - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
- <li><span class="li-head">column</span> - Widget's column ID. <span class="li-normal">type: int</span>  <span class="li-normal">default: 0</span> </li>
- <li><span class="li-head">diskio-content-type</span> - Disk I/O Monitor widget's chart type. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [util, iops, blks]</span>  <span class="li-normal">default: util</span> </li>
- <li><span class="li-head">diskio-period</span> - Disk I/O Monitor widget's data period. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [1hour, 8hour, 24hour]</span>  <span class="li-normal">default: 1hour</span> </li>
- <li><span class="li-head">log-rate-period</span> - Log receive monitor widget's data period. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [2min , 1hour, 6hours]</span> </li>
- <li><span class="li-head">log-rate-topn</span> - Log receive monitor widget's number of top items to display. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [1, 2, 3, 4, 5]</span>  <span class="li-normal">default: 5</span> </li>
- <li><span class="li-head">log-rate-type</span> - Log receive monitor widget's statistics breakdown options. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [log, device]</span>  <span class="li-normal">default: device</span> </li>
+ <li><span class="li-head">column</span> - Widgets column ID. <span class="li-normal">type: int</span>  <span class="li-normal">default: 0</span> </li>
+ <li><span class="li-head">diskio-content-type</span> - Disk I/O Monitor widgets chart type. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [util, iops, blks]</span>  <span class="li-normal">default: util</span> </li>
+ <li><span class="li-head">diskio-period</span> - Disk I/O Monitor widgets data period. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [1hour, 8hour, 24hour]</span>  <span class="li-normal">default: 1hour</span> </li>
+ <li><span class="li-head">log-rate-period</span> - Log receive monitor widgets data period. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [2min , 1hour, 6hours]</span> </li>
+ <li><span class="li-head">log-rate-topn</span> - Log receive monitor widgets number of top items to display. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [1, 2, 3, 4, 5]</span>  <span class="li-normal">default: 5</span> </li>
+ <li><span class="li-head">log-rate-type</span> - Log receive monitor widgets statistics breakdown options. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [log, device]</span>  <span class="li-normal">default: device</span> </li>
  <li><span class="li-head">moduleid</span> - Widget ID. <span class="li-normal">type: int</span>  <span class="li-normal">default: 0</span> </li>
  <li><span class="li-head">name</span> - Widget name. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">num-entries</span> - Number of entries. <span class="li-normal">type: int</span>  <span class="li-normal">default: 10</span> </li>
- <li><span class="li-head">refresh-interval</span> - Widget's refresh interval. <span class="li-normal">type: int</span>  <span class="li-normal">default: 300</span> </li>
- <li><span class="li-head">res-cpu-display</span> - Widget's CPU display type. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [average , each]</span>  <span class="li-normal">default: average </span> </li>
- <li><span class="li-head">res-period</span> - Widget's data period. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [10min , hour, day]</span>  <span class="li-normal">default: 10min </span> </li>
- <li><span class="li-head">res-view-type</span> - Widget's data view type. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [real-time , history]</span>  <span class="li-normal">default: history</span> </li>
- <li><span class="li-head">status</span> - Widget's opened/closed state. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [close, open]</span>  <span class="li-normal">default: open</span> </li>
+ <li><span class="li-head">refresh-interval</span> - Widgets refresh interval. <span class="li-normal">type: int</span>  <span class="li-normal">default: 300</span> </li>
+ <li><span class="li-head">res-cpu-display</span> - Widgets CPU display type. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [average , each]</span>  <span class="li-normal">default: average </span> </li>
+ <li><span class="li-head">res-period</span> - Widgets data period. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [10min , hour, day]</span>  <span class="li-normal">default: 10min </span> </li>
+ <li><span class="li-head">res-view-type</span> - Widgets data view type. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [real-time , history]</span>  <span class="li-normal">default: history</span> </li>
+ <li><span class="li-head">status</span> - Widgets opened/closed state. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [close, open]</span>  <span class="li-normal">default: open</span> </li>
  <li><span class="li-head">tabid</span> - ID of tab where widget is displayed. <span class="li-normal">type: int</span>  <span class="li-normal">default: 0</span> </li>
- <li><span class="li-head">time-period</span> - Log Database Monitor widget's data period. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [1hour, 8hour, 24hour]</span>  <span class="li-normal">default: 1hour</span> </li>
+ <li><span class="li-head">time-period</span> - Log Database Monitor widgets data period. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [1hour, 8hour, 24hour]</span>  <span class="li-normal">default: 1hour</span> </li>
  <li><span class="li-head">widget-type</span> - Widget type. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [top-lograte, sysres, sysinfo, licinfo, jsconsole, sysop, alert, statistics, rpteng, raid, logrecv, devsummary, logdb-perf, logdb-lag, disk-io, log-rcvd-fwd]</span> </li>
  </ul>
  </ul>
@@ -149,22 +149,22 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <ul class="ul-self">
  <li><span class="li-return">data</span>
  - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
- <li> <span class="li-return"> column </span> - Widget's column ID. <span class="li-normal">type: int</span>  <span class="li-normal">example: 0</span>  </li>
- <li> <span class="li-return"> diskio-content-type </span> - Disk I/O Monitor widget's chart type. <span class="li-normal">type: str</span>  <span class="li-normal">example: util</span>  </li>
- <li> <span class="li-return"> diskio-period </span> - Disk I/O Monitor widget's data period. <span class="li-normal">type: str</span>  <span class="li-normal">example: 1hour</span>  </li>
- <li> <span class="li-return"> log-rate-period </span> - Log receive monitor widget's data period. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> log-rate-topn </span> - Log receive monitor widget's number of top items to display. <span class="li-normal">type: str</span>  <span class="li-normal">example: 5</span>  </li>
- <li> <span class="li-return"> log-rate-type </span> - Log receive monitor widget's statistics breakdown options. <span class="li-normal">type: str</span>  <span class="li-normal">example: device</span>  </li>
+ <li> <span class="li-return"> column </span> - Widgets column ID. <span class="li-normal">type: int</span>  <span class="li-normal">example: 0</span>  </li>
+ <li> <span class="li-return"> diskio-content-type </span> - Disk I/O Monitor widgets chart type. <span class="li-normal">type: str</span>  <span class="li-normal">example: util</span>  </li>
+ <li> <span class="li-return"> diskio-period </span> - Disk I/O Monitor widgets data period. <span class="li-normal">type: str</span>  <span class="li-normal">example: 1hour</span>  </li>
+ <li> <span class="li-return"> log-rate-period </span> - Log receive monitor widgets data period. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> log-rate-topn </span> - Log receive monitor widgets number of top items to display. <span class="li-normal">type: str</span>  <span class="li-normal">example: 5</span>  </li>
+ <li> <span class="li-return"> log-rate-type </span> - Log receive monitor widgets statistics breakdown options. <span class="li-normal">type: str</span>  <span class="li-normal">example: device</span>  </li>
  <li> <span class="li-return"> moduleid </span> - Widget ID. <span class="li-normal">type: int</span>  <span class="li-normal">example: 0</span>  </li>
  <li> <span class="li-return"> name </span> - Widget name. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> num-entries </span> - Number of entries. <span class="li-normal">type: int</span>  <span class="li-normal">example: 10</span>  </li>
- <li> <span class="li-return"> refresh-interval </span> - Widget's refresh interval. <span class="li-normal">type: int</span>  <span class="li-normal">example: 300</span>  </li>
- <li> <span class="li-return"> res-cpu-display </span> - Widget's CPU display type. <span class="li-normal">type: str</span>  <span class="li-normal">example: average </span>  </li>
- <li> <span class="li-return"> res-period </span> - Widget's data period. <span class="li-normal">type: str</span>  <span class="li-normal">example: 10min </span>  </li>
- <li> <span class="li-return"> res-view-type </span> - Widget's data view type. <span class="li-normal">type: str</span>  <span class="li-normal">example: history</span>  </li>
- <li> <span class="li-return"> status </span> - Widget's opened/closed state. <span class="li-normal">type: str</span>  <span class="li-normal">example: open</span>  </li>
+ <li> <span class="li-return"> refresh-interval </span> - Widgets refresh interval. <span class="li-normal">type: int</span>  <span class="li-normal">example: 300</span>  </li>
+ <li> <span class="li-return"> res-cpu-display </span> - Widgets CPU display type. <span class="li-normal">type: str</span>  <span class="li-normal">example: average </span>  </li>
+ <li> <span class="li-return"> res-period </span> - Widgets data period. <span class="li-normal">type: str</span>  <span class="li-normal">example: 10min </span>  </li>
+ <li> <span class="li-return"> res-view-type </span> - Widgets data view type. <span class="li-normal">type: str</span>  <span class="li-normal">example: history</span>  </li>
+ <li> <span class="li-return"> status </span> - Widgets opened/closed state. <span class="li-normal">type: str</span>  <span class="li-normal">example: open</span>  </li>
  <li> <span class="li-return"> tabid </span> - ID of tab where widget is displayed. <span class="li-normal">type: int</span>  <span class="li-normal">example: 0</span>  </li>
- <li> <span class="li-return"> time-period </span> - Log Database Monitor widget's data period. <span class="li-normal">type: str</span>  <span class="li-normal">example: 1hour</span>  </li>
+ <li> <span class="li-return"> time-period </span> - Log Database Monitor widgets data period. <span class="li-normal">type: str</span>  <span class="li-normal">example: 1hour</span>  </li>
  <li> <span class="li-return"> widget-type </span> - Widget type. <span class="li-normal">type: str</span>  </li>
  </ul>
  <li><span class="li-return">status</span>

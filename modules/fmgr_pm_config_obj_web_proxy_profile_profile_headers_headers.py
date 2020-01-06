@@ -71,13 +71,13 @@ options:
                     type: str
                     description: 'Action when HTTP the header forwarded.'
                     choices:
-                        - add-to-request
-                        - add-to-response
-                        - remove-from-request
-                        - remove-from-response
+                        - 'add-to-request'
+                        - 'add-to-response'
+                        - 'remove-from-request'
+                        - 'remove-from-response'
                 content:
                     type: str
-                    description: 'HTTP header's content.'
+                    description: 'HTTP headers content.'
                 id:
                     type: int
                     description: 'HTTP forwarded header id.'
@@ -101,9 +101,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 
@@ -190,7 +190,7 @@ return_of_api_category_0:
                description: 'Action when HTTP the header forwarded.'
             content:
                type: str
-               description: 'HTTP header's content.'
+               description: 'HTTP headers content.'
             id:
                type: int
                description: 'HTTP forwarded header id.'

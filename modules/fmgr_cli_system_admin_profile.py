@@ -53,145 +53,145 @@ options:
                 -
                     adom-lock:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'ADOM locking'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     adom-policy-packages:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'ADOM policy packages.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     adom-switch:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Administrator domain.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     app-filter:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'App filter.'
                          - 'disable - Disable setting.'
                          - 'enable - Enable setting.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     assignment:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Assignment permission.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     change-password:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable restricted user to change self password.'
                          - 'disable - Disable setting.'
                          - 'enable - Enable setting.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     config-retrieve:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Configuration retrieve.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     config-revert:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Revert Configuration from Revision History'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     consistency-check:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Consistency check.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     datamask:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable data masking.'
                          - 'disable - Disable data masking.'
                          - 'enable - Enable data masking.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     datamask-custom-fields:
                         -
                             field-category:
                                 -
                                     type: str
                                     choices:
-                                        - log
-                                        - fortiview
-                                        - alert
-                                        - ueba
-                                        - all
+                                        - 'log'
+                                        - 'fortiview'
+                                        - 'alert'
+                                        - 'ueba'
+                                        - 'all'
                             field-name:
                                 type: str
                                 description: 'Field name.'
                             field-status:
                                 type: str
-                                default: enable
+                                default: 'enable'
                                 description:
                                  - 'Field status.'
                                  - 'disable - Disable field.'
                                  - 'enable - Enable field.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             field-type:
                                 type: str
-                                default: string
+                                default: 'string'
                                 description:
                                  - 'Field type.'
                                  - 'string - String.'
@@ -200,420 +200,420 @@ options:
                                  - 'email - Email address.'
                                  - 'unknown - Unknown.'
                                 choices:
-                                    - string
-                                    - ip
-                                    - mac
-                                    - email
-                                    - unknown
+                                    - 'string'
+                                    - 'ip'
+                                    - 'mac'
+                                    - 'email'
+                                    - 'unknown'
                     datamask-custom-priority:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Prioritize custom fields.'
                          - 'disable - Disable custom field search priority.'
                          - 'enable - Enable custom field search priority.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     datamask-fields:
                         -
                             type: str
                             choices:
-                                - user
-                                - srcip
-                                - srcname
-                                - srcmac
-                                - dstip
-                                - dstname
-                                - email
-                                - message
-                                - domain
+                                - 'user'
+                                - 'srcip'
+                                - 'srcname'
+                                - 'srcmac'
+                                - 'dstip'
+                                - 'dstname'
+                                - 'email'
+                                - 'message'
+                                - 'domain'
                     datamask-key:
                         -
                             type: str
-                            default: ENC MzI1Nzc3MjAyNTg1Njg0NNKOn5kCfNawE/VnDbtMpWXduJpvaREIOxBK4PNmJmqeRwgB9loHz7FqcMzTT5DrD50rb65MQrxNOiuHZ7eM/qmDuMiCMym4F4p2r819t/tQ0emIgt9MTrccrMAZN5Mv9Kmkp5KFjedrsRnbofB058Bi9VBs
+                            default: 'ENC MzI1Nzc3MjAyNTg1Njg0NNKOn5kCfNawE/VnDbtMpWXduJpvaREIOxBK4PNmJmqeRwgB9loHz7FqcMzTT5DrD50rb65MQrxNOiuHZ7eM/qmDuMiCMym4F4p2r819t/tQ0emIgt9MTrccrMAZN5Mv9Kmkp5KFjedrsRnbofB058Bi9VBs'
                     deploy-management:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Install to devices.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     description:
                         type: str
                         description: 'Description.'
                     device-ap:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Manage AP.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     device-config:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Manage device configurations.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     device-forticlient:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Manage FortiClient.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     device-fortiswitch:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Manage FortiSwitch.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     device-manager:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Device manager.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     device-op:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Device add/delete/edit.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     device-policy-package-lock:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Device/Policy Package locking'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     device-profile:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Device profile permission.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     device-revision-deletion:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Delete device revision.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     device-wan-link-load-balance:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Manage WAN link load balance.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     event-management:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Event management.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     fgd-center-advanced:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'FortiGuard Center Advanced.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     fgd-center-fmw-mgmt:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'FortiGuard Center Firmware Management.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     fgd-center-licensing:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'FortiGuard Center Licensing.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     fgd_center:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'FortiGuard Center.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     global-policy-packages:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Global policy packages.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     import-policy-packages:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Import Policy Package.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     intf-mapping:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Interface Mapping'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     ips-filter:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'IPS filter.'
                          - 'disable - Disable setting.'
                          - 'enable - Enable setting.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     log-viewer:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Log viewer.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     policy-objects:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Policy objects permission.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     profileid:
                         type: str
                         description: 'Profile ID.'
                     read-passwd:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'View password in clear text.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     realtime-monitor:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Realtime monitor.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     report-viewer:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Report viewer.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     scope:
                         type: str
-                        default: global
+                        default: 'global'
                         description:
                          - 'Scope.'
                          - 'global - Global scope.'
                          - 'adom - ADOM scope.'
                         choices:
-                            - global
-                            - adom
+                            - 'global'
+                            - 'adom'
                     set-install-targets:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Edit installation targets.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     system-setting:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'System setting.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     term-access:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'Terminal access.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     type:
                         type: str
-                        default: system
+                        default: 'system'
                         description:
                          - 'profile type.'
                          - 'system - System admin.'
                          - 'restricted - Restricted admin.'
                         choices:
-                            - system
-                            - restricted
+                            - 'system'
+                            - 'restricted'
                     vpn-manager:
                         type: str
-                        default: none
+                        default: 'none'
                         description:
                          - 'VPN manager.'
                          - 'none - No permission.'
                          - 'read - Read permission.'
                          - 'read-write - Read-write permission.'
                         choices:
-                            - none
-                            - read
-                            - read-write
+                            - 'none'
+                            - 'read'
+                            - 'read-write'
                     web-filter:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Web filter.'
                          - 'disable - Disable setting.'
                          - 'enable - Enable setting.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Admin profile.'
@@ -624,53 +624,53 @@ options:
                     -
                         type: str
                         choices:
-                            - adom-lock
-                            - adom-policy-packages
-                            - adom-switch
-                            - app-filter
-                            - assignment
-                            - change-password
-                            - config-retrieve
-                            - config-revert
-                            - consistency-check
-                            - datamask
-                            - datamask-custom-priority
-                            - datamask-fields
-                            - datamask-key
-                            - deploy-management
-                            - description
-                            - device-ap
-                            - device-config
-                            - device-forticlient
-                            - device-fortiswitch
-                            - device-manager
-                            - device-op
-                            - device-policy-package-lock
-                            - device-profile
-                            - device-revision-deletion
-                            - device-wan-link-load-balance
-                            - event-management
-                            - fgd-center-advanced
-                            - fgd-center-fmw-mgmt
-                            - fgd-center-licensing
-                            - fgd_center
-                            - global-policy-packages
-                            - import-policy-packages
-                            - intf-mapping
-                            - ips-filter
-                            - log-viewer
-                            - policy-objects
-                            - profileid
-                            - read-passwd
-                            - realtime-monitor
-                            - report-viewer
-                            - scope
-                            - set-install-targets
-                            - system-setting
-                            - term-access
-                            - type
-                            - vpn-manager
-                            - web-filter
+                            - 'adom-lock'
+                            - 'adom-policy-packages'
+                            - 'adom-switch'
+                            - 'app-filter'
+                            - 'assignment'
+                            - 'change-password'
+                            - 'config-retrieve'
+                            - 'config-revert'
+                            - 'consistency-check'
+                            - 'datamask'
+                            - 'datamask-custom-priority'
+                            - 'datamask-fields'
+                            - 'datamask-key'
+                            - 'deploy-management'
+                            - 'description'
+                            - 'device-ap'
+                            - 'device-config'
+                            - 'device-forticlient'
+                            - 'device-fortiswitch'
+                            - 'device-manager'
+                            - 'device-op'
+                            - 'device-policy-package-lock'
+                            - 'device-profile'
+                            - 'device-revision-deletion'
+                            - 'device-wan-link-load-balance'
+                            - 'event-management'
+                            - 'fgd-center-advanced'
+                            - 'fgd-center-fmw-mgmt'
+                            - 'fgd-center-licensing'
+                            - 'fgd_center'
+                            - 'global-policy-packages'
+                            - 'import-policy-packages'
+                            - 'intf-mapping'
+                            - 'ips-filter'
+                            - 'log-viewer'
+                            - 'policy-objects'
+                            - 'profileid'
+                            - 'read-passwd'
+                            - 'realtime-monitor'
+                            - 'report-viewer'
+                            - 'scope'
+                            - 'set-install-targets'
+                            - 'system-setting'
+                            - 'term-access'
+                            - 'type'
+                            - 'vpn-manager'
+                            - 'web-filter'
             filter:
                 -
                     type: str
@@ -684,8 +684,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

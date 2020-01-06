@@ -72,8 +72,8 @@ options:
                     type: str
                     description: 'Address mode (IPv4 or IPv6).'
                     choices:
-                        - ipv4
-                        - ipv6
+                        - 'ipv4'
+                        - 'ipv6'
                 failtime:
                     type: int
                     description: 'Number of failures before server is considered lost (1 - 3600, default = 5).'
@@ -108,12 +108,12 @@ options:
                     type: str
                     description: 'Protocol used to determine if the FortiGate can communicate with the server.'
                     choices:
-                        - ping
-                        - tcp-echo
-                        - udp-echo
-                        - http
-                        - twamp
-                        - ping6
+                        - 'ping'
+                        - 'tcp-echo'
+                        - 'udp-echo'
+                        - 'http'
+                        - 'twamp'
+                        - 'ping6'
                 recoverytime:
                     type: int
                     description: 'Number of successful responses received before server is considered recovered (1 - 3600, default = 5).'
@@ -121,8 +121,8 @@ options:
                     type: str
                     description: 'Twamp controller security mode.'
                     choices:
-                        - none
-                        - authentication
+                        - 'none'
+                        - 'authentication'
                 server:
                     -
                         type: str
@@ -141,9 +141,9 @@ options:
                             -
                                 type: str
                                 choices:
-                                    - latency
-                                    - jitter
-                                    - packet-loss
+                                    - 'latency'
+                                    - 'jitter'
+                                    - 'packet-loss'
                         packetloss-threshold:
                             type: int
                             description: 'Packet loss for SLA to make decision in percentage. (0 - 100, default = 0).'
@@ -169,14 +169,14 @@ options:
                     type: str
                     description: 'Enable/disable update cascade interface.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 update-static-route:
                     type: str
                     description: 'Enable/disable updating the static route.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'SD-WAN status checking or health checking. Identify a server on the Internet and determine how SD-WAN verifies that the FortiGate can communicate with it.'
@@ -194,9 +194,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

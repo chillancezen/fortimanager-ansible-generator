@@ -90,12 +90,12 @@ options:
                     -
                         type: str
                         choices:
-                            - created_by
-                            - created_time
-                            - desc
-                            - locked
-                            - name
-                            - version
+                            - 'created_by'
+                            - 'created_time'
+                            - 'desc'
+                            - 'locked'
+                            - 'name'
+                            - 'version'
             filter:
                 -
                     type: str
@@ -110,9 +110,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'syntax'
             range:
                 -
                     type: int

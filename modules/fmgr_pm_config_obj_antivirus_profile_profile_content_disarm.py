@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'AV Content Disarm and Reconstruction settings.'
@@ -84,99 +84,99 @@ options:
                     type: str
                     description: 'Enable/disable inserting a cover page into the disarmed document.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 detect-only:
                     type: str
                     description: 'Enable/disable only detect disarmable files, do not alter content.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 office-embed:
                     type: str
                     description: 'Enable/disable stripping of embedded objects in Microsoft Office documents.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 office-hylink:
                     type: str
                     description: 'Enable/disable stripping of hyperlinks in Microsoft Office documents.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 office-linked:
                     type: str
                     description: 'Enable/disable stripping of linked objects in Microsoft Office documents.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 office-macro:
                     type: str
                     description: 'Enable/disable stripping of macros in Microsoft Office documents.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 original-file-destination:
                     type: str
                     description: 'Destination to send original file if active content is removed.'
                     choices:
-                        - fortisandbox
-                        - quarantine
-                        - discard
+                        - 'fortisandbox'
+                        - 'quarantine'
+                        - 'discard'
                 pdf-act-form:
                     type: str
                     description: 'Enable/disable stripping of actions that submit data to other targets in PDF documents.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 pdf-act-gotor:
                     type: str
                     description: 'Enable/disable stripping of links to other PDFs in PDF documents.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 pdf-act-java:
                     type: str
                     description: 'Enable/disable stripping of actions that execute JavaScript code in PDF documents.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 pdf-act-launch:
                     type: str
                     description: 'Enable/disable stripping of links to external applications in PDF documents.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 pdf-act-movie:
                     type: str
                     description: 'Enable/disable stripping of embedded movies in PDF documents.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 pdf-act-sound:
                     type: str
                     description: 'Enable/disable stripping of embedded sound files in PDF documents.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 pdf-embedfile:
                     type: str
                     description: 'Enable/disable stripping of embedded files in PDF documents.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 pdf-hyperlink:
                     type: str
                     description: 'Enable/disable stripping of hyperlinks from PDF documents.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 pdf-javacode:
                     type: str
                     description: 'Enable/disable stripping of JavaScript code in PDF documents.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

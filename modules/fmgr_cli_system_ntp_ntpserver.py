@@ -53,14 +53,14 @@ options:
                 -
                     authentication:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable MD5 authentication.'
                          - 'disable - Disable setting.'
                          - 'enable - Enable setting.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     id:
                         type: int
                         default: 0
@@ -68,21 +68,21 @@ options:
                     key:
                         -
                             type: str
-                            default: ENC MTIwNDIxMDA1OTc0MDU5OOCz7ir5CgpbO/J3sN576PgSwbGc703sZpBwnR5CmNxRjhfSM2FPskJvCPZHAzZOjFTd7B1Ay0Ssf3MwFzNWVdOYL88mw7WTGYgcc3j/PFmJ0NiPwuFnT94rAO6yDHtO7QnVfyla+di36FC34BfdtB+S9eva
+                            default: 'ENC MTIwNDIxMDA1OTc0MDU5OOCz7ir5CgpbO/J3sN576PgSwbGc703sZpBwnR5CmNxRjhfSM2FPskJvCPZHAzZOjFTd7B1Ay0Ssf3MwFzNWVdOYL88mw7WTGYgcc3j/PFmJ0NiPwuFnT94rAO6yDHtO7QnVfyla+di36FC34BfdtB+S9eva'
                     key-id:
                         type: int
                         default: 0
                         description: 'Key ID for authentication.'
                     ntpv3:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable NTPv3.'
                          - 'disable - Disable setting.'
                          - 'enable - Enable setting.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     server:
                         type: str
                         description: 'IP address/hostname of NTP Server.'
@@ -96,12 +96,12 @@ options:
                     -
                         type: str
                         choices:
-                            - authentication
-                            - id
-                            - key
-                            - key-id
-                            - ntpv3
-                            - server
+                            - 'authentication'
+                            - 'id'
+                            - 'key'
+                            - 'key-id'
+                            - 'ntpv3'
+                            - 'server'
             filter:
                 -
                     type: str
@@ -115,8 +115,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

@@ -122,21 +122,21 @@ options:
                     -
                         type: str
                         choices:
-                            - application-list
-                            - av-profile
-                            - dlp-sensor
-                            - dnsfilter-profile
-                            - icap-profile
-                            - ips-sensor
-                            - mms-profile
-                            - name
-                            - profile-protocol-options
-                            - spamfilter-profile
-                            - ssh-filter-profile
-                            - ssl-ssh-profile
-                            - voip-profile
-                            - waf-profile
-                            - webfilter-profile
+                            - 'application-list'
+                            - 'av-profile'
+                            - 'dlp-sensor'
+                            - 'dnsfilter-profile'
+                            - 'icap-profile'
+                            - 'ips-sensor'
+                            - 'mms-profile'
+                            - 'name'
+                            - 'profile-protocol-options'
+                            - 'spamfilter-profile'
+                            - 'ssh-filter-profile'
+                            - 'ssl-ssh-profile'
+                            - 'voip-profile'
+                            - 'waf-profile'
+                            - 'webfilter-profile'
             filter:
                 -
                     type: str
@@ -155,11 +155,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

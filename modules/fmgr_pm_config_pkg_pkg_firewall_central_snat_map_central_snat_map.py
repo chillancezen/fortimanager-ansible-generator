@@ -76,8 +76,8 @@ options:
                     type: str
                     description: 'Enable/disable source NAT.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 nat-ippool:
                     type: str
                     description: 'Name of the IP pools to be used to translate addresses from available IP Pools.'
@@ -103,8 +103,8 @@ options:
                     type: str
                     description: 'Enable/disable the active status of this policy.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'Configure central SNAT policies.'
@@ -122,9 +122,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object3:
         methods: [move]
         description: 'Configure central SNAT policies.'
@@ -133,8 +133,8 @@ options:
             option:
                 type: str
                 choices:
-                    - before
-                    - after
+                    - 'before'
+                    - 'after'
             target:
                 type: str
                 description: 'Key to the target entry.'

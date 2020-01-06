@@ -74,8 +74,8 @@ options:
                             type: str
                             description: 'Type of address.'
                             choices:
-                                - ipv4
-                                - ipv6
+                                - 'ipv4'
+                                - 'ipv6'
                         id:
                             type: int
                             description: 'Trusted IP entry ID.'
@@ -89,8 +89,8 @@ options:
                             type: str
                             description: 'Enable/disable status.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                 id:
                     type: int
                     description: 'ID.'
@@ -114,9 +114,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

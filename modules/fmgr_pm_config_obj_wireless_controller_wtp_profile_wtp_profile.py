@@ -69,143 +69,143 @@ options:
                     -
                         type: str
                         choices:
-                            - https
-                            - ssh
-                            - snmp
-                            - http
-                            - telnet
+                            - 'https'
+                            - 'ssh'
+                            - 'snmp'
+                            - 'http'
+                            - 'telnet'
                 ap-country:
                     type: str
                     description: 'Country in which this WTP, FortiAP or AP will operate (default = NA, automatically use the country configured for the current VDOM).'
                     choices:
-                        - AL
-                        - DZ
-                        - AR
-                        - AM
-                        - AU
-                        - AT
-                        - AZ
-                        - BH
-                        - BD
-                        - BY
-                        - BE
-                        - BZ
-                        - BO
-                        - BA
-                        - BR
-                        - BN
-                        - BG
-                        - CA
-                        - CL
-                        - CN
-                        - CO
-                        - CR
-                        - HR
-                        - CY
-                        - CZ
-                        - DK
-                        - DO
-                        - EC
-                        - EG
-                        - SV
-                        - EE
-                        - FI
-                        - FR
-                        - GE
-                        - DE
-                        - GR
-                        - GT
-                        - HN
-                        - HK
-                        - HU
-                        - IS
-                        - IN
-                        - ID
-                        - IR
-                        - IE
-                        - IL
-                        - IT
-                        - JM
-                        - JP
-                        - JO
-                        - KZ
-                        - KE
-                        - KP
-                        - KR
-                        - KW
-                        - LV
-                        - LB
-                        - LI
-                        - LT
-                        - LU
-                        - MO
-                        - MK
-                        - MY
-                        - MT
-                        - MX
-                        - MC
-                        - MA
-                        - NP
-                        - NL
-                        - AN
-                        - NZ
-                        - NO
-                        - OM
-                        - PK
-                        - PA
-                        - PG
-                        - PE
-                        - PH
-                        - PL
-                        - PT
-                        - PR
-                        - QA
-                        - RO
-                        - RU
-                        - SA
-                        - SG
-                        - SK
-                        - SI
-                        - ZA
-                        - ES
-                        - LK
-                        - SE
-                        - CH
-                        - SY
-                        - TW
-                        - TH
-                        - TT
-                        - TN
-                        - TR
-                        - AE
-                        - UA
-                        - GB
-                        - US
-                        - PS
-                        - UY
-                        - UZ
-                        - VE
-                        - VN
-                        - YE
-                        - ZW
-                        - NA
-                        - KH
-                        - TZ
-                        - SD
-                        - AO
-                        - RW
-                        - MZ
-                        - RS
-                        - ME
-                        - BB
-                        - GD
-                        - GL
-                        - GU
-                        - PY
-                        - HT
-                        - AW
-                        - MM
-                        - ZB
+                        - 'AL'
+                        - 'DZ'
+                        - 'AR'
+                        - 'AM'
+                        - 'AU'
+                        - 'AT'
+                        - 'AZ'
+                        - 'BH'
+                        - 'BD'
+                        - 'BY'
+                        - 'BE'
+                        - 'BZ'
+                        - 'BO'
+                        - 'BA'
+                        - 'BR'
+                        - 'BN'
+                        - 'BG'
+                        - 'CA'
+                        - 'CL'
+                        - 'CN'
+                        - 'CO'
+                        - 'CR'
+                        - 'HR'
+                        - 'CY'
+                        - 'CZ'
+                        - 'DK'
+                        - 'DO'
+                        - 'EC'
+                        - 'EG'
+                        - 'SV'
+                        - 'EE'
+                        - 'FI'
+                        - 'FR'
+                        - 'GE'
+                        - 'DE'
+                        - 'GR'
+                        - 'GT'
+                        - 'HN'
+                        - 'HK'
+                        - 'HU'
+                        - 'IS'
+                        - 'IN'
+                        - 'ID'
+                        - 'IR'
+                        - 'IE'
+                        - 'IL'
+                        - 'IT'
+                        - 'JM'
+                        - 'JP'
+                        - 'JO'
+                        - 'KZ'
+                        - 'KE'
+                        - 'KP'
+                        - 'KR'
+                        - 'KW'
+                        - 'LV'
+                        - 'LB'
+                        - 'LI'
+                        - 'LT'
+                        - 'LU'
+                        - 'MO'
+                        - 'MK'
+                        - 'MY'
+                        - 'MT'
+                        - 'MX'
+                        - 'MC'
+                        - 'MA'
+                        - 'NP'
+                        - 'NL'
+                        - 'AN'
+                        - 'NZ'
+                        - 'NO'
+                        - 'OM'
+                        - 'PK'
+                        - 'PA'
+                        - 'PG'
+                        - 'PE'
+                        - 'PH'
+                        - 'PL'
+                        - 'PT'
+                        - 'PR'
+                        - 'QA'
+                        - 'RO'
+                        - 'RU'
+                        - 'SA'
+                        - 'SG'
+                        - 'SK'
+                        - 'SI'
+                        - 'ZA'
+                        - 'ES'
+                        - 'LK'
+                        - 'SE'
+                        - 'CH'
+                        - 'SY'
+                        - 'TW'
+                        - 'TH'
+                        - 'TT'
+                        - 'TN'
+                        - 'TR'
+                        - 'AE'
+                        - 'UA'
+                        - 'GB'
+                        - 'US'
+                        - 'PS'
+                        - 'UY'
+                        - 'UZ'
+                        - 'VE'
+                        - 'VN'
+                        - 'YE'
+                        - 'ZW'
+                        - 'NA'
+                        - 'KH'
+                        - 'TZ'
+                        - 'SD'
+                        - 'AO'
+                        - 'RW'
+                        - 'MZ'
+                        - 'RS'
+                        - 'ME'
+                        - 'BB'
+                        - 'GD'
+                        - 'GL'
+                        - 'GU'
+                        - 'PY'
+                        - 'HT'
+                        - 'AW'
+                        - 'MM'
+                        - 'ZB'
                 ble-profile:
                     type: str
                     description: 'Bluetooth Low Energy profile name.'
@@ -216,14 +216,14 @@ options:
                     -
                         type: str
                         choices:
-                            - ebp-frame
-                            - aeroscout-tag
-                            - ap-list
-                            - sta-list
-                            - sta-cap-list
-                            - stats
-                            - aeroscout-mu
-                            - sta-health
+                            - 'ebp-frame'
+                            - 'aeroscout-tag'
+                            - 'ap-list'
+                            - 'sta-list'
+                            - 'sta-cap-list'
+                            - 'stats'
+                            - 'aeroscout-mu'
+                            - 'sta-health'
                 deny-mac-list:
                     -
                         id:
@@ -236,33 +236,33 @@ options:
                     type: str
                     description: 'Enable/disable data channel DTLS in kernel.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dtls-policy:
                     -
                         type: str
                         choices:
-                            - clear-text
-                            - dtls-enabled
-                            - ipsec-vpn
+                            - 'clear-text'
+                            - 'dtls-enabled'
+                            - 'ipsec-vpn'
                 energy-efficient-ethernet:
                     type: str
                     description: 'Enable/disable use of energy efficient Ethernet on WTP.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ext-info-enable:
                     type: str
                     description: 'Enable/disable station/VAP/radio extension information.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 handoff-roaming:
                     type: str
                     description: 'Enable/disable client load balancing during roaming to avoid roaming delay (default = disable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 handoff-rssi:
                     type: int
                     description: 'Minimum received signal strength indicator (RSSI) value for handoff (20 - 30, default = 25).'
@@ -273,8 +273,8 @@ options:
                     -
                         type: str
                         choices:
-                            - tcp-mss-adjust
-                            - icmp-unreachable
+                            - 'tcp-mss-adjust'
+                            - 'icmp-unreachable'
                 led-schedules:
                     type: str
                     description: 'Recurring firewall schedules for illuminating LEDs on the FortiAP. If led-state is enabled, LEDs will be visible when at least one of the schedules is valid. Separate multiple schedule names with a space.'
@@ -282,14 +282,14 @@ options:
                     type: str
                     description: 'Enable/disable use of LEDs on WTP (default = disable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 lldp:
                     type: str
                     description: 'Enable/disable Link Layer Discovery Protocol (LLDP) for the WTP, FortiAP, or AP (default = disable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 login-passwd:
                     -
                         type: str
@@ -297,9 +297,9 @@ options:
                     type: str
                     description: 'Change or reset the administrator password of a managed WTP, FortiAP or AP (yes, default, or no, default = no).'
                     choices:
-                        - no
-                        - yes
-                        - default
+                        - 'no'
+                        - 'yes'
+                        - 'default'
                 max-clients:
                     type: int
                     description: 'Maximum number of stations (STAs) supported by the WTP (default = 0, meaning no client limitation).'
@@ -308,12 +308,12 @@ options:
                     description: 'WTP (or FortiAP or AP) profile name.'
                 poe-mode:
                     type: str
-                    description: 'Set the WTP, FortiAP, or AP's PoE mode.'
+                    description: 'Set the WTP, FortiAP, or APs PoE mode.'
                     choices:
-                        - auto
-                        - 8023af
-                        - 8023at
-                        - power-adapter
+                        - 'auto'
+                        - '8023af'
+                        - '8023at'
+                        - 'power-adapter'
                 split-tunneling-acl:
                     -
                         dest-ip:
@@ -326,14 +326,14 @@ options:
                     type: str
                     description: 'Enable/disable automatically adding local subnetwork of FortiAP to split-tunneling ACL (default = disable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 split-tunneling-acl-path:
                     type: str
                     description: 'Split tunneling ACL path is local/tunnel.'
                     choices:
-                        - tunnel
-                        - local
+                        - 'tunnel'
+                        - 'local'
                 tun-mtu-downlink:
                     type: int
                     description: 'Downlink CAPWAP tunnel MTU (0, 576, or 1500 bytes, default = 0).'
@@ -344,8 +344,8 @@ options:
                     type: str
                     description: 'Enable/disable using a WAN port as a LAN port.'
                     choices:
-                        - wan-lan
-                        - wan-only
+                        - 'wan-lan'
+                        - 'wan-only'
     schema_object1:
         methods: [delete]
         description: 'Configure WTP profiles or FortiAP profiles that define radio settings for manageable FortiAP platforms.'
@@ -363,9 +363,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 
@@ -537,7 +537,7 @@ return_of_api_category_0:
                description: 'WTP (or FortiAP or AP) profile name.'
             poe-mode:
                type: str
-               description: 'Set the WTP, FortiAP, or AP's PoE mode.'
+               description: 'Set the WTP, FortiAP, or APs PoE mode.'
             split-tunneling-acl:
                type: array
                suboptions:

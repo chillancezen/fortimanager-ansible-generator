@@ -74,9 +74,9 @@ options:
                             type: str
                             description: 'Action to take for this content type.'
                             choices:
-                                - exempt
-                                - block
-                                - allow
+                                - 'exempt'
+                                - 'block'
+                                - 'allow'
                         category:
                             type: str
                             description: 'Categories that this content type applies to.'
@@ -106,9 +106,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

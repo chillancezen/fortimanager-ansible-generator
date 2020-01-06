@@ -69,10 +69,10 @@ options:
                     type: str
                     description: 'Network authentication type.'
                     choices:
-                        - acceptance-of-terms
-                        - online-enrollment
-                        - http-redirection
-                        - dns-redirection
+                        - 'acceptance-of-terms'
+                        - 'online-enrollment'
+                        - 'http-redirection'
+                        - 'dns-redirection'
                 name:
                     type: str
                     description: 'Authentication type name.'
@@ -96,9 +96,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

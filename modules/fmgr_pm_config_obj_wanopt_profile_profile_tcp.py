@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Enable/disable TCP WAN Optimization and configure TCP WAN Optimization features.'
@@ -84,20 +84,20 @@ options:
                     type: str
                     description: 'Enable/disable byte-caching for HTTP. Byte caching reduces the amount of traffic by caching file data sent across the WAN and in future serving if from the cache.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 byte-caching-opt:
                     type: str
                     description: 'Select whether TCP byte-caching uses system memory only or both memory and disk space.'
                     choices:
-                        - mem-only
-                        - mem-disk
+                        - 'mem-only'
+                        - 'mem-disk'
                 log-traffic:
                     type: str
                     description: 'Enable/disable logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 port:
                     type: str
                     description: 'Single port number or port number range for TCP. Only packets with a destination port number that matches this port number or range are accepted by this profile.'
@@ -105,14 +105,14 @@ options:
                     type: str
                     description: 'Enable/disable securing the WAN Opt tunnel using SSL. Secure and non-secure tunnels use the same TCP port (7810).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ssl:
                     type: str
                     description: 'Enable/disable SSL/TLS offloading.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ssl-port:
                     -
                         type: int
@@ -120,15 +120,15 @@ options:
                     type: str
                     description: 'Enable/disable HTTP WAN Optimization.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 tunnel-sharing:
                     type: str
                     description: 'Tunnel sharing mode for aggressive/non-aggressive and/or interactive/non-interactive protocols.'
                     choices:
-                        - private
-                        - shared
-                        - express-shared
+                        - 'private'
+                        - 'shared'
+                        - 'express-shared'
 
 '''
 

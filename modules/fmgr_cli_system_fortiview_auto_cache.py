@@ -57,28 +57,28 @@ options:
             data:
                 aggressive-fortiview:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable auto-cache on fortiview aggressively.'
                      - 'disable - Disable the aggressive fortiview auto-cache.'
                      - 'enable - Enable the aggressive fortiview auto-cache.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 interval:
                     type: int
                     default: 168
                     description: 'The time interval in hours for fortiview auto-cache.'
                 status:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable fortiview auto-cache.'
                      - 'disable - Disable the fortiview auto-cache.'
                      - 'enable - Enable the fortiview auto-cache.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

@@ -57,14 +57,14 @@ options:
             data:
                 webspam-rating:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable URL/Antispam rating service (default = enable).'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

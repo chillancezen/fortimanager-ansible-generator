@@ -62,9 +62,9 @@ options:
                 action:
                     type: str
                     choices:
-                        - deny
-                        - accept
-                        - ipsec
+                        - 'deny'
+                        - 'accept'
+                        - 'ipsec'
                 app-category:
                     -
                         type: int
@@ -78,8 +78,8 @@ options:
                 auto-asic-offload:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 av-profile:
                     type: str
                 cifs-profile:
@@ -89,13 +89,13 @@ options:
                 diffserv-forward:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 diffserv-reverse:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 diffservcode-forward:
                     type: str
                 diffservcode-rev:
@@ -115,45 +115,45 @@ options:
                 fixedport:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 groups:
                     type: str
                 http-policy-redirect:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 icap-profile:
                     type: str
                 inbound:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 inspection-mode:
                     type: str
                     choices:
-                        - proxy
-                        - flow
+                        - 'proxy'
+                        - 'flow'
                 ippool:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ips-sensor:
                     type: str
                 logtraffic:
                     type: str
                     choices:
-                        - disable
-                        - all
-                        - utm
+                        - 'disable'
+                        - 'all'
+                        - 'utm'
                 logtraffic-start:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mms-profile:
                     type: str
                 name:
@@ -161,13 +161,13 @@ options:
                 nat:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 outbound:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 per-ip-shaper:
                     type: str
                 policyid:
@@ -183,15 +183,15 @@ options:
                 profile-type:
                     type: str
                     choices:
-                        - single
-                        - group
+                        - 'single'
+                        - 'group'
                 schedule:
                     type: str
                 schedule-timeout:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 service:
                     type: str
                 session-ttl:
@@ -209,15 +209,15 @@ options:
                 ssh-policy-redirect:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ssl-ssh-profile:
                     type: str
                 status:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 tcp-mss-receiver:
                     type: int
                 tcp-mss-sender:
@@ -234,13 +234,13 @@ options:
                 utm-inspection-mode:
                     type: str
                     choices:
-                        - proxy
-                        - flow
+                        - 'proxy'
+                        - 'flow'
                 utm-status:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 uuid:
                     type: str
                 voip-profile:
@@ -268,9 +268,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

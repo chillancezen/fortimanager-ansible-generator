@@ -52,7 +52,7 @@ Parameters
  <li><span class="li-head">name</span> - Name. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">rpc-over-https</span> - Enable/disable inspection of RPC over HTTPS. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">server-cert</span> - Certificate used by SSL Inspection to replace server certificate. <span class="li-normal">type: str</span> </li>
- <li><span class="li-head">server-cert-mode</span> - Re-sign or replace the server's certificate. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [re-sign, replace]</span> </li>
+ <li><span class="li-head">server-cert-mode</span> - Re-sign or replace the servers certificate. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [re-sign, replace]</span> </li>
  <li><span class="li-head">ssl-anomalies-log</span> - Enable/disable logging SSL anomalies. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">ssl-exempt</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li><span class="li-head">address</span> - IPv4 address object. <span class="li-normal">type: str</span> </li>
@@ -197,7 +197,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> name </span> - Name. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> rpc-over-https </span> - Enable/disable inspection of RPC over HTTPS. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> server-cert </span> - Certificate used by SSL Inspection to replace server certificate. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> server-cert-mode </span> - Re-sign or replace the server's certificate. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> server-cert-mode </span> - Re-sign or replace the servers certificate. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> ssl-anomalies-log </span> - Enable/disable logging SSL anomalies. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> ssl-exempt </span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li> <span class="li-return"> address </span> - IPv4 address object. <span class="li-normal">type: str</span>  </li>

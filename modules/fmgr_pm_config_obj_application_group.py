@@ -80,8 +80,8 @@ options:
                         type: str
                         description: 'Application group type.'
                         choices:
-                            - application
-                            - category
+                            - 'application'
+                            - 'category'
     schema_object1:
         methods: [get]
         description: 'Configure firewall application groups.'
@@ -95,11 +95,11 @@ options:
                     -
                         type: str
                         choices:
-                            - application
-                            - category
-                            - comment
-                            - name
-                            - type
+                            - 'application'
+                            - 'category'
+                            - 'comment'
+                            - 'name'
+                            - 'type'
             filter:
                 -
                     type: str
@@ -118,11 +118,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

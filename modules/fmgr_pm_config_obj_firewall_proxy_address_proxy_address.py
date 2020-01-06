@@ -69,8 +69,8 @@ options:
                     type: str
                     description: 'Enable to make the pattern case sensitive.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 category:
                     type: str
                     description: 'FortiGuard category ID.'
@@ -89,8 +89,8 @@ options:
                             type: str
                             description: 'Case sensitivity in pattern.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         header:
                             type: str
                             description: 'HTTP header regular expression.'
@@ -113,14 +113,14 @@ options:
                     -
                         type: str
                         choices:
-                            - delete
-                            - get
-                            - head
-                            - options
-                            - post
-                            - put
-                            - trace
-                            - connect
+                            - 'delete'
+                            - 'get'
+                            - 'head'
+                            - 'options'
+                            - 'post'
+                            - 'put'
+                            - 'trace'
+                            - 'connect'
                 name:
                     type: str
                     description: 'Address name.'
@@ -134,8 +134,8 @@ options:
                     type: str
                     description: 'Enable/disable use of referrer field in the HTTP header to match the address.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 tagging:
                     -
                         category:
@@ -151,23 +151,23 @@ options:
                     type: str
                     description: 'Proxy address type.'
                     choices:
-                        - host-regex
-                        - url
-                        - category
-                        - method
-                        - ua
-                        - header
-                        - src-advanced
-                        - dst-advanced
+                        - 'host-regex'
+                        - 'url'
+                        - 'category'
+                        - 'method'
+                        - 'ua'
+                        - 'header'
+                        - 'src-advanced'
+                        - 'dst-advanced'
                 ua:
                     -
                         type: str
                         choices:
-                            - chrome
-                            - ms
-                            - firefox
-                            - safari
-                            - other
+                            - 'chrome'
+                            - 'ms'
+                            - 'firefox'
+                            - 'safari'
+                            - 'other'
                 uuid:
                     type: str
                     description: 'Universally Unique Identifier (UUID; automatically assigned but can be manually reset).'
@@ -175,8 +175,8 @@ options:
                     type: str
                     description: 'Enable/disable visibility of the object in the GUI.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'Web proxy address configuration.'
@@ -194,9 +194,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

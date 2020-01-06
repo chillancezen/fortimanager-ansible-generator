@@ -70,8 +70,8 @@ options:
                     type: str
                     description: 'Enable/disable MD5 authentication.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 id:
                     type: int
                     description: 'NTP server ID.'
@@ -85,8 +85,8 @@ options:
                     type: str
                     description: 'Enable to use NTPv3 instead of NTPv4.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 server:
                     type: str
                     description: 'IP address or hostname of the NTP Server.'
@@ -107,9 +107,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

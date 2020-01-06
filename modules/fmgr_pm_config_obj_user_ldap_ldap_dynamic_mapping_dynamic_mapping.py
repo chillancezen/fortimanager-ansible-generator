@@ -80,8 +80,8 @@ options:
                 account-key-processing:
                     type: str
                     choices:
-                        - same
-                        - strip
+                        - 'same'
+                        - 'strip'
                 ca-cert:
                     type: str
                 cnid:
@@ -97,9 +97,9 @@ options:
                 group-member-check:
                     type: str
                     choices:
-                        - user-attr
-                        - group-object
-                        - posix-group-object
+                        - 'user-attr'
+                        - 'group-object'
+                        - 'posix-group-object'
                 group-object-filter:
                     type: str
                 group-object-search-base:
@@ -111,21 +111,21 @@ options:
                 obtain-user-info:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 password:
                     -
                         type: str
                 password-expiry-warning:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 password-renewal:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 port:
                     type: int
                 retrieve-protection-profile:
@@ -134,41 +134,41 @@ options:
                     -
                         type: str
                         choices:
-                            - nested
-                            - recursive
+                            - 'nested'
+                            - 'recursive'
                 secondary-server:
                     type: str
                 secure:
                     type: str
                     choices:
-                        - disable
-                        - starttls
-                        - ldaps
+                        - 'disable'
+                        - 'starttls'
+                        - 'ldaps'
                 server:
                     type: str
                 server-identity-check:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 source-ip:
                     type: str
                 ssl-min-proto-version:
                     type: str
                     choices:
-                        - default
-                        - TLSv1
-                        - TLSv1-1
-                        - TLSv1-2
-                        - SSLv3
+                        - 'default'
+                        - 'TLSv1'
+                        - 'TLSv1-1'
+                        - 'TLSv1-2'
+                        - 'SSLv3'
                 tertiary-server:
                     type: str
                 type:
                     type: str
                     choices:
-                        - simple
-                        - anonymous
-                        - regular
+                        - 'simple'
+                        - 'anonymous'
+                        - 'regular'
                 user-info-exchange-server:
                     type: str
                 username:
@@ -190,9 +190,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

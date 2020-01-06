@@ -83,16 +83,16 @@ options:
                     type: str
                     description: 'Quota type.'
                     choices:
-                        - time
-                        - traffic
+                        - 'time'
+                        - 'traffic'
                 unit:
                     type: str
                     description: 'Traffic quota unit of measurement.'
                     choices:
-                        - B
-                        - KB
-                        - MB
-                        - GB
+                        - 'B'
+                        - 'KB'
+                        - 'MB'
+                        - 'GB'
                 value:
                     type: int
                     description: 'Traffic quota value.'
@@ -113,9 +113,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

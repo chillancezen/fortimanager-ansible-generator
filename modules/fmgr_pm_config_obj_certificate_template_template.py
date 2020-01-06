@@ -71,32 +71,32 @@ options:
                     type: str
                 digest-type:
                     type: str
-                    default: sha1
+                    default: 'sha1'
                     choices:
-                        - sha1
-                        - sha256
+                        - 'sha1'
+                        - 'sha256'
                 email:
                     type: str
                 id-type:
                     type: str
-                    default: host-ip
+                    default: 'host-ip'
                     choices:
-                        - host-ip
-                        - domain-name
-                        - email
+                        - 'host-ip'
+                        - 'domain-name'
+                        - 'email'
                 key-size:
                     type: str
-                    default: 2048
+                    default: '2048'
                     choices:
-                        - 512
-                        - 1024
-                        - 1536
-                        - 2048
+                        - '512'
+                        - '1024'
+                        - '1536'
+                        - '2048'
                 key-type:
                     type: str
-                    default: rsa
+                    default: 'rsa'
                     choices:
-                        - rsa
+                        - 'rsa'
                 name:
                     type: str
                 organization:
@@ -115,10 +115,10 @@ options:
                     type: str
                 type:
                     type: str
-                    default: external
+                    default: 'external'
                     choices:
-                        - external
-                        - local
+                        - 'external'
+                        - 'local'
     schema_object1:
         methods: [delete]
         description: ''
@@ -136,9 +136,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

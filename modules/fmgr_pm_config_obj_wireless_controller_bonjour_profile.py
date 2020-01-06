@@ -59,7 +59,7 @@ options:
                   - custom dom
     schema_object0:
         methods: [add, set, update]
-        description: 'Configure Bonjour profiles. Bonjour is Apple's zero configuration networking protocol. Bonjour profiles allow APs and FortiAPs to connnect to networks using Bonjour.'
+        description: 'Configure Bonjour profiles. Bonjour is Apples zero configuration networking protocol. Bonjour profiles allow APs and FortiAPs to connnect to networks using Bonjour.'
         api_categories: [api_tag0]
         api_tag0:
             data:
@@ -85,24 +85,24 @@ options:
                                 -
                                     type: str
                                     choices:
-                                        - airplay
-                                        - afp
-                                        - bit-torrent
-                                        - ftp
-                                        - ichat
-                                        - itunes
-                                        - printers
-                                        - samba
-                                        - scanners
-                                        - ssh
-                                        - chromecast
-                                        - all
+                                        - 'airplay'
+                                        - 'afp'
+                                        - 'bit-torrent'
+                                        - 'ftp'
+                                        - 'ichat'
+                                        - 'itunes'
+                                        - 'printers'
+                                        - 'samba'
+                                        - 'scanners'
+                                        - 'ssh'
+                                        - 'chromecast'
+                                        - 'all'
                             to-vlan:
                                 type: str
                                 description: 'VLAN ID to which the Bonjour service is made available (0 - 4094, default = all).'
     schema_object1:
         methods: [get]
-        description: 'Configure Bonjour profiles. Bonjour is Apple's zero configuration networking protocol. Bonjour profiles allow APs and FortiAPs to connnect to networks using Bonjour.'
+        description: 'Configure Bonjour profiles. Bonjour is Apples zero configuration networking protocol. Bonjour profiles allow APs and FortiAPs to connnect to networks using Bonjour.'
         api_categories: [api_tag0]
         api_tag0:
             attr:
@@ -113,8 +113,8 @@ options:
                     -
                         type: str
                         choices:
-                            - comment
-                            - name
+                            - 'comment'
+                            - 'name'
             filter:
                 -
                     type: str
@@ -133,11 +133,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

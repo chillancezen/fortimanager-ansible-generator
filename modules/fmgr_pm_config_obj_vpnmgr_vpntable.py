@@ -67,15 +67,15 @@ options:
                     authmethod:
                         type: str
                         choices:
-                            - psk
-                            - rsa-signature
-                            - signature
+                            - 'psk'
+                            - 'rsa-signature'
+                            - 'signature'
                     auto-zone-policy:
                         type: str
-                        default: enable
+                        default: 'enable'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     certificate:
                         type: str
                     description:
@@ -83,10 +83,10 @@ options:
                     dpd:
                         type: str
                         choices:
-                            - disable
-                            - enable
-                            - on-idle
-                            - on-demand
+                            - 'disable'
+                            - 'enable'
+                            - 'on-idle'
+                            - 'on-demand'
                     dpd-retrycount:
                         type: int
                     dpd-retryinterval:
@@ -95,41 +95,41 @@ options:
                     fcc-enforcement:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     hub2spoke-zone:
                         type: str
                     ike-version:
                         type: str
                         choices:
-                            - 1
-                            - 2
+                            - '1'
+                            - '2'
                     ike1dhgroup:
                         -
                             type: str
                             choices:
-                                - 1
-                                - 2
-                                - 5
-                                - 14
-                                - 15
-                                - 16
-                                - 17
-                                - 18
-                                - 19
-                                - 20
-                                - 21
-                                - 27
-                                - 28
-                                - 29
-                                - 30
-                                - 31
-                                - 32
+                                - '1'
+                                - '2'
+                                - '5'
+                                - '14'
+                                - '15'
+                                - '16'
+                                - '17'
+                                - '18'
+                                - '19'
+                                - '20'
+                                - '21'
+                                - '27'
+                                - '28'
+                                - '29'
+                                - '30'
+                                - '31'
+                                - '32'
                     ike1dpd:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ike1keylifesec:
                         type: int
                     ike1localid:
@@ -137,107 +137,107 @@ options:
                     ike1mode:
                         type: str
                         choices:
-                            - main
-                            - aggressive
+                            - 'main'
+                            - 'aggressive'
                     ike1natkeepalive:
                         type: int
                     ike1nattraversal:
                         type: str
                         choices:
-                            - disable
-                            - enable
-                            - forced
+                            - 'disable'
+                            - 'enable'
+                            - 'forced'
                     ike1proposal:
                         type: str
                         choices:
-                            - des-md5
-                            - des-sha1
-                            - 3des-md5
-                            - 3des-sha1
-                            - aes128-md5
-                            - aes128-sha1
-                            - aes192-md5
-                            - aes192-sha1
-                            - aes256-md5
-                            - aes256-sha1
-                            - des-sha256
-                            - 3des-sha256
-                            - aes128-sha256
-                            - aes192-sha256
-                            - aes256-sha256
-                            - des-sha384
-                            - des-sha512
-                            - 3des-sha384
-                            - 3des-sha512
-                            - aes128-sha384
-                            - aes128-sha512
-                            - aes192-sha384
-                            - aes192-sha512
-                            - aes256-sha384
-                            - aes256-sha512
-                            - aria128-md5
-                            - aria128-sha1
-                            - aria128-sha256
-                            - aria128-sha384
-                            - aria128-sha512
-                            - aria192-md5
-                            - aria192-sha1
-                            - aria192-sha256
-                            - aria192-sha384
-                            - aria192-sha512
-                            - aria256-md5
-                            - aria256-sha1
-                            - aria256-sha256
-                            - aria256-sha384
-                            - aria256-sha512
-                            - seed-md5
-                            - seed-sha1
-                            - seed-sha256
-                            - seed-sha384
-                            - seed-sha512
-                            - aes128gcm-prfsha1
-                            - aes128gcm-prfsha256
-                            - aes128gcm-prfsha384
-                            - aes128gcm-prfsha512
-                            - aes256gcm-prfsha1
-                            - aes256gcm-prfsha256
-                            - aes256gcm-prfsha384
-                            - aes256gcm-prfsha512
-                            - chacha20poly1305-prfsha1
-                            - chacha20poly1305-prfsha256
-                            - chacha20poly1305-prfsha384
-                            - chacha20poly1305-prfsha512
+                            - 'des-md5'
+                            - 'des-sha1'
+                            - '3des-md5'
+                            - '3des-sha1'
+                            - 'aes128-md5'
+                            - 'aes128-sha1'
+                            - 'aes192-md5'
+                            - 'aes192-sha1'
+                            - 'aes256-md5'
+                            - 'aes256-sha1'
+                            - 'des-sha256'
+                            - '3des-sha256'
+                            - 'aes128-sha256'
+                            - 'aes192-sha256'
+                            - 'aes256-sha256'
+                            - 'des-sha384'
+                            - 'des-sha512'
+                            - '3des-sha384'
+                            - '3des-sha512'
+                            - 'aes128-sha384'
+                            - 'aes128-sha512'
+                            - 'aes192-sha384'
+                            - 'aes192-sha512'
+                            - 'aes256-sha384'
+                            - 'aes256-sha512'
+                            - 'aria128-md5'
+                            - 'aria128-sha1'
+                            - 'aria128-sha256'
+                            - 'aria128-sha384'
+                            - 'aria128-sha512'
+                            - 'aria192-md5'
+                            - 'aria192-sha1'
+                            - 'aria192-sha256'
+                            - 'aria192-sha384'
+                            - 'aria192-sha512'
+                            - 'aria256-md5'
+                            - 'aria256-sha1'
+                            - 'aria256-sha256'
+                            - 'aria256-sha384'
+                            - 'aria256-sha512'
+                            - 'seed-md5'
+                            - 'seed-sha1'
+                            - 'seed-sha256'
+                            - 'seed-sha384'
+                            - 'seed-sha512'
+                            - 'aes128gcm-prfsha1'
+                            - 'aes128gcm-prfsha256'
+                            - 'aes128gcm-prfsha384'
+                            - 'aes128gcm-prfsha512'
+                            - 'aes256gcm-prfsha1'
+                            - 'aes256gcm-prfsha256'
+                            - 'aes256gcm-prfsha384'
+                            - 'aes256gcm-prfsha512'
+                            - 'chacha20poly1305-prfsha1'
+                            - 'chacha20poly1305-prfsha256'
+                            - 'chacha20poly1305-prfsha384'
+                            - 'chacha20poly1305-prfsha512'
                     ike2autonego:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ike2dhgroup:
                         -
                             type: str
                             choices:
-                                - 1
-                                - 2
-                                - 5
-                                - 14
-                                - 15
-                                - 16
-                                - 17
-                                - 18
-                                - 19
-                                - 20
-                                - 21
-                                - 27
-                                - 28
-                                - 29
-                                - 30
-                                - 31
-                                - 32
+                                - '1'
+                                - '2'
+                                - '5'
+                                - '14'
+                                - '15'
+                                - '16'
+                                - '17'
+                                - '18'
+                                - '19'
+                                - '20'
+                                - '21'
+                                - '27'
+                                - '28'
+                                - '29'
+                                - '30'
+                                - '31'
+                                - '32'
                     ike2keepalive:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ike2keylifekbs:
                         type: int
                     ike2keylifesec:
@@ -245,93 +245,93 @@ options:
                     ike2keylifetype:
                         type: str
                         choices:
-                            - seconds
-                            - kbs
-                            - both
+                            - 'seconds'
+                            - 'kbs'
+                            - 'both'
                     ike2proposal:
                         type: str
                         choices:
-                            - null-md5
-                            - null-sha1
-                            - des-null
-                            - 3des-null
-                            - des-md5
-                            - des-sha1
-                            - 3des-md5
-                            - 3des-sha1
-                            - aes128-md5
-                            - aes128-sha1
-                            - aes192-md5
-                            - aes192-sha1
-                            - aes256-md5
-                            - aes256-sha1
-                            - aes128-null
-                            - aes192-null
-                            - aes256-null
-                            - null-sha256
-                            - des-sha256
-                            - 3des-sha256
-                            - aes128-sha256
-                            - aes192-sha256
-                            - aes256-sha256
-                            - des-sha384
-                            - des-sha512
-                            - 3des-sha384
-                            - 3des-sha512
-                            - aes128-sha384
-                            - aes128-sha512
-                            - aes192-sha384
-                            - aes192-sha512
-                            - aes256-sha384
-                            - aes256-sha512
-                            - null-sha384
-                            - null-sha512
-                            - aria128-null
-                            - aria128-md5
-                            - aria128-sha1
-                            - aria128-sha256
-                            - aria128-sha384
-                            - aria128-sha512
-                            - aria192-null
-                            - aria192-md5
-                            - aria192-sha1
-                            - aria192-sha256
-                            - aria192-sha384
-                            - aria192-sha512
-                            - aria256-null
-                            - aria256-md5
-                            - aria256-sha1
-                            - aria256-sha256
-                            - aria256-sha384
-                            - aria256-sha512
-                            - seed-null
-                            - seed-md5
-                            - seed-sha1
-                            - seed-sha256
-                            - seed-sha384
-                            - seed-sha512
-                            - aes128gcm
-                            - aes256gcm
-                            - chacha20poly1305
+                            - 'null-md5'
+                            - 'null-sha1'
+                            - 'des-null'
+                            - '3des-null'
+                            - 'des-md5'
+                            - 'des-sha1'
+                            - '3des-md5'
+                            - '3des-sha1'
+                            - 'aes128-md5'
+                            - 'aes128-sha1'
+                            - 'aes192-md5'
+                            - 'aes192-sha1'
+                            - 'aes256-md5'
+                            - 'aes256-sha1'
+                            - 'aes128-null'
+                            - 'aes192-null'
+                            - 'aes256-null'
+                            - 'null-sha256'
+                            - 'des-sha256'
+                            - '3des-sha256'
+                            - 'aes128-sha256'
+                            - 'aes192-sha256'
+                            - 'aes256-sha256'
+                            - 'des-sha384'
+                            - 'des-sha512'
+                            - '3des-sha384'
+                            - '3des-sha512'
+                            - 'aes128-sha384'
+                            - 'aes128-sha512'
+                            - 'aes192-sha384'
+                            - 'aes192-sha512'
+                            - 'aes256-sha384'
+                            - 'aes256-sha512'
+                            - 'null-sha384'
+                            - 'null-sha512'
+                            - 'aria128-null'
+                            - 'aria128-md5'
+                            - 'aria128-sha1'
+                            - 'aria128-sha256'
+                            - 'aria128-sha384'
+                            - 'aria128-sha512'
+                            - 'aria192-null'
+                            - 'aria192-md5'
+                            - 'aria192-sha1'
+                            - 'aria192-sha256'
+                            - 'aria192-sha384'
+                            - 'aria192-sha512'
+                            - 'aria256-null'
+                            - 'aria256-md5'
+                            - 'aria256-sha1'
+                            - 'aria256-sha256'
+                            - 'aria256-sha384'
+                            - 'aria256-sha512'
+                            - 'seed-null'
+                            - 'seed-md5'
+                            - 'seed-sha1'
+                            - 'seed-sha256'
+                            - 'seed-sha384'
+                            - 'seed-sha512'
+                            - 'aes128gcm'
+                            - 'aes256gcm'
+                            - 'chacha20poly1305'
                     inter-vdom:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     intf-mode:
                         type: str
                         choices:
-                            - off
-                            - on
+                            - 'off'
+                            - 'on'
                     localid-type:
                         type: str
                         choices:
-                            - auto
-                            - fqdn
-                            - user-fqdn
-                            - keyid
-                            - address
-                            - asn1dn
+                            - 'auto'
+                            - 'fqdn'
+                            - 'user-fqdn'
+                            - 'keyid'
+                            - 'address'
+                            - 'asn1dn'
                     name:
                         type: str
                     negotiate-timeout:
@@ -339,28 +339,28 @@ options:
                         default: 30
                     npu-offload:
                         type: str
-                        default: enable
+                        default: 'enable'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     pfs:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     psk-auto-generate:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     psksecret:
                         -
                             type: str
                     replay:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     rsa-certificate:
                         type: str
                     spoke2hub-zone:
@@ -368,9 +368,9 @@ options:
                     topology:
                         type: str
                         choices:
-                            - meshed
-                            - star
-                            - dialup
+                            - 'meshed'
+                            - 'star'
+                            - 'dialup'
                     vpn-zone:
                         type: str
     schema_object1:
@@ -386,45 +386,45 @@ options:
                     -
                         type: str
                         choices:
-                            - authmethod
-                            - auto-zone-policy
-                            - certificate
-                            - description
-                            - dpd
-                            - dpd-retrycount
-                            - dpd-retryinterval
-                            - fcc-enforcement
-                            - hub2spoke-zone
-                            - ike-version
-                            - ike1dhgroup
-                            - ike1dpd
-                            - ike1keylifesec
-                            - ike1localid
-                            - ike1mode
-                            - ike1natkeepalive
-                            - ike1nattraversal
-                            - ike1proposal
-                            - ike2autonego
-                            - ike2dhgroup
-                            - ike2keepalive
-                            - ike2keylifekbs
-                            - ike2keylifesec
-                            - ike2keylifetype
-                            - ike2proposal
-                            - inter-vdom
-                            - intf-mode
-                            - localid-type
-                            - name
-                            - negotiate-timeout
-                            - npu-offload
-                            - pfs
-                            - psk-auto-generate
-                            - psksecret
-                            - replay
-                            - rsa-certificate
-                            - spoke2hub-zone
-                            - topology
-                            - vpn-zone
+                            - 'authmethod'
+                            - 'auto-zone-policy'
+                            - 'certificate'
+                            - 'description'
+                            - 'dpd'
+                            - 'dpd-retrycount'
+                            - 'dpd-retryinterval'
+                            - 'fcc-enforcement'
+                            - 'hub2spoke-zone'
+                            - 'ike-version'
+                            - 'ike1dhgroup'
+                            - 'ike1dpd'
+                            - 'ike1keylifesec'
+                            - 'ike1localid'
+                            - 'ike1mode'
+                            - 'ike1natkeepalive'
+                            - 'ike1nattraversal'
+                            - 'ike1proposal'
+                            - 'ike2autonego'
+                            - 'ike2dhgroup'
+                            - 'ike2keepalive'
+                            - 'ike2keylifekbs'
+                            - 'ike2keylifesec'
+                            - 'ike2keylifetype'
+                            - 'ike2proposal'
+                            - 'inter-vdom'
+                            - 'intf-mode'
+                            - 'localid-type'
+                            - 'name'
+                            - 'negotiate-timeout'
+                            - 'npu-offload'
+                            - 'pfs'
+                            - 'psk-auto-generate'
+                            - 'psksecret'
+                            - 'replay'
+                            - 'rsa-certificate'
+                            - 'spoke2hub-zone'
+                            - 'topology'
+                            - 'vpn-zone'
             filter:
                 -
                     type: str
@@ -443,11 +443,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

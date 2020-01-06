@@ -73,11 +73,11 @@ options:
                         -
                             type: str
                             choices:
-                                - apn-restriction
-                                - rat-type
-                                - rai
-                                - uli
-                                - imei
+                                - 'apn-restriction'
+                                - 'rat-type'
+                                - 'rai'
+                                - 'uli'
+                                - 'imei'
                     sgsn-addr:
                         type: str
                         description: 'SGSN address name.'
@@ -94,9 +94,9 @@ options:
                     -
                         type: str
                         choices:
-                            - id
-                            - remove-ies
-                            - sgsn-addr
+                            - 'id'
+                            - 'remove-ies'
+                            - 'sgsn-addr'
             filter:
                 -
                     type: str
@@ -115,11 +115,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

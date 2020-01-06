@@ -78,7 +78,7 @@ options:
                     type:
                         type: str
                         choices:
-                            - wanprof
+                            - 'wanprof'
     schema_object1:
         methods: [get]
         description: ''
@@ -89,11 +89,11 @@ options:
                     -
                         type: str
                         choices:
-                            - description
-                            - name
-                            - oid
-                            - scope member
-                            - type
+                            - 'description'
+                            - 'name'
+                            - 'oid'
+                            - 'scope member'
+                            - 'type'
 
 '''
 

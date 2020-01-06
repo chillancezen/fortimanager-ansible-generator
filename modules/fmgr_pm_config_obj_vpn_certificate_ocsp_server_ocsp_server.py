@@ -84,8 +84,8 @@ options:
                     type: str
                     description: 'Action when server is unavailable (revoke the certificate or ignore the result of the check).'
                     choices:
-                        - revoke
-                        - ignore
+                        - 'revoke'
+                        - 'ignore'
                 url:
                     type: str
                     description: 'OCSP server URL.'
@@ -106,9 +106,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

@@ -69,68 +69,68 @@ options:
                     type: str
                     description: 'Bearer resource (command 68, failure indication 69).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 change-notification:
                     type: str
                     description: 'Change notification (req 38, resp 39).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 create-bearer:
                     type: str
                     description: 'Create bearer (req 95, resp 96).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 create-session:
                     type: str
                     description: 'Create session (req 32, resp 33).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 delete-bearer-cmd-fail:
                     type: str
                     description: 'Delete bearer (command 66, failure indication 67).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 delete-bearer-req-resp:
                     type: str
                     description: 'Delete bearer (req 99, resp 100).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 delete-pdn-connection-set:
                     type: str
                     description: 'Delete PDN connection set (req 101, resp 102).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 delete-session:
                     type: str
                     description: 'Delete session (req 36, resp 37).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 echo:
                     type: str
                     description: 'Echo (req 1, resp 2).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 modify-bearer-cmd-fail:
                     type: str
                     description: 'Modify bearer (command 64 , failure indication 65).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 modify-bearer-req-resp:
                     type: str
                     description: 'Modify bearer (req 34, resp 35).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 name:
                     type: str
                     description: 'Message filter name.'
@@ -138,26 +138,26 @@ options:
                     type: str
                     description: 'Resume (notify 164 , ack 165).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 suspend:
                     type: str
                     description: 'Suspend (notify 162, ack 163).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 trace-session:
                     type: str
                     description: 'Trace session (activation 71, deactivation 72).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 unknown-message:
                     type: str
                     description: 'Allow or Deny unknown messages.'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 unknown-message-white-list:
                     -
                         type: int
@@ -165,20 +165,20 @@ options:
                     type: str
                     description: 'Update bearer (req 97, resp 98).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 update-pdn-connection-set:
                     type: str
                     description: 'Update PDN connection set (req 200, resp 201).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 version-not-support:
                     type: str
                     description: 'Version not supported (3).'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
     schema_object1:
         methods: [delete]
         description: 'Message filter for GTPv2 messages.'
@@ -196,9 +196,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

@@ -46,35 +46,35 @@ notes:
 options:
     schema_object0:
         methods: [get]
-        description: 'Enable/disable logging of FortiGuard antivirus and IPS update packages received by FortiManager's built-in FortiGuard.'
+        description: 'Enable/disable logging of FortiGuard antivirus and IPS update packages received by FortiManagers built-in FortiGuard.'
         api_categories: [api_tag0]
         api_tag0:
     schema_object1:
         methods: [set, update]
-        description: 'Enable/disable logging of FortiGuard antivirus and IPS update packages received by FortiManager's built-in FortiGuard.'
+        description: 'Enable/disable logging of FortiGuard antivirus and IPS update packages received by FortiManagers built-in FortiGuard.'
         api_categories: [api_tag0]
         api_tag0:
             data:
                 log-fortigate:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable logging of FortiGuard antivirus and IPS service updates of FortiGate devices (default = disable).'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 log-server:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable logging of update packages received by the build-in FortiGuard server (default = disable).'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

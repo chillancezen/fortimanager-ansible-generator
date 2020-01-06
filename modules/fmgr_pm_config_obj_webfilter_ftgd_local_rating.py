@@ -71,8 +71,8 @@ options:
                         type: str
                         description: 'Enable/disable local rating.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     url:
                         type: str
                         description: 'URL to rate locally.'
@@ -89,9 +89,9 @@ options:
                     -
                         type: str
                         choices:
-                            - rating
-                            - status
-                            - url
+                            - 'rating'
+                            - 'status'
+                            - 'url'
             filter:
                 -
                     type: str
@@ -110,11 +110,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

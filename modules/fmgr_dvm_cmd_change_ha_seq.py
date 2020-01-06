@@ -61,10 +61,10 @@ options:
                     -
                         type: str
                         choices:
-                            - none
-                            - create_task
-                            - nonblocking
-                            - log_dev
+                            - 'none'
+                            - 'create_task'
+                            - 'nonblocking'
+                            - 'log_dev'
                 new_master:
                     type: str
                     description: 'Name or ID of the new HA master.'

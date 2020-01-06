@@ -70,9 +70,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Configure central management.'
@@ -83,17 +83,17 @@ options:
                     type: str
                     description: 'Enable/disable inclusion of public FortiGuard servers in the override server list.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 server-list:
                     -
                         addr-type:
                             type: str
                             description: 'Indicate whether the FortiGate communicates with the override server using an IPv4 address, an IPv6 address or a FQDN.'
                             choices:
-                                - fqdn
-                                - ipv4
-                                - ipv6
+                                - 'fqdn'
+                                - 'ipv4'
+                                - 'ipv6'
                         fqdn:
                             type: str
                             description: 'FQDN address of override server.'
@@ -110,8 +110,8 @@ options:
                             -
                                 type: str
                                 choices:
-                                    - update
-                                    - rating
+                                    - 'update'
+                                    - 'rating'
 
 '''
 

@@ -75,16 +75,16 @@ options:
                     authen-type:
                         type: str
                         choices:
-                            - auto
-                            - ascii
-                            - pap
-                            - chap
-                            - mschap
+                            - 'auto'
+                            - 'ascii'
+                            - 'pap'
+                            - 'chap'
+                            - 'mschap'
                     authorization:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     key:
                         -
                             type: str
@@ -117,17 +117,17 @@ options:
                     -
                         type: str
                         choices:
-                            - _scope
-                            - authen-type
-                            - authorization
-                            - key
-                            - port
-                            - secondary-key
-                            - secondary-server
-                            - server
-                            - source-ip
-                            - tertiary-key
-                            - tertiary-server
+                            - '_scope'
+                            - 'authen-type'
+                            - 'authorization'
+                            - 'key'
+                            - 'port'
+                            - 'secondary-key'
+                            - 'secondary-server'
+                            - 'server'
+                            - 'source-ip'
+                            - 'tertiary-key'
+                            - 'tertiary-server'
             filter:
                 -
                     type: str
@@ -146,11 +146,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

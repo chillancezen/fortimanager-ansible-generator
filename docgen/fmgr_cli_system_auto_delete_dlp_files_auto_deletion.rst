@@ -44,7 +44,7 @@ Parameters
  <ul class="ul-self">
  <li><span class="li-head">data</span> - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
  <li><span class="li-head">retention</span> - Automatic deletion in days, weeks, or months. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [days, weeks, months]</span>  <span class="li-normal">default: days</span> </li>
- <li><span class="li-head">runat</span> - Automatic deletion run at (0 - 23) o'clock. <span class="li-normal">type: int</span>  <span class="li-normal">default: 0</span> </li>
+ <li><span class="li-head">runat</span> - Automatic deletion run at (0 - 23) oclock. <span class="li-normal">type: int</span>  <span class="li-normal">default: 0</span> </li>
  <li><span class="li-head">status</span> - Enable/disable automatic deletion. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span>  <span class="li-normal">default: disable</span> </li>
  <li><span class="li-head">value</span> - Automatic deletion in x days, weeks, or months. <span class="li-normal">type: int</span>  <span class="li-normal">default: 0</span> </li>
  </ul>
@@ -106,7 +106,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li><span class="li-return">data</span>
  - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
  <li> <span class="li-return"> retention </span> - Automatic deletion in days, weeks, or months. <span class="li-normal">type: str</span>  <span class="li-normal">example: days</span>  </li>
- <li> <span class="li-return"> runat </span> - Automatic deletion run at (0 - 23) o'clock. <span class="li-normal">type: int</span>  <span class="li-normal">example: 0</span>  </li>
+ <li> <span class="li-return"> runat </span> - Automatic deletion run at (0 - 23) oclock. <span class="li-normal">type: int</span>  <span class="li-normal">example: 0</span>  </li>
  <li> <span class="li-return"> status </span> - Enable/disable automatic deletion. <span class="li-normal">type: str</span>  <span class="li-normal">example: disable</span>  </li>
  <li> <span class="li-return"> value </span> - Automatic deletion in x days, weeks, or months. <span class="li-normal">type: int</span>  <span class="li-normal">example: 0</span>  </li>
  </ul>

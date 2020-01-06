@@ -81,10 +81,10 @@ options:
                     detect-protocol:
                         type: str
                         choices:
-                            - ping
-                            - tcp-echo
-                            - udp-echo
-                            - http
+                            - 'ping'
+                            - 'tcp-echo'
+                            - 'udp-echo'
+                            - 'http'
                     detect-recoverytime:
                         type: int
                     detect-server:
@@ -116,10 +116,10 @@ options:
                             detect-protocol:
                                 type: str
                                 choices:
-                                    - ping
-                                    - tcp-echo
-                                    - udp-echo
-                                    - http
+                                    - 'ping'
+                                    - 'tcp-echo'
+                                    - 'udp-echo'
+                                    - 'http'
                             detect-recoverytime:
                                 type: int
                             detect-server:
@@ -145,8 +145,8 @@ options:
                             status:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             volume-ratio:
                                 type: int
                             weight:
@@ -172,8 +172,8 @@ options:
                     status:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     volume-ratio:
                         type: int
                     weight:
@@ -191,29 +191,29 @@ options:
                     -
                         type: str
                         choices:
-                            - comment
-                            - cost
-                            - detect-failtime
-                            - detect-http-get
-                            - detect-http-match
-                            - detect-http-port
-                            - detect-interval
-                            - detect-protocol
-                            - detect-recoverytime
-                            - detect-server
-                            - detect-timeout
-                            - gateway
-                            - gateway6
-                            - ingress-spillover-threshold
-                            - interface
-                            - name
-                            - priority
-                            - source
-                            - source6
-                            - spillover-threshold
-                            - status
-                            - volume-ratio
-                            - weight
+                            - 'comment'
+                            - 'cost'
+                            - 'detect-failtime'
+                            - 'detect-http-get'
+                            - 'detect-http-match'
+                            - 'detect-http-port'
+                            - 'detect-interval'
+                            - 'detect-protocol'
+                            - 'detect-recoverytime'
+                            - 'detect-server'
+                            - 'detect-timeout'
+                            - 'gateway'
+                            - 'gateway6'
+                            - 'ingress-spillover-threshold'
+                            - 'interface'
+                            - 'name'
+                            - 'priority'
+                            - 'source'
+                            - 'source6'
+                            - 'spillover-threshold'
+                            - 'status'
+                            - 'volume-ratio'
+                            - 'weight'
             filter:
                 -
                     type: str
@@ -232,11 +232,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

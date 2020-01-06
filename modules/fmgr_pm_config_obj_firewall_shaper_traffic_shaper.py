@@ -68,15 +68,15 @@ options:
                         type: str
                         description: 'Unit of measurement for guaranteed and maximum bandwidth for this shaper (Kbps, Mbps or Gbps).'
                         choices:
-                            - kbps
-                            - mbps
-                            - gbps
+                            - 'kbps'
+                            - 'mbps'
+                            - 'gbps'
                     diffserv:
                         type: str
                         description: 'Enable/disable changing the DiffServ setting applied to traffic accepted by this shaper.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     diffservcode:
                         type: str
                         description: 'DiffServ setting to be applied to traffic accepted by this shaper.'
@@ -93,15 +93,15 @@ options:
                         type: str
                         description: 'Enable/disable applying a separate shaper for each policy. For example, if enabled the guaranteed bandwidth is applied separately for each policy.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     priority:
                         type: str
                         description: 'Higher priority traffic is more likely to be forwarded without delays and without compromising the guaranteed bandwidth.'
                         choices:
-                            - high
-                            - medium
-                            - low
+                            - 'high'
+                            - 'medium'
+                            - 'low'
     schema_object1:
         methods: [get]
         description: 'Configure shared traffic shaper.'
@@ -115,14 +115,14 @@ options:
                     -
                         type: str
                         choices:
-                            - bandwidth-unit
-                            - diffserv
-                            - diffservcode
-                            - guaranteed-bandwidth
-                            - maximum-bandwidth
-                            - name
-                            - per-policy
-                            - priority
+                            - 'bandwidth-unit'
+                            - 'diffserv'
+                            - 'diffservcode'
+                            - 'guaranteed-bandwidth'
+                            - 'maximum-bandwidth'
+                            - 'name'
+                            - 'per-policy'
+                            - 'priority'
             filter:
                 -
                     type: str
@@ -141,11 +141,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

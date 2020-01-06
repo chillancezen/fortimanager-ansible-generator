@@ -70,15 +70,15 @@ options:
                 default-mapping:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 defmap-intf:
                     type: str
                 defmap-intrazone-deny:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 defmap-zonemember:
                     -
                         type: str
@@ -97,8 +97,8 @@ options:
                         intrazone-deny:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         local-intf:
                             -
                                 type: str
@@ -108,10 +108,10 @@ options:
                     type: str
                 single-intf:
                     type: str
-                    default: enable
+                    default: 'enable'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: ''
@@ -129,9 +129,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

@@ -64,29 +64,29 @@ options:
             data:
                 ip6-address:
                     type: str
-                    default: ::/0
+                    default: '::/0'
                     description: 'IPv6 address/prefix of interface.'
                 ip6-allowaccess:
                     -
                         type: str
                         choices:
-                            - ping
-                            - https
-                            - ssh
-                            - snmp
-                            - http
-                            - webservice
-                            - https-logging
+                            - 'ping'
+                            - 'https'
+                            - 'ssh'
+                            - 'snmp'
+                            - 'http'
+                            - 'webservice'
+                            - 'https-logging'
                 ip6-autoconf:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable address auto config (SLAAC).'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

@@ -69,8 +69,8 @@ options:
                     type: str
                     description: 'Enable to allow limited access to clients that cannot authenticate.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 auth-fail-vlan-id:
                     type: str
                     description: 'VLAN ID on which authentication failed.'
@@ -81,8 +81,8 @@ options:
                     type: str
                     description: 'Enable/disable EAP pass-through mode, allowing protocols (such as LLDP) to pass through ports for more flexible authentication.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 guest-auth-delay:
                     type: int
                     description: 'Guest authentication delay (1 - 900  sec, default = 30).'
@@ -90,8 +90,8 @@ options:
                     type: str
                     description: 'Enable the guest VLAN feature to allow limited access to non-802.1X-compliant clients.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 guest-vlan-id:
                     type: str
                     description: 'Guest VLAN name.'
@@ -102,8 +102,8 @@ options:
                     type: str
                     description: 'Enable/disable MAB for this policy.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 name:
                     type: str
                     description: 'Policy name.'
@@ -111,25 +111,25 @@ options:
                     type: str
                     description: 'Enable/disable open authentication for this policy.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 policy-type:
                     type: str
                     description: 'Policy type.'
                     choices:
-                        - 802.1X
+                        - '802.1X'
                 radius-timeout-overwrite:
                     type: str
                     description: 'Enable to override the global RADIUS session timeout.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 security-mode:
                     type: str
                     description: 'Port or MAC based 802.1X security mode.'
                     choices:
-                        - 802.1X
-                        - 802.1X-mac-based
+                        - '802.1X'
+                        - '802.1X-mac-based'
                 user-group:
                     type: str
                     description: 'Name of user-group to assign to this MAC Authentication Bypass (MAB) policy.'
@@ -150,9 +150,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

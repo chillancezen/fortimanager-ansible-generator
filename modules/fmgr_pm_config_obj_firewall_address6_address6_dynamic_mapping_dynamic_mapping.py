@@ -88,8 +88,8 @@ options:
                 host-type:
                     type: str
                     choices:
-                        - any
-                        - specific
+                        - 'any'
+                        - 'specific'
                 ip6:
                     type: str
                 obj-id:
@@ -97,7 +97,7 @@ options:
                 sdn:
                     type: str
                     choices:
-                        - nsx
+                        - 'nsx'
                 start-ip:
                     type: str
                 tags:
@@ -107,19 +107,19 @@ options:
                 type:
                     type: str
                     choices:
-                        - ipprefix
-                        - iprange
-                        - nsx
-                        - dynamic
-                        - fqdn
-                        - template
+                        - 'ipprefix'
+                        - 'iprange'
+                        - 'nsx'
+                        - 'dynamic'
+                        - 'fqdn'
+                        - 'template'
                 uuid:
                     type: str
                 visibility:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: ''
@@ -137,9 +137,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

@@ -69,8 +69,8 @@ options:
                         type: str
                         description: 'Address mode (IPv4 or IPv6).'
                         choices:
-                            - ipv4
-                            - ipv6
+                            - 'ipv4'
+                            - 'ipv6'
                     bandwidth-weight:
                         type: int
                         description: 'Coefficient of reciprocal of available bidirectional bandwidth in the formula of custom-profile-1.'
@@ -78,14 +78,14 @@ options:
                         type: str
                         description: 'Enable/disable use of SD-WAN as default service.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dscp-forward:
                         type: str
                         description: 'Enable/disable forward traffic DSCP tag.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dscp-forward-tag:
                         type: str
                         description: 'Forward traffic DSCP tag.'
@@ -93,8 +93,8 @@ options:
                         type: str
                         description: 'Enable/disable reverse traffic DSCP tag.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dscp-reverse-tag:
                         type: str
                         description: 'Reverse traffic DSCP tag.'
@@ -105,8 +105,8 @@ options:
                         type: str
                         description: 'Enable/disable negation of destination address match.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dst6:
                         type: str
                         description: 'Destination address6 name.'
@@ -117,8 +117,8 @@ options:
                         type: str
                         description: 'Enable/disable SD-WAN service gateway.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     groups:
                         type: str
                         description: 'User groups.'
@@ -135,8 +135,8 @@ options:
                         type: str
                         description: 'Enable/disable use of Internet service for application-based load balancing.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     internet-service-ctrl:
                         -
                             type: int
@@ -165,13 +165,13 @@ options:
                         type: str
                         description: 'Link cost factor.'
                         choices:
-                            - latency
-                            - jitter
-                            - packet-loss
-                            - inbandwidth
-                            - outbandwidth
-                            - bibandwidth
-                            - custom-profile-1
+                            - 'latency'
+                            - 'jitter'
+                            - 'packet-loss'
+                            - 'inbandwidth'
+                            - 'outbandwidth'
+                            - 'bibandwidth'
+                            - 'custom-profile-1'
                     link-cost-threshold:
                         type: int
                         description: 'Percentage threshold change of link cost values that will result in policy route regeneration (0 - 10000000, default = 10).'
@@ -182,11 +182,11 @@ options:
                         type: str
                         description: 'Control how the priority rule sets the priority of interfaces in the SD-WAN.'
                         choices:
-                            - auto
-                            - manual
-                            - priority
-                            - sla
-                            - load-balance
+                            - 'auto'
+                            - 'manual'
+                            - 'priority'
+                            - 'sla'
+                            - 'load-balance'
                     name:
                         type: str
                         description: 'Priority rule name.'
@@ -220,8 +220,8 @@ options:
                         type: str
                         description: 'Enable/disable negation of source address match.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     src6:
                         type: str
                         description: 'Source address6 name.'
@@ -232,8 +232,8 @@ options:
                         type: str
                         description: 'Enable/disable SD-WAN service.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     tos:
                         type: str
                         description: 'Type of service bit pattern.'
@@ -256,49 +256,49 @@ options:
                     -
                         type: str
                         choices:
-                            - addr-mode
-                            - bandwidth-weight
-                            - default
-                            - dscp-forward
-                            - dscp-forward-tag
-                            - dscp-reverse
-                            - dscp-reverse-tag
-                            - dst
-                            - dst-negate
-                            - dst6
-                            - end-port
-                            - gateway
-                            - groups
-                            - health-check
-                            - hold-down-time
-                            - id
-                            - internet-service
-                            - internet-service-ctrl
-                            - internet-service-ctrl-group
-                            - internet-service-custom
-                            - internet-service-custom-group
-                            - internet-service-group
-                            - internet-service-id
-                            - jitter-weight
-                            - latency-weight
-                            - link-cost-factor
-                            - link-cost-threshold
-                            - member
-                            - mode
-                            - name
-                            - packet-loss-weight
-                            - priority-members
-                            - protocol
-                            - quality-link
-                            - route-tag
-                            - src
-                            - src-negate
-                            - src6
-                            - start-port
-                            - status
-                            - tos
-                            - tos-mask
-                            - users
+                            - 'addr-mode'
+                            - 'bandwidth-weight'
+                            - 'default'
+                            - 'dscp-forward'
+                            - 'dscp-forward-tag'
+                            - 'dscp-reverse'
+                            - 'dscp-reverse-tag'
+                            - 'dst'
+                            - 'dst-negate'
+                            - 'dst6'
+                            - 'end-port'
+                            - 'gateway'
+                            - 'groups'
+                            - 'health-check'
+                            - 'hold-down-time'
+                            - 'id'
+                            - 'internet-service'
+                            - 'internet-service-ctrl'
+                            - 'internet-service-ctrl-group'
+                            - 'internet-service-custom'
+                            - 'internet-service-custom-group'
+                            - 'internet-service-group'
+                            - 'internet-service-id'
+                            - 'jitter-weight'
+                            - 'latency-weight'
+                            - 'link-cost-factor'
+                            - 'link-cost-threshold'
+                            - 'member'
+                            - 'mode'
+                            - 'name'
+                            - 'packet-loss-weight'
+                            - 'priority-members'
+                            - 'protocol'
+                            - 'quality-link'
+                            - 'route-tag'
+                            - 'src'
+                            - 'src-negate'
+                            - 'src6'
+                            - 'start-port'
+                            - 'status'
+                            - 'tos'
+                            - 'tos-mask'
+                            - 'users'
             filter:
                 -
                     type: str
@@ -317,11 +317,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

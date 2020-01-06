@@ -69,8 +69,8 @@ options:
                         type: str
                         description: 'Action performed on traffic matching the policy (default = deny).'
                         choices:
-                            - deny
-                            - accept
+                            - 'deny'
+                            - 'accept'
                     dstaddr:
                         type: str
                         description: 'Destination address object from available options.'
@@ -78,8 +78,8 @@ options:
                         type: str
                         description: 'Enable/disable dedicating the HA management interface only for local-in policy.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     intf:
                         type: str
                         description: 'Incoming interface name from available options.'
@@ -99,8 +99,8 @@ options:
                         type: str
                         description: 'Enable/disable this local-in policy.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure user defined IPv4 local-in policies.'
@@ -114,15 +114,15 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - dstaddr
-                            - ha-mgmt-intf-only
-                            - intf
-                            - policyid
-                            - schedule
-                            - service
-                            - srcaddr
-                            - status
+                            - 'action'
+                            - 'dstaddr'
+                            - 'ha-mgmt-intf-only'
+                            - 'intf'
+                            - 'policyid'
+                            - 'schedule'
+                            - 'service'
+                            - 'srcaddr'
+                            - 'status'
             filter:
                 -
                     type: str
@@ -141,11 +141,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

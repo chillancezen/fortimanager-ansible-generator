@@ -69,20 +69,20 @@ options:
                     accept-mode:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     adv-interval:
                         type: int
                     ignore-default-route:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     preempt:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     priority:
                         type: int
                     start-time:
@@ -90,13 +90,13 @@ options:
                     status:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     version:
                         type: str
                         choices:
-                            - 2
-                            - 3
+                            - '2'
+                            - '3'
                     vrdst:
                         -
                             type: str
@@ -121,19 +121,19 @@ options:
                     -
                         type: str
                         choices:
-                            - accept-mode
-                            - adv-interval
-                            - ignore-default-route
-                            - preempt
-                            - priority
-                            - start-time
-                            - status
-                            - version
-                            - vrdst
-                            - vrdst-priority
-                            - vrgrp
-                            - vrid
-                            - vrip
+                            - 'accept-mode'
+                            - 'adv-interval'
+                            - 'ignore-default-route'
+                            - 'preempt'
+                            - 'priority'
+                            - 'start-time'
+                            - 'status'
+                            - 'version'
+                            - 'vrdst'
+                            - 'vrdst-priority'
+                            - 'vrgrp'
+                            - 'vrid'
+                            - 'vrip'
             filter:
                 -
                     type: str
@@ -152,11 +152,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

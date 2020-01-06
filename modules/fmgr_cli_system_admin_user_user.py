@@ -85,81 +85,81 @@ options:
                     description: 'PKI user certificate CA (CA name in local).'
                 change-password:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable restricted user to change self password.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dashboard:
                     -
                         column:
                             type: int
                             default: 0
-                            description: 'Widget's column ID.'
+                            description: 'Widgets column ID.'
                         diskio-content-type:
                             type: str
-                            default: util
+                            default: 'util'
                             description:
-                             - 'Disk I/O Monitor widget's chart type.'
+                             - 'Disk I/O Monitor widgets chart type.'
                              - 'util - bandwidth utilization.'
                              - 'iops - the number of I/O requests.'
                              - 'blks - the amount of data of I/O requests.'
                             choices:
-                                - util
-                                - iops
-                                - blks
+                                - 'util'
+                                - 'iops'
+                                - 'blks'
                         diskio-period:
                             type: str
-                            default: 1hour
+                            default: '1hour'
                             description:
-                             - 'Disk I/O Monitor widget's data period.'
+                             - 'Disk I/O Monitor widgets data period.'
                              - '1hour - 1 hour.'
                              - '8hour - 8 hour.'
                              - '24hour - 24 hour.'
                             choices:
-                                - 1hour
-                                - 8hour
-                                - 24hour
+                                - '1hour'
+                                - '8hour'
+                                - '24hour'
                         log-rate-period:
                             type: str
                             description:
-                             - 'Log receive monitor widget's data period.'
+                             - 'Log receive monitor widgets data period.'
                              - '2min  - 2 minutes.'
                              - '1hour - 1 hour.'
                              - '6hours - 6 hours.'
                             choices:
-                                - 2min 
-                                - 1hour
-                                - 6hours
+                                - '2min '
+                                - '1hour'
+                                - '6hours'
                         log-rate-topn:
                             type: str
-                            default: 5
+                            default: '5'
                             description:
-                             - 'Log receive monitor widget's number of top items to display.'
+                             - 'Log receive monitor widgets number of top items to display.'
                              - '1 - Top 1.'
                              - '2 - Top 2.'
                              - '3 - Top 3.'
                              - '4 - Top 4.'
                              - '5 - Top 5.'
                             choices:
-                                - 1
-                                - 2
-                                - 3
-                                - 4
-                                - 5
+                                - '1'
+                                - '2'
+                                - '3'
+                                - '4'
+                                - '5'
                         log-rate-type:
                             type: str
-                            default: device
+                            default: 'device'
                             description:
-                             - 'Log receive monitor widget's statistics breakdown options.'
+                             - 'Log receive monitor widgets statistics breakdown options.'
                              - 'log - Show log rates for each log type.'
                              - 'device - Show log rates for each device.'
                             choices:
-                                - log
-                                - device
+                                - 'log'
+                                - 'device'
                         moduleid:
                             type: int
                             default: 0
@@ -174,65 +174,65 @@ options:
                         refresh-interval:
                             type: int
                             default: 300
-                            description: 'Widget's refresh interval.'
+                            description: 'Widgets refresh interval.'
                         res-cpu-display:
                             type: str
-                            default: average 
+                            default: 'average '
                             description:
-                             - 'Widget's CPU display type.'
+                             - 'Widgets CPU display type.'
                              - 'average  - Average usage of CPU.'
                              - 'each - Each usage of CPU.'
                             choices:
-                                - average 
-                                - each
+                                - 'average '
+                                - 'each'
                         res-period:
                             type: str
-                            default: 10min 
+                            default: '10min '
                             description:
-                             - 'Widget's data period.'
+                             - 'Widgets data period.'
                              - '10min  - Last 10 minutes.'
                              - 'hour - Last hour.'
                              - 'day - Last day.'
                             choices:
-                                - 10min 
-                                - hour
-                                - day
+                                - '10min '
+                                - 'hour'
+                                - 'day'
                         res-view-type:
                             type: str
-                            default: history
+                            default: 'history'
                             description:
-                             - 'Widget's data view type.'
+                             - 'Widgets data view type.'
                              - 'real-time  - Real-time view.'
                              - 'history - History view.'
                             choices:
-                                - real-time 
-                                - history
+                                - 'real-time '
+                                - 'history'
                         status:
                             type: str
-                            default: open
+                            default: 'open'
                             description:
-                             - 'Widget's opened/closed state.'
+                             - 'Widgets opened/closed state.'
                              - 'close - Widget closed.'
                              - 'open - Widget opened.'
                             choices:
-                                - close
-                                - open
+                                - 'close'
+                                - 'open'
                         tabid:
                             type: int
                             default: 0
                             description: 'ID of tab where widget is displayed.'
                         time-period:
                             type: str
-                            default: 1hour
+                            default: '1hour'
                             description:
-                             - 'Log Database Monitor widget's data period.'
+                             - 'Log Database Monitor widgets data period.'
                              - '1hour - 1 hour.'
                              - '8hour - 8 hour.'
                              - '24hour - 24 hour.'
                             choices:
-                                - 1hour
-                                - 8hour
-                                - 24hour
+                                - '1hour'
+                                - '8hour'
+                                - '24hour'
                         widget-type:
                             type: str
                             description:
@@ -254,22 +254,22 @@ options:
                              - 'disk-io - Disk I/O.'
                              - 'log-rcvd-fwd - Log receive and forwarding Monitor.'
                             choices:
-                                - top-lograte
-                                - sysres
-                                - sysinfo
-                                - licinfo
-                                - jsconsole
-                                - sysop
-                                - alert
-                                - statistics
-                                - rpteng
-                                - raid
-                                - logrecv
-                                - devsummary
-                                - logdb-perf
-                                - logdb-lag
-                                - disk-io
-                                - log-rcvd-fwd
+                                - 'top-lograte'
+                                - 'sysres'
+                                - 'sysinfo'
+                                - 'licinfo'
+                                - 'jsconsole'
+                                - 'sysop'
+                                - 'alert'
+                                - 'statistics'
+                                - 'rpteng'
+                                - 'raid'
+                                - 'logrecv'
+                                - 'devsummary'
+                                - 'logdb-perf'
+                                - 'logdb-lag'
+                                - 'disk-io'
+                                - 'log-rcvd-fwd'
                 dashboard-tabs:
                     -
                         name:
@@ -290,24 +290,24 @@ options:
                     description: 'Email address.'
                 ext-auth-accprofile-override:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Allow to use the access profile provided by the remote authentication server.'
                      - 'disable - Disable access profile override.'
                      - 'enable - Enable access profile override.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ext-auth-adom-override:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Allow to use the ADOM provided by the remote authentication server.'
                      - 'disable - Disable ADOM override.'
                      - 'enable - Enable ADOM override.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ext-auth-group-match:
                     type: str
                     description: 'Only administrators belonging to this group can login.'
@@ -316,14 +316,14 @@ options:
                     description: 'First name.'
                 force-password-change:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable force password change on next login.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 group:
                     type: str
                     description: 'Group name.'
@@ -338,43 +338,43 @@ options:
                             description: 'IPS filter name.'
                 ipv6_trusthost1:
                     type: str
-                    default: ::/0
+                    default: '::/0'
                     description: 'Admin user trusted host IPv6, default ::/0 for all.'
                 ipv6_trusthost10:
                     type: str
-                    default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128
+                    default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
                     description: 'Admin user trusted host IPv6, default ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128 for none.'
                 ipv6_trusthost2:
                     type: str
-                    default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128
+                    default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
                     description: 'Admin user trusted host IPv6, default ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128 for none.'
                 ipv6_trusthost3:
                     type: str
-                    default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128
+                    default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
                     description: 'Admin user trusted host IPv6, default ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128 for none.'
                 ipv6_trusthost4:
                     type: str
-                    default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128
+                    default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
                     description: 'Admin user trusted host IPv6, default ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128 for none.'
                 ipv6_trusthost5:
                     type: str
-                    default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128
+                    default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
                     description: 'Admin user trusted host IPv6, default ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128 for none.'
                 ipv6_trusthost6:
                     type: str
-                    default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128
+                    default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
                     description: 'Admin user trusted host IPv6, default ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128 for none.'
                 ipv6_trusthost7:
                     type: str
-                    default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128
+                    default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
                     description: 'Admin user trusted host IPv6, default ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128 for none.'
                 ipv6_trusthost8:
                     type: str
-                    default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128
+                    default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
                     description: 'Admin user trusted host IPv6, default ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128 for none.'
                 ipv6_trusthost9:
                     type: str
-                    default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128
+                    default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
                     description: 'Admin user trusted host IPv6, default ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128 for none.'
                 last-name:
                     type: str
@@ -396,24 +396,24 @@ options:
                             description: 'Field value.'
                         importance:
                             type: str
-                            default: optional
+                            default: 'optional'
                             description:
                              - 'Importance.'
                              - 'optional - This field is optional.'
                              - 'required - This field is required.'
                             choices:
-                                - optional
-                                - required
+                                - 'optional'
+                                - 'required'
                         status:
                             type: str
-                            default: enabled
+                            default: 'enabled'
                             description:
                              - 'Status.'
                              - 'disabled - This field is disabled.'
                              - 'enabled - This field is enabled.'
                             choices:
-                                - disabled
-                                - enabled
+                                - 'disabled'
+                                - 'enabled'
                 mobile-number:
                     type: str
                     description: 'Mobile number.'
@@ -423,7 +423,7 @@ options:
                 password:
                     -
                         type: str
-                        default: ENC ODU0NTM3NDg1NTMxMDg0MEm8OIAeHq0agoeKH1cknBy7orKo5c0jSfMSXT+VuqYN+atv8wiIW7W8PMzVMSjUkVEnbEpEW/komaek5rcWGIHzpijPphfS09Vlm0vEArsMz6UNqGxf5qLL/MxjITcW4WPWIFLPTPxZQAMoakc7pn8jNgVL
+                        default: 'ENC ODU0NTM3NDg1NTMxMDg0MEm8OIAeHq0agoeKH1cknBy7orKo5c0jSfMSXT+VuqYN+atv8wiIW7W8PMzVMSjUkVEnbEpEW/komaek5rcWGIHzpijPphfS09Vlm0vEArsMz6UNqGxf5qLL/MxjITcW4WPWIFLPTPxZQAMoakc7pn8jNgVL'
                 password-expire:
                     -
                         type: str
@@ -437,21 +437,21 @@ options:
                             description: 'Policy package names.'
                 profileid:
                     type: str
-                    default: Restricted_User
+                    default: 'Restricted_User'
                     description: 'Profile ID.'
                 radius_server:
                     type: str
                     description: 'RADIUS server name.'
                 restrict-access:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable restricted access to development VDOM.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 restrict-dev-vdom:
                     -
                         dev-vdom:
@@ -459,16 +459,16 @@ options:
                             description: 'Device or device VDOM.'
                 rpc-permit:
                     type: str
-                    default: none
+                    default: 'none'
                     description:
                      - 'set none/read/read-write rpc-permission.'
                      - 'read-write - Read-write permission.'
                      - 'none - No permission.'
                      - 'read - Read-only permission.'
                     choices:
-                        - read-write
-                        - none
-                        - read
+                        - 'read-write'
+                        - 'none'
+                        - 'read'
                 ssh-public-key1:
                     -
                         type: str
@@ -486,57 +486,57 @@ options:
                     description: 'TACACS+ server name.'
                 trusthost1:
                     type: str
-                    default: 0.0.0.0 0.0.0.0
+                    default: '0.0.0.0 0.0.0.0'
                     description: 'Admin user trusted host IP, default 0.0.0.0 0.0.0.0 for all.'
                 trusthost10:
                     type: str
-                    default: 255.255.255.255 255.255.255.255
+                    default: '255.255.255.255 255.255.255.255'
                     description: 'Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none.'
                 trusthost2:
                     type: str
-                    default: 255.255.255.255 255.255.255.255
+                    default: '255.255.255.255 255.255.255.255'
                     description: 'Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none.'
                 trusthost3:
                     type: str
-                    default: 255.255.255.255 255.255.255.255
+                    default: '255.255.255.255 255.255.255.255'
                     description: 'Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none.'
                 trusthost4:
                     type: str
-                    default: 255.255.255.255 255.255.255.255
+                    default: '255.255.255.255 255.255.255.255'
                     description: 'Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none.'
                 trusthost5:
                     type: str
-                    default: 255.255.255.255 255.255.255.255
+                    default: '255.255.255.255 255.255.255.255'
                     description: 'Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none.'
                 trusthost6:
                     type: str
-                    default: 255.255.255.255 255.255.255.255
+                    default: '255.255.255.255 255.255.255.255'
                     description: 'Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none.'
                 trusthost7:
                     type: str
-                    default: 255.255.255.255 255.255.255.255
+                    default: '255.255.255.255 255.255.255.255'
                     description: 'Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none.'
                 trusthost8:
                     type: str
-                    default: 255.255.255.255 255.255.255.255
+                    default: '255.255.255.255 255.255.255.255'
                     description: 'Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none.'
                 trusthost9:
                     type: str
-                    default: 255.255.255.255 255.255.255.255
+                    default: '255.255.255.255 255.255.255.255'
                     description: 'Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none.'
                 two-factor-auth:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable 2-factor authentication (certificate + password).'
                      - 'disable - Disable 2-factor authentication.'
                      - 'enable - Enable 2-factor authentication.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 user_type:
                     type: str
-                    default: local
+                    default: 'local'
                     description:
                      - 'User type.'
                      - 'local - Local user.'
@@ -546,12 +546,12 @@ options:
                      - 'pki-auth - PKI user.'
                      - 'group - Group user.'
                     choices:
-                        - local
-                        - radius
-                        - ldap
-                        - tacacs-plus
-                        - pki-auth
-                        - group
+                        - 'local'
+                        - 'radius'
+                        - 'ldap'
+                        - 'tacacs-plus'
+                        - 'pki-auth'
+                        - 'group'
                 userid:
                     type: str
                     description: 'User name.'
@@ -562,14 +562,14 @@ options:
                             description: 'Web filter name.'
                 wildcard:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable wildcard remote authentication.'
                      - 'disable - Disable username wildcard.'
                      - 'enable - Enable username wildcard.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 
@@ -761,12 +761,12 @@ return_of_api_category_0:
                suboptions:
                   column:
                      type: int
-                     description: 'Widget's column ID.'
+                     description: 'Widgets column ID.'
                      example: 0
                   diskio-content-type:
                      type: str
                      description: |
-                        'Disk I/O Monitor widget's chart type.'
+                        'Disk I/O Monitor widgets chart type.'
                         'util - bandwidth utilization.'
                         'iops - the number of I/O requests.'
                         'blks - the amount of data of I/O requests.'
@@ -774,7 +774,7 @@ return_of_api_category_0:
                   diskio-period:
                      type: str
                      description: |
-                        'Disk I/O Monitor widget's data period.'
+                        'Disk I/O Monitor widgets data period.'
                         '1hour - 1 hour.'
                         '8hour - 8 hour.'
                         '24hour - 24 hour.'
@@ -782,14 +782,14 @@ return_of_api_category_0:
                   log-rate-period:
                      type: str
                      description: |
-                        'Log receive monitor widget's data period.'
+                        'Log receive monitor widgets data period.'
                         '2min  - 2 minutes.'
                         '1hour - 1 hour.'
                         '6hours - 6 hours.'
                   log-rate-topn:
                      type: str
                      description: |
-                        'Log receive monitor widget's number of top items to display.'
+                        'Log receive monitor widgets number of top items to display.'
                         '1 - Top 1.'
                         '2 - Top 2.'
                         '3 - Top 3.'
@@ -799,7 +799,7 @@ return_of_api_category_0:
                   log-rate-type:
                      type: str
                      description: |
-                        'Log receive monitor widget's statistics breakdown options.'
+                        'Log receive monitor widgets statistics breakdown options.'
                         'log - Show log rates for each log type.'
                         'device - Show log rates for each device.'
                      example: device
@@ -816,19 +816,19 @@ return_of_api_category_0:
                      example: 10
                   refresh-interval:
                      type: int
-                     description: 'Widget's refresh interval.'
+                     description: 'Widgets refresh interval.'
                      example: 300
                   res-cpu-display:
                      type: str
                      description: |
-                        'Widget's CPU display type.'
+                        'Widgets CPU display type.'
                         'average  - Average usage of CPU.'
                         'each - Each usage of CPU.'
                      example: average 
                   res-period:
                      type: str
                      description: |
-                        'Widget's data period.'
+                        'Widgets data period.'
                         '10min  - Last 10 minutes.'
                         'hour - Last hour.'
                         'day - Last day.'
@@ -836,14 +836,14 @@ return_of_api_category_0:
                   res-view-type:
                      type: str
                      description: |
-                        'Widget's data view type.'
+                        'Widgets data view type.'
                         'real-time  - Real-time view.'
                         'history - History view.'
                      example: history
                   status:
                      type: str
                      description: |
-                        'Widget's opened/closed state.'
+                        'Widgets opened/closed state.'
                         'close - Widget closed.'
                         'open - Widget opened.'
                      example: open
@@ -854,7 +854,7 @@ return_of_api_category_0:
                   time-period:
                      type: str
                      description: |
-                        'Log Database Monitor widget's data period.'
+                        'Log Database Monitor widgets data period.'
                         '1hour - 1 hour.'
                         '8hour - 8 hour.'
                         '24hour - 24 hour.'

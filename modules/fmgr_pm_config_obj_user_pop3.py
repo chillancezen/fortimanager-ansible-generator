@@ -74,9 +74,9 @@ options:
                         type: str
                         description: 'SSL connection.'
                         choices:
-                            - none
-                            - starttls
-                            - pop3s
+                            - 'none'
+                            - 'starttls'
+                            - 'pop3s'
                     server:
                         type: str
                         description: '{&lt;name_str|ip_str&gt;} server domain name or IP.'
@@ -84,11 +84,11 @@ options:
                         type: str
                         description: 'Minimum supported protocol version for SSL/TLS connections (default is to follow system global setting).'
                         choices:
-                            - default
-                            - TLSv1
-                            - TLSv1-1
-                            - TLSv1-2
-                            - SSLv3
+                            - 'default'
+                            - 'TLSv1'
+                            - 'TLSv1-1'
+                            - 'TLSv1-2'
+                            - 'SSLv3'
     schema_object1:
         methods: [get]
         description: 'POP3 server entry configuration.'
@@ -102,11 +102,11 @@ options:
                     -
                         type: str
                         choices:
-                            - name
-                            - port
-                            - secure
-                            - server
-                            - ssl-min-proto-version
+                            - 'name'
+                            - 'port'
+                            - 'secure'
+                            - 'server'
+                            - 'ssl-min-proto-version'
             filter:
                 -
                     type: str
@@ -125,11 +125,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

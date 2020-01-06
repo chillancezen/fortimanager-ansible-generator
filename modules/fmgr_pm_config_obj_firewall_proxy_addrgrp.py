@@ -91,8 +91,8 @@ options:
                         type: str
                         description: 'Source or destination address group type.'
                         choices:
-                            - src
-                            - dst
+                            - 'src'
+                            - 'dst'
                     uuid:
                         type: str
                         description: 'Universally Unique Identifier (UUID; automatically assigned but can be manually reset).'
@@ -100,8 +100,8 @@ options:
                         type: str
                         description: 'Enable/disable visibility of the object in the GUI.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Web proxy address group configuration.'
@@ -115,13 +115,13 @@ options:
                     -
                         type: str
                         choices:
-                            - color
-                            - comment
-                            - member
-                            - name
-                            - type
-                            - uuid
-                            - visibility
+                            - 'color'
+                            - 'comment'
+                            - 'member'
+                            - 'name'
+                            - 'type'
+                            - 'uuid'
+                            - 'visibility'
             filter:
                 -
                     type: str
@@ -140,11 +140,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -69,9 +69,9 @@ options:
                         type: str
                         description: 'Accept or deny traffic matching the policy parameters.'
                         choices:
-                            - accept
-                            - deny
-                            - redirect
+                            - 'accept'
+                            - 'deny'
+                            - 'redirect'
                     application-list:
                         type: str
                         description: 'Name of an existing Application list.'
@@ -85,10 +85,10 @@ options:
                         type: str
                         description: 'Web proxy disclaimer setting: by domain, policy, or user.'
                         choices:
-                            - disable
-                            - domain
-                            - policy
-                            - user
+                            - 'disable'
+                            - 'domain'
+                            - 'policy'
+                            - 'user'
                     dlp-sensor:
                         type: str
                         description: 'Name of an existing DLP sensor.'
@@ -99,8 +99,8 @@ options:
                         type: str
                         description: 'When enabled, destination addresses match against any address EXCEPT the specified destination addresses.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dstaddr6:
                         type: str
                         description: 'IPv6 destination address objects.'
@@ -117,8 +117,8 @@ options:
                         type: str
                         description: 'Enable/disable HTTP tunnel authentication.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     icap-profile:
                         type: str
                         description: 'Name of an existing ICAP profile.'
@@ -126,8 +126,8 @@ options:
                         type: str
                         description: 'Enable/disable use of Internet Services for this policy. If enabled, destination address and service are not used.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     internet-service-custom:
                         type: str
                         description: 'Custom Internet Service name.'
@@ -138,8 +138,8 @@ options:
                         type: str
                         description: 'When enabled, Internet Services match against any internet service EXCEPT the selected Internet Service.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ips-sensor:
                         type: str
                         description: 'Name of an existing IPS sensor.'
@@ -150,15 +150,15 @@ options:
                         type: str
                         description: 'Enable/disable logging traffic through the policy.'
                         choices:
-                            - disable
-                            - all
-                            - utm
+                            - 'disable'
+                            - 'all'
+                            - 'utm'
                     logtraffic-start:
                         type: str
                         description: 'Enable/disable policy log traffic start.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     mms-profile:
                         type: str
                         description: 'Name of an existing MMS profile.'
@@ -178,18 +178,18 @@ options:
                         type: str
                         description: 'Determine whether the firewall policy allows security profile groups or single profiles only.'
                         choices:
-                            - single
-                            - group
+                            - 'single'
+                            - 'group'
                     proxy:
                         type: str
                         description: 'Type of explicit proxy.'
                         choices:
-                            - explicit-web
-                            - transparent-web
-                            - ftp
-                            - wanopt
-                            - ssh
-                            - ssh-tunnel
+                            - 'explicit-web'
+                            - 'transparent-web'
+                            - 'ftp'
+                            - 'wanopt'
+                            - 'ssh'
+                            - 'ssh-tunnel'
                     redirect-url:
                         type: str
                         description: 'Redirect URL for further explicit web proxy processing.'
@@ -200,9 +200,9 @@ options:
                         type: str
                         description: 'Enable/disable scanning of connections to Botnet servers.'
                         choices:
-                            - disable
-                            - block
-                            - monitor
+                            - 'disable'
+                            - 'block'
+                            - 'monitor'
                     schedule:
                         type: str
                         description: 'Name of schedule object.'
@@ -213,8 +213,8 @@ options:
                         type: str
                         description: 'When enabled, services match against any service EXCEPT the specified destination services.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     spamfilter-profile:
                         type: str
                         description: 'Name of an existing Spam filter profile.'
@@ -225,8 +225,8 @@ options:
                         type: str
                         description: 'When enabled, source addresses match against any address EXCEPT the specified source addresses.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     srcaddr6:
                         type: str
                         description: 'IPv6 source address objects.'
@@ -240,8 +240,8 @@ options:
                         type: str
                         description: 'Enable/disable the active status of the policy.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     tags:
                         type: str
                         description: 'Names of object-tags applied to address. Tags need to be preconfigured in config system object-tag. Separate multiple tags with a space.'
@@ -249,8 +249,8 @@ options:
                         type: str
                         description: 'Enable to use the IP address of the client to connect to the server.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     users:
                         type: str
                         description: 'Names of user objects.'
@@ -258,8 +258,8 @@ options:
                         type: str
                         description: 'Enable the use of UTM profiles/sensors/lists.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     uuid:
                         type: str
                         description: 'Universally Unique Identifier (UUID; automatically assigned but can be manually reset).'
@@ -270,14 +270,14 @@ options:
                         type: str
                         description: 'Enable/disable web caching.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     webcache-https:
                         type: str
                         description: 'Enable/disable web caching for HTTPS (Requires deep-inspection enabled in ssl-ssh-profile).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     webfilter-profile:
                         type: str
                         description: 'Name of an existing Web filter profile.'
@@ -300,59 +300,59 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - application-list
-                            - av-profile
-                            - comments
-                            - disclaimer
-                            - dlp-sensor
-                            - dstaddr
-                            - dstaddr-negate
-                            - dstaddr6
-                            - dstintf
-                            - global-label
-                            - groups
-                            - http-tunnel-auth
-                            - icap-profile
-                            - internet-service
-                            - internet-service-custom
-                            - internet-service-id
-                            - internet-service-negate
-                            - ips-sensor
-                            - label
-                            - logtraffic
-                            - logtraffic-start
-                            - mms-profile
-                            - policyid
-                            - poolname
-                            - profile-group
-                            - profile-protocol-options
-                            - profile-type
-                            - proxy
-                            - redirect-url
-                            - replacemsg-override-group
-                            - scan-botnet-connections
-                            - schedule
-                            - service
-                            - service-negate
-                            - spamfilter-profile
-                            - srcaddr
-                            - srcaddr-negate
-                            - srcaddr6
-                            - srcintf
-                            - ssl-ssh-profile
-                            - status
-                            - tags
-                            - transparent
-                            - users
-                            - utm-status
-                            - uuid
-                            - waf-profile
-                            - webcache
-                            - webcache-https
-                            - webfilter-profile
-                            - webproxy-forward-server
-                            - webproxy-profile
+                            - 'action'
+                            - 'application-list'
+                            - 'av-profile'
+                            - 'comments'
+                            - 'disclaimer'
+                            - 'dlp-sensor'
+                            - 'dstaddr'
+                            - 'dstaddr-negate'
+                            - 'dstaddr6'
+                            - 'dstintf'
+                            - 'global-label'
+                            - 'groups'
+                            - 'http-tunnel-auth'
+                            - 'icap-profile'
+                            - 'internet-service'
+                            - 'internet-service-custom'
+                            - 'internet-service-id'
+                            - 'internet-service-negate'
+                            - 'ips-sensor'
+                            - 'label'
+                            - 'logtraffic'
+                            - 'logtraffic-start'
+                            - 'mms-profile'
+                            - 'policyid'
+                            - 'poolname'
+                            - 'profile-group'
+                            - 'profile-protocol-options'
+                            - 'profile-type'
+                            - 'proxy'
+                            - 'redirect-url'
+                            - 'replacemsg-override-group'
+                            - 'scan-botnet-connections'
+                            - 'schedule'
+                            - 'service'
+                            - 'service-negate'
+                            - 'spamfilter-profile'
+                            - 'srcaddr'
+                            - 'srcaddr-negate'
+                            - 'srcaddr6'
+                            - 'srcintf'
+                            - 'ssl-ssh-profile'
+                            - 'status'
+                            - 'tags'
+                            - 'transparent'
+                            - 'users'
+                            - 'utm-status'
+                            - 'uuid'
+                            - 'waf-profile'
+                            - 'webcache'
+                            - 'webcache-https'
+                            - 'webfilter-profile'
+                            - 'webproxy-forward-server'
+                            - 'webproxy-profile'
             filter:
                 -
                     type: str
@@ -371,11 +371,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

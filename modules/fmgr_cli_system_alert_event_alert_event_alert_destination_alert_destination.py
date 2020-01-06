@@ -81,16 +81,16 @@ options:
                     description: 'Recipient email address to use in alert emails.'
                 type:
                     type: str
-                    default: mail
+                    default: 'mail'
                     description:
                      - 'Destination type.'
                      - 'mail - Send email alert.'
                      - 'snmp - Send SNMP trap.'
                      - 'syslog - Send syslog message.'
                     choices:
-                        - mail
-                        - snmp
-                        - syslog
+                        - 'mail'
+                        - 'snmp'
+                        - 'syslog'
 
 '''
 

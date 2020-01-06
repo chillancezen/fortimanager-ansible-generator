@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'SMTP.'
@@ -84,27 +84,27 @@ options:
                     type: str
                     description: 'Action for spam email.'
                     choices:
-                        - pass
-                        - tag
-                        - discard
+                        - 'pass'
+                        - 'tag'
+                        - 'discard'
                 hdrip:
                     type: str
                     description: 'Enable/disable SMTP email header IP checks for spamfsip, spamrbl and spambwl filters.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 local-override:
                     type: str
                     description: 'Enable/disable local filter to override SMTP remote check result.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 log:
                     type: str
                     description: 'Enable/disable logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 tag-msg:
                     type: str
                     description: 'Subject text or header added to spam email.'
@@ -112,9 +112,9 @@ options:
                     -
                         type: str
                         choices:
-                            - subject
-                            - header
-                            - spaminfo
+                            - 'subject'
+                            - 'header'
+                            - 'spaminfo'
 
 '''
 

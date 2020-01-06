@@ -70,9 +70,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Configure DNS.'
@@ -83,8 +83,8 @@ options:
                     type: str
                     description: 'Enable/disable response from the DNS server when a record is not in cache.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dns-cache-limit:
                     type: int
                     description: 'Maximum number of records in the DNS cache.'

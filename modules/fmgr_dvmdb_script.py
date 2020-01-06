@@ -81,19 +81,19 @@ options:
                         description: 'The value has no effect if target is "adom_database".'
                     filter_ostype:
                         type: str
-                        default: unknown
+                        default: 'unknown'
                         description: 'The value has no effect if target is "adom_database".'
                         choices:
-                            - unknown
-                            - fos
+                            - 'unknown'
+                            - 'fos'
                     filter_osver:
                         type: str
-                        default: unknown
+                        default: 'unknown'
                         description: 'The value will be ignored in add/set/update requests if filter_ostype is not set. It has no effect if target is "adom_database".'
                         choices:
-                            - unknown
-                            - 4.00
-                            - 5.00
+                            - 'unknown'
+                            - '4.00'
+                            - '5.00'
                     filter_platform:
                         type: str
                         description: 'The value will be ignored in add/set/update requests if filter_ostype is not set. It has no effect if target is "adom_database".'
@@ -117,16 +117,16 @@ options:
                                  - 'monthly: "DD hh:mm"'
                             day_of_week:
                                 type: str
-                                default: sun
+                                default: 'sun'
                                 choices:
-                                    - unknown
-                                    - sun
-                                    - mon
-                                    - tue
-                                    - wed
-                                    - thu
-                                    - fri
-                                    - sat
+                                    - 'unknown'
+                                    - 'sun'
+                                    - 'mon'
+                                    - 'tue'
+                                    - 'wed'
+                                    - 'thu'
+                                    - 'fri'
+                                    - 'sat'
                             device:
                                 type: int
                                 description: 'Name or id of an existing device in the database.'
@@ -134,32 +134,32 @@ options:
                                 type: str
                             run_on_db:
                                 type: str
-                                default: disable
+                                default: 'disable'
                                 description: 'Indicates if the scheduled script should be executed on device database. It should always be disable for tcl scripts.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             type:
                                 type: str
                                 choices:
-                                    - auto
-                                    - onetime
-                                    - daily
-                                    - weekly
-                                    - monthly
+                                    - 'auto'
+                                    - 'onetime'
+                                    - 'daily'
+                                    - 'weekly'
+                                    - 'monthly'
                     target:
                         type: str
-                        default: device_database
+                        default: 'device_database'
                         choices:
-                            - device_database
-                            - remote_device
-                            - adom_database
+                            - 'device_database'
+                            - 'remote_device'
+                            - 'adom_database'
                     type:
                         type: str
                         choices:
-                            - cli
-                            - tcl
-                            - cligrp
+                            - 'cli'
+                            - 'tcl'
+                            - 'cligrp'
     schema_object1:
         methods: [get]
         description: 'Script table.'
@@ -173,19 +173,19 @@ options:
                     -
                         type: str
                         choices:
-                            - content
-                            - desc
-                            - filter_build
-                            - filter_device
-                            - filter_hostname
-                            - filter_ostype
-                            - filter_osver
-                            - filter_platform
-                            - filter_serial
-                            - modification_time
-                            - name
-                            - target
-                            - type
+                            - 'content'
+                            - 'desc'
+                            - 'filter_build'
+                            - 'filter_device'
+                            - 'filter_hostname'
+                            - 'filter_ostype'
+                            - 'filter_osver'
+                            - 'filter_platform'
+                            - 'filter_serial'
+                            - 'modification_time'
+                            - 'name'
+                            - 'target'
+                            - 'type'
             filter:
                 -
                     type: str
@@ -200,9 +200,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'syntax'
             range:
                 -
                     type: int

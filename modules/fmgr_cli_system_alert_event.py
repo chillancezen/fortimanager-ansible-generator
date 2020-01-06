@@ -70,31 +70,31 @@ options:
                                 description: 'Recipient email address to use in alert emails.'
                             type:
                                 type: str
-                                default: mail
+                                default: 'mail'
                                 description:
                                  - 'Destination type.'
                                  - 'mail - Send email alert.'
                                  - 'snmp - Send SNMP trap.'
                                  - 'syslog - Send syslog message.'
                                 choices:
-                                    - mail
-                                    - snmp
-                                    - syslog
+                                    - 'mail'
+                                    - 'snmp'
+                                    - 'syslog'
                     enable-generic-text:
                         -
                             type: str
                             choices:
-                                - enable
-                                - disable
+                                - 'enable'
+                                - 'disable'
                     enable-severity-filter:
                         -
                             type: str
                             choices:
-                                - enable
-                                - disable
+                                - 'enable'
+                                - 'disable'
                     event-time-period:
                         type: str
-                        default: 0.5
+                        default: '0.5'
                         description:
                          - 'Time period (hours).'
                          - '0.5 - 30 minutes.'
@@ -106,14 +106,14 @@ options:
                          - '72 - 3 days.'
                          - '168 - 1 week.'
                         choices:
-                            - 0.5
-                            - 1
-                            - 3
-                            - 6
-                            - 12
-                            - 24
-                            - 72
-                            - 168
+                            - '0.5'
+                            - '1'
+                            - '3'
+                            - '6'
+                            - '12'
+                            - '24'
+                            - '72'
+                            - '168'
                     generic-text:
                         type: str
                         description: 'Text that must be contained in a log to trigger alert.'
@@ -122,7 +122,7 @@ options:
                         description: 'Alert name.'
                     num-events:
                         type: str
-                        default: 1
+                        default: '1'
                         description:
                          - 'Minimum number of events required within time period.'
                          - '1 - 1 event.'
@@ -131,14 +131,14 @@ options:
                          - '50 - 50 events.'
                          - '100 - 100 events.'
                         choices:
-                            - 1
-                            - 5
-                            - 10
-                            - 50
-                            - 100
+                            - '1'
+                            - '5'
+                            - '10'
+                            - '50'
+                            - '100'
                     severity-filter:
                         type: str
-                        default: high
+                        default: 'high'
                         description:
                          - 'Required log severity to trigger alert.'
                          - 'high - High level alert.'
@@ -147,30 +147,30 @@ options:
                          - 'medium-low - Medium-low level alert.'
                          - 'low - Low level alert.'
                         choices:
-                            - high
-                            - medium-high
-                            - medium
-                            - medium-low
-                            - low
+                            - 'high'
+                            - 'medium-high'
+                            - 'medium'
+                            - 'medium-low'
+                            - 'low'
                     severity-level-comp:
                         -
                             type: str
                             choices:
-                                - >=
-                                - =
-                                - <=
+                                - '>='
+                                - '='
+                                - '<='
                     severity-level-logs:
                         -
                             type: str
                             choices:
-                                - no-check
-                                - information
-                                - notify
-                                - warning
-                                - error
-                                - critical
-                                - alert
-                                - emergency
+                                - 'no-check'
+                                - 'information'
+                                - 'notify'
+                                - 'warning'
+                                - 'error'
+                                - 'critical'
+                                - 'alert'
+                                - 'emergency'
     schema_object1:
         methods: [get]
         description: 'Alert events.'
@@ -181,15 +181,15 @@ options:
                     -
                         type: str
                         choices:
-                            - enable-generic-text
-                            - enable-severity-filter
-                            - event-time-period
-                            - generic-text
-                            - name
-                            - num-events
-                            - severity-filter
-                            - severity-level-comp
-                            - severity-level-logs
+                            - 'enable-generic-text'
+                            - 'enable-severity-filter'
+                            - 'event-time-period'
+                            - 'generic-text'
+                            - 'name'
+                            - 'num-events'
+                            - 'severity-filter'
+                            - 'severity-level-comp'
+                            - 'severity-level-logs'
             filter:
                 -
                     type: str
@@ -203,8 +203,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Configure URL Extraction'
@@ -87,8 +87,8 @@ options:
                     type: str
                     description: 'Enable / Disable empty message-body entity in HTTP response'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 redirect-url:
                     type: str
                     description: 'HTTP header value to use for client redirect on blocked requests'
@@ -99,8 +99,8 @@ options:
                     type: str
                     description: 'Enable URL Extraction'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

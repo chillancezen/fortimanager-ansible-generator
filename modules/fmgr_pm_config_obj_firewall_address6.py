@@ -96,8 +96,8 @@ options:
                             host-type:
                                 type: str
                                 choices:
-                                    - any
-                                    - specific
+                                    - 'any'
+                                    - 'specific'
                             ip6:
                                 type: str
                             obj-id:
@@ -105,7 +105,7 @@ options:
                             sdn:
                                 type: str
                                 choices:
-                                    - nsx
+                                    - 'nsx'
                             start-ip:
                                 type: str
                             tags:
@@ -115,19 +115,19 @@ options:
                             type:
                                 type: str
                                 choices:
-                                    - ipprefix
-                                    - iprange
-                                    - nsx
-                                    - dynamic
-                                    - fqdn
-                                    - template
+                                    - 'ipprefix'
+                                    - 'iprange'
+                                    - 'nsx'
+                                    - 'dynamic'
+                                    - 'fqdn'
+                                    - 'template'
                             uuid:
                                 type: str
                             visibility:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                     end-ip:
                         type: str
                         description: 'Final IP address (inclusive) in the range for the address (format: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx).'
@@ -141,8 +141,8 @@ options:
                         type: str
                         description: 'Host type.'
                         choices:
-                            - any
-                            - specific
+                            - 'any'
+                            - 'specific'
                     ip6:
                         type: str
                         description: 'IPv6 address prefix (format: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx/xxx).'
@@ -161,7 +161,7 @@ options:
                         type: str
                         description: 'SDN.'
                         choices:
-                            - nsx
+                            - 'nsx'
                     start-ip:
                         type: str
                         description: 'First IP address (inclusive) in the range for the address (format: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx).'
@@ -174,8 +174,8 @@ options:
                                 type: str
                                 description: 'Subnet segment type.'
                                 choices:
-                                    - any
-                                    - specific
+                                    - 'any'
+                                    - 'specific'
                             value:
                                 type: str
                                 description: 'Subnet segment value.'
@@ -197,12 +197,12 @@ options:
                         type: str
                         description: 'Type of IPv6 address object (default = ipprefix).'
                         choices:
-                            - ipprefix
-                            - iprange
-                            - nsx
-                            - dynamic
-                            - fqdn
-                            - template
+                            - 'ipprefix'
+                            - 'iprange'
+                            - 'nsx'
+                            - 'dynamic'
+                            - 'fqdn'
+                            - 'template'
                     uuid:
                         type: str
                         description: 'Universally Unique Identifier (UUID; automatically assigned but can be manually reset).'
@@ -210,8 +210,8 @@ options:
                         type: str
                         description: 'Enable/disable the visibility of the object in the GUI.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure IPv6 firewall addresses.'
@@ -225,22 +225,22 @@ options:
                     -
                         type: str
                         choices:
-                            - cache-ttl
-                            - color
-                            - comment
-                            - end-ip
-                            - fqdn
-                            - host
-                            - host-type
-                            - ip6
-                            - name
-                            - obj-id
-                            - sdn
-                            - start-ip
-                            - template
-                            - type
-                            - uuid
-                            - visibility
+                            - 'cache-ttl'
+                            - 'color'
+                            - 'comment'
+                            - 'end-ip'
+                            - 'fqdn'
+                            - 'host'
+                            - 'host-type'
+                            - 'ip6'
+                            - 'name'
+                            - 'obj-id'
+                            - 'sdn'
+                            - 'start-ip'
+                            - 'template'
+                            - 'type'
+                            - 'uuid'
+                            - 'visibility'
             filter:
                 -
                     type: str
@@ -259,11 +259,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

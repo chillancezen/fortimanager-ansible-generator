@@ -73,23 +73,23 @@ options:
                         type: str
                         description: 'character encoding used for replacement message'
                         choices:
-                            - us-ascii
-                            - utf-8
+                            - 'us-ascii'
+                            - 'utf-8'
                     format:
                         type: str
                         description: 'Format flag.'
                         choices:
-                            - none
-                            - text
-                            - html
-                            - wml
+                            - 'none'
+                            - 'text'
+                            - 'html'
+                            - 'wml'
                     header:
                         type: str
                         description: 'Header flag.'
                         choices:
-                            - none
-                            - http
-                            - 8bit
+                            - 'none'
+                            - 'http'
+                            - '8bit'
                     image:
                         type: str
                         description: 'Message string.'
@@ -109,12 +109,12 @@ options:
                     -
                         type: str
                         choices:
-                            - buffer
-                            - charset
-                            - format
-                            - header
-                            - image
-                            - msg-type
+                            - 'buffer'
+                            - 'charset'
+                            - 'format'
+                            - 'header'
+                            - 'image'
+                            - 'msg-type'
             filter:
                 -
                     type: str
@@ -133,11 +133,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

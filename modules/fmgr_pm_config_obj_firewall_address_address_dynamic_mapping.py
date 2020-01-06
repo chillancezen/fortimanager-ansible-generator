@@ -75,8 +75,8 @@ options:
                     allow-routing:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     associated-interface:
                         type: str
                     cache-ttl:
@@ -108,20 +108,20 @@ options:
                     sdn:
                         type: str
                         choices:
-                            - aci
-                            - aws
-                            - nsx
-                            - nuage
-                            - azure
-                            - gcp
-                            - oci
-                            - openstack
+                            - 'aci'
+                            - 'aws'
+                            - 'nsx'
+                            - 'nuage'
+                            - 'azure'
+                            - 'gcp'
+                            - 'oci'
+                            - 'openstack'
                     sdn-addr-type:
                         type: str
                         choices:
-                            - private
-                            - public
-                            - all
+                            - 'private'
+                            - 'public'
+                            - 'all'
                     sdn-tag:
                         type: str
                     start-ip:
@@ -139,18 +139,18 @@ options:
                     type:
                         type: str
                         choices:
-                            - ipmask
-                            - iprange
-                            - fqdn
-                            - wildcard
-                            - geography
-                            - url
-                            - wildcard-fqdn
-                            - nsx
-                            - aws
-                            - dynamic
-                            - interface-subnet
-                            - mac
+                            - 'ipmask'
+                            - 'iprange'
+                            - 'fqdn'
+                            - 'wildcard'
+                            - 'geography'
+                            - 'url'
+                            - 'wildcard-fqdn'
+                            - 'nsx'
+                            - 'aws'
+                            - 'dynamic'
+                            - 'interface-subnet'
+                            - 'mac'
                     url:
                         type: str
                     uuid:
@@ -158,8 +158,8 @@ options:
                     visibility:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     wildcard:
                         type: str
                     wildcard-fqdn:
@@ -177,36 +177,36 @@ options:
                     -
                         type: str
                         choices:
-                            - _scope
-                            - allow-routing
-                            - associated-interface
-                            - cache-ttl
-                            - color
-                            - country
-                            - end-ip
-                            - end-mac
-                            - epg-name
-                            - filter
-                            - fqdn
-                            - interface
-                            - obj-id
-                            - organization
-                            - policy-group
-                            - sdn
-                            - sdn-addr-type
-                            - sdn-tag
-                            - start-ip
-                            - start-mac
-                            - subnet
-                            - subnet-name
-                            - tags
-                            - tenant
-                            - type
-                            - url
-                            - uuid
-                            - visibility
-                            - wildcard
-                            - wildcard-fqdn
+                            - '_scope'
+                            - 'allow-routing'
+                            - 'associated-interface'
+                            - 'cache-ttl'
+                            - 'color'
+                            - 'country'
+                            - 'end-ip'
+                            - 'end-mac'
+                            - 'epg-name'
+                            - 'filter'
+                            - 'fqdn'
+                            - 'interface'
+                            - 'obj-id'
+                            - 'organization'
+                            - 'policy-group'
+                            - 'sdn'
+                            - 'sdn-addr-type'
+                            - 'sdn-tag'
+                            - 'start-ip'
+                            - 'start-mac'
+                            - 'subnet'
+                            - 'subnet-name'
+                            - 'tags'
+                            - 'tenant'
+                            - 'type'
+                            - 'url'
+                            - 'uuid'
+                            - 'visibility'
+                            - 'wildcard'
+                            - 'wildcard-fqdn'
             filter:
                 -
                     type: str
@@ -225,11 +225,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -70,9 +70,9 @@ options:
                         -
                             type: str
                             choices:
-                                - block
-                                - exempt
-                                - exempt-mass-mms
+                                - 'block'
+                                - 'exempt'
+                                - 'exempt-mass-mms'
                     carrier-endpoint:
                         type: str
                         description: 'End point to act on.'
@@ -80,21 +80,21 @@ options:
                         -
                             type: str
                             choices:
-                                - archive
-                                - intercept
+                                - 'archive'
+                                - 'intercept'
                     pattern-type:
                         type: str
                         description: 'Wildcard pattern or regular expression.'
                         choices:
-                            - wildcard
-                            - regexp
-                            - simple
+                            - 'wildcard'
+                            - 'regexp'
+                            - 'simple'
                     status:
                         type: str
                         description: 'Enable/disable specified action(s) for this end point.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Carrier end point black/white list.'
@@ -108,11 +108,11 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - carrier-endpoint
-                            - log-action
-                            - pattern-type
-                            - status
+                            - 'action'
+                            - 'carrier-endpoint'
+                            - 'log-action'
+                            - 'pattern-type'
+                            - 'status'
             filter:
                 -
                     type: str
@@ -131,11 +131,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

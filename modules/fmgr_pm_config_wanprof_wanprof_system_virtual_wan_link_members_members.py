@@ -102,8 +102,8 @@ options:
                     type: str
                     description: 'Enable/disable this interface in the SD-WAN.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 volume-ratio:
                     type: int
                     description: 'Measured volume ratio (this value / sum of all values = percentage of link volume, 0 - 255).'
@@ -127,9 +127,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object3:
         methods: [move]
         description: 'Physical FortiGate interfaces added to the virtual-wan-link.'
@@ -138,8 +138,8 @@ options:
             option:
                 type: str
                 choices:
-                    - before
-                    - after
+                    - 'before'
+                    - 'after'
             target:
                 type: str
                 description: 'Key to the target entry.'

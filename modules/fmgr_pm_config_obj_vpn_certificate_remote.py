@@ -71,8 +71,8 @@ options:
                         type: str
                         description: 'Either the global or VDOM IP address range for the remote certificate.'
                         choices:
-                            - global
-                            - vdom
+                            - 'global'
+                            - 'vdom'
                     remote:
                         type: str
                         description: 'Remote certificate.'
@@ -80,10 +80,10 @@ options:
                         type: str
                         description: 'Remote certificate source type.'
                         choices:
-                            - factory
-                            - user
-                            - bundle
-                            - fortiguard
+                            - 'factory'
+                            - 'user'
+                            - 'bundle'
+                            - 'fortiguard'
     schema_object1:
         methods: [get]
         description: 'Remote certificate as a PEM file.'
@@ -97,10 +97,10 @@ options:
                     -
                         type: str
                         choices:
-                            - name
-                            - range
-                            - remote
-                            - source
+                            - 'name'
+                            - 'range'
+                            - 'remote'
+                            - 'source'
             filter:
                 -
                     type: str
@@ -119,11 +119,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

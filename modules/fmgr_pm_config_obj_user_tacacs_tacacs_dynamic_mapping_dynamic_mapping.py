@@ -76,16 +76,16 @@ options:
                 authen-type:
                     type: str
                     choices:
-                        - auto
-                        - ascii
-                        - pap
-                        - chap
-                        - mschap
+                        - 'auto'
+                        - 'ascii'
+                        - 'pap'
+                        - 'chap'
+                        - 'mschap'
                 authorization:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 key:
                     -
                         type: str
@@ -122,9 +122,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

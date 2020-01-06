@@ -67,7 +67,7 @@ options:
             data:
                 expire-days:
                     type: int
-                    description: 'Time in days before the user's password expires.'
+                    description: 'Time in days before the users password expires.'
                 name:
                     type: str
                     description: 'Password policy name.'
@@ -91,9 +91,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 
@@ -155,7 +155,7 @@ return_of_api_category_0:
          data:
             expire-days:
                type: int
-               description: 'Time in days before the user's password expires.'
+               description: 'Time in days before the users password expires.'
             name:
                type: str
                description: 'Password policy name.'

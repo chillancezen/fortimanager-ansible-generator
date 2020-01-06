@@ -85,14 +85,14 @@ options:
                                 type: str
                                 description: 'Status.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                     acct-all-servers:
                         type: str
                         description: 'Enable/disable sending of accounting messages to all configured servers (default = disable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     acct-interim-interval:
                         type: int
                         description: 'Time in seconds between each accounting interim update message.'
@@ -100,17 +100,17 @@ options:
                         type: str
                         description: 'Enable/disable automatically including this RADIUS server in all user groups.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     auth-type:
                         type: str
                         description: 'Authentication methods/protocols permitted for this RADIUS server.'
                         choices:
-                            - pap
-                            - chap
-                            - ms_chap
-                            - ms_chap_v2
-                            - auto
+                            - 'pap'
+                            - 'chap'
+                            - 'ms_chap'
+                            - 'ms_chap_v2'
+                            - 'auto'
                     class:
                         -
                             type: str
@@ -125,145 +125,145 @@ options:
                             acct-all-servers:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             acct-interim-interval:
                                 type: int
                             all-usergroup:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             auth-type:
                                 type: str
                                 choices:
-                                    - pap
-                                    - chap
-                                    - ms_chap
-                                    - ms_chap_v2
-                                    - auto
+                                    - 'pap'
+                                    - 'chap'
+                                    - 'ms_chap'
+                                    - 'ms_chap_v2'
+                                    - 'auto'
                             class:
                                 -
                                     type: str
                             dp-carrier-endpoint-attribute:
                                 type: str
                                 choices:
-                                    - User-Name
-                                    - User-Password
-                                    - CHAP-Password
-                                    - NAS-IP-Address
-                                    - NAS-Port
-                                    - Service-Type
-                                    - Framed-Protocol
-                                    - Framed-IP-Address
-                                    - Framed-IP-Netmask
-                                    - Framed-Routing
-                                    - Filter-Id
-                                    - Framed-MTU
-                                    - Framed-Compression
-                                    - Login-IP-Host
-                                    - Login-Service
-                                    - Login-TCP-Port
-                                    - Reply-Message
-                                    - Callback-Number
-                                    - Callback-Id
-                                    - Framed-Route
-                                    - Framed-IPX-Network
-                                    - State
-                                    - Class
-                                    - Vendor-Specific
-                                    - Session-Timeout
-                                    - Idle-Timeout
-                                    - Termination-Action
-                                    - Called-Station-Id
-                                    - Calling-Station-Id
-                                    - NAS-Identifier
-                                    - Proxy-State
-                                    - Login-LAT-Service
-                                    - Login-LAT-Node
-                                    - Login-LAT-Group
-                                    - Framed-AppleTalk-Link
-                                    - Framed-AppleTalk-Network
-                                    - Framed-AppleTalk-Zone
-                                    - Acct-Status-Type
-                                    - Acct-Delay-Time
-                                    - Acct-Input-Octets
-                                    - Acct-Output-Octets
-                                    - Acct-Session-Id
-                                    - Acct-Authentic
-                                    - Acct-Session-Time
-                                    - Acct-Input-Packets
-                                    - Acct-Output-Packets
-                                    - Acct-Terminate-Cause
-                                    - Acct-Multi-Session-Id
-                                    - Acct-Link-Count
-                                    - CHAP-Challenge
-                                    - NAS-Port-Type
-                                    - Port-Limit
-                                    - Login-LAT-Port
+                                    - 'User-Name'
+                                    - 'User-Password'
+                                    - 'CHAP-Password'
+                                    - 'NAS-IP-Address'
+                                    - 'NAS-Port'
+                                    - 'Service-Type'
+                                    - 'Framed-Protocol'
+                                    - 'Framed-IP-Address'
+                                    - 'Framed-IP-Netmask'
+                                    - 'Framed-Routing'
+                                    - 'Filter-Id'
+                                    - 'Framed-MTU'
+                                    - 'Framed-Compression'
+                                    - 'Login-IP-Host'
+                                    - 'Login-Service'
+                                    - 'Login-TCP-Port'
+                                    - 'Reply-Message'
+                                    - 'Callback-Number'
+                                    - 'Callback-Id'
+                                    - 'Framed-Route'
+                                    - 'Framed-IPX-Network'
+                                    - 'State'
+                                    - 'Class'
+                                    - 'Vendor-Specific'
+                                    - 'Session-Timeout'
+                                    - 'Idle-Timeout'
+                                    - 'Termination-Action'
+                                    - 'Called-Station-Id'
+                                    - 'Calling-Station-Id'
+                                    - 'NAS-Identifier'
+                                    - 'Proxy-State'
+                                    - 'Login-LAT-Service'
+                                    - 'Login-LAT-Node'
+                                    - 'Login-LAT-Group'
+                                    - 'Framed-AppleTalk-Link'
+                                    - 'Framed-AppleTalk-Network'
+                                    - 'Framed-AppleTalk-Zone'
+                                    - 'Acct-Status-Type'
+                                    - 'Acct-Delay-Time'
+                                    - 'Acct-Input-Octets'
+                                    - 'Acct-Output-Octets'
+                                    - 'Acct-Session-Id'
+                                    - 'Acct-Authentic'
+                                    - 'Acct-Session-Time'
+                                    - 'Acct-Input-Packets'
+                                    - 'Acct-Output-Packets'
+                                    - 'Acct-Terminate-Cause'
+                                    - 'Acct-Multi-Session-Id'
+                                    - 'Acct-Link-Count'
+                                    - 'CHAP-Challenge'
+                                    - 'NAS-Port-Type'
+                                    - 'Port-Limit'
+                                    - 'Login-LAT-Port'
                             dp-carrier-endpoint-block-attribute:
                                 type: str
                                 choices:
-                                    - User-Name
-                                    - User-Password
-                                    - CHAP-Password
-                                    - NAS-IP-Address
-                                    - NAS-Port
-                                    - Service-Type
-                                    - Framed-Protocol
-                                    - Framed-IP-Address
-                                    - Framed-IP-Netmask
-                                    - Framed-Routing
-                                    - Filter-Id
-                                    - Framed-MTU
-                                    - Framed-Compression
-                                    - Login-IP-Host
-                                    - Login-Service
-                                    - Login-TCP-Port
-                                    - Reply-Message
-                                    - Callback-Number
-                                    - Callback-Id
-                                    - Framed-Route
-                                    - Framed-IPX-Network
-                                    - State
-                                    - Class
-                                    - Vendor-Specific
-                                    - Session-Timeout
-                                    - Idle-Timeout
-                                    - Termination-Action
-                                    - Called-Station-Id
-                                    - Calling-Station-Id
-                                    - NAS-Identifier
-                                    - Proxy-State
-                                    - Login-LAT-Service
-                                    - Login-LAT-Node
-                                    - Login-LAT-Group
-                                    - Framed-AppleTalk-Link
-                                    - Framed-AppleTalk-Network
-                                    - Framed-AppleTalk-Zone
-                                    - Acct-Status-Type
-                                    - Acct-Delay-Time
-                                    - Acct-Input-Octets
-                                    - Acct-Output-Octets
-                                    - Acct-Session-Id
-                                    - Acct-Authentic
-                                    - Acct-Session-Time
-                                    - Acct-Input-Packets
-                                    - Acct-Output-Packets
-                                    - Acct-Terminate-Cause
-                                    - Acct-Multi-Session-Id
-                                    - Acct-Link-Count
-                                    - CHAP-Challenge
-                                    - NAS-Port-Type
-                                    - Port-Limit
-                                    - Login-LAT-Port
+                                    - 'User-Name'
+                                    - 'User-Password'
+                                    - 'CHAP-Password'
+                                    - 'NAS-IP-Address'
+                                    - 'NAS-Port'
+                                    - 'Service-Type'
+                                    - 'Framed-Protocol'
+                                    - 'Framed-IP-Address'
+                                    - 'Framed-IP-Netmask'
+                                    - 'Framed-Routing'
+                                    - 'Filter-Id'
+                                    - 'Framed-MTU'
+                                    - 'Framed-Compression'
+                                    - 'Login-IP-Host'
+                                    - 'Login-Service'
+                                    - 'Login-TCP-Port'
+                                    - 'Reply-Message'
+                                    - 'Callback-Number'
+                                    - 'Callback-Id'
+                                    - 'Framed-Route'
+                                    - 'Framed-IPX-Network'
+                                    - 'State'
+                                    - 'Class'
+                                    - 'Vendor-Specific'
+                                    - 'Session-Timeout'
+                                    - 'Idle-Timeout'
+                                    - 'Termination-Action'
+                                    - 'Called-Station-Id'
+                                    - 'Calling-Station-Id'
+                                    - 'NAS-Identifier'
+                                    - 'Proxy-State'
+                                    - 'Login-LAT-Service'
+                                    - 'Login-LAT-Node'
+                                    - 'Login-LAT-Group'
+                                    - 'Framed-AppleTalk-Link'
+                                    - 'Framed-AppleTalk-Network'
+                                    - 'Framed-AppleTalk-Zone'
+                                    - 'Acct-Status-Type'
+                                    - 'Acct-Delay-Time'
+                                    - 'Acct-Input-Octets'
+                                    - 'Acct-Output-Octets'
+                                    - 'Acct-Session-Id'
+                                    - 'Acct-Authentic'
+                                    - 'Acct-Session-Time'
+                                    - 'Acct-Input-Packets'
+                                    - 'Acct-Output-Packets'
+                                    - 'Acct-Terminate-Cause'
+                                    - 'Acct-Multi-Session-Id'
+                                    - 'Acct-Link-Count'
+                                    - 'CHAP-Challenge'
+                                    - 'NAS-Port-Type'
+                                    - 'Port-Limit'
+                                    - 'Login-LAT-Port'
                             dp-context-timeout:
                                 type: int
                             dp-flush-ip-session:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             dp-hold-time:
                                 type: int
                             dp-http-header:
@@ -271,30 +271,30 @@ options:
                             dp-http-header-fallback:
                                 type: str
                                 choices:
-                                    - ip-header-address
-                                    - default-profile
+                                    - 'ip-header-address'
+                                    - 'default-profile'
                             dp-http-header-status:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             dp-http-header-suppress:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             dp-log-dyn_flags:
                                 -
                                     type: str
                                     choices:
-                                        - none
-                                        - protocol-error
-                                        - profile-missing
-                                        - context-missing
-                                        - accounting-stop-missed
-                                        - accounting-event
-                                        - radiusd-other
-                                        - endpoint-block
+                                        - 'none'
+                                        - 'protocol-error'
+                                        - 'profile-missing'
+                                        - 'context-missing'
+                                        - 'accounting-stop-missed'
+                                        - 'accounting-event'
+                                        - 'radiusd-other'
+                                        - 'endpoint-block'
                             dp-log-period:
                                 type: int
                             dp-mem-percent:
@@ -302,66 +302,66 @@ options:
                             dp-profile-attribute:
                                 type: str
                                 choices:
-                                    - User-Name
-                                    - User-Password
-                                    - CHAP-Password
-                                    - NAS-IP-Address
-                                    - NAS-Port
-                                    - Service-Type
-                                    - Framed-Protocol
-                                    - Framed-IP-Address
-                                    - Framed-IP-Netmask
-                                    - Framed-Routing
-                                    - Filter-Id
-                                    - Framed-MTU
-                                    - Framed-Compression
-                                    - Login-IP-Host
-                                    - Login-Service
-                                    - Login-TCP-Port
-                                    - Reply-Message
-                                    - Callback-Number
-                                    - Callback-Id
-                                    - Framed-Route
-                                    - Framed-IPX-Network
-                                    - State
-                                    - Class
-                                    - Vendor-Specific
-                                    - Session-Timeout
-                                    - Idle-Timeout
-                                    - Termination-Action
-                                    - Called-Station-Id
-                                    - Calling-Station-Id
-                                    - NAS-Identifier
-                                    - Proxy-State
-                                    - Login-LAT-Service
-                                    - Login-LAT-Node
-                                    - Login-LAT-Group
-                                    - Framed-AppleTalk-Link
-                                    - Framed-AppleTalk-Network
-                                    - Framed-AppleTalk-Zone
-                                    - Acct-Status-Type
-                                    - Acct-Delay-Time
-                                    - Acct-Input-Octets
-                                    - Acct-Output-Octets
-                                    - Acct-Session-Id
-                                    - Acct-Authentic
-                                    - Acct-Session-Time
-                                    - Acct-Input-Packets
-                                    - Acct-Output-Packets
-                                    - Acct-Terminate-Cause
-                                    - Acct-Multi-Session-Id
-                                    - Acct-Link-Count
-                                    - CHAP-Challenge
-                                    - NAS-Port-Type
-                                    - Port-Limit
-                                    - Login-LAT-Port
+                                    - 'User-Name'
+                                    - 'User-Password'
+                                    - 'CHAP-Password'
+                                    - 'NAS-IP-Address'
+                                    - 'NAS-Port'
+                                    - 'Service-Type'
+                                    - 'Framed-Protocol'
+                                    - 'Framed-IP-Address'
+                                    - 'Framed-IP-Netmask'
+                                    - 'Framed-Routing'
+                                    - 'Filter-Id'
+                                    - 'Framed-MTU'
+                                    - 'Framed-Compression'
+                                    - 'Login-IP-Host'
+                                    - 'Login-Service'
+                                    - 'Login-TCP-Port'
+                                    - 'Reply-Message'
+                                    - 'Callback-Number'
+                                    - 'Callback-Id'
+                                    - 'Framed-Route'
+                                    - 'Framed-IPX-Network'
+                                    - 'State'
+                                    - 'Class'
+                                    - 'Vendor-Specific'
+                                    - 'Session-Timeout'
+                                    - 'Idle-Timeout'
+                                    - 'Termination-Action'
+                                    - 'Called-Station-Id'
+                                    - 'Calling-Station-Id'
+                                    - 'NAS-Identifier'
+                                    - 'Proxy-State'
+                                    - 'Login-LAT-Service'
+                                    - 'Login-LAT-Node'
+                                    - 'Login-LAT-Group'
+                                    - 'Framed-AppleTalk-Link'
+                                    - 'Framed-AppleTalk-Network'
+                                    - 'Framed-AppleTalk-Zone'
+                                    - 'Acct-Status-Type'
+                                    - 'Acct-Delay-Time'
+                                    - 'Acct-Input-Octets'
+                                    - 'Acct-Output-Octets'
+                                    - 'Acct-Session-Id'
+                                    - 'Acct-Authentic'
+                                    - 'Acct-Session-Time'
+                                    - 'Acct-Input-Packets'
+                                    - 'Acct-Output-Packets'
+                                    - 'Acct-Terminate-Cause'
+                                    - 'Acct-Multi-Session-Id'
+                                    - 'Acct-Link-Count'
+                                    - 'CHAP-Challenge'
+                                    - 'NAS-Port-Type'
+                                    - 'Port-Limit'
+                                    - 'Login-LAT-Port'
                             dp-profile-attribute-key:
                                 type: str
                             dp-radius-response:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             dp-radius-server-port:
                                 type: int
                             dp-secret:
@@ -370,35 +370,35 @@ options:
                             dp-validate-request-secret:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             dynamic-profile:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             endpoint-translation:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             ep-carrier-endpoint-convert-hex:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             ep-carrier-endpoint-header:
                                 type: str
                             ep-carrier-endpoint-header-suppress:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             ep-carrier-endpoint-prefix:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             ep-carrier-endpoint-prefix-range-max:
                                 type: int
                             ep-carrier-endpoint-prefix-range-min:
@@ -408,196 +408,196 @@ options:
                             ep-carrier-endpoint-source:
                                 type: str
                                 choices:
-                                    - http-header
-                                    - cookie
+                                    - 'http-header'
+                                    - 'cookie'
                             ep-ip-header:
                                 type: str
                             ep-ip-header-suppress:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             ep-missing-header-fallback:
                                 type: str
                                 choices:
-                                    - session-ip
-                                    - policy-profile
+                                    - 'session-ip'
+                                    - 'policy-profile'
                             ep-profile-query-type:
                                 type: str
                                 choices:
-                                    - session-ip
-                                    - extract-ip
-                                    - extract-carrier-endpoint
+                                    - 'session-ip'
+                                    - 'extract-ip'
+                                    - 'extract-carrier-endpoint'
                             h3c-compatibility:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             nas-ip:
                                 type: str
                             password-encoding:
                                 type: str
                                 choices:
-                                    - ISO-8859-1
-                                    - auto
+                                    - 'ISO-8859-1'
+                                    - 'auto'
                             password-renewal:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             radius-coa:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             radius-port:
                                 type: int
                             rsso:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             rsso-context-timeout:
                                 type: int
                             rsso-endpoint-attribute:
                                 type: str
                                 choices:
-                                    - User-Name
-                                    - User-Password
-                                    - CHAP-Password
-                                    - NAS-IP-Address
-                                    - NAS-Port
-                                    - Service-Type
-                                    - Framed-Protocol
-                                    - Framed-IP-Address
-                                    - Framed-IP-Netmask
-                                    - Framed-Routing
-                                    - Filter-Id
-                                    - Framed-MTU
-                                    - Framed-Compression
-                                    - Login-IP-Host
-                                    - Login-Service
-                                    - Login-TCP-Port
-                                    - Reply-Message
-                                    - Callback-Number
-                                    - Callback-Id
-                                    - Framed-Route
-                                    - Framed-IPX-Network
-                                    - State
-                                    - Class
-                                    - Session-Timeout
-                                    - Idle-Timeout
-                                    - Termination-Action
-                                    - Called-Station-Id
-                                    - Calling-Station-Id
-                                    - NAS-Identifier
-                                    - Proxy-State
-                                    - Login-LAT-Service
-                                    - Login-LAT-Node
-                                    - Login-LAT-Group
-                                    - Framed-AppleTalk-Link
-                                    - Framed-AppleTalk-Network
-                                    - Framed-AppleTalk-Zone
-                                    - Acct-Status-Type
-                                    - Acct-Delay-Time
-                                    - Acct-Input-Octets
-                                    - Acct-Output-Octets
-                                    - Acct-Session-Id
-                                    - Acct-Authentic
-                                    - Acct-Session-Time
-                                    - Acct-Input-Packets
-                                    - Acct-Output-Packets
-                                    - Acct-Terminate-Cause
-                                    - Acct-Multi-Session-Id
-                                    - Acct-Link-Count
-                                    - CHAP-Challenge
-                                    - NAS-Port-Type
-                                    - Port-Limit
-                                    - Login-LAT-Port
+                                    - 'User-Name'
+                                    - 'User-Password'
+                                    - 'CHAP-Password'
+                                    - 'NAS-IP-Address'
+                                    - 'NAS-Port'
+                                    - 'Service-Type'
+                                    - 'Framed-Protocol'
+                                    - 'Framed-IP-Address'
+                                    - 'Framed-IP-Netmask'
+                                    - 'Framed-Routing'
+                                    - 'Filter-Id'
+                                    - 'Framed-MTU'
+                                    - 'Framed-Compression'
+                                    - 'Login-IP-Host'
+                                    - 'Login-Service'
+                                    - 'Login-TCP-Port'
+                                    - 'Reply-Message'
+                                    - 'Callback-Number'
+                                    - 'Callback-Id'
+                                    - 'Framed-Route'
+                                    - 'Framed-IPX-Network'
+                                    - 'State'
+                                    - 'Class'
+                                    - 'Session-Timeout'
+                                    - 'Idle-Timeout'
+                                    - 'Termination-Action'
+                                    - 'Called-Station-Id'
+                                    - 'Calling-Station-Id'
+                                    - 'NAS-Identifier'
+                                    - 'Proxy-State'
+                                    - 'Login-LAT-Service'
+                                    - 'Login-LAT-Node'
+                                    - 'Login-LAT-Group'
+                                    - 'Framed-AppleTalk-Link'
+                                    - 'Framed-AppleTalk-Network'
+                                    - 'Framed-AppleTalk-Zone'
+                                    - 'Acct-Status-Type'
+                                    - 'Acct-Delay-Time'
+                                    - 'Acct-Input-Octets'
+                                    - 'Acct-Output-Octets'
+                                    - 'Acct-Session-Id'
+                                    - 'Acct-Authentic'
+                                    - 'Acct-Session-Time'
+                                    - 'Acct-Input-Packets'
+                                    - 'Acct-Output-Packets'
+                                    - 'Acct-Terminate-Cause'
+                                    - 'Acct-Multi-Session-Id'
+                                    - 'Acct-Link-Count'
+                                    - 'CHAP-Challenge'
+                                    - 'NAS-Port-Type'
+                                    - 'Port-Limit'
+                                    - 'Login-LAT-Port'
                             rsso-endpoint-block-attribute:
                                 type: str
                                 choices:
-                                    - User-Name
-                                    - User-Password
-                                    - CHAP-Password
-                                    - NAS-IP-Address
-                                    - NAS-Port
-                                    - Service-Type
-                                    - Framed-Protocol
-                                    - Framed-IP-Address
-                                    - Framed-IP-Netmask
-                                    - Framed-Routing
-                                    - Filter-Id
-                                    - Framed-MTU
-                                    - Framed-Compression
-                                    - Login-IP-Host
-                                    - Login-Service
-                                    - Login-TCP-Port
-                                    - Reply-Message
-                                    - Callback-Number
-                                    - Callback-Id
-                                    - Framed-Route
-                                    - Framed-IPX-Network
-                                    - State
-                                    - Class
-                                    - Session-Timeout
-                                    - Idle-Timeout
-                                    - Termination-Action
-                                    - Called-Station-Id
-                                    - Calling-Station-Id
-                                    - NAS-Identifier
-                                    - Proxy-State
-                                    - Login-LAT-Service
-                                    - Login-LAT-Node
-                                    - Login-LAT-Group
-                                    - Framed-AppleTalk-Link
-                                    - Framed-AppleTalk-Network
-                                    - Framed-AppleTalk-Zone
-                                    - Acct-Status-Type
-                                    - Acct-Delay-Time
-                                    - Acct-Input-Octets
-                                    - Acct-Output-Octets
-                                    - Acct-Session-Id
-                                    - Acct-Authentic
-                                    - Acct-Session-Time
-                                    - Acct-Input-Packets
-                                    - Acct-Output-Packets
-                                    - Acct-Terminate-Cause
-                                    - Acct-Multi-Session-Id
-                                    - Acct-Link-Count
-                                    - CHAP-Challenge
-                                    - NAS-Port-Type
-                                    - Port-Limit
-                                    - Login-LAT-Port
+                                    - 'User-Name'
+                                    - 'User-Password'
+                                    - 'CHAP-Password'
+                                    - 'NAS-IP-Address'
+                                    - 'NAS-Port'
+                                    - 'Service-Type'
+                                    - 'Framed-Protocol'
+                                    - 'Framed-IP-Address'
+                                    - 'Framed-IP-Netmask'
+                                    - 'Framed-Routing'
+                                    - 'Filter-Id'
+                                    - 'Framed-MTU'
+                                    - 'Framed-Compression'
+                                    - 'Login-IP-Host'
+                                    - 'Login-Service'
+                                    - 'Login-TCP-Port'
+                                    - 'Reply-Message'
+                                    - 'Callback-Number'
+                                    - 'Callback-Id'
+                                    - 'Framed-Route'
+                                    - 'Framed-IPX-Network'
+                                    - 'State'
+                                    - 'Class'
+                                    - 'Session-Timeout'
+                                    - 'Idle-Timeout'
+                                    - 'Termination-Action'
+                                    - 'Called-Station-Id'
+                                    - 'Calling-Station-Id'
+                                    - 'NAS-Identifier'
+                                    - 'Proxy-State'
+                                    - 'Login-LAT-Service'
+                                    - 'Login-LAT-Node'
+                                    - 'Login-LAT-Group'
+                                    - 'Framed-AppleTalk-Link'
+                                    - 'Framed-AppleTalk-Network'
+                                    - 'Framed-AppleTalk-Zone'
+                                    - 'Acct-Status-Type'
+                                    - 'Acct-Delay-Time'
+                                    - 'Acct-Input-Octets'
+                                    - 'Acct-Output-Octets'
+                                    - 'Acct-Session-Id'
+                                    - 'Acct-Authentic'
+                                    - 'Acct-Session-Time'
+                                    - 'Acct-Input-Packets'
+                                    - 'Acct-Output-Packets'
+                                    - 'Acct-Terminate-Cause'
+                                    - 'Acct-Multi-Session-Id'
+                                    - 'Acct-Link-Count'
+                                    - 'CHAP-Challenge'
+                                    - 'NAS-Port-Type'
+                                    - 'Port-Limit'
+                                    - 'Login-LAT-Port'
                             rsso-ep-one-ip-only:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             rsso-flush-ip-session:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             rsso-log-flags:
                                 -
                                     type: str
                                     choices:
-                                        - none
-                                        - protocol-error
-                                        - profile-missing
-                                        - context-missing
-                                        - accounting-stop-missed
-                                        - accounting-event
-                                        - radiusd-other
-                                        - endpoint-block
+                                        - 'none'
+                                        - 'protocol-error'
+                                        - 'profile-missing'
+                                        - 'context-missing'
+                                        - 'accounting-stop-missed'
+                                        - 'accounting-event'
+                                        - 'radiusd-other'
+                                        - 'endpoint-block'
                             rsso-log-period:
                                 type: int
                             rsso-radius-response:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             rsso-radius-server-port:
                                 type: int
                             rsso-secret:
@@ -606,8 +606,8 @@ options:
                             rsso-validate-request-secret:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             secondary-secret:
                                 -
                                     type: str
@@ -623,65 +623,65 @@ options:
                             sso-attribute:
                                 type: str
                                 choices:
-                                    - User-Name
-                                    - User-Password
-                                    - CHAP-Password
-                                    - NAS-IP-Address
-                                    - NAS-Port
-                                    - Service-Type
-                                    - Framed-Protocol
-                                    - Framed-IP-Address
-                                    - Framed-IP-Netmask
-                                    - Framed-Routing
-                                    - Filter-Id
-                                    - Framed-MTU
-                                    - Framed-Compression
-                                    - Login-IP-Host
-                                    - Login-Service
-                                    - Login-TCP-Port
-                                    - Reply-Message
-                                    - Callback-Number
-                                    - Callback-Id
-                                    - Framed-Route
-                                    - Framed-IPX-Network
-                                    - State
-                                    - Class
-                                    - Session-Timeout
-                                    - Idle-Timeout
-                                    - Termination-Action
-                                    - Called-Station-Id
-                                    - Calling-Station-Id
-                                    - NAS-Identifier
-                                    - Proxy-State
-                                    - Login-LAT-Service
-                                    - Login-LAT-Node
-                                    - Login-LAT-Group
-                                    - Framed-AppleTalk-Link
-                                    - Framed-AppleTalk-Network
-                                    - Framed-AppleTalk-Zone
-                                    - Acct-Status-Type
-                                    - Acct-Delay-Time
-                                    - Acct-Input-Octets
-                                    - Acct-Output-Octets
-                                    - Acct-Session-Id
-                                    - Acct-Authentic
-                                    - Acct-Session-Time
-                                    - Acct-Input-Packets
-                                    - Acct-Output-Packets
-                                    - Acct-Terminate-Cause
-                                    - Acct-Multi-Session-Id
-                                    - Acct-Link-Count
-                                    - CHAP-Challenge
-                                    - NAS-Port-Type
-                                    - Port-Limit
-                                    - Login-LAT-Port
+                                    - 'User-Name'
+                                    - 'User-Password'
+                                    - 'CHAP-Password'
+                                    - 'NAS-IP-Address'
+                                    - 'NAS-Port'
+                                    - 'Service-Type'
+                                    - 'Framed-Protocol'
+                                    - 'Framed-IP-Address'
+                                    - 'Framed-IP-Netmask'
+                                    - 'Framed-Routing'
+                                    - 'Filter-Id'
+                                    - 'Framed-MTU'
+                                    - 'Framed-Compression'
+                                    - 'Login-IP-Host'
+                                    - 'Login-Service'
+                                    - 'Login-TCP-Port'
+                                    - 'Reply-Message'
+                                    - 'Callback-Number'
+                                    - 'Callback-Id'
+                                    - 'Framed-Route'
+                                    - 'Framed-IPX-Network'
+                                    - 'State'
+                                    - 'Class'
+                                    - 'Session-Timeout'
+                                    - 'Idle-Timeout'
+                                    - 'Termination-Action'
+                                    - 'Called-Station-Id'
+                                    - 'Calling-Station-Id'
+                                    - 'NAS-Identifier'
+                                    - 'Proxy-State'
+                                    - 'Login-LAT-Service'
+                                    - 'Login-LAT-Node'
+                                    - 'Login-LAT-Group'
+                                    - 'Framed-AppleTalk-Link'
+                                    - 'Framed-AppleTalk-Network'
+                                    - 'Framed-AppleTalk-Zone'
+                                    - 'Acct-Status-Type'
+                                    - 'Acct-Delay-Time'
+                                    - 'Acct-Input-Octets'
+                                    - 'Acct-Output-Octets'
+                                    - 'Acct-Session-Id'
+                                    - 'Acct-Authentic'
+                                    - 'Acct-Session-Time'
+                                    - 'Acct-Input-Packets'
+                                    - 'Acct-Output-Packets'
+                                    - 'Acct-Terminate-Cause'
+                                    - 'Acct-Multi-Session-Id'
+                                    - 'Acct-Link-Count'
+                                    - 'CHAP-Challenge'
+                                    - 'NAS-Port-Type'
+                                    - 'Port-Limit'
+                                    - 'Login-LAT-Port'
                             sso-attribute-key:
                                 type: str
                             sso-attribute-value-override:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             tertiary-secret:
                                 -
                                     type: str
@@ -692,24 +692,24 @@ options:
                             use-group-for-profile:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             use-management-vdom:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             username-case-sensitive:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                     h3c-compatibility:
                         type: str
                         description: 'Enable/disable compatibility with the H3C, a mechanism that performs security checking for authentication.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     name:
                         type: str
                         description: 'RADIUS server entry name.'
@@ -720,20 +720,20 @@ options:
                         type: str
                         description: 'Password encoding.'
                         choices:
-                            - ISO-8859-1
-                            - auto
+                            - 'ISO-8859-1'
+                            - 'auto'
                     password-renewal:
                         type: str
                         description: 'Enable/disable password renewal.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     radius-coa:
                         type: str
                         description: 'Enable to allow a mechanism to change the attributes of an authentication, authorization, and accounting session after it is authenticated.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     radius-port:
                         type: int
                         description: 'RADIUS service port number.'
@@ -741,8 +741,8 @@ options:
                         type: str
                         description: 'Enable/disable RADIUS based single sign on feature.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     rsso-context-timeout:
                         type: int
                         description: 'Time in seconds before the logged out user is removed from the "user context list" of logged on users.'
@@ -750,138 +750,138 @@ options:
                         type: str
                         description: 'RADIUS attributes used to extract the user end point identifer from the RADIUS Start record.'
                         choices:
-                            - User-Name
-                            - User-Password
-                            - CHAP-Password
-                            - NAS-IP-Address
-                            - NAS-Port
-                            - Service-Type
-                            - Framed-Protocol
-                            - Framed-IP-Address
-                            - Framed-IP-Netmask
-                            - Framed-Routing
-                            - Filter-Id
-                            - Framed-MTU
-                            - Framed-Compression
-                            - Login-IP-Host
-                            - Login-Service
-                            - Login-TCP-Port
-                            - Reply-Message
-                            - Callback-Number
-                            - Callback-Id
-                            - Framed-Route
-                            - Framed-IPX-Network
-                            - State
-                            - Class
-                            - Session-Timeout
-                            - Idle-Timeout
-                            - Termination-Action
-                            - Called-Station-Id
-                            - Calling-Station-Id
-                            - NAS-Identifier
-                            - Proxy-State
-                            - Login-LAT-Service
-                            - Login-LAT-Node
-                            - Login-LAT-Group
-                            - Framed-AppleTalk-Link
-                            - Framed-AppleTalk-Network
-                            - Framed-AppleTalk-Zone
-                            - Acct-Status-Type
-                            - Acct-Delay-Time
-                            - Acct-Input-Octets
-                            - Acct-Output-Octets
-                            - Acct-Session-Id
-                            - Acct-Authentic
-                            - Acct-Session-Time
-                            - Acct-Input-Packets
-                            - Acct-Output-Packets
-                            - Acct-Terminate-Cause
-                            - Acct-Multi-Session-Id
-                            - Acct-Link-Count
-                            - CHAP-Challenge
-                            - NAS-Port-Type
-                            - Port-Limit
-                            - Login-LAT-Port
+                            - 'User-Name'
+                            - 'User-Password'
+                            - 'CHAP-Password'
+                            - 'NAS-IP-Address'
+                            - 'NAS-Port'
+                            - 'Service-Type'
+                            - 'Framed-Protocol'
+                            - 'Framed-IP-Address'
+                            - 'Framed-IP-Netmask'
+                            - 'Framed-Routing'
+                            - 'Filter-Id'
+                            - 'Framed-MTU'
+                            - 'Framed-Compression'
+                            - 'Login-IP-Host'
+                            - 'Login-Service'
+                            - 'Login-TCP-Port'
+                            - 'Reply-Message'
+                            - 'Callback-Number'
+                            - 'Callback-Id'
+                            - 'Framed-Route'
+                            - 'Framed-IPX-Network'
+                            - 'State'
+                            - 'Class'
+                            - 'Session-Timeout'
+                            - 'Idle-Timeout'
+                            - 'Termination-Action'
+                            - 'Called-Station-Id'
+                            - 'Calling-Station-Id'
+                            - 'NAS-Identifier'
+                            - 'Proxy-State'
+                            - 'Login-LAT-Service'
+                            - 'Login-LAT-Node'
+                            - 'Login-LAT-Group'
+                            - 'Framed-AppleTalk-Link'
+                            - 'Framed-AppleTalk-Network'
+                            - 'Framed-AppleTalk-Zone'
+                            - 'Acct-Status-Type'
+                            - 'Acct-Delay-Time'
+                            - 'Acct-Input-Octets'
+                            - 'Acct-Output-Octets'
+                            - 'Acct-Session-Id'
+                            - 'Acct-Authentic'
+                            - 'Acct-Session-Time'
+                            - 'Acct-Input-Packets'
+                            - 'Acct-Output-Packets'
+                            - 'Acct-Terminate-Cause'
+                            - 'Acct-Multi-Session-Id'
+                            - 'Acct-Link-Count'
+                            - 'CHAP-Challenge'
+                            - 'NAS-Port-Type'
+                            - 'Port-Limit'
+                            - 'Login-LAT-Port'
                     rsso-endpoint-block-attribute:
                         type: str
                         description: 'RADIUS attributes used to block a user.'
                         choices:
-                            - User-Name
-                            - User-Password
-                            - CHAP-Password
-                            - NAS-IP-Address
-                            - NAS-Port
-                            - Service-Type
-                            - Framed-Protocol
-                            - Framed-IP-Address
-                            - Framed-IP-Netmask
-                            - Framed-Routing
-                            - Filter-Id
-                            - Framed-MTU
-                            - Framed-Compression
-                            - Login-IP-Host
-                            - Login-Service
-                            - Login-TCP-Port
-                            - Reply-Message
-                            - Callback-Number
-                            - Callback-Id
-                            - Framed-Route
-                            - Framed-IPX-Network
-                            - State
-                            - Class
-                            - Session-Timeout
-                            - Idle-Timeout
-                            - Termination-Action
-                            - Called-Station-Id
-                            - Calling-Station-Id
-                            - NAS-Identifier
-                            - Proxy-State
-                            - Login-LAT-Service
-                            - Login-LAT-Node
-                            - Login-LAT-Group
-                            - Framed-AppleTalk-Link
-                            - Framed-AppleTalk-Network
-                            - Framed-AppleTalk-Zone
-                            - Acct-Status-Type
-                            - Acct-Delay-Time
-                            - Acct-Input-Octets
-                            - Acct-Output-Octets
-                            - Acct-Session-Id
-                            - Acct-Authentic
-                            - Acct-Session-Time
-                            - Acct-Input-Packets
-                            - Acct-Output-Packets
-                            - Acct-Terminate-Cause
-                            - Acct-Multi-Session-Id
-                            - Acct-Link-Count
-                            - CHAP-Challenge
-                            - NAS-Port-Type
-                            - Port-Limit
-                            - Login-LAT-Port
+                            - 'User-Name'
+                            - 'User-Password'
+                            - 'CHAP-Password'
+                            - 'NAS-IP-Address'
+                            - 'NAS-Port'
+                            - 'Service-Type'
+                            - 'Framed-Protocol'
+                            - 'Framed-IP-Address'
+                            - 'Framed-IP-Netmask'
+                            - 'Framed-Routing'
+                            - 'Filter-Id'
+                            - 'Framed-MTU'
+                            - 'Framed-Compression'
+                            - 'Login-IP-Host'
+                            - 'Login-Service'
+                            - 'Login-TCP-Port'
+                            - 'Reply-Message'
+                            - 'Callback-Number'
+                            - 'Callback-Id'
+                            - 'Framed-Route'
+                            - 'Framed-IPX-Network'
+                            - 'State'
+                            - 'Class'
+                            - 'Session-Timeout'
+                            - 'Idle-Timeout'
+                            - 'Termination-Action'
+                            - 'Called-Station-Id'
+                            - 'Calling-Station-Id'
+                            - 'NAS-Identifier'
+                            - 'Proxy-State'
+                            - 'Login-LAT-Service'
+                            - 'Login-LAT-Node'
+                            - 'Login-LAT-Group'
+                            - 'Framed-AppleTalk-Link'
+                            - 'Framed-AppleTalk-Network'
+                            - 'Framed-AppleTalk-Zone'
+                            - 'Acct-Status-Type'
+                            - 'Acct-Delay-Time'
+                            - 'Acct-Input-Octets'
+                            - 'Acct-Output-Octets'
+                            - 'Acct-Session-Id'
+                            - 'Acct-Authentic'
+                            - 'Acct-Session-Time'
+                            - 'Acct-Input-Packets'
+                            - 'Acct-Output-Packets'
+                            - 'Acct-Terminate-Cause'
+                            - 'Acct-Multi-Session-Id'
+                            - 'Acct-Link-Count'
+                            - 'CHAP-Challenge'
+                            - 'NAS-Port-Type'
+                            - 'Port-Limit'
+                            - 'Login-LAT-Port'
                     rsso-ep-one-ip-only:
                         type: str
                         description: 'Enable/disable the replacement of old IP addresses with new ones for the same endpoint on RADIUS accounting Start messages.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     rsso-flush-ip-session:
                         type: str
                         description: 'Enable/disable flushing user IP sessions on RADIUS accounting Stop messages.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     rsso-log-flags:
                         -
                             type: str
                             choices:
-                                - none
-                                - protocol-error
-                                - profile-missing
-                                - context-missing
-                                - accounting-stop-missed
-                                - accounting-event
-                                - radiusd-other
-                                - endpoint-block
+                                - 'none'
+                                - 'protocol-error'
+                                - 'profile-missing'
+                                - 'context-missing'
+                                - 'accounting-stop-missed'
+                                - 'accounting-event'
+                                - 'radiusd-other'
+                                - 'endpoint-block'
                     rsso-log-period:
                         type: int
                         description: 'Time interval in seconds that group event log messages will be generated for dynamic profile events.'
@@ -889,8 +889,8 @@ options:
                         type: str
                         description: 'Enable/disable sending RADIUS response packets after receiving Start and Stop records.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     rsso-radius-server-port:
                         type: int
                         description: 'UDP port to listen on for RADIUS Start and Stop records.'
@@ -901,8 +901,8 @@ options:
                         type: str
                         description: 'Enable/disable validating the RADIUS request shared secret in the Start or End record.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     secondary-secret:
                         -
                             type: str
@@ -922,58 +922,58 @@ options:
                         type: str
                         description: 'RADIUS attribute that contains the profile group name to be extracted from the RADIUS Start record.'
                         choices:
-                            - User-Name
-                            - User-Password
-                            - CHAP-Password
-                            - NAS-IP-Address
-                            - NAS-Port
-                            - Service-Type
-                            - Framed-Protocol
-                            - Framed-IP-Address
-                            - Framed-IP-Netmask
-                            - Framed-Routing
-                            - Filter-Id
-                            - Framed-MTU
-                            - Framed-Compression
-                            - Login-IP-Host
-                            - Login-Service
-                            - Login-TCP-Port
-                            - Reply-Message
-                            - Callback-Number
-                            - Callback-Id
-                            - Framed-Route
-                            - Framed-IPX-Network
-                            - State
-                            - Class
-                            - Session-Timeout
-                            - Idle-Timeout
-                            - Termination-Action
-                            - Called-Station-Id
-                            - Calling-Station-Id
-                            - NAS-Identifier
-                            - Proxy-State
-                            - Login-LAT-Service
-                            - Login-LAT-Node
-                            - Login-LAT-Group
-                            - Framed-AppleTalk-Link
-                            - Framed-AppleTalk-Network
-                            - Framed-AppleTalk-Zone
-                            - Acct-Status-Type
-                            - Acct-Delay-Time
-                            - Acct-Input-Octets
-                            - Acct-Output-Octets
-                            - Acct-Session-Id
-                            - Acct-Authentic
-                            - Acct-Session-Time
-                            - Acct-Input-Packets
-                            - Acct-Output-Packets
-                            - Acct-Terminate-Cause
-                            - Acct-Multi-Session-Id
-                            - Acct-Link-Count
-                            - CHAP-Challenge
-                            - NAS-Port-Type
-                            - Port-Limit
-                            - Login-LAT-Port
+                            - 'User-Name'
+                            - 'User-Password'
+                            - 'CHAP-Password'
+                            - 'NAS-IP-Address'
+                            - 'NAS-Port'
+                            - 'Service-Type'
+                            - 'Framed-Protocol'
+                            - 'Framed-IP-Address'
+                            - 'Framed-IP-Netmask'
+                            - 'Framed-Routing'
+                            - 'Filter-Id'
+                            - 'Framed-MTU'
+                            - 'Framed-Compression'
+                            - 'Login-IP-Host'
+                            - 'Login-Service'
+                            - 'Login-TCP-Port'
+                            - 'Reply-Message'
+                            - 'Callback-Number'
+                            - 'Callback-Id'
+                            - 'Framed-Route'
+                            - 'Framed-IPX-Network'
+                            - 'State'
+                            - 'Class'
+                            - 'Session-Timeout'
+                            - 'Idle-Timeout'
+                            - 'Termination-Action'
+                            - 'Called-Station-Id'
+                            - 'Calling-Station-Id'
+                            - 'NAS-Identifier'
+                            - 'Proxy-State'
+                            - 'Login-LAT-Service'
+                            - 'Login-LAT-Node'
+                            - 'Login-LAT-Group'
+                            - 'Framed-AppleTalk-Link'
+                            - 'Framed-AppleTalk-Network'
+                            - 'Framed-AppleTalk-Zone'
+                            - 'Acct-Status-Type'
+                            - 'Acct-Delay-Time'
+                            - 'Acct-Input-Octets'
+                            - 'Acct-Output-Octets'
+                            - 'Acct-Session-Id'
+                            - 'Acct-Authentic'
+                            - 'Acct-Session-Time'
+                            - 'Acct-Input-Packets'
+                            - 'Acct-Output-Packets'
+                            - 'Acct-Terminate-Cause'
+                            - 'Acct-Multi-Session-Id'
+                            - 'Acct-Link-Count'
+                            - 'CHAP-Challenge'
+                            - 'NAS-Port-Type'
+                            - 'Port-Limit'
+                            - 'Login-LAT-Port'
                     sso-attribute-key:
                         type: str
                         description: 'Key prefix for SSO group value in the SSO attribute.'
@@ -981,8 +981,8 @@ options:
                         type: str
                         description: 'Enable/disable override old attribute value with new value for the same endpoint.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     tertiary-secret:
                         -
                             type: str
@@ -996,14 +996,14 @@ options:
                         type: str
                         description: 'Enable/disable using management VDOM to send requests.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     username-case-sensitive:
                         type: str
                         description: 'Enable/disable case sensitive user names.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure RADIUS server entries.'
@@ -1017,43 +1017,43 @@ options:
                     -
                         type: str
                         choices:
-                            - acct-all-servers
-                            - acct-interim-interval
-                            - all-usergroup
-                            - auth-type
-                            - class
-                            - h3c-compatibility
-                            - name
-                            - nas-ip
-                            - password-encoding
-                            - password-renewal
-                            - radius-coa
-                            - radius-port
-                            - rsso
-                            - rsso-context-timeout
-                            - rsso-endpoint-attribute
-                            - rsso-endpoint-block-attribute
-                            - rsso-ep-one-ip-only
-                            - rsso-flush-ip-session
-                            - rsso-log-flags
-                            - rsso-log-period
-                            - rsso-radius-response
-                            - rsso-radius-server-port
-                            - rsso-secret
-                            - rsso-validate-request-secret
-                            - secondary-secret
-                            - secondary-server
-                            - secret
-                            - server
-                            - source-ip
-                            - sso-attribute
-                            - sso-attribute-key
-                            - sso-attribute-value-override
-                            - tertiary-secret
-                            - tertiary-server
-                            - timeout
-                            - use-management-vdom
-                            - username-case-sensitive
+                            - 'acct-all-servers'
+                            - 'acct-interim-interval'
+                            - 'all-usergroup'
+                            - 'auth-type'
+                            - 'class'
+                            - 'h3c-compatibility'
+                            - 'name'
+                            - 'nas-ip'
+                            - 'password-encoding'
+                            - 'password-renewal'
+                            - 'radius-coa'
+                            - 'radius-port'
+                            - 'rsso'
+                            - 'rsso-context-timeout'
+                            - 'rsso-endpoint-attribute'
+                            - 'rsso-endpoint-block-attribute'
+                            - 'rsso-ep-one-ip-only'
+                            - 'rsso-flush-ip-session'
+                            - 'rsso-log-flags'
+                            - 'rsso-log-period'
+                            - 'rsso-radius-response'
+                            - 'rsso-radius-server-port'
+                            - 'rsso-secret'
+                            - 'rsso-validate-request-secret'
+                            - 'secondary-secret'
+                            - 'secondary-server'
+                            - 'secret'
+                            - 'server'
+                            - 'source-ip'
+                            - 'sso-attribute'
+                            - 'sso-attribute-key'
+                            - 'sso-attribute-value-override'
+                            - 'tertiary-secret'
+                            - 'tertiary-server'
+                            - 'timeout'
+                            - 'use-management-vdom'
+                            - 'username-case-sensitive'
             filter:
                 -
                     type: str
@@ -1072,11 +1072,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

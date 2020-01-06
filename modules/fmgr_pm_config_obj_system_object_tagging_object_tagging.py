@@ -69,9 +69,9 @@ options:
                     type: str
                     description: 'Address.'
                     choices:
-                        - optional
-                        - mandatory
-                        - disable
+                        - 'optional'
+                        - 'mandatory'
+                        - 'disable'
                 category:
                     type: str
                     description: 'Tag Category.'
@@ -82,22 +82,22 @@ options:
                     type: str
                     description: 'Device.'
                     choices:
-                        - optional
-                        - mandatory
-                        - disable
+                        - 'optional'
+                        - 'mandatory'
+                        - 'disable'
                 interface:
                     type: str
                     description: 'Interface.'
                     choices:
-                        - optional
-                        - mandatory
-                        - disable
+                        - 'optional'
+                        - 'mandatory'
+                        - 'disable'
                 multiple:
                     type: str
                     description: 'Allow multiple tag selection.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 tags:
                     -
                         type: str
@@ -118,9 +118,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

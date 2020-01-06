@@ -68,8 +68,8 @@ options:
                         type: str
                         description: 'Enable/disable WMM bandwidth admission control.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     bandwidth-capacity:
                         type: int
                         description: 'Maximum bandwidth capacity allowed (1 - 600000 Kbps, default = 2000).'
@@ -77,14 +77,14 @@ options:
                         type: str
                         description: 'Enable/disable client rate burst.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     call-admission-control:
                         type: str
                         description: 'Enable/disable WMM call admission control.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     call-capacity:
                         type: int
                         description: 'Maximum number of Voice over WLAN (VoWLAN) phones allowed (0 - 60, default = 10).'
@@ -107,8 +107,8 @@ options:
                         type: str
                         description: 'Enable/disable Differentiated Services Code Point (DSCP) mapping.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dscp-wmm-vi:
                         -
                             type: int
@@ -128,14 +128,14 @@ options:
                         type: str
                         description: 'Enable/disable WiFi multi-media (WMM) control.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     wmm-uapsd:
                         type: str
                         description: 'Enable/disable WMM Unscheduled Automatic Power Save Delivery (U-APSD) power save mode.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure WiFi quality of service (QoS) profiles.'
@@ -149,24 +149,24 @@ options:
                     -
                         type: str
                         choices:
-                            - bandwidth-admission-control
-                            - bandwidth-capacity
-                            - burst
-                            - call-admission-control
-                            - call-capacity
-                            - comment
-                            - downlink
-                            - downlink-sta
-                            - dscp-wmm-be
-                            - dscp-wmm-bk
-                            - dscp-wmm-mapping
-                            - dscp-wmm-vi
-                            - dscp-wmm-vo
-                            - name
-                            - uplink
-                            - uplink-sta
-                            - wmm
-                            - wmm-uapsd
+                            - 'bandwidth-admission-control'
+                            - 'bandwidth-capacity'
+                            - 'burst'
+                            - 'call-admission-control'
+                            - 'call-capacity'
+                            - 'comment'
+                            - 'downlink'
+                            - 'downlink-sta'
+                            - 'dscp-wmm-be'
+                            - 'dscp-wmm-bk'
+                            - 'dscp-wmm-mapping'
+                            - 'dscp-wmm-vi'
+                            - 'dscp-wmm-vo'
+                            - 'name'
+                            - 'uplink'
+                            - 'uplink-sta'
+                            - 'wmm'
+                            - 'wmm-uapsd'
             filter:
                 -
                     type: str
@@ -185,11 +185,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

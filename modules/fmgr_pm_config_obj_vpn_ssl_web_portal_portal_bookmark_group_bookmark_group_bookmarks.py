@@ -75,17 +75,17 @@ options:
                         type: str
                         description: 'Application type.'
                         choices:
-                            - web
-                            - telnet
-                            - ssh
-                            - ftp
-                            - smb
-                            - vnc
-                            - rdp
-                            - citrix
-                            - rdpnative
-                            - portforward
-                            - sftp
+                            - 'web'
+                            - 'telnet'
+                            - 'ssh'
+                            - 'ftp'
+                            - 'smb'
+                            - 'vnc'
+                            - 'rdp'
+                            - 'citrix'
+                            - 'rdpnative'
+                            - 'portforward'
+                            - 'sftp'
                     description:
                         type: str
                         description: 'Description.'
@@ -134,51 +134,51 @@ options:
                         type: str
                         description: 'Security mode for RDP connection.'
                         choices:
-                            - rdp
-                            - nla
-                            - tls
-                            - any
+                            - 'rdp'
+                            - 'nla'
+                            - 'tls'
+                            - 'any'
                     server-layout:
                         type: str
                         description: 'Server side keyboard layout.'
                         choices:
-                            - en-us-qwerty
-                            - de-de-qwertz
-                            - fr-fr-azerty
-                            - it-it-qwerty
-                            - sv-se-qwerty
-                            - failsafe
-                            - en-gb-qwerty
-                            - es-es-qwerty
-                            - fr-ch-qwertz
-                            - ja-jp-qwerty
-                            - pt-br-qwerty
-                            - tr-tr-qwerty
+                            - 'en-us-qwerty'
+                            - 'de-de-qwertz'
+                            - 'fr-fr-azerty'
+                            - 'it-it-qwerty'
+                            - 'sv-se-qwerty'
+                            - 'failsafe'
+                            - 'en-gb-qwerty'
+                            - 'es-es-qwerty'
+                            - 'fr-ch-qwertz'
+                            - 'ja-jp-qwerty'
+                            - 'pt-br-qwerty'
+                            - 'tr-tr-qwerty'
                     show-status-window:
                         type: str
                         description: 'Enable/disable showing of status window.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     sso:
                         type: str
                         description: 'Single Sign-On.'
                         choices:
-                            - disable
-                            - static
-                            - auto
+                            - 'disable'
+                            - 'static'
+                            - 'auto'
                     sso-credential:
                         type: str
                         description: 'Single sign-on credentials.'
                         choices:
-                            - sslvpn-login
-                            - alternative
+                            - 'sslvpn-login'
+                            - 'alternative'
                     sso-credential-sent-once:
                         type: str
                         description: 'Single sign-on credentials are only sent once to remote server.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     sso-password:
                         -
                             type: str
@@ -201,29 +201,29 @@ options:
                     -
                         type: str
                         choices:
-                            - additional-params
-                            - apptype
-                            - description
-                            - folder
-                            - host
-                            - listening-port
-                            - load-balancing-info
-                            - logon-password
-                            - logon-user
-                            - name
-                            - port
-                            - preconnection-blob
-                            - preconnection-id
-                            - remote-port
-                            - security
-                            - server-layout
-                            - show-status-window
-                            - sso
-                            - sso-credential
-                            - sso-credential-sent-once
-                            - sso-password
-                            - sso-username
-                            - url
+                            - 'additional-params'
+                            - 'apptype'
+                            - 'description'
+                            - 'folder'
+                            - 'host'
+                            - 'listening-port'
+                            - 'load-balancing-info'
+                            - 'logon-password'
+                            - 'logon-user'
+                            - 'name'
+                            - 'port'
+                            - 'preconnection-blob'
+                            - 'preconnection-id'
+                            - 'remote-port'
+                            - 'security'
+                            - 'server-layout'
+                            - 'show-status-window'
+                            - 'sso'
+                            - 'sso-credential'
+                            - 'sso-credential-sent-once'
+                            - 'sso-password'
+                            - 'sso-username'
+                            - 'url'
             filter:
                 -
                     type: str
@@ -242,11 +242,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

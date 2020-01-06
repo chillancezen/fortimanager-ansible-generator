@@ -79,9 +79,9 @@ options:
                     -
                         type: str
                         choices:
-                            - adom-name
-                            - mail-server
-                            - notify
+                            - 'adom-name'
+                            - 'mail-server'
+                            - 'notify'
             filter:
                 -
                     type: str
@@ -95,8 +95,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

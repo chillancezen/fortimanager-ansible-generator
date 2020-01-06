@@ -69,10 +69,10 @@ options:
                         type: str
                         description: 'Policy action (allow/deny/ipsec).'
                         choices:
-                            - deny
-                            - accept
-                            - ipsec
-                            - ssl-vpn
+                            - 'deny'
+                            - 'accept'
+                            - 'ipsec'
+                            - 'ssl-vpn'
                     app-category:
                         type: str
                         description: 'Application category ID list.'
@@ -86,8 +86,8 @@ options:
                         type: str
                         description: 'Enable/disable policy traffic ASIC offloading.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     av-profile:
                         type: str
                         description: 'Name of an existing Antivirus profile.'
@@ -102,22 +102,22 @@ options:
                         description: 'Names of devices or device groups that can be matched by the policy.'
                     diffserv-forward:
                         type: str
-                        description: 'Enable to change packet's DiffServ values to the specified diffservcode-forward value.'
+                        description: 'Enable to change packets DiffServ values to the specified diffservcode-forward value.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     diffserv-reverse:
                         type: str
-                        description: 'Enable to change packet's reverse (reply) DiffServ values to the specified diffservcode-rev value.'
+                        description: 'Enable to change packets reverse (reply) DiffServ values to the specified diffservcode-rev value.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     diffservcode-forward:
                         type: str
-                        description: 'Change packet's DiffServ to this value.'
+                        description: 'Change packets DiffServ to this value.'
                     diffservcode-rev:
                         type: str
-                        description: 'Change packet's reverse (reply) DiffServ to this value.'
+                        description: 'Change packets reverse (reply) DiffServ to this value.'
                     dlp-sensor:
                         type: str
                         description: 'Name of an existing DLP sensor.'
@@ -125,14 +125,14 @@ options:
                         type: str
                         description: 'Enable DSCP check.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dscp-negate:
                         type: str
                         description: 'Enable negated DSCP match.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dscp-value:
                         type: str
                         description: 'DSCP value.'
@@ -140,8 +140,8 @@ options:
                         type: str
                         description: 'Enable DSRI to ignore HTTP server responses.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dstaddr:
                         type: str
                         description: 'Destination address and address group names.'
@@ -149,8 +149,8 @@ options:
                         type: str
                         description: 'When enabled dstaddr specifies what the destination address must NOT be.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dstintf:
                         type: str
                         description: 'Outgoing (egress) interface.'
@@ -158,14 +158,14 @@ options:
                         type: str
                         description: 'How to handle sessions if the configuration of this firewall policy changes.'
                         choices:
-                            - check-all
-                            - check-new
+                            - 'check-all'
+                            - 'check-new'
                     fixedport:
                         type: str
-                        description: 'Enable to prevent source NAT from changing a session's source port.'
+                        description: 'Enable to prevent source NAT from changing a sessions source port.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     global-label:
                         type: str
                         description: 'Label for the policy that appears when the GUI is in Global View mode.'
@@ -179,14 +179,14 @@ options:
                         type: str
                         description: 'Policy-based IPsec VPN: only traffic from the remote network can initiate a VPN.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ippool:
                         type: str
                         description: 'Enable to use IP Pools for source NAT.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ips-sensor:
                         type: str
                         description: 'Name of an existing IPS sensor.'
@@ -197,16 +197,16 @@ options:
                         type: str
                         description: 'Enable or disable logging. Log all sessions or security profile sessions.'
                         choices:
-                            - disable
-                            - enable
-                            - all
-                            - utm
+                            - 'disable'
+                            - 'enable'
+                            - 'all'
+                            - 'utm'
                     logtraffic-start:
                         type: str
                         description: 'Record logs when a session starts and ends.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     mms-profile:
                         type: str
                         description: 'Name of an existing MMS profile.'
@@ -217,32 +217,32 @@ options:
                         type: str
                         description: 'Enable/disable source NAT.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     natinbound:
                         type: str
                         description: 'Policy-based IPsec VPN: apply destination NAT to inbound traffic.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     natoutbound:
                         type: str
                         description: 'Policy-based IPsec VPN: apply source NAT to outbound traffic.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     np-accelation:
                         type: str
                         description: 'Enable/disable UTM Network Processor acceleration.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     outbound:
                         type: str
                         description: 'Policy-based IPsec VPN: only traffic from the internal network can initiate a VPN.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     per-ip-shaper:
                         type: str
                         description: 'Per-IP traffic shaper.'
@@ -262,8 +262,8 @@ options:
                         type: str
                         description: 'Determine whether the firewall policy allows security profile groups or single profiles only.'
                         choices:
-                            - single
-                            - group
+                            - 'single'
+                            - 'group'
                     replacemsg-override-group:
                         type: str
                         description: 'Override the default replacement message group for this policy.'
@@ -271,8 +271,8 @@ options:
                         type: str
                         description: 'Enable/disable RADIUS single sign-on (RSSO).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     schedule:
                         type: str
                         description: 'Schedule name.'
@@ -280,8 +280,8 @@ options:
                         type: str
                         description: 'Enable/disable return of deny-packet.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     service:
                         type: str
                         description: 'Service and service group names.'
@@ -289,8 +289,8 @@ options:
                         type: str
                         description: 'When enabled service specifies what the service must NOT be.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     session-ttl:
                         type: int
                         description: 'Session TTL in seconds for sessions accepted by this policy. 0 means use the system default session TTL.'
@@ -304,8 +304,8 @@ options:
                         type: str
                         description: 'When enabled srcaddr specifies what the source address must NOT be.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     srcintf:
                         type: str
                         description: 'Incoming (ingress) interface.'
@@ -313,8 +313,8 @@ options:
                         type: str
                         description: 'Enable to copy decrypted SSL traffic to a FortiGate interface (called SSL mirroring).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ssl-mirror-intf:
                         type: str
                         description: 'SSL mirror interface name.'
@@ -325,8 +325,8 @@ options:
                         type: str
                         description: 'Enable or disable this policy.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     tags:
                         type: str
                         description: 'Names of object-tags applied to this policy.'
@@ -340,15 +340,15 @@ options:
                         type: str
                         description: 'Enable/disable creation of TCP session without SYN flag.'
                         choices:
-                            - all
-                            - data-only
-                            - disable
+                            - 'all'
+                            - 'data-only'
+                            - 'disable'
                     timeout-send-rst:
                         type: str
                         description: 'Enable/disable sending RST packets when TCP sessions expire.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     traffic-shaper:
                         type: str
                         description: 'Reverse traffic shaper.'
@@ -365,8 +365,8 @@ options:
                         type: str
                         description: 'Enable AV/web/ips protection profile.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     uuid:
                         type: str
                         description: 'Universally Unique Identifier (UUID; automatically assigned but can be manually reset).'
@@ -398,82 +398,82 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - app-category
-                            - application
-                            - application-list
-                            - auto-asic-offload
-                            - av-profile
-                            - comments
-                            - custom-log-fields
-                            - devices
-                            - diffserv-forward
-                            - diffserv-reverse
-                            - diffservcode-forward
-                            - diffservcode-rev
-                            - dlp-sensor
-                            - dscp-match
-                            - dscp-negate
-                            - dscp-value
-                            - dsri
-                            - dstaddr
-                            - dstaddr-negate
-                            - dstintf
-                            - firewall-session-dirty
-                            - fixedport
-                            - global-label
-                            - groups
-                            - icap-profile
-                            - inbound
-                            - ippool
-                            - ips-sensor
-                            - label
-                            - logtraffic
-                            - logtraffic-start
-                            - mms-profile
-                            - name
-                            - nat
-                            - natinbound
-                            - natoutbound
-                            - np-accelation
-                            - outbound
-                            - per-ip-shaper
-                            - policyid
-                            - poolname
-                            - profile-group
-                            - profile-protocol-options
-                            - profile-type
-                            - replacemsg-override-group
-                            - rsso
-                            - schedule
-                            - send-deny-packet
-                            - service
-                            - service-negate
-                            - session-ttl
-                            - spamfilter-profile
-                            - srcaddr
-                            - srcaddr-negate
-                            - srcintf
-                            - ssl-mirror
-                            - ssl-mirror-intf
-                            - ssl-ssh-profile
-                            - status
-                            - tags
-                            - tcp-mss-receiver
-                            - tcp-mss-sender
-                            - tcp-session-without-syn
-                            - timeout-send-rst
-                            - traffic-shaper
-                            - traffic-shaper-reverse
-                            - url-category
-                            - users
-                            - utm-status
-                            - uuid
-                            - vlan-cos-fwd
-                            - vlan-cos-rev
-                            - voip-profile
-                            - vpntunnel
-                            - webfilter-profile
+                            - 'action'
+                            - 'app-category'
+                            - 'application'
+                            - 'application-list'
+                            - 'auto-asic-offload'
+                            - 'av-profile'
+                            - 'comments'
+                            - 'custom-log-fields'
+                            - 'devices'
+                            - 'diffserv-forward'
+                            - 'diffserv-reverse'
+                            - 'diffservcode-forward'
+                            - 'diffservcode-rev'
+                            - 'dlp-sensor'
+                            - 'dscp-match'
+                            - 'dscp-negate'
+                            - 'dscp-value'
+                            - 'dsri'
+                            - 'dstaddr'
+                            - 'dstaddr-negate'
+                            - 'dstintf'
+                            - 'firewall-session-dirty'
+                            - 'fixedport'
+                            - 'global-label'
+                            - 'groups'
+                            - 'icap-profile'
+                            - 'inbound'
+                            - 'ippool'
+                            - 'ips-sensor'
+                            - 'label'
+                            - 'logtraffic'
+                            - 'logtraffic-start'
+                            - 'mms-profile'
+                            - 'name'
+                            - 'nat'
+                            - 'natinbound'
+                            - 'natoutbound'
+                            - 'np-accelation'
+                            - 'outbound'
+                            - 'per-ip-shaper'
+                            - 'policyid'
+                            - 'poolname'
+                            - 'profile-group'
+                            - 'profile-protocol-options'
+                            - 'profile-type'
+                            - 'replacemsg-override-group'
+                            - 'rsso'
+                            - 'schedule'
+                            - 'send-deny-packet'
+                            - 'service'
+                            - 'service-negate'
+                            - 'session-ttl'
+                            - 'spamfilter-profile'
+                            - 'srcaddr'
+                            - 'srcaddr-negate'
+                            - 'srcintf'
+                            - 'ssl-mirror'
+                            - 'ssl-mirror-intf'
+                            - 'ssl-ssh-profile'
+                            - 'status'
+                            - 'tags'
+                            - 'tcp-mss-receiver'
+                            - 'tcp-mss-sender'
+                            - 'tcp-session-without-syn'
+                            - 'timeout-send-rst'
+                            - 'traffic-shaper'
+                            - 'traffic-shaper-reverse'
+                            - 'url-category'
+                            - 'users'
+                            - 'utm-status'
+                            - 'uuid'
+                            - 'vlan-cos-fwd'
+                            - 'vlan-cos-rev'
+                            - 'voip-profile'
+                            - 'vpntunnel'
+                            - 'webfilter-profile'
             filter:
                 -
                     type: str
@@ -492,11 +492,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int
@@ -692,16 +692,16 @@ return_of_api_category_0:
                   description: 'Names of devices or device groups that can be matched by the policy.'
                diffserv-forward:
                   type: str
-                  description: 'Enable to change packet's DiffServ values to the specified diffservcode-forward value.'
+                  description: 'Enable to change packets DiffServ values to the specified diffservcode-forward value.'
                diffserv-reverse:
                   type: str
-                  description: 'Enable to change packet's reverse (reply) DiffServ values to the specified diffservcode-rev value.'
+                  description: 'Enable to change packets reverse (reply) DiffServ values to the specified diffservcode-rev value.'
                diffservcode-forward:
                   type: str
-                  description: 'Change packet's DiffServ to this value.'
+                  description: 'Change packets DiffServ to this value.'
                diffservcode-rev:
                   type: str
-                  description: 'Change packet's reverse (reply) DiffServ to this value.'
+                  description: 'Change packets reverse (reply) DiffServ to this value.'
                dlp-sensor:
                   type: str
                   description: 'Name of an existing DLP sensor.'
@@ -731,7 +731,7 @@ return_of_api_category_0:
                   description: 'How to handle sessions if the configuration of this firewall policy changes.'
                fixedport:
                   type: str
-                  description: 'Enable to prevent source NAT from changing a session's source port.'
+                  description: 'Enable to prevent source NAT from changing a sessions source port.'
                global-label:
                   type: str
                   description: 'Label for the policy that appears when the GUI is in Global View mode.'

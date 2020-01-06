@@ -59,23 +59,23 @@ options:
                     -
                         type: str
                         choices:
-                            - sun
-                            - mon
-                            - tue
-                            - wed
-                            - thu
-                            - fri
-                            - sat
+                            - 'sun'
+                            - 'mon'
+                            - 'tue'
+                            - 'wed'
+                            - 'thu'
+                            - 'fri'
+                            - 'sat'
                 del-files:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable log file deletion after uploading.'
                      - 'disable - Disable log file deletion.'
                      - 'enable - Enable log file deletion.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 directory:
                     type: str
                     description: 'Upload server directory, for Unix server, use absolute'
@@ -85,42 +85,42 @@ options:
                     description: 'Roll log files when they reach this size (MB).'
                 gzip-format:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable compression of uploaded log files.'
                      - 'disable - Disable compression.'
                      - 'enable - Enable compression.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 hour:
                     type: int
                     default: 0
                     description: 'Log files rolling schedule (hour).'
                 ip:
                     type: str
-                    default: 0.0.0.0
+                    default: '0.0.0.0'
                     description: 'Upload server IP address.'
                 ip2:
                     type: str
-                    default: 0.0.0.0
+                    default: '0.0.0.0'
                     description: 'Upload server IP2 address.'
                 ip3:
                     type: str
-                    default: 0.0.0.0
+                    default: '0.0.0.0'
                     description: 'Upload server IP3 address.'
                 log-format:
                     type: str
-                    default: native
+                    default: 'native'
                     description:
                      - 'Format of uploaded log files.'
                      - 'native - Native format (text or compact).'
                      - 'text - Text format (convert if necessary).'
                      - 'csv - CSV (comma-separated value) format.'
                     choices:
-                        - native
-                        - text
-                        - csv
+                        - 'native'
+                        - 'text'
+                        - 'csv'
                 min:
                     type: int
                     default: 0
@@ -128,61 +128,61 @@ options:
                 password:
                     -
                         type: str
-                        default: ENC ODAwOTQ3NjUzMDIwNzk1OIPHW/nEK7BO24JYo1Em7rYn7CdH7TdDmHCHkrjwr+SVjdV8BYqBZBky2+zlZseWknPUDVeGjpRxz5S4sOpVJpepIlmEWlA52qtz+8yR98QYwq7x6zet0/xPAsnFJfQ5hkw+glg4dEZe8dYhZqUIpBTG3A1f
+                        default: 'ENC ODAwOTQ3NjUzMDIwNzk1OIPHW/nEK7BO24JYo1Em7rYn7CdH7TdDmHCHkrjwr+SVjdV8BYqBZBky2+zlZseWknPUDVeGjpRxz5S4sOpVJpepIlmEWlA52qtz+8yR98QYwq7x6zet0/xPAsnFJfQ5hkw+glg4dEZe8dYhZqUIpBTG3A1f'
                 password2:
                     -
                         type: str
-                        default: ENC NDI4MzA1MDAwNDc5MDM1NCgaDuO8BbylW468/v7rkRIUl/sgtzU4EClw6xY77UANoEcktN7+aT2a+gQ1XwPLrlWn+8x5CURG3MmkJULSMu2wqfWLPA7C1rIwlHY7Z22A1SW04YvTiPiKK/LY7OjYalTgHqL33VerBXP7/Sgyn5dlEZnu
+                        default: 'ENC NDI4MzA1MDAwNDc5MDM1NCgaDuO8BbylW468/v7rkRIUl/sgtzU4EClw6xY77UANoEcktN7+aT2a+gQ1XwPLrlWn+8x5CURG3MmkJULSMu2wqfWLPA7C1rIwlHY7Z22A1SW04YvTiPiKK/LY7OjYalTgHqL33VerBXP7/Sgyn5dlEZnu'
                 password3:
                     -
                         type: str
-                        default: ENC MTI4Mzk5OTgyODM4NjQ2NbWPjK9Eo8bsyoRiMK1soj62ZQgC0L38apk7ls82V9kbFawm+/xT594RzdZD3WU8luDAAvtCGVOECxVPu4I9owGyeS2ioYrWcqFmjTCrgZrM9D0Vb4UvHpENCMz/qImwFE+ka+Y/f8+c79d9b0unoAUgOi6M
+                        default: 'ENC MTI4Mzk5OTgyODM4NjQ2NbWPjK9Eo8bsyoRiMK1soj62ZQgC0L38apk7ls82V9kbFawm+/xT594RzdZD3WU8luDAAvtCGVOECxVPu4I9owGyeS2ioYrWcqFmjTCrgZrM9D0Vb4UvHpENCMz/qImwFE+ka+Y/f8+c79d9b0unoAUgOi6M'
                 server-type:
                     type: str
-                    default: ftp
+                    default: 'ftp'
                     description:
                      - 'Upload server type.'
                      - 'ftp - Upload via FTP.'
                      - 'sftp - Upload via SFTP.'
                      - 'scp - Upload via SCP.'
                     choices:
-                        - ftp
-                        - sftp
-                        - scp
+                        - 'ftp'
+                        - 'sftp'
+                        - 'scp'
                 upload:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable log file uploads.'
                      - 'disable - Disable log files uploading.'
                      - 'enable - Enable log files uploading.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 upload-hour:
                     type: int
                     default: 0
                     description: 'Log files upload schedule (hour).'
                 upload-mode:
                     type: str
-                    default: backup
+                    default: 'backup'
                     description:
                      - 'Upload mode with multiple servers.'
                      - 'backup - Servers are attempted and used one after the other upon failure to connect.'
                      - 'mirror - All configured servers are attempted and used.'
                     choices:
-                        - backup
-                        - mirror
+                        - 'backup'
+                        - 'mirror'
                 upload-trigger:
                     type: str
-                    default: on-roll
+                    default: 'on-roll'
                     description:
                      - 'Event triggering log files upload.'
                      - 'on-roll - Upload log files after they are rolled.'
                      - 'on-schedule - Upload log files daily.'
                     choices:
-                        - on-roll
-                        - on-schedule
+                        - 'on-roll'
+                        - 'on-schedule'
                 username:
                     type: str
                     description: 'Upload server login username.'
@@ -194,16 +194,16 @@ options:
                     description: 'Upload server login username3.'
                 when:
                     type: str
-                    default: none
+                    default: 'none'
                     description:
                      - 'Roll log files periodically.'
                      - 'none - Do not roll log files periodically.'
                      - 'daily - Roll log files daily.'
                      - 'weekly - Roll log files on certain days of week.'
                     choices:
-                        - none
-                        - daily
-                        - weekly
+                        - 'none'
+                        - 'daily'
+                        - 'weekly'
 
 '''
 

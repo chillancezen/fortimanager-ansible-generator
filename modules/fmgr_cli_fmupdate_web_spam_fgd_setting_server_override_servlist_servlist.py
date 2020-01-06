@@ -68,11 +68,11 @@ options:
                     description: 'Override server ID (1 - 10).'
                 ip:
                     type: str
-                    default: 0.0.0.0
+                    default: '0.0.0.0'
                     description: 'IPv4 address of the override server.'
                 ip6:
                     type: str
-                    default: ::
+                    default: '::'
                     description: 'IPv6 address of the override server.'
                 port:
                     type: int
@@ -82,9 +82,9 @@ options:
                     -
                         type: str
                         choices:
-                            - fgd
-                            - fgc
-                            - fsa
+                            - 'fgd'
+                            - 'fgc'
+                            - 'fsa'
 
 '''
 

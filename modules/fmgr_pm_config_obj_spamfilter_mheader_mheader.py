@@ -74,8 +74,8 @@ options:
                             type: str
                             description: 'Mark spam or good.'
                             choices:
-                                - spam
-                                - clear
+                                - 'spam'
+                                - 'clear'
                         fieldbody:
                             type: str
                             description: 'Pattern for the header field body.'
@@ -89,14 +89,14 @@ options:
                             type: str
                             description: 'Wildcard pattern or regular expression.'
                             choices:
-                                - wildcard
-                                - regexp
+                                - 'wildcard'
+                                - 'regexp'
                         status:
                             type: str
                             description: 'Enable/disable status.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                 id:
                     type: int
                     description: 'ID.'
@@ -120,9 +120,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

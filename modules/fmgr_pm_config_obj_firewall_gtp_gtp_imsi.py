@@ -70,8 +70,8 @@ options:
                         type: str
                         description: 'Action.'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     apnmember:
                         type: str
                         description: 'APN member.'
@@ -88,9 +88,9 @@ options:
                         -
                             type: str
                             choices:
-                                - ms
-                                - net
-                                - vrf
+                                - 'ms'
+                                - 'net'
+                                - 'vrf'
     schema_object1:
         methods: [get]
         description: 'IMSI.'
@@ -104,12 +104,12 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - apnmember
-                            - id
-                            - mcc-mnc
-                            - msisdn-prefix
-                            - selection-mode
+                            - 'action'
+                            - 'apnmember'
+                            - 'id'
+                            - 'mcc-mnc'
+                            - 'msisdn-prefix'
+                            - 'selection-mode'
             filter:
                 -
                     type: str
@@ -128,11 +128,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

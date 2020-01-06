@@ -68,8 +68,8 @@ options:
                         type: str
                         description: 'Enable/disable malicious URL blocking.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     comment:
                         type: str
                         description: 'Comment.'
@@ -79,10 +79,10 @@ options:
                                 type: str
                                 description: 'Action taken with traffic in which signatures are detected.'
                                 choices:
-                                    - pass
-                                    - block
-                                    - reset
-                                    - default
+                                    - 'pass'
+                                    - 'block'
+                                    - 'reset'
+                                    - 'default'
                             application:
                                 -
                                     type: str
@@ -107,20 +107,20 @@ options:
                                 type: str
                                 description: 'Enable/disable logging of signatures included in filter.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             log-attack-context:
                                 type: str
                                 description: 'Enable/disable logging of attack context: URL buffer, header buffer, body buffer, packet buffer.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             log-packet:
                                 type: str
                                 description: 'Enable/disable packet logging. Enable to save the packet that triggers the filter. You can download the packets in pcap format for diagnostic use.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             os:
                                 -
                                     type: str
@@ -131,10 +131,10 @@ options:
                                 type: str
                                 description: 'Quarantine method.'
                                 choices:
-                                    - none
-                                    - attacker
-                                    - both
-                                    - interface
+                                    - 'none'
+                                    - 'attacker'
+                                    - 'both'
+                                    - 'interface'
                             quarantine-expiry:
                                 type: str
                                 description: 'Duration of quarantine. (Format ###d##h##m, minimum 1m, maximum 364d23h59m, default = 5m). Requires quarantine set to attacker.'
@@ -142,8 +142,8 @@ options:
                                 type: str
                                 description: 'Enable/disable quarantine logging.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             rate-count:
                                 type: int
                                 description: 'Count of the rate.'
@@ -154,17 +154,17 @@ options:
                                 type: str
                                 description: 'Rate limit mode.'
                                 choices:
-                                    - periodical
-                                    - continuous
+                                    - 'periodical'
+                                    - 'continuous'
                             rate-track:
                                 type: str
                                 description: 'Track the packet protocol field.'
                                 choices:
-                                    - none
-                                    - src-ip
-                                    - dest-ip
-                                    - dhcp-client-mac
-                                    - dns-domain
+                                    - 'none'
+                                    - 'src-ip'
+                                    - 'dest-ip'
+                                    - 'dhcp-client-mac'
+                                    - 'dns-domain'
                             rule:
                                 type: str
                                 description: 'Identifies the predefined or custom IPS signatures to add to the sensor.'
@@ -175,25 +175,25 @@ options:
                                 type: str
                                 description: 'Status of the signatures included in filter. default enables the filter and only use filters with default status of enable. Filters with default status of disable will not be used.'
                                 choices:
-                                    - disable
-                                    - enable
-                                    - default
+                                    - 'disable'
+                                    - 'enable'
+                                    - 'default'
                     extended-log:
                         type: str
                         description: 'Enable/disable extended logging.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     filter:
                         -
                             action:
                                 type: str
                                 description: 'Action of selected rules.'
                                 choices:
-                                    - pass
-                                    - block
-                                    - default
-                                    - reset
+                                    - 'pass'
+                                    - 'block'
+                                    - 'default'
+                                    - 'reset'
                             application:
                                 -
                                     type: str
@@ -204,16 +204,16 @@ options:
                                 type: str
                                 description: 'Enable/disable logging of selected rules.'
                                 choices:
-                                    - disable
-                                    - enable
-                                    - default
+                                    - 'disable'
+                                    - 'enable'
+                                    - 'default'
                             log-packet:
                                 type: str
                                 description: 'Enable/disable packet logging of selected rules.'
                                 choices:
-                                    - disable
-                                    - enable
-                                    - default
+                                    - 'disable'
+                                    - 'enable'
+                                    - 'default'
                             name:
                                 type: str
                                 description: 'Filter name.'
@@ -227,10 +227,10 @@ options:
                                 type: str
                                 description: 'Quarantine IP or interface.'
                                 choices:
-                                    - none
-                                    - attacker
-                                    - both
-                                    - interface
+                                    - 'none'
+                                    - 'attacker'
+                                    - 'both'
+                                    - 'interface'
                             quarantine-expiry:
                                 type: int
                                 description: 'Duration of quarantine in minute.'
@@ -238,8 +238,8 @@ options:
                                 type: str
                                 description: 'Enable/disable logging of selected quarantine.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             severity:
                                 -
                                     type: str
@@ -247,9 +247,9 @@ options:
                                 type: str
                                 description: 'Selected rules status.'
                                 choices:
-                                    - disable
-                                    - enable
-                                    - default
+                                    - 'disable'
+                                    - 'enable'
+                                    - 'default'
                     name:
                         type: str
                         description: 'Sensor name.'
@@ -259,9 +259,9 @@ options:
                                 type: str
                                 description: 'Action of override rule.'
                                 choices:
-                                    - pass
-                                    - block
-                                    - reset
+                                    - 'pass'
+                                    - 'block'
+                                    - 'reset'
                             exempt-ip:
                                 -
                                     dst-ip:
@@ -277,22 +277,22 @@ options:
                                 type: str
                                 description: 'Enable/disable logging.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             log-packet:
                                 type: str
                                 description: 'Enable/disable packet logging.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             quarantine:
                                 type: str
                                 description: 'Quarantine IP or interface.'
                                 choices:
-                                    - none
-                                    - attacker
-                                    - both
-                                    - interface
+                                    - 'none'
+                                    - 'attacker'
+                                    - 'both'
+                                    - 'interface'
                             quarantine-expiry:
                                 type: int
                                 description: 'Duration of quarantine in minute.'
@@ -300,8 +300,8 @@ options:
                                 type: str
                                 description: 'Enable/disable logging of selected quarantine.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             rule-id:
                                 type: int
                                 description: 'Override rule ID.'
@@ -309,8 +309,8 @@ options:
                                 type: str
                                 description: 'Enable/disable status of override rule.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                     replacemsg-group:
                         type: str
                         description: 'Replacement message group.'
@@ -327,11 +327,11 @@ options:
                     -
                         type: str
                         choices:
-                            - block-malicious-url
-                            - comment
-                            - extended-log
-                            - name
-                            - replacemsg-group
+                            - 'block-malicious-url'
+                            - 'comment'
+                            - 'extended-log'
+                            - 'name'
+                            - 'replacemsg-group'
             filter:
                 -
                     type: str
@@ -350,11 +350,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

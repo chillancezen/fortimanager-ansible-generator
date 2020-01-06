@@ -78,8 +78,8 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
+                    - 'object member'
+                    - 'chksum'
     schema_object2:
         methods: [set, update]
         description: 'Device VDOM table.'
@@ -92,10 +92,10 @@ options:
                     type: str
                 opmode:
                     type: str
-                    default: nat
+                    default: 'nat'
                     choices:
-                        - nat
-                        - transparent
+                        - 'nat'
+                        - 'transparent'
                 rtm_prof_id:
                     type: int
                 status:

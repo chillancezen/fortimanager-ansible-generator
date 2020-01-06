@@ -69,64 +69,64 @@ options:
                     type: str
                     description: 'Action to take on the HTTP client-IP header in forwarded requests: forwards (pass), adds, or removes the HTTP header.'
                     choices:
-                        - pass
-                        - add
-                        - remove
+                        - 'pass'
+                        - 'add'
+                        - 'remove'
                 header-front-end-https:
                     type: str
                     description: 'Action to take on the HTTP front-end-HTTPS header in forwarded requests: forwards (pass), adds, or removes the HTTP header.'
                     choices:
-                        - pass
-                        - add
-                        - remove
+                        - 'pass'
+                        - 'add'
+                        - 'remove'
                 header-via-request:
                     type: str
                     description: 'Action to take on the HTTP via header in forwarded requests: forwards (pass), adds, or removes the HTTP header.'
                     choices:
-                        - pass
-                        - add
-                        - remove
+                        - 'pass'
+                        - 'add'
+                        - 'remove'
                 header-via-response:
                     type: str
                     description: 'Action to take on the HTTP via header in forwarded responses: forwards (pass), adds, or removes the HTTP header.'
                     choices:
-                        - pass
-                        - add
-                        - remove
+                        - 'pass'
+                        - 'add'
+                        - 'remove'
                 header-x-authenticated-groups:
                     type: str
                     description: 'Action to take on the HTTP x-authenticated-groups header in forwarded requests: forwards (pass), adds, or removes the HTTP header.'
                     choices:
-                        - pass
-                        - add
-                        - remove
+                        - 'pass'
+                        - 'add'
+                        - 'remove'
                 header-x-authenticated-user:
                     type: str
                     description: 'Action to take on the HTTP x-authenticated-user header in forwarded requests: forwards (pass), adds, or removes the HTTP header.'
                     choices:
-                        - pass
-                        - add
-                        - remove
+                        - 'pass'
+                        - 'add'
+                        - 'remove'
                 header-x-forwarded-for:
                     type: str
                     description: 'Action to take on the HTTP x-forwarded-for header in forwarded requests: forwards (pass), adds, or removes the HTTP header.'
                     choices:
-                        - pass
-                        - add
-                        - remove
+                        - 'pass'
+                        - 'add'
+                        - 'remove'
                 headers:
                     -
                         action:
                             type: str
                             description: 'Action when HTTP the header forwarded.'
                             choices:
-                                - add-to-request
-                                - add-to-response
-                                - remove-from-request
-                                - remove-from-response
+                                - 'add-to-request'
+                                - 'add-to-response'
+                                - 'remove-from-request'
+                                - 'remove-from-response'
                         content:
                             type: str
-                            description: 'HTTP header's content.'
+                            description: 'HTTP headers content.'
                         id:
                             type: int
                             description: 'HTTP forwarded header id.'
@@ -137,8 +137,8 @@ options:
                     type: str
                     description: 'Enable/disable logging HTTP header changes.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 name:
                     type: str
                     description: 'Profile name.'
@@ -146,8 +146,8 @@ options:
                     type: str
                     description: 'Enable/disable stripping unsupported encoding from the request header.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'Configure web proxy profiles.'
@@ -165,9 +165,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 
@@ -269,7 +269,7 @@ return_of_api_category_0:
                      description: 'Action when HTTP the header forwarded.'
                   content:
                      type: str
-                     description: 'HTTP header's content.'
+                     description: 'HTTP headers content.'
                   id:
                      type: int
                      description: 'HTTP forwarded header id.'

@@ -90,10 +90,10 @@ options:
                 detect-protocol:
                     type: str
                     choices:
-                        - ping
-                        - tcp-echo
-                        - udp-echo
-                        - http
+                        - 'ping'
+                        - 'tcp-echo'
+                        - 'udp-echo'
+                        - 'http'
                 detect-recoverytime:
                     type: int
                 detect-server:
@@ -119,8 +119,8 @@ options:
                 status:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 volume-ratio:
                     type: int
                 weight:
@@ -142,9 +142,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

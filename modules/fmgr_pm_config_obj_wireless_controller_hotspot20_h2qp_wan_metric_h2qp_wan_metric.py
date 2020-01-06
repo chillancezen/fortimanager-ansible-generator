@@ -75,15 +75,15 @@ options:
                     type: str
                     description: 'Link at capacity.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 link-status:
                     type: str
                     description: 'Link status.'
                     choices:
-                        - down
-                        - up
-                        - in-test
+                        - 'down'
+                        - 'up'
+                        - 'in-test'
                 load-measurement-duration:
                     type: int
                     description: 'Load measurement duration (in tenths of a second).'
@@ -94,8 +94,8 @@ options:
                     type: str
                     description: 'WAN link symmetry.'
                     choices:
-                        - asymmetric
-                        - symmetric
+                        - 'asymmetric'
+                        - 'symmetric'
                 uplink-load:
                     type: int
                     description: 'Uplink load.'
@@ -119,9 +119,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

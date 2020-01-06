@@ -59,9 +59,9 @@ options:
                     -
                         type: str
                         choices:
-                            - both
-                            - custom-url
-                            - fortiguard-db
+                            - 'both'
+                            - 'custom-url'
+                            - 'fortiguard-db'
 
 '''
 

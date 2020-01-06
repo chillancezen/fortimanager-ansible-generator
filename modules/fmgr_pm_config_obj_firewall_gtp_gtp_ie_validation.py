@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'IE validation.'
@@ -84,116 +84,116 @@ options:
                     type: str
                     description: 'Validate APN restriction.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 charging-ID:
                     type: str
                     description: 'Validate charging ID.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 charging-gateway-addr:
                     type: str
                     description: 'Validate charging gateway address.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 end-user-addr:
                     type: str
                     description: 'Validate end user address.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 gsn-addr:
                     type: str
                     description: 'Validate GSN address.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 imei:
                     type: str
                     description: 'Validate IMEI(SV).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 imsi:
                     type: str
                     description: 'Validate IMSI.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mm-context:
                     type: str
                     description: 'Validate MM context.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ms-tzone:
                     type: str
                     description: 'Validate MS time zone.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ms-validated:
                     type: str
                     description: 'Validate MS validated.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 msisdn:
                     type: str
                     description: 'Validate MSISDN.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 nsapi:
                     type: str
                     description: 'Validate NSAPI.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 pdp-context:
                     type: str
                     description: 'Validate PDP context.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 qos-profile:
                     type: str
                     description: 'Validate Quality of Service(QoS) profile.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 rai:
                     type: str
                     description: 'Validate RAI.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 rat-type:
                     type: str
                     description: 'Validate RAT type.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 reordering-required:
                     type: str
                     description: 'Validate re-ordering required.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 selection-mode:
                     type: str
                     description: 'Validate selection mode.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 uli:
                     type: str
                     description: 'Validate user location information.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

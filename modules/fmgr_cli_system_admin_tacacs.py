@@ -53,7 +53,7 @@ options:
                 -
                     authen-type:
                         type: str
-                        default: auto
+                        default: 'auto'
                         description:
                          - 'Authentication type.'
                          - 'auto - Use PAP, MSCHAP, and CHAP (in that order).'
@@ -62,25 +62,25 @@ options:
                          - 'chap - CHAP.'
                          - 'mschap - MSCHAP.'
                         choices:
-                            - auto
-                            - ascii
-                            - pap
-                            - chap
-                            - mschap
+                            - 'auto'
+                            - 'ascii'
+                            - 'pap'
+                            - 'chap'
+                            - 'mschap'
                     authorization:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable TACACS+ authorization.'
                          - 'disable - Disable TACACS+ authorization.'
                          - 'enable - Enable TACACS+ authorization (service = fortigate).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     key:
                         -
                             type: str
-                            default: ENC MTM1NzgxNTEwMTQ3MzkyN6Bf+SUc1DH38ALtjfXS+4tsPEStofpzICCe9zH2nI/U1uDRuS4ysXoRMhkM/i6ypV7BvpqVqu3wnaI3lWsFOh6+06ydV9EyGZ+z+v4JkMDSSJ5UHQdPh8DxRdsVvWS3WpWWGFXk4064PiT2A1zTZuT+ZqDM
+                            default: 'ENC MTM1NzgxNTEwMTQ3MzkyN6Bf+SUc1DH38ALtjfXS+4tsPEStofpzICCe9zH2nI/U1uDRuS4ysXoRMhkM/i6ypV7BvpqVqu3wnaI3lWsFOh6+06ydV9EyGZ+z+v4JkMDSSJ5UHQdPh8DxRdsVvWS3WpWWGFXk4064PiT2A1zTZuT+ZqDM'
                     name:
                         type: str
                         description: 'TACACS+ server entry name.'
@@ -91,7 +91,7 @@ options:
                     secondary-key:
                         -
                             type: str
-                            default: ENC MTM3MzM0NTI4MzQ3MTQ4OftOEtzg8U8bz+L2zW2yOkzO1vkOesoOkTy2j02IrPnwTVEVz7aOODvx+zGMUtELHdsY22GW20r4Q0OasjCqkmZgjt9PbfLA2Np3vyJ5ZPtz0IUohnN5frAIVPy7p2VtSHJmvOK3PrMoiwLcSesT0RKSn//Q
+                            default: 'ENC MTM3MzM0NTI4MzQ3MTQ4OftOEtzg8U8bz+L2zW2yOkzO1vkOesoOkTy2j02IrPnwTVEVz7aOODvx+zGMUtELHdsY22GW20r4Q0OasjCqkmZgjt9PbfLA2Np3vyJ5ZPtz0IUohnN5frAIVPy7p2VtSHJmvOK3PrMoiwLcSesT0RKSn//Q'
                     secondary-server:
                         type: str
                         description: '{<name_str|ip_str>} secondary server domain name or IP.'
@@ -101,7 +101,7 @@ options:
                     tertiary-key:
                         -
                             type: str
-                            default: ENC MjAzNTE3MDIwNDI1OTEwMgAtMeOT5CzyMlsFCmOGJ8cTlQYpjv7BJI+uC5QN2LxVGteUJ87W++EYhPaChx42doThcM3Gtb7w8PfrihahuU7S+qoi9weI6eVMq6AUQ7Zw0AomShHbqS8QLEsNf1a59nYX+Lp2wFPwgSYT4xlLOXCNX18h
+                            default: 'ENC MjAzNTE3MDIwNDI1OTEwMgAtMeOT5CzyMlsFCmOGJ8cTlQYpjv7BJI+uC5QN2LxVGteUJ87W++EYhPaChx42doThcM3Gtb7w8PfrihahuU7S+qoi9weI6eVMq6AUQ7Zw0AomShHbqS8QLEsNf1a59nYX+Lp2wFPwgSYT4xlLOXCNX18h'
                     tertiary-server:
                         type: str
                         description: '{<name_str|ip_str>} tertiary server domain name or IP.'
@@ -115,16 +115,16 @@ options:
                     -
                         type: str
                         choices:
-                            - authen-type
-                            - authorization
-                            - key
-                            - name
-                            - port
-                            - secondary-key
-                            - secondary-server
-                            - server
-                            - tertiary-key
-                            - tertiary-server
+                            - 'authen-type'
+                            - 'authorization'
+                            - 'key'
+                            - 'name'
+                            - 'port'
+                            - 'secondary-key'
+                            - 'secondary-server'
+                            - 'server'
+                            - 'tertiary-key'
+                            - 'tertiary-server'
             filter:
                 -
                     type: str
@@ -138,8 +138,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

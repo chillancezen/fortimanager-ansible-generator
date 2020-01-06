@@ -71,33 +71,33 @@ options:
                     -
                         type: str
                         choices:
-                            - https
-                            - ping
-                            - ssh
-                            - snmp
-                            - http
-                            - telnet
-                            - fgfm
-                            - auto-ipsec
-                            - radius-acct
-                            - probe-response
-                            - capwap
-                            - dnp
-                            - ftm
+                            - 'https'
+                            - 'ping'
+                            - 'ssh'
+                            - 'snmp'
+                            - 'http'
+                            - 'telnet'
+                            - 'fgfm'
+                            - 'auto-ipsec'
+                            - 'radius-acct'
+                            - 'probe-response'
+                            - 'capwap'
+                            - 'dnp'
+                            - 'ftm'
                 detectprotocol:
                     -
                         type: str
                         choices:
-                            - ping
-                            - tcp-echo
-                            - udp-echo
+                            - 'ping'
+                            - 'tcp-echo'
+                            - 'udp-echo'
                 detectserver:
                     type: str
                 gwdetect:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ha-priority:
                     type: int
                 id:
@@ -125,9 +125,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

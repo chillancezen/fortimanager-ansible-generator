@@ -61,7 +61,7 @@ options:
                 type: str
     schema_object0:
         methods: [exec]
-        description: 'Replace device's serial number with new value.'
+        description: 'Replace devices serial number with new value.'
         api_categories: [api_tag0]
         api_tag0:
             workflow:

@@ -57,11 +57,11 @@ options:
                         description: 'Private server ID (1 - 10).'
                     ip:
                         type: str
-                        default: 0.0.0.0
+                        default: '0.0.0.0'
                         description: 'IPv4 address of the FortiManager unit or private server.'
                     ip6:
                         type: str
-                        default: ::
+                        default: '::'
                         description: 'IPv6 address of the FortiManager unit or private server.'
                     time_zone:
                         type: int
@@ -77,10 +77,10 @@ options:
                     -
                         type: str
                         choices:
-                            - id
-                            - ip
-                            - ip6
-                            - time_zone
+                            - 'id'
+                            - 'ip'
+                            - 'ip6'
+                            - 'time_zone'
             filter:
                 -
                     type: str
@@ -94,8 +94,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

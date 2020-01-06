@@ -70,73 +70,73 @@ options:
                     -
                         type: str
                         choices:
-                            - adm_pass
-                            - adm_usr
-                            - app_ver
-                            - av_ver
-                            - beta
-                            - branch_pt
-                            - build
-                            - checksum
-                            - conf_status
-                            - conn_mode
-                            - conn_status
-                            - db_status
-                            - desc
-                            - dev_status
-                            - fap_cnt
-                            - faz.full_act
-                            - faz.perm
-                            - faz.quota
-                            - faz.used
-                            - fex_cnt
-                            - flags
-                            - foslic_cpu
-                            - foslic_dr_site
-                            - foslic_inst_time
-                            - foslic_last_sync
-                            - foslic_ram
-                            - foslic_type
-                            - foslic_utm
-                            - fsw_cnt
-                            - ha_group_id
-                            - ha_group_name
-                            - ha_mode
-                            - hdisk_size
-                            - hostname
-                            - hw_rev_major
-                            - hw_rev_minor
-                            - ip
-                            - ips_ext
-                            - ips_ver
-                            - last_checked
-                            - last_resync
-                            - latitude
-                            - lic_flags
-                            - lic_region
-                            - location_from
-                            - logdisk_size
-                            - longitude
-                            - maxvdom
-                            - mgmt_id
-                            - mgmt_if
-                            - mgmt_mode
-                            - mgt_vdom
-                            - mr
-                            - name
-                            - os_type
-                            - os_ver
-                            - patch
-                            - platform_str
-                            - psk
-                            - sn
-                            - version
-                            - vm_cpu
-                            - vm_cpu_limit
-                            - vm_lic_expire
-                            - vm_mem
-                            - vm_mem_limit
-                            - vm_status
+                            - 'adm_pass'
+                            - 'adm_usr'
+                            - 'app_ver'
+                            - 'av_ver'
+                            - 'beta'
+                            - 'branch_pt'
+                            - 'build'
+                            - 'checksum'
+                            - 'conf_status'
+                            - 'conn_mode'
+                            - 'conn_status'
+                            - 'db_status'
+                            - 'desc'
+                            - 'dev_status'
+                            - 'fap_cnt'
+                            - 'faz.full_act'
+                            - 'faz.perm'
+                            - 'faz.quota'
+                            - 'faz.used'
+                            - 'fex_cnt'
+                            - 'flags'
+                            - 'foslic_cpu'
+                            - 'foslic_dr_site'
+                            - 'foslic_inst_time'
+                            - 'foslic_last_sync'
+                            - 'foslic_ram'
+                            - 'foslic_type'
+                            - 'foslic_utm'
+                            - 'fsw_cnt'
+                            - 'ha_group_id'
+                            - 'ha_group_name'
+                            - 'ha_mode'
+                            - 'hdisk_size'
+                            - 'hostname'
+                            - 'hw_rev_major'
+                            - 'hw_rev_minor'
+                            - 'ip'
+                            - 'ips_ext'
+                            - 'ips_ver'
+                            - 'last_checked'
+                            - 'last_resync'
+                            - 'latitude'
+                            - 'lic_flags'
+                            - 'lic_region'
+                            - 'location_from'
+                            - 'logdisk_size'
+                            - 'longitude'
+                            - 'maxvdom'
+                            - 'mgmt_id'
+                            - 'mgmt_if'
+                            - 'mgmt_mode'
+                            - 'mgt_vdom'
+                            - 'mr'
+                            - 'name'
+                            - 'os_type'
+                            - 'os_ver'
+                            - 'patch'
+                            - 'platform_str'
+                            - 'psk'
+                            - 'sn'
+                            - 'version'
+                            - 'vm_cpu'
+                            - 'vm_cpu_limit'
+                            - 'vm_lic_expire'
+                            - 'vm_mem'
+                            - 'vm_mem_limit'
+                            - 'vm_status'
             filter:
                 -
                     type: str
@@ -154,9 +154,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'syntax'
             range:
                 -
                     type: int
@@ -193,53 +193,53 @@ options:
                         type: str
                     conf_status:
                         type: str
-                        default: unknown
+                        default: 'unknown'
                         choices:
-                            - unknown
-                            - insync
-                            - outofsync
+                            - 'unknown'
+                            - 'insync'
+                            - 'outofsync'
                     conn_mode:
                         type: str
-                        default: passive
+                        default: 'passive'
                         choices:
-                            - active
-                            - passive
+                            - 'active'
+                            - 'passive'
                     conn_status:
                         type: str
-                        default: UNKNOWN
+                        default: 'UNKNOWN'
                         choices:
-                            - UNKNOWN
-                            - up
-                            - down
+                            - 'UNKNOWN'
+                            - 'up'
+                            - 'down'
                     db_status:
                         type: str
-                        default: unknown
+                        default: 'unknown'
                         choices:
-                            - unknown
-                            - nomod
-                            - mod
+                            - 'unknown'
+                            - 'nomod'
+                            - 'mod'
                     desc:
                         type: str
                     dev_status:
                         type: str
-                        default: unknown
+                        default: 'unknown'
                         choices:
-                            - none
-                            - unknown
-                            - checkedin
-                            - inprogress
-                            - installed
-                            - aborted
-                            - sched
-                            - retry
-                            - canceled
-                            - pending
-                            - retrieved
-                            - changed_conf
-                            - sync_fail
-                            - timeout
-                            - rev_revert
-                            - auto_updated
+                            - 'none'
+                            - 'unknown'
+                            - 'checkedin'
+                            - 'inprogress'
+                            - 'installed'
+                            - 'aborted'
+                            - 'sched'
+                            - 'retry'
+                            - 'canceled'
+                            - 'pending'
+                            - 'retrieved'
+                            - 'changed_conf'
+                            - 'sync_fail'
+                            - 'timeout'
+                            - 'rev_revert'
+                            - 'auto_updated'
                     fap_cnt:
                         type: int
                     faz.full_act:
@@ -256,27 +256,27 @@ options:
                         -
                             type: str
                             choices:
-                                - has_hdd
-                                - vdom_enabled
-                                - discover
-                                - reload
-                                - interim_build
-                                - offline_mode
-                                - is_model
-                                - fips_mode
-                                - linked_to_model
-                                - ip-conflict
-                                - faz-autosync
+                                - 'has_hdd'
+                                - 'vdom_enabled'
+                                - 'discover'
+                                - 'reload'
+                                - 'interim_build'
+                                - 'offline_mode'
+                                - 'is_model'
+                                - 'fips_mode'
+                                - 'linked_to_model'
+                                - 'ip-conflict'
+                                - 'faz-autosync'
                     foslic_cpu:
                         type: int
                         description: 'VM Meter vCPU count.'
                     foslic_dr_site:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description: 'VM Meter DR Site status.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     foslic_inst_time:
                         type: int
                         description: 'VM Meter first deployment time (in UNIX timestamp).'
@@ -288,24 +288,24 @@ options:
                         description: 'VM Meter device RAM size (in MB).'
                     foslic_type:
                         type: str
-                        default: temporary
+                        default: 'temporary'
                         description: 'VM Meter license type.'
                         choices:
-                            - temporary
-                            - trial
-                            - regular
-                            - trial_expired
+                            - 'temporary'
+                            - 'trial'
+                            - 'regular'
+                            - 'trial_expired'
                     foslic_utm:
                         -
                             type: str
                             choices:
-                                - fw
-                                - av
-                                - ips
-                                - app
-                                - url
-                                - utm
-                                - fwb
+                                - 'fw'
+                                - 'av'
+                                - 'ips'
+                                - 'app'
+                                - 'url'
+                                - 'utm'
+                                - 'fwb'
                     fsw_cnt:
                         type: int
                     ha_group_id:
@@ -314,16 +314,16 @@ options:
                         type: str
                     ha_mode:
                         type: str
-                        default: standalone
+                        default: 'standalone'
                         description: 'enabled - Value reserved for non-FOS HA devices.'
                         choices:
-                            - standalone
-                            - AP
-                            - AA
-                            - ELBC
-                            - DUAL
-                            - enabled
-                            - unknown
+                            - 'standalone'
+                            - 'AP'
+                            - 'AA'
+                            - 'ELBC'
+                            - 'DUAL'
+                            - 'enabled'
+                            - 'unknown'
                     hdisk_size:
                         type: int
                     hostname:
@@ -365,12 +365,12 @@ options:
                         type: str
                     mgmt_mode:
                         type: str
-                        default: unreg
+                        default: 'unreg'
                         choices:
-                            - unreg
-                            - fmg
-                            - faz
-                            - fmgfaz
+                            - 'unreg'
+                            - 'fmg'
+                            - 'faz'
+                            - 'fmgfaz'
                     mgt_vdom:
                         type: str
                     mr:
@@ -381,35 +381,35 @@ options:
                         description: 'Unique name for the device.'
                     os_type:
                         type: str
-                        default: unknown
+                        default: 'unknown'
                         choices:
-                            - unknown
-                            - fos
-                            - fsw
-                            - foc
-                            - fml
-                            - faz
-                            - fwb
-                            - fch
-                            - fct
-                            - log
-                            - fmg
-                            - fsa
-                            - fdd
-                            - fac
-                            - fpx
+                            - 'unknown'
+                            - 'fos'
+                            - 'fsw'
+                            - 'foc'
+                            - 'fml'
+                            - 'faz'
+                            - 'fwb'
+                            - 'fch'
+                            - 'fct'
+                            - 'log'
+                            - 'fmg'
+                            - 'fsa'
+                            - 'fdd'
+                            - 'fac'
+                            - 'fpx'
                     os_ver:
                         type: str
-                        default: unknown
+                        default: 'unknown'
                         choices:
-                            - unknown
-                            - 0.0
-                            - 1.0
-                            - 2.0
-                            - 3.0
-                            - 4.0
-                            - 5.0
-                            - 6.0
+                            - 'unknown'
+                            - '0.0'
+                            - '1.0'
+                            - '2.0'
+                            - '3.0'
+                            - '4.0'
+                            - '5.0'
+                            - '6.0'
                     patch:
                         type: int
                     platform_str:
@@ -427,10 +427,10 @@ options:
                                 type: str
                             opmode:
                                 type: str
-                                default: nat
+                                default: 'nat'
                                 choices:
-                                    - nat
-                                    - transparent
+                                    - 'nat'
+                                    - 'transparent'
                             rtm_prof_id:
                                 type: int
                             status:

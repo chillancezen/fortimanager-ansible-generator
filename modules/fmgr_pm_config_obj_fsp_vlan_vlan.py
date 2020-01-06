@@ -68,13 +68,13 @@ options:
                 _dhcp-status:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 auth:
                     type: str
                     choices:
-                        - radius
-                        - usergroup
+                        - 'radius'
+                        - 'usergroup'
                 color:
                     type: int
                 comments:
@@ -84,8 +84,8 @@ options:
                         _dhcp-status:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         _scope:
                             -
                                 name:
@@ -101,9 +101,9 @@ options:
                 security:
                     type: str
                     choices:
-                        - open
-                        - captive-portal
-                        - 8021x
+                        - 'open'
+                        - 'captive-portal'
+                        - '8021x'
                 selected-usergroups:
                     type: str
                 usergroup:
@@ -129,9 +129,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

@@ -71,8 +71,8 @@ options:
                         type: str
                         description: 'Address mode (IPv4 or IPv6).'
                         choices:
-                            - ipv4
-                            - ipv6
+                            - 'ipv4'
+                            - 'ipv6'
                     failtime:
                         type: int
                         description: 'Number of failures before server is considered lost (1 - 3600, default = 5).'
@@ -107,12 +107,12 @@ options:
                         type: str
                         description: 'Protocol used to determine if the FortiGate can communicate with the server.'
                         choices:
-                            - ping
-                            - tcp-echo
-                            - udp-echo
-                            - http
-                            - twamp
-                            - ping6
+                            - 'ping'
+                            - 'tcp-echo'
+                            - 'udp-echo'
+                            - 'http'
+                            - 'twamp'
+                            - 'ping6'
                     recoverytime:
                         type: int
                         description: 'Number of successful responses received before server is considered recovered (1 - 3600, default = 5).'
@@ -120,8 +120,8 @@ options:
                         type: str
                         description: 'Twamp controller security mode.'
                         choices:
-                            - none
-                            - authentication
+                            - 'none'
+                            - 'authentication'
                     server:
                         -
                             type: str
@@ -140,9 +140,9 @@ options:
                                 -
                                     type: str
                                     choices:
-                                        - latency
-                                        - jitter
-                                        - packet-loss
+                                        - 'latency'
+                                        - 'jitter'
+                                        - 'packet-loss'
                             packetloss-threshold:
                                 type: int
                                 description: 'Packet loss for SLA to make decision in percentage. (0 - 100, default = 0).'
@@ -168,14 +168,14 @@ options:
                         type: str
                         description: 'Enable/disable update cascade interface.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     update-static-route:
                         type: str
                         description: 'Enable/disable updating the static route.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'SD-WAN status checking or health checking. Identify a server on the Internet and determine how SD-WAN verifies that the FortiGate can communicate with it.'
@@ -189,30 +189,30 @@ options:
                     -
                         type: str
                         choices:
-                            - _dynamic-server
-                            - addr-mode
-                            - failtime
-                            - http-agent
-                            - http-get
-                            - http-match
-                            - interval
-                            - members
-                            - name
-                            - packet-size
-                            - password
-                            - port
-                            - protocol
-                            - recoverytime
-                            - security-mode
-                            - server
-                            - threshold-alert-jitter
-                            - threshold-alert-latency
-                            - threshold-alert-packetloss
-                            - threshold-warning-jitter
-                            - threshold-warning-latency
-                            - threshold-warning-packetloss
-                            - update-cascade-interface
-                            - update-static-route
+                            - '_dynamic-server'
+                            - 'addr-mode'
+                            - 'failtime'
+                            - 'http-agent'
+                            - 'http-get'
+                            - 'http-match'
+                            - 'interval'
+                            - 'members'
+                            - 'name'
+                            - 'packet-size'
+                            - 'password'
+                            - 'port'
+                            - 'protocol'
+                            - 'recoverytime'
+                            - 'security-mode'
+                            - 'server'
+                            - 'threshold-alert-jitter'
+                            - 'threshold-alert-latency'
+                            - 'threshold-alert-packetloss'
+                            - 'threshold-warning-jitter'
+                            - 'threshold-warning-latency'
+                            - 'threshold-warning-packetloss'
+                            - 'update-cascade-interface'
+                            - 'update-static-route'
             filter:
                 -
                     type: str
@@ -231,11 +231,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

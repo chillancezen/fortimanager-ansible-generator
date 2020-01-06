@@ -84,16 +84,16 @@ options:
                     type: str
                     description: 'Enable/disable user resource.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 type:
                     type: str
                     description: 'User resource type.'
                     choices:
-                        - category
-                        - address
-                        - domain
-                        - malware
+                        - 'category'
+                        - 'address'
+                        - 'domain'
+                        - 'malware'
     schema_object1:
         methods: [delete]
         description: 'Configure external resource.'
@@ -111,9 +111,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

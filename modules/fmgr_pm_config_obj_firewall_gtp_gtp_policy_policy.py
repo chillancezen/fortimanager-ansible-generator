@@ -71,15 +71,15 @@ options:
                     type: str
                     description: 'Action.'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 apn-sel-mode:
                     -
                         type: str
                         choices:
-                            - ms
-                            - net
-                            - vrf
+                            - 'ms'
+                            - 'net'
+                            - 'vrf'
                 apnmember:
                     type: str
                     description: 'APN member.'
@@ -96,19 +96,19 @@ options:
                     type: str
                     description: 'Maximum APN restriction value.'
                     choices:
-                        - all
-                        - public-1
-                        - public-2
-                        - private-1
-                        - private-2
+                        - 'all'
+                        - 'public-1'
+                        - 'public-2'
+                        - 'private-1'
+                        - 'private-2'
                 messages:
                     -
                         type: str
                         choices:
-                            - create-req
-                            - create-res
-                            - update-req
-                            - update-res
+                            - 'create-req'
+                            - 'create-res'
+                            - 'update-req'
+                            - 'update-res'
                 msisdn:
                     type: str
                     description: 'MSISDN prefix.'
@@ -119,15 +119,15 @@ options:
                     -
                         type: str
                         choices:
-                            - any
-                            - utran
-                            - geran
-                            - wlan
-                            - gan
-                            - hspa
-                            - eutran
-                            - virtual
-                            - nbiot
+                            - 'any'
+                            - 'utran'
+                            - 'geran'
+                            - 'wlan'
+                            - 'gan'
+                            - 'hspa'
+                            - 'eutran'
+                            - 'virtual'
+                            - 'nbiot'
                 uli:
                     type: str
                     description: 'ULI pattern.'
@@ -148,9 +148,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

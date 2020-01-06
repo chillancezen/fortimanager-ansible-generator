@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Configure AntiVirus quarantine settings.'
@@ -87,15 +87,15 @@ options:
                     type: str
                     description: 'Enable/Disable quarantining infected hosts to the banned user list.'
                     choices:
-                        - none
-                        - quar-src-ip
-                        - quar-interface
+                        - 'none'
+                        - 'quar-src-ip'
+                        - 'quar-interface'
                 log:
                     type: str
                     description: 'Enable/disable AntiVirus quarantine logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

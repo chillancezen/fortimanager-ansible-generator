@@ -73,15 +73,15 @@ options:
                         -
                             type: str
                             choices:
-                                - delete
-                                - get
-                                - head
-                                - options
-                                - post
-                                - put
-                                - trace
-                                - others
-                                - connect
+                                - 'delete'
+                                - 'get'
+                                - 'head'
+                                - 'options'
+                                - 'post'
+                                - 'put'
+                                - 'trace'
+                                - 'others'
+                                - 'connect'
                     id:
                         type: int
                         description: 'HTTP method policy ID.'
@@ -92,8 +92,8 @@ options:
                         type: str
                         description: 'Enable/disable regular expression based pattern match.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'HTTP method policy.'
@@ -107,11 +107,11 @@ options:
                     -
                         type: str
                         choices:
-                            - address
-                            - allowed-methods
-                            - id
-                            - pattern
-                            - regex
+                            - 'address'
+                            - 'allowed-methods'
+                            - 'id'
+                            - 'pattern'
+                            - 'regex'
             filter:
                 -
                     type: str
@@ -130,11 +130,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -80,18 +80,18 @@ options:
                     -
                         type: str
                         choices:
-                            - airplay
-                            - afp
-                            - bit-torrent
-                            - ftp
-                            - ichat
-                            - itunes
-                            - printers
-                            - samba
-                            - scanners
-                            - ssh
-                            - chromecast
-                            - all
+                            - 'airplay'
+                            - 'afp'
+                            - 'bit-torrent'
+                            - 'ftp'
+                            - 'ichat'
+                            - 'itunes'
+                            - 'printers'
+                            - 'samba'
+                            - 'scanners'
+                            - 'ssh'
+                            - 'chromecast'
+                            - 'all'
                 to-vlan:
                     type: str
                     description: 'VLAN ID to which the Bonjour service is made available (0 - 4094, default = all).'
@@ -112,9 +112,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object3:
         methods: [move]
         description: 'Bonjour policy list.'
@@ -123,8 +123,8 @@ options:
             option:
                 type: str
                 choices:
-                    - before
-                    - after
+                    - 'before'
+                    - 'after'
             target:
                 type: str
                 description: 'Key to the target entry.'

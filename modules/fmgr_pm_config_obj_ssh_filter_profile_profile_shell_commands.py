@@ -70,14 +70,14 @@ options:
                         type: str
                         description: 'Action to take for URL filter matches.'
                         choices:
-                            - block
-                            - allow
+                            - 'block'
+                            - 'allow'
                     alert:
                         type: str
                         description: 'Enable/disable alert.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     id:
                         type: int
                         description: 'Id.'
@@ -85,8 +85,8 @@ options:
                         type: str
                         description: 'Enable/disable logging.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     pattern:
                         type: str
                         description: 'SSH shell command pattern.'
@@ -94,16 +94,16 @@ options:
                         type: str
                         description: 'Log severity.'
                         choices:
-                            - low
-                            - medium
-                            - high
-                            - critical
+                            - 'low'
+                            - 'medium'
+                            - 'high'
+                            - 'critical'
                     type:
                         type: str
                         description: 'Matching type.'
                         choices:
-                            - regex
-                            - simple
+                            - 'regex'
+                            - 'simple'
     schema_object1:
         methods: [get]
         description: 'SSH command filter.'
@@ -117,13 +117,13 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - alert
-                            - id
-                            - log
-                            - pattern
-                            - severity
-                            - type
+                            - 'action'
+                            - 'alert'
+                            - 'id'
+                            - 'log'
+                            - 'pattern'
+                            - 'severity'
+                            - 'type'
             filter:
                 -
                     type: str
@@ -142,11 +142,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -83,8 +83,8 @@ options:
                         type: str
                         description: 'Action when server is unavailable (revoke the certificate or ignore the result of the check).'
                         choices:
-                            - revoke
-                            - ignore
+                            - 'revoke'
+                            - 'ignore'
                     url:
                         type: str
                         description: 'OCSP server URL.'
@@ -101,13 +101,13 @@ options:
                     -
                         type: str
                         choices:
-                            - cert
-                            - name
-                            - secondary-cert
-                            - secondary-url
-                            - source-ip
-                            - unavail-action
-                            - url
+                            - 'cert'
+                            - 'name'
+                            - 'secondary-cert'
+                            - 'secondary-url'
+                            - 'source-ip'
+                            - 'unavail-action'
+                            - 'url'
             filter:
                 -
                     type: str
@@ -126,11 +126,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

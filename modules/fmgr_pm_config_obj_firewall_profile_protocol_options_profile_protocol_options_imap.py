@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Configure IMAP protocol options.'
@@ -84,15 +84,15 @@ options:
                     type: str
                     description: 'Enable/disable the inspection of all ports for the protocol.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 options:
                     -
                         type: str
                         choices:
-                            - oversize
-                            - fragmail
-                            - no-content-summary
+                            - 'oversize'
+                            - 'fragmail'
+                            - 'no-content-summary'
                 oversize-limit:
                     type: int
                     description: 'Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).'
@@ -103,14 +103,14 @@ options:
                     type: str
                     description: 'Enable/disable scanning of BZip2 compressed files.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 status:
                     type: str
                     description: 'Enable/disable the active status of scanning for this protocol.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 uncompressed-nest-limit:
                     type: int
                     description: 'Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12).'

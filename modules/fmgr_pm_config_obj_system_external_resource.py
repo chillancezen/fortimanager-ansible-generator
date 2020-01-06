@@ -83,16 +83,16 @@ options:
                         type: str
                         description: 'Enable/disable user resource.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     type:
                         type: str
                         description: 'User resource type.'
                         choices:
-                            - category
-                            - address
-                            - domain
-                            - malware
+                            - 'category'
+                            - 'address'
+                            - 'domain'
+                            - 'malware'
     schema_object1:
         methods: [get]
         description: 'Configure external resource.'
@@ -106,13 +106,13 @@ options:
                     -
                         type: str
                         choices:
-                            - category
-                            - comments
-                            - name
-                            - refresh-rate
-                            - resource
-                            - status
-                            - type
+                            - 'category'
+                            - 'comments'
+                            - 'name'
+                            - 'refresh-rate'
+                            - 'resource'
+                            - 'status'
+                            - 'type'
             filter:
                 -
                     type: str
@@ -131,11 +131,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

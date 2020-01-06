@@ -74,11 +74,11 @@ options:
                     type: str
                     description: 'Azure server region.'
                     choices:
-                        - global
-                        - china
-                        - germany
-                        - usgov
-                        - local
+                        - 'global'
+                        - 'china'
+                        - 'germany'
+                        - 'usgov'
+                        - 'local'
                 client-id:
                     type: str
                     description: 'Azure client ID (application ID).'
@@ -130,11 +130,11 @@ options:
                     type: str
                     description: 'OCI server region.'
                     choices:
-                        - phoenix
-                        - ashburn
-                        - frankfurt
-                        - london
-                        - toronto
+                        - 'phoenix'
+                        - 'ashburn'
+                        - 'frankfurt'
+                        - 'london'
+                        - 'toronto'
                 password:
                     -
                         type: str
@@ -154,8 +154,8 @@ options:
                     type: str
                     description: 'Interface name for REST service to listen on.'
                     choices:
-                        - mgmt
-                        - sync
+                        - 'mgmt'
+                        - 'sync'
                 rest-password:
                     -
                         type: str
@@ -165,8 +165,8 @@ options:
                 rest-ssl:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 route:
                     -
                         name:
@@ -201,8 +201,8 @@ options:
                     type: str
                     description: 'Enable/disable connection to the remote SDN connector.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 subscription-id:
                     type: str
                     description: 'Azure subscription ID.'
@@ -213,18 +213,18 @@ options:
                     type: str
                     description: 'Type of SDN connector.'
                     choices:
-                        - aci
-                        - aws
-                        - nsx
-                        - nuage
-                        - azure
-                        - gcp
-                        - oci
-                        - openstack
-                        - kubernetes
-                        - vmware
-                        - acs
-                        - alicloud
+                        - 'aci'
+                        - 'aws'
+                        - 'nsx'
+                        - 'nuage'
+                        - 'azure'
+                        - 'gcp'
+                        - 'oci'
+                        - 'openstack'
+                        - 'kubernetes'
+                        - 'vmware'
+                        - 'acs'
+                        - 'alicloud'
                 update-interval:
                     type: int
                     description: 'Dynamic object update interval (0 - 3600 sec, 0 means disabled, default = 60).'
@@ -232,8 +232,8 @@ options:
                     type: str
                     description: 'Enable/disable using IAM role from metadata to call API.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 user-id:
                     type: str
                     description: 'User ID.'
@@ -266,9 +266,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

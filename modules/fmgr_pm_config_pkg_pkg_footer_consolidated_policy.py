@@ -61,9 +61,9 @@ options:
                     action:
                         type: str
                         choices:
-                            - deny
-                            - accept
-                            - ipsec
+                            - 'deny'
+                            - 'accept'
+                            - 'ipsec'
                     app-category:
                         -
                             type: int
@@ -77,8 +77,8 @@ options:
                     auto-asic-offload:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     av-profile:
                         type: str
                     cifs-profile:
@@ -88,13 +88,13 @@ options:
                     diffserv-forward:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     diffserv-reverse:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     diffservcode-forward:
                         type: str
                     diffservcode-rev:
@@ -114,45 +114,45 @@ options:
                     fixedport:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     groups:
                         type: str
                     http-policy-redirect:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     icap-profile:
                         type: str
                     inbound:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     inspection-mode:
                         type: str
                         choices:
-                            - proxy
-                            - flow
+                            - 'proxy'
+                            - 'flow'
                     ippool:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ips-sensor:
                         type: str
                     logtraffic:
                         type: str
                         choices:
-                            - disable
-                            - all
-                            - utm
+                            - 'disable'
+                            - 'all'
+                            - 'utm'
                     logtraffic-start:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     mms-profile:
                         type: str
                     name:
@@ -160,13 +160,13 @@ options:
                     nat:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     outbound:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     per-ip-shaper:
                         type: str
                     policyid:
@@ -182,15 +182,15 @@ options:
                     profile-type:
                         type: str
                         choices:
-                            - single
-                            - group
+                            - 'single'
+                            - 'group'
                     schedule:
                         type: str
                     schedule-timeout:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     service:
                         type: str
                     session-ttl:
@@ -208,15 +208,15 @@ options:
                     ssh-policy-redirect:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ssl-ssh-profile:
                         type: str
                     status:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     tcp-mss-receiver:
                         type: int
                     tcp-mss-sender:
@@ -233,13 +233,13 @@ options:
                     utm-inspection-mode:
                         type: str
                         choices:
-                            - proxy
-                            - flow
+                            - 'proxy'
+                            - 'flow'
                     utm-status:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     uuid:
                         type: str
                     voip-profile:
@@ -263,71 +263,71 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - app-category
-                            - app-group
-                            - application
-                            - application-list
-                            - auto-asic-offload
-                            - av-profile
-                            - cifs-profile
-                            - comments
-                            - diffserv-forward
-                            - diffserv-reverse
-                            - diffservcode-forward
-                            - diffservcode-rev
-                            - dlp-sensor
-                            - dnsfilter-profile
-                            - dstaddr4
-                            - dstaddr6
-                            - dstintf
-                            - emailfilter-profile
-                            - fixedport
-                            - groups
-                            - http-policy-redirect
-                            - icap-profile
-                            - inbound
-                            - inspection-mode
-                            - ippool
-                            - ips-sensor
-                            - logtraffic
-                            - logtraffic-start
-                            - mms-profile
-                            - name
-                            - nat
-                            - outbound
-                            - per-ip-shaper
-                            - policyid
-                            - poolname4
-                            - poolname6
-                            - profile-group
-                            - profile-protocol-options
-                            - profile-type
-                            - schedule
-                            - schedule-timeout
-                            - service
-                            - session-ttl
-                            - spamfilter-profile
-                            - srcaddr4
-                            - srcaddr6
-                            - srcintf
-                            - ssh-filter-profile
-                            - ssh-policy-redirect
-                            - ssl-ssh-profile
-                            - status
-                            - tcp-mss-receiver
-                            - tcp-mss-sender
-                            - traffic-shaper
-                            - traffic-shaper-reverse
-                            - url-category
-                            - users
-                            - utm-inspection-mode
-                            - utm-status
-                            - uuid
-                            - voip-profile
-                            - vpntunnel
-                            - waf-profile
-                            - webfilter-profile
+                            - 'action'
+                            - 'app-category'
+                            - 'app-group'
+                            - 'application'
+                            - 'application-list'
+                            - 'auto-asic-offload'
+                            - 'av-profile'
+                            - 'cifs-profile'
+                            - 'comments'
+                            - 'diffserv-forward'
+                            - 'diffserv-reverse'
+                            - 'diffservcode-forward'
+                            - 'diffservcode-rev'
+                            - 'dlp-sensor'
+                            - 'dnsfilter-profile'
+                            - 'dstaddr4'
+                            - 'dstaddr6'
+                            - 'dstintf'
+                            - 'emailfilter-profile'
+                            - 'fixedport'
+                            - 'groups'
+                            - 'http-policy-redirect'
+                            - 'icap-profile'
+                            - 'inbound'
+                            - 'inspection-mode'
+                            - 'ippool'
+                            - 'ips-sensor'
+                            - 'logtraffic'
+                            - 'logtraffic-start'
+                            - 'mms-profile'
+                            - 'name'
+                            - 'nat'
+                            - 'outbound'
+                            - 'per-ip-shaper'
+                            - 'policyid'
+                            - 'poolname4'
+                            - 'poolname6'
+                            - 'profile-group'
+                            - 'profile-protocol-options'
+                            - 'profile-type'
+                            - 'schedule'
+                            - 'schedule-timeout'
+                            - 'service'
+                            - 'session-ttl'
+                            - 'spamfilter-profile'
+                            - 'srcaddr4'
+                            - 'srcaddr6'
+                            - 'srcintf'
+                            - 'ssh-filter-profile'
+                            - 'ssh-policy-redirect'
+                            - 'ssl-ssh-profile'
+                            - 'status'
+                            - 'tcp-mss-receiver'
+                            - 'tcp-mss-sender'
+                            - 'traffic-shaper'
+                            - 'traffic-shaper-reverse'
+                            - 'url-category'
+                            - 'users'
+                            - 'utm-inspection-mode'
+                            - 'utm-status'
+                            - 'uuid'
+                            - 'voip-profile'
+                            - 'vpntunnel'
+                            - 'waf-profile'
+                            - 'webfilter-profile'
             filter:
                 -
                     type: str
@@ -346,11 +346,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

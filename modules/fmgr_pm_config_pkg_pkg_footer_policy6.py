@@ -61,15 +61,15 @@ options:
                     action:
                         type: str
                         choices:
-                            - deny
-                            - accept
-                            - ipsec
-                            - ssl-vpn
+                            - 'deny'
+                            - 'accept'
+                            - 'ipsec'
+                            - 'ssl-vpn'
                     anti-replay:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     app-category:
                         type: str
                     app-group:
@@ -81,16 +81,16 @@ options:
                         -
                             type: str
                             choices:
-                                - top10-app
-                                - top10-p2p-user
-                                - top10-media-user
+                                - 'top10-app'
+                                - 'top10-p2p-user'
+                                - 'top10-media-user'
                     application-list:
                         type: str
                     auto-asic-offload:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     av-profile:
                         type: str
                     casi-profile:
@@ -106,20 +106,20 @@ options:
                     device-detection-portal:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     devices:
                         type: str
                     diffserv-forward:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     diffserv-reverse:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     diffservcode-forward:
                         type: str
                     diffservcode-rev:
@@ -131,74 +131,74 @@ options:
                     dscp-match:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dscp-negate:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dscp-value:
                         type: str
                     dsri:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dstaddr:
                         type: str
                     dstaddr-negate:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dstintf:
                         type: str
                     dynamic-profile:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dynamic-profile-access:
                         -
                             type: str
                             choices:
-                                - imap
-                                - smtp
-                                - pop3
-                                - http
-                                - ftp
-                                - im
-                                - nntp
-                                - imaps
-                                - smtps
-                                - pop3s
-                                - https
-                                - ftps
+                                - 'imap'
+                                - 'smtp'
+                                - 'pop3'
+                                - 'http'
+                                - 'ftp'
+                                - 'im'
+                                - 'nntp'
+                                - 'imaps'
+                                - 'smtps'
+                                - 'pop3s'
+                                - 'https'
+                                - 'ftps'
                     dynamic-profile-group:
                         type: str
                     email-collection-portal:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     emailfilter-profile:
                         type: str
                     firewall-session-dirty:
                         type: str
                         choices:
-                            - check-all
-                            - check-new
+                            - 'check-all'
+                            - 'check-new'
                     fixedport:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     fsae:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     global-label:
                         type: str
                     groups:
@@ -206,22 +206,22 @@ options:
                     http-policy-redirect:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     icap-profile:
                         type: str
                     identity-based:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     identity-based-policy6:
                         -
                             action:
                                 type: str
                                 choices:
-                                    - deny
-                                    - accept
+                                    - 'deny'
+                                    - 'accept'
                             application-list:
                                 type: str
                             av-profile:
@@ -235,8 +235,8 @@ options:
                             endpoint-compliance:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             groups:
                                 type: str
                             icap-profile:
@@ -248,10 +248,10 @@ options:
                             logtraffic:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
-                                    - all
-                                    - utm
+                                    - 'disable'
+                                    - 'enable'
+                                    - 'all'
+                                    - 'utm'
                             mms-profile:
                                 type: str
                             per-ip-shaper:
@@ -263,8 +263,8 @@ options:
                             profile-type:
                                 type: str
                                 choices:
-                                    - single
-                                    - group
+                                    - 'single'
+                                    - 'group'
                             replacemsg-group:
                                 type: str
                             schedule:
@@ -272,15 +272,15 @@ options:
                             send-deny-packet:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             service:
                                 type: str
                             service-negate:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             spamfilter-profile:
                                 type: str
                             sslvpn-portal:
@@ -294,8 +294,8 @@ options:
                             utm-status:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             voip-profile:
                                 type: str
                             webfilter-profile:
@@ -303,23 +303,23 @@ options:
                     identity-from:
                         type: str
                         choices:
-                            - auth
-                            - device
+                            - 'auth'
+                            - 'device'
                     inbound:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     inspection-mode:
                         type: str
                         choices:
-                            - proxy
-                            - flow
+                            - 'proxy'
+                            - 'flow'
                     ippool:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ips-sensor:
                         type: str
                     label:
@@ -327,15 +327,15 @@ options:
                     logtraffic:
                         type: str
                         choices:
-                            - disable
-                            - enable
-                            - all
-                            - utm
+                            - 'disable'
+                            - 'enable'
+                            - 'all'
+                            - 'utm'
                     logtraffic-start:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     mms-profile:
                         type: str
                     name:
@@ -343,33 +343,33 @@ options:
                     nat:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     natinbound:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     natoutbound:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     np-accelation:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     np-acceleration:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     outbound:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     per-ip-shaper:
                         type: str
                     policyid:
@@ -383,8 +383,8 @@ options:
                     profile-type:
                         type: str
                         choices:
-                            - single
-                            - group
+                            - 'single'
+                            - 'group'
                     replacemsg-group:
                         type: str
                     replacemsg-override-group:
@@ -392,22 +392,22 @@ options:
                     rsso:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     schedule:
                         type: str
                     send-deny-packet:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     service:
                         type: str
                     service-negate:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     session-ttl:
                         type: int
                     spamfilter-profile:
@@ -417,8 +417,8 @@ options:
                     srcaddr-negate:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     srcintf:
                         type: str
                     ssh-filter-profile:
@@ -426,13 +426,13 @@ options:
                     ssh-policy-redirect:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ssl-mirror:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ssl-mirror-intf:
                         type: str
                     ssl-ssh-profile:
@@ -440,27 +440,27 @@ options:
                     sslvpn-auth:
                         type: str
                         choices:
-                            - any
-                            - local
-                            - radius
-                            - ldap
-                            - tacacs+
+                            - 'any'
+                            - 'local'
+                            - 'radius'
+                            - 'ldap'
+                            - 'tacacs+'
                     sslvpn-ccert:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     sslvpn-cipher:
                         type: str
                         choices:
-                            - any
-                            - high
-                            - medium
+                            - 'any'
+                            - 'high'
+                            - 'medium'
                     status:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     tags:
                         type: str
                     tcp-mss-receiver:
@@ -470,14 +470,14 @@ options:
                     tcp-session-without-syn:
                         type: str
                         choices:
-                            - all
-                            - data-only
-                            - disable
+                            - 'all'
+                            - 'data-only'
+                            - 'disable'
                     timeout-send-rst:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     tos:
                         type: str
                     tos-mask:
@@ -485,8 +485,8 @@ options:
                     tos-negate:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     traffic-shaper:
                         type: str
                     traffic-shaper-reverse:
@@ -498,13 +498,13 @@ options:
                     utm-inspection-mode:
                         type: str
                         choices:
-                            - proxy
-                            - flow
+                            - 'proxy'
+                            - 'flow'
                     utm-status:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     uuid:
                         type: str
                     vlan-cos-fwd:
@@ -532,112 +532,112 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - anti-replay
-                            - app-category
-                            - app-group
-                            - application
-                            - application-charts
-                            - application-list
-                            - auto-asic-offload
-                            - av-profile
-                            - casi-profile
-                            - cifs-profile
-                            - comments
-                            - custom-log-fields
-                            - deep-inspection-options
-                            - device-detection-portal
-                            - devices
-                            - diffserv-forward
-                            - diffserv-reverse
-                            - diffservcode-forward
-                            - diffservcode-rev
-                            - dlp-sensor
-                            - dnsfilter-profile
-                            - dscp-match
-                            - dscp-negate
-                            - dscp-value
-                            - dsri
-                            - dstaddr
-                            - dstaddr-negate
-                            - dstintf
-                            - dynamic-profile
-                            - dynamic-profile-access
-                            - dynamic-profile-group
-                            - email-collection-portal
-                            - emailfilter-profile
-                            - firewall-session-dirty
-                            - fixedport
-                            - fsae
-                            - global-label
-                            - groups
-                            - http-policy-redirect
-                            - icap-profile
-                            - identity-based
-                            - identity-from
-                            - inbound
-                            - inspection-mode
-                            - ippool
-                            - ips-sensor
-                            - label
-                            - logtraffic
-                            - logtraffic-start
-                            - mms-profile
-                            - name
-                            - nat
-                            - natinbound
-                            - natoutbound
-                            - np-accelation
-                            - np-acceleration
-                            - outbound
-                            - per-ip-shaper
-                            - policyid
-                            - poolname
-                            - profile-group
-                            - profile-protocol-options
-                            - profile-type
-                            - replacemsg-group
-                            - replacemsg-override-group
-                            - rsso
-                            - schedule
-                            - send-deny-packet
-                            - service
-                            - service-negate
-                            - session-ttl
-                            - spamfilter-profile
-                            - srcaddr
-                            - srcaddr-negate
-                            - srcintf
-                            - ssh-filter-profile
-                            - ssh-policy-redirect
-                            - ssl-mirror
-                            - ssl-mirror-intf
-                            - ssl-ssh-profile
-                            - sslvpn-auth
-                            - sslvpn-ccert
-                            - sslvpn-cipher
-                            - status
-                            - tags
-                            - tcp-mss-receiver
-                            - tcp-mss-sender
-                            - tcp-session-without-syn
-                            - timeout-send-rst
-                            - tos
-                            - tos-mask
-                            - tos-negate
-                            - traffic-shaper
-                            - traffic-shaper-reverse
-                            - url-category
-                            - users
-                            - utm-inspection-mode
-                            - utm-status
-                            - uuid
-                            - vlan-cos-fwd
-                            - vlan-cos-rev
-                            - vlan-filter
-                            - voip-profile
-                            - vpntunnel
-                            - webfilter-profile
+                            - 'action'
+                            - 'anti-replay'
+                            - 'app-category'
+                            - 'app-group'
+                            - 'application'
+                            - 'application-charts'
+                            - 'application-list'
+                            - 'auto-asic-offload'
+                            - 'av-profile'
+                            - 'casi-profile'
+                            - 'cifs-profile'
+                            - 'comments'
+                            - 'custom-log-fields'
+                            - 'deep-inspection-options'
+                            - 'device-detection-portal'
+                            - 'devices'
+                            - 'diffserv-forward'
+                            - 'diffserv-reverse'
+                            - 'diffservcode-forward'
+                            - 'diffservcode-rev'
+                            - 'dlp-sensor'
+                            - 'dnsfilter-profile'
+                            - 'dscp-match'
+                            - 'dscp-negate'
+                            - 'dscp-value'
+                            - 'dsri'
+                            - 'dstaddr'
+                            - 'dstaddr-negate'
+                            - 'dstintf'
+                            - 'dynamic-profile'
+                            - 'dynamic-profile-access'
+                            - 'dynamic-profile-group'
+                            - 'email-collection-portal'
+                            - 'emailfilter-profile'
+                            - 'firewall-session-dirty'
+                            - 'fixedport'
+                            - 'fsae'
+                            - 'global-label'
+                            - 'groups'
+                            - 'http-policy-redirect'
+                            - 'icap-profile'
+                            - 'identity-based'
+                            - 'identity-from'
+                            - 'inbound'
+                            - 'inspection-mode'
+                            - 'ippool'
+                            - 'ips-sensor'
+                            - 'label'
+                            - 'logtraffic'
+                            - 'logtraffic-start'
+                            - 'mms-profile'
+                            - 'name'
+                            - 'nat'
+                            - 'natinbound'
+                            - 'natoutbound'
+                            - 'np-accelation'
+                            - 'np-acceleration'
+                            - 'outbound'
+                            - 'per-ip-shaper'
+                            - 'policyid'
+                            - 'poolname'
+                            - 'profile-group'
+                            - 'profile-protocol-options'
+                            - 'profile-type'
+                            - 'replacemsg-group'
+                            - 'replacemsg-override-group'
+                            - 'rsso'
+                            - 'schedule'
+                            - 'send-deny-packet'
+                            - 'service'
+                            - 'service-negate'
+                            - 'session-ttl'
+                            - 'spamfilter-profile'
+                            - 'srcaddr'
+                            - 'srcaddr-negate'
+                            - 'srcintf'
+                            - 'ssh-filter-profile'
+                            - 'ssh-policy-redirect'
+                            - 'ssl-mirror'
+                            - 'ssl-mirror-intf'
+                            - 'ssl-ssh-profile'
+                            - 'sslvpn-auth'
+                            - 'sslvpn-ccert'
+                            - 'sslvpn-cipher'
+                            - 'status'
+                            - 'tags'
+                            - 'tcp-mss-receiver'
+                            - 'tcp-mss-sender'
+                            - 'tcp-session-without-syn'
+                            - 'timeout-send-rst'
+                            - 'tos'
+                            - 'tos-mask'
+                            - 'tos-negate'
+                            - 'traffic-shaper'
+                            - 'traffic-shaper-reverse'
+                            - 'url-category'
+                            - 'users'
+                            - 'utm-inspection-mode'
+                            - 'utm-status'
+                            - 'uuid'
+                            - 'vlan-cos-fwd'
+                            - 'vlan-cos-rev'
+                            - 'vlan-filter'
+                            - 'voip-profile'
+                            - 'vpntunnel'
+                            - 'webfilter-profile'
             filter:
                 -
                     type: str
@@ -656,11 +656,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

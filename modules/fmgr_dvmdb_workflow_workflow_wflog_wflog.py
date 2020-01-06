@@ -74,8 +74,8 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
+                    - 'object member'
+                    - 'chksum'
 
 '''
 

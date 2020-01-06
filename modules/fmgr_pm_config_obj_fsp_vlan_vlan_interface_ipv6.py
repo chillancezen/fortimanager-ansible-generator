@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: ''
@@ -83,27 +83,27 @@ options:
                 autoconf:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dhcp6-client-options:
                     -
                         type: str
                         choices:
-                            - rapid
-                            - iapd
-                            - iana
-                            - dns
-                            - dnsname
+                            - 'rapid'
+                            - 'iapd'
+                            - 'iana'
+                            - 'dns'
+                            - 'dnsname'
                 dhcp6-information-request:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dhcp6-prefix-delegation:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dhcp6-prefix-hint:
                     type: str
                 dhcp6-prefix-hint-plt:
@@ -115,33 +115,33 @@ options:
                 dhcp6-relay-service:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dhcp6-relay-type:
                     type: str
                     choices:
-                        - regular
+                        - 'regular'
                 ip6-address:
                     type: str
                 ip6-allowaccess:
                     -
                         type: str
                         choices:
-                            - https
-                            - ping
-                            - ssh
-                            - snmp
-                            - http
-                            - telnet
-                            - fgfm
-                            - capwap
+                            - 'https'
+                            - 'ping'
+                            - 'ssh'
+                            - 'snmp'
+                            - 'http'
+                            - 'telnet'
+                            - 'fgfm'
+                            - 'capwap'
                 ip6-default-life:
                     type: int
                 ip6-dns-server-override:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ip6-hop-limit:
                     type: int
                 ip6-link-mtu:
@@ -149,8 +149,8 @@ options:
                 ip6-manage-flag:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ip6-max-interval:
                     type: int
                 ip6-min-interval:
@@ -158,15 +158,15 @@ options:
                 ip6-mode:
                     type: str
                     choices:
-                        - static
-                        - dhcp
-                        - pppoe
-                        - delegated
+                        - 'static'
+                        - 'dhcp'
+                        - 'pppoe'
+                        - 'delegated'
                 ip6-other-flag:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ip6-reachable-time:
                     type: int
                 ip6-retrans-time:
@@ -174,8 +174,8 @@ options:
                 ip6-send-adv:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ip6-subnet:
                     type: str
                 ip6-upstream-interface:
@@ -187,8 +187,8 @@ options:
                 nd-mode:
                     type: str
                     choices:
-                        - basic
-                        - SEND-compatible
+                        - 'basic'
+                        - 'SEND-compatible'
                 nd-security-level:
                     type: int
                 nd-timestamp-delta:
@@ -200,8 +200,8 @@ options:
                 vrrp-virtual-mac6:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

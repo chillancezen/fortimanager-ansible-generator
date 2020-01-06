@@ -75,8 +75,8 @@ options:
                         type: str
                         description: 'Enable/disable source NAT.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     nat-ippool:
                         type: str
                         description: 'Name of the IP pools to be used to translate addresses from available IP Pools.'
@@ -102,8 +102,8 @@ options:
                         type: str
                         description: 'Enable/disable the active status of this policy.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure central SNAT policies.'
@@ -117,17 +117,17 @@ options:
                     -
                         type: str
                         choices:
-                            - dst-addr
-                            - dstintf
-                            - nat
-                            - nat-ippool
-                            - nat-port
-                            - orig-addr
-                            - orig-port
-                            - policyid
-                            - protocol
-                            - srcintf
-                            - status
+                            - 'dst-addr'
+                            - 'dstintf'
+                            - 'nat'
+                            - 'nat-ippool'
+                            - 'nat-port'
+                            - 'orig-addr'
+                            - 'orig-port'
+                            - 'policyid'
+                            - 'protocol'
+                            - 'srcintf'
+                            - 'status'
             filter:
                 -
                     type: str
@@ -146,11 +146,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

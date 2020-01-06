@@ -69,8 +69,8 @@ options:
                     type: str
                     description: 'Enable/disable use of this address in the static route configuration.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 associated-interface:
                     type: str
                     description: 'Network interface associated with address.'
@@ -96,8 +96,8 @@ options:
                         allow-routing:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         associated-interface:
                             type: str
                         cache-ttl:
@@ -129,20 +129,20 @@ options:
                         sdn:
                             type: str
                             choices:
-                                - aci
-                                - aws
-                                - nsx
-                                - nuage
-                                - azure
-                                - gcp
-                                - oci
-                                - openstack
+                                - 'aci'
+                                - 'aws'
+                                - 'nsx'
+                                - 'nuage'
+                                - 'azure'
+                                - 'gcp'
+                                - 'oci'
+                                - 'openstack'
                         sdn-addr-type:
                             type: str
                             choices:
-                                - private
-                                - public
-                                - all
+                                - 'private'
+                                - 'public'
+                                - 'all'
                         sdn-tag:
                             type: str
                         start-ip:
@@ -160,18 +160,18 @@ options:
                         type:
                             type: str
                             choices:
-                                - ipmask
-                                - iprange
-                                - fqdn
-                                - wildcard
-                                - geography
-                                - url
-                                - wildcard-fqdn
-                                - nsx
-                                - aws
-                                - dynamic
-                                - interface-subnet
-                                - mac
+                                - 'ipmask'
+                                - 'iprange'
+                                - 'fqdn'
+                                - 'wildcard'
+                                - 'geography'
+                                - 'url'
+                                - 'wildcard-fqdn'
+                                - 'nsx'
+                                - 'aws'
+                                - 'dynamic'
+                                - 'interface-subnet'
+                                - 'mac'
                         url:
                             type: str
                         uuid:
@@ -179,8 +179,8 @@ options:
                         visibility:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         wildcard:
                             type: str
                         wildcard-fqdn:
@@ -218,14 +218,14 @@ options:
                     type: str
                     description: 'SDN.'
                     choices:
-                        - aci
-                        - aws
-                        - nsx
-                        - nuage
-                        - azure
-                        - gcp
-                        - oci
-                        - openstack
+                        - 'aci'
+                        - 'aws'
+                        - 'nsx'
+                        - 'nuage'
+                        - 'azure'
+                        - 'gcp'
+                        - 'oci'
+                        - 'openstack'
                 sdn-tag:
                     type: str
                     description: 'SDN Tag.'
@@ -256,18 +256,18 @@ options:
                     type: str
                     description: 'Type of address.'
                     choices:
-                        - ipmask
-                        - iprange
-                        - fqdn
-                        - wildcard
-                        - geography
-                        - url
-                        - wildcard-fqdn
-                        - nsx
-                        - aws
-                        - dynamic
-                        - interface-subnet
-                        - mac
+                        - 'ipmask'
+                        - 'iprange'
+                        - 'fqdn'
+                        - 'wildcard'
+                        - 'geography'
+                        - 'url'
+                        - 'wildcard-fqdn'
+                        - 'nsx'
+                        - 'aws'
+                        - 'dynamic'
+                        - 'interface-subnet'
+                        - 'mac'
                 uuid:
                     type: str
                     description: 'Universally Unique Identifier (UUID; automatically assigned but can be manually reset).'
@@ -275,8 +275,8 @@ options:
                     type: str
                     description: 'Enable/disable address visibility in the GUI.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 wildcard:
                     type: str
                     description: 'IP address and wildcard netmask.'
@@ -300,9 +300,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

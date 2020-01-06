@@ -70,15 +70,15 @@ options:
                         type: str
                         description: 'Action.'
                         choices:
-                            - allow
-                            - deny
+                            - 'allow'
+                            - 'deny'
                     apn-sel-mode:
                         -
                             type: str
                             choices:
-                                - ms
-                                - net
-                                - vrf
+                                - 'ms'
+                                - 'net'
+                                - 'vrf'
                     apnmember:
                         type: str
                         description: 'APN member.'
@@ -95,19 +95,19 @@ options:
                         type: str
                         description: 'Maximum APN restriction value.'
                         choices:
-                            - all
-                            - public-1
-                            - public-2
-                            - private-1
-                            - private-2
+                            - 'all'
+                            - 'public-1'
+                            - 'public-2'
+                            - 'private-1'
+                            - 'private-2'
                     messages:
                         -
                             type: str
                             choices:
-                                - create-req
-                                - create-res
-                                - update-req
-                                - update-res
+                                - 'create-req'
+                                - 'create-res'
+                                - 'update-req'
+                                - 'update-res'
                     msisdn:
                         type: str
                         description: 'MSISDN prefix.'
@@ -118,15 +118,15 @@ options:
                         -
                             type: str
                             choices:
-                                - any
-                                - utran
-                                - geran
-                                - wlan
-                                - gan
-                                - hspa
-                                - eutran
-                                - virtual
-                                - nbiot
+                                - 'any'
+                                - 'utran'
+                                - 'geran'
+                                - 'wlan'
+                                - 'gan'
+                                - 'hspa'
+                                - 'eutran'
+                                - 'virtual'
+                                - 'nbiot'
                     uli:
                         type: str
                         description: 'ULI pattern.'
@@ -143,18 +143,18 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - apn-sel-mode
-                            - apnmember
-                            - id
-                            - imei
-                            - imsi
-                            - max-apn-restriction
-                            - messages
-                            - msisdn
-                            - rai
-                            - rat-type
-                            - uli
+                            - 'action'
+                            - 'apn-sel-mode'
+                            - 'apnmember'
+                            - 'id'
+                            - 'imei'
+                            - 'imsi'
+                            - 'max-apn-restriction'
+                            - 'messages'
+                            - 'msisdn'
+                            - 'rai'
+                            - 'rat-type'
+                            - 'uli'
             filter:
                 -
                     type: str
@@ -173,11 +173,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

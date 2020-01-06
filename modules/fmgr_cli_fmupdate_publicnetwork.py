@@ -57,14 +57,14 @@ options:
             data:
                 status:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable public network (default = enable).'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

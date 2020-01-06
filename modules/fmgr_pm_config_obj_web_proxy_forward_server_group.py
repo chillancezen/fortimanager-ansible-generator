@@ -66,22 +66,22 @@ options:
                 -
                     affinity:
                         type: str
-                        description: 'Enable/disable affinity, attaching a source-ip's traffic to the assigned forwarding server until the forward-server-affinity-timeout is reached (under web-proxy global).'
+                        description: 'Enable/disable affinity, attaching a source-ips traffic to the assigned forwarding server until the forward-server-affinity-timeout is reached (under web-proxy global).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     group-down-option:
                         type: str
                         description: 'Action to take when all of the servers in the forward server group are down: block sessions until at least one server is back up or pass sessions to their destination.'
                         choices:
-                            - block
-                            - pass
+                            - 'block'
+                            - 'pass'
                     ldb-method:
                         type: str
                         description: 'Load balance method: weighted or least-session.'
                         choices:
-                            - weighted
-                            - least-session
+                            - 'weighted'
+                            - 'least-session'
                     name:
                         type: str
                         description: 'Configure a forward server group consisting one or multiple forward servers. Supports failover and load balancing.'
@@ -106,10 +106,10 @@ options:
                     -
                         type: str
                         choices:
-                            - affinity
-                            - group-down-option
-                            - ldb-method
-                            - name
+                            - 'affinity'
+                            - 'group-down-option'
+                            - 'ldb-method'
+                            - 'name'
             filter:
                 -
                     type: str
@@ -128,11 +128,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int
@@ -223,7 +223,7 @@ return_of_api_category_0:
             suboptions:
                affinity:
                   type: str
-                  description: 'Enable/disable affinity, attaching a source-ip's traffic to the assigned forwarding server until the forward-server-affinity-timeout is reached (under web-proxy global).'
+                  description: 'Enable/disable affinity, attaching a source-ips traffic to the assigned forwarding server until the forward-server-affinity-timeout is reached (under web-proxy global).'
                group-down-option:
                   type: str
                   description: 'Action to take when all of the servers in the forward server group are down: block sessions until at least one server is back up or pass sessions to their destination.'

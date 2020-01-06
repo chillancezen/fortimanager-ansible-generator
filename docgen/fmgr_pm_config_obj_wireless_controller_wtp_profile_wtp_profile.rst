@@ -80,7 +80,7 @@ Parameters
  <li><span class="li-head">login-passwd-change</span> - Change or reset the administrator password of a managed WTP, FortiAP or AP (yes, default, or no, default = no). <span class="li-normal">type: str</span>  <span class="li-normal">choices: [no, yes, default]</span> </li>
  <li><span class="li-head">max-clients</span> - Maximum number of stations (STAs) supported by the WTP (default = 0, meaning no client limitation). <span class="li-normal">type: int</span> </li>
  <li><span class="li-head">name</span> - WTP (or FortiAP or AP) profile name. <span class="li-normal">type: str</span> </li>
- <li><span class="li-head">poe-mode</span> - Set the WTP, FortiAP, or AP's PoE mode. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [auto, 8023af, 8023at, power-adapter]</span> </li>
+ <li><span class="li-head">poe-mode</span> - Set the WTP, FortiAP, or APs PoE mode. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [auto, 8023af, 8023at, power-adapter]</span> </li>
  <li><span class="li-head">split-tunneling-acl</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li><span class="li-head">dest-ip</span> - Destination IP and mask for the split-tunneling subnet. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">id</span> - ID. <span class="li-normal">type: int</span> </li>
@@ -246,7 +246,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> login-passwd-change </span> - Change or reset the administrator password of a managed WTP, FortiAP or AP (yes, default, or no, default = no). <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> max-clients </span> - Maximum number of stations (STAs) supported by the WTP (default = 0, meaning no client limitation). <span class="li-normal">type: int</span>  </li>
  <li> <span class="li-return"> name </span> - WTP (or FortiAP or AP) profile name. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> poe-mode </span> - Set the WTP, FortiAP, or AP's PoE mode. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> poe-mode </span> - Set the WTP, FortiAP, or APs PoE mode. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> split-tunneling-acl </span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li> <span class="li-return"> dest-ip </span> - Destination IP and mask for the split-tunneling subnet. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> id </span> - ID. <span class="li-normal">type: int</span>  </li>

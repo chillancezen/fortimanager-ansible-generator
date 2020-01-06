@@ -79,18 +79,18 @@ options:
                         -
                             type: str
                             choices:
-                                - airplay
-                                - afp
-                                - bit-torrent
-                                - ftp
-                                - ichat
-                                - itunes
-                                - printers
-                                - samba
-                                - scanners
-                                - ssh
-                                - chromecast
-                                - all
+                                - 'airplay'
+                                - 'afp'
+                                - 'bit-torrent'
+                                - 'ftp'
+                                - 'ichat'
+                                - 'itunes'
+                                - 'printers'
+                                - 'samba'
+                                - 'scanners'
+                                - 'ssh'
+                                - 'chromecast'
+                                - 'all'
                     to-vlan:
                         type: str
                         description: 'VLAN ID to which the Bonjour service is made available (0 - 4094, default = all).'
@@ -107,11 +107,11 @@ options:
                     -
                         type: str
                         choices:
-                            - description
-                            - from-vlan
-                            - policy-id
-                            - services
-                            - to-vlan
+                            - 'description'
+                            - 'from-vlan'
+                            - 'policy-id'
+                            - 'services'
+                            - 'to-vlan'
             filter:
                 -
                     type: str
@@ -130,11 +130,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

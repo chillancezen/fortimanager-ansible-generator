@@ -74,9 +74,9 @@ options:
                     type: str
                     description: 'Enable to check the responsiveness of the real server before forwarding traffic.'
                     choices:
-                        - disable
-                        - enable
-                        - vip
+                        - 'disable'
+                        - 'enable'
+                        - 'vip'
                 holddown-interval:
                     type: int
                     description: 'Time in seconds that the health check monitor continues to monitor an unresponsive server that should be active.'
@@ -94,7 +94,7 @@ options:
                     description: 'Max number of active connections that can directed to the real server. When reached, sessions are sent to other real servers.'
                 monitor:
                     type: str
-                    description: 'Name of the health check monitor to use when polling to determine a virtual server's connectivity status.'
+                    description: 'Name of the health check monitor to use when polling to determine a virtual servers connectivity status.'
                 port:
                     type: int
                     description: 'Port for communicating with the real server. Required if port forwarding is enabled.'
@@ -102,9 +102,9 @@ options:
                     type: str
                     description: 'Set the status of the real server to active so that it can accept traffic, or on standby or disabled so no traffic is sent.'
                     choices:
-                        - active
-                        - standby
-                        - disable
+                        - 'active'
+                        - 'standby'
+                        - 'disable'
                 weight:
                     type: int
                     description: 'Weight of the real server. If weighted load balancing is enabled, the server with the highest weight gets more connections.'
@@ -125,9 +125,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 
@@ -239,7 +239,7 @@ return_of_api_category_0:
                description: 'Max number of active connections that can directed to the real server. When reached, sessions are sent to other real servers.'
             monitor:
                type: str
-               description: 'Name of the health check monitor to use when polling to determine a virtual server's connectivity status.'
+               description: 'Name of the health check monitor to use when polling to determine a virtual servers connectivity status.'
             port:
                type: int
                description: 'Port for communicating with the real server. Required if port forwarding is enabled.'

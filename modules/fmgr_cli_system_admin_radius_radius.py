@@ -64,7 +64,7 @@ options:
             data:
                 auth-type:
                     type: str
-                    default: any
+                    default: 'any'
                     description:
                      - 'Authentication protocol.'
                      - 'any - Use any supported authentication protocol.'
@@ -72,16 +72,16 @@ options:
                      - 'chap - CHAP.'
                      - 'mschap2 - MSCHAPv2.'
                     choices:
-                        - any
-                        - pap
-                        - chap
-                        - mschap2
+                        - 'any'
+                        - 'pap'
+                        - 'chap'
+                        - 'mschap2'
                 name:
                     type: str
                     description: 'Name.'
                 nas-ip:
                     type: str
-                    default: 0.0.0.0
+                    default: '0.0.0.0'
                     description: 'NAS IP address and called station ID.'
                 port:
                     type: int
@@ -90,14 +90,14 @@ options:
                 secondary-secret:
                     -
                         type: str
-                        default: ENC MjQ1NDY1NzY1NDA5NDc3NsQvpemPPVnDdmjXG2aGMVw2ewhHNWiM5dWsNnfyIP59U/x0Sh3pI2ORfJmJ/m2bQ9guTxrIH8uvVP4gzItuNQvVvgS5sR/Y4x3jjlmrhvA0vK8TjoXt6sFKfKe86/vEo/cg3Y/RJFF1a1dkdDKNjHxCXJIL
+                        default: 'ENC MjQ1NDY1NzY1NDA5NDc3NsQvpemPPVnDdmjXG2aGMVw2ewhHNWiM5dWsNnfyIP59U/x0Sh3pI2ORfJmJ/m2bQ9guTxrIH8uvVP4gzItuNQvVvgS5sR/Y4x3jjlmrhvA0vK8TjoXt6sFKfKe86/vEo/cg3Y/RJFF1a1dkdDKNjHxCXJIL'
                 secondary-server:
                     type: str
                     description: 'Secondary server name/IP.'
                 secret:
                     -
                         type: str
-                        default: ENC ODcxMTExOTAwNDcxNzk4NoWoeEH5WLj2/jjPjplVd8npoc4Pf69w03rfqCi4oVPVPLjIKZTbFLtwEaPQESVBBguR6N1nV9qaAP9EHiMLSzU7Ff/g5ui7hXGXo4hEkXIP09D4PY2eQg9Htz8Oqm42M148kMuPADC3cx8nsiVWb001mIvf
+                        default: 'ENC ODcxMTExOTAwNDcxNzk4NoWoeEH5WLj2/jjPjplVd8npoc4Pf69w03rfqCi4oVPVPLjIKZTbFLtwEaPQESVBBguR6N1nV9qaAP9EHiMLSzU7Ff/g5ui7hXGXo4hEkXIP09D4PY2eQg9Htz8Oqm42M148kMuPADC3cx8nsiVWb001mIvf'
                 server:
                     type: str
                     description: 'Server name/IP.'

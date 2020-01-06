@@ -44,7 +44,7 @@ Parameters
  <ul class="ul-self">
  <li><span class="li-head">data</span> - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
  <li><span class="li-head">change-4-characters</span> - Enable/disable changing at least 4 characters for new password. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span>  <span class="li-normal">default: disable</span> </li>
- <li><span class="li-head">expire</span> - Number of days after which admin users' password will expire (0 - 3650, 0 = never expire). <span class="li-normal">type: int</span>  <span class="li-normal">default: 0</span> </li>
+ <li><span class="li-head">expire</span> - Number of days after which admin users password will expire (0 - 3650, 0 = never expire). <span class="li-normal">type: int</span>  <span class="li-normal">default: 0</span> </li>
  <li><span class="li-head">minimum-length</span> - Minimum password length. <span class="li-normal">type: int</span>  <span class="li-normal">default: 8</span> </li>
  <li><span class="li-head">must-contain</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">choices: [upper-case-letter, lower-case-letter, number, non-alphanumeric]</span> </li>
@@ -111,7 +111,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li><span class="li-return">data</span>
  - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
  <li> <span class="li-return"> change-4-characters </span> - Enable/disable changing at least 4 characters for new password. <span class="li-normal">type: str</span>  <span class="li-normal">example: disable</span>  </li>
- <li> <span class="li-return"> expire </span> - Number of days after which admin users' password will expire (0 - 3650, 0 = never expire). <span class="li-normal">type: int</span>  <span class="li-normal">example: 0</span>  </li>
+ <li> <span class="li-return"> expire </span> - Number of days after which admin users password will expire (0 - 3650, 0 = never expire). <span class="li-normal">type: int</span>  <span class="li-normal">example: 0</span>  </li>
  <li> <span class="li-return"> minimum-length </span> - Minimum password length. <span class="li-normal">type: int</span>  <span class="li-normal">example: 8</span>  </li>
  <li> <span class="li-return"> must-contain </span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li><span class="li-return">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span>  </li>

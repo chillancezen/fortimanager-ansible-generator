@@ -92,8 +92,8 @@ options:
                         visibility:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                 member:
                     type: str
                     description: 'Address objects contained within the group.'
@@ -118,8 +118,8 @@ options:
                     type: str
                     description: 'Enable/disable address group6 visibility in the GUI.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'Configure IPv6 address groups.'
@@ -137,9 +137,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

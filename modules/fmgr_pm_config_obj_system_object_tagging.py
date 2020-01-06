@@ -68,9 +68,9 @@ options:
                         type: str
                         description: 'Address.'
                         choices:
-                            - optional
-                            - mandatory
-                            - disable
+                            - 'optional'
+                            - 'mandatory'
+                            - 'disable'
                     category:
                         type: str
                         description: 'Tag Category.'
@@ -81,22 +81,22 @@ options:
                         type: str
                         description: 'Device.'
                         choices:
-                            - optional
-                            - mandatory
-                            - disable
+                            - 'optional'
+                            - 'mandatory'
+                            - 'disable'
                     interface:
                         type: str
                         description: 'Interface.'
                         choices:
-                            - optional
-                            - mandatory
-                            - disable
+                            - 'optional'
+                            - 'mandatory'
+                            - 'disable'
                     multiple:
                         type: str
                         description: 'Allow multiple tag selection.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     tags:
                         -
                             type: str
@@ -113,13 +113,13 @@ options:
                     -
                         type: str
                         choices:
-                            - address
-                            - category
-                            - color
-                            - device
-                            - interface
-                            - multiple
-                            - tags
+                            - 'address'
+                            - 'category'
+                            - 'color'
+                            - 'device'
+                            - 'interface'
+                            - 'multiple'
+                            - 'tags'
             filter:
                 -
                     type: str
@@ -138,11 +138,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

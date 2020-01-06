@@ -90,8 +90,8 @@ options:
                         type: str
                         description: 'Apply this traffic shaping policy to IPv4 or IPv6 traffic.'
                         choices:
-                            - 4
-                            - 6
+                            - '4'
+                            - '6'
                     per-ip-shaper:
                         type: str
                         description: 'Per-IP traffic shaper to apply with this policy.'
@@ -111,8 +111,8 @@ options:
                         type: str
                         description: 'Enable/disable this traffic shaping policy.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     traffic-shaper:
                         type: str
                         description: 'Traffic shaper to apply to traffic forwarded by the firewall policy.'
@@ -138,24 +138,24 @@ options:
                     -
                         type: str
                         choices:
-                            - app-category
-                            - application
-                            - dstaddr
-                            - dstaddr6
-                            - dstintf
-                            - groups
-                            - id
-                            - ip-version
-                            - per-ip-shaper
-                            - schedule
-                            - service
-                            - srcaddr
-                            - srcaddr6
-                            - status
-                            - traffic-shaper
-                            - traffic-shaper-reverse
-                            - url-category
-                            - users
+                            - 'app-category'
+                            - 'application'
+                            - 'dstaddr'
+                            - 'dstaddr6'
+                            - 'dstintf'
+                            - 'groups'
+                            - 'id'
+                            - 'ip-version'
+                            - 'per-ip-shaper'
+                            - 'schedule'
+                            - 'service'
+                            - 'srcaddr'
+                            - 'srcaddr6'
+                            - 'status'
+                            - 'traffic-shaper'
+                            - 'traffic-shaper-reverse'
+                            - 'url-category'
+                            - 'users'
             filter:
                 -
                     type: str
@@ -174,11 +174,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

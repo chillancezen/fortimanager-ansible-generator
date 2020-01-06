@@ -70,8 +70,8 @@ options:
                         type: str
                         description: 'Mark spam or good.'
                         choices:
-                            - spam
-                            - clear
+                            - 'spam'
+                            - 'clear'
                     fieldbody:
                         type: str
                         description: 'Pattern for the header field body.'
@@ -85,14 +85,14 @@ options:
                         type: str
                         description: 'Wildcard pattern or regular expression.'
                         choices:
-                            - wildcard
-                            - regexp
+                            - 'wildcard'
+                            - 'regexp'
                     status:
                         type: str
                         description: 'Enable/disable status.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Spam filter mime header content.'
@@ -106,12 +106,12 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - fieldbody
-                            - fieldname
-                            - id
-                            - pattern-type
-                            - status
+                            - 'action'
+                            - 'fieldbody'
+                            - 'fieldname'
+                            - 'id'
+                            - 'pattern-type'
+                            - 'status'
             filter:
                 -
                     type: str
@@ -130,11 +130,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

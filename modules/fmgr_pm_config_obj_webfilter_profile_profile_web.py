@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Web content filtering settings.'
@@ -84,8 +84,8 @@ options:
                     type: str
                     description: 'Enable/disable automatic addition of URLs detected by FortiSandbox to blacklist.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 bword-table:
                     type: str
                     description: 'Banned word table ID.'
@@ -102,17 +102,17 @@ options:
                     type: str
                     description: 'Enable/disable logging all search phrases.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 safe-search:
                     -
                         type: str
                         choices:
-                            - google
-                            - yahoo
-                            - bing
-                            - url
-                            - header
+                            - 'google'
+                            - 'yahoo'
+                            - 'bing'
+                            - 'url'
+                            - 'header'
                 urlfilter-table:
                     type: str
                     description: 'URL filter table ID.'
@@ -120,19 +120,19 @@ options:
                     -
                         type: str
                         choices:
-                            - exempt-av
-                            - exempt-webcontent
-                            - exempt-activex-java-cookie
-                            - exempt-dlp
-                            - exempt-rangeblock
-                            - extended-log-others
+                            - 'exempt-av'
+                            - 'exempt-webcontent'
+                            - 'exempt-activex-java-cookie'
+                            - 'exempt-dlp'
+                            - 'exempt-rangeblock'
+                            - 'extended-log-others'
                 youtube-restrict:
                     type: str
                     description: 'YouTube EDU filter level.'
                     choices:
-                        - strict
-                        - none
-                        - moderate
+                        - 'strict'
+                        - 'none'
+                        - 'moderate'
 
 '''
 

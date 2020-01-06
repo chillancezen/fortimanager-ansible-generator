@@ -76,8 +76,8 @@ options:
                 arp-reply:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 color:
                     type: int
                 comment:
@@ -91,12 +91,12 @@ options:
                 ldb-method:
                     type: str
                     choices:
-                        - static
-                        - round-robin
-                        - weighted
-                        - least-session
-                        - least-rtt
-                        - first-alive
+                        - 'static'
+                        - 'round-robin'
+                        - 'weighted'
+                        - 'least-session'
+                        - 'least-rtt'
+                        - 'first-alive'
                 mappedip:
                     type: str
                 mappedport:
@@ -106,28 +106,28 @@ options:
                 portforward:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 protocol:
                     type: str
                     choices:
-                        - tcp
-                        - udp
+                        - 'tcp'
+                        - 'udp'
                 server-type:
                     type: str
                     choices:
-                        - http
-                        - tcp
-                        - udp
-                        - ip
+                        - 'http'
+                        - 'tcp'
+                        - 'udp'
+                        - 'ip'
                 src-filter:
                     -
                         type: str
                 type:
                     type: str
                     choices:
-                        - static-nat
-                        - server-load-balance
+                        - 'static-nat'
+                        - 'server-load-balance'
                 uuid:
                     type: str
     schema_object1:
@@ -147,9 +147,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

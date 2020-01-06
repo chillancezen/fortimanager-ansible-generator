@@ -69,8 +69,8 @@ options:
                     type: str
                     description: 'Default action (pass or block) for this signature.'
                     choices:
-                        - block
-                        - pass
+                        - 'block'
+                        - 'pass'
                 application:
                     -
                         type: str
@@ -84,14 +84,14 @@ options:
                     type: str
                     description: 'Enable/disable logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 log-packet:
                     type: str
                     description: 'Enable/disable packet logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 os:
                     -
                         type: str
@@ -112,8 +112,8 @@ options:
                     type: str
                     description: 'Enable/disable this signature.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 tag:
                     type: str
                     description: 'Signature tag.'
@@ -134,9 +134,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

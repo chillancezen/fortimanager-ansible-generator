@@ -54,10 +54,10 @@ options:
                     -
                         type: str
                         choices:
-                            - none
-                            - cp_all_objs
-                            - copy_assigned_pkg
-                            - unassign
+                            - 'none'
+                            - 'cp_all_objs'
+                            - 'copy_assigned_pkg'
+                            - 'unassign'
                 pkg:
                     type: str
                     description: 'Source package path and name.'
@@ -68,13 +68,13 @@ options:
                             description: 'Destination ADOM.'
                         excluded:
                             type: str
-                            default: disable
+                            default: 'disable'
                             description:
                              - 'disable - Only include the packages listed in the <i>pkg</i> list.'
                              - 'enable - Exclude the package listed in the <i>pkg</i> list, and assign to all other packages in the ADOM.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         pkg:
                             type: str
                             description: 'Destination ADOM policy package path and name.'

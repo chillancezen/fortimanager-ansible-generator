@@ -86,11 +86,11 @@ options:
                     type: str
                     description: 'Type of address object (IPv4 or IPv6) or FortiGuard category.'
                     choices:
-                        - fortiguard-category
-                        - address
-                        - address6
-                        - wildcard-fqdn
-                        - regex
+                        - 'fortiguard-category'
+                        - 'address'
+                        - 'address6'
+                        - 'wildcard-fqdn'
+                        - 'regex'
                 wildcard-fqdn:
                     type: str
                     description: 'Exempt servers by wildcard FQDN.'
@@ -111,9 +111,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

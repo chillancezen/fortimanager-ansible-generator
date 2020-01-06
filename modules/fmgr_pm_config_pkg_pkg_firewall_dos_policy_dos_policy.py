@@ -72,15 +72,15 @@ options:
                             type: str
                             description: 'Action taken when the threshold is reached.'
                             choices:
-                                - pass
-                                - block
-                                - proxy
+                                - 'pass'
+                                - 'block'
+                                - 'proxy'
                         log:
                             type: str
                             description: 'Enable/disable logging for this anomaly.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         name:
                             type: str
                             description: 'Anomaly name.'
@@ -88,10 +88,10 @@ options:
                             type: str
                             description: 'Quarantine method.'
                             choices:
-                                - none
-                                - attacker
-                                - both
-                                - interface
+                                - 'none'
+                                - 'attacker'
+                                - 'both'
+                                - 'interface'
                         quarantine-expiry:
                             type: str
                             description: 'Duration of quarantine, from 1 minute to 364 days, 23 hours, and 59 minutes from now. (format: ###d##h##m, default = 5m). Requires quarantine set to attacker.'
@@ -99,14 +99,14 @@ options:
                             type: str
                             description: 'Enable/disable quarantine logging.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         status:
                             type: str
                             description: 'Enable/disable the active status of this anomaly sensor.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         threshold:
                             type: int
                             description: 'Number of detected instances per minute which triggers action (1 - 2147483647, default = 1000). Note that each anomaly has a different threshold value assigned to it.'
@@ -134,8 +134,8 @@ options:
                     type: str
                     description: 'Enable/disable this policy.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'Configure IPv4 DoS policies.'
@@ -153,9 +153,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object3:
         methods: [move]
         description: 'Configure IPv4 DoS policies.'
@@ -164,8 +164,8 @@ options:
             option:
                 type: str
                 choices:
-                    - before
-                    - after
+                    - 'before'
+                    - 'after'
             target:
                 type: str
                 description: 'Key to the target entry.'

@@ -71,9 +71,9 @@ options:
                     type: str
                     description: 'Action of override rule.'
                     choices:
-                        - pass
-                        - block
-                        - reset
+                        - 'pass'
+                        - 'block'
+                        - 'reset'
                 exempt-ip:
                     -
                         dst-ip:
@@ -89,22 +89,22 @@ options:
                     type: str
                     description: 'Enable/disable logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 log-packet:
                     type: str
                     description: 'Enable/disable packet logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 quarantine:
                     type: str
                     description: 'Quarantine IP or interface.'
                     choices:
-                        - none
-                        - attacker
-                        - both
-                        - interface
+                        - 'none'
+                        - 'attacker'
+                        - 'both'
+                        - 'interface'
                 quarantine-expiry:
                     type: int
                     description: 'Duration of quarantine in minute.'
@@ -112,8 +112,8 @@ options:
                     type: str
                     description: 'Enable/disable logging of selected quarantine.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 rule-id:
                     type: int
                     description: 'Override rule ID.'
@@ -121,8 +121,8 @@ options:
                     type: str
                     description: 'Enable/disable status of override rule.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'IPS override rule.'
@@ -140,9 +140,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

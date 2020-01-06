@@ -53,15 +53,15 @@ options:
                 -
                     client-adom:
                         type: str
-                        description: 'Log-fetch client side's adom name.'
+                        description: 'Log-fetch client sides adom name.'
                     data-range:
                         type: str
-                        default: custom
+                        default: 'custom'
                         description:
                          - 'Data-range for fetched logs.'
                          - 'custom - Specify some other date and time range.'
                         choices:
-                            - custom
+                            - 'custom'
                     data-range-value:
                         type: int
                         default: 10
@@ -70,11 +70,11 @@ options:
                         -
                             adom:
                                 type: str
-                                default: *
+                                default: '*'
                                 description: 'Adom name.'
                             device:
                                 type: str
-                                default: *
+                                default: '*'
                                 description: 'Device name or Serial number.'
                             id:
                                 type: int
@@ -82,7 +82,7 @@ options:
                                 description: 'Add or edit a device filter.'
                             vdom:
                                 type: str
-                                default: *
+                                default: '*'
                                 description: 'Vdom filters.'
                     end-time:
                         -
@@ -93,14 +93,14 @@ options:
                         description: 'Log-fetch client profile ID.'
                     index-fetch-logs:
                         type: str
-                        default: enable
+                        default: 'enable'
                         description:
                          - 'Enable/Disable indexing logs automatically after fetching logs.'
                          - 'disable - Disable attribute function.'
                          - 'enable - Enable attribute function.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     log-filter:
                         -
                             field:
@@ -112,7 +112,7 @@ options:
                                 description: 'Log filter ID.'
                             oper:
                                 type: str
-                                default: =
+                                default: '='
                                 description:
                                  - 'Field filter operator.'
                                  - '&lt; - =Less than or equal to'
@@ -121,75 +121,75 @@ options:
                                  - 'not-contain - Not contain'
                                  - 'match - Match (expression)'
                                 choices:
-                                    - =
-                                    - !=
-                                    - <
-                                    - >
-                                    - <=
-                                    - >=
-                                    - contain
-                                    - not-contain
-                                    - match
+                                    - '='
+                                    - '!='
+                                    - '<'
+                                    - '>'
+                                    - '<='
+                                    - '>='
+                                    - 'contain'
+                                    - 'not-contain'
+                                    - 'match'
                             value:
                                 type: str
                                 description: 'Field filter operand or free-text matching expression.'
                     log-filter-logic:
                         type: str
-                        default: or
+                        default: 'or'
                         description:
                          - 'And/Or logic for log-filters.'
                          - 'and - Logic And.'
                          - 'or - Logic Or.'
                         choices:
-                            - and
-                            - or
+                            - 'and'
+                            - 'or'
                     log-filter-status:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/Disable log-filter.'
                          - 'disable - Disable attribute function.'
                          - 'enable - Enable attribute function.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     name:
                         type: str
                         description: 'Name of log-fetch client profile.'
                     password:
                         -
                             type: str
-                            default: ENC NzkzMDg4MDc2MTgwNjUzNhwvJBDjPF8MRvYpIukmL7G++XrKmHYTQF5zcGV+Ss3GXWsKe9F9Ie2B55rWFdty9EbQ6aAhGObDlAP7FQ7Otz0SNL49BDP1poSzSg2PuvFul8YYBSll3W/AAKoDgHm+llvtNz/qEJFyG6JzkDaGLy1ebMpO
+                            default: 'ENC NzkzMDg4MDc2MTgwNjUzNhwvJBDjPF8MRvYpIukmL7G++XrKmHYTQF5zcGV+Ss3GXWsKe9F9Ie2B55rWFdty9EbQ6aAhGObDlAP7FQ7Otz0SNL49BDP1poSzSg2PuvFul8YYBSll3W/AAKoDgHm+llvtNz/qEJFyG6JzkDaGLy1ebMpO'
                     secure-connection:
                         type: str
-                        default: enable
+                        default: 'enable'
                         description:
                          - 'Enable/Disable protecting log-fetch connection with TLS/SSL.'
                          - 'disable - Disable attribute function.'
                          - 'enable - Enable attribute function.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     server-adom:
                         type: str
-                        description: 'Log-fetch server side's adom name.'
+                        description: 'Log-fetch server sides adom name.'
                     server-ip:
                         type: str
-                        default: 0.0.0.0
+                        default: '0.0.0.0'
                         description: 'Log-fetch server IP address.'
                     start-time:
                         -
                             type: str
                     sync-adom-config:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/Disable sync adom related config.'
                          - 'disable - Disable attribute function.'
                          - 'enable - Enable attribute function.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     user:
                         type: str
                         description: 'Log-fetch server login username.'
@@ -203,22 +203,22 @@ options:
                     -
                         type: str
                         choices:
-                            - client-adom
-                            - data-range
-                            - data-range-value
-                            - end-time
-                            - id
-                            - index-fetch-logs
-                            - log-filter-logic
-                            - log-filter-status
-                            - name
-                            - password
-                            - secure-connection
-                            - server-adom
-                            - server-ip
-                            - start-time
-                            - sync-adom-config
-                            - user
+                            - 'client-adom'
+                            - 'data-range'
+                            - 'data-range-value'
+                            - 'end-time'
+                            - 'id'
+                            - 'index-fetch-logs'
+                            - 'log-filter-logic'
+                            - 'log-filter-status'
+                            - 'name'
+                            - 'password'
+                            - 'secure-connection'
+                            - 'server-adom'
+                            - 'server-ip'
+                            - 'start-time'
+                            - 'sync-adom-config'
+                            - 'user'
             filter:
                 -
                     type: str
@@ -232,8 +232,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 
@@ -326,7 +326,7 @@ return_of_api_category_0:
             suboptions:
                client-adom:
                   type: str
-                  description: 'Log-fetch client side's adom name.'
+                  description: 'Log-fetch client sides adom name.'
                data-range:
                   type: str
                   description: |
@@ -425,7 +425,7 @@ return_of_api_category_0:
                   example: enable
                server-adom:
                   type: str
-                  description: 'Log-fetch server side's adom name.'
+                  description: 'Log-fetch server sides adom name.'
                server-ip:
                   type: str
                   description: 'Log-fetch server IP address.'

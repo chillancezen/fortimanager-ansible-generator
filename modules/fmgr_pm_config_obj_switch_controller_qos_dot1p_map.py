@@ -74,98 +74,98 @@ options:
                         type: str
                         description: 'COS queue mapped to dot1p priority number.'
                         choices:
-                            - queue-0
-                            - queue-1
-                            - queue-2
-                            - queue-3
-                            - queue-4
-                            - queue-5
-                            - queue-6
-                            - queue-7
+                            - 'queue-0'
+                            - 'queue-1'
+                            - 'queue-2'
+                            - 'queue-3'
+                            - 'queue-4'
+                            - 'queue-5'
+                            - 'queue-6'
+                            - 'queue-7'
                     priority-1:
                         type: str
                         description: 'COS queue mapped to dot1p priority number.'
                         choices:
-                            - queue-0
-                            - queue-1
-                            - queue-2
-                            - queue-3
-                            - queue-4
-                            - queue-5
-                            - queue-6
-                            - queue-7
+                            - 'queue-0'
+                            - 'queue-1'
+                            - 'queue-2'
+                            - 'queue-3'
+                            - 'queue-4'
+                            - 'queue-5'
+                            - 'queue-6'
+                            - 'queue-7'
                     priority-2:
                         type: str
                         description: 'COS queue mapped to dot1p priority number.'
                         choices:
-                            - queue-0
-                            - queue-1
-                            - queue-2
-                            - queue-3
-                            - queue-4
-                            - queue-5
-                            - queue-6
-                            - queue-7
+                            - 'queue-0'
+                            - 'queue-1'
+                            - 'queue-2'
+                            - 'queue-3'
+                            - 'queue-4'
+                            - 'queue-5'
+                            - 'queue-6'
+                            - 'queue-7'
                     priority-3:
                         type: str
                         description: 'COS queue mapped to dot1p priority number.'
                         choices:
-                            - queue-0
-                            - queue-1
-                            - queue-2
-                            - queue-3
-                            - queue-4
-                            - queue-5
-                            - queue-6
-                            - queue-7
+                            - 'queue-0'
+                            - 'queue-1'
+                            - 'queue-2'
+                            - 'queue-3'
+                            - 'queue-4'
+                            - 'queue-5'
+                            - 'queue-6'
+                            - 'queue-7'
                     priority-4:
                         type: str
                         description: 'COS queue mapped to dot1p priority number.'
                         choices:
-                            - queue-0
-                            - queue-1
-                            - queue-2
-                            - queue-3
-                            - queue-4
-                            - queue-5
-                            - queue-6
-                            - queue-7
+                            - 'queue-0'
+                            - 'queue-1'
+                            - 'queue-2'
+                            - 'queue-3'
+                            - 'queue-4'
+                            - 'queue-5'
+                            - 'queue-6'
+                            - 'queue-7'
                     priority-5:
                         type: str
                         description: 'COS queue mapped to dot1p priority number.'
                         choices:
-                            - queue-0
-                            - queue-1
-                            - queue-2
-                            - queue-3
-                            - queue-4
-                            - queue-5
-                            - queue-6
-                            - queue-7
+                            - 'queue-0'
+                            - 'queue-1'
+                            - 'queue-2'
+                            - 'queue-3'
+                            - 'queue-4'
+                            - 'queue-5'
+                            - 'queue-6'
+                            - 'queue-7'
                     priority-6:
                         type: str
                         description: 'COS queue mapped to dot1p priority number.'
                         choices:
-                            - queue-0
-                            - queue-1
-                            - queue-2
-                            - queue-3
-                            - queue-4
-                            - queue-5
-                            - queue-6
-                            - queue-7
+                            - 'queue-0'
+                            - 'queue-1'
+                            - 'queue-2'
+                            - 'queue-3'
+                            - 'queue-4'
+                            - 'queue-5'
+                            - 'queue-6'
+                            - 'queue-7'
                     priority-7:
                         type: str
                         description: 'COS queue mapped to dot1p priority number.'
                         choices:
-                            - queue-0
-                            - queue-1
-                            - queue-2
-                            - queue-3
-                            - queue-4
-                            - queue-5
-                            - queue-6
-                            - queue-7
+                            - 'queue-0'
+                            - 'queue-1'
+                            - 'queue-2'
+                            - 'queue-3'
+                            - 'queue-4'
+                            - 'queue-5'
+                            - 'queue-6'
+                            - 'queue-7'
     schema_object1:
         methods: [get]
         description: 'Configure FortiSwitch QoS 802.1p.'
@@ -179,16 +179,16 @@ options:
                     -
                         type: str
                         choices:
-                            - description
-                            - name
-                            - priority-0
-                            - priority-1
-                            - priority-2
-                            - priority-3
-                            - priority-4
-                            - priority-5
-                            - priority-6
-                            - priority-7
+                            - 'description'
+                            - 'name'
+                            - 'priority-0'
+                            - 'priority-1'
+                            - 'priority-2'
+                            - 'priority-3'
+                            - 'priority-4'
+                            - 'priority-5'
+                            - 'priority-6'
+                            - 'priority-7'
             filter:
                 -
                     type: str
@@ -207,11 +207,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

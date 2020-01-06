@@ -75,8 +75,8 @@ options:
                     allow-routing:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     color:
                         type: int
                     comment:
@@ -84,8 +84,8 @@ options:
                     exclude:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     exclude-member:
                         type: str
                     member:
@@ -97,8 +97,8 @@ options:
                     visibility:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: ''
@@ -112,15 +112,15 @@ options:
                     -
                         type: str
                         choices:
-                            - _scope
-                            - allow-routing
-                            - color
-                            - exclude
-                            - exclude-member
-                            - member
-                            - tags
-                            - uuid
-                            - visibility
+                            - '_scope'
+                            - 'allow-routing'
+                            - 'color'
+                            - 'exclude'
+                            - 'exclude-member'
+                            - 'member'
+                            - 'tags'
+                            - 'uuid'
+                            - 'visibility'
             filter:
                 -
                     type: str
@@ -139,11 +139,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -79,8 +79,8 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
+                    - 'object member'
+                    - 'chksum'
     schema_object2:
         methods: [set, update]
         description: 'Script schedule table.'
@@ -97,16 +97,16 @@ options:
                      - 'monthly: "DD hh:mm"'
                 day_of_week:
                     type: str
-                    default: sun
+                    default: 'sun'
                     choices:
-                        - unknown
-                        - sun
-                        - mon
-                        - tue
-                        - wed
-                        - thu
-                        - fri
-                        - sat
+                        - 'unknown'
+                        - 'sun'
+                        - 'mon'
+                        - 'tue'
+                        - 'wed'
+                        - 'thu'
+                        - 'fri'
+                        - 'sat'
                 device:
                     type: int
                     description: 'Name or id of an existing device in the database.'
@@ -114,19 +114,19 @@ options:
                     type: str
                 run_on_db:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description: 'Indicates if the scheduled script should be executed on device database. It should always be disable for tcl scripts.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 type:
                     type: str
                     choices:
-                        - auto
-                        - onetime
-                        - daily
-                        - weekly
-                        - monthly
+                        - 'auto'
+                        - 'onetime'
+                        - 'daily'
+                        - 'weekly'
+                        - 'monthly'
 
 '''
 

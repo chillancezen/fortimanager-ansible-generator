@@ -54,8 +54,8 @@ options:
                     importance:
                         type: str
                         choices:
-                            - optional
-                            - required
+                            - 'optional'
+                            - 'required'
                     length:
                         type: int
                     name:
@@ -63,8 +63,8 @@ options:
                     status:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: ''

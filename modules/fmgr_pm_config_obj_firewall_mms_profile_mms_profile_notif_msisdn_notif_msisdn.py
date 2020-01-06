@@ -74,12 +74,12 @@ options:
                     -
                         type: str
                         choices:
-                            - flood-thresh-1
-                            - flood-thresh-2
-                            - flood-thresh-3
-                            - dupe-thresh-1
-                            - dupe-thresh-2
-                            - dupe-thresh-3
+                            - 'flood-thresh-1'
+                            - 'flood-thresh-2'
+                            - 'flood-thresh-3'
+                            - 'dupe-thresh-1'
+                            - 'dupe-thresh-2'
+                            - 'dupe-thresh-3'
     schema_object1:
         methods: [delete]
         description: 'Notification for MSISDNs.'
@@ -97,9 +97,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

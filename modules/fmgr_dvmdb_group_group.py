@@ -83,8 +83,8 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
+                    - 'object member'
+                    - 'chksum'
     schema_object2:
         methods: [set, update]
         description: 'Device group table.'
@@ -99,30 +99,30 @@ options:
                     type: str
                 os_type:
                     type: str
-                    default: unknown
+                    default: 'unknown'
                     choices:
-                        - unknown
-                        - fos
-                        - fsw
-                        - foc
-                        - fml
-                        - faz
-                        - fwb
-                        - fch
-                        - fct
-                        - log
-                        - fmg
-                        - fsa
-                        - fdd
-                        - fac
-                        - fpx
+                        - 'unknown'
+                        - 'fos'
+                        - 'fsw'
+                        - 'foc'
+                        - 'fml'
+                        - 'faz'
+                        - 'fwb'
+                        - 'fch'
+                        - 'fct'
+                        - 'log'
+                        - 'fmg'
+                        - 'fsa'
+                        - 'fdd'
+                        - 'fac'
+                        - 'fpx'
                 type:
                     type: str
-                    default: normal
+                    default: 'normal'
                     choices:
-                        - normal
-                        - default
-                        - auto
+                        - 'normal'
+                        - 'default'
+                        - 'auto'
         api_tag1:
             data:
                 -

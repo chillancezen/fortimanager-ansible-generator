@@ -69,8 +69,8 @@ options:
                     type: str
                     description: 'Enable ARP reply.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 color:
                     type: int
                     description: 'Color of icon on the GUI.'
@@ -88,8 +88,8 @@ options:
                         arp-reply:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         color:
                             type: int
                         comment:
@@ -103,12 +103,12 @@ options:
                         ldb-method:
                             type: str
                             choices:
-                                - static
-                                - round-robin
-                                - weighted
-                                - least-session
-                                - least-rtt
-                                - first-alive
+                                - 'static'
+                                - 'round-robin'
+                                - 'weighted'
+                                - 'least-session'
+                                - 'least-rtt'
+                                - 'first-alive'
                         mappedip:
                             type: str
                         mappedport:
@@ -118,28 +118,28 @@ options:
                         portforward:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         protocol:
                             type: str
                             choices:
-                                - tcp
-                                - udp
+                                - 'tcp'
+                                - 'udp'
                         server-type:
                             type: str
                             choices:
-                                - http
-                                - tcp
-                                - udp
-                                - ip
+                                - 'http'
+                                - 'tcp'
+                                - 'udp'
+                                - 'ip'
                         src-filter:
                             -
                                 type: str
                         type:
                             type: str
                             choices:
-                                - static-nat
-                                - server-load-balance
+                                - 'static-nat'
+                                - 'server-load-balance'
                         uuid:
                             type: str
                 extip:
@@ -155,12 +155,12 @@ options:
                     type: str
                     description: 'Load balance method.'
                     choices:
-                        - static
-                        - round-robin
-                        - weighted
-                        - least-session
-                        - least-rtt
-                        - first-alive
+                        - 'static'
+                        - 'round-robin'
+                        - 'weighted'
+                        - 'least-session'
+                        - 'least-rtt'
+                        - 'first-alive'
                 mappedip:
                     type: str
                     description: 'Start-mapped-IP [-end mapped-IP].'
@@ -177,14 +177,14 @@ options:
                     type: str
                     description: 'Enable port forwarding.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 protocol:
                     type: str
                     description: 'Mapped port protocol.'
                     choices:
-                        - tcp
-                        - udp
+                        - 'tcp'
+                        - 'udp'
                 realservers:
                     -
                         client-ip:
@@ -194,9 +194,9 @@ options:
                             type: str
                             description: 'Per server health check.'
                             choices:
-                                - disable
-                                - enable
-                                - vip
+                                - 'disable'
+                                - 'enable'
+                                - 'vip'
                         holddown-interval:
                             type: int
                             description: 'Hold down interval.'
@@ -219,19 +219,19 @@ options:
                             type: str
                             description: 'Server administrative status.'
                             choices:
-                                - active
-                                - standby
-                                - disable
+                                - 'active'
+                                - 'standby'
+                                - 'disable'
                         weight:
                             type: int
                 server-type:
                     type: str
                     description: 'Server type.'
                     choices:
-                        - http
-                        - tcp
-                        - udp
-                        - ip
+                        - 'http'
+                        - 'tcp'
+                        - 'udp'
+                        - 'ip'
                 src-filter:
                     -
                         type: str
@@ -239,8 +239,8 @@ options:
                     type: str
                     description: 'VIP type: static NAT.'
                     choices:
-                        - static-nat
-                        - server-load-balance
+                        - 'static-nat'
+                        - 'server-load-balance'
                 uuid:
                     type: str
                     description: 'Universally Unique Identifier (UUID; automatically assigned but can be manually reset).'
@@ -261,9 +261,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

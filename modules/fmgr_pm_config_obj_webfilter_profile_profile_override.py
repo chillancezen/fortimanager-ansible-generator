@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Web Filter override settings.'
@@ -84,8 +84,8 @@ options:
                     type: str
                     description: 'Allow/deny browser-based (cookie) overrides.'
                     choices:
-                        - deny
-                        - allow
+                        - 'deny'
+                        - 'allow'
                 ovrd-dur:
                     type: str
                     description: 'Override duration.'
@@ -93,17 +93,17 @@ options:
                     type: str
                     description: 'Override duration mode.'
                     choices:
-                        - constant
-                        - ask
+                        - 'constant'
+                        - 'ask'
                 ovrd-scope:
                     type: str
                     description: 'Override scope.'
                     choices:
-                        - user
-                        - user-group
-                        - ip
-                        - ask
-                        - browser
+                        - 'user'
+                        - 'user-group'
+                        - 'ip'
+                        - 'ask'
+                        - 'browser'
                 ovrd-user-group:
                     type: str
                     description: 'User groups with permission to use the override.'
@@ -114,65 +114,65 @@ options:
                     type: str
                     description: 'Profile attribute to retrieve from the RADIUS server.'
                     choices:
-                        - User-Name
-                        - User-Password
-                        - CHAP-Password
-                        - NAS-IP-Address
-                        - NAS-Port
-                        - Service-Type
-                        - Framed-Protocol
-                        - Framed-IP-Address
-                        - Framed-IP-Netmask
-                        - Framed-Routing
-                        - Filter-Id
-                        - Framed-MTU
-                        - Framed-Compression
-                        - Login-IP-Host
-                        - Login-Service
-                        - Login-TCP-Port
-                        - Reply-Message
-                        - Callback-Number
-                        - Callback-Id
-                        - Framed-Route
-                        - Framed-IPX-Network
-                        - State
-                        - Class
-                        - Vendor-Specific
-                        - Session-Timeout
-                        - Idle-Timeout
-                        - Termination-Action
-                        - Called-Station-Id
-                        - Calling-Station-Id
-                        - NAS-Identifier
-                        - Proxy-State
-                        - Login-LAT-Service
-                        - Login-LAT-Node
-                        - Login-LAT-Group
-                        - Framed-AppleTalk-Link
-                        - Framed-AppleTalk-Network
-                        - Framed-AppleTalk-Zone
-                        - Acct-Status-Type
-                        - Acct-Delay-Time
-                        - Acct-Input-Octets
-                        - Acct-Output-Octets
-                        - Acct-Session-Id
-                        - Acct-Authentic
-                        - Acct-Session-Time
-                        - Acct-Input-Packets
-                        - Acct-Output-Packets
-                        - Acct-Terminate-Cause
-                        - Acct-Multi-Session-Id
-                        - Acct-Link-Count
-                        - CHAP-Challenge
-                        - NAS-Port-Type
-                        - Port-Limit
-                        - Login-LAT-Port
+                        - 'User-Name'
+                        - 'User-Password'
+                        - 'CHAP-Password'
+                        - 'NAS-IP-Address'
+                        - 'NAS-Port'
+                        - 'Service-Type'
+                        - 'Framed-Protocol'
+                        - 'Framed-IP-Address'
+                        - 'Framed-IP-Netmask'
+                        - 'Framed-Routing'
+                        - 'Filter-Id'
+                        - 'Framed-MTU'
+                        - 'Framed-Compression'
+                        - 'Login-IP-Host'
+                        - 'Login-Service'
+                        - 'Login-TCP-Port'
+                        - 'Reply-Message'
+                        - 'Callback-Number'
+                        - 'Callback-Id'
+                        - 'Framed-Route'
+                        - 'Framed-IPX-Network'
+                        - 'State'
+                        - 'Class'
+                        - 'Vendor-Specific'
+                        - 'Session-Timeout'
+                        - 'Idle-Timeout'
+                        - 'Termination-Action'
+                        - 'Called-Station-Id'
+                        - 'Calling-Station-Id'
+                        - 'NAS-Identifier'
+                        - 'Proxy-State'
+                        - 'Login-LAT-Service'
+                        - 'Login-LAT-Node'
+                        - 'Login-LAT-Group'
+                        - 'Framed-AppleTalk-Link'
+                        - 'Framed-AppleTalk-Network'
+                        - 'Framed-AppleTalk-Zone'
+                        - 'Acct-Status-Type'
+                        - 'Acct-Delay-Time'
+                        - 'Acct-Input-Octets'
+                        - 'Acct-Output-Octets'
+                        - 'Acct-Session-Id'
+                        - 'Acct-Authentic'
+                        - 'Acct-Session-Time'
+                        - 'Acct-Input-Packets'
+                        - 'Acct-Output-Packets'
+                        - 'Acct-Terminate-Cause'
+                        - 'Acct-Multi-Session-Id'
+                        - 'Acct-Link-Count'
+                        - 'CHAP-Challenge'
+                        - 'NAS-Port-Type'
+                        - 'Port-Limit'
+                        - 'Login-LAT-Port'
                 profile-type:
                     type: str
                     description: 'Override profile type.'
                     choices:
-                        - list
-                        - radius
+                        - 'list'
+                        - 'radius'
 
 '''
 

@@ -70,65 +70,65 @@ options:
                     -
                         type: str
                         choices:
-                            - cpu-high
-                            - mem-low
-                            - log-full
-                            - intf-ip
-                            - vpn-tun-up
-                            - vpn-tun-down
-                            - ha-switch
-                            - ha-hb-failure
-                            - ips-signature
-                            - ips-anomaly
-                            - av-virus
-                            - av-oversize
-                            - av-pattern
-                            - av-fragmented
-                            - fm-if-change
-                            - fm-conf-change
-                            - temperature-high
-                            - voltage-alert
-                            - ha-member-up
-                            - ha-member-down
-                            - ent-conf-change
-                            - av-conserve
-                            - av-bypass
-                            - av-oversize-passed
-                            - av-oversize-blocked
-                            - ips-pkg-update
-                            - power-supply-failure
-                            - amc-bypass
-                            - faz-disconnect
-                            - fan-failure
-                            - bgp-established
-                            - bgp-backward-transition
-                            - wc-ap-up
-                            - wc-ap-down
-                            - fswctl-session-up
-                            - fswctl-session-down
-                            - ips-fail-open
-                            - load-balance-real-server-down
-                            - device-new
-                            - enter-intf-bypass
-                            - exit-intf-bypass
-                            - per-cpu-high
-                            - power-blade-down
-                            - confsync_failure
+                            - 'cpu-high'
+                            - 'mem-low'
+                            - 'log-full'
+                            - 'intf-ip'
+                            - 'vpn-tun-up'
+                            - 'vpn-tun-down'
+                            - 'ha-switch'
+                            - 'ha-hb-failure'
+                            - 'ips-signature'
+                            - 'ips-anomaly'
+                            - 'av-virus'
+                            - 'av-oversize'
+                            - 'av-pattern'
+                            - 'av-fragmented'
+                            - 'fm-if-change'
+                            - 'fm-conf-change'
+                            - 'temperature-high'
+                            - 'voltage-alert'
+                            - 'ha-member-up'
+                            - 'ha-member-down'
+                            - 'ent-conf-change'
+                            - 'av-conserve'
+                            - 'av-bypass'
+                            - 'av-oversize-passed'
+                            - 'av-oversize-blocked'
+                            - 'ips-pkg-update'
+                            - 'power-supply-failure'
+                            - 'amc-bypass'
+                            - 'faz-disconnect'
+                            - 'fan-failure'
+                            - 'bgp-established'
+                            - 'bgp-backward-transition'
+                            - 'wc-ap-up'
+                            - 'wc-ap-down'
+                            - 'fswctl-session-up'
+                            - 'fswctl-session-down'
+                            - 'ips-fail-open'
+                            - 'load-balance-real-server-down'
+                            - 'device-new'
+                            - 'enter-intf-bypass'
+                            - 'exit-intf-bypass'
+                            - 'per-cpu-high'
+                            - 'power-blade-down'
+                            - 'confsync_failure'
                 hosts:
                     -
                         ha-direct:
                             type: str
                             description: 'Enable/disable direct management of HA cluster members.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         host-type:
                             type: str
                             description: 'Control whether the SNMP manager sends SNMP queries, receives SNMP traps, or both.'
                             choices:
-                                - any
-                                - query
-                                - trap
+                                - 'any'
+                                - 'query'
+                                - 'trap'
                         id:
                             type: int
                             description: 'Host entry ID.'
@@ -144,15 +144,15 @@ options:
                             type: str
                             description: 'Enable/disable direct management of HA cluster members.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         host-type:
                             type: str
                             description: 'Control whether the SNMP manager sends SNMP queries, receives SNMP traps, or both.'
                             choices:
-                                - any
-                                - query
-                                - trap
+                                - 'any'
+                                - 'query'
+                                - 'trap'
                         id:
                             type: int
                             description: 'Host6 entry ID.'
@@ -175,8 +175,8 @@ options:
                     type: str
                     description: 'Enable/disable SNMP v1 queries.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 query-v2c-port:
                     type: int
                     description: 'SNMP v2c query port (default = 161).'
@@ -184,14 +184,14 @@ options:
                     type: str
                     description: 'Enable/disable SNMP v2c queries.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 status:
                     type: str
                     description: 'Enable/disable this SNMP community.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 trap-v1-lport:
                     type: int
                     description: 'SNMP v1 trap local port (default = 162).'
@@ -202,8 +202,8 @@ options:
                     type: str
                     description: 'Enable/disable SNMP v1 traps.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 trap-v2c-lport:
                     type: int
                     description: 'SNMP v2c trap local port (default = 162).'
@@ -214,8 +214,8 @@ options:
                     type: str
                     description: 'Enable/disable SNMP v2c traps.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'SNMP community configuration.'
@@ -233,9 +233,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

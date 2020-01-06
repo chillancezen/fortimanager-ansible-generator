@@ -73,17 +73,17 @@ options:
                         type: str
                         description: 'Format flag.'
                         choices:
-                            - none
-                            - text
-                            - html
-                            - wml
+                            - 'none'
+                            - 'text'
+                            - 'html'
+                            - 'wml'
                     header:
                         type: str
                         description: 'Header flag.'
                         choices:
-                            - none
-                            - http
-                            - 8bit
+                            - 'none'
+                            - 'http'
+                            - '8bit'
                     msg-type:
                         type: str
                         description: 'Message type.'
@@ -100,10 +100,10 @@ options:
                     -
                         type: str
                         choices:
-                            - buffer
-                            - format
-                            - header
-                            - msg-type
+                            - 'buffer'
+                            - 'format'
+                            - 'header'
+                            - 'msg-type'
             filter:
                 -
                     type: str
@@ -122,11 +122,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -71,9 +71,9 @@ options:
                     type: str
                     description: 'Options for the DHCP server to configure the client with the reserved MAC address.'
                     choices:
-                        - assign
-                        - block
-                        - reserved
+                        - 'assign'
+                        - 'block'
+                        - 'reserved'
                 description:
                     type: str
                     description: 'Description.'
@@ -103,9 +103,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

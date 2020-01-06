@@ -63,15 +63,15 @@ options:
                     action:
                         type: str
                         choices:
-                            - deny
-                            - accept
+                            - 'deny'
+                            - 'accept'
                     application-charts:
                         -
                             type: str
                             choices:
-                                - top10-app
-                                - top10-p2p-user
-                                - top10-media-user
+                                - 'top10-app'
+                                - 'top10-p2p-user'
+                                - 'top10-media-user'
                     application-list:
                         type: str
                     av-profile:
@@ -79,8 +79,8 @@ options:
                     capture-packet:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     deep-inspection-options:
                         type: str
                     devices:
@@ -92,13 +92,13 @@ options:
                     dstaddr-negate:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     endpoint-compliance:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     groups:
                         type: str
                     icap-profile:
@@ -110,20 +110,20 @@ options:
                     logtraffic:
                         type: str
                         choices:
-                            - disable
-                            - enable
-                            - all
-                            - utm
+                            - 'disable'
+                            - 'enable'
+                            - 'all'
+                            - 'utm'
                     logtraffic-app:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     logtraffic-start:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     mms-profile:
                         type: str
                     per-ip-shaper:
@@ -135,8 +135,8 @@ options:
                     profile-type:
                         type: str
                         choices:
-                            - single
-                            - group
+                            - 'single'
+                            - 'group'
                     replacemsg-group:
                         type: str
                     schedule:
@@ -144,15 +144,15 @@ options:
                     send-deny-packet:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     service:
                         type: str
                     service-negate:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     spamfilter-profile:
                         type: str
                     sslvpn-portal:
@@ -168,8 +168,8 @@ options:
                     utm-status:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     voip-profile:
                         type: str
                     webfilter-profile:
@@ -187,43 +187,43 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - application-charts
-                            - application-list
-                            - av-profile
-                            - capture-packet
-                            - deep-inspection-options
-                            - devices
-                            - dlp-sensor
-                            - dstaddr
-                            - dstaddr-negate
-                            - endpoint-compliance
-                            - groups
-                            - icap-profile
-                            - id
-                            - ips-sensor
-                            - logtraffic
-                            - logtraffic-app
-                            - logtraffic-start
-                            - mms-profile
-                            - per-ip-shaper
-                            - profile-group
-                            - profile-protocol-options
-                            - profile-type
-                            - replacemsg-group
-                            - schedule
-                            - send-deny-packet
-                            - service
-                            - service-negate
-                            - spamfilter-profile
-                            - sslvpn-portal
-                            - sslvpn-realm
-                            - traffic-shaper
-                            - traffic-shaper-reverse
-                            - users
-                            - utm-status
-                            - voip-profile
-                            - webfilter-profile
+                            - 'action'
+                            - 'application-charts'
+                            - 'application-list'
+                            - 'av-profile'
+                            - 'capture-packet'
+                            - 'deep-inspection-options'
+                            - 'devices'
+                            - 'dlp-sensor'
+                            - 'dstaddr'
+                            - 'dstaddr-negate'
+                            - 'endpoint-compliance'
+                            - 'groups'
+                            - 'icap-profile'
+                            - 'id'
+                            - 'ips-sensor'
+                            - 'logtraffic'
+                            - 'logtraffic-app'
+                            - 'logtraffic-start'
+                            - 'mms-profile'
+                            - 'per-ip-shaper'
+                            - 'profile-group'
+                            - 'profile-protocol-options'
+                            - 'profile-type'
+                            - 'replacemsg-group'
+                            - 'schedule'
+                            - 'send-deny-packet'
+                            - 'service'
+                            - 'service-negate'
+                            - 'spamfilter-profile'
+                            - 'sslvpn-portal'
+                            - 'sslvpn-realm'
+                            - 'traffic-shaper'
+                            - 'traffic-shaper-reverse'
+                            - 'users'
+                            - 'utm-status'
+                            - 'voip-profile'
+                            - 'webfilter-profile'
             filter:
                 -
                     type: str
@@ -242,11 +242,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -72,30 +72,30 @@ options:
                         type: str
                     os_type:
                         type: str
-                        default: unknown
+                        default: 'unknown'
                         choices:
-                            - unknown
-                            - fos
-                            - fsw
-                            - foc
-                            - fml
-                            - faz
-                            - fwb
-                            - fch
-                            - fct
-                            - log
-                            - fmg
-                            - fsa
-                            - fdd
-                            - fac
-                            - fpx
+                            - 'unknown'
+                            - 'fos'
+                            - 'fsw'
+                            - 'foc'
+                            - 'fml'
+                            - 'faz'
+                            - 'fwb'
+                            - 'fch'
+                            - 'fct'
+                            - 'log'
+                            - 'fmg'
+                            - 'fsa'
+                            - 'fdd'
+                            - 'fac'
+                            - 'fpx'
                     type:
                         type: str
-                        default: normal
+                        default: 'normal'
                         choices:
-                            - normal
-                            - default
-                            - auto
+                            - 'normal'
+                            - 'default'
+                            - 'auto'
     schema_object1:
         methods: [get]
         description: 'Device group table.'
@@ -109,10 +109,10 @@ options:
                     -
                         type: str
                         choices:
-                            - desc
-                            - name
-                            - os_type
-                            - type
+                            - 'desc'
+                            - 'name'
+                            - 'os_type'
+                            - 'type'
             filter:
                 -
                     type: str
@@ -130,9 +130,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'syntax'
             range:
                 -
                     type: int

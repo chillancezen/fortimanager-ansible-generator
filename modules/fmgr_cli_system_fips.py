@@ -57,30 +57,30 @@ options:
             data:
                 entropy-token:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable entropy token when switching to FIPS mode.'
                      - 'enable - Enable entropy token.'
                      - 'disable - Disable entropy token.'
                      - 'dynamic - Dynamically detect entropy token during bootup.'
                     choices:
-                        - enable
-                        - disable
-                        - dynamic
+                        - 'enable'
+                        - 'disable'
+                        - 'dynamic'
                 re-seed-interval:
                     type: int
                     default: 1440
                     description: 'Kernel FIPS-compliant PRNG re-seed interval (0 to 1440 minutes)'
                 status:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable FIPS-CC mode.'
                      - 'disable - Disable FIPS-CC mode.'
                      - 'enable - Enable FIPS-CC mode.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

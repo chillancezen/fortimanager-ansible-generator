@@ -121,16 +121,16 @@ options:
                         ssl:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         ssl-trusted-cert:
                             type: str
                         type:
                             type: str
                             choices:
-                                - default
-                                - fortiems
-                                - fortinac
+                                - 'default'
+                                - 'fortiems'
+                                - 'fortinac'
                         user-info-server:
                             type: str
                 ldap-server:
@@ -207,9 +207,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

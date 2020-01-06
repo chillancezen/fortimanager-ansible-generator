@@ -120,16 +120,16 @@ options:
                             ssl:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             ssl-trusted-cert:
                                 type: str
                             type:
                                 type: str
                                 choices:
-                                    - default
-                                    - fortiems
-                                    - fortinac
+                                    - 'default'
+                                    - 'fortiems'
+                                    - 'fortinac'
                             user-info-server:
                                 type: str
                     ldap-server:
@@ -202,26 +202,26 @@ options:
                     -
                         type: str
                         choices:
-                            - _gui_meta
-                            - ldap-server
-                            - name
-                            - password
-                            - password2
-                            - password3
-                            - password4
-                            - password5
-                            - port
-                            - port2
-                            - port3
-                            - port4
-                            - port5
-                            - server
-                            - server2
-                            - server3
-                            - server4
-                            - server5
-                            - source-ip
-                            - source-ip6
+                            - '_gui_meta'
+                            - 'ldap-server'
+                            - 'name'
+                            - 'password'
+                            - 'password2'
+                            - 'password3'
+                            - 'password4'
+                            - 'password5'
+                            - 'port'
+                            - 'port2'
+                            - 'port3'
+                            - 'port4'
+                            - 'port5'
+                            - 'server'
+                            - 'server2'
+                            - 'server3'
+                            - 'server4'
+                            - 'server5'
+                            - 'source-ip'
+                            - 'source-ip6'
             filter:
                 -
                     type: str
@@ -240,11 +240,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

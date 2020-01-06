@@ -71,10 +71,10 @@ options:
                     type: str
                     description: 'Action to take for matches.'
                     choices:
-                        - block
-                        - monitor
-                        - warning
-                        - authenticate
+                        - 'block'
+                        - 'monitor'
+                        - 'warning'
+                        - 'authenticate'
                 auth-usr-grp:
                     type: str
                     description: 'Groups with permission to authenticate.'
@@ -88,8 +88,8 @@ options:
                     type: str
                     description: 'Enable/disable logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 override-replacemsg:
                     type: str
                     description: 'Override replacement message.'
@@ -100,14 +100,14 @@ options:
                     type: str
                     description: 'Re-display warning after closing browser or after a timeout.'
                     choices:
-                        - session
-                        - timeout
+                        - 'session'
+                        - 'timeout'
                 warning-prompt:
                     type: str
                     description: 'Warning prompts in each category or each domain.'
                     choices:
-                        - per-domain
-                        - per-category
+                        - 'per-domain'
+                        - 'per-category'
     schema_object1:
         methods: [delete]
         description: 'FortiGuard filters.'
@@ -125,9 +125,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

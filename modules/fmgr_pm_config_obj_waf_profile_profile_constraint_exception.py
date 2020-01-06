@@ -73,20 +73,20 @@ options:
                         type: str
                         description: 'HTTP content length in request.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     header-length:
                         type: str
                         description: 'HTTP header length in request.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     hostname:
                         type: str
                         description: 'Enable/disable hostname check.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     id:
                         type: int
                         description: 'Exception ID.'
@@ -94,50 +94,50 @@ options:
                         type: str
                         description: 'HTTP line length in request.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     malformed:
                         type: str
                         description: 'Enable/disable malformed HTTP request check.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     max-cookie:
                         type: str
                         description: 'Maximum number of cookies in HTTP request.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     max-header-line:
                         type: str
                         description: 'Maximum number of HTTP header line.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     max-range-segment:
                         type: str
                         description: 'Maximum number of range segments in HTTP range line.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     max-url-param:
                         type: str
                         description: 'Maximum number of parameters in URL.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     method:
                         type: str
                         description: 'Enable/disable HTTP method check.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     param-length:
                         type: str
                         description: 'Maximum length of parameter in URL, HTTP POST request or HTTP body.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     pattern:
                         type: str
                         description: 'URL pattern.'
@@ -145,20 +145,20 @@ options:
                         type: str
                         description: 'Enable/disable regular expression based pattern match.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     url-param-length:
                         type: str
                         description: 'Maximum length of parameter in URL.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     version:
                         type: str
                         description: 'Enable/disable HTTP version check.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'HTTP constraint exception.'
@@ -172,23 +172,23 @@ options:
                     -
                         type: str
                         choices:
-                            - address
-                            - content-length
-                            - header-length
-                            - hostname
-                            - id
-                            - line-length
-                            - malformed
-                            - max-cookie
-                            - max-header-line
-                            - max-range-segment
-                            - max-url-param
-                            - method
-                            - param-length
-                            - pattern
-                            - regex
-                            - url-param-length
-                            - version
+                            - 'address'
+                            - 'content-length'
+                            - 'header-length'
+                            - 'hostname'
+                            - 'id'
+                            - 'line-length'
+                            - 'malformed'
+                            - 'max-cookie'
+                            - 'max-header-line'
+                            - 'max-range-segment'
+                            - 'max-url-param'
+                            - 'method'
+                            - 'param-length'
+                            - 'pattern'
+                            - 'regex'
+                            - 'url-param-length'
+                            - 'version'
             filter:
                 -
                     type: str
@@ -207,11 +207,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

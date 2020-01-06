@@ -69,9 +69,9 @@ options:
                     -
                         type: str
                         choices:
-                            - ibeacon
-                            - eddystone-uid
-                            - eddystone-url
+                            - 'ibeacon'
+                            - 'eddystone-uid'
+                            - 'eddystone-url'
                 beacon-interval:
                     type: int
                     description: 'Beacon interval (default = 100 msec).'
@@ -79,8 +79,8 @@ options:
                     type: str
                     description: 'Enable/disable Bluetooth Low Energy (BLE) scanning.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 comment:
                     type: str
                     description: 'Comment.'
@@ -112,19 +112,19 @@ options:
                     type: str
                     description: 'Transmit power level (default = 0).'
                     choices:
-                        - 0
-                        - 1
-                        - 2
-                        - 3
-                        - 4
-                        - 5
-                        - 6
-                        - 7
-                        - 8
-                        - 9
-                        - 10
-                        - 11
-                        - 12
+                        - '0'
+                        - '1'
+                        - '2'
+                        - '3'
+                        - '4'
+                        - '5'
+                        - '6'
+                        - '7'
+                        - '8'
+                        - '9'
+                        - '10'
+                        - '11'
+                        - '12'
     schema_object1:
         methods: [delete]
         description: 'Configure Bluetooth Low Energy profile.'
@@ -142,9 +142,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

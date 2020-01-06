@@ -74,9 +74,9 @@ options:
                     type: str
                     description: 'Per server health check.'
                     choices:
-                        - disable
-                        - enable
-                        - vip
+                        - 'disable'
+                        - 'enable'
+                        - 'vip'
                 holddown-interval:
                     type: int
                     description: 'Hold down interval.'
@@ -99,9 +99,9 @@ options:
                     type: str
                     description: 'Server administrative status.'
                     choices:
-                        - active
-                        - standby
-                        - disable
+                        - 'active'
+                        - 'standby'
+                        - 'disable'
                 weight:
                     type: int
     schema_object1:
@@ -121,9 +121,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

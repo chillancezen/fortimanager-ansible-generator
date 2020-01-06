@@ -73,8 +73,8 @@ options:
                         type: str
                         description: 'COS queue drop policy.'
                         choices:
-                            - taildrop
-                            - weighted-random-early-detection
+                            - 'taildrop'
+                            - 'weighted-random-early-detection'
                     max-rate:
                         type: int
                         description: 'Maximum rate (0 - 4294967295 kbps, 0 to disable).'
@@ -100,12 +100,12 @@ options:
                     -
                         type: str
                         choices:
-                            - description
-                            - drop-policy
-                            - max-rate
-                            - min-rate
-                            - name
-                            - weight
+                            - 'description'
+                            - 'drop-policy'
+                            - 'max-rate'
+                            - 'min-rate'
+                            - 'name'
+                            - 'weight'
             filter:
                 -
                     type: str
@@ -124,11 +124,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

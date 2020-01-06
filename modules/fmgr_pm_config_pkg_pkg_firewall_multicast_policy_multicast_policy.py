@@ -70,14 +70,14 @@ options:
                     type: str
                     description: 'Accept or deny traffic matching the policy.'
                     choices:
-                        - deny
-                        - accept
+                        - 'deny'
+                        - 'accept'
                 auto-asic-offload:
                     type: str
                     description: 'Enable/disable offloading policy traffic for hardware acceleration.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dnat:
                     type: str
                     description: 'IPv4 DNAT address used for multicast destination addresses.'
@@ -97,8 +97,8 @@ options:
                     type: str
                     description: 'Enable/disable logging traffic accepted by this policy.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 protocol:
                     type: int
                     description: 'Integer value for the protocol type as defined by IANA (0 - 255, default = 0).'
@@ -106,8 +106,8 @@ options:
                     type: str
                     description: 'Enable/disable substitution of the outgoing interface IP address for the original source IP address (called source NAT or SNAT).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 snat-ip:
                     type: str
                     description: 'IPv4 address to be used as the source address for NATed traffic.'
@@ -124,8 +124,8 @@ options:
                     type: str
                     description: 'Enable/disable this policy.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'Configure multicast NAT policies.'
@@ -143,9 +143,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object3:
         methods: [move]
         description: 'Configure multicast NAT policies.'
@@ -154,8 +154,8 @@ options:
             option:
                 type: str
                 choices:
-                    - before
-                    - after
+                    - 'before'
+                    - 'after'
             target:
                 type: str
                 description: 'Key to the target entry.'

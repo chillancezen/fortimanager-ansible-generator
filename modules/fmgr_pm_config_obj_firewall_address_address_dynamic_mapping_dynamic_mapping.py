@@ -76,8 +76,8 @@ options:
                 allow-routing:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 associated-interface:
                     type: str
                 cache-ttl:
@@ -109,20 +109,20 @@ options:
                 sdn:
                     type: str
                     choices:
-                        - aci
-                        - aws
-                        - nsx
-                        - nuage
-                        - azure
-                        - gcp
-                        - oci
-                        - openstack
+                        - 'aci'
+                        - 'aws'
+                        - 'nsx'
+                        - 'nuage'
+                        - 'azure'
+                        - 'gcp'
+                        - 'oci'
+                        - 'openstack'
                 sdn-addr-type:
                     type: str
                     choices:
-                        - private
-                        - public
-                        - all
+                        - 'private'
+                        - 'public'
+                        - 'all'
                 sdn-tag:
                     type: str
                 start-ip:
@@ -140,18 +140,18 @@ options:
                 type:
                     type: str
                     choices:
-                        - ipmask
-                        - iprange
-                        - fqdn
-                        - wildcard
-                        - geography
-                        - url
-                        - wildcard-fqdn
-                        - nsx
-                        - aws
-                        - dynamic
-                        - interface-subnet
-                        - mac
+                        - 'ipmask'
+                        - 'iprange'
+                        - 'fqdn'
+                        - 'wildcard'
+                        - 'geography'
+                        - 'url'
+                        - 'wildcard-fqdn'
+                        - 'nsx'
+                        - 'aws'
+                        - 'dynamic'
+                        - 'interface-subnet'
+                        - 'mac'
                 url:
                     type: str
                 uuid:
@@ -159,8 +159,8 @@ options:
                 visibility:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 wildcard:
                     type: str
                 wildcard-fqdn:
@@ -182,9 +182,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

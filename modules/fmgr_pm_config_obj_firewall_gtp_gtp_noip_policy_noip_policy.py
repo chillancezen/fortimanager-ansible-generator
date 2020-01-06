@@ -71,8 +71,8 @@ options:
                     type: str
                     description: 'Action.'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 end:
                     type: int
                     description: 'End of protocol range (0 - 255).'
@@ -86,8 +86,8 @@ options:
                     type: str
                     description: 'Protocol field type.'
                     choices:
-                        - etsi
-                        - ietf
+                        - 'etsi'
+                        - 'ietf'
     schema_object1:
         methods: [delete]
         description: 'No IP policy.'
@@ -105,9 +105,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

@@ -69,8 +69,8 @@ options:
                         type: str
                         description: 'Authentication protocol.'
                         choices:
-                            - md5
-                            - sha
+                            - 'md5'
+                            - 'sha'
                     auth-pwd:
                         -
                             type: str
@@ -78,56 +78,56 @@ options:
                         -
                             type: str
                             choices:
-                                - cpu-high
-                                - mem-low
-                                - log-full
-                                - intf-ip
-                                - vpn-tun-up
-                                - vpn-tun-down
-                                - ha-switch
-                                - fm-conf-change
-                                - ips-signature
-                                - ips-anomaly
-                                - temperature-high
-                                - voltage-alert
-                                - av-virus
-                                - av-oversize
-                                - av-pattern
-                                - av-fragmented
-                                - ha-hb-failure
-                                - fan-failure
-                                - ha-member-up
-                                - ha-member-down
-                                - ent-conf-change
-                                - av-conserve
-                                - av-bypass
-                                - av-oversize-passed
-                                - av-oversize-blocked
-                                - ips-pkg-update
-                                - fm-if-change
-                                - power-supply-failure
-                                - amc-bypass
-                                - faz-disconnect
-                                - bgp-established
-                                - bgp-backward-transition
-                                - wc-ap-up
-                                - wc-ap-down
-                                - fswctl-session-up
-                                - fswctl-session-down
-                                - ips-fail-open
-                                - load-balance-real-server-down
-                                - device-new
-                                - enter-intf-bypass
-                                - exit-intf-bypass
-                                - per-cpu-high
-                                - power-blade-down
-                                - confsync_failure
+                                - 'cpu-high'
+                                - 'mem-low'
+                                - 'log-full'
+                                - 'intf-ip'
+                                - 'vpn-tun-up'
+                                - 'vpn-tun-down'
+                                - 'ha-switch'
+                                - 'fm-conf-change'
+                                - 'ips-signature'
+                                - 'ips-anomaly'
+                                - 'temperature-high'
+                                - 'voltage-alert'
+                                - 'av-virus'
+                                - 'av-oversize'
+                                - 'av-pattern'
+                                - 'av-fragmented'
+                                - 'ha-hb-failure'
+                                - 'fan-failure'
+                                - 'ha-member-up'
+                                - 'ha-member-down'
+                                - 'ent-conf-change'
+                                - 'av-conserve'
+                                - 'av-bypass'
+                                - 'av-oversize-passed'
+                                - 'av-oversize-blocked'
+                                - 'ips-pkg-update'
+                                - 'fm-if-change'
+                                - 'power-supply-failure'
+                                - 'amc-bypass'
+                                - 'faz-disconnect'
+                                - 'bgp-established'
+                                - 'bgp-backward-transition'
+                                - 'wc-ap-up'
+                                - 'wc-ap-down'
+                                - 'fswctl-session-up'
+                                - 'fswctl-session-down'
+                                - 'ips-fail-open'
+                                - 'load-balance-real-server-down'
+                                - 'device-new'
+                                - 'enter-intf-bypass'
+                                - 'exit-intf-bypass'
+                                - 'per-cpu-high'
+                                - 'power-blade-down'
+                                - 'confsync_failure'
                     ha-direct:
                         type: str
                         description: 'Enable/disable direct management of HA cluster members.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     name:
                         type: str
                         description: 'SNMP user name.'
@@ -141,10 +141,10 @@ options:
                         type: str
                         description: 'Privacy (encryption) protocol.'
                         choices:
-                            - aes
-                            - des
-                            - aes256
-                            - aes256cisco
+                            - 'aes'
+                            - 'des'
+                            - 'aes256'
+                            - 'aes256cisco'
                     priv-pwd:
                         -
                             type: str
@@ -152,8 +152,8 @@ options:
                         type: str
                         description: 'Enable/disable SNMP queries for this user.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     query-port:
                         type: int
                         description: 'SNMPv3 query port (default = 161).'
@@ -161,9 +161,9 @@ options:
                         type: str
                         description: 'Security level for message authentication and encryption.'
                         choices:
-                            - no-auth-no-priv
-                            - auth-no-priv
-                            - auth-priv
+                            - 'no-auth-no-priv'
+                            - 'auth-no-priv'
+                            - 'auth-priv'
                     source-ip:
                         type: str
                         description: 'Source IP for SNMP trap.'
@@ -174,8 +174,8 @@ options:
                         type: str
                         description: 'Enable/disable this SNMP user.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     trap-lport:
                         type: int
                         description: 'SNMPv3 local trap port (default = 162).'
@@ -186,8 +186,8 @@ options:
                         type: str
                         description: 'Enable/disable traps for this SNMP user.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'SNMP user configuration.'
@@ -201,24 +201,24 @@ options:
                     -
                         type: str
                         choices:
-                            - auth-proto
-                            - auth-pwd
-                            - events
-                            - ha-direct
-                            - name
-                            - notify-hosts
-                            - notify-hosts6
-                            - priv-proto
-                            - priv-pwd
-                            - queries
-                            - query-port
-                            - security-level
-                            - source-ip
-                            - source-ipv6
-                            - status
-                            - trap-lport
-                            - trap-rport
-                            - trap-status
+                            - 'auth-proto'
+                            - 'auth-pwd'
+                            - 'events'
+                            - 'ha-direct'
+                            - 'name'
+                            - 'notify-hosts'
+                            - 'notify-hosts6'
+                            - 'priv-proto'
+                            - 'priv-pwd'
+                            - 'queries'
+                            - 'query-port'
+                            - 'security-level'
+                            - 'source-ip'
+                            - 'source-ipv6'
+                            - 'status'
+                            - 'trap-lport'
+                            - 'trap-rport'
+                            - 'trap-status'
             filter:
                 -
                     type: str
@@ -237,11 +237,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

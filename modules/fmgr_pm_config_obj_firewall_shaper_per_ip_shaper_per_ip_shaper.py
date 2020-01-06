@@ -69,21 +69,21 @@ options:
                     type: str
                     description: 'Unit of measurement for maximum bandwidth for this shaper (Kbps, Mbps or Gbps).'
                     choices:
-                        - kbps
-                        - mbps
-                        - gbps
+                        - 'kbps'
+                        - 'mbps'
+                        - 'gbps'
                 diffserv-forward:
                     type: str
                     description: 'Enable/disable changing the Forward (original) DiffServ setting applied to traffic accepted by this shaper.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 diffserv-reverse:
                     type: str
                     description: 'Enable/disable changing the Reverse (reply) DiffServ setting applied to traffic accepted by this shaper.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 diffservcode-forward:
                     type: str
                     description: 'Forward (original) DiffServ setting to be applied to traffic accepted by this shaper.'
@@ -116,9 +116,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

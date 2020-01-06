@@ -70,9 +70,9 @@ options:
                         type: str
                         description: 'Action of override rule.'
                         choices:
-                            - pass
-                            - block
-                            - reset
+                            - 'pass'
+                            - 'block'
+                            - 'reset'
                     exempt-ip:
                         -
                             dst-ip:
@@ -88,22 +88,22 @@ options:
                         type: str
                         description: 'Enable/disable logging.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     log-packet:
                         type: str
                         description: 'Enable/disable packet logging.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     quarantine:
                         type: str
                         description: 'Quarantine IP or interface.'
                         choices:
-                            - none
-                            - attacker
-                            - both
-                            - interface
+                            - 'none'
+                            - 'attacker'
+                            - 'both'
+                            - 'interface'
                     quarantine-expiry:
                         type: int
                         description: 'Duration of quarantine in minute.'
@@ -111,8 +111,8 @@ options:
                         type: str
                         description: 'Enable/disable logging of selected quarantine.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     rule-id:
                         type: int
                         description: 'Override rule ID.'
@@ -120,8 +120,8 @@ options:
                         type: str
                         description: 'Enable/disable status of override rule.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'IPS override rule.'
@@ -135,14 +135,14 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - log
-                            - log-packet
-                            - quarantine
-                            - quarantine-expiry
-                            - quarantine-log
-                            - rule-id
-                            - status
+                            - 'action'
+                            - 'log'
+                            - 'log-packet'
+                            - 'quarantine'
+                            - 'quarantine-expiry'
+                            - 'quarantine-log'
+                            - 'rule-id'
+                            - 'status'
             filter:
                 -
                     type: str
@@ -161,11 +161,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

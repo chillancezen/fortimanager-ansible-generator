@@ -79,8 +79,8 @@ options:
                         type: str
                         description: 'Enable or disable this TLV.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     vlan:
                         type: int
                         description: 'ID of VLAN to advertise, if configured on port (0 - 4094, 0 = priority tag).'
@@ -97,11 +97,11 @@ options:
                     -
                         type: str
                         choices:
-                            - dscp
-                            - name
-                            - priority
-                            - status
-                            - vlan
+                            - 'dscp'
+                            - 'name'
+                            - 'priority'
+                            - 'status'
+                            - 'vlan'
             filter:
                 -
                     type: str
@@ -120,11 +120,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

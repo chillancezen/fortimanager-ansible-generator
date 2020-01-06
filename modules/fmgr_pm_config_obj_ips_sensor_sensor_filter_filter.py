@@ -71,10 +71,10 @@ options:
                     type: str
                     description: 'Action of selected rules.'
                     choices:
-                        - pass
-                        - block
-                        - default
-                        - reset
+                        - 'pass'
+                        - 'block'
+                        - 'default'
+                        - 'reset'
                 application:
                     -
                         type: str
@@ -85,16 +85,16 @@ options:
                     type: str
                     description: 'Enable/disable logging of selected rules.'
                     choices:
-                        - disable
-                        - enable
-                        - default
+                        - 'disable'
+                        - 'enable'
+                        - 'default'
                 log-packet:
                     type: str
                     description: 'Enable/disable packet logging of selected rules.'
                     choices:
-                        - disable
-                        - enable
-                        - default
+                        - 'disable'
+                        - 'enable'
+                        - 'default'
                 name:
                     type: str
                     description: 'Filter name.'
@@ -108,10 +108,10 @@ options:
                     type: str
                     description: 'Quarantine IP or interface.'
                     choices:
-                        - none
-                        - attacker
-                        - both
-                        - interface
+                        - 'none'
+                        - 'attacker'
+                        - 'both'
+                        - 'interface'
                 quarantine-expiry:
                     type: int
                     description: 'Duration of quarantine in minute.'
@@ -119,8 +119,8 @@ options:
                     type: str
                     description: 'Enable/disable logging of selected quarantine.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 severity:
                     -
                         type: str
@@ -128,9 +128,9 @@ options:
                     type: str
                     description: 'Selected rules status.'
                     choices:
-                        - disable
-                        - enable
-                        - default
+                        - 'disable'
+                        - 'enable'
+                        - 'default'
     schema_object1:
         methods: [delete]
         description: 'IPS sensor filter.'
@@ -148,9 +148,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object3:
         methods: [move]
         description: 'IPS sensor filter.'
@@ -159,8 +159,8 @@ options:
             option:
                 type: str
                 choices:
-                    - before
-                    - after
+                    - 'before'
+                    - 'after'
             target:
                 type: str
                 description: 'Key to the target entry.'

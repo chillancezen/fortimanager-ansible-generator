@@ -55,7 +55,7 @@ Parameters
  <li><span class="li-head">header-x-forwarded-for</span> - Action to take on the HTTP x-forwarded-for header in forwarded requests: forwards (pass), adds, or removes the HTTP header. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [pass, add, remove]</span> </li>
  <li><span class="li-head">headers</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li><span class="li-head">action</span> - Action when HTTP the header forwarded. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [add-to-request, add-to-response, remove-from-request, remove-from-response]</span> </li>
- <li><span class="li-head">content</span> - HTTP header's content. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">content</span> - HTTP headers content. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">id</span> - HTTP forwarded header id. <span class="li-normal">type: int</span> </li>
  <li><span class="li-head">name</span> - HTTP forwarded header name. <span class="li-normal">type: str</span> </li>
  </ul>
@@ -170,7 +170,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> header-x-forwarded-for </span> - Action to take on the HTTP x-forwarded-for header in forwarded requests: forwards (pass), adds, or removes the HTTP header. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> headers </span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li> <span class="li-return"> action </span> - Action when HTTP the header forwarded. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> content </span> - HTTP header's content. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> content </span> - HTTP headers content. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> id </span> - HTTP forwarded header id. <span class="li-normal">type: int</span>  </li>
  <li> <span class="li-return"> name </span> - HTTP forwarded header name. <span class="li-normal">type: str</span>  </li>
  </ul>

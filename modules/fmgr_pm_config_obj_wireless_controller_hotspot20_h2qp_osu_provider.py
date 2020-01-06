@@ -85,9 +85,9 @@ options:
                         -
                             type: str
                             choices:
-                                - oma-dm
-                                - soap-xml-spp
-                                - reserved
+                                - 'oma-dm'
+                                - 'soap-xml-spp'
+                                - 'reserved'
                     osu-nai:
                         type: str
                         description: 'OSU NAI.'
@@ -118,11 +118,11 @@ options:
                     -
                         type: str
                         choices:
-                            - icon
-                            - name
-                            - osu-method
-                            - osu-nai
-                            - server-uri
+                            - 'icon'
+                            - 'name'
+                            - 'osu-method'
+                            - 'osu-nai'
+                            - 'server-uri'
             filter:
                 -
                     type: str
@@ -141,11 +141,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

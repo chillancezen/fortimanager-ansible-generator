@@ -70,9 +70,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Filters for remote system server.'
@@ -83,14 +83,14 @@ options:
                     type: str
                     description: 'Lowest severity level to log.'
                     choices:
-                        - emergency
-                        - alert
-                        - critical
-                        - error
-                        - warning
-                        - notification
-                        - information
-                        - debug
+                        - 'emergency'
+                        - 'alert'
+                        - 'critical'
+                        - 'error'
+                        - 'warning'
+                        - 'notification'
+                        - 'information'
+                        - 'debug'
 
 '''
 

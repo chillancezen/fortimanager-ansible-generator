@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'WAF signatures.'
@@ -89,27 +89,27 @@ options:
                             type: str
                             description: 'Action.'
                             choices:
-                                - allow
-                                - block
-                                - erase
+                                - 'allow'
+                                - 'block'
+                                - 'erase'
                         case-sensitivity:
                             type: str
                             description: 'Case sensitivity in pattern.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         direction:
                             type: str
                             description: 'Traffic direction.'
                             choices:
-                                - request
-                                - response
+                                - 'request'
+                                - 'response'
                         log:
                             type: str
                             description: 'Enable/disable logging.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         name:
                             type: str
                             description: 'Signature name.'
@@ -120,32 +120,32 @@ options:
                             type: str
                             description: 'Severity.'
                             choices:
-                                - low
-                                - medium
-                                - high
+                                - 'low'
+                                - 'medium'
+                                - 'high'
                         status:
                             type: str
                             description: 'Status.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         target:
                             -
                                 type: str
                                 choices:
-                                    - arg
-                                    - arg-name
-                                    - req-body
-                                    - req-cookie
-                                    - req-cookie-name
-                                    - req-filename
-                                    - req-header
-                                    - req-header-name
-                                    - req-raw-uri
-                                    - req-uri
-                                    - resp-body
-                                    - resp-hdr
-                                    - resp-status
+                                    - 'arg'
+                                    - 'arg-name'
+                                    - 'req-body'
+                                    - 'req-cookie'
+                                    - 'req-cookie-name'
+                                    - 'req-filename'
+                                    - 'req-header'
+                                    - 'req-header-name'
+                                    - 'req-raw-uri'
+                                    - 'req-uri'
+                                    - 'resp-body'
+                                    - 'resp-hdr'
+                                    - 'resp-status'
                 disabled-signature:
                     type: str
                     description: 'Disabled signatures'
@@ -157,9 +157,9 @@ options:
                         type: str
                         description: 'Action.'
                         choices:
-                            - allow
-                            - block
-                            - erase
+                            - 'allow'
+                            - 'block'
+                            - 'erase'
                     id:
                         type: int
                         description: 'Main signature class ID.'
@@ -167,21 +167,21 @@ options:
                         type: str
                         description: 'Enable/disable logging.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     severity:
                         type: str
                         description: 'Severity.'
                         choices:
-                            - low
-                            - medium
-                            - high
+                            - 'low'
+                            - 'medium'
+                            - 'high'
                     status:
                         type: str
                         description: 'Status.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
 
 '''
 

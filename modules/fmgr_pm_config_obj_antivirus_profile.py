@@ -71,8 +71,8 @@ options:
                         type: str
                         description: 'Enable/disable using the FortiSandbox signature database to supplement the AV signature databases.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     analytics-max-upload:
                         type: int
                         description: 'Maximum size of files that can be uploaded to FortiSandbox (1 - 395 MBytes, default = 10).'
@@ -83,14 +83,14 @@ options:
                         type: str
                         description: 'Enable/disable logging for AntiVirus file blocking.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     av-virus-log:
                         type: str
                         description: 'Enable/disable AntiVirus logging.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     comment:
                         type: str
                         description: 'Comment.'
@@ -98,27 +98,27 @@ options:
                         type: str
                         description: 'Enable/disable extended logging for antivirus.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ftgd-analytics:
                         type: str
                         description: 'Settings to control which files are uploaded to FortiSandbox.'
                         choices:
-                            - disable
-                            - suspicious
-                            - everything
+                            - 'disable'
+                            - 'suspicious'
+                            - 'everything'
                     inspection-mode:
                         type: str
                         description: 'Inspection mode.'
                         choices:
-                            - proxy
-                            - flow-based
+                            - 'proxy'
+                            - 'flow-based'
                     mobile-malware-db:
                         type: str
                         description: 'Enable/disable using the mobile malware signature database.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     name:
                         type: str
                         description: 'Profile name.'
@@ -129,8 +129,8 @@ options:
                         type: str
                         description: 'Choose between full scan mode and quick scan mode.'
                         choices:
-                            - quick
-                            - full
+                            - 'quick'
+                            - 'full'
     schema_object1:
         methods: [get]
         description: 'Configure AntiVirus profiles.'
@@ -144,20 +144,20 @@ options:
                     -
                         type: str
                         choices:
-                            - analytics-bl-filetype
-                            - analytics-db
-                            - analytics-max-upload
-                            - analytics-wl-filetype
-                            - av-block-log
-                            - av-virus-log
-                            - comment
-                            - extended-log
-                            - ftgd-analytics
-                            - inspection-mode
-                            - mobile-malware-db
-                            - name
-                            - replacemsg-group
-                            - scan-mode
+                            - 'analytics-bl-filetype'
+                            - 'analytics-db'
+                            - 'analytics-max-upload'
+                            - 'analytics-wl-filetype'
+                            - 'av-block-log'
+                            - 'av-virus-log'
+                            - 'comment'
+                            - 'extended-log'
+                            - 'ftgd-analytics'
+                            - 'inspection-mode'
+                            - 'mobile-malware-db'
+                            - 'name'
+                            - 'replacemsg-group'
+                            - 'scan-mode'
             filter:
                 -
                     type: str
@@ -176,11 +176,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

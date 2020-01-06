@@ -70,8 +70,8 @@ options:
                         type: str
                         description: 'Action to take for DNS requests matching the category.'
                         choices:
-                            - monitor
-                            - block
+                            - 'monitor'
+                            - 'block'
                     category:
                         type: str
                         description: 'Category number.'
@@ -82,8 +82,8 @@ options:
                         type: str
                         description: 'Enable/disable DNS filter logging for this DNS profile.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'FortiGuard DNS domain filters.'
@@ -97,10 +97,10 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - category
-                            - id
-                            - log
+                            - 'action'
+                            - 'category'
+                            - 'id'
+                            - 'log'
             filter:
                 -
                     type: str
@@ -119,11 +119,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

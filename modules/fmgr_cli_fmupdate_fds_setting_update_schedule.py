@@ -57,7 +57,7 @@ options:
             data:
                 day:
                     type: str
-                    default: Monday
+                    default: 'Monday'
                     description:
                      - 'Configure the day the update will occur, if the freqnecy is weekly (Sunday - Saturday, default = Monday).'
                      - 'Sunday - Update every Sunday.'
@@ -68,35 +68,35 @@ options:
                      - 'Friday - Update every Friday.'
                      - 'Saturday - Update every Saturday.'
                     choices:
-                        - Sunday
-                        - Monday
-                        - Tuesday
-                        - Wednesday
-                        - Thursday
-                        - Friday
-                        - Saturday
+                        - 'Sunday'
+                        - 'Monday'
+                        - 'Tuesday'
+                        - 'Wednesday'
+                        - 'Thursday'
+                        - 'Friday'
+                        - 'Saturday'
                 frequency:
                     type: str
-                    default: every
+                    default: 'every'
                     description:
                      - 'Configure update frequency: every - time interval, daily - once a day, weekly - once a week (default = every).'
                      - 'every - Time interval.'
                      - 'daily - Every day.'
                      - 'weekly - Every week.'
                     choices:
-                        - every
-                        - daily
-                        - weekly
+                        - 'every'
+                        - 'daily'
+                        - 'weekly'
                 status:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable scheduled updates.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 time:
                     -
                         type: str

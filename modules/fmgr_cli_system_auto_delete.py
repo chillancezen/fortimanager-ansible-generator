@@ -58,30 +58,30 @@ options:
                 dlp-files-auto-deletion:
                     retention:
                         type: str
-                        default: days
+                        default: 'days'
                         description:
                          - 'Automatic deletion in days, weeks, or months.'
                          - 'days - Auto-delete data older than <value> days.'
                          - 'weeks - Auto-delete data older than <value> weeks.'
                          - 'months - Auto-delete data older than <value> months.'
                         choices:
-                            - days
-                            - weeks
-                            - months
+                            - 'days'
+                            - 'weeks'
+                            - 'months'
                     runat:
                         type: int
                         default: 0
-                        description: 'Automatic deletion run at (0 - 23) o'clock.'
+                        description: 'Automatic deletion run at (0 - 23) oclock.'
                     status:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable automatic deletion.'
                          - 'disable - Disable automatic deletion.'
                          - 'enable - Enable automatic deletion.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     value:
                         type: int
                         default: 0
@@ -89,30 +89,30 @@ options:
                 log-auto-deletion:
                     retention:
                         type: str
-                        default: days
+                        default: 'days'
                         description:
                          - 'Automatic deletion in days, weeks, or months.'
                          - 'days - Auto-delete data older than <value> days.'
                          - 'weeks - Auto-delete data older than <value> weeks.'
                          - 'months - Auto-delete data older than <value> months.'
                         choices:
-                            - days
-                            - weeks
-                            - months
+                            - 'days'
+                            - 'weeks'
+                            - 'months'
                     runat:
                         type: int
                         default: 0
-                        description: 'Automatic deletion run at (0 - 23) o'clock.'
+                        description: 'Automatic deletion run at (0 - 23) oclock.'
                     status:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable automatic deletion.'
                          - 'disable - Disable automatic deletion.'
                          - 'enable - Enable automatic deletion.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     value:
                         type: int
                         default: 0
@@ -120,30 +120,30 @@ options:
                 quarantine-files-auto-deletion:
                     retention:
                         type: str
-                        default: days
+                        default: 'days'
                         description:
                          - 'Automatic deletion in days, weeks, or months.'
                          - 'days - Auto-delete data older than <value> days.'
                          - 'weeks - Auto-delete data older than <value> weeks.'
                          - 'months - Auto-delete data older than <value> months.'
                         choices:
-                            - days
-                            - weeks
-                            - months
+                            - 'days'
+                            - 'weeks'
+                            - 'months'
                     runat:
                         type: int
                         default: 0
-                        description: 'Automatic deletion run at (0 - 23) o'clock.'
+                        description: 'Automatic deletion run at (0 - 23) oclock.'
                     status:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable automatic deletion.'
                          - 'disable - Disable automatic deletion.'
                          - 'enable - Enable automatic deletion.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     value:
                         type: int
                         default: 0
@@ -151,30 +151,30 @@ options:
                 report-auto-deletion:
                     retention:
                         type: str
-                        default: days
+                        default: 'days'
                         description:
                          - 'Automatic deletion in days, weeks, or months.'
                          - 'days - Auto-delete data older than <value> days.'
                          - 'weeks - Auto-delete data older than <value> weeks.'
                          - 'months - Auto-delete data older than <value> months.'
                         choices:
-                            - days
-                            - weeks
-                            - months
+                            - 'days'
+                            - 'weeks'
+                            - 'months'
                     runat:
                         type: int
                         default: 0
-                        description: 'Automatic deletion run at (0 - 23) o'clock.'
+                        description: 'Automatic deletion run at (0 - 23) oclock.'
                     status:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable automatic deletion.'
                          - 'disable - Disable automatic deletion.'
                          - 'enable - Enable automatic deletion.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     value:
                         type: int
                         default: 0
@@ -243,7 +243,7 @@ return_of_api_category_0:
                   example: days
                runat:
                   type: int
-                  description: 'Automatic deletion run at (0 - 23) o'clock.'
+                  description: 'Automatic deletion run at (0 - 23) oclock.'
                   example: 0
                status:
                   type: str
@@ -267,7 +267,7 @@ return_of_api_category_0:
                   example: days
                runat:
                   type: int
-                  description: 'Automatic deletion run at (0 - 23) o'clock.'
+                  description: 'Automatic deletion run at (0 - 23) oclock.'
                   example: 0
                status:
                   type: str
@@ -291,7 +291,7 @@ return_of_api_category_0:
                   example: days
                runat:
                   type: int
-                  description: 'Automatic deletion run at (0 - 23) o'clock.'
+                  description: 'Automatic deletion run at (0 - 23) oclock.'
                   example: 0
                status:
                   type: str
@@ -315,7 +315,7 @@ return_of_api_category_0:
                   example: days
                runat:
                   type: int
-                  description: 'Automatic deletion run at (0 - 23) o'clock.'
+                  description: 'Automatic deletion run at (0 - 23) oclock.'
                   example: 0
                status:
                   type: str

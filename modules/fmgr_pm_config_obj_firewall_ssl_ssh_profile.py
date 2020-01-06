@@ -74,8 +74,8 @@ options:
                         type: str
                         description: 'Enable/disable inspection of MAPI over HTTPS.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     name:
                         type: str
                         description: 'Name.'
@@ -83,23 +83,23 @@ options:
                         type: str
                         description: 'Enable/disable inspection of RPC over HTTPS.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     server-cert:
                         type: str
                         description: 'Certificate used by SSL Inspection to replace server certificate.'
                     server-cert-mode:
                         type: str
-                        description: 'Re-sign or replace the server's certificate.'
+                        description: 'Re-sign or replace the servers certificate.'
                         choices:
-                            - re-sign
-                            - replace
+                            - 're-sign'
+                            - 'replace'
                     ssl-anomalies-log:
                         type: str
                         description: 'Enable/disable logging SSL anomalies.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ssl-exempt:
                         -
                             address:
@@ -121,11 +121,11 @@ options:
                                 type: str
                                 description: 'Type of address object (IPv4 or IPv6) or FortiGuard category.'
                                 choices:
-                                    - fortiguard-category
-                                    - address
-                                    - address6
-                                    - wildcard-fqdn
-                                    - regex
+                                    - 'fortiguard-category'
+                                    - 'address'
+                                    - 'address6'
+                                    - 'wildcard-fqdn'
+                                    - 'regex'
                             wildcard-fqdn:
                                 type: str
                                 description: 'Exempt servers by wildcard FQDN.'
@@ -133,24 +133,24 @@ options:
                         type: str
                         description: 'Enable/disable logging SSL exemptions.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     ssl-server:
                         -
                             ftps-client-cert-request:
                                 type: str
                                 description: 'Action based on client certificate request during the FTPS handshake.'
                                 choices:
-                                    - bypass
-                                    - inspect
-                                    - block
+                                    - 'bypass'
+                                    - 'inspect'
+                                    - 'block'
                             https-client-cert-request:
                                 type: str
                                 description: 'Action based on client certificate request during the HTTPS handshake.'
                                 choices:
-                                    - bypass
-                                    - inspect
-                                    - block
+                                    - 'bypass'
+                                    - 'inspect'
+                                    - 'block'
                             id:
                                 type: int
                                 description: 'SSL server ID.'
@@ -158,9 +158,9 @@ options:
                                 type: str
                                 description: 'Action based on client certificate request during the IMAPS handshake.'
                                 choices:
-                                    - bypass
-                                    - inspect
-                                    - block
+                                    - 'bypass'
+                                    - 'inspect'
+                                    - 'block'
                             ip:
                                 type: str
                                 description: 'IPv4 address of the SSL server.'
@@ -168,23 +168,23 @@ options:
                                 type: str
                                 description: 'Action based on client certificate request during the POP3S handshake.'
                                 choices:
-                                    - bypass
-                                    - inspect
-                                    - block
+                                    - 'bypass'
+                                    - 'inspect'
+                                    - 'block'
                             smtps-client-cert-request:
                                 type: str
                                 description: 'Action based on client certificate request during the SMTPS handshake.'
                                 choices:
-                                    - bypass
-                                    - inspect
-                                    - block
+                                    - 'bypass'
+                                    - 'inspect'
+                                    - 'block'
                             ssl-other-client-cert-request:
                                 type: str
                                 description: 'Action based on client certificate request during an SSL protocol handshake.'
                                 choices:
-                                    - bypass
-                                    - inspect
-                                    - block
+                                    - 'bypass'
+                                    - 'inspect'
+                                    - 'block'
                     untrusted-caname:
                         type: str
                         description: 'Untrusted CA certificate used by SSL Inspection.'
@@ -192,14 +192,14 @@ options:
                         type: str
                         description: 'Enable/disable the use of SSL server table for SSL offloading.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     whitelist:
                         type: str
                         description: 'Enable/disable exempting servers by FortiGuard whitelist.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure SSL/SSH protocol options.'
@@ -213,18 +213,18 @@ options:
                     -
                         type: str
                         choices:
-                            - caname
-                            - comment
-                            - mapi-over-https
-                            - name
-                            - rpc-over-https
-                            - server-cert
-                            - server-cert-mode
-                            - ssl-anomalies-log
-                            - ssl-exemptions-log
-                            - untrusted-caname
-                            - use-ssl-server
-                            - whitelist
+                            - 'caname'
+                            - 'comment'
+                            - 'mapi-over-https'
+                            - 'name'
+                            - 'rpc-over-https'
+                            - 'server-cert'
+                            - 'server-cert-mode'
+                            - 'ssl-anomalies-log'
+                            - 'ssl-exemptions-log'
+                            - 'untrusted-caname'
+                            - 'use-ssl-server'
+                            - 'whitelist'
             filter:
                 -
                     type: str
@@ -243,11 +243,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int
@@ -379,7 +379,7 @@ return_of_api_category_0:
                   description: 'Certificate used by SSL Inspection to replace server certificate.'
                server-cert-mode:
                   type: str
-                  description: 'Re-sign or replace the server's certificate.'
+                  description: 'Re-sign or replace the servers certificate.'
                ssl-anomalies-log:
                   type: str
                   description: 'Enable/disable logging SSL anomalies.'

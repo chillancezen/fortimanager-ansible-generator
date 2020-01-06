@@ -68,30 +68,30 @@ options:
                         -
                             type: str
                             choices:
-                                - x11
-                                - shell
-                                - exec
-                                - port-forward
-                                - tun-forward
-                                - sftp
-                                - unknown
+                                - 'x11'
+                                - 'shell'
+                                - 'exec'
+                                - 'port-forward'
+                                - 'tun-forward'
+                                - 'sftp'
+                                - 'unknown'
                     default-command-log:
                         type: str
                         description: 'Enable/disable logging unmatched shell commands.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     log:
                         -
                             type: str
                             choices:
-                                - x11
-                                - shell
-                                - exec
-                                - port-forward
-                                - tun-forward
-                                - sftp
-                                - unknown
+                                - 'x11'
+                                - 'shell'
+                                - 'exec'
+                                - 'port-forward'
+                                - 'tun-forward'
+                                - 'sftp'
+                                - 'unknown'
                     name:
                         type: str
                         description: 'SSH filter profile name.'
@@ -101,14 +101,14 @@ options:
                                 type: str
                                 description: 'Action to take for URL filter matches.'
                                 choices:
-                                    - block
-                                    - allow
+                                    - 'block'
+                                    - 'allow'
                             alert:
                                 type: str
                                 description: 'Enable/disable alert.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             id:
                                 type: int
                                 description: 'Id.'
@@ -116,8 +116,8 @@ options:
                                 type: str
                                 description: 'Enable/disable logging.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             pattern:
                                 type: str
                                 description: 'SSH shell command pattern.'
@@ -125,16 +125,16 @@ options:
                                 type: str
                                 description: 'Log severity.'
                                 choices:
-                                    - low
-                                    - medium
-                                    - high
-                                    - critical
+                                    - 'low'
+                                    - 'medium'
+                                    - 'high'
+                                    - 'critical'
                             type:
                                 type: str
                                 description: 'Matching type.'
                                 choices:
-                                    - regex
-                                    - simple
+                                    - 'regex'
+                                    - 'simple'
     schema_object1:
         methods: [get]
         description: 'SSH filter profile.'
@@ -148,10 +148,10 @@ options:
                     -
                         type: str
                         choices:
-                            - block
-                            - default-command-log
-                            - log
-                            - name
+                            - 'block'
+                            - 'default-command-log'
+                            - 'log'
+                            - 'name'
             filter:
                 -
                     type: str
@@ -170,11 +170,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

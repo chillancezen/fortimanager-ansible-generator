@@ -79,10 +79,10 @@ options:
                 type:
                     type: str
                     choices:
-                        - hex
-                        - string
-                        - ip
-                        - fqdn
+                        - 'hex'
+                        - 'string'
+                        - 'ip'
+                        - 'fqdn'
                 value:
                     type: str
     schema_object1:
@@ -102,9 +102,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

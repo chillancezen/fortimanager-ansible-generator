@@ -70,9 +70,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Configure the email server used by the FortiGate various things. For example, for sending email messages to users to support user authentication features.'
@@ -83,8 +83,8 @@ options:
                     type: str
                     description: 'Enable/disable authentication.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 password:
                     -
                         type: str
@@ -98,9 +98,9 @@ options:
                     type: str
                     description: 'Connection security used by the email server.'
                     choices:
-                        - none
-                        - starttls
-                        - smtps
+                        - 'none'
+                        - 'starttls'
+                        - 'smtps'
                 server:
                     type: str
                     description: 'SMTP server IP address or hostname.'
@@ -114,16 +114,16 @@ options:
                     type: str
                     description: 'Minimum supported protocol version for SSL/TLS connections (default is to follow system global setting).'
                     choices:
-                        - default
-                        - TLSv1
-                        - TLSv1-1
-                        - TLSv1-2
-                        - SSLv3
+                        - 'default'
+                        - 'TLSv1'
+                        - 'TLSv1-1'
+                        - 'TLSv1-2'
+                        - 'SSLv3'
                 type:
                     type: str
                     description: 'Use FortiGuard Message service or custom email server.'
                     choices:
-                        - custom
+                        - 'custom'
                 username:
                     type: str
                     description: 'SMTP server user name for authentication.'
@@ -131,8 +131,8 @@ options:
                     type: str
                     description: 'Enable/disable validation of server certificate.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

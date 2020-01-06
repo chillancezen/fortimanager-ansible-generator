@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Configure SSH options.'
@@ -84,8 +84,8 @@ options:
                     type: str
                     description: 'Level of SSL inspection.'
                     choices:
-                        - disable
-                        - deep-inspection
+                        - 'disable'
+                        - 'deep-inspection'
                 ports:
                     -
                         type: int
@@ -93,32 +93,32 @@ options:
                     type: str
                     description: 'Relative strength of encryption algorithms accepted during negotiation.'
                     choices:
-                        - compatible
-                        - high-encryption
+                        - 'compatible'
+                        - 'high-encryption'
                 ssh-policy-check:
                     type: str
                     description: 'Enable/disable SSH policy check.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ssh-tun-policy-check:
                     type: str
                     description: 'Enable/disable SSH tunnel policy check.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 status:
                     type: str
                     description: 'Configure protocol inspection status.'
                     choices:
-                        - disable
-                        - deep-inspection
+                        - 'disable'
+                        - 'deep-inspection'
                 unsupported-version:
                     type: str
                     description: 'Action based on SSH version being unsupported.'
                     choices:
-                        - block
-                        - bypass
+                        - 'block'
+                        - 'bypass'
 
 '''
 

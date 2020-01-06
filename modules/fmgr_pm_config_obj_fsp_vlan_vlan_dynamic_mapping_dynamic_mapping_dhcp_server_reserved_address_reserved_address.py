@@ -72,16 +72,16 @@ options:
                 action:
                     type: str
                     choices:
-                        - assign
-                        - block
-                        - reserved
+                        - 'assign'
+                        - 'block'
+                        - 'reserved'
                 circuit-id:
                     type: str
                 circuit-id-type:
                     type: str
                     choices:
-                        - hex
-                        - string
+                        - 'hex'
+                        - 'string'
                 description:
                     type: str
                 id:
@@ -95,13 +95,13 @@ options:
                 remote-id-type:
                     type: str
                     choices:
-                        - hex
-                        - string
+                        - 'hex'
+                        - 'string'
                 type:
                     type: str
                     choices:
-                        - mac
-                        - option82
+                        - 'mac'
+                        - 'option82'
     schema_object1:
         methods: [delete]
         description: ''
@@ -119,9 +119,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

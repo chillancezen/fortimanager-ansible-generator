@@ -71,15 +71,15 @@ options:
                     type: str
                     description: 'Reject, mark as spam or good email.'
                     choices:
-                        - spam
-                        - clear
-                        - reject
+                        - 'spam'
+                        - 'clear'
+                        - 'reject'
                 addr-type:
                     type: str
                     description: 'IP address type.'
                     choices:
-                        - ipv4
-                        - ipv6
+                        - 'ipv4'
+                        - 'ipv6'
                 email-pattern:
                     type: str
                     description: 'Email address pattern.'
@@ -96,20 +96,20 @@ options:
                     type: str
                     description: 'Wildcard pattern or regular expression.'
                     choices:
-                        - wildcard
-                        - regexp
+                        - 'wildcard'
+                        - 'regexp'
                 status:
                     type: str
                     description: 'Enable/disable status.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 type:
                     type: str
                     description: 'Entry type.'
                     choices:
-                        - ip
-                        - email
+                        - 'ip'
+                        - 'email'
     schema_object1:
         methods: [delete]
         description: 'Anti-spam black/white list entries.'
@@ -127,9 +127,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object3:
         methods: [move]
         description: 'Anti-spam black/white list entries.'
@@ -138,8 +138,8 @@ options:
             option:
                 type: str
                 choices:
-                    - before
-                    - after
+                    - 'before'
+                    - 'after'
             target:
                 type: str
                 description: 'Key to the target entry.'

@@ -71,8 +71,8 @@ options:
                     type: str
                     description: 'Action.'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 apnmember:
                     type: str
                     description: 'APN member.'
@@ -83,9 +83,9 @@ options:
                     -
                         type: str
                         choices:
-                            - ms
-                            - net
-                            - vrf
+                            - 'ms'
+                            - 'net'
+                            - 'vrf'
     schema_object1:
         methods: [delete]
         description: 'APN.'
@@ -103,9 +103,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

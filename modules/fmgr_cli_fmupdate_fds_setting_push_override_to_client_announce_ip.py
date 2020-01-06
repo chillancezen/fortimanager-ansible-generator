@@ -57,7 +57,7 @@ options:
                         description: 'ID of the announce IP address (1 - 10).'
                     ip:
                         type: str
-                        default: 0.0.0.0
+                        default: '0.0.0.0'
                         description: 'Announce IPv4 address.'
                     port:
                         type: int
@@ -73,9 +73,9 @@ options:
                     -
                         type: str
                         choices:
-                            - id
-                            - ip
-                            - port
+                            - 'id'
+                            - 'ip'
+                            - 'port'
             filter:
                 -
                     type: str
@@ -89,8 +89,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

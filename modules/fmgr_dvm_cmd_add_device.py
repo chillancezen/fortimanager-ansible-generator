@@ -83,10 +83,10 @@ options:
                         type: str
                         description: '<i>add real and model device</i>.'
                         choices:
-                            - unreg
-                            - fmg
-                            - faz
-                            - fmgfaz
+                            - 'unreg'
+                            - 'fmg'
+                            - 'faz'
+                            - 'fmgfaz'
                     mr:
                         type: int
                         description: '<i>add model device only</i>.'
@@ -97,31 +97,31 @@ options:
                         type: str
                         description: '<i>add model device only</i>.'
                         choices:
-                            - unknown
-                            - fos
-                            - fsw
-                            - foc
-                            - fml
-                            - faz
-                            - fwb
-                            - fch
-                            - fct
-                            - log
-                            - fmg
-                            - fsa
-                            - fdd
-                            - fac
+                            - 'unknown'
+                            - 'fos'
+                            - 'fsw'
+                            - 'foc'
+                            - 'fml'
+                            - 'faz'
+                            - 'fwb'
+                            - 'fch'
+                            - 'fct'
+                            - 'log'
+                            - 'fmg'
+                            - 'fsa'
+                            - 'fdd'
+                            - 'fac'
                     os_ver:
                         type: str
                         description: '<i>add model device only</i>.'
                         choices:
-                            - unknown
-                            - 0.0
-                            - 1.0
-                            - 2.0
-                            - 3.0
-                            - 4.0
-                            - 5.0
+                            - 'unknown'
+                            - '0.0'
+                            - '1.0'
+                            - '2.0'
+                            - '3.0'
+                            - '4.0'
+                            - '5.0'
                     patch:
                         type: int
                         description: '<i>add model device only</i>.'
@@ -135,10 +135,10 @@ options:
                     -
                         type: str
                         choices:
-                            - none
-                            - create_task
-                            - nonblocking
-                            - log_dev
+                            - 'none'
+                            - 'create_task'
+                            - 'nonblocking'
+                            - 'log_dev'
                 groups:
                     -
                         name:

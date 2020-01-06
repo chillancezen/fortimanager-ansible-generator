@@ -64,8 +64,8 @@ options:
                 action:
                     type: str
                     choices:
-                        - deny
-                        - accept
+                        - 'deny'
+                        - 'accept'
                 application-list:
                     type: str
                 av-profile:
@@ -79,8 +79,8 @@ options:
                 endpoint-compliance:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 groups:
                     type: str
                 icap-profile:
@@ -92,10 +92,10 @@ options:
                 logtraffic:
                     type: str
                     choices:
-                        - disable
-                        - enable
-                        - all
-                        - utm
+                        - 'disable'
+                        - 'enable'
+                        - 'all'
+                        - 'utm'
                 mms-profile:
                     type: str
                 per-ip-shaper:
@@ -107,8 +107,8 @@ options:
                 profile-type:
                     type: str
                     choices:
-                        - single
-                        - group
+                        - 'single'
+                        - 'group'
                 replacemsg-group:
                     type: str
                 schedule:
@@ -116,15 +116,15 @@ options:
                 send-deny-packet:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 service:
                     type: str
                 service-negate:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 spamfilter-profile:
                     type: str
                 sslvpn-portal:
@@ -138,8 +138,8 @@ options:
                 utm-status:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 voip-profile:
                     type: str
                 webfilter-profile:
@@ -161,9 +161,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

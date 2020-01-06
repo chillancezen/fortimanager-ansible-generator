@@ -67,20 +67,20 @@ options:
                     add-route:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     assign-ip:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     assign-ip-from:
                         type: str
                         choices:
-                            - range
-                            - usrgrp
-                            - dhcp
-                            - name
+                            - 'range'
+                            - 'usrgrp'
+                            - 'dhcp'
+                            - 'name'
                     authpasswd:
                         -
                             type: str
@@ -91,13 +91,13 @@ options:
                     auto-configuration:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     automatic_routing:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     banner:
                         type: str
                     default-gateway:
@@ -105,19 +105,19 @@ options:
                     dhcp-server:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dns-mode:
                         type: str
                         choices:
-                            - auto
-                            - manual
+                            - 'auto'
+                            - 'manual'
                     dns-service:
                         type: str
                         choices:
-                            - default
-                            - specify
-                            - local
+                            - 'default'
+                            - 'specify'
+                            - 'local'
                     domain:
                         type: str
                     extgw:
@@ -127,8 +127,8 @@ options:
                     extgw_p2_per_net:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     extgwip:
                         type: str
                     hub_iface:
@@ -180,18 +180,18 @@ options:
                     mode-cfg:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     mode-cfg-ip-version:
                         type: str
                         choices:
-                            - 4
-                            - 6
+                            - '4'
+                            - '6'
                     net-device:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     peer:
                         type: str
                     peergrp:
@@ -201,11 +201,11 @@ options:
                     peertype:
                         type: str
                         choices:
-                            - any
-                            - one
-                            - dialup
-                            - peer
-                            - peergrp
+                            - 'any'
+                            - 'one'
+                            - 'dialup'
+                            - 'peer'
+                            - 'peergrp'
                     protected_subnet:
                         -
                             addr:
@@ -217,14 +217,14 @@ options:
                     role:
                         type: str
                         choices:
-                            - hub
-                            - spoke
+                            - 'hub'
+                            - 'spoke'
                     route-overlap:
                         type: str
                         choices:
-                            - use-old
-                            - use-new
-                            - allow
+                            - 'use-old'
+                            - 'use-new'
+                            - 'allow'
                     spoke-zone:
                         type: str
                     summary_addr:
@@ -238,13 +238,13 @@ options:
                     tunnel-search:
                         type: str
                         choices:
-                            - selectors
-                            - nexthop
+                            - 'selectors'
+                            - 'nexthop'
                     unity-support:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     usrgrp:
                         type: str
                     vpn-interface-priority:
@@ -256,11 +256,11 @@ options:
                     xauthtype:
                         type: str
                         choices:
-                            - disable
-                            - client
-                            - pap
-                            - chap
-                            - auto
+                            - 'disable'
+                            - 'client'
+                            - 'pap'
+                            - 'chap'
+                            - 'auto'
     schema_object1:
         methods: [get]
         description: 'VPN node for VPN Manager. Must specify vpntable and scope member.'
@@ -274,57 +274,57 @@ options:
                     -
                         type: str
                         choices:
-                            - add-route
-                            - assign-ip
-                            - assign-ip-from
-                            - authpasswd
-                            - authusr
-                            - authusrgrp
-                            - auto-configuration
-                            - automatic_routing
-                            - banner
-                            - default-gateway
-                            - dhcp-server
-                            - dns-mode
-                            - dns-service
-                            - domain
-                            - extgw
-                            - extgw_hubip
-                            - extgw_p2_per_net
-                            - extgwip
-                            - hub_iface
-                            - id
-                            - iface
-                            - ipsec-lease-hold
-                            - ipv4-dns-server1
-                            - ipv4-dns-server2
-                            - ipv4-dns-server3
-                            - ipv4-end-ip
-                            - ipv4-netmask
-                            - ipv4-split-include
-                            - ipv4-start-ip
-                            - ipv4-wins-server1
-                            - ipv4-wins-server2
-                            - local-gw
-                            - localid
-                            - mode-cfg
-                            - mode-cfg-ip-version
-                            - net-device
-                            - peer
-                            - peergrp
-                            - peerid
-                            - peertype
-                            - public-ip
-                            - role
-                            - route-overlap
-                            - spoke-zone
-                            - tunnel-search
-                            - unity-support
-                            - usrgrp
-                            - vpn-interface-priority
-                            - vpn-zone
-                            - vpntable
-                            - xauthtype
+                            - 'add-route'
+                            - 'assign-ip'
+                            - 'assign-ip-from'
+                            - 'authpasswd'
+                            - 'authusr'
+                            - 'authusrgrp'
+                            - 'auto-configuration'
+                            - 'automatic_routing'
+                            - 'banner'
+                            - 'default-gateway'
+                            - 'dhcp-server'
+                            - 'dns-mode'
+                            - 'dns-service'
+                            - 'domain'
+                            - 'extgw'
+                            - 'extgw_hubip'
+                            - 'extgw_p2_per_net'
+                            - 'extgwip'
+                            - 'hub_iface'
+                            - 'id'
+                            - 'iface'
+                            - 'ipsec-lease-hold'
+                            - 'ipv4-dns-server1'
+                            - 'ipv4-dns-server2'
+                            - 'ipv4-dns-server3'
+                            - 'ipv4-end-ip'
+                            - 'ipv4-netmask'
+                            - 'ipv4-split-include'
+                            - 'ipv4-start-ip'
+                            - 'ipv4-wins-server1'
+                            - 'ipv4-wins-server2'
+                            - 'local-gw'
+                            - 'localid'
+                            - 'mode-cfg'
+                            - 'mode-cfg-ip-version'
+                            - 'net-device'
+                            - 'peer'
+                            - 'peergrp'
+                            - 'peerid'
+                            - 'peertype'
+                            - 'public-ip'
+                            - 'role'
+                            - 'route-overlap'
+                            - 'spoke-zone'
+                            - 'tunnel-search'
+                            - 'unity-support'
+                            - 'usrgrp'
+                            - 'vpn-interface-priority'
+                            - 'vpn-zone'
+                            - 'vpntable'
+                            - 'xauthtype'
             filter:
                 -
                     type: str
@@ -343,11 +343,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

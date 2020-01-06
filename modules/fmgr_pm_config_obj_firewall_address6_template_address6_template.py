@@ -80,8 +80,8 @@ options:
                             type: str
                             description: 'Enable/disable exclusive value.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         id:
                             type: int
                             description: 'Subnet segment ID.'
@@ -116,9 +116,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

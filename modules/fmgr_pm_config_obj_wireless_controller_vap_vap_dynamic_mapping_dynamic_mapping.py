@@ -69,67 +69,67 @@ options:
             data:
                 _centmgmt:
                     type: str
-                    default: disable
+                    default: 'disable'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 _dhcp_svr_id:
                     type: str
                 _intf_allowaccess:
                     -
                         type: str
                         choices:
-                            - https
-                            - ping
-                            - ssh
-                            - snmp
-                            - http
-                            - telnet
-                            - fgfm
-                            - auto-ipsec
-                            - radius-acct
-                            - probe-response
-                            - capwap
+                            - 'https'
+                            - 'ping'
+                            - 'ssh'
+                            - 'snmp'
+                            - 'http'
+                            - 'telnet'
+                            - 'fgfm'
+                            - 'auto-ipsec'
+                            - 'radius-acct'
+                            - 'probe-response'
+                            - 'capwap'
                 _intf_device-identification:
                     type: str
-                    default: disable
+                    default: 'disable'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 _intf_device-netscan:
                     type: str
-                    default: disable
+                    default: 'disable'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 _intf_dhcp-relay-ip:
                     -
                         type: str
                 _intf_dhcp-relay-service:
                     type: str
-                    default: disable
+                    default: 'disable'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 _intf_dhcp-relay-type:
                     type: str
-                    default: regular
+                    default: 'regular'
                     choices:
-                        - regular
-                        - ipsec
+                        - 'regular'
+                        - 'ipsec'
                 _intf_dhcp6-relay-ip:
                     type: str
                 _intf_dhcp6-relay-service:
                     type: str
-                    default: disable
+                    default: 'disable'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 _intf_dhcp6-relay-type:
                     type: str
-                    default: regular
+                    default: 'regular'
                     choices:
-                        - regular
+                        - 'regular'
                 _intf_ip:
                     type: str
                 _intf_ip6-address:
@@ -138,21 +138,21 @@ options:
                     -
                         type: str
                         choices:
-                            - https
-                            - ping
-                            - ssh
-                            - snmp
-                            - http
-                            - telnet
-                            - any
-                            - fgfm
-                            - capwap
+                            - 'https'
+                            - 'ping'
+                            - 'ssh'
+                            - 'snmp'
+                            - 'http'
+                            - 'telnet'
+                            - 'any'
+                            - 'fgfm'
+                            - 'capwap'
                 _intf_listen-forticlient-connection:
                     type: str
-                    default: disable
+                    default: 'disable'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 _scope:
                     -
                         name:
@@ -170,39 +170,39 @@ options:
                 auth:
                     type: str
                     choices:
-                        - PSK
-                        - psk
-                        - RADIUS
-                        - radius
-                        - usergroup
+                        - 'PSK'
+                        - 'psk'
+                        - 'RADIUS'
+                        - 'radius'
+                        - 'usergroup'
                 broadcast-ssid:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 broadcast-suppression:
                     -
                         type: str
                         choices:
-                            - dhcp
-                            - arp
-                            - dhcp2
-                            - arp2
-                            - netbios-ns
-                            - netbios-ds
-                            - arp3
-                            - dhcp-up
-                            - dhcp-down
-                            - arp-known
-                            - arp-unknown
-                            - arp-reply
-                            - ipv6
-                            - dhcp-starvation
-                            - arp-poison
-                            - all-other-mc
-                            - all-other-bc
-                            - arp-proxy
-                            - dhcp-ucast
+                            - 'dhcp'
+                            - 'arp'
+                            - 'dhcp2'
+                            - 'arp2'
+                            - 'netbios-ns'
+                            - 'netbios-ds'
+                            - 'arp3'
+                            - 'dhcp-up'
+                            - 'dhcp-down'
+                            - 'arp-known'
+                            - 'arp-unknown'
+                            - 'arp-reply'
+                            - 'ipv6'
+                            - 'dhcp-starvation'
+                            - 'arp-poison'
+                            - 'all-other-mc'
+                            - 'all-other-bc'
+                            - 'arp-proxy'
+                            - 'dhcp-ucast'
                 captive-portal-ac-name:
                     type: str
                 captive-portal-macauth-radius-secret:
@@ -224,47 +224,47 @@ options:
                 dhcp-option82-circuit-id-insertion:
                     type: str
                     choices:
-                        - disable
-                        - style-1
-                        - style-2
+                        - 'disable'
+                        - 'style-1'
+                        - 'style-2'
                 dhcp-option82-insertion:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dhcp-option82-remote-id-insertion:
                     type: str
                     choices:
-                        - disable
-                        - style-1
+                        - 'disable'
+                        - 'style-1'
                 dynamic-vlan:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 eap-reauth:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 eap-reauth-intv:
                     type: int
                 eapol-key-retries:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 encrypt:
                     type: str
                     choices:
-                        - TKIP
-                        - AES
-                        - TKIP-AES
+                        - 'TKIP'
+                        - 'AES'
+                        - 'TKIP-AES'
                 external-fast-roaming:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 external-logout:
                     type: str
                 external-web:
@@ -272,27 +272,27 @@ options:
                 fast-bss-transition:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 fast-roaming:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ft-mobility-domain:
                     type: int
                 ft-over-ds:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ft-r0-key-lifetime:
                     type: int
                 gtk-rekey:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 gtk-rekey-intv:
                     type: int
                 hotspot20-profile:
@@ -300,8 +300,8 @@ options:
                 intra-vap-privacy:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ip:
                     type: str
                 key:
@@ -312,55 +312,55 @@ options:
                 ldpc:
                     type: str
                     choices:
-                        - disable
-                        - tx
-                        - rx
-                        - rxtx
+                        - 'disable'
+                        - 'tx'
+                        - 'rx'
+                        - 'rxtx'
                 local-authentication:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 local-bridging:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 local-lan:
                     type: str
                     choices:
-                        - deny
-                        - allow
+                        - 'deny'
+                        - 'allow'
                 local-standalone:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 local-standalone-nat:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 local-switching:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mac-auth-bypass:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mac-filter:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mac-filter-policy-other:
                     type: str
                     choices:
-                        - deny
-                        - allow
+                        - 'deny'
+                        - 'allow'
                 max-clients:
                     type: int
                 max-clients-ap:
@@ -370,44 +370,44 @@ options:
                 mesh-backhaul:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mpsk:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mpsk-concurrent-clients:
                     type: int
                 multicast-enhance:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 multicast-rate:
                     type: str
                     choices:
-                        - 0
-                        - 6000
-                        - 12000
-                        - 24000
+                        - '0'
+                        - '6000'
+                        - '12000'
+                        - '24000'
                 okc:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 owe-groups:
                     -
                         type: str
                         choices:
-                            - 19
-                            - 20
-                            - 21
+                            - '19'
+                            - '20'
+                            - '21'
                 owe-transition:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 owe-transition-ssid:
                     type: str
                 passphrase:
@@ -416,9 +416,9 @@ options:
                 pmf:
                     type: str
                     choices:
-                        - disable
-                        - enable
-                        - optional
+                        - 'disable'
+                        - 'enable'
+                        - 'optional'
                 pmf-assoc-comeback-timeout:
                     type: int
                 pmf-sa-query-retry-timeout:
@@ -428,25 +428,25 @@ options:
                 portal-type:
                     type: str
                     choices:
-                        - auth
-                        - auth+disclaimer
-                        - disclaimer
-                        - email-collect
-                        - cmcc
-                        - cmcc-macauth
-                        - auth-mac
+                        - 'auth'
+                        - 'auth+disclaimer'
+                        - 'disclaimer'
+                        - 'email-collect'
+                        - 'cmcc'
+                        - 'cmcc-macauth'
+                        - 'auth-mac'
                 probe-resp-suppression:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 probe-resp-threshold:
                     type: str
                 ptk-rekey:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ptk-rekey-intv:
                     type: int
                 qos-profile:
@@ -454,8 +454,8 @@ options:
                 quarantine:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 radio-2g-threshold:
                     type: str
                 radio-5g-threshold:
@@ -463,13 +463,13 @@ options:
                 radio-sensitivity:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 radius-mac-auth:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 radius-mac-auth-server:
                     type: str
                 radius-mac-auth-usergroups:
@@ -481,174 +481,174 @@ options:
                     -
                         type: str
                         choices:
-                            - 1
-                            - 1-basic
-                            - 2
-                            - 2-basic
-                            - 5.5
-                            - 5.5-basic
-                            - 6
-                            - 6-basic
-                            - 9
-                            - 9-basic
-                            - 12
-                            - 12-basic
-                            - 18
-                            - 18-basic
-                            - 24
-                            - 24-basic
-                            - 36
-                            - 36-basic
-                            - 48
-                            - 48-basic
-                            - 54
-                            - 54-basic
-                            - 11
-                            - 11-basic
+                            - '1'
+                            - '1-basic'
+                            - '2'
+                            - '2-basic'
+                            - '5.5'
+                            - '5.5-basic'
+                            - '6'
+                            - '6-basic'
+                            - '9'
+                            - '9-basic'
+                            - '12'
+                            - '12-basic'
+                            - '18'
+                            - '18-basic'
+                            - '24'
+                            - '24-basic'
+                            - '36'
+                            - '36-basic'
+                            - '48'
+                            - '48-basic'
+                            - '54'
+                            - '54-basic'
+                            - '11'
+                            - '11-basic'
                 rates-11ac-ss12:
                     -
                         type: str
                         choices:
-                            - mcs0/1
-                            - mcs1/1
-                            - mcs2/1
-                            - mcs3/1
-                            - mcs4/1
-                            - mcs5/1
-                            - mcs6/1
-                            - mcs7/1
-                            - mcs8/1
-                            - mcs9/1
-                            - mcs0/2
-                            - mcs1/2
-                            - mcs2/2
-                            - mcs3/2
-                            - mcs4/2
-                            - mcs5/2
-                            - mcs6/2
-                            - mcs7/2
-                            - mcs8/2
-                            - mcs9/2
-                            - mcs10/1
-                            - mcs11/1
-                            - mcs10/2
-                            - mcs11/2
+                            - 'mcs0/1'
+                            - 'mcs1/1'
+                            - 'mcs2/1'
+                            - 'mcs3/1'
+                            - 'mcs4/1'
+                            - 'mcs5/1'
+                            - 'mcs6/1'
+                            - 'mcs7/1'
+                            - 'mcs8/1'
+                            - 'mcs9/1'
+                            - 'mcs0/2'
+                            - 'mcs1/2'
+                            - 'mcs2/2'
+                            - 'mcs3/2'
+                            - 'mcs4/2'
+                            - 'mcs5/2'
+                            - 'mcs6/2'
+                            - 'mcs7/2'
+                            - 'mcs8/2'
+                            - 'mcs9/2'
+                            - 'mcs10/1'
+                            - 'mcs11/1'
+                            - 'mcs10/2'
+                            - 'mcs11/2'
                 rates-11ac-ss34:
                     -
                         type: str
                         choices:
-                            - mcs0/3
-                            - mcs1/3
-                            - mcs2/3
-                            - mcs3/3
-                            - mcs4/3
-                            - mcs5/3
-                            - mcs6/3
-                            - mcs7/3
-                            - mcs8/3
-                            - mcs9/3
-                            - mcs0/4
-                            - mcs1/4
-                            - mcs2/4
-                            - mcs3/4
-                            - mcs4/4
-                            - mcs5/4
-                            - mcs6/4
-                            - mcs7/4
-                            - mcs8/4
-                            - mcs9/4
-                            - mcs10/3
-                            - mcs11/3
-                            - mcs10/4
-                            - mcs11/4
+                            - 'mcs0/3'
+                            - 'mcs1/3'
+                            - 'mcs2/3'
+                            - 'mcs3/3'
+                            - 'mcs4/3'
+                            - 'mcs5/3'
+                            - 'mcs6/3'
+                            - 'mcs7/3'
+                            - 'mcs8/3'
+                            - 'mcs9/3'
+                            - 'mcs0/4'
+                            - 'mcs1/4'
+                            - 'mcs2/4'
+                            - 'mcs3/4'
+                            - 'mcs4/4'
+                            - 'mcs5/4'
+                            - 'mcs6/4'
+                            - 'mcs7/4'
+                            - 'mcs8/4'
+                            - 'mcs9/4'
+                            - 'mcs10/3'
+                            - 'mcs11/3'
+                            - 'mcs10/4'
+                            - 'mcs11/4'
                 rates-11bg:
                     -
                         type: str
                         choices:
-                            - 1
-                            - 1-basic
-                            - 2
-                            - 2-basic
-                            - 5.5
-                            - 5.5-basic
-                            - 6
-                            - 6-basic
-                            - 9
-                            - 9-basic
-                            - 12
-                            - 12-basic
-                            - 18
-                            - 18-basic
-                            - 24
-                            - 24-basic
-                            - 36
-                            - 36-basic
-                            - 48
-                            - 48-basic
-                            - 54
-                            - 54-basic
-                            - 11
-                            - 11-basic
+                            - '1'
+                            - '1-basic'
+                            - '2'
+                            - '2-basic'
+                            - '5.5'
+                            - '5.5-basic'
+                            - '6'
+                            - '6-basic'
+                            - '9'
+                            - '9-basic'
+                            - '12'
+                            - '12-basic'
+                            - '18'
+                            - '18-basic'
+                            - '24'
+                            - '24-basic'
+                            - '36'
+                            - '36-basic'
+                            - '48'
+                            - '48-basic'
+                            - '54'
+                            - '54-basic'
+                            - '11'
+                            - '11-basic'
                 rates-11n-ss12:
                     -
                         type: str
                         choices:
-                            - mcs0/1
-                            - mcs1/1
-                            - mcs2/1
-                            - mcs3/1
-                            - mcs4/1
-                            - mcs5/1
-                            - mcs6/1
-                            - mcs7/1
-                            - mcs8/2
-                            - mcs9/2
-                            - mcs10/2
-                            - mcs11/2
-                            - mcs12/2
-                            - mcs13/2
-                            - mcs14/2
-                            - mcs15/2
+                            - 'mcs0/1'
+                            - 'mcs1/1'
+                            - 'mcs2/1'
+                            - 'mcs3/1'
+                            - 'mcs4/1'
+                            - 'mcs5/1'
+                            - 'mcs6/1'
+                            - 'mcs7/1'
+                            - 'mcs8/2'
+                            - 'mcs9/2'
+                            - 'mcs10/2'
+                            - 'mcs11/2'
+                            - 'mcs12/2'
+                            - 'mcs13/2'
+                            - 'mcs14/2'
+                            - 'mcs15/2'
                 rates-11n-ss34:
                     -
                         type: str
                         choices:
-                            - mcs16/3
-                            - mcs17/3
-                            - mcs18/3
-                            - mcs19/3
-                            - mcs20/3
-                            - mcs21/3
-                            - mcs22/3
-                            - mcs23/3
-                            - mcs24/4
-                            - mcs25/4
-                            - mcs26/4
-                            - mcs27/4
-                            - mcs28/4
-                            - mcs29/4
-                            - mcs30/4
-                            - mcs31/4
+                            - 'mcs16/3'
+                            - 'mcs17/3'
+                            - 'mcs18/3'
+                            - 'mcs19/3'
+                            - 'mcs20/3'
+                            - 'mcs21/3'
+                            - 'mcs22/3'
+                            - 'mcs23/3'
+                            - 'mcs24/4'
+                            - 'mcs25/4'
+                            - 'mcs26/4'
+                            - 'mcs27/4'
+                            - 'mcs28/4'
+                            - 'mcs29/4'
+                            - 'mcs30/4'
+                            - 'mcs31/4'
                 sae-groups:
                     -
                         type: str
                         choices:
-                            - 1
-                            - 2
-                            - 5
-                            - 14
-                            - 15
-                            - 16
-                            - 17
-                            - 18
-                            - 19
-                            - 20
-                            - 21
-                            - 27
-                            - 28
-                            - 29
-                            - 30
-                            - 31
+                            - '1'
+                            - '2'
+                            - '5'
+                            - '14'
+                            - '15'
+                            - '16'
+                            - '17'
+                            - '18'
+                            - '19'
+                            - '20'
+                            - '21'
+                            - '27'
+                            - '28'
+                            - '29'
+                            - '30'
+                            - '31'
                 sae-password:
                     -
                         type: str
@@ -657,41 +657,41 @@ options:
                 security:
                     type: str
                     choices:
-                        - None
-                        - WEP64
-                        - wep64
-                        - WEP128
-                        - wep128
-                        - WPA_PSK
-                        - WPA_RADIUS
-                        - WPA
-                        - WPA2
-                        - WPA2_AUTO
-                        - open
-                        - wpa-personal
-                        - wpa-enterprise
-                        - captive-portal
-                        - wpa-only-personal
-                        - wpa-only-enterprise
-                        - wpa2-only-personal
-                        - wpa2-only-enterprise
-                        - wpa-personal+captive-portal
-                        - wpa-only-personal+captive-portal
-                        - wpa2-only-personal+captive-portal
-                        - osen
-                        - wpa3-enterprise
-                        - sae
-                        - sae-transition
-                        - owe
-                        - wpa3-sae
-                        - wpa3-sae-transition
+                        - 'None'
+                        - 'WEP64'
+                        - 'wep64'
+                        - 'WEP128'
+                        - 'wep128'
+                        - 'WPA_PSK'
+                        - 'WPA_RADIUS'
+                        - 'WPA'
+                        - 'WPA2'
+                        - 'WPA2_AUTO'
+                        - 'open'
+                        - 'wpa-personal'
+                        - 'wpa-enterprise'
+                        - 'captive-portal'
+                        - 'wpa-only-personal'
+                        - 'wpa-only-enterprise'
+                        - 'wpa2-only-personal'
+                        - 'wpa2-only-enterprise'
+                        - 'wpa-personal+captive-portal'
+                        - 'wpa-only-personal+captive-portal'
+                        - 'wpa2-only-personal+captive-portal'
+                        - 'osen'
+                        - 'wpa3-enterprise'
+                        - 'sae'
+                        - 'sae-transition'
+                        - 'owe'
+                        - 'wpa3-sae'
+                        - 'wpa3-sae-transition'
                 security-exempt-list:
                     type: str
                 security-obsolete-option:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 security-redirect-url:
                     type: str
                 selected-usergroups:
@@ -699,15 +699,15 @@ options:
                 split-tunneling:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ssid:
                     type: str
                 tkip-counter-measure:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 usergroup:
                     type: str
                 utm-profile:
@@ -717,22 +717,22 @@ options:
                 vlan-auto:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 vlan-pooling:
                     type: str
                     choices:
-                        - wtp-group
-                        - round-robin
-                        - hash
-                        - disable
+                        - 'wtp-group'
+                        - 'round-robin'
+                        - 'hash'
+                        - 'disable'
                 vlanid:
                     type: int
                 voice-enterprise:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: ''
@@ -750,9 +750,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

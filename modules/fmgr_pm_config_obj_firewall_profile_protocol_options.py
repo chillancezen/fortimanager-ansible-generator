@@ -74,8 +74,8 @@ options:
                         type: str
                         description: 'Enable/disable logging for antivirus oversize file blocking.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     replacemsg-group:
                         type: str
                         description: 'Name of the replacement message group to be used'
@@ -83,14 +83,14 @@ options:
                         type: str
                         description: 'Enable/disable inspection of RPC over HTTP.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     switching-protocols-log:
                         type: str
                         description: 'Enable/disable logging for HTTP/HTTPS switching protocols.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure protocol options.'
@@ -104,12 +104,12 @@ options:
                     -
                         type: str
                         choices:
-                            - comment
-                            - name
-                            - oversize-log
-                            - replacemsg-group
-                            - rpc-over-http
-                            - switching-protocols-log
+                            - 'comment'
+                            - 'name'
+                            - 'oversize-log'
+                            - 'replacemsg-group'
+                            - 'rpc-over-http'
+                            - 'switching-protocols-log'
             filter:
                 -
                     type: str
@@ -128,11 +128,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

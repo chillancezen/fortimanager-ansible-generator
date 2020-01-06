@@ -73,14 +73,14 @@ options:
                         type: str
                         description: 'enable prefix matches based on this name'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     status:
                         type: str
                         description: 'enable this entry for notifications'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'modify this antivirus notification list'
@@ -94,9 +94,9 @@ options:
                     -
                         type: str
                         choices:
-                            - name
-                            - prefix
-                            - status
+                            - 'name'
+                            - 'prefix'
+                            - 'status'
             filter:
                 -
                     type: str
@@ -115,11 +115,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -68,17 +68,17 @@ options:
                         type: str
                         description: 'Allowed authentication protocols/methods.'
                         choices:
-                            - auto
-                            - ascii
-                            - pap
-                            - chap
-                            - mschap
+                            - 'auto'
+                            - 'ascii'
+                            - 'pap'
+                            - 'chap'
+                            - 'mschap'
                     authorization:
                         type: str
                         description: 'Enable/disable TACACS+ authorization.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dynamic_mapping:
                         -
                             _scope:
@@ -90,16 +90,16 @@ options:
                             authen-type:
                                 type: str
                                 choices:
-                                    - auto
-                                    - ascii
-                                    - pap
-                                    - chap
-                                    - mschap
+                                    - 'auto'
+                                    - 'ascii'
+                                    - 'pap'
+                                    - 'chap'
+                                    - 'mschap'
                             authorization:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             key:
                                 -
                                     type: str
@@ -159,17 +159,17 @@ options:
                     -
                         type: str
                         choices:
-                            - authen-type
-                            - authorization
-                            - key
-                            - name
-                            - port
-                            - secondary-key
-                            - secondary-server
-                            - server
-                            - source-ip
-                            - tertiary-key
-                            - tertiary-server
+                            - 'authen-type'
+                            - 'authorization'
+                            - 'key'
+                            - 'name'
+                            - 'port'
+                            - 'secondary-key'
+                            - 'secondary-server'
+                            - 'server'
+                            - 'source-ip'
+                            - 'tertiary-key'
+                            - 'tertiary-server'
             filter:
                 -
                     type: str
@@ -188,11 +188,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

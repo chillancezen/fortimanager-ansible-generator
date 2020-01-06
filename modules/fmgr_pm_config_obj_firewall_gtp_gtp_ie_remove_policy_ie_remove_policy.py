@@ -74,11 +74,11 @@ options:
                     -
                         type: str
                         choices:
-                            - apn-restriction
-                            - rat-type
-                            - rai
-                            - uli
-                            - imei
+                            - 'apn-restriction'
+                            - 'rat-type'
+                            - 'rai'
+                            - 'uli'
+                            - 'imei'
                 sgsn-addr:
                     type: str
                     description: 'SGSN address name.'
@@ -99,9 +99,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

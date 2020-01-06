@@ -68,21 +68,21 @@ options:
                         type: str
                         description: 'Unit of measurement for maximum bandwidth for this shaper (Kbps, Mbps or Gbps).'
                         choices:
-                            - kbps
-                            - mbps
-                            - gbps
+                            - 'kbps'
+                            - 'mbps'
+                            - 'gbps'
                     diffserv-forward:
                         type: str
                         description: 'Enable/disable changing the Forward (original) DiffServ setting applied to traffic accepted by this shaper.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     diffserv-reverse:
                         type: str
                         description: 'Enable/disable changing the Reverse (reply) DiffServ setting applied to traffic accepted by this shaper.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     diffservcode-forward:
                         type: str
                         description: 'Forward (original) DiffServ setting to be applied to traffic accepted by this shaper.'
@@ -111,14 +111,14 @@ options:
                     -
                         type: str
                         choices:
-                            - bandwidth-unit
-                            - diffserv-forward
-                            - diffserv-reverse
-                            - diffservcode-forward
-                            - diffservcode-rev
-                            - max-bandwidth
-                            - max-concurrent-session
-                            - name
+                            - 'bandwidth-unit'
+                            - 'diffserv-forward'
+                            - 'diffserv-reverse'
+                            - 'diffservcode-forward'
+                            - 'diffservcode-rev'
+                            - 'max-bandwidth'
+                            - 'max-concurrent-session'
+                            - 'name'
             filter:
                 -
                     type: str
@@ -137,11 +137,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

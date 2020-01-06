@@ -71,8 +71,8 @@ options:
                     type: str
                     description: 'Action.'
                     choices:
-                        - deny
-                        - require
+                        - 'deny'
+                        - 'require'
                 id:
                     type: int
                     description: 'ID (0 - 4294967295).'
@@ -86,9 +86,9 @@ options:
                     type: str
                     description: 'Type.'
                     choices:
-                        - file
-                        - registry
-                        - process
+                        - 'file'
+                        - 'registry'
+                        - 'process'
                 version:
                     type: str
                     description: 'Version.'
@@ -109,9 +109,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

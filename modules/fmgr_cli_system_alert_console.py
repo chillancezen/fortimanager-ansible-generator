@@ -57,7 +57,7 @@ options:
             data:
                 period:
                     type: str
-                    default: 7
+                    default: '7'
                     description:
                      - 'Alert console keeps alerts for this period.'
                      - '1 - 1 day.'
@@ -68,25 +68,25 @@ options:
                      - '6 - 6 days.'
                      - '7 - 7 days.'
                     choices:
-                        - 1
-                        - 2
-                        - 3
-                        - 4
-                        - 5
-                        - 6
-                        - 7
+                        - '1'
+                        - '2'
+                        - '3'
+                        - '4'
+                        - '5'
+                        - '6'
+                        - '7'
                 severity-level:
                     -
                         type: str
                         choices:
-                            - debug
-                            - information
-                            - notify
-                            - warning
-                            - error
-                            - critical
-                            - alert
-                            - emergency
+                            - 'debug'
+                            - 'information'
+                            - 'notify'
+                            - 'warning'
+                            - 'error'
+                            - 'critical'
+                            - 'alert'
+                            - 'emergency'
 
 '''
 

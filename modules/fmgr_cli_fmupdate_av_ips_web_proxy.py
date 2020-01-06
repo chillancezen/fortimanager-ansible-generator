@@ -57,40 +57,40 @@ options:
             data:
                 ip:
                     type: str
-                    default: 0.0.0.0
+                    default: '0.0.0.0'
                     description: 'IPv4 address of the web proxy.'
                 ip6:
                     type: str
-                    default: ::
+                    default: '::'
                     description: 'IPv6 address of the web proxy.'
                 mode:
                     type: str
-                    default: proxy
+                    default: 'proxy'
                     description:
                      - 'Web proxy mode: proxy - http proxy, tunnel - http tunnel (default = proxy).'
                      - 'proxy - HTTP proxy.'
                      - 'tunnel - HTTP tunnel.'
                     choices:
-                        - proxy
-                        - tunnel
+                        - 'proxy'
+                        - 'tunnel'
                 password:
                     -
                         type: str
-                        default: ENC MTI2MjAzMTE0MTc0NzY3N96A1AmSDwrXKEo5liF49GmZugX/t86PjMCxqbV67bnu5q3vr1l9kR/jt+BYI+PH3j5ZmUYXO6ZXXHE1wEhZwMirHrcObe3p1h8QGgTiVa/F6CCH3JQkigR5WzWpmW++j9sHqYnfeBZqThZulCaTu1dpr1IF
+                        default: 'ENC MTI2MjAzMTE0MTc0NzY3N96A1AmSDwrXKEo5liF49GmZugX/t86PjMCxqbV67bnu5q3vr1l9kR/jt+BYI+PH3j5ZmUYXO6ZXXHE1wEhZwMirHrcObe3p1h8QGgTiVa/F6CCH3JQkigR5WzWpmW++j9sHqYnfeBZqThZulCaTu1dpr1IF'
                 port:
                     type: int
                     default: 80
                     description: 'The port number of the web proxy (1 - 65535, default = 80).'
                 status:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable connections through the web proxy (default = disable).'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 username:
                     type: str
                     description: 'The user name used for authentication.'

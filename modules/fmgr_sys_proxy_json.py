@@ -54,10 +54,10 @@ options:
                     type: str
                     description: 'Specify HTTP action for the request.'
                     choices:
-                        - get
-                        - post
-                        - put
-                        - delete
+                        - 'get'
+                        - 'post'
+                        - 'put'
+                        - 'delete'
                 payload:
                 resource:
                     type: str

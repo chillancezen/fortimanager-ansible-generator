@@ -64,34 +64,34 @@ options:
             data:
                 auth-proto:
                     type: str
-                    default: sha
+                    default: 'sha'
                     description:
                      - 'Authentication protocol.'
                      - 'md5 - HMAC-MD5-96 authentication protocol.'
                      - 'sha - HMAC-SHA-96 authentication protocol.'
                     choices:
-                        - md5
-                        - sha
+                        - 'md5'
+                        - 'sha'
                 auth-pwd:
                     -
                         type: str
-                        default: ENC NjAyNzczNjcyNzY3Nzg1Of2B29hwP1lYq82MXmrQ1PG7EGaRNDqkrqYFYL1NNEgm54idZER+oDi44SCyPKkvrPPrxgkkBtYnh1uQ3hobimfdeMd2rooTubF9B+lKXyq06wTtneMsxzjLK1SP1NNDy91keEpVFpDTpHpRtZ1meW8+NS8k
+                        default: 'ENC NjAyNzczNjcyNzY3Nzg1Of2B29hwP1lYq82MXmrQ1PG7EGaRNDqkrqYFYL1NNEgm54idZER+oDi44SCyPKkvrPPrxgkkBtYnh1uQ3hobimfdeMd2rooTubF9B+lKXyq06wTtneMsxzjLK1SP1NNDy91keEpVFpDTpHpRtZ1meW8+NS8k'
                 events:
                     -
                         type: str
                         choices:
-                            - disk_low
-                            - ha_switch
-                            - intf_ip_chg
-                            - sys_reboot
-                            - cpu_high
-                            - mem_low
-                            - log-alert
-                            - log-rate
-                            - log-data-rate
-                            - lic-gbday
-                            - lic-dev-quota
-                            - cpu-high-exclude-nice
+                            - 'disk_low'
+                            - 'ha_switch'
+                            - 'intf_ip_chg'
+                            - 'sys_reboot'
+                            - 'cpu_high'
+                            - 'mem_low'
+                            - 'log-alert'
+                            - 'log-rate'
+                            - 'log-data-rate'
+                            - 'lic-gbday'
+                            - 'lic-dev-quota'
+                            - 'cpu-high-exclude-nice'
                 name:
                     type: str
                     description: 'SNMP user name.'
@@ -103,44 +103,44 @@ options:
                     description: 'IPv6 hosts to send notifications (traps) to.'
                 priv-proto:
                     type: str
-                    default: aes
+                    default: 'aes'
                     description:
                      - 'Privacy (encryption) protocol.'
                      - 'aes - CFB128-AES-128 symmetric encryption protocol.'
                      - 'des - CBC-DES symmetric encryption protocol.'
                     choices:
-                        - aes
-                        - des
+                        - 'aes'
+                        - 'des'
                 priv-pwd:
                     -
                         type: str
-                        default: ENC OTA3MDU5Nzg1ODQ2MDM2NInoPzPSYfTulrcxKZ65Re1ROZUOMQVvU4dqPX5WkABZ8PkpLAOtCEZJPjCcJbybir6Dw9yptXUDyKN4hUHbzauIOAQ2Az8BlB5n4ifkMNTkDDDxZ7r6oB0GK+QmJM9n2wjUGMCcVi0sG9l4bc9sFFuBi4mJ
+                        default: 'ENC OTA3MDU5Nzg1ODQ2MDM2NInoPzPSYfTulrcxKZ65Re1ROZUOMQVvU4dqPX5WkABZ8PkpLAOtCEZJPjCcJbybir6Dw9yptXUDyKN4hUHbzauIOAQ2Az8BlB5n4ifkMNTkDDDxZ7r6oB0GK+QmJM9n2wjUGMCcVi0sG9l4bc9sFFuBi4mJ'
                 queries:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable queries for this user.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 query-port:
                     type: int
                     default: 161
                     description: 'SNMPv3 query port.'
                 security-level:
                     type: str
-                    default: no-auth-no-priv
+                    default: 'no-auth-no-priv'
                     description:
                      - 'Security level for message authentication and encryption.'
                      - 'no-auth-no-priv - Message with no authentication and no privacy (encryption).'
                      - 'auth-no-priv - Message with authentication but no privacy (encryption).'
                      - 'auth-priv - Message with authentication and privacy (encryption).'
                     choices:
-                        - no-auth-no-priv
-                        - auth-no-priv
-                        - auth-priv
+                        - 'no-auth-no-priv'
+                        - 'auth-no-priv'
+                        - 'auth-priv'
 
 '''
 

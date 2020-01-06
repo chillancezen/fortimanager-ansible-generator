@@ -57,19 +57,19 @@ options:
             data:
                 ip6-primary:
                     type: str
-                    default: ::
+                    default: '::'
                     description: 'IPv6 primary DNS IP.'
                 ip6-secondary:
                     type: str
-                    default: ::
+                    default: '::'
                     description: 'IPv6 secondary DNS IP.'
                 primary:
                     type: str
-                    default: 0.0.0.0
+                    default: '0.0.0.0'
                     description: 'Primary DNS IP.'
                 secondary:
                     type: str
-                    default: 0.0.0.0
+                    default: '0.0.0.0'
                     description: 'Secondary DNS IP.'
 
 '''

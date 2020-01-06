@@ -61,7 +61,7 @@ options:
                     -
                         type: str
                         choices:
-                            - force
+                            - 'force'
 
 '''
 

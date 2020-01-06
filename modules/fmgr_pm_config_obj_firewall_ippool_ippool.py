@@ -72,8 +72,8 @@ options:
                     type: str
                     description: 'Enable/disable replying to ARP requests when an IP Pool is added to a policy (default = enable).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 associated-interface:
                     type: str
                     description: 'Associated interface name.'
@@ -96,8 +96,8 @@ options:
                         arp-reply:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         associated-interface:
                             type: str
                         block-size:
@@ -113,8 +113,8 @@ options:
                         permit-any-host:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         source-endip:
                             type: str
                         source-startip:
@@ -124,10 +124,10 @@ options:
                         type:
                             type: str
                             choices:
-                                - overload
-                                - one-to-one
-                                - fixed-port-range
-                                - port-block-allocation
+                                - 'overload'
+                                - 'one-to-one'
+                                - 'fixed-port-range'
+                                - 'port-block-allocation'
                 endip:
                     type: str
                     description: 'Final IPv4 address (inclusive) in the range for the address pool (format xxx.xxx.xxx.xxx, Default: 0.0.0.0).'
@@ -144,8 +144,8 @@ options:
                     type: str
                     description: 'Enable/disable full cone NAT.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 source-endip:
                     type: str
                     description: 'Final IPv4 address (inclusive) in the range of the source addresses to be translated (format xxx.xxx.xxx.xxx, Default: 0.0.0.0).'
@@ -159,10 +159,10 @@ options:
                     type: str
                     description: 'IP pool type (overload, one-to-one, fixed port range, or port block allocation).'
                     choices:
-                        - overload
-                        - one-to-one
-                        - fixed-port-range
-                        - port-block-allocation
+                        - 'overload'
+                        - 'one-to-one'
+                        - 'fixed-port-range'
+                        - 'port-block-allocation'
     schema_object1:
         methods: [delete]
         description: 'Configure IPv4 IP pools.'
@@ -180,9 +180,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

@@ -75,8 +75,8 @@ options:
                     type: str
                     description: 'Enable/disable logging for antivirus oversize file blocking.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 replacemsg-group:
                     type: str
                     description: 'Name of the replacement message group to be used'
@@ -84,14 +84,14 @@ options:
                     type: str
                     description: 'Enable/disable inspection of RPC over HTTP.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 switching-protocols-log:
                     type: str
                     description: 'Enable/disable logging for HTTP/HTTPS switching protocols.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'Configure protocol options.'
@@ -109,9 +109,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Enable/disable HTTP WAN Optimization and configure HTTP WAN Optimization features.'
@@ -84,14 +84,14 @@ options:
                     type: str
                     description: 'Enable/disable byte-caching for HTTP. Byte caching reduces the amount of traffic by caching file data sent across the WAN and in future serving if from the cache.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 log-traffic:
                     type: str
                     description: 'Enable/disable logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 port:
                     -
                         type: int
@@ -99,20 +99,20 @@ options:
                     type: str
                     description: 'Select dynamic or fixed-size data chunking for HTTP WAN Optimization.'
                     choices:
-                        - dynamic
-                        - fix
+                        - 'dynamic'
+                        - 'fix'
                 secure-tunnel:
                     type: str
                     description: 'Enable/disable securing the WAN Opt tunnel using SSL. Secure and non-secure tunnels use the same TCP port (7810).'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ssl:
                     type: str
                     description: 'Enable/disable SSL/TLS offloading (hardware acceleration) for HTTPS traffic in this tunnel.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ssl-port:
                     -
                         type: int
@@ -120,28 +120,28 @@ options:
                     type: str
                     description: 'Enable/disable HTTP WAN Optimization.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 tunnel-non-http:
                     type: str
                     description: 'Configure how to process non-HTTP traffic when a profile configured for HTTP traffic accepts a non-HTTP session. Can occur if an application sends non-HTTP traffic using an HTTP destination port.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 tunnel-sharing:
                     type: str
                     description: 'Tunnel sharing mode for aggressive/non-aggressive and/or interactive/non-interactive protocols.'
                     choices:
-                        - private
-                        - shared
-                        - express-shared
+                        - 'private'
+                        - 'shared'
+                        - 'express-shared'
                 unknown-http-version:
                     type: str
                     description: 'How to handle HTTP sessions that do not comply with HTTP 0.9, 1.0, or 1.1.'
                     choices:
-                        - best-effort
-                        - reject
-                        - tunnel
+                        - 'best-effort'
+                        - 'reject'
+                        - 'tunnel'
 
 '''
 

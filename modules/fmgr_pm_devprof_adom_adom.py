@@ -69,15 +69,15 @@ options:
                         -
                             type: str
                             choices:
-                                - none
-                                - dns
-                                - ntp
-                                - email
-                                - admin
-                                - snmp
-                                - repmsg
-                                - ftgd
-                                - log
+                                - 'none'
+                                - 'dns'
+                                - 'ntp'
+                                - 'email'
+                                - 'admin'
+                                - 'snmp'
+                                - 'repmsg'
+                                - 'ftgd'
+                                - 'log'
                     name:
                         type: str
                     oid:
@@ -91,7 +91,7 @@ options:
                     type:
                         type: str
                         choices:
-                            - devprof
+                            - 'devprof'
     schema_object1:
         methods: [get]
         description: ''
@@ -102,12 +102,12 @@ options:
                     -
                         type: str
                         choices:
-                            - description
-                            - enabled options
-                            - name
-                            - oid
-                            - scope member
-                            - type
+                            - 'description'
+                            - 'enabled options'
+                            - 'name'
+                            - 'oid'
+                            - 'scope member'
+                            - 'type'
 
 '''
 

@@ -70,13 +70,13 @@ options:
                         type: str
                         description: 'Action when HTTP the header forwarded.'
                         choices:
-                            - add-to-request
-                            - add-to-response
-                            - remove-from-request
-                            - remove-from-response
+                            - 'add-to-request'
+                            - 'add-to-response'
+                            - 'remove-from-request'
+                            - 'remove-from-response'
                     content:
                         type: str
-                        description: 'HTTP header's content.'
+                        description: 'HTTP headers content.'
                     id:
                         type: int
                         description: 'HTTP forwarded header id.'
@@ -96,10 +96,10 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - content
-                            - id
-                            - name
+                            - 'action'
+                            - 'content'
+                            - 'id'
+                            - 'name'
             filter:
                 -
                     type: str
@@ -118,11 +118,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int
@@ -220,7 +220,7 @@ return_of_api_category_0:
                   description: 'Action when HTTP the header forwarded.'
                content:
                   type: str
-                  description: 'HTTP header's content.'
+                  description: 'HTTP headers content.'
                id:
                   type: int
                   description: 'HTTP forwarded header id.'

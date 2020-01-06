@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'FortiGuard DNS Filter settings.'
@@ -86,8 +86,8 @@ options:
                             type: str
                             description: 'Action to take for DNS requests matching the category.'
                             choices:
-                                - monitor
-                                - block
+                                - 'monitor'
+                                - 'block'
                         category:
                             type: str
                             description: 'Category number.'
@@ -98,14 +98,14 @@ options:
                             type: str
                             description: 'Enable/disable DNS filter logging for this DNS profile.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                 options:
                     -
                         type: str
                         choices:
-                            - error-allow
-                            - ftgd-disable
+                            - 'error-allow'
+                            - 'ftgd-disable'
 
 '''
 

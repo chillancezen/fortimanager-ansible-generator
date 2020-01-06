@@ -71,16 +71,16 @@ options:
                     action:
                         type: str
                         choices:
-                            - assign
-                            - block
-                            - reserved
+                            - 'assign'
+                            - 'block'
+                            - 'reserved'
                     circuit-id:
                         type: str
                     circuit-id-type:
                         type: str
                         choices:
-                            - hex
-                            - string
+                            - 'hex'
+                            - 'string'
                     description:
                         type: str
                     id:
@@ -94,13 +94,13 @@ options:
                     remote-id-type:
                         type: str
                         choices:
-                            - hex
-                            - string
+                            - 'hex'
+                            - 'string'
                     type:
                         type: str
                         choices:
-                            - mac
-                            - option82
+                            - 'mac'
+                            - 'option82'
     schema_object1:
         methods: [get]
         description: ''
@@ -114,16 +114,16 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - circuit-id
-                            - circuit-id-type
-                            - description
-                            - id
-                            - ip
-                            - mac
-                            - remote-id
-                            - remote-id-type
-                            - type
+                            - 'action'
+                            - 'circuit-id'
+                            - 'circuit-id-type'
+                            - 'description'
+                            - 'id'
+                            - 'ip'
+                            - 'mac'
+                            - 'remote-id'
+                            - 'remote-id-type'
+                            - 'type'
             filter:
                 -
                     type: str
@@ -142,11 +142,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

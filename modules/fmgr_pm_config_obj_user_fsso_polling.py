@@ -99,8 +99,8 @@ options:
                         type: str
                         description: 'Enable/disable polling for the status of this Active Directory server.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     user:
                         type: str
                         description: 'User name required to log into this Active Directory server.'
@@ -117,17 +117,17 @@ options:
                     -
                         type: str
                         choices:
-                            - _gui_meta
-                            - default-domain
-                            - id
-                            - ldap-server
-                            - logon-history
-                            - password
-                            - polling-frequency
-                            - port
-                            - server
-                            - status
-                            - user
+                            - '_gui_meta'
+                            - 'default-domain'
+                            - 'id'
+                            - 'ldap-server'
+                            - 'logon-history'
+                            - 'password'
+                            - 'polling-frequency'
+                            - 'port'
+                            - 'server'
+                            - 'status'
+                            - 'user'
             filter:
                 -
                     type: str
@@ -146,11 +146,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

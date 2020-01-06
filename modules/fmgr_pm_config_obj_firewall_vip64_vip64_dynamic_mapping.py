@@ -75,8 +75,8 @@ options:
                     arp-reply:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     color:
                         type: int
                     comment:
@@ -90,12 +90,12 @@ options:
                     ldb-method:
                         type: str
                         choices:
-                            - static
-                            - round-robin
-                            - weighted
-                            - least-session
-                            - least-rtt
-                            - first-alive
+                            - 'static'
+                            - 'round-robin'
+                            - 'weighted'
+                            - 'least-session'
+                            - 'least-rtt'
+                            - 'first-alive'
                     mappedip:
                         type: str
                     mappedport:
@@ -105,28 +105,28 @@ options:
                     portforward:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     protocol:
                         type: str
                         choices:
-                            - tcp
-                            - udp
+                            - 'tcp'
+                            - 'udp'
                     server-type:
                         type: str
                         choices:
-                            - http
-                            - tcp
-                            - udp
-                            - ip
+                            - 'http'
+                            - 'tcp'
+                            - 'udp'
+                            - 'ip'
                     src-filter:
                         -
                             type: str
                     type:
                         type: str
                         choices:
-                            - static-nat
-                            - server-load-balance
+                            - 'static-nat'
+                            - 'server-load-balance'
                     uuid:
                         type: str
     schema_object1:
@@ -142,23 +142,23 @@ options:
                     -
                         type: str
                         choices:
-                            - _scope
-                            - arp-reply
-                            - color
-                            - comment
-                            - extip
-                            - extport
-                            - id
-                            - ldb-method
-                            - mappedip
-                            - mappedport
-                            - monitor
-                            - portforward
-                            - protocol
-                            - server-type
-                            - src-filter
-                            - type
-                            - uuid
+                            - '_scope'
+                            - 'arp-reply'
+                            - 'color'
+                            - 'comment'
+                            - 'extip'
+                            - 'extport'
+                            - 'id'
+                            - 'ldb-method'
+                            - 'mappedip'
+                            - 'mappedport'
+                            - 'monitor'
+                            - 'portforward'
+                            - 'protocol'
+                            - 'server-type'
+                            - 'src-filter'
+                            - 'type'
+                            - 'uuid'
             filter:
                 -
                     type: str
@@ -177,11 +177,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

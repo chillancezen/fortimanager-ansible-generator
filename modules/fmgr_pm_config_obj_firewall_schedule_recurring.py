@@ -71,14 +71,14 @@ options:
                         -
                             type: str
                             choices:
-                                - sunday
-                                - monday
-                                - tuesday
-                                - wednesday
-                                - thursday
-                                - friday
-                                - saturday
-                                - none
+                                - 'sunday'
+                                - 'monday'
+                                - 'tuesday'
+                                - 'wednesday'
+                                - 'thursday'
+                                - 'friday'
+                                - 'saturday'
+                                - 'none'
                     end:
                         type: str
                         description: 'Time of day to end the schedule, format hh:mm.'
@@ -101,11 +101,11 @@ options:
                     -
                         type: str
                         choices:
-                            - color
-                            - day
-                            - end
-                            - name
-                            - start
+                            - 'color'
+                            - 'day'
+                            - 'end'
+                            - 'name'
+                            - 'start'
             filter:
                 -
                     type: str
@@ -124,11 +124,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

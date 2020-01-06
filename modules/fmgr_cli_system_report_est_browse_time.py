@@ -61,14 +61,14 @@ options:
                     description: 'Read time threshold for each page view.'
                 status:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Estimate browse time status.'
                      - 'disable - Disable estimating browse time.'
                      - 'enable - Enable estimating browse time.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

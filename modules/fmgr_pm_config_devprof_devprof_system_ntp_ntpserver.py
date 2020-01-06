@@ -69,8 +69,8 @@ options:
                         type: str
                         description: 'Enable/disable MD5 authentication.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     id:
                         type: int
                         description: 'NTP server ID.'
@@ -84,8 +84,8 @@ options:
                         type: str
                         description: 'Enable to use NTPv3 instead of NTPv4.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     server:
                         type: str
                         description: 'IP address or hostname of the NTP Server.'
@@ -102,12 +102,12 @@ options:
                     -
                         type: str
                         choices:
-                            - authentication
-                            - id
-                            - key
-                            - key-id
-                            - ntpv3
-                            - server
+                            - 'authentication'
+                            - 'id'
+                            - 'key'
+                            - 'key-id'
+                            - 'ntpv3'
+                            - 'server'
             filter:
                 -
                     type: str
@@ -126,11 +126,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

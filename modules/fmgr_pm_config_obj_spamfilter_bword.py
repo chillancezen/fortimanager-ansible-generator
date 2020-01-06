@@ -73,8 +73,8 @@ options:
                                 type: str
                                 description: 'Mark spam or good.'
                                 choices:
-                                    - spam
-                                    - clear
+                                    - 'spam'
+                                    - 'clear'
                             id:
                                 type: int
                                 description: 'Banned word entry ID.'
@@ -82,14 +82,14 @@ options:
                                 type: str
                                 description: 'Language for the banned word.'
                                 choices:
-                                    - western
-                                    - simch
-                                    - trach
-                                    - japanese
-                                    - korean
-                                    - french
-                                    - thai
-                                    - spanish
+                                    - 'western'
+                                    - 'simch'
+                                    - 'trach'
+                                    - 'japanese'
+                                    - 'korean'
+                                    - 'french'
+                                    - 'thai'
+                                    - 'spanish'
                             pattern:
                                 type: str
                                 description: 'Pattern for the banned word.'
@@ -97,8 +97,8 @@ options:
                                 type: str
                                 description: 'Wildcard pattern or regular expression.'
                                 choices:
-                                    - wildcard
-                                    - regexp
+                                    - 'wildcard'
+                                    - 'regexp'
                             score:
                                 type: int
                                 description: 'Score value.'
@@ -106,15 +106,15 @@ options:
                                 type: str
                                 description: 'Enable/disable status.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             where:
                                 type: str
                                 description: 'Component of the email to be scanned.'
                                 choices:
-                                    - subject
-                                    - body
-                                    - all
+                                    - 'subject'
+                                    - 'body'
+                                    - 'all'
                     id:
                         type: int
                         description: 'ID.'
@@ -134,9 +134,9 @@ options:
                     -
                         type: str
                         choices:
-                            - comment
-                            - id
-                            - name
+                            - 'comment'
+                            - 'id'
+                            - 'name'
             filter:
                 -
                     type: str
@@ -155,11 +155,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

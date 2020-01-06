@@ -79,8 +79,8 @@ options:
                         type: str
                         description: 'Enable/disable web proxy service group.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure service groups.'
@@ -94,10 +94,10 @@ options:
                     -
                         type: str
                         choices:
-                            - color
-                            - member
-                            - name
-                            - proxy
+                            - 'color'
+                            - 'member'
+                            - 'name'
+                            - 'proxy'
             filter:
                 -
                     type: str
@@ -116,11 +116,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

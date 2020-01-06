@@ -68,21 +68,21 @@ options:
                         type: str
                         description: 'IPv4 address type.'
                         choices:
-                            - not-available
-                            - not-known
-                            - public
-                            - port-restricted
-                            - single-NATed-private
-                            - double-NATed-private
-                            - port-restricted-and-single-NATed
-                            - port-restricted-and-double-NATed
+                            - 'not-available'
+                            - 'not-known'
+                            - 'public'
+                            - 'port-restricted'
+                            - 'single-NATed-private'
+                            - 'double-NATed-private'
+                            - 'port-restricted-and-single-NATed'
+                            - 'port-restricted-and-double-NATed'
                     ipv6-address-type:
                         type: str
                         description: 'IPv6 address type.'
                         choices:
-                            - not-available
-                            - available
-                            - not-known
+                            - 'not-available'
+                            - 'available'
+                            - 'not-known'
                     name:
                         type: str
                         description: 'IP type name.'
@@ -99,9 +99,9 @@ options:
                     -
                         type: str
                         choices:
-                            - ipv4-address-type
-                            - ipv6-address-type
-                            - name
+                            - 'ipv4-address-type'
+                            - 'ipv6-address-type'
+                            - 'name'
             filter:
                 -
                     type: str
@@ -120,11 +120,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

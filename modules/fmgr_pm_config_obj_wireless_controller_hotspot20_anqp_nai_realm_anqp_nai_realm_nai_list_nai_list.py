@@ -75,10 +75,10 @@ options:
                                     type: str
                                     description: 'ID of authentication parameter.'
                                     choices:
-                                        - non-eap-inner-auth
-                                        - inner-auth-eap
-                                        - credential
-                                        - tunneled-credential
+                                        - 'non-eap-inner-auth'
+                                        - 'inner-auth-eap'
+                                        - 'credential'
+                                        - 'tunneled-credential'
                                 index:
                                     type: int
                                     description: 'Param index.'
@@ -86,36 +86,36 @@ options:
                                     type: str
                                     description: 'Value of authentication parameter.'
                                     choices:
-                                        - eap-identity
-                                        - eap-md5
-                                        - eap-tls
-                                        - eap-ttls
-                                        - eap-peap
-                                        - eap-sim
-                                        - eap-aka
-                                        - eap-aka-prime
-                                        - non-eap-pap
-                                        - non-eap-chap
-                                        - non-eap-mschap
-                                        - non-eap-mschapv2
-                                        - cred-sim
-                                        - cred-usim
-                                        - cred-nfc
-                                        - cred-hardware-token
-                                        - cred-softoken
-                                        - cred-certificate
-                                        - cred-user-pwd
-                                        - cred-none
-                                        - cred-vendor-specific
-                                        - tun-cred-sim
-                                        - tun-cred-usim
-                                        - tun-cred-nfc
-                                        - tun-cred-hardware-token
-                                        - tun-cred-softoken
-                                        - tun-cred-certificate
-                                        - tun-cred-user-pwd
-                                        - tun-cred-anonymous
-                                        - tun-cred-vendor-specific
+                                        - 'eap-identity'
+                                        - 'eap-md5'
+                                        - 'eap-tls'
+                                        - 'eap-ttls'
+                                        - 'eap-peap'
+                                        - 'eap-sim'
+                                        - 'eap-aka'
+                                        - 'eap-aka-prime'
+                                        - 'non-eap-pap'
+                                        - 'non-eap-chap'
+                                        - 'non-eap-mschap'
+                                        - 'non-eap-mschapv2'
+                                        - 'cred-sim'
+                                        - 'cred-usim'
+                                        - 'cred-nfc'
+                                        - 'cred-hardware-token'
+                                        - 'cred-softoken'
+                                        - 'cred-certificate'
+                                        - 'cred-user-pwd'
+                                        - 'cred-none'
+                                        - 'cred-vendor-specific'
+                                        - 'tun-cred-sim'
+                                        - 'tun-cred-usim'
+                                        - 'tun-cred-nfc'
+                                        - 'tun-cred-hardware-token'
+                                        - 'tun-cred-softoken'
+                                        - 'tun-cred-certificate'
+                                        - 'tun-cred-user-pwd'
+                                        - 'tun-cred-anonymous'
+                                        - 'tun-cred-vendor-specific'
                         index:
                             type: int
                             description: 'EAP method index.'
@@ -123,20 +123,20 @@ options:
                             type: str
                             description: 'EAP method type.'
                             choices:
-                                - eap-identity
-                                - eap-md5
-                                - eap-tls
-                                - eap-ttls
-                                - eap-peap
-                                - eap-sim
-                                - eap-aka
-                                - eap-aka-prime
+                                - 'eap-identity'
+                                - 'eap-md5'
+                                - 'eap-tls'
+                                - 'eap-ttls'
+                                - 'eap-peap'
+                                - 'eap-sim'
+                                - 'eap-aka'
+                                - 'eap-aka-prime'
                 encoding:
                     type: str
                     description: 'Enable/disable format in accordance with IETF RFC 4282.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 nai-realm:
                     type: str
                     description: 'Configure NAI realms (delimited by a semi-colon character).'
@@ -160,9 +160,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

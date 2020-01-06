@@ -58,21 +58,21 @@ options:
                     -
                         type: str
                         choices:
-                            - none
-                            - create_task
-                            - nonblocking
-                            - log_dev
+                            - 'none'
+                            - 'create_task'
+                            - 'nonblocking'
+                            - 'log_dev'
                 from:
                     type: str
-                    default: json
+                    default: 'json'
                     choices:
-                        - um
-                        - fgfm
-                        - apache
-                        - dvm
-                        - fwm
-                        - xml
-                        - json
+                        - 'um'
+                        - 'fgfm'
+                        - 'apache'
+                        - 'dvm'
+                        - 'fwm'
+                        - 'xml'
+                        - 'json'
                 reload-dev-member-list:
                     -
                         name:

@@ -57,14 +57,14 @@ options:
             data:
                 diskfull:
                     type: str
-                    default: overwrite
+                    default: 'overwrite'
                     description:
                      - 'Policy to apply when disk is full.'
                      - 'overwrite - Overwrite oldest log when disk is full.'
                      - 'nolog - Stop logging when disk is full.'
                     choices:
-                        - overwrite
-                        - nolog
+                        - 'overwrite'
+                        - 'nolog'
                 log-disk-full-percentage:
                     type: int
                     default: 80
@@ -77,43 +77,43 @@ options:
                     -
                         type: str
                         choices:
-                            - sunday
-                            - monday
-                            - tuesday
-                            - wednesday
-                            - thursday
-                            - friday
-                            - saturday
+                            - 'sunday'
+                            - 'monday'
+                            - 'tuesday'
+                            - 'wednesday'
+                            - 'thursday'
+                            - 'friday'
+                            - 'saturday'
                 roll-schedule:
                     type: str
-                    default: none
+                    default: 'none'
                     description:
                      - 'Frequency to check log file for rolling.'
                      - 'none - Not scheduled.'
                      - 'daily - Every day.'
                      - 'weekly - Every week.'
                     choices:
-                        - none
-                        - daily
-                        - weekly
+                        - 'none'
+                        - 'daily'
+                        - 'weekly'
                 roll-time:
                     -
                         type: str
                 server-type:
                     type: str
-                    default: FTP
+                    default: 'FTP'
                     description:
                      - 'Server type.'
                      - 'FTP - Upload via FTP.'
                      - 'SFTP - Upload via SFTP.'
                      - 'SCP - Upload via SCP.'
                     choices:
-                        - FTP
-                        - SFTP
-                        - SCP
+                        - 'FTP'
+                        - 'SFTP'
+                        - 'SCP'
                 severity:
                     type: str
-                    default: information
+                    default: 'information'
                     description:
                      - 'Least severity level to log.'
                      - 'emergency - Emergency level.'
@@ -125,44 +125,44 @@ options:
                      - 'information - Information level.'
                      - 'debug - Debug level.'
                     choices:
-                        - emergency
-                        - alert
-                        - critical
-                        - error
-                        - warning
-                        - notification
-                        - information
-                        - debug
+                        - 'emergency'
+                        - 'alert'
+                        - 'critical'
+                        - 'error'
+                        - 'warning'
+                        - 'notification'
+                        - 'information'
+                        - 'debug'
                 status:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable local disk log.'
                      - 'disable - Do not log to local disk.'
                      - 'enable - Log to local disk.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 upload:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Upload log file when rolling.'
                      - 'disable - Disable uploading when rolling log file.'
                      - 'enable - Enable uploading when rolling log file.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 upload-delete-files:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Delete log files after uploading (default = enable).'
                      - 'disable - Do not delete log files after uploading.'
                      - 'enable - Delete log files after uploading.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 upload-time:
                     -
                         type: str
@@ -171,44 +171,44 @@ options:
                     description: 'Log file upload remote directory.'
                 uploadip:
                     type: str
-                    default: 0.0.0.0
+                    default: '0.0.0.0'
                     description: 'IP address of log uploading server.'
                 uploadpass:
                     -
                         type: str
-                        default: ENC NDk0NjE4Nzg3MjIwODA3N71+qrz/6PhYvtMUVz84NXNAP8LBSobOqp91xwfif6Oy3+uy8/crasneRp4VbtBQntyLw7E8MbzHoUlJp8Y2cQLnVfVsTQsRfvtq/BZcpTL+c2yDARD0Bvd1khGe4e1mCVFSVuCTSXxm6CmxqPpcGKFfHLyn
+                        default: 'ENC NDk0NjE4Nzg3MjIwODA3N71+qrz/6PhYvtMUVz84NXNAP8LBSobOqp91xwfif6Oy3+uy8/crasneRp4VbtBQntyLw7E8MbzHoUlJp8Y2cQLnVfVsTQsRfvtq/BZcpTL+c2yDARD0Bvd1khGe4e1mCVFSVuCTSXxm6CmxqPpcGKFfHLyn'
                 uploadport:
                     type: int
                     default: 0
                     description: 'Server port (0 = default protocol port).'
                 uploadsched:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Scheduled upload (disable = upload when rolling).'
                      - 'disable - Upload when rolling.'
                      - 'enable - Scheduled upload.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 uploadtype:
                     -
                         type: str
                         choices:
-                            - event
+                            - 'event'
                 uploaduser:
                     type: str
                     description: 'User account in upload server.'
                 uploadzip:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Compress upload logs.'
                      - 'disable - Upload log files as plain text.'
                      - 'enable - Upload log files compressed.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

@@ -57,11 +57,11 @@ options:
             data:
                 User-Agent:
                     type: str
-                    default: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)
+                    default: 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'
                     description: 'Configure the user agent string.'
                 fds-clt-ssl-protocol:
                     type: str
-                    default: tlsv1.2
+                    default: 'tlsv1.2'
                     description:
                      - 'The SSL protocols version for connecting fds server (default = tlsv1.2).'
                      - 'sslv3 - set SSLv3 as the client version.'
@@ -69,13 +69,13 @@ options:
                      - 'tlsv1.1 - set TLSv1.1 as the client version.'
                      - 'tlsv1.2 - set TLSv1.2 as the client version (default).'
                     choices:
-                        - sslv3
-                        - tlsv1.0
-                        - tlsv1.1
-                        - tlsv1.2
+                        - 'sslv3'
+                        - 'tlsv1.0'
+                        - 'tlsv1.1'
+                        - 'tlsv1.2'
                 fds-ssl-protocol:
                     type: str
-                    default: tlsv1.2
+                    default: 'tlsv1.2'
                     description:
                      - 'The SSL protocols version for receiving fgt connection (default = tlsv1.2).'
                      - 'sslv3 - set SSLv3 as the lowest version.'
@@ -83,13 +83,13 @@ options:
                      - 'tlsv1.1 - set TLSv1.1 as the lowest version.'
                      - 'tlsv1.2 - set TLSv1.2 as the lowest version (default).'
                     choices:
-                        - sslv3
-                        - tlsv1.0
-                        - tlsv1.1
-                        - tlsv1.2
+                        - 'sslv3'
+                        - 'tlsv1.0'
+                        - 'tlsv1.1'
+                        - 'tlsv1.2'
                 fmtr-log:
                     type: str
-                    default: info
+                    default: 'info'
                     description:
                      - 'fmtr log level'
                      - 'emergency - Log level - emergency'
@@ -102,18 +102,18 @@ options:
                      - 'debug - Log level - debug'
                      - 'disable - Disable linkd log'
                     choices:
-                        - emergency
-                        - alert
-                        - critical
-                        - error
-                        - warn
-                        - notice
-                        - info
-                        - debug
-                        - disable
+                        - 'emergency'
+                        - 'alert'
+                        - 'critical'
+                        - 'error'
+                        - 'warn'
+                        - 'notice'
+                        - 'info'
+                        - 'debug'
+                        - 'disable'
                 linkd-log:
                     type: str
-                    default: info
+                    default: 'info'
                     description:
                      - 'The linkd log level (default = info).'
                      - 'emergency - Log level - emergency'
@@ -126,15 +126,15 @@ options:
                      - 'debug - Log level - debug'
                      - 'disable - Disable linkd log'
                     choices:
-                        - emergency
-                        - alert
-                        - critical
-                        - error
-                        - warn
-                        - notice
-                        - info
-                        - debug
-                        - disable
+                        - 'emergency'
+                        - 'alert'
+                        - 'critical'
+                        - 'error'
+                        - 'warn'
+                        - 'notice'
+                        - 'info'
+                        - 'debug'
+                        - 'disable'
                 max-av-ips-version:
                     type: int
                     default: 20
@@ -146,7 +146,7 @@ options:
                 push-override:
                     ip:
                         type: str
-                        default: 0.0.0.0
+                        default: '0.0.0.0'
                         description: 'External or virtual IP address of the NAT device that will forward push messages to the FortiManager unit.'
                     port:
                         type: int
@@ -154,14 +154,14 @@ options:
                         description: 'Receiving port number on the NAT device (1 - 65535, default = 9443).'
                     status:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable push updates for clients (default = disable).'
                          - 'disable - Disable setting.'
                          - 'enable - Enable setting.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                 push-override-to-client:
                     announce-ip:
                         -
@@ -171,7 +171,7 @@ options:
                                 description: 'ID of the announce IP address (1 - 10).'
                             ip:
                                 type: str
-                                default: 0.0.0.0
+                                default: '0.0.0.0'
                                 description: 'Announce IPv4 address.'
                             port:
                                 type: int
@@ -179,34 +179,34 @@ options:
                                 description: 'Announce IP port (1 - 65535, default = 8890).'
                     status:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Enable/disable push updates (default = disable).'
                          - 'disable - Disable setting.'
                          - 'enable - Enable setting.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                 send_report:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'send report/fssi to fds server.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 send_setup:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'forward setup to fds server.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 server-override:
                     servlist:
                         -
@@ -216,11 +216,11 @@ options:
                                 description: 'Override server ID (1 - 10).'
                             ip:
                                 type: str
-                                default: 0.0.0.0
+                                default: '0.0.0.0'
                                 description: 'IPv4 address of the override server.'
                             ip6:
                                 type: str
-                                default: ::
+                                default: '::'
                                 description: 'IPv6 address of the override server.'
                             port:
                                 type: int
@@ -230,61 +230,61 @@ options:
                                 -
                                     type: str
                                     choices:
-                                        - fds
-                                        - fct
+                                        - 'fds'
+                                        - 'fct'
                     status:
                         type: str
-                        default: disable
+                        default: 'disable'
                         description:
                          - 'Override status.'
                          - 'disable - Disable setting.'
                          - 'enable - Enable setting.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                 system-support-fct:
                     -
                         type: str
                         choices:
-                            - 4.x
-                            - 5.0
-                            - 5.2
-                            - 5.4
-                            - 5.6
-                            - 6.0
+                            - '4.x'
+                            - '5.0'
+                            - '5.2'
+                            - '5.4'
+                            - '5.6'
+                            - '6.0'
                 system-support-fgt:
                     -
                         type: str
                         choices:
-                            - 5.4
-                            - 5.6
-                            - 6.0
-                            - 6.2
+                            - '5.4'
+                            - '5.6'
+                            - '6.0'
+                            - '6.2'
                 system-support-fml:
                     -
                         type: str
                         choices:
-                            - 4.x
-                            - 5.x
-                            - 6.x
+                            - '4.x'
+                            - '5.x'
+                            - '6.x'
                 system-support-fsa:
                     -
                         type: str
                         choices:
-                            - 1.x
-                            - 2.x
-                            - 3.x
+                            - '1.x'
+                            - '2.x'
+                            - '3.x'
                 system-support-fsw:
                     -
                         type: str
                         choices:
-                            - 5.4
-                            - 5.6
-                            - 6.0
-                            - 6.2
+                            - '5.4'
+                            - '5.6'
+                            - '6.0'
+                            - '6.2'
                 umsvc-log:
                     type: str
-                    default: info
+                    default: 'info'
                     description:
                      - 'The um_service log level (default = info).'
                      - 'emergency - Log level - emergency'
@@ -297,31 +297,31 @@ options:
                      - 'debug - Log level - debug'
                      - 'disable - Disable linkd log'
                     choices:
-                        - emergency
-                        - alert
-                        - critical
-                        - error
-                        - warn
-                        - notice
-                        - info
-                        - debug
-                        - disable
+                        - 'emergency'
+                        - 'alert'
+                        - 'critical'
+                        - 'error'
+                        - 'warn'
+                        - 'notice'
+                        - 'info'
+                        - 'debug'
+                        - 'disable'
                 unreg-dev-option:
                     type: str
-                    default: add-service
+                    default: 'add-service'
                     description:
                      - 'set the option for unregister devices'
                      - 'ignore - Ignore all unregistered devices.'
                      - 'svc-only - Allow update requests without adding the device.'
                      - 'add-service - Add unregistered devices and allow update request.'
                     choices:
-                        - ignore
-                        - svc-only
-                        - add-service
+                        - 'ignore'
+                        - 'svc-only'
+                        - 'add-service'
                 update-schedule:
                     day:
                         type: str
-                        default: Monday
+                        default: 'Monday'
                         description:
                          - 'Configure the day the update will occur, if the freqnecy is weekly (Sunday - Saturday, default = Monday).'
                          - 'Sunday - Update every Sunday.'
@@ -332,48 +332,48 @@ options:
                          - 'Friday - Update every Friday.'
                          - 'Saturday - Update every Saturday.'
                         choices:
-                            - Sunday
-                            - Monday
-                            - Tuesday
-                            - Wednesday
-                            - Thursday
-                            - Friday
-                            - Saturday
+                            - 'Sunday'
+                            - 'Monday'
+                            - 'Tuesday'
+                            - 'Wednesday'
+                            - 'Thursday'
+                            - 'Friday'
+                            - 'Saturday'
                     frequency:
                         type: str
-                        default: every
+                        default: 'every'
                         description:
                          - 'Configure update frequency: every - time interval, daily - once a day, weekly - once a week (default = every).'
                          - 'every - Time interval.'
                          - 'daily - Every day.'
                          - 'weekly - Every week.'
                         choices:
-                            - every
-                            - daily
-                            - weekly
+                            - 'every'
+                            - 'daily'
+                            - 'weekly'
                     status:
                         type: str
-                        default: enable
+                        default: 'enable'
                         description:
                          - 'Enable/disable scheduled updates.'
                          - 'disable - Disable setting.'
                          - 'enable - Enable setting.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     time:
                         -
                             type: str
                 wanip-query-mode:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'public ip query mode'
                      - 'disable - Do not query public ip'
                      - 'ipify - Get public IP through https://api.ipify.org'
                     choices:
-                        - disable
-                        - ipify
+                        - 'disable'
+                        - 'ipify'
 
 '''
 

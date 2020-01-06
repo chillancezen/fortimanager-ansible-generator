@@ -63,18 +63,18 @@ options:
                     description: 'OFTP certificate comment.'
                 custom:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable custom certificate.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 password:
                     -
                         type: str
-                        default: ENC MTI5NjYzMDEzODE4NDg1NVPJciKIaIk4c9RaJExLIhIeE1CWLHxjPU7i6K/MH/r6Et25GbRk+XSVylgi6eEZfsdO9enC3RNAgJVBT5MBtxnKZPQs3OSqP30a3KlVKWDLIUqFDpwZwWgCEJOM+g3iR9i958iDsfa0BamlMUBM23bb8Yve
+                        default: 'ENC MTI5NjYzMDEzODE4NDg1NVPJciKIaIk4c9RaJExLIhIeE1CWLHxjPU7i6K/MH/r6Et25GbRk+XSVylgi6eEZfsdO9enC3RNAgJVBT5MBtxnKZPQs3OSqP30a3KlVKWDLIUqFDpwZwWgCEJOM+g3iR9i958iDsfa0BamlMUBM23bb8Yve'
                 private-key:
                     -
                         type: str

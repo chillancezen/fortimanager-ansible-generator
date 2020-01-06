@@ -72,13 +72,13 @@ options:
                     diffserv-forward:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     diffserv-reverse:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     diffservcode-forward:
                         type: str
                     diffservcode-rev:
@@ -96,8 +96,8 @@ options:
                     internet-service:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     internet-service-custom:
                         type: str
                     internet-service-custom-group:
@@ -109,8 +109,8 @@ options:
                     internet-service-src:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     internet-service-src-custom:
                         type: str
                     internet-service-src-custom-group:
@@ -122,8 +122,8 @@ options:
                     ip-version:
                         type: str
                         choices:
-                            - 4
-                            - 6
+                            - '4'
+                            - '6'
                     name:
                         type: str
                     per-ip-shaper:
@@ -141,8 +141,8 @@ options:
                     status:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     tos:
                         type: str
                     tos-mask:
@@ -150,8 +150,8 @@ options:
                     tos-negate:
                         type: str
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     traffic-shaper:
                         type: str
                     traffic-shaper-reverse:
@@ -173,46 +173,46 @@ options:
                     -
                         type: str
                         choices:
-                            - app-category
-                            - app-group
-                            - application
-                            - class-id
-                            - comment
-                            - diffserv-forward
-                            - diffserv-reverse
-                            - diffservcode-forward
-                            - diffservcode-rev
-                            - dstaddr
-                            - dstaddr6
-                            - dstintf
-                            - groups
-                            - id
-                            - internet-service
-                            - internet-service-custom
-                            - internet-service-custom-group
-                            - internet-service-group
-                            - internet-service-id
-                            - internet-service-src
-                            - internet-service-src-custom
-                            - internet-service-src-custom-group
-                            - internet-service-src-group
-                            - internet-service-src-id
-                            - ip-version
-                            - name
-                            - per-ip-shaper
-                            - schedule
-                            - service
-                            - srcaddr
-                            - srcaddr6
-                            - srcintf
-                            - status
-                            - tos
-                            - tos-mask
-                            - tos-negate
-                            - traffic-shaper
-                            - traffic-shaper-reverse
-                            - url-category
-                            - users
+                            - 'app-category'
+                            - 'app-group'
+                            - 'application'
+                            - 'class-id'
+                            - 'comment'
+                            - 'diffserv-forward'
+                            - 'diffserv-reverse'
+                            - 'diffservcode-forward'
+                            - 'diffservcode-rev'
+                            - 'dstaddr'
+                            - 'dstaddr6'
+                            - 'dstintf'
+                            - 'groups'
+                            - 'id'
+                            - 'internet-service'
+                            - 'internet-service-custom'
+                            - 'internet-service-custom-group'
+                            - 'internet-service-group'
+                            - 'internet-service-id'
+                            - 'internet-service-src'
+                            - 'internet-service-src-custom'
+                            - 'internet-service-src-custom-group'
+                            - 'internet-service-src-group'
+                            - 'internet-service-src-id'
+                            - 'ip-version'
+                            - 'name'
+                            - 'per-ip-shaper'
+                            - 'schedule'
+                            - 'service'
+                            - 'srcaddr'
+                            - 'srcaddr6'
+                            - 'srcintf'
+                            - 'status'
+                            - 'tos'
+                            - 'tos-mask'
+                            - 'tos-negate'
+                            - 'traffic-shaper'
+                            - 'traffic-shaper-reverse'
+                            - 'url-category'
+                            - 'users'
             filter:
                 -
                     type: str
@@ -231,11 +231,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

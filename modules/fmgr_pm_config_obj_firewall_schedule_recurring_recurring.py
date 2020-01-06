@@ -72,14 +72,14 @@ options:
                     -
                         type: str
                         choices:
-                            - sunday
-                            - monday
-                            - tuesday
-                            - wednesday
-                            - thursday
-                            - friday
-                            - saturday
-                            - none
+                            - 'sunday'
+                            - 'monday'
+                            - 'tuesday'
+                            - 'wednesday'
+                            - 'thursday'
+                            - 'friday'
+                            - 'saturday'
+                            - 'none'
                 end:
                     type: str
                     description: 'Time of day to end the schedule, format hh:mm.'
@@ -106,9 +106,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

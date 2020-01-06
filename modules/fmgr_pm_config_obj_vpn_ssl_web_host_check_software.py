@@ -70,8 +70,8 @@ options:
                                 type: str
                                 description: 'Action.'
                                 choices:
-                                    - deny
-                                    - require
+                                    - 'deny'
+                                    - 'require'
                             id:
                                 type: int
                                 description: 'ID (0 - 4294967295).'
@@ -85,9 +85,9 @@ options:
                                 type: str
                                 description: 'Type.'
                                 choices:
-                                    - file
-                                    - registry
-                                    - process
+                                    - 'file'
+                                    - 'registry'
+                                    - 'process'
                             version:
                                 type: str
                                 description: 'Version.'
@@ -101,14 +101,14 @@ options:
                         type: str
                         description: 'OS type.'
                         choices:
-                            - macos
-                            - windows
+                            - 'macos'
+                            - 'windows'
                     type:
                         type: str
                         description: 'Type.'
                         choices:
-                            - av
-                            - fw
+                            - 'av'
+                            - 'fw'
                     version:
                         type: str
                         description: 'Version.'
@@ -125,11 +125,11 @@ options:
                     -
                         type: str
                         choices:
-                            - guid
-                            - name
-                            - os-type
-                            - type
-                            - version
+                            - 'guid'
+                            - 'name'
+                            - 'os-type'
+                            - 'type'
+                            - 'version'
             filter:
                 -
                     type: str
@@ -148,11 +148,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

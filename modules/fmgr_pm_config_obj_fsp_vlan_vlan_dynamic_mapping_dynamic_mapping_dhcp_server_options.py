@@ -78,10 +78,10 @@ options:
                     type:
                         type: str
                         choices:
-                            - hex
-                            - string
-                            - ip
-                            - fqdn
+                            - 'hex'
+                            - 'string'
+                            - 'ip'
+                            - 'fqdn'
                     value:
                         type: str
     schema_object1:
@@ -97,11 +97,11 @@ options:
                     -
                         type: str
                         choices:
-                            - code
-                            - id
-                            - ip
-                            - type
-                            - value
+                            - 'code'
+                            - 'id'
+                            - 'ip'
+                            - 'type'
+                            - 'value'
             filter:
                 -
                     type: str
@@ -120,11 +120,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

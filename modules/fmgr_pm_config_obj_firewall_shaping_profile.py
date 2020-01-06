@@ -91,9 +91,9 @@ options:
                                 type: str
                                 description: 'Priority.'
                                 choices:
-                                    - low
-                                    - medium
-                                    - high
+                                    - 'low'
+                                    - 'medium'
+                                    - 'high'
     schema_object1:
         methods: [get]
         description: 'Configure shaping profiles.'
@@ -107,9 +107,9 @@ options:
                     -
                         type: str
                         choices:
-                            - comment
-                            - default-class-id
-                            - profile-name
+                            - 'comment'
+                            - 'default-class-id'
+                            - 'profile-name'
             filter:
                 -
                     type: str
@@ -128,11 +128,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

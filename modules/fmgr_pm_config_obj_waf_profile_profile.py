@@ -72,14 +72,14 @@ options:
                     type: str
                     description: 'Enable/disable extended logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 external:
                     type: str
                     description: 'Disable/Enable external HTTP Inspection.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 name:
                     type: str
                     description: 'WAF Profile name.'
@@ -94,8 +94,8 @@ options:
                                     type: str
                                     description: 'Enable/disable match negation.'
                                     choices:
-                                        - disable
-                                        - enable
+                                        - 'disable'
+                                        - 'enable'
                                 pattern:
                                     type: str
                                     description: 'URL pattern.'
@@ -103,8 +103,8 @@ options:
                                     type: str
                                     description: 'Enable/disable regular expression based pattern match.'
                                     choices:
-                                        - disable
-                                        - enable
+                                        - 'disable'
+                                        - 'enable'
                                 srcaddr:
                                     type: str
                                     description: 'Source address.'
@@ -112,9 +112,9 @@ options:
                             type: str
                             description: 'Action.'
                             choices:
-                                - bypass
-                                - permit
-                                - block
+                                - 'bypass'
+                                - 'permit'
+                                - 'block'
                         address:
                             type: str
                             description: 'Host address.'
@@ -125,15 +125,15 @@ options:
                             type: str
                             description: 'Enable/disable logging.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         severity:
                             type: str
                             description: 'Severity.'
                             choices:
-                                - low
-                                - medium
-                                - high
+                                - 'low'
+                                - 'medium'
+                                - 'high'
     schema_object1:
         methods: [delete]
         description: 'Web application firewall configuration.'
@@ -151,9 +151,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

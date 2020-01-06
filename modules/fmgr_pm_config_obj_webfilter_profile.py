@@ -71,27 +71,27 @@ options:
                         type: str
                         description: 'Enable/disable extended logging for web filtering.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     https-replacemsg:
                         type: str
                         description: 'Enable replacement messages for HTTPS.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     inspection-mode:
                         type: str
                         description: 'Web filtering inspection mode.'
                         choices:
-                            - proxy
-                            - flow-based
-                            - dns
+                            - 'proxy'
+                            - 'flow-based'
+                            - 'dns'
                     log-all-url:
                         type: str
                         description: 'Enable/disable logging all URLs visited.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     name:
                         type: str
                         description: 'Profile name.'
@@ -99,37 +99,37 @@ options:
                         -
                             type: str
                             choices:
-                                - block-invalid-url
-                                - jscript
-                                - js
-                                - vbs
-                                - unknown
-                                - wf-referer
-                                - https-scan
-                                - intrinsic
-                                - wf-cookie
-                                - per-user-bwl
-                                - activexfilter
-                                - cookiefilter
-                                - https-url-scan
-                                - javafilter
-                                - rangeblock
-                                - contenttype-check
+                                - 'block-invalid-url'
+                                - 'jscript'
+                                - 'js'
+                                - 'vbs'
+                                - 'unknown'
+                                - 'wf-referer'
+                                - 'https-scan'
+                                - 'intrinsic'
+                                - 'wf-cookie'
+                                - 'per-user-bwl'
+                                - 'activexfilter'
+                                - 'cookiefilter'
+                                - 'https-url-scan'
+                                - 'javafilter'
+                                - 'rangeblock'
+                                - 'contenttype-check'
                     ovrd-perm:
                         -
                             type: str
                             choices:
-                                - bannedword-override
-                                - urlfilter-override
-                                - fortiguard-wf-override
-                                - contenttype-check-override
+                                - 'bannedword-override'
+                                - 'urlfilter-override'
+                                - 'fortiguard-wf-override'
+                                - 'contenttype-check-override'
                     post-action:
                         type: str
                         description: 'Action taken for HTTP POST traffic.'
                         choices:
-                            - normal
-                            - comfort
-                            - block
+                            - 'normal'
+                            - 'comfort'
+                            - 'block'
                     replacemsg-group:
                         type: str
                         description: 'Replacement message group.'
@@ -137,111 +137,111 @@ options:
                         type: str
                         description: 'Enable/disable logging logging blocked web content.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     web-extended-all-action-log:
                         type: str
                         description: 'Enable/disable extended any filter action logging for web filtering.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     web-filter-activex-log:
                         type: str
                         description: 'Enable/disable logging ActiveX.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     web-filter-applet-log:
                         type: str
                         description: 'Enable/disable logging Java applets.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     web-filter-command-block-log:
                         type: str
                         description: 'Enable/disable logging blocked commands.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     web-filter-cookie-log:
                         type: str
                         description: 'Enable/disable logging cookie filtering.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     web-filter-cookie-removal-log:
                         type: str
                         description: 'Enable/disable logging blocked cookies.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     web-filter-js-log:
                         type: str
                         description: 'Enable/disable logging Java scripts.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     web-filter-jscript-log:
                         type: str
                         description: 'Enable/disable logging JScripts.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     web-filter-referer-log:
                         type: str
                         description: 'Enable/disable logging referrers.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     web-filter-unknown-log:
                         type: str
                         description: 'Enable/disable logging unknown scripts.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     web-filter-vbs-log:
                         type: str
                         description: 'Enable/disable logging VBS scripts.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     web-ftgd-err-log:
                         type: str
                         description: 'Enable/disable logging rating errors.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     web-ftgd-quota-usage:
                         type: str
                         description: 'Enable/disable logging daily quota usage.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     web-invalid-domain-log:
                         type: str
                         description: 'Enable/disable logging invalid domain names.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     web-url-log:
                         type: str
                         description: 'Enable/disable logging URL filtering.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     wisp:
                         type: str
                         description: 'Enable/disable web proxy WISP.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     wisp-algorithm:
                         type: str
                         description: 'WISP server selection algorithm.'
                         choices:
-                            - auto-learning
-                            - primary-secondary
-                            - round-robin
+                            - 'auto-learning'
+                            - 'primary-secondary'
+                            - 'round-robin'
                     wisp-servers:
                         type: str
                         description: 'WISP servers.'
@@ -260,9 +260,9 @@ options:
                         type: str
                         description: 'YouTube channel filter status.'
                         choices:
-                            - disable
-                            - blacklist
-                            - whitelist
+                            - 'disable'
+                            - 'blacklist'
+                            - 'whitelist'
     schema_object1:
         methods: [get]
         description: 'Configure Web filter profiles.'
@@ -276,36 +276,36 @@ options:
                     -
                         type: str
                         choices:
-                            - comment
-                            - extended-log
-                            - https-replacemsg
-                            - inspection-mode
-                            - log-all-url
-                            - name
-                            - options
-                            - ovrd-perm
-                            - post-action
-                            - replacemsg-group
-                            - web-content-log
-                            - web-extended-all-action-log
-                            - web-filter-activex-log
-                            - web-filter-applet-log
-                            - web-filter-command-block-log
-                            - web-filter-cookie-log
-                            - web-filter-cookie-removal-log
-                            - web-filter-js-log
-                            - web-filter-jscript-log
-                            - web-filter-referer-log
-                            - web-filter-unknown-log
-                            - web-filter-vbs-log
-                            - web-ftgd-err-log
-                            - web-ftgd-quota-usage
-                            - web-invalid-domain-log
-                            - web-url-log
-                            - wisp
-                            - wisp-algorithm
-                            - wisp-servers
-                            - youtube-channel-status
+                            - 'comment'
+                            - 'extended-log'
+                            - 'https-replacemsg'
+                            - 'inspection-mode'
+                            - 'log-all-url'
+                            - 'name'
+                            - 'options'
+                            - 'ovrd-perm'
+                            - 'post-action'
+                            - 'replacemsg-group'
+                            - 'web-content-log'
+                            - 'web-extended-all-action-log'
+                            - 'web-filter-activex-log'
+                            - 'web-filter-applet-log'
+                            - 'web-filter-command-block-log'
+                            - 'web-filter-cookie-log'
+                            - 'web-filter-cookie-removal-log'
+                            - 'web-filter-js-log'
+                            - 'web-filter-jscript-log'
+                            - 'web-filter-referer-log'
+                            - 'web-filter-unknown-log'
+                            - 'web-filter-vbs-log'
+                            - 'web-ftgd-err-log'
+                            - 'web-ftgd-quota-usage'
+                            - 'web-invalid-domain-log'
+                            - 'web-url-log'
+                            - 'wisp'
+                            - 'wisp-algorithm'
+                            - 'wisp-servers'
+                            - 'youtube-channel-status'
             filter:
                 -
                     type: str
@@ -324,11 +324,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

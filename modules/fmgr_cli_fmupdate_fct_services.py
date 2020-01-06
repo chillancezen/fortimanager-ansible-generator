@@ -61,14 +61,14 @@ options:
                     description: 'Configure the port number on which the built-in FortiGuard should provide updates to FortiClient installations (1 - 65535, default = 80).'
                 status:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable built-in FortiGuard service to FortiClient installations (default = enable).'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

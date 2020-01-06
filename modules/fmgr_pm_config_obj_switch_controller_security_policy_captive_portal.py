@@ -71,7 +71,7 @@ options:
                         type: str
                         description: 'Policy type.'
                         choices:
-                            - captive-portal
+                            - 'captive-portal'
                     vlan:
                         type: str
                         description: 'Names of VLANs that use captive portal authentication.'
@@ -88,9 +88,9 @@ options:
                     -
                         type: str
                         choices:
-                            - name
-                            - policy-type
-                            - vlan
+                            - 'name'
+                            - 'policy-type'
+                            - 'vlan'
             filter:
                 -
                     type: str
@@ -109,11 +109,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

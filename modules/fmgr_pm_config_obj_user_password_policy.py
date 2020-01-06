@@ -66,7 +66,7 @@ options:
                 -
                     expire-days:
                         type: int
-                        description: 'Time in days before the user's password expires.'
+                        description: 'Time in days before the users password expires.'
                     name:
                         type: str
                         description: 'Password policy name.'
@@ -86,9 +86,9 @@ options:
                     -
                         type: str
                         choices:
-                            - expire-days
-                            - name
-                            - warn-days
+                            - 'expire-days'
+                            - 'name'
+                            - 'warn-days'
             filter:
                 -
                     type: str
@@ -107,11 +107,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int
@@ -197,7 +197,7 @@ return_of_api_category_0:
             suboptions:
                expire-days:
                   type: int
-                  description: 'Time in days before the user's password expires.'
+                  description: 'Time in days before the users password expires.'
                name:
                   type: str
                   description: 'Password policy name.'

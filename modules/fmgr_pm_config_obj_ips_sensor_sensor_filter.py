@@ -70,10 +70,10 @@ options:
                         type: str
                         description: 'Action of selected rules.'
                         choices:
-                            - pass
-                            - block
-                            - default
-                            - reset
+                            - 'pass'
+                            - 'block'
+                            - 'default'
+                            - 'reset'
                     application:
                         -
                             type: str
@@ -84,16 +84,16 @@ options:
                         type: str
                         description: 'Enable/disable logging of selected rules.'
                         choices:
-                            - disable
-                            - enable
-                            - default
+                            - 'disable'
+                            - 'enable'
+                            - 'default'
                     log-packet:
                         type: str
                         description: 'Enable/disable packet logging of selected rules.'
                         choices:
-                            - disable
-                            - enable
-                            - default
+                            - 'disable'
+                            - 'enable'
+                            - 'default'
                     name:
                         type: str
                         description: 'Filter name.'
@@ -107,10 +107,10 @@ options:
                         type: str
                         description: 'Quarantine IP or interface.'
                         choices:
-                            - none
-                            - attacker
-                            - both
-                            - interface
+                            - 'none'
+                            - 'attacker'
+                            - 'both'
+                            - 'interface'
                     quarantine-expiry:
                         type: int
                         description: 'Duration of quarantine in minute.'
@@ -118,8 +118,8 @@ options:
                         type: str
                         description: 'Enable/disable logging of selected quarantine.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     severity:
                         -
                             type: str
@@ -127,9 +127,9 @@ options:
                         type: str
                         description: 'Selected rules status.'
                         choices:
-                            - disable
-                            - enable
-                            - default
+                            - 'disable'
+                            - 'enable'
+                            - 'default'
     schema_object1:
         methods: [get]
         description: 'IPS sensor filter.'
@@ -143,19 +143,19 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - application
-                            - location
-                            - log
-                            - log-packet
-                            - name
-                            - os
-                            - protocol
-                            - quarantine
-                            - quarantine-expiry
-                            - quarantine-log
-                            - severity
-                            - status
+                            - 'action'
+                            - 'application'
+                            - 'location'
+                            - 'log'
+                            - 'log-packet'
+                            - 'name'
+                            - 'os'
+                            - 'protocol'
+                            - 'quarantine'
+                            - 'quarantine-expiry'
+                            - 'quarantine-log'
+                            - 'severity'
+                            - 'status'
             filter:
                 -
                     type: str
@@ -174,11 +174,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -71,8 +71,8 @@ options:
                         type: str
                         description: 'Account key processing operation, either keep or strip domain string of UPN in the token.'
                         choices:
-                            - same
-                            - strip
+                            - 'same'
+                            - 'strip'
                     ca-cert:
                         type: str
                         description: 'CA certificate name.'
@@ -97,8 +97,8 @@ options:
                             account-key-processing:
                                 type: str
                                 choices:
-                                    - same
-                                    - strip
+                                    - 'same'
+                                    - 'strip'
                             ca-cert:
                                 type: str
                             cnid:
@@ -114,9 +114,9 @@ options:
                             group-member-check:
                                 type: str
                                 choices:
-                                    - user-attr
-                                    - group-object
-                                    - posix-group-object
+                                    - 'user-attr'
+                                    - 'group-object'
+                                    - 'posix-group-object'
                             group-object-filter:
                                 type: str
                             group-object-search-base:
@@ -128,21 +128,21 @@ options:
                             obtain-user-info:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             password:
                                 -
                                     type: str
                             password-expiry-warning:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             password-renewal:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             port:
                                 type: int
                             retrieve-protection-profile:
@@ -151,41 +151,41 @@ options:
                                 -
                                     type: str
                                     choices:
-                                        - nested
-                                        - recursive
+                                        - 'nested'
+                                        - 'recursive'
                             secondary-server:
                                 type: str
                             secure:
                                 type: str
                                 choices:
-                                    - disable
-                                    - starttls
-                                    - ldaps
+                                    - 'disable'
+                                    - 'starttls'
+                                    - 'ldaps'
                             server:
                                 type: str
                             server-identity-check:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             source-ip:
                                 type: str
                             ssl-min-proto-version:
                                 type: str
                                 choices:
-                                    - default
-                                    - TLSv1
-                                    - TLSv1-1
-                                    - TLSv1-2
-                                    - SSLv3
+                                    - 'default'
+                                    - 'TLSv1'
+                                    - 'TLSv1-1'
+                                    - 'TLSv1-2'
+                                    - 'SSLv3'
                             tertiary-server:
                                 type: str
                             type:
                                 type: str
                                 choices:
-                                    - simple
-                                    - anonymous
-                                    - regular
+                                    - 'simple'
+                                    - 'anonymous'
+                                    - 'regular'
                             user-info-exchange-server:
                                 type: str
                             username:
@@ -197,9 +197,9 @@ options:
                         type: str
                         description: 'Group member checking methods.'
                         choices:
-                            - user-attr
-                            - group-object
-                            - posix-group-object
+                            - 'user-attr'
+                            - 'group-object'
+                            - 'posix-group-object'
                     group-object-filter:
                         type: str
                         description: 'Filter used for group searching.'
@@ -219,14 +219,14 @@ options:
                         type: str
                         description: 'Enable/disable password expiry warnings.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     password-renewal:
                         type: str
                         description: 'Enable/disable online password renewal.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     port:
                         type: int
                         description: 'Port to be used for communication with the LDAP server (default = 389).'
@@ -237,9 +237,9 @@ options:
                         type: str
                         description: 'Port to be used for authentication.'
                         choices:
-                            - disable
-                            - starttls
-                            - ldaps
+                            - 'disable'
+                            - 'starttls'
+                            - 'ldaps'
                     server:
                         type: str
                         description: 'LDAP server CN domain name or IP.'
@@ -247,8 +247,8 @@ options:
                         type: str
                         description: 'Enable/disable LDAP server identity check (verify server domain name/IP address against the server certificate).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     source-ip:
                         type: str
                         description: 'Source IP for communications to LDAP server.'
@@ -256,11 +256,11 @@ options:
                         type: str
                         description: 'Minimum supported protocol version for SSL/TLS connections (default is to follow system global setting).'
                         choices:
-                            - default
-                            - TLSv1
-                            - TLSv1-1
-                            - TLSv1-2
-                            - SSLv3
+                            - 'default'
+                            - 'TLSv1'
+                            - 'TLSv1-1'
+                            - 'TLSv1-2'
+                            - 'SSLv3'
                     tertiary-server:
                         type: str
                         description: 'Tertiary LDAP server CN domain name or IP.'
@@ -268,9 +268,9 @@ options:
                         type: str
                         description: 'Authentication type for LDAP searches.'
                         choices:
-                            - simple
-                            - anonymous
-                            - regular
+                            - 'simple'
+                            - 'anonymous'
+                            - 'regular'
                     username:
                         type: str
                         description: 'Username (full DN) for initial binding.'
@@ -287,30 +287,30 @@ options:
                     -
                         type: str
                         choices:
-                            - account-key-filter
-                            - account-key-processing
-                            - ca-cert
-                            - cnid
-                            - dn
-                            - group-filter
-                            - group-member-check
-                            - group-object-filter
-                            - group-search-base
-                            - member-attr
-                            - name
-                            - password
-                            - password-expiry-warning
-                            - password-renewal
-                            - port
-                            - secondary-server
-                            - secure
-                            - server
-                            - server-identity-check
-                            - source-ip
-                            - ssl-min-proto-version
-                            - tertiary-server
-                            - type
-                            - username
+                            - 'account-key-filter'
+                            - 'account-key-processing'
+                            - 'ca-cert'
+                            - 'cnid'
+                            - 'dn'
+                            - 'group-filter'
+                            - 'group-member-check'
+                            - 'group-object-filter'
+                            - 'group-search-base'
+                            - 'member-attr'
+                            - 'name'
+                            - 'password'
+                            - 'password-expiry-warning'
+                            - 'password-renewal'
+                            - 'port'
+                            - 'secondary-server'
+                            - 'secure'
+                            - 'server'
+                            - 'server-identity-check'
+                            - 'source-ip'
+                            - 'ssl-min-proto-version'
+                            - 'tertiary-server'
+                            - 'type'
+                            - 'username'
             filter:
                 -
                     type: str
@@ -329,11 +329,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

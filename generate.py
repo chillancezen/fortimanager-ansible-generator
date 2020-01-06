@@ -55,7 +55,9 @@ def canonicalize_text(raw_text):
         stripped_data = item
         for stripped_chars in stripped_words:
             stripped_data = stripped_data.replace(stripped_chars, '')
-        ret_lst.append('\'' + stripped_data.rstrip(' ').rstrip('-').rstrip('-') + '\'')
+        stripped_data = stripped_data.rstrip(' ').rstrip('-').rstrip('-')
+        stripped_data = stripped_data.replace('\'', '')
+        ret_lst.append('\'' + stripped_data + '\'')
     return ret_lst
 
 
@@ -177,10 +179,11 @@ def _generate_schema_document_options_recursilve(schema, depth):
         return rdata
 
     if schema['type'] in ['string', 'integer']:
+        quote = '\'' if schema['type'] == 'string' else ''
         rdata += ' ' * depth * 4 + 'type: ' + \
             schematype_displayname_mapping[schema['type']] + '\n'
         if 'default' in schema:
-            rdata += ' ' * depth * 4 + 'default: ' + str(schema['default']) + '\n'
+            rdata += ' ' * depth * 4 + 'default: ' + quote + str(schema['default']) + quote + '\n'
         # FIXED: some characters in description are not recognized by yaml.
         if 'description' in schema:
             desc_list = canonicalize_text(schema['description'])
@@ -194,7 +197,7 @@ def _generate_schema_document_options_recursilve(schema, depth):
         if 'enum' in schema:
             rdata += ' ' * depth * 4 + 'choices:\n'
             for item in schema['enum']:
-                rdata += ' ' * (depth + 1) * 4 + '- ' + str(item) + '\n'
+                rdata += ' ' * (depth + 1) * 4 + '- ' + quote + str(item) + quote + '\n'
     elif schema['type'] is 'dict':
         assert('dict' in schema)
         rdata += _generate_schema_document_options_recursilve(schema['dict'], depth)
@@ -237,7 +240,7 @@ def generate_schema_document_options(
         options_data += ' ' * 4 + schema_object_key_display_name + ':\n'
         options_data += ' ' * 8 + 'methods: ' + str(method_list).replace('\'', '') + '\n'
         options_data += ' ' * 8 + \
-            'description: \'%s\'\n' % (api_endpoint_tags[method_list[0]])
+            'description: %s\n' % (canonicalize_text(api_endpoint_tags[method_list[0]])[0])
         tagged_params = dict()
         for param in schema_object:
             assert('api_tag' in param)

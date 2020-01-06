@@ -66,7 +66,7 @@ options:
                         description: 'Variable name.'
                     var-type:
                         type: str
-                        default: string
+                        default: 'string'
                         description:
                          - 'Variable type.'
                          - 'integer - Integer.'
@@ -74,10 +74,10 @@ options:
                          - 'enum - Enum.'
                          - 'ip - IP.'
                         choices:
-                            - integer
-                            - string
-                            - enum
-                            - ip
+                            - 'integer'
+                            - 'string'
+                            - 'enum'
+                            - 'ip'
     schema_object1:
         methods: [get]
         description: 'Group-by variables.'
@@ -88,9 +88,9 @@ options:
                     -
                         type: str
                         choices:
-                            - var-expression
-                            - var-name
-                            - var-type
+                            - 'var-expression'
+                            - 'var-name'
+                            - 'var-type'
             filter:
                 -
                     type: str
@@ -104,8 +104,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

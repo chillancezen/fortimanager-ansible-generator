@@ -70,9 +70,9 @@ options:
                         type: str
                         description: 'Pass or block traffic, or reset connection for traffic from this application.'
                         choices:
-                            - pass
-                            - block
-                            - reset
+                            - 'pass'
+                            - 'block'
+                            - 'reset'
                     application:
                         -
                             type: int
@@ -89,14 +89,14 @@ options:
                         type: str
                         description: 'Enable/disable logging for this application list.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     log-packet:
                         type: str
                         description: 'Enable/disable packet logging.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     parameters:
                         -
                             id:
@@ -112,11 +112,11 @@ options:
                         -
                             type: str
                             choices:
-                                - 1
-                                - 2
-                                - 3
-                                - 4
-                                - 5
+                                - '1'
+                                - '2'
+                                - '3'
+                                - '4'
+                                - '5'
                     protocols:
                         -
                             type: str
@@ -124,8 +124,8 @@ options:
                         type: str
                         description: 'Quarantine method.'
                         choices:
-                            - none
-                            - attacker
+                            - 'none'
+                            - 'attacker'
                     quarantine-expiry:
                         type: str
                         description: 'Duration of quarantine. (Format ###d##h##m, minimum 1m, maximum 364d23h59m, default = 5m). Requires quarantine set to attacker.'
@@ -133,8 +133,8 @@ options:
                         type: str
                         description: 'Enable/disable quarantine logging.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     rate-count:
                         type: int
                         description: 'Count of the rate.'
@@ -145,17 +145,17 @@ options:
                         type: str
                         description: 'Rate limit mode.'
                         choices:
-                            - periodical
-                            - continuous
+                            - 'periodical'
+                            - 'continuous'
                     rate-track:
                         type: str
                         description: 'Track the packet protocol field.'
                         choices:
-                            - none
-                            - src-ip
-                            - dest-ip
-                            - dhcp-client-mac
-                            - dns-domain
+                            - 'none'
+                            - 'src-ip'
+                            - 'dest-ip'
+                            - 'dhcp-client-mac'
+                            - 'dns-domain'
                     risk:
                         -
                             type: int
@@ -190,30 +190,30 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - application
-                            - behavior
-                            - category
-                            - id
-                            - log
-                            - log-packet
-                            - per-ip-shaper
-                            - popularity
-                            - protocols
-                            - quarantine
-                            - quarantine-expiry
-                            - quarantine-log
-                            - rate-count
-                            - rate-duration
-                            - rate-mode
-                            - rate-track
-                            - risk
-                            - session-ttl
-                            - shaper
-                            - shaper-reverse
-                            - sub-category
-                            - technology
-                            - vendor
+                            - 'action'
+                            - 'application'
+                            - 'behavior'
+                            - 'category'
+                            - 'id'
+                            - 'log'
+                            - 'log-packet'
+                            - 'per-ip-shaper'
+                            - 'popularity'
+                            - 'protocols'
+                            - 'quarantine'
+                            - 'quarantine-expiry'
+                            - 'quarantine-log'
+                            - 'rate-count'
+                            - 'rate-duration'
+                            - 'rate-mode'
+                            - 'rate-track'
+                            - 'risk'
+                            - 'session-ttl'
+                            - 'shaper'
+                            - 'shaper-reverse'
+                            - 'sub-category'
+                            - 'technology'
+                            - 'vendor'
             filter:
                 -
                     type: str
@@ -232,11 +232,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -70,8 +70,8 @@ options:
                         type: str
                         description: 'Type of address.'
                         choices:
-                            - ipv4
-                            - ipv6
+                            - 'ipv4'
+                            - 'ipv6'
                     id:
                         type: int
                         description: 'Trusted IP entry ID.'
@@ -85,8 +85,8 @@ options:
                         type: str
                         description: 'Enable/disable status.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Spam filter trusted IP addresses.'
@@ -100,11 +100,11 @@ options:
                     -
                         type: str
                         choices:
-                            - addr-type
-                            - id
-                            - ip4-subnet
-                            - ip6-subnet
-                            - status
+                            - 'addr-type'
+                            - 'id'
+                            - 'ip4-subnet'
+                            - 'ip6-subnet'
+                            - 'status'
             filter:
                 -
                     type: str
@@ -123,11 +123,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

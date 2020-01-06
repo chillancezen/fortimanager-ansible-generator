@@ -69,8 +69,8 @@ options:
                     type: str
                     description: 'Enable/disable auto configuration.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 conflicted-ip-timeout:
                     type: int
                     description: 'Time in seconds to wait after a conflicted IP address is removed from the DHCP range before it can be reused.'
@@ -78,8 +78,8 @@ options:
                     type: str
                     description: 'DDNS authentication mode.'
                     choices:
-                        - disable
-                        - tsig
+                        - 'disable'
+                        - 'tsig'
                 ddns-key:
                     type: str
                     description: 'DDNS update key (base 64 encoding).'
@@ -96,14 +96,14 @@ options:
                     type: str
                     description: 'Enable/disable DDNS update for DHCP.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ddns-update-override:
                     type: str
                     description: 'Enable/disable DDNS update override for DHCP.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ddns-zone:
                     type: str
                     description: 'Zone of your domain name (ex. DDNS.com).'
@@ -123,9 +123,9 @@ options:
                     type: str
                     description: 'Options for assigning DNS servers to DHCP clients.'
                     choices:
-                        - default
-                        - specify
-                        - local
+                        - 'default'
+                        - 'specify'
+                        - 'local'
                 domain:
                     type: str
                     description: 'Domain name suffix for the IP addresses that the DHCP server assigns to clients.'
@@ -147,8 +147,8 @@ options:
                     type: str
                     description: 'Enable/disable FortiClient-On-Net service for this DHCP server.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 id:
                     type: int
                     description: 'ID.'
@@ -159,8 +159,8 @@ options:
                     type: str
                     description: 'Method used to assign client IP.'
                     choices:
-                        - range
-                        - usrgrp
+                        - 'range'
+                        - 'usrgrp'
                 ip-range:
                     -
                         end-ip:
@@ -182,8 +182,8 @@ options:
                     type: str
                     description: 'MAC access control default action (allow or block assigning IP settings).'
                     choices:
-                        - assign
-                        - block
+                        - 'assign'
+                        - 'block'
                 netmask:
                     type: str
                     description: 'Netmask assigned by the DHCP server.'
@@ -203,9 +203,9 @@ options:
                     type: str
                     description: 'Options for assigning Network Time Protocol (NTP) servers to DHCP clients.'
                     choices:
-                        - default
-                        - specify
-                        - local
+                        - 'default'
+                        - 'specify'
+                        - 'local'
                 options:
                     -
                         code:
@@ -221,10 +221,10 @@ options:
                             type: str
                             description: 'DHCP option type.'
                             choices:
-                                - hex
-                                - string
-                                - ip
-                                - fqdn
+                                - 'hex'
+                                - 'string'
+                                - 'ip'
+                                - 'fqdn'
                         value:
                             type: str
                             description: 'DHCP option value.'
@@ -234,9 +234,9 @@ options:
                             type: str
                             description: 'Options for the DHCP server to configure the client with the reserved MAC address.'
                             choices:
-                                - assign
-                                - block
-                                - reserved
+                                - 'assign'
+                                - 'block'
+                                - 'reserved'
                         description:
                             type: str
                             description: 'Description.'
@@ -253,14 +253,14 @@ options:
                     type: str
                     description: 'DHCP server can be a normal DHCP server or an IPsec DHCP server.'
                     choices:
-                        - regular
-                        - ipsec
+                        - 'regular'
+                        - 'ipsec'
                 status:
                     type: str
                     description: 'Enable/disable this DHCP configuration.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 tftp-server:
                     -
                         type: str
@@ -268,107 +268,107 @@ options:
                     type: str
                     description: 'Select the time zone to be assigned to DHCP clients.'
                     choices:
-                        - 00
-                        - 01
-                        - 02
-                        - 03
-                        - 04
-                        - 05
-                        - 06
-                        - 07
-                        - 08
-                        - 09
-                        - 10
-                        - 11
-                        - 12
-                        - 13
-                        - 14
-                        - 15
-                        - 16
-                        - 17
-                        - 18
-                        - 19
-                        - 20
-                        - 21
-                        - 22
-                        - 23
-                        - 24
-                        - 25
-                        - 26
-                        - 27
-                        - 28
-                        - 29
-                        - 30
-                        - 31
-                        - 32
-                        - 33
-                        - 34
-                        - 35
-                        - 36
-                        - 37
-                        - 38
-                        - 39
-                        - 40
-                        - 41
-                        - 42
-                        - 43
-                        - 44
-                        - 45
-                        - 46
-                        - 47
-                        - 48
-                        - 49
-                        - 50
-                        - 51
-                        - 52
-                        - 53
-                        - 54
-                        - 55
-                        - 56
-                        - 57
-                        - 58
-                        - 59
-                        - 60
-                        - 61
-                        - 62
-                        - 63
-                        - 64
-                        - 65
-                        - 66
-                        - 67
-                        - 68
-                        - 69
-                        - 70
-                        - 71
-                        - 72
-                        - 73
-                        - 74
-                        - 75
-                        - 76
-                        - 77
-                        - 78
-                        - 79
-                        - 80
-                        - 81
-                        - 82
-                        - 83
-                        - 84
-                        - 85
-                        - 86
-                        - 87
+                        - '00'
+                        - '01'
+                        - '02'
+                        - '03'
+                        - '04'
+                        - '05'
+                        - '06'
+                        - '07'
+                        - '08'
+                        - '09'
+                        - '10'
+                        - '11'
+                        - '12'
+                        - '13'
+                        - '14'
+                        - '15'
+                        - '16'
+                        - '17'
+                        - '18'
+                        - '19'
+                        - '20'
+                        - '21'
+                        - '22'
+                        - '23'
+                        - '24'
+                        - '25'
+                        - '26'
+                        - '27'
+                        - '28'
+                        - '29'
+                        - '30'
+                        - '31'
+                        - '32'
+                        - '33'
+                        - '34'
+                        - '35'
+                        - '36'
+                        - '37'
+                        - '38'
+                        - '39'
+                        - '40'
+                        - '41'
+                        - '42'
+                        - '43'
+                        - '44'
+                        - '45'
+                        - '46'
+                        - '47'
+                        - '48'
+                        - '49'
+                        - '50'
+                        - '51'
+                        - '52'
+                        - '53'
+                        - '54'
+                        - '55'
+                        - '56'
+                        - '57'
+                        - '58'
+                        - '59'
+                        - '60'
+                        - '61'
+                        - '62'
+                        - '63'
+                        - '64'
+                        - '65'
+                        - '66'
+                        - '67'
+                        - '68'
+                        - '69'
+                        - '70'
+                        - '71'
+                        - '72'
+                        - '73'
+                        - '74'
+                        - '75'
+                        - '76'
+                        - '77'
+                        - '78'
+                        - '79'
+                        - '80'
+                        - '81'
+                        - '82'
+                        - '83'
+                        - '84'
+                        - '85'
+                        - '86'
+                        - '87'
                 timezone-option:
                     type: str
-                    description: 'Options for the DHCP server to set the client's time zone.'
+                    description: 'Options for the DHCP server to set the clients time zone.'
                     choices:
-                        - disable
-                        - default
-                        - specify
+                        - 'disable'
+                        - 'default'
+                        - 'specify'
                 vci-match:
                     type: str
                     description: 'Enable/disable vendor class identifier (VCI) matching. When enabled only DHCP requests with a matching VCI are served.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 vci-string:
                     -
                         type: str
@@ -404,9 +404,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 
@@ -717,7 +717,7 @@ return_of_api_category_0:
                description: 'Select the time zone to be assigned to DHCP clients.'
             timezone-option:
                type: str
-               description: 'Options for the DHCP server to set the client's time zone.'
+               description: 'Options for the DHCP server to set the clients time zone.'
             vci-match:
                type: str
                description: 'Enable/disable vendor class identifier (VCI) matching. When enabled only DHCP requests with a matching VCI are served.'

@@ -68,20 +68,20 @@ options:
                 add-route:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 assign-ip:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 assign-ip-from:
                     type: str
                     choices:
-                        - range
-                        - usrgrp
-                        - dhcp
-                        - name
+                        - 'range'
+                        - 'usrgrp'
+                        - 'dhcp'
+                        - 'name'
                 authpasswd:
                     -
                         type: str
@@ -92,13 +92,13 @@ options:
                 auto-configuration:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 automatic_routing:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 banner:
                     type: str
                 default-gateway:
@@ -106,19 +106,19 @@ options:
                 dhcp-server:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dns-mode:
                     type: str
                     choices:
-                        - auto
-                        - manual
+                        - 'auto'
+                        - 'manual'
                 dns-service:
                     type: str
                     choices:
-                        - default
-                        - specify
-                        - local
+                        - 'default'
+                        - 'specify'
+                        - 'local'
                 domain:
                     type: str
                 extgw:
@@ -128,8 +128,8 @@ options:
                 extgw_p2_per_net:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 extgwip:
                     type: str
                 hub_iface:
@@ -181,18 +181,18 @@ options:
                 mode-cfg:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mode-cfg-ip-version:
                     type: str
                     choices:
-                        - 4
-                        - 6
+                        - '4'
+                        - '6'
                 net-device:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 peer:
                     type: str
                 peergrp:
@@ -202,11 +202,11 @@ options:
                 peertype:
                     type: str
                     choices:
-                        - any
-                        - one
-                        - dialup
-                        - peer
-                        - peergrp
+                        - 'any'
+                        - 'one'
+                        - 'dialup'
+                        - 'peer'
+                        - 'peergrp'
                 protected_subnet:
                     -
                         addr:
@@ -218,14 +218,14 @@ options:
                 role:
                     type: str
                     choices:
-                        - hub
-                        - spoke
+                        - 'hub'
+                        - 'spoke'
                 route-overlap:
                     type: str
                     choices:
-                        - use-old
-                        - use-new
-                        - allow
+                        - 'use-old'
+                        - 'use-new'
+                        - 'allow'
                 spoke-zone:
                     type: str
                 summary_addr:
@@ -239,13 +239,13 @@ options:
                 tunnel-search:
                     type: str
                     choices:
-                        - selectors
-                        - nexthop
+                        - 'selectors'
+                        - 'nexthop'
                 unity-support:
                     type: str
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 usrgrp:
                     type: str
                 vpn-interface-priority:
@@ -257,11 +257,11 @@ options:
                 xauthtype:
                     type: str
                     choices:
-                        - disable
-                        - client
-                        - pap
-                        - chap
-                        - auto
+                        - 'disable'
+                        - 'client'
+                        - 'pap'
+                        - 'chap'
+                        - 'auto'
     schema_object1:
         methods: [delete]
         description: 'VPN node for VPN Manager. Must specify vpntable and scope member.'
@@ -279,9 +279,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

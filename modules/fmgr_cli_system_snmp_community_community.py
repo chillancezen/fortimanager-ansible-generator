@@ -66,18 +66,18 @@ options:
                     -
                         type: str
                         choices:
-                            - disk_low
-                            - ha_switch
-                            - intf_ip_chg
-                            - sys_reboot
-                            - cpu_high
-                            - mem_low
-                            - log-alert
-                            - log-rate
-                            - log-data-rate
-                            - lic-gbday
-                            - lic-dev-quota
-                            - cpu-high-exclude-nice
+                            - 'disk_low'
+                            - 'ha_switch'
+                            - 'intf_ip_chg'
+                            - 'sys_reboot'
+                            - 'cpu_high'
+                            - 'mem_low'
+                            - 'log-alert'
+                            - 'log-rate'
+                            - 'log-data-rate'
+                            - 'lic-gbday'
+                            - 'lic-dev-quota'
+                            - 'cpu-high-exclude-nice'
                 hosts:
                     -
                         id:
@@ -89,7 +89,7 @@ options:
                             description: 'Allow interface name.'
                         ip:
                             type: str
-                            default: 0.0.0.0 0.0.0.0
+                            default: '0.0.0.0 0.0.0.0'
                             description: 'Allow host IP address.'
                 hosts6:
                     -
@@ -102,7 +102,7 @@ options:
                             description: 'Allow interface name.'
                         ip:
                             type: str
-                            default: ::/0
+                            default: '::/0'
                             description: 'Allow host IP address.'
                 id:
                     type: int
@@ -117,66 +117,66 @@ options:
                     description: 'SNMP v1 query port.'
                 query_v1_status:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable SNMP v1 query.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 query_v2c_port:
                     type: int
                     default: 161
                     description: 'SNMP v2c query port.'
                 query_v2c_status:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable SNMP v2c query.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 status:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable community.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 trap_v1_rport:
                     type: int
                     default: 162
                     description: 'SNMP v1 trap remote port.'
                 trap_v1_status:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable SNMP v1 trap.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 trap_v2c_rport:
                     type: int
                     default: 162
                     description: 'SNMP v2c trap remote port.'
                 trap_v2c_status:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Enable/disable SNMP v2c trap.'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

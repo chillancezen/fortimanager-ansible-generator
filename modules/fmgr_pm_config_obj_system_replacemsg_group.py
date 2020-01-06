@@ -73,17 +73,17 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             msg-type:
                                 type: str
                                 description: 'Message type.'
@@ -96,17 +96,17 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             msg-type:
                                 type: str
                                 description: 'Message type.'
@@ -119,17 +119,17 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             msg-type:
                                 type: str
                                 description: 'Message type.'
@@ -145,17 +145,17 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             msg-type:
                                 type: str
                                 description: 'Message type.'
@@ -168,17 +168,17 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             msg-type:
                                 type: str
                                 description: 'Message type.'
@@ -191,17 +191,17 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             msg-type:
                                 type: str
                                 description: 'Message type.'
@@ -214,17 +214,17 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             msg-type:
                                 type: str
                                 description: 'Message type.'
@@ -237,17 +237,17 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             msg-type:
                                 type: str
                                 description: 'Message type.'
@@ -255,11 +255,11 @@ options:
                         type: str
                         description: 'Group type.'
                         choices:
-                            - default
-                            - utm
-                            - auth
-                            - ec
-                            - captive-portal
+                            - 'default'
+                            - 'utm'
+                            - 'auth'
+                            - 'ec'
+                            - 'captive-portal'
                     http:
                         -
                             buffer:
@@ -269,17 +269,17 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             msg-type:
                                 type: str
                                 description: 'Message type.'
@@ -292,17 +292,17 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             msg-type:
                                 type: str
                                 description: 'Message type.'
@@ -315,17 +315,17 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             msg-type:
                                 type: str
                                 description: 'Message type.'
@@ -335,31 +335,31 @@ options:
                                 type: str
                                 description: 'add message encapsulation'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             charset:
                                 type: str
                                 description: 'character encoding used for replacement message'
                                 choices:
-                                    - us-ascii
-                                    - utf-8
+                                    - 'us-ascii'
+                                    - 'utf-8'
                             class:
                                 type: str
                                 description: 'message class'
                                 choices:
-                                    - personal
-                                    - advertisement
-                                    - information
-                                    - automatic
-                                    - not-included
+                                    - 'personal'
+                                    - 'advertisement'
+                                    - 'information'
+                                    - 'automatic'
+                                    - 'not-included'
                             format:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             from:
                                 type: str
                                 description: 'from address'
@@ -367,15 +367,15 @@ options:
                                 type: str
                                 description: 'notification message sent from recipient'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             image:
                                 type: str
                                 description: 'Message string.'
@@ -389,23 +389,23 @@ options:
                                 type: str
                                 description: 'message priority'
                                 choices:
-                                    - low
-                                    - normal
-                                    - high
-                                    - not-included
+                                    - 'low'
+                                    - 'normal'
+                                    - 'high'
+                                    - 'not-included'
                             rsp-status:
                                 type: str
                                 description: 'response status code'
                                 choices:
-                                    - ok
-                                    - err-unspecified
-                                    - err-srv-denied
-                                    - err-msg-fmt-corrupt
-                                    - err-snd-addr-unresolv
-                                    - err-msg-not-found
-                                    - err-net-prob
-                                    - err-content-not-accept
-                                    - err-unsupp-msg
+                                    - 'ok'
+                                    - 'err-unspecified'
+                                    - 'err-srv-denied'
+                                    - 'err-msg-fmt-corrupt'
+                                    - 'err-snd-addr-unresolv'
+                                    - 'err-msg-not-found'
+                                    - 'err-net-prob'
+                                    - 'err-content-not-accept'
+                                    - 'err-unsupp-msg'
                             rsp-text:
                                 type: str
                                 description: 'response text'
@@ -413,9 +413,9 @@ options:
                                 type: str
                                 description: 'sender visibility'
                                 choices:
-                                    - hide
-                                    - show
-                                    - not-specified
+                                    - 'hide'
+                                    - 'show'
+                                    - 'not-specified'
                             smil-part:
                                 type: str
                                 description: 'message encapsulation text'
@@ -428,22 +428,22 @@ options:
                                 type: str
                                 description: 'add message encapsulation'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             charset:
                                 type: str
                                 description: 'character encoding used for replacement message'
                                 choices:
-                                    - us-ascii
-                                    - utf-8
+                                    - 'us-ascii'
+                                    - 'utf-8'
                             format:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             from:
                                 type: str
                                 description: 'from address'
@@ -451,15 +451,15 @@ options:
                                 type: str
                                 description: 'notification message sent from recipient'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             html-part:
                                 type: str
                                 description: 'message encapsulation text'
@@ -476,10 +476,10 @@ options:
                                 type: str
                                 description: 'message priority'
                                 choices:
-                                    - low
-                                    - normal
-                                    - high
-                                    - not-included
+                                    - 'low'
+                                    - 'normal'
+                                    - 'high'
+                                    - 'not-included'
                             subject:
                                 type: str
                                 description: 'subject text string'
@@ -489,23 +489,23 @@ options:
                                 type: str
                                 description: 'add message encapsulation'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             charset:
                                 type: str
                                 description: 'character encoding used for replacement message'
                                 choices:
-                                    - us-ascii
-                                    - utf-8
+                                    - 'us-ascii'
+                                    - 'utf-8'
                             class:
                                 type: str
                                 description: 'message class'
                                 choices:
-                                    - personal
-                                    - advertisement
-                                    - informational
-                                    - auto
-                                    - not-included
+                                    - 'personal'
+                                    - 'advertisement'
+                                    - 'informational'
+                                    - 'auto'
+                                    - 'not-included'
                             domain:
                                 type: str
                                 description: 'from address domain'
@@ -513,10 +513,10 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             from:
                                 type: str
                                 description: 'from address'
@@ -524,15 +524,15 @@ options:
                                 type: str
                                 description: 'notification message sent from recipient'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             image:
                                 type: str
                                 description: 'Message string.'
@@ -546,22 +546,22 @@ options:
                                 type: str
                                 description: 'message priority'
                                 choices:
-                                    - low
-                                    - normal
-                                    - high
-                                    - not-included
+                                    - 'low'
+                                    - 'normal'
+                                    - 'high'
+                                    - 'not-included'
                             rsp-status:
                                 type: str
                                 description: 'response status'
                                 choices:
-                                    - ok
-                                    - err-unspecified
-                                    - err-srv-denied
-                                    - err-msg-fmt-corrupt
-                                    - err-snd-addr-unresolv
-                                    - err-net-prob
-                                    - err-content-not-accept
-                                    - err-unsupp-msg
+                                    - 'ok'
+                                    - 'err-unspecified'
+                                    - 'err-srv-denied'
+                                    - 'err-msg-fmt-corrupt'
+                                    - 'err-snd-addr-unresolv'
+                                    - 'err-net-prob'
+                                    - 'err-content-not-accept'
+                                    - 'err-unsupp-msg'
                             smil-part:
                                 type: str
                                 description: 'message encapsulation text'
@@ -574,44 +574,44 @@ options:
                                 type: str
                                 description: 'add message encapsulation'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             addr-type:
                                 type: str
                                 description: 'from address type'
                                 choices:
-                                    - rfc2822-addr
-                                    - number
-                                    - short-code
+                                    - 'rfc2822-addr'
+                                    - 'number'
+                                    - 'short-code'
                             allow-content-adaptation:
                                 type: str
                                 description: 'allow content adaptations'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             charset:
                                 type: str
                                 description: 'character encoding used for replacement message'
                                 choices:
-                                    - us-ascii
-                                    - utf-8
+                                    - 'us-ascii'
+                                    - 'utf-8'
                             class:
                                 type: str
                                 description: 'message class'
                                 choices:
-                                    - personal
-                                    - advertisement
-                                    - informational
-                                    - auto
-                                    - not-included
+                                    - 'personal'
+                                    - 'advertisement'
+                                    - 'informational'
+                                    - 'auto'
+                                    - 'not-included'
                             format:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             from:
                                 type: str
                                 description: 'from address'
@@ -619,15 +619,15 @@ options:
                                 type: str
                                 description: 'notification message sent from recipient'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             image:
                                 type: str
                                 description: 'Message string.'
@@ -641,40 +641,40 @@ options:
                                 type: str
                                 description: 'message priority'
                                 choices:
-                                    - low
-                                    - normal
-                                    - high
-                                    - not-included
+                                    - 'low'
+                                    - 'normal'
+                                    - 'high'
+                                    - 'not-included'
                             rsp-status:
                                 type: str
                                 description: 'response status'
                                 choices:
-                                    - success
-                                    - partial-success
-                                    - client-err
-                                    - oper-restrict
-                                    - addr-err
-                                    - addr-not-found
-                                    - content-refused
-                                    - msg-id-not-found
-                                    - link-id-not-found
-                                    - msg-fmt-corrupt
-                                    - app-id-not-found
-                                    - repl-app-id-not-found
-                                    - srv-err
-                                    - not-possible
-                                    - msg-rejected
-                                    - multiple-addr-not-supp
-                                    - app-addr-not-supp
-                                    - gen-service-err
-                                    - improper-ident
-                                    - unsupp-ver
-                                    - unsupp-oper
-                                    - validation-err
-                                    - service-err
-                                    - service-unavail
-                                    - service-denied
-                                    - app-denied
+                                    - 'success'
+                                    - 'partial-success'
+                                    - 'client-err'
+                                    - 'oper-restrict'
+                                    - 'addr-err'
+                                    - 'addr-not-found'
+                                    - 'content-refused'
+                                    - 'msg-id-not-found'
+                                    - 'link-id-not-found'
+                                    - 'msg-fmt-corrupt'
+                                    - 'app-id-not-found'
+                                    - 'repl-app-id-not-found'
+                                    - 'srv-err'
+                                    - 'not-possible'
+                                    - 'msg-rejected'
+                                    - 'multiple-addr-not-supp'
+                                    - 'app-addr-not-supp'
+                                    - 'gen-service-err'
+                                    - 'improper-ident'
+                                    - 'unsupp-ver'
+                                    - 'unsupp-oper'
+                                    - 'validation-err'
+                                    - 'service-err'
+                                    - 'service-unavail'
+                                    - 'service-denied'
+                                    - 'app-denied'
                             smil-part:
                                 type: str
                                 description: 'message encapsulation text'
@@ -690,23 +690,23 @@ options:
                                 type: str
                                 description: 'character encoding used for replacement message'
                                 choices:
-                                    - us-ascii
-                                    - utf-8
+                                    - 'us-ascii'
+                                    - 'utf-8'
                             format:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             image:
                                 type: str
                                 description: 'Message string.'
@@ -722,17 +722,17 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             msg-type:
                                 type: str
                                 description: 'Message type.'
@@ -748,17 +748,17 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             msg-type:
                                 type: str
                                 description: 'Message type.'
@@ -771,17 +771,17 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             msg-type:
                                 type: str
                                 description: 'Message type.'
@@ -794,17 +794,17 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             msg-type:
                                 type: str
                                 description: 'Message type.'
@@ -817,17 +817,17 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             msg-type:
                                 type: str
                                 description: 'Message type.'
@@ -840,17 +840,17 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             msg-type:
                                 type: str
                                 description: 'Message type.'
@@ -863,17 +863,17 @@ options:
                                 type: str
                                 description: 'Format flag.'
                                 choices:
-                                    - none
-                                    - text
-                                    - html
-                                    - wml
+                                    - 'none'
+                                    - 'text'
+                                    - 'html'
+                                    - 'wml'
                             header:
                                 type: str
                                 description: 'Header flag.'
                                 choices:
-                                    - none
-                                    - http
-                                    - 8bit
+                                    - 'none'
+                                    - 'http'
+                                    - '8bit'
                             msg-type:
                                 type: str
                                 description: 'Message type.'
@@ -890,9 +890,9 @@ options:
                     -
                         type: str
                         choices:
-                            - comment
-                            - group-type
-                            - name
+                            - 'comment'
+                            - 'group-type'
+                            - 'name'
             filter:
                 -
                     type: str
@@ -911,11 +911,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -100,14 +100,14 @@ options:
                         type: str
                         description: 'Type of address object: multicast IP address range or broadcast IP/mask to be treated as a multicast address.'
                         choices:
-                            - multicastrange
-                            - broadcastmask
+                            - 'multicastrange'
+                            - 'broadcastmask'
                     visibility:
                         type: str
                         description: 'Enable/disable visibility of the multicast address on the GUI.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure multicast addresses.'
@@ -121,15 +121,15 @@ options:
                     -
                         type: str
                         choices:
-                            - associated-interface
-                            - color
-                            - comment
-                            - end-ip
-                            - name
-                            - start-ip
-                            - subnet
-                            - type
-                            - visibility
+                            - 'associated-interface'
+                            - 'color'
+                            - 'comment'
+                            - 'end-ip'
+                            - 'name'
+                            - 'start-ip'
+                            - 'subnet'
+                            - 'type'
+                            - 'visibility'
             filter:
                 -
                     type: str
@@ -148,11 +148,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

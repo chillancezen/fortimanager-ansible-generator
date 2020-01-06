@@ -70,8 +70,8 @@ options:
                     type: str
                     description: 'Address mode (IPv4 or IPv6).'
                     choices:
-                        - ipv4
-                        - ipv6
+                        - 'ipv4'
+                        - 'ipv6'
                 bandwidth-weight:
                     type: int
                     description: 'Coefficient of reciprocal of available bidirectional bandwidth in the formula of custom-profile-1.'
@@ -79,14 +79,14 @@ options:
                     type: str
                     description: 'Enable/disable use of SD-WAN as default service.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dscp-forward:
                     type: str
                     description: 'Enable/disable forward traffic DSCP tag.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dscp-forward-tag:
                     type: str
                     description: 'Forward traffic DSCP tag.'
@@ -94,8 +94,8 @@ options:
                     type: str
                     description: 'Enable/disable reverse traffic DSCP tag.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dscp-reverse-tag:
                     type: str
                     description: 'Reverse traffic DSCP tag.'
@@ -106,8 +106,8 @@ options:
                     type: str
                     description: 'Enable/disable negation of destination address match.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dst6:
                     type: str
                     description: 'Destination address6 name.'
@@ -118,8 +118,8 @@ options:
                     type: str
                     description: 'Enable/disable SD-WAN service gateway.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 groups:
                     type: str
                     description: 'User groups.'
@@ -136,8 +136,8 @@ options:
                     type: str
                     description: 'Enable/disable use of Internet service for application-based load balancing.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 internet-service-ctrl:
                     -
                         type: int
@@ -166,13 +166,13 @@ options:
                     type: str
                     description: 'Link cost factor.'
                     choices:
-                        - latency
-                        - jitter
-                        - packet-loss
-                        - inbandwidth
-                        - outbandwidth
-                        - bibandwidth
-                        - custom-profile-1
+                        - 'latency'
+                        - 'jitter'
+                        - 'packet-loss'
+                        - 'inbandwidth'
+                        - 'outbandwidth'
+                        - 'bibandwidth'
+                        - 'custom-profile-1'
                 link-cost-threshold:
                     type: int
                     description: 'Percentage threshold change of link cost values that will result in policy route regeneration (0 - 10000000, default = 10).'
@@ -183,11 +183,11 @@ options:
                     type: str
                     description: 'Control how the priority rule sets the priority of interfaces in the SD-WAN.'
                     choices:
-                        - auto
-                        - manual
-                        - priority
-                        - sla
-                        - load-balance
+                        - 'auto'
+                        - 'manual'
+                        - 'priority'
+                        - 'sla'
+                        - 'load-balance'
                 name:
                     type: str
                     description: 'Priority rule name.'
@@ -221,8 +221,8 @@ options:
                     type: str
                     description: 'Enable/disable negation of source address match.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 src6:
                     type: str
                     description: 'Source address6 name.'
@@ -233,8 +233,8 @@ options:
                     type: str
                     description: 'Enable/disable SD-WAN service.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 tos:
                     type: str
                     description: 'Type of service bit pattern.'
@@ -261,9 +261,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object3:
         methods: [move]
         description: 'Create SD-WAN rules or priority rules (also called services) to control how sessions are distributed to physical interfaces in the SD-WAN.'
@@ -272,8 +272,8 @@ options:
             option:
                 type: str
                 choices:
-                    - before
-                    - after
+                    - 'before'
+                    - 'after'
             target:
                 type: str
                 description: 'Key to the target entry.'

@@ -57,17 +57,17 @@ options:
                         -
                             type: str
                             choices:
-                                - migration
-                                - db_export
-                                - no_vpn_console
-                                - backup
-                                - other_devices
-                                - central_sdwan
-                                - is_autosync
-                                - per_device_wtp
-                                - policy_check_on_install
-                                - install_on_policy_check_fail
-                                - auto_push_cfg
+                                - 'migration'
+                                - 'db_export'
+                                - 'no_vpn_console'
+                                - 'backup'
+                                - 'other_devices'
+                                - 'central_sdwan'
+                                - 'is_autosync'
+                                - 'per_device_wtp'
+                                - 'policy_check_on_install'
+                                - 'install_on_policy_check_fail'
+                                - 'auto_push_cfg'
                     log_db_retention_hours:
                         type: int
                         default: 1440
@@ -89,26 +89,26 @@ options:
                         default: 2
                     mig_os_ver:
                         type: str
-                        default: 6.0
+                        default: '6.0'
                         choices:
-                            - unknown
-                            - 0.0
-                            - 1.0
-                            - 2.0
-                            - 3.0
-                            - 4.0
-                            - 5.0
-                            - 6.0
+                            - 'unknown'
+                            - '0.0'
+                            - '1.0'
+                            - '2.0'
+                            - '3.0'
+                            - '4.0'
+                            - '5.0'
+                            - '6.0'
                     mode:
                         type: str
-                        default: gms
+                        default: 'gms'
                         description:
                          - 'ems - (Value no longer used as of 4.3)'
                          - 'provider - Global database.'
                         choices:
-                            - ems
-                            - gms
-                            - provider
+                            - 'ems'
+                            - 'gms'
+                            - 'provider'
                     mr:
                         type: int
                         default: 2
@@ -116,34 +116,34 @@ options:
                         type: str
                     os_ver:
                         type: str
-                        default: 6.0
+                        default: '6.0'
                         choices:
-                            - unknown
-                            - 0.0
-                            - 1.0
-                            - 2.0
-                            - 3.0
-                            - 4.0
-                            - 5.0
-                            - 6.0
+                            - 'unknown'
+                            - '0.0'
+                            - '1.0'
+                            - '2.0'
+                            - '3.0'
+                            - '4.0'
+                            - '5.0'
+                            - '6.0'
                     restricted_prds:
                         -
                             type: str
                             choices:
-                                - fos
-                                - foc
-                                - fml
-                                - fch
-                                - fwb
-                                - log
-                                - fct
-                                - faz
-                                - fsa
-                                - fsw
-                                - fmg
-                                - fdd
-                                - fac
-                                - fpx
+                                - 'fos'
+                                - 'foc'
+                                - 'fml'
+                                - 'fch'
+                                - 'fwb'
+                                - 'log'
+                                - 'fct'
+                                - 'faz'
+                                - 'fsa'
+                                - 'fsw'
+                                - 'fmg'
+                                - 'fdd'
+                                - 'fac'
+                                - 'fpx'
                     state:
                         type: int
                         default: 1
@@ -162,22 +162,22 @@ options:
                     -
                         type: str
                         choices:
-                            - desc
-                            - flags
-                            - log_db_retention_hours
-                            - log_disk_quota
-                            - log_disk_quota_alert_thres
-                            - log_disk_quota_split_ratio
-                            - log_file_retention_hours
-                            - mig_mr
-                            - mig_os_ver
-                            - mode
-                            - mr
-                            - name
-                            - os_ver
-                            - restricted_prds
-                            - state
-                            - uuid
+                            - 'desc'
+                            - 'flags'
+                            - 'log_db_retention_hours'
+                            - 'log_disk_quota'
+                            - 'log_disk_quota_alert_thres'
+                            - 'log_disk_quota_split_ratio'
+                            - 'log_file_retention_hours'
+                            - 'mig_mr'
+                            - 'mig_os_ver'
+                            - 'mode'
+                            - 'mr'
+                            - 'name'
+                            - 'os_ver'
+                            - 'restricted_prds'
+                            - 'state'
+                            - 'uuid'
             filter:
                 -
                     type: str
@@ -195,9 +195,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -68,8 +68,8 @@ options:
                         type: str
                         description: 'Enable/disable use of this group in the static route configuration.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     color:
                         type: int
                         description: 'Color of icon on the GUI.'
@@ -86,8 +86,8 @@ options:
                             allow-routing:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             color:
                                 type: int
                             comment:
@@ -95,8 +95,8 @@ options:
                             exclude:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             exclude-member:
                                 type: str
                             member:
@@ -108,8 +108,8 @@ options:
                             visibility:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                     member:
                         type: str
                         description: 'Address objects contained within the group.'
@@ -134,8 +134,8 @@ options:
                         type: str
                         description: 'Enable/disable address visibility in the GUI.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure IPv4 address groups.'
@@ -149,12 +149,12 @@ options:
                     -
                         type: str
                         choices:
-                            - allow-routing
-                            - color
-                            - member
-                            - name
-                            - uuid
-                            - visibility
+                            - 'allow-routing'
+                            - 'color'
+                            - 'member'
+                            - 'name'
+                            - 'uuid'
+                            - 'visibility'
             filter:
                 -
                     type: str
@@ -173,11 +173,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

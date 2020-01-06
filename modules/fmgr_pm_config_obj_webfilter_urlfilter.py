@@ -73,31 +73,31 @@ options:
                                 type: str
                                 description: 'Action to take for URL filter matches.'
                                 choices:
-                                    - exempt
-                                    - block
-                                    - allow
-                                    - monitor
-                                    - pass
+                                    - 'exempt'
+                                    - 'block'
+                                    - 'allow'
+                                    - 'monitor'
+                                    - 'pass'
                             dns-address-family:
                                 type: str
                                 description: 'Resolve IPv4 address, IPv6 address, or both from DNS server.'
                                 choices:
-                                    - ipv4
-                                    - ipv6
-                                    - both
+                                    - 'ipv4'
+                                    - 'ipv6'
+                                    - 'both'
                             exempt:
                                 -
                                     type: str
                                     choices:
-                                        - av
-                                        - web-content
-                                        - activex-java-cookie
-                                        - dlp
-                                        - fortiguard
-                                        - all
-                                        - filepattern
-                                        - pass
-                                        - range-block
+                                        - 'av'
+                                        - 'web-content'
+                                        - 'activex-java-cookie'
+                                        - 'dlp'
+                                        - 'fortiguard'
+                                        - 'all'
+                                        - 'filepattern'
+                                        - 'pass'
+                                        - 'range-block'
                             id:
                                 type: int
                                 description: 'Id.'
@@ -108,15 +108,15 @@ options:
                                 type: str
                                 description: 'Enable/disable this URL filter.'
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             type:
                                 type: str
                                 description: 'Filter type (simple, regex, or wildcard).'
                                 choices:
-                                    - simple
-                                    - regex
-                                    - wildcard
+                                    - 'simple'
+                                    - 'regex'
+                                    - 'wildcard'
                             url:
                                 type: str
                                 description: 'URL to be filtered.'
@@ -130,8 +130,8 @@ options:
                         type: str
                         description: 'Enable/disable blocking URLs when the hostname appears as an IP address.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     name:
                         type: str
                         description: 'Name of URL filter list.'
@@ -139,8 +139,8 @@ options:
                         type: str
                         description: 'Enable/disable DNS resolver for one-arm IPS URL filter operation.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure URL filter lists.'
@@ -154,11 +154,11 @@ options:
                     -
                         type: str
                         choices:
-                            - comment
-                            - id
-                            - ip-addr-block
-                            - name
-                            - one-arm-ips-urlfilter
+                            - 'comment'
+                            - 'id'
+                            - 'ip-addr-block'
+                            - 'name'
+                            - 'one-arm-ips-urlfilter'
             filter:
                 -
                     type: str
@@ -177,11 +177,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Notification configuration.'
@@ -87,8 +87,8 @@ options:
                     type: str
                     description: 'Alert notification interval mode.'
                     choices:
-                        - hours
-                        - minutes
+                        - 'hours'
+                        - 'minutes'
                 alert-src-msisdn:
                     type: str
                     description: 'Specify from address for alert messages.'
@@ -96,8 +96,8 @@ options:
                     type: str
                     description: 'Alert notification status.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 bword-int:
                     type: int
                     description: 'Banned word notification send interval.'
@@ -105,14 +105,14 @@ options:
                     type: str
                     description: 'Banned word notification interval mode.'
                     choices:
-                        - hours
-                        - minutes
+                        - 'hours'
+                        - 'minutes'
                 bword-status:
                     type: str
                     description: 'Banned word notification status.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 carrier-endpoint-bwl-int:
                     type: int
                     description: 'Carrier end point black/white list notification send interval.'
@@ -120,31 +120,31 @@ options:
                     type: str
                     description: 'Carrier end point black/white list notification interval mode.'
                     choices:
-                        - hours
-                        - minutes
+                        - 'hours'
+                        - 'minutes'
                 carrier-endpoint-bwl-status:
                     type: str
                     description: 'Carrier end point black/white list notification status.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 days-allowed:
                     -
                         type: str
                         choices:
-                            - sunday
-                            - monday
-                            - tuesday
-                            - wednesday
-                            - thursday
-                            - friday
-                            - saturday
+                            - 'sunday'
+                            - 'monday'
+                            - 'tuesday'
+                            - 'wednesday'
+                            - 'thursday'
+                            - 'friday'
+                            - 'saturday'
                 detect-server:
                     type: str
                     description: 'Enable/disable automatic server address determination.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dupe-int:
                     type: int
                     description: 'Duplicate notification send interval.'
@@ -152,14 +152,14 @@ options:
                     type: str
                     description: 'Duplicate notification interval mode.'
                     choices:
-                        - hours
-                        - minutes
+                        - 'hours'
+                        - 'minutes'
                 dupe-status:
                     type: str
                     description: 'Duplicate notification status.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 file-block-int:
                     type: int
                     description: 'File block notification send interval.'
@@ -167,14 +167,14 @@ options:
                     type: str
                     description: 'File block notification interval mode.'
                     choices:
-                        - hours
-                        - minutes
+                        - 'hours'
+                        - 'minutes'
                 file-block-status:
                     type: str
                     description: 'File block notification status.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 flood-int:
                     type: int
                     description: 'Flood notification send interval.'
@@ -182,20 +182,20 @@ options:
                     type: str
                     description: 'Flood notification interval mode.'
                     choices:
-                        - hours
-                        - minutes
+                        - 'hours'
+                        - 'minutes'
                 flood-status:
                     type: str
                     description: 'Flood notification status.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 from-in-header:
                     type: str
                     description: 'Enable/disable insertion of from address in HTTP header.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mms-checksum-int:
                     type: int
                     description: 'MMS checksum notification send interval.'
@@ -203,14 +203,14 @@ options:
                     type: str
                     description: 'MMS checksum notification interval mode.'
                     choices:
-                        - hours
-                        - minutes
+                        - 'hours'
+                        - 'minutes'
                 mms-checksum-status:
                     type: str
                     description: 'MMS checksum notification status.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mmsc-hostname:
                     type: str
                     description: 'Host name or IP address of the MMSC.'
@@ -230,16 +230,16 @@ options:
                     type: str
                     description: 'Protocol to use for sending notification messages.'
                     choices:
-                        - mm1
-                        - mm3
-                        - mm4
-                        - mm7
+                        - 'mm1'
+                        - 'mm3'
+                        - 'mm4'
+                        - 'mm7'
                 msg-type:
                     type: str
                     description: 'MM7 message type.'
                     choices:
-                        - submit-req
-                        - deliver-req
+                        - 'submit-req'
+                        - 'deliver-req'
                 protocol:
                     type: str
                     description: 'Protocol.'
@@ -271,14 +271,14 @@ options:
                     type: str
                     description: 'Virus notification interval mode.'
                     choices:
-                        - hours
-                        - minutes
+                        - 'hours'
+                        - 'minutes'
                 virus-status:
                     type: str
                     description: 'Virus notification status.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

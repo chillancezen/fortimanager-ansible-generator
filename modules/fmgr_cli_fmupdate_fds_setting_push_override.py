@@ -57,7 +57,7 @@ options:
             data:
                 ip:
                     type: str
-                    default: 0.0.0.0
+                    default: '0.0.0.0'
                     description: 'External or virtual IP address of the NAT device that will forward push messages to the FortiManager unit.'
                 port:
                     type: int
@@ -65,14 +65,14 @@ options:
                     description: 'Receiving port number on the NAT device (1 - 65535, default = 9443).'
                 status:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable push updates for clients (default = disable).'
                      - 'disable - Disable setting.'
                      - 'enable - Enable setting.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

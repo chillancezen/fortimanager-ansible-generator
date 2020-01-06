@@ -68,8 +68,8 @@ options:
                         type: str
                         description: 'Select certificate or pre-shared key authentication for this authentication group.'
                         choices:
-                            - cert
-                            - psk
+                            - 'cert'
+                            - 'psk'
                     cert:
                         type: str
                         description: 'Name of certificate to identify this peer.'
@@ -83,9 +83,9 @@ options:
                         type: str
                         description: 'Determine if this auth group accepts, any peer, a list of defined peers, or just one peer.'
                         choices:
-                            - any
-                            - defined
-                            - one
+                            - 'any'
+                            - 'defined'
+                            - 'one'
                     psk:
                         -
                             type: str
@@ -102,12 +102,12 @@ options:
                     -
                         type: str
                         choices:
-                            - auth-method
-                            - cert
-                            - name
-                            - peer
-                            - peer-accept
-                            - psk
+                            - 'auth-method'
+                            - 'cert'
+                            - 'name'
+                            - 'peer'
+                            - 'peer-accept'
+                            - 'psk'
             filter:
                 -
                     type: str
@@ -126,11 +126,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

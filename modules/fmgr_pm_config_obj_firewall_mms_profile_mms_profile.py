@@ -75,8 +75,8 @@ options:
                     type: str
                     description: 'Enable/disable prefixing of end point values.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 carrier-endpoint-prefix-range-max:
                     type: int
                     description: 'Maximum length of end point value that can be prefixed (1 - 48).'
@@ -96,29 +96,29 @@ options:
                     type: str
                     description: 'Enable/disable detailed UTM log messages.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mm1:
                     -
                         type: str
                         choices:
-                            - avmonitor
-                            - block
-                            - oversize
-                            - quarantine
-                            - scan
-                            - avquery
-                            - bannedword
-                            - no-content-summary
-                            - archive-summary
-                            - archive-full
-                            - carrier-endpoint-bwl
-                            - remove-blocked
-                            - chunkedbypass
-                            - clientcomfort
-                            - servercomfort
-                            - strict-file
-                            - mms-checksum
+                            - 'avmonitor'
+                            - 'block'
+                            - 'oversize'
+                            - 'quarantine'
+                            - 'scan'
+                            - 'avquery'
+                            - 'bannedword'
+                            - 'no-content-summary'
+                            - 'archive-summary'
+                            - 'archive-full'
+                            - 'carrier-endpoint-bwl'
+                            - 'remove-blocked'
+                            - 'chunkedbypass'
+                            - 'clientcomfort'
+                            - 'servercomfort'
+                            - 'strict-file'
+                            - 'mms-checksum'
                 mm1-addr-hdr:
                     type: str
                     description: 'HTTP header field (for MM1) containing user address.'
@@ -126,33 +126,33 @@ options:
                     type: str
                     description: 'Source for MM1 user address.'
                     choices:
-                        - http-header
-                        - cookie
+                        - 'http-header'
+                        - 'cookie'
                 mm1-convert-hex:
                     type: str
                     description: 'Enable/disable converting user address from HEX string for MM1.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mm1-outbreak-prevention:
                     type: str
                     description: 'Enable FortiGuard Virus Outbreak Prevention service.'
                     choices:
-                        - disabled
-                        - files
-                        - full-archive
+                        - 'disabled'
+                        - 'files'
+                        - 'full-archive'
                 mm1-retr-dupe:
                     type: str
                     description: 'Enable/disable duplicate scanning of MM1 retr.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mm1-retrieve-scan:
                     type: str
                     description: 'Enable/disable scanning on MM1 retrieve configuration messages.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mm1comfortamount:
                     type: int
                     description: 'MM1 comfort amount (0 - 4294967295).'
@@ -166,28 +166,28 @@ options:
                     -
                         type: str
                         choices:
-                            - avmonitor
-                            - block
-                            - oversize
-                            - quarantine
-                            - scan
-                            - avquery
-                            - bannedword
-                            - no-content-summary
-                            - archive-summary
-                            - archive-full
-                            - carrier-endpoint-bwl
-                            - remove-blocked
-                            - fragmail
-                            - splice
-                            - mms-checksum
+                            - 'avmonitor'
+                            - 'block'
+                            - 'oversize'
+                            - 'quarantine'
+                            - 'scan'
+                            - 'avquery'
+                            - 'bannedword'
+                            - 'no-content-summary'
+                            - 'archive-summary'
+                            - 'archive-full'
+                            - 'carrier-endpoint-bwl'
+                            - 'remove-blocked'
+                            - 'fragmail'
+                            - 'splice'
+                            - 'mms-checksum'
                 mm3-outbreak-prevention:
                     type: str
                     description: 'Enable FortiGuard Virus Outbreak Prevention service.'
                     choices:
-                        - disabled
-                        - files
-                        - full-archive
+                        - 'disabled'
+                        - 'files'
+                        - 'full-archive'
                 mm3oversizelimit:
                     type: int
                     description: 'Maximum file size to scan (1 - 819200 kB).'
@@ -195,28 +195,28 @@ options:
                     -
                         type: str
                         choices:
-                            - avmonitor
-                            - block
-                            - oversize
-                            - quarantine
-                            - scan
-                            - avquery
-                            - bannedword
-                            - no-content-summary
-                            - archive-summary
-                            - archive-full
-                            - carrier-endpoint-bwl
-                            - remove-blocked
-                            - fragmail
-                            - splice
-                            - mms-checksum
+                            - 'avmonitor'
+                            - 'block'
+                            - 'oversize'
+                            - 'quarantine'
+                            - 'scan'
+                            - 'avquery'
+                            - 'bannedword'
+                            - 'no-content-summary'
+                            - 'archive-summary'
+                            - 'archive-full'
+                            - 'carrier-endpoint-bwl'
+                            - 'remove-blocked'
+                            - 'fragmail'
+                            - 'splice'
+                            - 'mms-checksum'
                 mm4-outbreak-prevention:
                     type: str
                     description: 'Enable FortiGuard Virus Outbreak Prevention service.'
                     choices:
-                        - disabled
-                        - files
-                        - full-archive
+                        - 'disabled'
+                        - 'files'
+                        - 'full-archive'
                 mm4oversizelimit:
                     type: int
                     description: 'Maximum file size to scan (1 - 819200 kB).'
@@ -224,23 +224,23 @@ options:
                     -
                         type: str
                         choices:
-                            - avmonitor
-                            - block
-                            - oversize
-                            - quarantine
-                            - scan
-                            - avquery
-                            - bannedword
-                            - no-content-summary
-                            - archive-summary
-                            - archive-full
-                            - carrier-endpoint-bwl
-                            - remove-blocked
-                            - chunkedbypass
-                            - clientcomfort
-                            - servercomfort
-                            - strict-file
-                            - mms-checksum
+                            - 'avmonitor'
+                            - 'block'
+                            - 'oversize'
+                            - 'quarantine'
+                            - 'scan'
+                            - 'avquery'
+                            - 'bannedword'
+                            - 'no-content-summary'
+                            - 'archive-summary'
+                            - 'archive-full'
+                            - 'carrier-endpoint-bwl'
+                            - 'remove-blocked'
+                            - 'chunkedbypass'
+                            - 'clientcomfort'
+                            - 'servercomfort'
+                            - 'strict-file'
+                            - 'mms-checksum'
                 mm7-addr-hdr:
                     type: str
                     description: 'HTTP header field (for MM7) containing user address.'
@@ -248,21 +248,21 @@ options:
                     type: str
                     description: 'Source for MM7 user address.'
                     choices:
-                        - http-header
-                        - cookie
+                        - 'http-header'
+                        - 'cookie'
                 mm7-convert-hex:
                     type: str
                     description: 'Enable/disable conversion of user address from HEX string for MM7.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mm7-outbreak-prevention:
                     type: str
                     description: 'Enable FortiGuard Virus Outbreak Prevention service.'
                     choices:
-                        - disabled
-                        - files
-                        - full-archive
+                        - 'disabled'
+                        - 'files'
+                        - 'full-archive'
                 mm7comfortamount:
                     type: int
                     description: 'MM7 comfort amount (0 - 4294967295).'
@@ -276,38 +276,38 @@ options:
                     type: str
                     description: 'Enable/disable logging for MMS antispam mass.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mms-av-block-log:
                     type: str
                     description: 'Enable/disable logging for MMS antivirus file blocking.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mms-av-oversize-log:
                     type: str
                     description: 'Enable/disable logging for MMS antivirus oversize file blocking.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mms-av-virus-log:
                     type: str
                     description: 'Enable/disable logging for MMS antivirus scanning.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mms-carrier-endpoint-filter-log:
                     type: str
                     description: 'Enable/disable logging for MMS end point filter blocking.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mms-checksum-log:
                     type: str
                     description: 'Enable/disable MMS content checksum logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mms-checksum-table:
                     type: str
                     description: 'MMS content checksum table ID.'
@@ -315,14 +315,14 @@ options:
                     type: str
                     description: 'Enable/disable logging for MMS notification messages.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mms-web-content-log:
                     type: str
                     description: 'Enable/disable logging for MMS web content blocking.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 mmsbwordthreshold:
                     type: int
                     description: 'MMS banned word threshold.'
@@ -338,18 +338,18 @@ options:
                             -
                                 type: str
                                 choices:
-                                    - flood-thresh-1
-                                    - flood-thresh-2
-                                    - flood-thresh-3
-                                    - dupe-thresh-1
-                                    - dupe-thresh-2
-                                    - dupe-thresh-3
+                                    - 'flood-thresh-1'
+                                    - 'flood-thresh-2'
+                                    - 'flood-thresh-3'
+                                    - 'dupe-thresh-1'
+                                    - 'dupe-thresh-2'
+                                    - 'dupe-thresh-3'
                 remove-blocked-const-length:
                     type: str
                     description: 'Enable/disable MMS replacement of blocked file constant length.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 replacemsg-group:
                     type: str
                     description: 'Replacement message group.'
@@ -370,9 +370,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

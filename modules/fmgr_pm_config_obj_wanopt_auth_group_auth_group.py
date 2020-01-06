@@ -69,8 +69,8 @@ options:
                     type: str
                     description: 'Select certificate or pre-shared key authentication for this authentication group.'
                     choices:
-                        - cert
-                        - psk
+                        - 'cert'
+                        - 'psk'
                 cert:
                     type: str
                     description: 'Name of certificate to identify this peer.'
@@ -84,9 +84,9 @@ options:
                     type: str
                     description: 'Determine if this auth group accepts, any peer, a list of defined peers, or just one peer.'
                     choices:
-                        - any
-                        - defined
-                        - one
+                        - 'any'
+                        - 'defined'
+                        - 'one'
                 psk:
                     -
                         type: str
@@ -107,9 +107,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

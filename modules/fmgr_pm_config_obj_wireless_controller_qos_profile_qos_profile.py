@@ -69,8 +69,8 @@ options:
                     type: str
                     description: 'Enable/disable WMM bandwidth admission control.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 bandwidth-capacity:
                     type: int
                     description: 'Maximum bandwidth capacity allowed (1 - 600000 Kbps, default = 2000).'
@@ -78,14 +78,14 @@ options:
                     type: str
                     description: 'Enable/disable client rate burst.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 call-admission-control:
                     type: str
                     description: 'Enable/disable WMM call admission control.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 call-capacity:
                     type: int
                     description: 'Maximum number of Voice over WLAN (VoWLAN) phones allowed (0 - 60, default = 10).'
@@ -108,8 +108,8 @@ options:
                     type: str
                     description: 'Enable/disable Differentiated Services Code Point (DSCP) mapping.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dscp-wmm-vi:
                     -
                         type: int
@@ -129,14 +129,14 @@ options:
                     type: str
                     description: 'Enable/disable WiFi multi-media (WMM) control.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 wmm-uapsd:
                     type: str
                     description: 'Enable/disable WMM Unscheduled Automatic Power Save Delivery (U-APSD) power save mode.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'Configure WiFi quality of service (QoS) profiles.'
@@ -154,9 +154,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

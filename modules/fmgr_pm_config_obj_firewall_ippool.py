@@ -71,8 +71,8 @@ options:
                         type: str
                         description: 'Enable/disable replying to ARP requests when an IP Pool is added to a policy (default = enable).'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     associated-interface:
                         type: str
                         description: 'Associated interface name.'
@@ -95,8 +95,8 @@ options:
                             arp-reply:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             associated-interface:
                                 type: str
                             block-size:
@@ -112,8 +112,8 @@ options:
                             permit-any-host:
                                 type: str
                                 choices:
-                                    - disable
-                                    - enable
+                                    - 'disable'
+                                    - 'enable'
                             source-endip:
                                 type: str
                             source-startip:
@@ -123,10 +123,10 @@ options:
                             type:
                                 type: str
                                 choices:
-                                    - overload
-                                    - one-to-one
-                                    - fixed-port-range
-                                    - port-block-allocation
+                                    - 'overload'
+                                    - 'one-to-one'
+                                    - 'fixed-port-range'
+                                    - 'port-block-allocation'
                     endip:
                         type: str
                         description: 'Final IPv4 address (inclusive) in the range for the address pool (format xxx.xxx.xxx.xxx, Default: 0.0.0.0).'
@@ -143,8 +143,8 @@ options:
                         type: str
                         description: 'Enable/disable full cone NAT.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     source-endip:
                         type: str
                         description: 'Final IPv4 address (inclusive) in the range of the source addresses to be translated (format xxx.xxx.xxx.xxx, Default: 0.0.0.0).'
@@ -158,10 +158,10 @@ options:
                         type: str
                         description: 'IP pool type (overload, one-to-one, fixed port range, or port block allocation).'
                         choices:
-                            - overload
-                            - one-to-one
-                            - fixed-port-range
-                            - port-block-allocation
+                            - 'overload'
+                            - 'one-to-one'
+                            - 'fixed-port-range'
+                            - 'port-block-allocation'
     schema_object1:
         methods: [get]
         description: 'Configure IPv4 IP pools.'
@@ -175,20 +175,20 @@ options:
                     -
                         type: str
                         choices:
-                            - arp-intf
-                            - arp-reply
-                            - associated-interface
-                            - block-size
-                            - comments
-                            - endip
-                            - name
-                            - num-blocks-per-user
-                            - pba-timeout
-                            - permit-any-host
-                            - source-endip
-                            - source-startip
-                            - startip
-                            - type
+                            - 'arp-intf'
+                            - 'arp-reply'
+                            - 'associated-interface'
+                            - 'block-size'
+                            - 'comments'
+                            - 'endip'
+                            - 'name'
+                            - 'num-blocks-per-user'
+                            - 'pba-timeout'
+                            - 'permit-any-host'
+                            - 'source-endip'
+                            - 'source-startip'
+                            - 'startip'
+                            - 'type'
             filter:
                 -
                     type: str
@@ -207,11 +207,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

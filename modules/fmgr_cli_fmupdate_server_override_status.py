@@ -57,14 +57,14 @@ options:
             data:
                 mode:
                     type: str
-                    default: loose
+                    default: 'loose'
                     description:
                      - 'Server override mode (default = loose).'
                      - 'strict - Access override server only.'
                      - 'loose - Allow access other servers.'
                     choices:
-                        - strict
-                        - loose
+                        - 'strict'
+                        - 'loose'
 
 '''
 

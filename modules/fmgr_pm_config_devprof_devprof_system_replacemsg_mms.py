@@ -70,9 +70,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Replacement messages.'
@@ -86,23 +86,23 @@ options:
                     type: str
                     description: 'character encoding used for replacement message'
                     choices:
-                        - us-ascii
-                        - utf-8
+                        - 'us-ascii'
+                        - 'utf-8'
                 format:
                     type: str
                     description: 'Format flag.'
                     choices:
-                        - none
-                        - text
-                        - html
-                        - wml
+                        - 'none'
+                        - 'text'
+                        - 'html'
+                        - 'wml'
                 header:
                     type: str
                     description: 'Header flag.'
                     choices:
-                        - none
-                        - http
-                        - 8bit
+                        - 'none'
+                        - 'http'
+                        - '8bit'
                 image:
                     type: str
                     description: 'Message string.'

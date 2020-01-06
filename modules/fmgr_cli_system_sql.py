@@ -57,29 +57,29 @@ options:
             data:
                 background-rebuild:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Disable/Enable rebuild SQL database in the background.'
                      - 'disable - Rebuild SQL database not in the background.'
                      - 'enable - Rebuild SQL database in the background.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 custom-index:
                     -
                         case-sensitive:
                             type: str
-                            default: disable
+                            default: 'disable'
                             description:
                              - 'Disable/Enable case sensitive index.'
                              - 'disable - Build a case insensitive index.'
                              - 'enable - Build a case sensitive index.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         device-type:
                             type: str
-                            default: FortiGate
+                            default: 'FortiGate'
                             description:
                              - 'Device type.'
                              - 'FortiGate - Device type to FortiGate.'
@@ -93,16 +93,16 @@ options:
                              - 'FortiAuthenticator - Set device type to FortiAuthenticator'
                              - 'FortiProxy - Set device type to FortiProxy'
                             choices:
-                                - FortiGate
-                                - FortiManager
-                                - FortiClient
-                                - FortiMail
-                                - FortiWeb
-                                - FortiCache
-                                - FortiSandbox
-                                - FortiDDoS
-                                - FortiAuthenticator
-                                - FortiProxy
+                                - 'FortiGate'
+                                - 'FortiManager'
+                                - 'FortiClient'
+                                - 'FortiMail'
+                                - 'FortiWeb'
+                                - 'FortiCache'
+                                - 'FortiSandbox'
+                                - 'FortiDDoS'
+                                - 'FortiAuthenticator'
+                                - 'FortiProxy'
                         id:
                             type: int
                             default: 0
@@ -112,7 +112,7 @@ options:
                             description: 'Log field name to be indexed.'
                         log-type:
                             type: str
-                            default: traffic
+                            default: 'traffic'
                             description:
                              - 'Log type.'
                              - 'none - none'
@@ -138,51 +138,51 @@ options:
                              - 'ssh '
                              - 'ssl '
                             choices:
-                                - none
-                                - app-ctrl
-                                - attack
-                                - content
-                                - dlp
-                                - emailfilter
-                                - event
-                                - generic
-                                - history
-                                - traffic
-                                - virus
-                                - voip
-                                - webfilter
-                                - netscan
-                                - fct-event
-                                - fct-traffic
-                                - fct-netscan
-                                - waf
-                                - gtp
-                                - dns
-                                - ssh
-                                - ssl
+                                - 'none'
+                                - 'app-ctrl'
+                                - 'attack'
+                                - 'content'
+                                - 'dlp'
+                                - 'emailfilter'
+                                - 'event'
+                                - 'generic'
+                                - 'history'
+                                - 'traffic'
+                                - 'virus'
+                                - 'voip'
+                                - 'webfilter'
+                                - 'netscan'
+                                - 'fct-event'
+                                - 'fct-traffic'
+                                - 'fct-netscan'
+                                - 'waf'
+                                - 'gtp'
+                                - 'dns'
+                                - 'ssh'
+                                - 'ssl'
                 database-name:
                     type: str
                     description: 'Database name.'
                 database-type:
                     type: str
-                    default: postgres
+                    default: 'postgres'
                     description:
                      - 'Database type.'
                      - 'mysql - MySQL database.'
                      - 'postgres - PostgreSQL local database.'
                     choices:
-                        - mysql
-                        - postgres
+                        - 'mysql'
+                        - 'postgres'
                 device-count-high:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Must set to enable if the count of registered devices is greater than 8000.'
                      - 'disable - Set to disable if device count is less than 8000.'
                      - 'enable - Set to enable if device count is equal to or greater than 8000.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 event-table-partition-time:
                     type: int
                     default: 0
@@ -195,52 +195,52 @@ options:
                     -
                         type: str
                         choices:
-                            - none
-                            - app-ctrl
-                            - attack
-                            - content
-                            - dlp
-                            - emailfilter
-                            - event
-                            - generic
-                            - history
-                            - traffic
-                            - virus
-                            - voip
-                            - webfilter
-                            - netscan
-                            - fct-event
-                            - fct-traffic
-                            - fct-netscan
-                            - waf
-                            - gtp
-                            - dns
-                            - ssh
-                            - ssl
+                            - 'none'
+                            - 'app-ctrl'
+                            - 'attack'
+                            - 'content'
+                            - 'dlp'
+                            - 'emailfilter'
+                            - 'event'
+                            - 'generic'
+                            - 'history'
+                            - 'traffic'
+                            - 'virus'
+                            - 'voip'
+                            - 'webfilter'
+                            - 'netscan'
+                            - 'fct-event'
+                            - 'fct-traffic'
+                            - 'fct-netscan'
+                            - 'waf'
+                            - 'gtp'
+                            - 'dns'
+                            - 'ssh'
+                            - 'ssl'
                 password:
                     -
                         type: str
-                        default: ENC NjQ3NzAyNTQ0MjIyMDUxNUE+4gCrDBIJb7pqPICInSs5KmyrG1Tt8M8Zl+eK2k42FSlwDSDiBpNLwRPdCyo8dSIl+p0KUlKP781RcCnzzGAb/gOob+zQwnCMY730a19D6Tf5E3BBEeL/R375HU5/K0L4aeWS/TsuwFbi0JtMJkVKk0je
+                        default: 'ENC NjQ3NzAyNTQ0MjIyMDUxNUE+4gCrDBIJb7pqPICInSs5KmyrG1Tt8M8Zl+eK2k42FSlwDSDiBpNLwRPdCyo8dSIl+p0KUlKP781RcCnzzGAb/gOob+zQwnCMY730a19D6Tf5E3BBEeL/R375HU5/K0L4aeWS/TsuwFbi0JtMJkVKk0je'
                 prompt-sql-upgrade:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Prompt to convert log database into SQL database at start time on GUI.'
                      - 'disable - Do not prompt to upgrade log database to SQL database at start time on GUI.'
                      - 'enable - Prompt to upgrade log database to SQL database at start time on GUI.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 rebuild-event:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Disable/Enable rebuild event during SQL database rebuilding.'
                      - 'disable - Do not rebuild event during SQL database rebuilding.'
                      - 'enable - Rebuild event during SQL database rebuilding.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 rebuild-event-start-time:
                     -
                         type: str
@@ -252,24 +252,24 @@ options:
                         type: str
                 status:
                     type: str
-                    default: local
+                    default: 'local'
                     description:
                      - 'SQL database status.'
                      - 'disable - Disable SQL database.'
                      - 'local - Enable local database.'
                     choices:
-                        - disable
-                        - local
+                        - 'disable'
+                        - 'local'
                 text-search-index:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Disable/Enable text search index.'
                      - 'disable - Do not create text search index.'
                      - 'enable - Create text search index.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 traffic-table-partition-time:
                     type: int
                     default: 0

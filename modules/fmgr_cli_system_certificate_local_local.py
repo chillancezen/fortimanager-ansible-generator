@@ -77,7 +77,7 @@ options:
                 password:
                     -
                         type: str
-                        default: ENC MTU2NTY2MTI5MDA3MDkxNBB2U7GXAKMJnXNp1HA5qlMS8x60LYYPH59UftMARK2yBZSIyOKVdX6+LwsW+HCuCyxLGSjNDtDBuxlRE0O7Wq9sKZOknxG2S1rADC1fQWbul8eYa0wrzplnDD/u8OlHAf4q/+Ubo19o8BlFW8Pg8Fi+WhVP
+                        default: 'ENC MTU2NTY2MTI5MDA3MDkxNBB2U7GXAKMJnXNp1HA5qlMS8x60LYYPH59UftMARK2yBZSIyOKVdX6+LwsW+HCuCyxLGSjNDtDBuxlRE0O7Wq9sKZOknxG2S1rADC1fQWbul8eYa0wrzplnDD/u8OlHAf4q/+Ubo19o8BlFW8Pg8Fi+WhVP'
                 private-key:
                     -
                         type: str

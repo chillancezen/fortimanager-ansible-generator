@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'SCCP.'
@@ -84,20 +84,20 @@ options:
                     type: str
                     description: 'Enable/disable block multicast RTP connections.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 log-call-summary:
                     type: str
                     description: 'Enable/disable log summary of SCCP calls.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 log-violations:
                     type: str
                     description: 'Enable/disable logging of SCCP violations.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 max-calls:
                     type: int
                     description: 'Maximum calls per minute per SCCP client (max 65535).'
@@ -105,14 +105,14 @@ options:
                     type: str
                     description: 'Enable/disable SCCP.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 verify-header:
                     type: str
                     description: 'Enable/disable verify SCCP header content.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

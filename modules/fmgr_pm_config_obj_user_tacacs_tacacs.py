@@ -69,17 +69,17 @@ options:
                     type: str
                     description: 'Allowed authentication protocols/methods.'
                     choices:
-                        - auto
-                        - ascii
-                        - pap
-                        - chap
-                        - mschap
+                        - 'auto'
+                        - 'ascii'
+                        - 'pap'
+                        - 'chap'
+                        - 'mschap'
                 authorization:
                     type: str
                     description: 'Enable/disable TACACS+ authorization.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 dynamic_mapping:
                     -
                         _scope:
@@ -91,16 +91,16 @@ options:
                         authen-type:
                             type: str
                             choices:
-                                - auto
-                                - ascii
-                                - pap
-                                - chap
-                                - mschap
+                                - 'auto'
+                                - 'ascii'
+                                - 'pap'
+                                - 'chap'
+                                - 'mschap'
                         authorization:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         key:
                             -
                                 type: str
@@ -164,9 +164,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

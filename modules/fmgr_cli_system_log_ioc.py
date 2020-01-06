@@ -57,14 +57,14 @@ options:
             data:
                 notification:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Disable/Enable IoC notification.'
                      - 'disable - Disable IoC feature.'
                      - 'enable - Enable IoC feature.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 notification-throttle:
                     type: int
                     default: 1440
@@ -79,24 +79,24 @@ options:
                     description: 'When to run IoC rescan.'
                 rescan-status:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Disable/Enable IoC rescan.'
                      - 'disable - Disable IoC feature.'
                      - 'enable - Enable IoC feature.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 status:
                     type: str
-                    default: enable
+                    default: 'enable'
                     description:
                      - 'Disable/Enable IoC feature.'
                      - 'disable - Disable IoC feature.'
                      - 'enable - Enable IoC feature.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

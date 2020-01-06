@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Main signature class.'
@@ -84,9 +84,9 @@ options:
                     type: str
                     description: 'Action.'
                     choices:
-                        - allow
-                        - block
-                        - erase
+                        - 'allow'
+                        - 'block'
+                        - 'erase'
                 id:
                     type: int
                     description: 'Main signature class ID.'
@@ -94,21 +94,21 @@ options:
                     type: str
                     description: 'Enable/disable logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 severity:
                     type: str
                     description: 'Severity.'
                     choices:
-                        - low
-                        - medium
-                        - high
+                        - 'low'
+                        - 'medium'
+                        - 'high'
                 status:
                     type: str
                     description: 'Status.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

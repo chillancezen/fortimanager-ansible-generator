@@ -48,8 +48,8 @@ Parameters
  <li><span class="li-head">auth-concurrent-override</span> - Enable/disable overriding the policy-auth-concurrent under config system global. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">auth-concurrent-value</span> - Maximum number of concurrent logins permitted from the same user. <span class="li-normal">type: int</span> </li>
  <li><span class="li-head">authtimeout</span> - Time in minutes before the authentication timeout for a user is reached. <span class="li-normal">type: int</span> </li>
- <li><span class="li-head">email-to</span> - Two-factor recipient's email address. <span class="li-normal">type: str</span> </li>
- <li><span class="li-head">fortitoken</span> - Two-factor recipient's FortiToken serial number. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">email-to</span> - Two-factor recipients email address. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">fortitoken</span> - Two-factor recipients FortiToken serial number. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">id</span> - User ID. <span class="li-normal">type: int</span> </li>
  <li><span class="li-head">ldap-server</span> - Name of LDAP server with which the user must authenticate. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">name</span> - User name. <span class="li-normal">type: str</span> </li>
@@ -62,8 +62,8 @@ Parameters
  <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span> </li>
  </ul>
  <li><span class="li-head">radius-server</span> - Name of RADIUS server with which the user must authenticate. <span class="li-normal">type: str</span> </li>
- <li><span class="li-head">sms-custom-server</span> - Two-factor recipient's SMS server. <span class="li-normal">type: str</span> </li>
- <li><span class="li-head">sms-phone</span> - Two-factor recipient's mobile phone number. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">sms-custom-server</span> - Two-factor recipients SMS server. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">sms-phone</span> - Two-factor recipients mobile phone number. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">sms-server</span> - Send SMS through FortiGuard or other external server. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [fortiguard, custom]</span> </li>
  <li><span class="li-head">status</span> - Enable/disable allowing the local user to authenticate with the FortiGate unit. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  <li><span class="li-head">tacacs+-server</span> - Name of TACACS+ server with which the user must authenticate. <span class="li-normal">type: str</span> </li>
@@ -205,8 +205,8 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> auth-concurrent-override </span> - Enable/disable overriding the policy-auth-concurrent under config system global. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> auth-concurrent-value </span> - Maximum number of concurrent logins permitted from the same user. <span class="li-normal">type: int</span>  </li>
  <li> <span class="li-return"> authtimeout </span> - Time in minutes before the authentication timeout for a user is reached. <span class="li-normal">type: int</span>  </li>
- <li> <span class="li-return"> email-to </span> - Two-factor recipient's email address. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> fortitoken </span> - Two-factor recipient's FortiToken serial number. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> email-to </span> - Two-factor recipients email address. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> fortitoken </span> - Two-factor recipients FortiToken serial number. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> id </span> - User ID. <span class="li-normal">type: int</span>  </li>
  <li> <span class="li-return"> ldap-server </span> - Name of LDAP server with which the user must authenticate. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> name </span> - User name. <span class="li-normal">type: str</span>  </li>
@@ -219,8 +219,8 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li><span class="li-return">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
  </ul>
  <li> <span class="li-return"> radius-server </span> - Name of RADIUS server with which the user must authenticate. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> sms-custom-server </span> - Two-factor recipient's SMS server. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> sms-phone </span> - Two-factor recipient's mobile phone number. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> sms-custom-server </span> - Two-factor recipients SMS server. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> sms-phone </span> - Two-factor recipients mobile phone number. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> sms-server </span> - Send SMS through FortiGuard or other external server. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> status </span> - Enable/disable allowing the local user to authenticate with the FortiGate unit. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> tacacs+-server </span> - Name of TACACS+ server with which the user must authenticate. <span class="li-normal">type: str</span>  </li>

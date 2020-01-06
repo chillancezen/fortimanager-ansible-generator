@@ -77,14 +77,14 @@ options:
                             type: str
                             description: 'enable prefix matches based on this name'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         status:
                             type: str
                             description: 'enable this entry for notifications'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                 id:
                     type: int
                     description: 'ID.'
@@ -108,9 +108,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

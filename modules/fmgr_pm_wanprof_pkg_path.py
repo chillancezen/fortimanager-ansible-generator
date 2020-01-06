@@ -73,11 +73,11 @@ options:
                     -
                         type: str
                         choices:
-                            - description
-                            - name
-                            - oid
-                            - scope member
-                            - type
+                            - 'description'
+                            - 'name'
+                            - 'oid'
+                            - 'scope member'
+                            - 'type'
     schema_object2:
         methods: [set, update]
         description: ''
@@ -99,7 +99,7 @@ options:
                 type:
                     type: str
                     choices:
-                        - wanprof
+                        - 'wanprof'
 
 '''
 

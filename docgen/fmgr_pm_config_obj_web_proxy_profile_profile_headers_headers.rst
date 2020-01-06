@@ -48,7 +48,7 @@ Parameters
  <ul class="ul-self">
  <li><span class="li-head">data</span> - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
  <li><span class="li-head">action</span> - Action when HTTP the header forwarded. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [add-to-request, add-to-response, remove-from-request, remove-from-response]</span> </li>
- <li><span class="li-head">content</span> - HTTP header's content. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">content</span> - HTTP headers content. <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">id</span> - HTTP forwarded header id. <span class="li-normal">type: int</span> </li>
  <li><span class="li-head">name</span> - HTTP forwarded header name. <span class="li-normal">type: str</span> </li>
  </ul>
@@ -155,7 +155,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li><span class="li-return">data</span>
  - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
  <li> <span class="li-return"> action </span> - Action when HTTP the header forwarded. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> content </span> - HTTP header's content. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> content </span> - HTTP headers content. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> id </span> - HTTP forwarded header id. <span class="li-normal">type: int</span>  </li>
  <li> <span class="li-return"> name </span> - HTTP forwarded header name. <span class="li-normal">type: str</span>  </li>
  </ul>

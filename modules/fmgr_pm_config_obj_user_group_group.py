@@ -69,8 +69,8 @@ options:
                     type: str
                     description: 'Enable/disable overriding the global number of concurrent authentication sessions for this user group.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 auth-concurrent-value:
                     type: int
                     description: 'Maximum number of concurrent authenticated connections per user (0 - 100).'
@@ -81,15 +81,15 @@ options:
                     type: str
                     description: 'Set the action for the company guest user field.'
                     choices:
-                        - optional
-                        - mandatory
-                        - disabled
+                        - 'optional'
+                        - 'mandatory'
+                        - 'disabled'
                 email:
                     type: str
                     description: 'Enable/disable the guest user email address field.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 expire:
                     type: int
                     description: 'Time in seconds before guest user accounts expire. (1 - 31536000 sec)'
@@ -97,17 +97,17 @@ options:
                     type: str
                     description: 'Determine when the expiration countdown begins.'
                     choices:
-                        - immediately
-                        - first-successful-login
+                        - 'immediately'
+                        - 'first-successful-login'
                 group-type:
                     type: str
                     description: 'Set the group to be for firewall authentication, FSSO, RSSO, or guest users.'
                     choices:
-                        - firewall
-                        - directory-service
-                        - fsso-service
-                        - guest
-                        - rsso
+                        - 'firewall'
+                        - 'directory-service'
+                        - 'fsso-service'
+                        - 'guest'
+                        - 'rsso'
                 guest:
                     -
                         comment:
@@ -166,14 +166,14 @@ options:
                     type: str
                     description: 'Enable/disable the guest user mobile phone number field.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 multiple-guest-add:
                     type: str
                     description: 'Enable/disable addition of multiple guests.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 name:
                     type: str
                     description: 'Group name.'
@@ -181,9 +181,9 @@ options:
                     type: str
                     description: 'Guest user password type.'
                     choices:
-                        - auto-generate
-                        - specify
-                        - disable
+                        - 'auto-generate'
+                        - 'specify'
+                        - 'disable'
                 sms-custom-server:
                     type: str
                     description: 'SMS server.'
@@ -191,15 +191,15 @@ options:
                     type: str
                     description: 'Send SMS through FortiGuard or other external server.'
                     choices:
-                        - fortiguard
-                        - custom
+                        - 'fortiguard'
+                        - 'custom'
                 sponsor:
                     type: str
                     description: 'Set the action for the sponsor guest user field.'
                     choices:
-                        - optional
-                        - mandatory
-                        - disabled
+                        - 'optional'
+                        - 'mandatory'
+                        - 'disabled'
                 sso-attribute-value:
                     type: str
                     description: 'Name of the RADIUS user group that this local user group represents.'
@@ -207,15 +207,15 @@ options:
                     type: str
                     description: 'Guest user ID type.'
                     choices:
-                        - email
-                        - auto-generate
-                        - specify
+                        - 'email'
+                        - 'auto-generate'
+                        - 'specify'
                 user-name:
                     type: str
                     description: 'Enable/disable the guest user name entry.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
     schema_object1:
         methods: [delete]
         description: 'Configure user groups.'
@@ -233,9 +233,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 

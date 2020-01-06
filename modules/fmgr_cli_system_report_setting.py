@@ -57,24 +57,24 @@ options:
             data:
                 aggregate-report:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Enable/disable including a group report along with the per-device reports.'
                      - 'disable - Exclude a group report along with the per-device reports.'
                      - 'enable - Include a group report along with the per-device reports.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 hcache-lossless:
                     type: str
-                    default: disable
+                    default: 'disable'
                     description:
                      - 'Usableness of ready-with-loss hcaches.'
                      - 'disable - Use ready-with-loss hcaches.'
                      - 'enable - Do not use ready-with-loss hcaches.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ldap-cache-timeout:
                     type: int
                     default: 60
@@ -85,36 +85,36 @@ options:
                     description: 'Maximum number of rows can be generated in a single table.'
                 report-priority:
                     type: str
-                    default: auto
+                    default: 'auto'
                     description:
                      - 'Priority of sql report.'
                      - 'high - High'
                      - 'low - Low'
                      - 'auto - Auto'
                     choices:
-                        - high
-                        - low
-                        - auto
+                        - 'high'
+                        - 'low'
+                        - 'auto'
                 template-auto-install:
                     type: str
-                    default: default
+                    default: 'default'
                     description:
                      - 'The language used for new ADOMs (default = default).'
                      - 'default - Default.'
                      - 'english - English.'
                     choices:
-                        - default
-                        - english
+                        - 'default'
+                        - 'english'
                 week-start:
                     type: str
-                    default: sun
+                    default: 'sun'
                     description:
                      - 'Day of the week on which the week starts.'
                      - 'sun - Sunday.'
                      - 'mon - Monday.'
                     choices:
-                        - sun
-                        - mon
+                        - 'sun'
+                        - 'mon'
 
 '''
 

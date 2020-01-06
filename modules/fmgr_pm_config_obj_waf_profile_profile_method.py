@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'Method restriction.'
@@ -84,21 +84,21 @@ options:
                     -
                         type: str
                         choices:
-                            - delete
-                            - get
-                            - head
-                            - options
-                            - post
-                            - put
-                            - trace
-                            - others
-                            - connect
+                            - 'delete'
+                            - 'get'
+                            - 'head'
+                            - 'options'
+                            - 'post'
+                            - 'put'
+                            - 'trace'
+                            - 'others'
+                            - 'connect'
                 log:
                     type: str
                     description: 'Enable/disable logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 method-policy:
                     -
                         address:
@@ -108,15 +108,15 @@ options:
                             -
                                 type: str
                                 choices:
-                                    - delete
-                                    - get
-                                    - head
-                                    - options
-                                    - post
-                                    - put
-                                    - trace
-                                    - others
-                                    - connect
+                                    - 'delete'
+                                    - 'get'
+                                    - 'head'
+                                    - 'options'
+                                    - 'post'
+                                    - 'put'
+                                    - 'trace'
+                                    - 'others'
+                                    - 'connect'
                         id:
                             type: int
                             description: 'HTTP method policy ID.'
@@ -127,21 +127,21 @@ options:
                             type: str
                             description: 'Enable/disable regular expression based pattern match.'
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                 severity:
                     type: str
                     description: 'Severity.'
                     choices:
-                        - low
-                        - medium
-                        - high
+                        - 'low'
+                        - 'medium'
+                        - 'high'
                 status:
                     type: str
                     description: 'Status.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
 
 '''
 

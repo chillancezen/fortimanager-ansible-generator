@@ -76,39 +76,39 @@ options:
                                 -
                                     type: str
                                     choices:
-                                        - CS0
-                                        - CS1
-                                        - AF11
-                                        - AF12
-                                        - AF13
-                                        - CS2
-                                        - AF21
-                                        - AF22
-                                        - AF23
-                                        - CS3
-                                        - AF31
-                                        - AF32
-                                        - AF33
-                                        - CS4
-                                        - AF41
-                                        - AF42
-                                        - AF43
-                                        - CS5
-                                        - EF
-                                        - CS6
-                                        - CS7
+                                        - 'CS0'
+                                        - 'CS1'
+                                        - 'AF11'
+                                        - 'AF12'
+                                        - 'AF13'
+                                        - 'CS2'
+                                        - 'AF21'
+                                        - 'AF22'
+                                        - 'AF23'
+                                        - 'CS3'
+                                        - 'AF31'
+                                        - 'AF32'
+                                        - 'AF33'
+                                        - 'CS4'
+                                        - 'AF41'
+                                        - 'AF42'
+                                        - 'AF43'
+                                        - 'CS5'
+                                        - 'EF'
+                                        - 'CS6'
+                                        - 'CS7'
                             ip-precedence:
                                 -
                                     type: str
                                     choices:
-                                        - network-control
-                                        - internetwork-control
-                                        - critic-ecp
-                                        - flashoverride
-                                        - flash
-                                        - immediate
-                                        - priority
-                                        - routine
+                                        - 'network-control'
+                                        - 'internetwork-control'
+                                        - 'critic-ecp'
+                                        - 'flashoverride'
+                                        - 'flash'
+                                        - 'immediate'
+                                        - 'priority'
+                                        - 'routine'
                             name:
                                 type: str
                                 description: 'Dscp mapping entry name.'
@@ -131,8 +131,8 @@ options:
                     -
                         type: str
                         choices:
-                            - description
-                            - name
+                            - 'description'
+                            - 'name'
             filter:
                 -
                     type: str
@@ -151,11 +151,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

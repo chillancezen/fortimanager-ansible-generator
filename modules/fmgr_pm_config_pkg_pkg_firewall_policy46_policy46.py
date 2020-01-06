@@ -70,8 +70,8 @@ options:
                     type: str
                     description: 'Accept or deny traffic matching the policy.'
                     choices:
-                        - deny
-                        - accept
+                        - 'deny'
+                        - 'accept'
                 comments:
                     type: str
                     description: 'Comment.'
@@ -85,14 +85,14 @@ options:
                     type: str
                     description: 'Enable/disable fixed port for this policy.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 logtraffic:
                     type: str
                     description: 'Enable/disable traffic logging for this policy.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 per-ip-shaper:
                     type: str
                     description: 'Per IP traffic shaper.'
@@ -100,8 +100,8 @@ options:
                     type: str
                     description: 'Enable/disable allowing any host.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 policyid:
                     type: int
                     description: 'Policy ID.'
@@ -121,8 +121,8 @@ options:
                     type: str
                     description: 'Enable/disable this policy.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 tags:
                     type: str
                     description: 'Applied object tags.'
@@ -158,9 +158,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object3:
         methods: [move]
         description: 'Configure IPv4 to IPv6 policies.'
@@ -169,8 +169,8 @@ options:
             option:
                 type: str
                 choices:
-                    - before
-                    - after
+                    - 'before'
+                    - 'after'
             target:
                 type: str
                 description: 'Key to the target entry.'

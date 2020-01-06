@@ -67,7 +67,7 @@ options:
                         description: 'Allow interface name.'
                     ip:
                         type: str
-                        default: ::/0
+                        default: '::/0'
                         description: 'Allow host IP address.'
     schema_object1:
         methods: [get]
@@ -79,9 +79,9 @@ options:
                     -
                         type: str
                         choices:
-                            - id
-                            - interface
-                            - ip
+                            - 'id'
+                            - 'interface'
+                            - 'ip'
             filter:
                 -
                     type: str
@@ -95,8 +95,8 @@ options:
                  - 'count - Return the number of matching entries instead of the actual entry data.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - syntax
+                    - 'count'
+                    - 'syntax'
 
 '''
 

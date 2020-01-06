@@ -61,7 +61,7 @@ options:
                 type: str
     schema_object0:
         methods: [get]
-        description: 'Get a list of script logs of a device. The amount of data to retrieve can be controlled by the <b>range</b> option. This API call does not return the content of script log.'
+        description: 'Get a list of script logs of a device. The amount of data to retrieve can be controlled by the range option. This API call does not return the content of script log.'
         api_categories: [api_tag0]
         api_tag0:
 

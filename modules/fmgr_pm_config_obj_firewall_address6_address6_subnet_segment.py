@@ -73,8 +73,8 @@ options:
                         type: str
                         description: 'Subnet segment type.'
                         choices:
-                            - any
-                            - specific
+                            - 'any'
+                            - 'specific'
                     value:
                         type: str
                         description: 'Subnet segment value.'
@@ -91,9 +91,9 @@ options:
                     -
                         type: str
                         choices:
-                            - name
-                            - type
-                            - value
+                            - 'name'
+                            - 'type'
+                            - 'value'
             filter:
                 -
                     type: str
@@ -112,11 +112,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

@@ -71,9 +71,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object1:
         methods: [set, update]
         description: 'WTP LAN port mapping.'
@@ -84,10 +84,10 @@ options:
                     type: str
                     description: 'LAN port mode.'
                     choices:
-                        - offline
-                        - bridge-to-wan
-                        - bridge-to-ssid
-                        - nat-to-wan
+                        - 'offline'
+                        - 'bridge-to-wan'
+                        - 'bridge-to-ssid'
+                        - 'nat-to-wan'
                 port-ssid:
                     type: str
                     description: 'Bridge LAN port to SSID.'
@@ -95,10 +95,10 @@ options:
                     type: str
                     description: 'LAN port 1 mode.'
                     choices:
-                        - offline
-                        - bridge-to-wan
-                        - bridge-to-ssid
-                        - nat-to-wan
+                        - 'offline'
+                        - 'bridge-to-wan'
+                        - 'bridge-to-ssid'
+                        - 'nat-to-wan'
                 port1-ssid:
                     type: str
                     description: 'Bridge LAN port 1 to SSID.'
@@ -106,10 +106,10 @@ options:
                     type: str
                     description: 'LAN port 2 mode.'
                     choices:
-                        - offline
-                        - bridge-to-wan
-                        - bridge-to-ssid
-                        - nat-to-wan
+                        - 'offline'
+                        - 'bridge-to-wan'
+                        - 'bridge-to-ssid'
+                        - 'nat-to-wan'
                 port2-ssid:
                     type: str
                     description: 'Bridge LAN port 2 to SSID.'
@@ -117,10 +117,10 @@ options:
                     type: str
                     description: 'LAN port 3 mode.'
                     choices:
-                        - offline
-                        - bridge-to-wan
-                        - bridge-to-ssid
-                        - nat-to-wan
+                        - 'offline'
+                        - 'bridge-to-wan'
+                        - 'bridge-to-ssid'
+                        - 'nat-to-wan'
                 port3-ssid:
                     type: str
                     description: 'Bridge LAN port 3 to SSID.'
@@ -128,10 +128,10 @@ options:
                     type: str
                     description: 'LAN port 4 mode.'
                     choices:
-                        - offline
-                        - bridge-to-wan
-                        - bridge-to-ssid
-                        - nat-to-wan
+                        - 'offline'
+                        - 'bridge-to-wan'
+                        - 'bridge-to-ssid'
+                        - 'nat-to-wan'
                 port4-ssid:
                     type: str
                     description: 'Bridge LAN port 4 to SSID.'
@@ -139,10 +139,10 @@ options:
                     type: str
                     description: 'LAN port 5 mode.'
                     choices:
-                        - offline
-                        - bridge-to-wan
-                        - bridge-to-ssid
-                        - nat-to-wan
+                        - 'offline'
+                        - 'bridge-to-wan'
+                        - 'bridge-to-ssid'
+                        - 'nat-to-wan'
                 port5-ssid:
                     type: str
                     description: 'Bridge LAN port 5 to SSID.'
@@ -150,10 +150,10 @@ options:
                     type: str
                     description: 'LAN port 6 mode.'
                     choices:
-                        - offline
-                        - bridge-to-wan
-                        - bridge-to-ssid
-                        - nat-to-wan
+                        - 'offline'
+                        - 'bridge-to-wan'
+                        - 'bridge-to-ssid'
+                        - 'nat-to-wan'
                 port6-ssid:
                     type: str
                     description: 'Bridge LAN port 6 to SSID.'
@@ -161,10 +161,10 @@ options:
                     type: str
                     description: 'LAN port 7 mode.'
                     choices:
-                        - offline
-                        - bridge-to-wan
-                        - bridge-to-ssid
-                        - nat-to-wan
+                        - 'offline'
+                        - 'bridge-to-wan'
+                        - 'bridge-to-ssid'
+                        - 'nat-to-wan'
                 port7-ssid:
                     type: str
                     description: 'Bridge LAN port 7 to SSID.'
@@ -172,10 +172,10 @@ options:
                     type: str
                     description: 'LAN port 8 mode.'
                     choices:
-                        - offline
-                        - bridge-to-wan
-                        - bridge-to-ssid
-                        - nat-to-wan
+                        - 'offline'
+                        - 'bridge-to-wan'
+                        - 'bridge-to-ssid'
+                        - 'nat-to-wan'
                 port8-ssid:
                     type: str
                     description: 'Bridge LAN port 8 to SSID.'

@@ -79,10 +79,10 @@ options:
                         type: str
                         description: 'DHCP option type.'
                         choices:
-                            - hex
-                            - string
-                            - ip
-                            - fqdn
+                            - 'hex'
+                            - 'string'
+                            - 'ip'
+                            - 'fqdn'
                     value:
                         type: str
                         description: 'DHCP option value.'
@@ -99,11 +99,11 @@ options:
                     -
                         type: str
                         choices:
-                            - code
-                            - id
-                            - ip
-                            - type
-                            - value
+                            - 'code'
+                            - 'id'
+                            - 'ip'
+                            - 'type'
+                            - 'value'
             filter:
                 -
                     type: str
@@ -122,11 +122,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

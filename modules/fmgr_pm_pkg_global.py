@@ -61,33 +61,33 @@ options:
                         central-nat:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         consolidated-firewall-mode:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         fwpolicy-implicit-log:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         fwpolicy6-implicit-log:
                             type: str
                             choices:
-                                - disable
-                                - enable
+                                - 'disable'
+                                - 'enable'
                         inspection-mode:
                             type: str
                             choices:
-                                - proxy
-                                - flow
+                                - 'proxy'
+                                - 'flow'
                         ngfw-mode:
                             type: str
                             choices:
-                                - profile-based
-                                - policy-based
+                                - 'profile-based'
+                                - 'policy-based'
                         ssl-ssh-profile:
                             type: str
                     scope member:
@@ -99,8 +99,8 @@ options:
                     type:
                         type: str
                         choices:
-                            - pkg
-                            - folder
+                            - 'pkg'
+                            - 'folder'
     schema_object1:
         methods: [get]
         description: ''
@@ -111,11 +111,11 @@ options:
                     -
                         type: str
                         choices:
-                            - name
-                            - obj ver
-                            - oid
-                            - scope member
-                            - type
+                            - 'name'
+                            - 'obj ver'
+                            - 'oid'
+                            - 'scope member'
+                            - 'type'
 
 '''
 

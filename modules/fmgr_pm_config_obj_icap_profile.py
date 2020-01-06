@@ -68,14 +68,14 @@ options:
                         -
                             type: str
                             choices:
-                                - delete
-                                - get
-                                - head
-                                - options
-                                - post
-                                - put
-                                - trace
-                                - other
+                                - 'delete'
+                                - 'get'
+                                - 'head'
+                                - 'options'
+                                - 'post'
+                                - 'put'
+                                - 'trace'
+                                - 'other'
                     name:
                         type: str
                         description: 'ICAP profile name.'
@@ -86,14 +86,14 @@ options:
                         type: str
                         description: 'Enable/disable whether an HTTP request is passed to an ICAP server.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     request-failure:
                         type: str
                         description: 'Action to take if the ICAP server cannot be contacted when processing an HTTP request.'
                         choices:
-                            - error
-                            - bypass
+                            - 'error'
+                            - 'bypass'
                     request-path:
                         type: str
                         description: 'Path component of the ICAP URI that identifies the HTTP request processing service.'
@@ -104,14 +104,14 @@ options:
                         type: str
                         description: 'Enable/disable whether an HTTP response is passed to an ICAP server.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     response-failure:
                         type: str
                         description: 'Action to take if the ICAP server cannot be contacted when processing an HTTP response.'
                         choices:
-                            - error
-                            - bypass
+                            - 'error'
+                            - 'bypass'
                     response-path:
                         type: str
                         description: 'Path component of the ICAP URI that identifies the HTTP response processing service.'
@@ -122,8 +122,8 @@ options:
                         type: str
                         description: 'Enable/disable bypassing of ICAP server for streaming content.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure ICAP profiles.'
@@ -137,18 +137,18 @@ options:
                     -
                         type: str
                         choices:
-                            - methods
-                            - name
-                            - replacemsg-group
-                            - request
-                            - request-failure
-                            - request-path
-                            - request-server
-                            - response
-                            - response-failure
-                            - response-path
-                            - response-server
-                            - streaming-content-bypass
+                            - 'methods'
+                            - 'name'
+                            - 'replacemsg-group'
+                            - 'request'
+                            - 'request-failure'
+                            - 'request-path'
+                            - 'request-server'
+                            - 'response'
+                            - 'response-failure'
+                            - 'response-path'
+                            - 'response-server'
+                            - 'streaming-content-bypass'
             filter:
                 -
                     type: str
@@ -167,11 +167,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

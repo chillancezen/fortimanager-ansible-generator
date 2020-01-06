@@ -69,14 +69,14 @@ options:
                         type: str
                         description: 'Accept or deny traffic matching the policy.'
                         choices:
-                            - deny
-                            - accept
+                            - 'deny'
+                            - 'accept'
                     auto-asic-offload:
                         type: str
                         description: 'Enable/disable offloading policy traffic for hardware acceleration.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     dstaddr:
                         type: str
                         description: 'IPv6 destination address name.'
@@ -93,8 +93,8 @@ options:
                         type: str
                         description: 'Enable/disable logging traffic accepted by this policy.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
                     protocol:
                         type: int
                         description: 'Integer value for the protocol type as defined by IANA (0 - 255, default = 0).'
@@ -111,8 +111,8 @@ options:
                         type: str
                         description: 'Enable/disable this policy.'
                         choices:
-                            - disable
-                            - enable
+                            - 'disable'
+                            - 'enable'
     schema_object1:
         methods: [get]
         description: 'Configure IPv6 multicast NAT policies.'
@@ -126,18 +126,18 @@ options:
                     -
                         type: str
                         choices:
-                            - action
-                            - auto-asic-offload
-                            - dstaddr
-                            - dstintf
-                            - end-port
-                            - id
-                            - logtraffic
-                            - protocol
-                            - srcaddr
-                            - srcintf
-                            - start-port
-                            - status
+                            - 'action'
+                            - 'auto-asic-offload'
+                            - 'dstaddr'
+                            - 'dstintf'
+                            - 'end-port'
+                            - 'id'
+                            - 'logtraffic'
+                            - 'protocol'
+                            - 'srcaddr'
+                            - 'srcintf'
+                            - 'start-port'
+                            - 'status'
             filter:
                 -
                     type: str
@@ -156,11 +156,11 @@ options:
                  - 'get reserved - Also return reserved objects in the result.'
                  - 'syntax - Return the attribute syntax of a table or an object, instead of the actual entry data. All filter parameters will be ignored.'
                 choices:
-                    - count
-                    - object member
-                    - datasrc
-                    - get reserved
-                    - syntax
+                    - 'count'
+                    - 'object member'
+                    - 'datasrc'
+                    - 'get reserved'
+                    - 'syntax'
             range:
                 -
                     type: int

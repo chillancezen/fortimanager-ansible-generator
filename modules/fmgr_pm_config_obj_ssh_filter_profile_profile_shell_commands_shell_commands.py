@@ -71,14 +71,14 @@ options:
                     type: str
                     description: 'Action to take for URL filter matches.'
                     choices:
-                        - block
-                        - allow
+                        - 'block'
+                        - 'allow'
                 alert:
                     type: str
                     description: 'Enable/disable alert.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 id:
                     type: int
                     description: 'Id.'
@@ -86,8 +86,8 @@ options:
                     type: str
                     description: 'Enable/disable logging.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 pattern:
                     type: str
                     description: 'SSH shell command pattern.'
@@ -95,16 +95,16 @@ options:
                     type: str
                     description: 'Log severity.'
                     choices:
-                        - low
-                        - medium
-                        - high
-                        - critical
+                        - 'low'
+                        - 'medium'
+                        - 'high'
+                        - 'critical'
                 type:
                     type: str
                     description: 'Matching type.'
                     choices:
-                        - regex
-                        - simple
+                        - 'regex'
+                        - 'simple'
     schema_object1:
         methods: [delete]
         description: 'SSH command filter.'
@@ -122,9 +122,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
     schema_object3:
         methods: [move]
         description: 'SSH command filter.'
@@ -133,8 +133,8 @@ options:
             option:
                 type: str
                 choices:
-                    - before
-                    - after
+                    - 'before'
+                    - 'after'
             target:
                 type: str
                 description: 'Key to the target entry.'

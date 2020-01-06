@@ -74,8 +74,8 @@ options:
                             type: str
                             description: 'Action.'
                             choices:
-                                - allow
-                                - deny
+                                - 'allow'
+                                - 'deny'
                         apnmember:
                             type: str
                             description: 'APN member.'
@@ -86,15 +86,15 @@ options:
                             -
                                 type: str
                                 choices:
-                                    - ms
-                                    - net
-                                    - vrf
+                                    - 'ms'
+                                    - 'net'
+                                    - 'vrf'
                 apn-filter:
                     type: str
                     description: 'apn filter'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 authorized-ggsns:
                     type: str
                     description: 'Authorized GGSN group'
@@ -114,38 +114,38 @@ options:
                     type: str
                     description: 'default apn action'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 default-imsi-action:
                     type: str
                     description: 'default imsi action'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 default-ip-action:
                     type: str
                     description: 'default action for encapsulated IP traffic'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 default-noip-action:
                     type: str
                     description: 'default action for encapsulated non-IP traffic'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 default-policy-action:
                     type: str
                     description: 'default advanced policy action'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 denied-log:
                     type: str
                     description: 'log denied'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 echo-request-interval:
                     type: int
                     description: 'echo request interval (in seconds)'
@@ -153,14 +153,14 @@ options:
                     type: str
                     description: 'log in extension format'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 forwarded-log:
                     type: str
                     description: 'log forwarded'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 global-tunnel-limit:
                     type: str
                     description: 'Global tunnel limit.'
@@ -168,20 +168,20 @@ options:
                     type: str
                     description: 'gtp in gtp'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 gtpu-denied-log:
                     type: str
                     description: 'Enable/disable logging of denied GTP-U packets.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 gtpu-forwarded-log:
                     type: str
                     description: 'Enable/disable logging of forwarded GTP-U packets.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 gtpu-log-freq:
                     type: int
                     description: 'Logging of frequency of GTP-U packets.'
@@ -203,11 +203,11 @@ options:
                             -
                                 type: str
                                 choices:
-                                    - apn-restriction
-                                    - rat-type
-                                    - rai
-                                    - uli
-                                    - imei
+                                    - 'apn-restriction'
+                                    - 'rat-type'
+                                    - 'rai'
+                                    - 'uli'
+                                    - 'imei'
                         sgsn-addr:
                             type: str
                             description: 'SGSN address name.'
@@ -215,8 +215,8 @@ options:
                     type: str
                     description: 'IE removal policy.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ie-white-list-v0v1:
                     type: str
                     description: 'IE white list.'
@@ -229,8 +229,8 @@ options:
                             type: str
                             description: 'Action.'
                             choices:
-                                - allow
-                                - deny
+                                - 'allow'
+                                - 'deny'
                         apnmember:
                             type: str
                             description: 'APN member.'
@@ -247,15 +247,15 @@ options:
                             -
                                 type: str
                                 choices:
-                                    - ms
-                                    - net
-                                    - vrf
+                                    - 'ms'
+                                    - 'net'
+                                    - 'vrf'
                 imsi-filter:
                     type: str
                     description: 'imsi filter'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 interface-notify:
                     type: str
                     description: 'overbilling interface'
@@ -263,8 +263,8 @@ options:
                     type: str
                     description: 'Invalid reserved field in GTP header'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 invalid-sgsns-to-log:
                     type: str
                     description: 'Invalid SGSN group to be logged'
@@ -272,16 +272,16 @@ options:
                     type: str
                     description: 'IP filter for encapsulted traffic'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 ip-policy:
                     -
                         action:
                             type: str
                             description: 'Action.'
                             choices:
-                                - allow
-                                - deny
+                                - 'allow'
+                                - 'deny'
                         dstaddr:
                             type: str
                             description: 'Destination address name.'
@@ -319,15 +319,15 @@ options:
                     type: str
                     description: 'Missing mandatory information element'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 monitor-mode:
                     type: str
                     description: 'GTP monitor mode'
                     choices:
-                        - disable
-                        - enable
-                        - vdom
+                        - 'disable'
+                        - 'enable'
+                        - 'vdom'
                 name:
                     type: str
                     description: 'Profile name.'
@@ -335,16 +335,16 @@ options:
                     type: str
                     description: 'non-IP filter for encapsulted traffic'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 noip-policy:
                     -
                         action:
                             type: str
                             description: 'Action.'
                             choices:
-                                - allow
-                                - deny
+                                - 'allow'
+                                - 'deny'
                         end:
                             type: int
                             description: 'End of protocol range (0 - 255).'
@@ -358,20 +358,20 @@ options:
                             type: str
                             description: 'Protocol field type.'
                             choices:
-                                - etsi
-                                - ietf
+                                - 'etsi'
+                                - 'ietf'
                 out-of-state-ie:
                     type: str
                     description: 'Out of state information element.'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 out-of-state-message:
                     type: str
                     description: 'Out of state GTP message'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 per-apn-shaper:
                     -
                         apn:
@@ -392,15 +392,15 @@ options:
                             type: str
                             description: 'Action.'
                             choices:
-                                - allow
-                                - deny
+                                - 'allow'
+                                - 'deny'
                         apn-sel-mode:
                             -
                                 type: str
                                 choices:
-                                    - ms
-                                    - net
-                                    - vrf
+                                    - 'ms'
+                                    - 'net'
+                                    - 'vrf'
                         apnmember:
                             type: str
                             description: 'APN member.'
@@ -417,19 +417,19 @@ options:
                             type: str
                             description: 'Maximum APN restriction value.'
                             choices:
-                                - all
-                                - public-1
-                                - public-2
-                                - private-1
-                                - private-2
+                                - 'all'
+                                - 'public-1'
+                                - 'public-2'
+                                - 'private-1'
+                                - 'private-2'
                         messages:
                             -
                                 type: str
                                 choices:
-                                    - create-req
-                                    - create-res
-                                    - update-req
-                                    - update-res
+                                    - 'create-req'
+                                    - 'create-res'
+                                    - 'update-req'
+                                    - 'update-res'
                         msisdn:
                             type: str
                             description: 'MSISDN prefix.'
@@ -440,15 +440,15 @@ options:
                             -
                                 type: str
                                 choices:
-                                    - any
-                                    - utran
-                                    - geran
-                                    - wlan
-                                    - gan
-                                    - hspa
-                                    - eutran
-                                    - virtual
-                                    - nbiot
+                                    - 'any'
+                                    - 'utran'
+                                    - 'geran'
+                                    - 'wlan'
+                                    - 'gan'
+                                    - 'hspa'
+                                    - 'eutran'
+                                    - 'virtual'
+                                    - 'nbiot'
                         uli:
                             type: str
                             description: 'ULI pattern.'
@@ -456,8 +456,8 @@ options:
                     type: str
                     description: 'Advanced policy filter'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 port-notify:
                     type: int
                     description: 'overbilling notify port'
@@ -465,15 +465,15 @@ options:
                     type: str
                     description: 'GTP rate limit mode.'
                     choices:
-                        - per-profile
-                        - per-stream
-                        - per-apn
+                        - 'per-profile'
+                        - 'per-stream'
+                        - 'per-apn'
                 rate-limited-log:
                     type: str
                     description: 'log rate limited'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 rate-sampling-interval:
                     type: int
                     description: 'rate sampling interval (1-3600 seconds)'
@@ -481,50 +481,50 @@ options:
                     type: str
                     description: 'remove if echo response expires'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 remove-if-recovery-differ:
                     type: str
                     description: 'remove upon different Recovery IE'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 reserved-ie:
                     type: str
                     description: 'reserved information element'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 send-delete-when-timeout:
                     type: str
                     description: 'send DELETE request to path endpoints when GTPv0/v1 tunnel timeout.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 send-delete-when-timeout-v2:
                     type: str
                     description: 'send DELETE request to path endpoints when GTPv2 tunnel timeout.'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 spoof-src-addr:
                     type: str
                     description: 'Spoofed source address for Mobile Station.'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 state-invalid-log:
                     type: str
                     description: 'log state invalid'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 traffic-count-log:
                     type: str
                     description: 'log tunnel traffic counter'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 tunnel-limit:
                     type: int
                     description: 'tunnel limit'
@@ -532,8 +532,8 @@ options:
                     type: str
                     description: 'tunnel limit'
                     choices:
-                        - disable
-                        - enable
+                        - 'disable'
+                        - 'enable'
                 tunnel-timeout:
                     type: int
                     description: 'Established tunnel timeout (in seconds).'
@@ -541,8 +541,8 @@ options:
                     type: str
                     description: 'action for unknown gtp version'
                     choices:
-                        - allow
-                        - deny
+                        - 'allow'
+                        - 'deny'
                 user-plane-message-rate-limit:
                     type: int
                     description: 'user plane message rate limit'
@@ -566,9 +566,9 @@ options:
                  - 'object member - Return a list of object members along with other attributes.'
                  - 'chksum - Return the check-sum value instead of attributes.'
                 choices:
-                    - object member
-                    - chksum
-                    - datasrc
+                    - 'object member'
+                    - 'chksum'
+                    - 'datasrc'
 
 '''
 
