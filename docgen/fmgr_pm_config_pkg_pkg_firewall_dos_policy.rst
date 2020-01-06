@@ -1,11 +1,11 @@
-:source: fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy.py
+:source: fmgr_pm_config_pkg_pkg_firewall_dos_policy.py
 
 :orphan:
 
-.. _fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy:
+.. _fmgr_pm_config_pkg_pkg_firewall_dos_policy:
 
-fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy -- Configure IPv4 DoS policies.
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+fmgr_pm_config_pkg_pkg_firewall_dos_policy -- Configure IPv4 DoS policies.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 2.10
 
@@ -17,8 +17,8 @@ fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy -- Configure IPv4 DoS poli
 Synopsis
 --------
 
-- This module is able to configure a FortiManager device by allowing the user to **[clone, delete, get, move, set, update]** the following FortiManager json-rpc urls.
-- `/pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}`
+- This module is able to configure a FortiManager device by allowing the user to **[add, get, set, update]** the following FortiManager json-rpc urls.
+- `/pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy`
 - Examples include all parameters and values need to be adjusted to data sources before usage.
 - Tested with FortiManager v6.0.0
 
@@ -41,11 +41,10 @@ Parameters
  <ul class="ul-self">
  <li><span class="li-head">adom</span> - the domain prefix <span class="li-normal">type: str</span> <span class="li-normal"> choices: none, global, custom dom</span></li>
  <li><span class="li-head">pkg</span> - the object name <span class="li-normal">type: str</span> </li>
- <li><span class="li-head">DoS-policy</span> - the object name <span class="li-normal">type: str</span> </li>
  </ul>
- <li><span class="li-head">parameters for method: [clone, set, update]</span> - Configure IPv4 DoS policies.</li>
+ <li><span class="li-head">parameters for method: [add, set, update]</span> - Configure IPv4 DoS policies.</li>
  <ul class="ul-self">
- <li><span class="li-head">data</span> - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
+ <li><span class="li-head">data</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li><span class="li-head">anomaly</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li><span class="li-head">action</span> - Action taken when the threshold is reached. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [pass, block, proxy]</span> </li>
  <li><span class="li-head">log</span> - Enable/disable logging for this anomaly. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
@@ -66,17 +65,26 @@ Parameters
  <li><span class="li-head">status</span> - Enable/disable this policy. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
  </ul>
  </ul>
- <li><span class="li-head">parameters for method: [delete]</span> - Configure IPv4 DoS policies.</li>
- <ul class="ul-self">
- </ul>
  <li><span class="li-head">parameters for method: [get]</span> - Configure IPv4 DoS policies.</li>
  <ul class="ul-self">
- <li><span class="li-head">option</span> - Set fetch option for the request. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [object member, chksum, datasrc]</span> </li>
+ <li><span class="li-head">attr</span> - The name of the attribute to retrieve its datasource. <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">fields</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
+ <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
+ <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">choices: [comments, dstaddr, interface, policyid, service, srcaddr, status]</span> </li>
  </ul>
- <li><span class="li-head">parameters for method: [move]</span> - Configure IPv4 DoS policies.</li>
- <ul class="ul-self">
- <li><span class="li-head">option</span> - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">choices: [before, after]</span> </li>
- <li><span class="li-head">target</span> - Key to the target entry. <span class="li-normal">type: str</span> </li>
+ </ul>
+ <li><span class="li-head">filter</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
+ <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span> </li>
+ </ul>
+ <li><span class="li-head">get used</span> - No description for the parameter <span class="li-normal">type: int</span> </li>
+ <li><span class="li-head">loadsub</span> - Enable or disable the return of any sub-objects. <span class="li-normal">type: int</span> </li>
+ <li><span class="li-head">option</span> - Set fetch option for the request. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [count, object member, datasrc, get reserved, syntax]</span> </li>
+ <li><span class="li-head">range</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
+ <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: int</span> </li>
+ </ul>
+ <li><span class="li-head">sortings</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
+ <li><span class="li-head">{attr_name}</span> - No description for the parameter <span class="li-normal">type: int</span>  <span class="li-normal">choices: [1, -1]</span> </li>
+ </ul>
  </ul>
  </ul>
 
@@ -107,55 +115,56 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}
-      fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy:
-         method: <value in [clone, set, update]>
+    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy
+      fmgr_pm_config_pkg_pkg_firewall_dos_policy:
+         method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
             pkg: <value of string>
-            DoS-policy: <value of string>
          params:
             - 
                data: 
-                  anomaly: 
-                   - 
-                        action: <value in [pass, block, proxy]>
-                        log: <value in [disable, enable]>
-                        name: <value of string>
-                        quarantine: <value in [none, attacker, both, ...]>
-                        quarantine-expiry: <value of string>
-                        quarantine-log: <value in [disable, enable]>
-                        status: <value in [disable, enable]>
-                        threshold: <value of integer>
-                        threshold(default): <value of integer>
-                  comments: <value of string>
-                  dstaddr: <value of string>
-                  interface: <value of string>
-                  policyid: <value of integer>
-                  service: <value of string>
-                  srcaddr: <value of string>
-                  status: <value in [disable, enable]>
-    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}
-      fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy:
+                - 
+                     anomaly: 
+                      - 
+                           action: <value in [pass, block, proxy]>
+                           log: <value in [disable, enable]>
+                           name: <value of string>
+                           quarantine: <value in [none, attacker, both, ...]>
+                           quarantine-expiry: <value of string>
+                           quarantine-log: <value in [disable, enable]>
+                           status: <value in [disable, enable]>
+                           threshold: <value of integer>
+                           threshold(default): <value of integer>
+                     comments: <value of string>
+                     dstaddr: <value of string>
+                     interface: <value of string>
+                     policyid: <value of integer>
+                     service: <value of string>
+                     srcaddr: <value of string>
+                     status: <value in [disable, enable]>
+    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy
+      fmgr_pm_config_pkg_pkg_firewall_dos_policy:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
             pkg: <value of string>
-            DoS-policy: <value of string>
          params:
             - 
-               option: <value in [object member, chksum, datasrc]>
-    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}
-      fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy:
-         method: <value in [move]>
-         url_params:
-            adom: <value in [none, global, custom dom]>
-            pkg: <value of string>
-            DoS-policy: <value of string>
-         params:
-            - 
-               option: <value in [before, after]>
-               target: <value of string>
+               attr: <value of string>
+               fields: 
+                - 
+                   - <value in [comments, dstaddr, interface, ...]>
+               filter: 
+                - <value of string>
+               get used: <value of integer>
+               loadsub: <value of integer>
+               option: <value in [count, object member, datasrc, ...]>
+               range: 
+                - <value of integer>
+               sortings: 
+                - 
+                     \{attr_name\}: <value in [1, -1]>
 
 
 
@@ -169,10 +178,10 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
 .. raw:: html
 
  <ul>
- <li><span class="li-return"> return values for method: [clone, move, set, update]</span> </li>
+ <li><span class="li-return"> return values for method: [add, set, update]</span> </li>
  <ul class="ul-self">
  <li><span class="li-return">data</span>
- - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
+ - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li> <span class="li-return"> policyid </span> - Policy ID. <span class="li-normal">type: int</span>  </li>
  </ul>
  <li><span class="li-return">status</span>
@@ -181,22 +190,12 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> message </span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
  </ul>
  <li><span class="li-return">url</span>
- - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}</span>  </li>
- </ul>
- <li><span class="li-return"> return values for method: [delete]</span> </li>
- <ul class="ul-self">
- <li><span class="li-return">status</span>
- - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
- <li> <span class="li-return"> code </span> - No description for the parameter <span class="li-normal">type: int</span>  </li>
- <li> <span class="li-return"> message </span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
- </ul>
- <li><span class="li-return">url</span>
- - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}</span>  </li>
+ - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy</span>  </li>
  </ul>
  <li><span class="li-return"> return values for method: [get]</span> </li>
  <ul class="ul-self">
  <li><span class="li-return">data</span>
- - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
+ - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li> <span class="li-return"> anomaly </span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li> <span class="li-return"> action </span> - Action taken when the threshold is reached. <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> log </span> - Enable/disable logging for this anomaly. <span class="li-normal">type: str</span>  </li>
@@ -222,7 +221,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> message </span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
  </ul>
  <li><span class="li-return">url</span>
- - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}</span>  </li>
+ - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy</span>  </li>
  </ul>
  </ul>
 

@@ -23,13 +23,13 @@ ANSIBLE_METADATA = {'status': ['preview'],
 
 DOCUMENTATION = '''
 ---
-module: fmgr_pm_config_pkg_pkg_firewall_DoS_policy
+module: fmgr_pm_config_obj_user_tacacs
 description:
     - This module is able to configure a FortiManager device by allowing the
-      user to [ add get set update ] the following apis:
-    - /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy
-    - Examples include all parameters and values need to be adjusted to data 
-      sources before usage.
+      user to [ add get set update ] the following apis.
+    - /pm/config/adom/{adom}/obj/user/tacacs+
+    - /pm/config/global/obj/user/tacacs+
+    - Examples include all parameters and values need to be adjusted to data sources before usage.
      
 
 version_added: "2.10"
@@ -41,7 +41,7 @@ notes:
       while other two 'params' and 'url_params' can be optional
     - Due to the complexity of fortimanager api schema, the validation is done
       out of Ansible native parameter validation procedure.
-    - The syntax of OPTIONS doen not comply with the standard Ansible argument 
+    - The syntax of OPTIONS doen not comply with the standard Ansible argument
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
@@ -57,88 +57,98 @@ options:
                   - none
                   - global
                   - custom dom
-            pkg:
-                type: str
     schema_object0:
         methods: [add, set, update]
-        description: 'Configure IPv4 DoS policies.'
+        description: 'Configure TACACS+ server entries.'
         api_categories: [api_tag0]
         api_tag0:
             data:
                 -
-                    anomaly:
-                        -
-                            action:
-                                type: str
-                                description: 'Action taken when the threshold is reached.'
-                                choices:
-                                    - pass
-                                    - block
-                                    - proxy
-                            log:
-                                type: str
-                                description: 'Enable/disable logging for this anomaly.'
-                                choices:
-                                    - disable
-                                    - enable
-                            name:
-                                type: str
-                                description: 'Anomaly name.'
-                            quarantine:
-                                type: str
-                                description: 'Quarantine method.'
-                                choices:
-                                    - none
-                                    - attacker
-                                    - both
-                                    - interface
-                            quarantine-expiry:
-                                type: str
-                                description: 'Duration of quarantine, from 1 minute to 364 days, 23 hours, and 59 minutes from now. (format: ###d##h##m, default = 5m). Requires quarantine set to attacker.'
-                            quarantine-log:
-                                type: str
-                                description: 'Enable/disable quarantine logging.'
-                                choices:
-                                    - disable
-                                    - enable
-                            status:
-                                type: str
-                                description: 'Enable/disable the active status of this anomaly sensor.'
-                                choices:
-                                    - disable
-                                    - enable
-                            threshold:
-                                type: int
-                                description: 'Number of detected instances per minute which triggers action (1 - 2147483647, default = 1000). Note that each anomaly has a different threshold value assigned to it.'
-                            threshold(default):
-                                type: int
-                    comments:
+                    authen-type:
                         type: str
-                        description: 'Comment.'
-                    dstaddr:
+                        description: 'Allowed authentication protocols/methods.'
+                        choices:
+                            - auto
+                            - ascii
+                            - pap
+                            - chap
+                            - mschap
+                    authorization:
                         type: str
-                        description: 'Destination address name from available addresses.'
-                    interface:
-                        type: str
-                        description: 'Incoming interface name from available interfaces.'
-                    policyid:
-                        type: int
-                        description: 'Policy ID.'
-                    service:
-                        type: str
-                        description: 'Service object from available options.'
-                    srcaddr:
-                        type: str
-                        description: 'Source address name from available addresses.'
-                    status:
-                        type: str
-                        description: 'Enable/disable this policy.'
+                        description: 'Enable/disable TACACS+ authorization.'
                         choices:
                             - disable
                             - enable
+                    dynamic_mapping:
+                        -
+                            _scope:
+                                -
+                                    name:
+                                        type: str
+                                    vdom:
+                                        type: str
+                            authen-type:
+                                type: str
+                                choices:
+                                    - auto
+                                    - ascii
+                                    - pap
+                                    - chap
+                                    - mschap
+                            authorization:
+                                type: str
+                                choices:
+                                    - disable
+                                    - enable
+                            key:
+                                -
+                                    type: str
+                            port:
+                                type: int
+                            secondary-key:
+                                -
+                                    type: str
+                            secondary-server:
+                                type: str
+                            server:
+                                type: str
+                            source-ip:
+                                type: str
+                            tertiary-key:
+                                -
+                                    type: str
+                            tertiary-server:
+                                type: str
+                    key:
+                        -
+                            type: str
+                    name:
+                        type: str
+                        description: 'TACACS+ server entry name.'
+                    port:
+                        type: int
+                        description: 'Port number of the TACACS+ server.'
+                    secondary-key:
+                        -
+                            type: str
+                    secondary-server:
+                        type: str
+                        description: 'Secondary TACACS+ server CN domain name or IP address.'
+                    server:
+                        type: str
+                        description: 'Primary TACACS+ server CN domain name or IP address.'
+                    source-ip:
+                        type: str
+                        description: 'source IP for communications to TACACS+ server.'
+                    tertiary-key:
+                        -
+                            type: str
+                    tertiary-server:
+                        type: str
+                        description: 'Tertiary TACACS+ server CN domain name or IP address.'
     schema_object1:
         methods: [get]
-        description: 'Configure IPv4 DoS policies.'
+        description: 'Configure TACACS+ server entries.'
         api_categories: [api_tag0]
         api_tag0:
             attr:
@@ -149,13 +159,17 @@ options:
                     -
                         type: str
                         choices:
-                            - comments
-                            - dstaddr
-                            - interface
-                            - policyid
-                            - service
-                            - srcaddr
-                            - status
+                            - authen-type
+                            - authorization
+                            - key
+                            - name
+                            - port
+                            - secondary-key
+                            - secondary-server
+                            - server
+                            - source-ip
+                            - tertiary-key
+                            - tertiary-server
             filter:
                 -
                     type: str
@@ -200,46 +214,59 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy
-      fmgr_pm_config_pkg_pkg_firewall_DoS_policy:
+    - name: send request to /pm/config/obj/user/tacacs+
+      fmgr_pm_config_obj_user_tacacs:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
-            pkg: <value of string>
          params:
             - 
                data: 
                 - 
-                     anomaly: 
+                     authen-type: <value in [auto, ascii, pap, ...]>
+                     authorization: <value in [disable, enable]>
+                     dynamic_mapping: 
                       - 
-                           action: <value in [pass, block, proxy]>
-                           log: <value in [disable, enable]>
-                           name: <value of string>
-                           quarantine: <value in [none, attacker, both, ...]>
-                           quarantine-expiry: <value of string>
-                           quarantine-log: <value in [disable, enable]>
-                           status: <value in [disable, enable]>
-                           threshold: <value of integer>
-                           threshold(default): <value of integer>
-                     comments: <value of string>
-                     dstaddr: <value of string>
-                     interface: <value of string>
-                     policyid: <value of integer>
-                     service: <value of string>
-                     srcaddr: <value of string>
-                     status: <value in [disable, enable]>
-    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy
-      fmgr_pm_config_pkg_pkg_firewall_DoS_policy:
+                           _scope: 
+                            - 
+                                 name: <value of string>
+                                 vdom: <value of string>
+                           authen-type: <value in [auto, ascii, pap, ...]>
+                           authorization: <value in [disable, enable]>
+                           key: 
+                            - <value of string>
+                           port: <value of integer>
+                           secondary-key: 
+                            - <value of string>
+                           secondary-server: <value of string>
+                           server: <value of string>
+                           source-ip: <value of string>
+                           tertiary-key: 
+                            - <value of string>
+                           tertiary-server: <value of string>
+                     key: 
+                      - <value of string>
+                     name: <value of string>
+                     port: <value of integer>
+                     secondary-key: 
+                      - <value of string>
+                     secondary-server: <value of string>
+                     server: <value of string>
+                     source-ip: <value of string>
+                     tertiary-key: 
+                      - <value of string>
+                     tertiary-server: <value of string>
+    - name: send request to /pm/config/obj/user/tacacs+
+      fmgr_pm_config_obj_user_tacacs:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
-            pkg: <value of string>
          params:
             - 
                attr: <value of string>
                fields: 
                 - 
-                   - <value in [comments, dstaddr, interface, ...]>
+                   - <value in [authen-type, authorization, key, ...]>
                filter: 
                 - <value of string>
                get used: <value of integer>
@@ -261,12 +288,6 @@ return_of_api_category_0:
       id:
          type: int
       result:
-         data:
-            type: array
-            suboptions:
-               policyid:
-                  type: int
-                  description: 'Policy ID.'
          status:
             code:
                type: int
@@ -274,7 +295,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy
+            example: /pm/config/adom/{adom}/obj/user/tacacs+
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -285,56 +306,78 @@ return_of_api_category_0:
          data:
             type: array
             suboptions:
-               anomaly:
+               authen-type:
+                  type: str
+                  description: 'Allowed authentication protocols/methods.'
+               authorization:
+                  type: str
+                  description: 'Enable/disable TACACS+ authorization.'
+               dynamic_mapping:
                   type: array
                   suboptions:
-                     action:
+                     _scope:
+                        type: array
+                        suboptions:
+                           name:
+                              type: str
+                           vdom:
+                              type: str
+                     authen-type:
                         type: str
-                        description: 'Action taken when the threshold is reached.'
-                     log:
+                     authorization:
                         type: str
-                        description: 'Enable/disable logging for this anomaly.'
-                     name:
-                        type: str
-                        description: 'Anomaly name.'
-                     quarantine:
-                        type: str
-                        description: 'Quarantine method.'
-                     quarantine-expiry:
-                        type: str
-                        description: 'Duration of quarantine, from 1 minute to 364 days, 23 hours, and 59 minutes from now. (format: ###d##h##m, default = 5m). Requires quarantine set to attacker.'
-                     quarantine-log:
-                        type: str
-                        description: 'Enable/disable quarantine logging.'
-                     status:
-                        type: str
-                        description: 'Enable/disable the active status of this anomaly sensor.'
-                     threshold:
+                     key:
+                        type: array
+                        suboptions:
+                           type: str
+                     port:
                         type: int
-                        description: 'Number of detected instances per minute which triggers action (1 - 2147483647, default = 1000). Note that each anomaly has a different threshold value assigned to it.'
-                     threshold(default):
-                        type: int
-               comments:
+                     secondary-key:
+                        type: array
+                        suboptions:
+                           type: str
+                     secondary-server:
+                        type: str
+                     server:
+                        type: str
+                     source-ip:
+                        type: str
+                     tertiary-key:
+                        type: array
+                        suboptions:
+                           type: str
+                     tertiary-server:
+                        type: str
+               key:
+                  type: array
+                  suboptions:
+                     type: str
+               name:
                   type: str
-                  description: 'Comment.'
-               dstaddr:
-                  type: str
-                  description: 'Destination address name from available addresses.'
-               interface:
-                  type: str
-                  description: 'Incoming interface name from available interfaces.'
-               policyid:
+                  description: 'TACACS+ server entry name.'
+               port:
                   type: int
-                  description: 'Policy ID.'
-               service:
+                  description: 'Port number of the TACACS+ server.'
+               secondary-key:
+                  type: array
+                  suboptions:
+                     type: str
+               secondary-server:
                   type: str
-                  description: 'Service object from available options.'
-               srcaddr:
+                  description: 'Secondary TACACS+ server CN domain name or IP address.'
+               server:
                   type: str
-                  description: 'Source address name from available addresses.'
-               status:
+                  description: 'Primary TACACS+ server CN domain name or IP address.'
+               source-ip:
                   type: str
-                  description: 'Enable/disable this policy.'
+                  description: 'source IP for communications to TACACS+ server.'
+               tertiary-key:
+                  type: array
+                  suboptions:
+                     type: str
+               tertiary-server:
+                  type: str
+                  description: 'Tertiary TACACS+ server CN domain name or IP address.'
          status:
             code:
                type: int
@@ -342,7 +385,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy
+            example: /pm/config/adom/{adom}/obj/user/tacacs+
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -355,16 +398,13 @@ from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerH
 
 def main():
     jrpc_urls = [
-        '/pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy'
+        '/pm/config/adom/{adom}/obj/user/tacacs+',
+        '/pm/config/global/obj/user/tacacs+'
     ]
 
     url_schema = [
         {
             'name': 'adom',
-            'type': 'string'
-        },
-        {
-            'name': 'pkg',
             'type': 'string'
         }
     ]
@@ -377,85 +417,124 @@ def main():
                     'api_tag': 0,
                     'type': 'array',
                     'items': {
-                        'anomaly': {
-                            'type': 'array',
-                            'items': {
-                                'action': {
-                                    'type': 'string',
-                                    'enum': [
-                                        'pass',
-                                        'block',
-                                        'proxy'
-                                    ]
-                                },
-                                'log': {
-                                    'type': 'string',
-                                    'enum': [
-                                        'disable',
-                                        'enable'
-                                    ]
-                                },
-                                'name': {
-                                    'type': 'string'
-                                },
-                                'quarantine': {
-                                    'type': 'string',
-                                    'enum': [
-                                        'none',
-                                        'attacker',
-                                        'both',
-                                        'interface'
-                                    ]
-                                },
-                                'quarantine-expiry': {
-                                    'type': 'string'
-                                },
-                                'quarantine-log': {
-                                    'type': 'string',
-                                    'enum': [
-                                        'disable',
-                                        'enable'
-                                    ]
-                                },
-                                'status': {
-                                    'type': 'string',
-                                    'enum': [
-                                        'disable',
-                                        'enable'
-                                    ]
-                                },
-                                'threshold': {
-                                    'type': 'integer'
-                                },
-                                'threshold(default)': {
-                                    'type': 'integer'
-                                }
-                            }
+                        'authen-type': {
+                            'type': 'string',
+                            'enum': [
+                                'auto',
+                                'ascii',
+                                'pap',
+                                'chap',
+                                'mschap'
+                            ]
                         },
-                        'comments': {
-                            'type': 'string'
-                        },
-                        'dstaddr': {
-                            'type': 'string'
-                        },
-                        'interface': {
-                            'type': 'string'
-                        },
-                        'policyid': {
-                            'type': 'integer'
-                        },
-                        'service': {
-                            'type': 'string'
-                        },
-                        'srcaddr': {
-                            'type': 'string'
-                        },
-                        'status': {
+                        'authorization': {
                             'type': 'string',
                             'enum': [
                                 'disable',
                                 'enable'
                             ]
+                        },
+                        'dynamic_mapping': {
+                            'type': 'array',
+                            'items': {
+                                '_scope': {
+                                    'type': 'array',
+                                    'items': {
+                                        'name': {
+                                            'type': 'string'
+                                        },
+                                        'vdom': {
+                                            'type': 'string'
+                                        }
+                                    }
+                                },
+                                'authen-type': {
+                                    'type': 'string',
+                                    'enum': [
+                                        'auto',
+                                        'ascii',
+                                        'pap',
+                                        'chap',
+                                        'mschap'
+                                    ]
+                                },
+                                'authorization': {
+                                    'type': 'string',
+                                    'enum': [
+                                        'disable',
+                                        'enable'
+                                    ]
+                                },
+                                'key': {
+                                    'type': 'array',
+                                    'items': {
+                                        'type': 'string'
+                                    }
+                                },
+                                'port': {
+                                    'type': 'integer'
+                                },
+                                'secondary-key': {
+                                    'type': 'array',
+                                    'items': {
+                                        'type': 'string'
+                                    }
+                                },
+                                'secondary-server': {
+                                    'type': 'string'
+                                },
+                                'server': {
+                                    'type': 'string'
+                                },
+                                'source-ip': {
+                                    'type': 'string'
+                                },
+                                'tertiary-key': {
+                                    'type': 'array',
+                                    'items': {
+                                        'type': 'string'
+                                    }
+                                },
+                                'tertiary-server': {
+                                    'type': 'string'
+                                }
+                            }
+                        },
+                        'key': {
+                            'type': 'array',
+                            'items': {
+                                'type': 'string'
+                            }
+                        },
+                        'name': {
+                            'type': 'string'
+                        },
+                        'port': {
+                            'type': 'integer'
+                        },
+                        'secondary-key': {
+                            'type': 'array',
+                            'items': {
+                                'type': 'string'
+                            }
+                        },
+                        'secondary-server': {
+                            'type': 'string'
+                        },
+                        'server': {
+                            'type': 'string'
+                        },
+                        'source-ip': {
+                            'type': 'string'
+                        },
+                        'tertiary-key': {
+                            'type': 'array',
+                            'items': {
+                                'type': 'string'
+                            }
+                        },
+                        'tertiary-server': {
+                            'type': 'string'
                         }
                     }
                 },
@@ -480,13 +559,17 @@ def main():
                         'items': {
                             'type': 'string',
                             'enum': [
-                                'comments',
-                                'dstaddr',
-                                'interface',
-                                'policyid',
-                                'service',
-                                'srcaddr',
-                                'status'
+                                'authen-type',
+                                'authorization',
+                                'key',
+                                'name',
+                                'port',
+                                'secondary-key',
+                                'secondary-server',
+                                'server',
+                                'source-ip',
+                                'tertiary-key',
+                                'tertiary-server'
                             ]
                         }
                     }

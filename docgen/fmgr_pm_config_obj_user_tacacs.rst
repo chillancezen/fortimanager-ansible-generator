@@ -1,11 +1,11 @@
-:source: fmgr_pm_config_obj_user_tacacs+.py
+:source: fmgr_pm_config_obj_user_tacacs.py
 
 :orphan:
 
-.. _fmgr_pm_config_obj_user_tacacs+:
+.. _fmgr_pm_config_obj_user_tacacs:
 
-fmgr_pm_config_obj_user_tacacs+ -- Configure TACACS+ server entries.
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+fmgr_pm_config_obj_user_tacacs -- Configure TACACS+ server entries.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 2.10
 
@@ -137,7 +137,7 @@ Examples
       ansible_httpapi_port: 443
    tasks:
     - name: send request to /pm/config/obj/user/tacacs+
-      fmgr_pm_config_obj_user_tacacs+:
+      fmgr_pm_config_obj_user_tacacs:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
@@ -179,7 +179,7 @@ Examples
                       - <value of string>
                      tertiary-server: <value of string>
     - name: send request to /pm/config/obj/user/tacacs+
-      fmgr_pm_config_obj_user_tacacs+:
+      fmgr_pm_config_obj_user_tacacs:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>

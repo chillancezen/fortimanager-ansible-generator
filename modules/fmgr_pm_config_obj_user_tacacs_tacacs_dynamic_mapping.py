@@ -23,14 +23,13 @@ ANSIBLE_METADATA = {'status': ['preview'],
 
 DOCUMENTATION = '''
 ---
-module: fmgr_pm_config_obj_switch_controller_security_policy_802_1X
+module: fmgr_pm_config_obj_user_tacacs_tacacs_dynamic_mapping
 description:
     - This module is able to configure a FortiManager device by allowing the
-      user to [ add get set update ] the following apis:
-    - /pm/config/adom/{adom}/obj/switch-controller/security-policy/802-1X
-    - /pm/config/global/obj/switch-controller/security-policy/802-1X
-    - Examples include all parameters and values need to be adjusted to data 
-      sources before usage.
+      user to [ add get set update ] the following apis.
+    - /pm/config/adom/{adom}/obj/user/tacacs+/{tacacs+}/dynamic_mapping
+    - /pm/config/global/obj/user/tacacs+/{tacacs+}/dynamic_mapping
+    - Examples include all parameters and values need to be adjusted to data sources before usage.
      
 
 version_added: "2.10"
@@ -42,7 +41,7 @@ notes:
       while other two 'params' and 'url_params' can be optional
     - Due to the complexity of fortimanager api schema, the validation is done
       out of Ansible native parameter validation procedure.
-    - The syntax of OPTIONS doen not comply with the standard Ansible argument 
+    - The syntax of OPTIONS doen not comply with the standard Ansible argument
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
@@ -58,84 +57,56 @@ options:
                   - none
                   - global
                   - custom dom
+            tacacs+:
+                type: str
     schema_object0:
         methods: [add, set, update]
-        description: 'Configure 802.1x MAC Authentication Bypass (MAB) policies.'
+        description: ''
         api_categories: [api_tag0]
         api_tag0:
             data:
                 -
-                    auth-fail-vlan:
+                    _scope:
+                        -
+                            name:
+                                type: str
+                            vdom:
+                                type: str
+                    authen-type:
                         type: str
-                        description: 'Enable to allow limited access to clients that cannot authenticate.'
+                        choices:
+                            - auto
+                            - ascii
+                            - pap
+                            - chap
+                            - mschap
+                    authorization:
+                        type: str
                         choices:
                             - disable
                             - enable
-                    auth-fail-vlan-id:
-                        type: str
-                        description: 'VLAN ID on which authentication failed.'
-                    auth-fail-vlanid:
+                    key:
+                        -
+                            type: str
+                    port:
                         type: int
-                        description: 'VLAN ID on which authentication failed.'
-                    eap-passthru:
+                    secondary-key:
+                        -
+                            type: str
+                    secondary-server:
                         type: str
-                        description: 'Enable/disable EAP pass-through mode, allowing protocols (such as LLDP) to pass through ports for more flexible authentication.'
-                        choices:
-                            - disable
-                            - enable
-                    guest-auth-delay:
-                        type: int
-                        description: 'Guest authentication delay (1 - 900  sec, default = 30).'
-                    guest-vlan:
+                    server:
                         type: str
-                        description: 'Enable the guest VLAN feature to allow limited access to non-802.1X-compliant clients.'
-                        choices:
-                            - disable
-                            - enable
-                    guest-vlan-id:
+                    source-ip:
                         type: str
-                        description: 'Guest VLAN name.'
-                    guest-vlanid:
-                        type: int
-                        description: 'Guest VLAN ID.'
-                    mac-auth-bypass:
+                    tertiary-key:
+                        -
+                            type: str
+                    tertiary-server:
                         type: str
-                        description: 'Enable/disable MAB for this policy.'
-                        choices:
-                            - disable
-                            - enable
-                    name:
-                        type: str
-                        description: 'Policy name.'
-                    open-auth:
-                        type: str
-                        description: 'Enable/disable open authentication for this policy.'
-                        choices:
-                            - disable
-                            - enable
-                    policy-type:
-                        type: str
-                        description: 'Policy type.'
-                        choices:
-                            - 802.1X
-                    radius-timeout-overwrite:
-                        type: str
-                        description: 'Enable to override the global RADIUS session timeout.'
-                        choices:
-                            - disable
-                            - enable
-                    security-mode:
-                        type: str
-                        description: 'Port or MAC based 802.1X security mode.'
-                        choices:
-                            - 802.1X
-                            - 802.1X-mac-based
-                    user-group:
-                        type: str
-                        description: 'Name of user-group to assign to this MAC Authentication Bypass (MAB) policy.'
     schema_object1:
         methods: [get]
-        description: 'Configure 802.1x MAC Authentication Bypass (MAB) policies.'
+        description: ''
         api_categories: [api_tag0]
         api_tag0:
             attr:
@@ -146,21 +117,17 @@ options:
                     -
                         type: str
                         choices:
-                            - auth-fail-vlan
-                            - auth-fail-vlan-id
-                            - auth-fail-vlanid
-                            - eap-passthru
-                            - guest-auth-delay
-                            - guest-vlan
-                            - guest-vlan-id
-                            - guest-vlanid
-                            - mac-auth-bypass
-                            - name
-                            - open-auth
-                            - policy-type
-                            - radius-timeout-overwrite
-                            - security-mode
-                            - user-group
+                            - _scope
+                            - authen-type
+                            - authorization
+                            - key
+                            - port
+                            - secondary-key
+                            - secondary-server
+                            - server
+                            - source-ip
+                            - tertiary-key
+                            - tertiary-server
             filter:
                 -
                     type: str
@@ -205,41 +172,45 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/switch-controller/security-policy/802-1X
-      fmgr_pm_config_obj_switch_controller_security_policy_802_1X:
+    - name: send request to /pm/config/obj/user/tacacs+/{tacacs+}/dynamic_mapping
+      fmgr_pm_config_obj_user_tacacs_tacacs_dynamic_mapping:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
+            tacacs+: <value of string>
          params:
             - 
                data: 
                 - 
-                     auth-fail-vlan: <value in [disable, enable]>
-                     auth-fail-vlan-id: <value of string>
-                     auth-fail-vlanid: <value of integer>
-                     eap-passthru: <value in [disable, enable]>
-                     guest-auth-delay: <value of integer>
-                     guest-vlan: <value in [disable, enable]>
-                     guest-vlan-id: <value of string>
-                     guest-vlanid: <value of integer>
-                     mac-auth-bypass: <value in [disable, enable]>
-                     name: <value of string>
-                     open-auth: <value in [disable, enable]>
-                     policy-type: <value in [802.1X]>
-                     radius-timeout-overwrite: <value in [disable, enable]>
-                     security-mode: <value in [802.1X, 802.1X-mac-based]>
-                     user-group: <value of string>
-    - name: send request to /pm/config/obj/switch-controller/security-policy/802-1X
-      fmgr_pm_config_obj_switch_controller_security_policy_802_1X:
+                     _scope: 
+                      - 
+                           name: <value of string>
+                           vdom: <value of string>
+                     authen-type: <value in [auto, ascii, pap, ...]>
+                     authorization: <value in [disable, enable]>
+                     key: 
+                      - <value of string>
+                     port: <value of integer>
+                     secondary-key: 
+                      - <value of string>
+                     secondary-server: <value of string>
+                     server: <value of string>
+                     source-ip: <value of string>
+                     tertiary-key: 
+                      - <value of string>
+                     tertiary-server: <value of string>
+    - name: send request to /pm/config/obj/user/tacacs+/{tacacs+}/dynamic_mapping
+      fmgr_pm_config_obj_user_tacacs_tacacs_dynamic_mapping:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
+            tacacs+: <value of string>
          params:
             - 
                attr: <value of string>
                fields: 
                 - 
-                   - <value in [auth-fail-vlan, auth-fail-vlan-id, auth-fail-vlanid, ...]>
+                   - <value in [_scope, authen-type, authorization, ...]>
                filter: 
                 - <value of string>
                get used: <value of integer>
@@ -268,7 +239,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/switch-controller/security-policy/802-1X
+            example: /pm/config/adom/{adom}/obj/user/tacacs+/{tacacs+}/dynamic_mapping
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -279,51 +250,39 @@ return_of_api_category_0:
          data:
             type: array
             suboptions:
-               auth-fail-vlan:
+               _scope:
+                  type: array
+                  suboptions:
+                     name:
+                        type: str
+                     vdom:
+                        type: str
+               authen-type:
                   type: str
-                  description: 'Enable to allow limited access to clients that cannot authenticate.'
-               auth-fail-vlan-id:
+               authorization:
                   type: str
-                  description: 'VLAN ID on which authentication failed.'
-               auth-fail-vlanid:
+               key:
+                  type: array
+                  suboptions:
+                     type: str
+               port:
                   type: int
-                  description: 'VLAN ID on which authentication failed.'
-               eap-passthru:
+               secondary-key:
+                  type: array
+                  suboptions:
+                     type: str
+               secondary-server:
                   type: str
-                  description: 'Enable/disable EAP pass-through mode, allowing protocols (such as LLDP) to pass through ports for more flexible authentication.'
-               guest-auth-delay:
-                  type: int
-                  description: 'Guest authentication delay (1 - 900  sec, default = 30).'
-               guest-vlan:
+               server:
                   type: str
-                  description: 'Enable the guest VLAN feature to allow limited access to non-802.1X-compliant clients.'
-               guest-vlan-id:
+               source-ip:
                   type: str
-                  description: 'Guest VLAN name.'
-               guest-vlanid:
-                  type: int
-                  description: 'Guest VLAN ID.'
-               mac-auth-bypass:
+               tertiary-key:
+                  type: array
+                  suboptions:
+                     type: str
+               tertiary-server:
                   type: str
-                  description: 'Enable/disable MAB for this policy.'
-               name:
-                  type: str
-                  description: 'Policy name.'
-               open-auth:
-                  type: str
-                  description: 'Enable/disable open authentication for this policy.'
-               policy-type:
-                  type: str
-                  description: 'Policy type.'
-               radius-timeout-overwrite:
-                  type: str
-                  description: 'Enable to override the global RADIUS session timeout.'
-               security-mode:
-                  type: str
-                  description: 'Port or MAC based 802.1X security mode.'
-               user-group:
-                  type: str
-                  description: 'Name of user-group to assign to this MAC Authentication Bypass (MAB) policy.'
          status:
             code:
                type: int
@@ -331,7 +290,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/switch-controller/security-policy/802-1X
+            example: /pm/config/adom/{adom}/obj/user/tacacs+/{tacacs+}/dynamic_mapping
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -344,13 +303,17 @@ from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerH
 
 def main():
     jrpc_urls = [
-        '/pm/config/adom/{adom}/obj/switch-controller/security-policy/802-1X',
-        '/pm/config/global/obj/switch-controller/security-policy/802-1X'
+        '/pm/config/adom/{adom}/obj/user/tacacs+/{tacacs+}/dynamic_mapping',
+        '/pm/config/global/obj/user/tacacs+/{tacacs+}/dynamic_mapping'
     ]
 
     url_schema = [
         {
             'name': 'adom',
+            'type': 'string'
+        },
+        {
+            'name': 'tacacs+',
             'type': 'string'
         }
     ]
@@ -363,80 +326,65 @@ def main():
                     'api_tag': 0,
                     'type': 'array',
                     'items': {
-                        'auth-fail-vlan': {
+                        '_scope': {
+                            'type': 'array',
+                            'items': {
+                                'name': {
+                                    'type': 'string'
+                                },
+                                'vdom': {
+                                    'type': 'string'
+                                }
+                            }
+                        },
+                        'authen-type': {
+                            'type': 'string',
+                            'enum': [
+                                'auto',
+                                'ascii',
+                                'pap',
+                                'chap',
+                                'mschap'
+                            ]
+                        },
+                        'authorization': {
                             'type': 'string',
                             'enum': [
                                 'disable',
                                 'enable'
                             ]
                         },
-                        'auth-fail-vlan-id': {
-                            'type': 'string'
+                        'key': {
+                            'type': 'array',
+                            'items': {
+                                'type': 'string'
+                            }
                         },
-                        'auth-fail-vlanid': {
+                        'port': {
                             'type': 'integer'
                         },
-                        'eap-passthru': {
-                            'type': 'string',
-                            'enum': [
-                                'disable',
-                                'enable'
-                            ]
+                        'secondary-key': {
+                            'type': 'array',
+                            'items': {
+                                'type': 'string'
+                            }
                         },
-                        'guest-auth-delay': {
-                            'type': 'integer'
-                        },
-                        'guest-vlan': {
-                            'type': 'string',
-                            'enum': [
-                                'disable',
-                                'enable'
-                            ]
-                        },
-                        'guest-vlan-id': {
+                        'secondary-server': {
                             'type': 'string'
                         },
-                        'guest-vlanid': {
-                            'type': 'integer'
-                        },
-                        'mac-auth-bypass': {
-                            'type': 'string',
-                            'enum': [
-                                'disable',
-                                'enable'
-                            ]
-                        },
-                        'name': {
+                        'server': {
                             'type': 'string'
                         },
-                        'open-auth': {
-                            'type': 'string',
-                            'enum': [
-                                'disable',
-                                'enable'
-                            ]
+                        'source-ip': {
+                            'type': 'string'
                         },
-                        'policy-type': {
-                            'type': 'string',
-                            'enum': [
-                                '802.1X'
-                            ]
+                        'tertiary-key': {
+                            'type': 'array',
+                            'items': {
+                                'type': 'string'
+                            }
                         },
-                        'radius-timeout-overwrite': {
-                            'type': 'string',
-                            'enum': [
-                                'disable',
-                                'enable'
-                            ]
-                        },
-                        'security-mode': {
-                            'type': 'string',
-                            'enum': [
-                                '802.1X',
-                                '802.1X-mac-based'
-                            ]
-                        },
-                        'user-group': {
+                        'tertiary-server': {
                             'type': 'string'
                         }
                     }
@@ -462,21 +410,17 @@ def main():
                         'items': {
                             'type': 'string',
                             'enum': [
-                                'auth-fail-vlan',
-                                'auth-fail-vlan-id',
-                                'auth-fail-vlanid',
-                                'eap-passthru',
-                                'guest-auth-delay',
-                                'guest-vlan',
-                                'guest-vlan-id',
-                                'guest-vlanid',
-                                'mac-auth-bypass',
-                                'name',
-                                'open-auth',
-                                'policy-type',
-                                'radius-timeout-overwrite',
-                                'security-mode',
-                                'user-group'
+                                '_scope',
+                                'authen-type',
+                                'authorization',
+                                'key',
+                                'port',
+                                'secondary-key',
+                                'secondary-server',
+                                'server',
+                                'source-ip',
+                                'tertiary-key',
+                                'tertiary-server'
                             ]
                         }
                     }

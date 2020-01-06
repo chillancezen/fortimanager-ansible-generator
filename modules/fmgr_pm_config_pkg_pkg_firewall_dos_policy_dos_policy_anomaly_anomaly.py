@@ -23,13 +23,12 @@ ANSIBLE_METADATA = {'status': ['preview'],
 
 DOCUMENTATION = '''
 ---
-module: fmgr_pm_config_pkg_pkg_firewall_DoS_policy6_DoS_policy6_anomaly_anomaly
+module: fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy_anomaly_anomaly
 description:
     - This module is able to configure a FortiManager device by allowing the
-      user to [ clone delete get set update ] the following apis:
-    - /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy6/{DoS-policy6}/anomaly/{anomaly}
-    - Examples include all parameters and values need to be adjusted to data 
-      sources before usage.
+      user to [ clone delete get set update ] the following apis.
+    - /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly/{anomaly}
+    - Examples include all parameters and values need to be adjusted to data sources before usage.
      
 
 version_added: "2.10"
@@ -41,7 +40,7 @@ notes:
       while other two 'params' and 'url_params' can be optional
     - Due to the complexity of fortimanager api schema, the validation is done
       out of Ansible native parameter validation procedure.
-    - The syntax of OPTIONS doen not comply with the standard Ansible argument 
+    - The syntax of OPTIONS doen not comply with the standard Ansible argument
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
@@ -59,7 +58,7 @@ options:
                   - custom dom
             pkg:
                 type: str
-            DoS-policy6:
+            DoS-policy:
                 type: str
             anomaly:
                 type: str
@@ -144,13 +143,13 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy6/{DoS-policy6}/anomaly/{anomaly}
-      fmgr_pm_config_pkg_pkg_firewall_DoS_policy6_DoS_policy6_anomaly_anomaly:
+    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly/{anomaly}
+      fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy_anomaly_anomaly:
          method: <value in [clone, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
             pkg: <value of string>
-            DoS-policy6: <value of string>
+            DoS-policy: <value of string>
             anomaly: <value of string>
          params:
             - 
@@ -164,13 +163,13 @@ EXAMPLES = '''
                   status: <value in [disable, enable]>
                   threshold: <value of integer>
                   threshold(default): <value of integer>
-    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy6/{DoS-policy6}/anomaly/{anomaly}
-      fmgr_pm_config_pkg_pkg_firewall_DoS_policy6_DoS_policy6_anomaly_anomaly:
+    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly/{anomaly}
+      fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy_anomaly_anomaly:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
             pkg: <value of string>
-            DoS-policy6: <value of string>
+            DoS-policy: <value of string>
             anomaly: <value of string>
          params:
             - 
@@ -193,7 +192,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy6/{DoS-policy6}/anomaly/{anomaly}
+            example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly/{anomaly}
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -235,7 +234,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy6/{DoS-policy6}/anomaly/{anomaly}
+            example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly/{anomaly}
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -248,7 +247,7 @@ from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerH
 
 def main():
     jrpc_urls = [
-        '/pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy6/{DoS-policy6}/anomaly/{anomaly}'
+        '/pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly/{anomaly}'
     ]
 
     url_schema = [
@@ -261,7 +260,7 @@ def main():
             'type': 'string'
         },
         {
-            'name': 'DoS-policy6',
+            'name': 'DoS-policy',
             'type': 'string'
         },
         {

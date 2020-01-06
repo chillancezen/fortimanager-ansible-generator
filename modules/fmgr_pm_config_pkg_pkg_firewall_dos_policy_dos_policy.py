@@ -23,13 +23,12 @@ ANSIBLE_METADATA = {'status': ['preview'],
 
 DOCUMENTATION = '''
 ---
-module: fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy
+module: fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy
 description:
     - This module is able to configure a FortiManager device by allowing the
-      user to [ clone delete get move set update ] the following apis:
+      user to [ clone delete get move set update ] the following apis.
     - /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}
-    - Examples include all parameters and values need to be adjusted to data 
-      sources before usage.
+    - Examples include all parameters and values need to be adjusted to data sources before usage.
      
 
 version_added: "2.10"
@@ -41,7 +40,7 @@ notes:
       while other two 'params' and 'url_params' can be optional
     - Due to the complexity of fortimanager api schema, the validation is done
       out of Ansible native parameter validation procedure.
-    - The syntax of OPTIONS doen not comply with the standard Ansible argument 
+    - The syntax of OPTIONS doen not comply with the standard Ansible argument
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
@@ -182,7 +181,7 @@ EXAMPLES = '''
       ansible_httpapi_port: 443
    tasks:
     - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}
-      fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy:
+      fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy:
          method: <value in [clone, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
@@ -210,7 +209,7 @@ EXAMPLES = '''
                   srcaddr: <value of string>
                   status: <value in [disable, enable]>
     - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}
-      fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy:
+      fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
@@ -220,7 +219,7 @@ EXAMPLES = '''
             - 
                option: <value in [object member, chksum, datasrc]>
     - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}
-      fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy:
+      fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy:
          method: <value in [move]>
          url_params:
             adom: <value in [none, global, custom dom]>

@@ -26,10 +26,9 @@ DOCUMENTATION = '''
 module: fmgr_cli_system_locallog_memory_setting
 description:
     - This module is able to configure a FortiManager device by allowing the
-      user to [ get set update ] the following apis:
+      user to [ get set update ] the following apis.
     - /cli/global/system/locallog/memory/setting
-    - Examples include all parameters and values need to be adjusted to data 
-      sources before usage.
+    - Examples include all parameters and values need to be adjusted to data sources before usage.
      
 
 version_added: "2.10"
@@ -41,7 +40,7 @@ notes:
       while other two 'params' and 'url_params' can be optional
     - Due to the complexity of fortimanager api schema, the validation is done
       out of Ansible native parameter validation procedure.
-    - The syntax of OPTIONS doen not comply with the standard Ansible argument 
+    - The syntax of OPTIONS doen not comply with the standard Ansible argument
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:

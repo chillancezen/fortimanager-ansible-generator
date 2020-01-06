@@ -36,7 +36,7 @@ def canonicalize_url_as_path(url):
         field = field.strip('{')
         field = field.strip('}')
         canocial_url_path += '_' + field
-    return canocial_url_path
+    return canocial_url_path.lower().replace('+', '')
 
 
 def canonicalize_text(raw_text):

@@ -1,10 +1,10 @@
-:source: fmgr_pm_config_device_device_vdom_vdom_switch_controller_managed_switch_managed_switch_802_1X_settings.py
+:source: fmgr_pm_config_device_device_vdom_vdom_switch_controller_managed_switch_managed_switch_802_1x_settings.py
 
 :orphan:
 
-.. _fmgr_pm_config_device_device_vdom_vdom_switch_controller_managed_switch_managed_switch_802_1X_settings:
+.. _fmgr_pm_config_device_device_vdom_vdom_switch_controller_managed_switch_managed_switch_802_1x_settings:
 
-fmgr_pm_config_device_device_vdom_vdom_switch_controller_managed_switch_managed_switch_802_1X_settings -- Configuration method to edit FortiSwitch 802.
+fmgr_pm_config_device_device_vdom_vdom_switch_controller_managed_switch_managed_switch_802_1x_settings -- Configuration method to edit FortiSwitch 802.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 2.10
@@ -82,7 +82,7 @@ Examples
       ansible_httpapi_port: 443
    tasks:
     - name: send request to /pm/config/device/{device}/vdom/{vdom}/switch-controller/managed-switch/{managed-switch}/802-1X-settings
-      fmgr_pm_config_device_device_vdom_vdom_switch_controller_managed_switch_managed_switch_802_1X_settings:
+      fmgr_pm_config_device_device_vdom_vdom_switch_controller_managed_switch_managed_switch_802_1x_settings:
          method: <value in [get]>
          url_params:
             device: <value of string>
@@ -92,7 +92,7 @@ Examples
             - 
                option: <value in [object member, chksum, datasrc]>
     - name: send request to /pm/config/device/{device}/vdom/{vdom}/switch-controller/managed-switch/{managed-switch}/802-1X-settings
-      fmgr_pm_config_device_device_vdom_vdom_switch_controller_managed_switch_managed_switch_802_1X_settings:
+      fmgr_pm_config_device_device_vdom_vdom_switch_controller_managed_switch_managed_switch_802_1x_settings:
          method: <value in [set, update]>
          url_params:
             device: <value of string>

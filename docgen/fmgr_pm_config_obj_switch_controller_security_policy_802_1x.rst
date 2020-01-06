@@ -1,10 +1,10 @@
-:source: fmgr_pm_config_obj_switch_controller_security_policy_802_1X.py
+:source: fmgr_pm_config_obj_switch_controller_security_policy_802_1x.py
 
 :orphan:
 
-.. _fmgr_pm_config_obj_switch_controller_security_policy_802_1X:
+.. _fmgr_pm_config_obj_switch_controller_security_policy_802_1x:
 
-fmgr_pm_config_obj_switch_controller_security_policy_802_1X -- Configure 802.
+fmgr_pm_config_obj_switch_controller_security_policy_802_1x -- Configure 802.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 2.10
@@ -113,7 +113,7 @@ Examples
       ansible_httpapi_port: 443
    tasks:
     - name: send request to /pm/config/obj/switch-controller/security-policy/802-1X
-      fmgr_pm_config_obj_switch_controller_security_policy_802_1X:
+      fmgr_pm_config_obj_switch_controller_security_policy_802_1x:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
@@ -137,7 +137,7 @@ Examples
                      security-mode: <value in [802.1X, 802.1X-mac-based]>
                      user-group: <value of string>
     - name: send request to /pm/config/obj/switch-controller/security-policy/802-1X
-      fmgr_pm_config_obj_switch_controller_security_policy_802_1X:
+      fmgr_pm_config_obj_switch_controller_security_policy_802_1x:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>

@@ -26,11 +26,10 @@ DOCUMENTATION = '''
 module: fmgr_pm_config_obj_webfilter_profile_profile_youtube_channel_filter_youtube_channel_filter
 description:
     - This module is able to configure a FortiManager device by allowing the
-      user to [ clone delete get set update ] the following apis:
+      user to [ clone delete get set update ] the following apis.
     - /pm/config/adom/{adom}/obj/webfilter/profile/{profile}/youtube-channel-filter/{youtube-channel-filter}
     - /pm/config/global/obj/webfilter/profile/{profile}/youtube-channel-filter/{youtube-channel-filter}
-    - Examples include all parameters and values need to be adjusted to data 
-      sources before usage.
+    - Examples include all parameters and values need to be adjusted to data sources before usage.
      
 
 version_added: "2.10"
@@ -42,7 +41,7 @@ notes:
       while other two 'params' and 'url_params' can be optional
     - Due to the complexity of fortimanager api schema, the validation is done
       out of Ansible native parameter validation procedure.
-    - The syntax of OPTIONS doen not comply with the standard Ansible argument 
+    - The syntax of OPTIONS doen not comply with the standard Ansible argument
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:

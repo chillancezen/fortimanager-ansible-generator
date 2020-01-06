@@ -23,13 +23,13 @@ ANSIBLE_METADATA = {'status': ['preview'],
 
 DOCUMENTATION = '''
 ---
-module: fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy_anomaly_anomaly
+module: fmgr_pm_config_obj_user_tacacs_tacacs_dynamic_mapping_dynamic_mapping
 description:
     - This module is able to configure a FortiManager device by allowing the
-      user to [ clone delete get set update ] the following apis:
-    - /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly/{anomaly}
-    - Examples include all parameters and values need to be adjusted to data 
-      sources before usage.
+      user to [ clone delete get set update ] the following apis.
+    - /pm/config/adom/{adom}/obj/user/tacacs+/{tacacs+}/dynamic_mapping/{dynamic_mapping}
+    - /pm/config/global/obj/user/tacacs+/{tacacs+}/dynamic_mapping/{dynamic_mapping}
+    - Examples include all parameters and values need to be adjusted to data sources before usage.
      
 
 version_added: "2.10"
@@ -41,7 +41,7 @@ notes:
       while other two 'params' and 'url_params' can be optional
     - Due to the complexity of fortimanager api schema, the validation is done
       out of Ansible native parameter validation procedure.
-    - The syntax of OPTIONS doen not comply with the standard Ansible argument 
+    - The syntax of OPTIONS doen not comply with the standard Ansible argument
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
@@ -57,70 +57,62 @@ options:
                   - none
                   - global
                   - custom dom
-            pkg:
+            tacacs+:
                 type: str
-            DoS-policy:
-                type: str
-            anomaly:
+            dynamic_mapping:
                 type: str
     schema_object0:
         methods: [clone, set, update]
-        description: 'Anomaly name.'
+        description: ''
         api_categories: [api_tag0]
         api_tag0:
             data:
-                action:
+                _scope:
+                    -
+                        name:
+                            type: str
+                        vdom:
+                            type: str
+                authen-type:
                     type: str
-                    description: 'Action taken when the threshold is reached.'
                     choices:
-                        - pass
-                        - block
-                        - proxy
-                log:
+                        - auto
+                        - ascii
+                        - pap
+                        - chap
+                        - mschap
+                authorization:
                     type: str
-                    description: 'Enable/disable logging for this anomaly.'
-                    choices:
-                        - disable
-                        - enable
-                name:
-                    type: str
-                    description: 'Anomaly name.'
-                quarantine:
-                    type: str
-                    description: 'Quarantine method.'
-                    choices:
-                        - none
-                        - attacker
-                        - both
-                        - interface
-                quarantine-expiry:
-                    type: str
-                    description: 'Duration of quarantine, from 1 minute to 364 days, 23 hours, and 59 minutes from now. (format: ###d##h##m, default = 5m). Requires quarantine set to attacker.'
-                quarantine-log:
-                    type: str
-                    description: 'Enable/disable quarantine logging.'
                     choices:
                         - disable
                         - enable
-                status:
-                    type: str
-                    description: 'Enable/disable the active status of this anomaly sensor.'
-                    choices:
-                        - disable
-                        - enable
-                threshold:
+                key:
+                    -
+                        type: str
+                port:
                     type: int
-                    description: 'Number of detected instances per minute which triggers action (1 - 2147483647, default = 1000). Note that each anomaly has a different threshold value assigned to it.'
-                threshold(default):
-                    type: int
+                secondary-key:
+                    -
+                        type: str
+                secondary-server:
+                    type: str
+                server:
+                    type: str
+                source-ip:
+                    type: str
+                tertiary-key:
+                    -
+                        type: str
+                tertiary-server:
+                    type: str
     schema_object1:
         methods: [delete]
-        description: 'Anomaly name.'
+        description: ''
         api_categories: [api_tag0]
         api_tag0:
     schema_object2:
         methods: [get]
-        description: 'Anomaly name.'
+        description: ''
         api_categories: [api_tag0]
         api_tag0:
             option:
@@ -144,34 +136,40 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly/{anomaly}
-      fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy_anomaly_anomaly:
+    - name: send request to /pm/config/obj/user/tacacs+/{tacacs+}/dynamic_mapping/{dynamic_mapping}
+      fmgr_pm_config_obj_user_tacacs_tacacs_dynamic_mapping_dynamic_mapping:
          method: <value in [clone, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
-            pkg: <value of string>
-            DoS-policy: <value of string>
-            anomaly: <value of string>
+            tacacs+: <value of string>
+            dynamic_mapping: <value of string>
          params:
             - 
                data: 
-                  action: <value in [pass, block, proxy]>
-                  log: <value in [disable, enable]>
-                  name: <value of string>
-                  quarantine: <value in [none, attacker, both, ...]>
-                  quarantine-expiry: <value of string>
-                  quarantine-log: <value in [disable, enable]>
-                  status: <value in [disable, enable]>
-                  threshold: <value of integer>
-                  threshold(default): <value of integer>
-    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly/{anomaly}
-      fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy_anomaly_anomaly:
+                  _scope: 
+                   - 
+                        name: <value of string>
+                        vdom: <value of string>
+                  authen-type: <value in [auto, ascii, pap, ...]>
+                  authorization: <value in [disable, enable]>
+                  key: 
+                   - <value of string>
+                  port: <value of integer>
+                  secondary-key: 
+                   - <value of string>
+                  secondary-server: <value of string>
+                  server: <value of string>
+                  source-ip: <value of string>
+                  tertiary-key: 
+                   - <value of string>
+                  tertiary-server: <value of string>
+    - name: send request to /pm/config/obj/user/tacacs+/{tacacs+}/dynamic_mapping/{dynamic_mapping}
+      fmgr_pm_config_obj_user_tacacs_tacacs_dynamic_mapping_dynamic_mapping:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
-            pkg: <value of string>
-            DoS-policy: <value of string>
-            anomaly: <value of string>
+            tacacs+: <value of string>
+            dynamic_mapping: <value of string>
          params:
             - 
                option: <value in [object member, chksum, datasrc]>
@@ -193,7 +191,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly/{anomaly}
+            example: /pm/config/adom/{adom}/obj/user/tacacs+/{tacacs+}/dynamic_mapping/{dynamic_mapping}
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -202,32 +200,39 @@ return_of_api_category_0:
          type: int
       result:
          data:
-            action:
+            _scope:
+               type: array
+               suboptions:
+                  name:
+                     type: str
+                  vdom:
+                     type: str
+            authen-type:
                type: str
-               description: 'Action taken when the threshold is reached.'
-            log:
+            authorization:
                type: str
-               description: 'Enable/disable logging for this anomaly.'
-            name:
-               type: str
-               description: 'Anomaly name.'
-            quarantine:
-               type: str
-               description: 'Quarantine method.'
-            quarantine-expiry:
-               type: str
-               description: 'Duration of quarantine, from 1 minute to 364 days, 23 hours, and 59 minutes from now. (format: ###d##h##m, default = 5m). Requires quarantine set to attacker.'
-            quarantine-log:
-               type: str
-               description: 'Enable/disable quarantine logging.'
-            status:
-               type: str
-               description: 'Enable/disable the active status of this anomaly sensor.'
-            threshold:
+            key:
+               type: array
+               suboptions:
+                  type: str
+            port:
                type: int
-               description: 'Number of detected instances per minute which triggers action (1 - 2147483647, default = 1000). Note that each anomaly has a different threshold value assigned to it.'
-            threshold(default):
-               type: int
+            secondary-key:
+               type: array
+               suboptions:
+                  type: str
+            secondary-server:
+               type: str
+            server:
+               type: str
+            source-ip:
+               type: str
+            tertiary-key:
+               type: array
+               suboptions:
+                  type: str
+            tertiary-server:
+               type: str
          status:
             code:
                type: int
@@ -235,7 +240,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly/{anomaly}
+            example: /pm/config/adom/{adom}/obj/user/tacacs+/{tacacs+}/dynamic_mapping/{dynamic_mapping}
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -248,7 +253,8 @@ from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerH
 
 def main():
     jrpc_urls = [
-        '/pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly/{anomaly}'
+        '/pm/config/adom/{adom}/obj/user/tacacs+/{tacacs+}/dynamic_mapping/{dynamic_mapping}',
+        '/pm/config/global/obj/user/tacacs+/{tacacs+}/dynamic_mapping/{dynamic_mapping}'
     ]
 
     url_schema = [
@@ -257,15 +263,11 @@ def main():
             'type': 'string'
         },
         {
-            'name': 'pkg',
+            'name': 'tacacs+',
             'type': 'string'
         },
         {
-            'name': 'DoS-policy',
-            'type': 'string'
-        },
-        {
-            'name': 'anomaly',
+            'name': 'dynamic_mapping',
             'type': 'string'
         }
     ]
@@ -277,55 +279,66 @@ def main():
                     'name': 'data',
                     'type': 'dict',
                     'dict': {
-                        'action': {
+                        '_scope': {
+                            'type': 'array',
+                            'items': {
+                                'name': {
+                                    'type': 'string'
+                                },
+                                'vdom': {
+                                    'type': 'string'
+                                }
+                            }
+                        },
+                        'authen-type': {
                             'type': 'string',
                             'enum': [
-                                'pass',
-                                'block',
-                                'proxy'
+                                'auto',
+                                'ascii',
+                                'pap',
+                                'chap',
+                                'mschap'
                             ]
                         },
-                        'log': {
-                            'type': 'string',
-                            'enum': [
-                                'disable',
-                                'enable'
-                            ]
-                        },
-                        'name': {
-                            'type': 'string'
-                        },
-                        'quarantine': {
-                            'type': 'string',
-                            'enum': [
-                                'none',
-                                'attacker',
-                                'both',
-                                'interface'
-                            ]
-                        },
-                        'quarantine-expiry': {
-                            'type': 'string'
-                        },
-                        'quarantine-log': {
+                        'authorization': {
                             'type': 'string',
                             'enum': [
                                 'disable',
                                 'enable'
                             ]
                         },
-                        'status': {
-                            'type': 'string',
-                            'enum': [
-                                'disable',
-                                'enable'
-                            ]
+                        'key': {
+                            'type': 'array',
+                            'items': {
+                                'type': 'string'
+                            }
                         },
-                        'threshold': {
+                        'port': {
                             'type': 'integer'
                         },
-                        'threshold(default)': {
-                            'type': 'integer'
+                        'secondary-key': {
+                            'type': 'array',
+                            'items': {
+                                'type': 'string'
+                            }
+                        },
+                        'secondary-server': {
+                            'type': 'string'
+                        },
+                        'server': {
+                            'type': 'string'
+                        },
+                        'source-ip': {
+                            'type': 'string'
+                        },
+                        'tertiary-key': {
+                            'type': 'array',
+                            'items': {
+                                'type': 'string'
+                            }
+                        },
+                        'tertiary-server': {
+                            'type': 'string'
                         }
                     },
                     'api_tag': 0

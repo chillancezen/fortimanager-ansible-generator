@@ -1,11 +1,11 @@
-:source: fmgr_pm_config_pkg_pkg_firewall_DoS_policy6_DoS_policy6_anomaly.py
+:source: fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy_anomaly.py
 
 :orphan:
 
-.. _fmgr_pm_config_pkg_pkg_firewall_DoS_policy6_DoS_policy6_anomaly:
+.. _fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy_anomaly:
 
-fmgr_pm_config_pkg_pkg_firewall_DoS_policy6_DoS_policy6_anomaly -- Anomaly name.
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy_anomaly -- Anomaly name.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 2.10
 
@@ -18,7 +18,7 @@ Synopsis
 --------
 
 - This module is able to configure a FortiManager device by allowing the user to **[add, get, set, update]** the following FortiManager json-rpc urls.
-- `/pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy6/{DoS-policy6}/anomaly`
+- `/pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly`
 - Examples include all parameters and values need to be adjusted to data sources before usage.
 - Tested with FortiManager v6.0.0
 
@@ -41,7 +41,7 @@ Parameters
  <ul class="ul-self">
  <li><span class="li-head">adom</span> - the domain prefix <span class="li-normal">type: str</span> <span class="li-normal"> choices: none, global, custom dom</span></li>
  <li><span class="li-head">pkg</span> - the object name <span class="li-normal">type: str</span> </li>
- <li><span class="li-head">DoS-policy6</span> - the object name <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">DoS-policy</span> - the object name <span class="li-normal">type: str</span> </li>
  </ul>
  <li><span class="li-head">parameters for method: [add, set, update]</span> - Anomaly name.</li>
  <ul class="ul-self">
@@ -107,13 +107,13 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy6/{DoS-policy6}/anomaly
-      fmgr_pm_config_pkg_pkg_firewall_DoS_policy6_DoS_policy6_anomaly:
+    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly
+      fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy_anomaly:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
             pkg: <value of string>
-            DoS-policy6: <value of string>
+            DoS-policy: <value of string>
          params:
             - 
                data: 
@@ -127,13 +127,13 @@ Examples
                      status: <value in [disable, enable]>
                      threshold: <value of integer>
                      threshold(default): <value of integer>
-    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy6/{DoS-policy6}/anomaly
-      fmgr_pm_config_pkg_pkg_firewall_DoS_policy6_DoS_policy6_anomaly:
+    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly
+      fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy_anomaly:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
             pkg: <value of string>
-            DoS-policy6: <value of string>
+            DoS-policy: <value of string>
          params:
             - 
                attr: <value of string>
@@ -171,7 +171,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> message </span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
  </ul>
  <li><span class="li-return">url</span>
- - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy6/{DoS-policy6}/anomaly</span>  </li>
+ - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly</span>  </li>
  </ul>
  <li><span class="li-return"> return values for method: [get]</span> </li>
  <ul class="ul-self">
@@ -193,7 +193,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> message </span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
  </ul>
  <li><span class="li-return">url</span>
- - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy6/{DoS-policy6}/anomaly</span>  </li>
+ - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly</span>  </li>
  </ul>
  </ul>
 

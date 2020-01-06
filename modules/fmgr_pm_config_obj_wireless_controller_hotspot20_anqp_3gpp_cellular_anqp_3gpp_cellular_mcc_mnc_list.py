@@ -26,11 +26,10 @@ DOCUMENTATION = '''
 module: fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_3gpp_cellular_anqp_3gpp_cellular_mcc_mnc_list
 description:
     - This module is able to configure a FortiManager device by allowing the
-      user to [ add get set update ] the following apis:
+      user to [ add get set update ] the following apis.
     - /pm/config/adom/{adom}/obj/wireless-controller/hotspot20/anqp-3gpp-cellular/{anqp-3gpp-cellular}/mcc-mnc-list
     - /pm/config/global/obj/wireless-controller/hotspot20/anqp-3gpp-cellular/{anqp-3gpp-cellular}/mcc-mnc-list
-    - Examples include all parameters and values need to be adjusted to data 
-      sources before usage.
+    - Examples include all parameters and values need to be adjusted to data sources before usage.
      
 
 version_added: "2.10"
@@ -42,7 +41,7 @@ notes:
       while other two 'params' and 'url_params' can be optional
     - Due to the complexity of fortimanager api schema, the validation is done
       out of Ansible native parameter validation procedure.
-    - The syntax of OPTIONS doen not comply with the standard Ansible argument 
+    - The syntax of OPTIONS doen not comply with the standard Ansible argument
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:

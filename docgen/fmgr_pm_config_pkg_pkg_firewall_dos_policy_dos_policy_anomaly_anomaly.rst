@@ -1,10 +1,10 @@
-:source: fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy_anomaly_anomaly.py
+:source: fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy_anomaly_anomaly.py
 
 :orphan:
 
-.. _fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy_anomaly_anomaly:
+.. _fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy_anomaly_anomaly:
 
-fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy_anomaly_anomaly -- Anomaly name.
+fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy_anomaly_anomaly -- Anomaly name.
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 2.10
@@ -95,7 +95,7 @@ Examples
       ansible_httpapi_port: 443
    tasks:
     - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly/{anomaly}
-      fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy_anomaly_anomaly:
+      fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy_anomaly_anomaly:
          method: <value in [clone, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
@@ -115,7 +115,7 @@ Examples
                   threshold: <value of integer>
                   threshold(default): <value of integer>
     - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly/{anomaly}
-      fmgr_pm_config_pkg_pkg_firewall_DoS_policy_DoS_policy_anomaly_anomaly:
+      fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy_anomaly_anomaly:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>

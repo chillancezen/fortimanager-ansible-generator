@@ -1,11 +1,11 @@
-:source: fmgr_pm_config_obj_user_tacacs+_tacacs+.py
+:source: fmgr_pm_config_obj_user_tacacs_tacacs_dynamic_mapping_dynamic_mapping.py
 
 :orphan:
 
-.. _fmgr_pm_config_obj_user_tacacs+_tacacs+:
+.. _fmgr_pm_config_obj_user_tacacs_tacacs_dynamic_mapping_dynamic_mapping:
 
-fmgr_pm_config_obj_user_tacacs+_tacacs+ -- Configure TACACS+ server entries.
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+fmgr_pm_config_obj_user_tacacs_tacacs_dynamic_mapping_dynamic_mapping
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 2.10
 
@@ -18,8 +18,8 @@ Synopsis
 --------
 
 - This module is able to configure a FortiManager device by allowing the user to **[clone, delete, get, set, update]** the following FortiManager json-rpc urls.
-- `/pm/config/adom/{adom}/obj/user/tacacs+/{tacacs+}`
-- `/pm/config/global/obj/user/tacacs+/{tacacs+}`
+- `/pm/config/adom/{adom}/obj/user/tacacs+/{tacacs+}/dynamic_mapping/{dynamic_mapping}`
+- `/pm/config/global/obj/user/tacacs+/{tacacs+}/dynamic_mapping/{dynamic_mapping}`
 - Examples include all parameters and values need to be adjusted to data sources before usage.
 - Tested with FortiManager v6.0.0
 
@@ -42,13 +42,11 @@ Parameters
  <ul class="ul-self">
  <li><span class="li-head">adom</span> - the domain prefix <span class="li-normal">type: str</span> <span class="li-normal"> choices: none, global, custom dom</span></li>
  <li><span class="li-head">tacacs+</span> - the object name <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">dynamic_mapping</span> - the object name <span class="li-normal">type: str</span> </li>
  </ul>
- <li><span class="li-head">parameters for method: [clone, set, update]</span> - Configure TACACS+ server entries.</li>
+ <li><span class="li-head">parameters for method: [clone, set, update]</span> - </li>
  <ul class="ul-self">
  <li><span class="li-head">data</span> - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
- <li><span class="li-head">authen-type</span> - Allowed authentication protocols/methods. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [auto, ascii, pap, chap, mschap]</span> </li>
- <li><span class="li-head">authorization</span> - Enable/disable TACACS+ authorization. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [disable, enable]</span> </li>
- <li><span class="li-head">dynamic_mapping</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li><span class="li-head">_scope</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li><span class="li-head">name</span> - No description for the parameter <span class="li-normal">type: str</span> </li>
  <li><span class="li-head">vdom</span> - No description for the parameter <span class="li-normal">type: str</span> </li>
@@ -70,27 +68,11 @@ Parameters
  </ul>
  <li><span class="li-head">tertiary-server</span> - No description for the parameter <span class="li-normal">type: str</span> </li>
  </ul>
- <li><span class="li-head">key</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
- <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span> </li>
  </ul>
- <li><span class="li-head">name</span> - TACACS+ server entry name. <span class="li-normal">type: str</span> </li>
- <li><span class="li-head">port</span> - Port number of the TACACS+ server. <span class="li-normal">type: int</span> </li>
- <li><span class="li-head">secondary-key</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
- <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span> </li>
- </ul>
- <li><span class="li-head">secondary-server</span> - Secondary TACACS+ server CN domain name or IP address. <span class="li-normal">type: str</span> </li>
- <li><span class="li-head">server</span> - Primary TACACS+ server CN domain name or IP address. <span class="li-normal">type: str</span> </li>
- <li><span class="li-head">source-ip</span> - source IP for communications to TACACS+ server. <span class="li-normal">type: str</span> </li>
- <li><span class="li-head">tertiary-key</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
- <li><span class="li-head">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span> </li>
- </ul>
- <li><span class="li-head">tertiary-server</span> - Tertiary TACACS+ server CN domain name or IP address. <span class="li-normal">type: str</span> </li>
- </ul>
- </ul>
- <li><span class="li-head">parameters for method: [delete]</span> - Configure TACACS+ server entries.</li>
+ <li><span class="li-head">parameters for method: [delete]</span> - </li>
  <ul class="ul-self">
  </ul>
- <li><span class="li-head">parameters for method: [get]</span> - Configure TACACS+ server entries.</li>
+ <li><span class="li-head">parameters for method: [get]</span> - </li>
  <ul class="ul-self">
  <li><span class="li-head">option</span> - Set fetch option for the request. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [object member, chksum, datasrc]</span> </li>
  </ul>
@@ -123,39 +105,24 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/user/tacacs+/{tacacs+}
-      fmgr_pm_config_obj_user_tacacs+_tacacs+:
+    - name: send request to /pm/config/obj/user/tacacs+/{tacacs+}/dynamic_mapping/{dynamic_mapping}
+      fmgr_pm_config_obj_user_tacacs_tacacs_dynamic_mapping_dynamic_mapping:
          method: <value in [clone, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
             tacacs+: <value of string>
+            dynamic_mapping: <value of string>
          params:
             - 
                data: 
+                  _scope: 
+                   - 
+                        name: <value of string>
+                        vdom: <value of string>
                   authen-type: <value in [auto, ascii, pap, ...]>
                   authorization: <value in [disable, enable]>
-                  dynamic_mapping: 
-                   - 
-                        _scope: 
-                         - 
-                              name: <value of string>
-                              vdom: <value of string>
-                        authen-type: <value in [auto, ascii, pap, ...]>
-                        authorization: <value in [disable, enable]>
-                        key: 
-                         - <value of string>
-                        port: <value of integer>
-                        secondary-key: 
-                         - <value of string>
-                        secondary-server: <value of string>
-                        server: <value of string>
-                        source-ip: <value of string>
-                        tertiary-key: 
-                         - <value of string>
-                        tertiary-server: <value of string>
                   key: 
                    - <value of string>
-                  name: <value of string>
                   port: <value of integer>
                   secondary-key: 
                    - <value of string>
@@ -165,12 +132,13 @@ Examples
                   tertiary-key: 
                    - <value of string>
                   tertiary-server: <value of string>
-    - name: send request to /pm/config/obj/user/tacacs+/{tacacs+}
-      fmgr_pm_config_obj_user_tacacs+_tacacs+:
+    - name: send request to /pm/config/obj/user/tacacs+/{tacacs+}/dynamic_mapping/{dynamic_mapping}
+      fmgr_pm_config_obj_user_tacacs_tacacs_dynamic_mapping_dynamic_mapping:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
             tacacs+: <value of string>
+            dynamic_mapping: <value of string>
          params:
             - 
                option: <value in [object member, chksum, datasrc]>
@@ -195,15 +163,12 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  <li> <span class="li-return"> message </span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
  </ul>
  <li><span class="li-return">url</span>
- - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">example: /pm/config/adom/{adom}/obj/user/tacacs+/{tacacs+}</span>  </li>
+ - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">example: /pm/config/adom/{adom}/obj/user/tacacs+/{tacacs+}/dynamic_mapping/{dynamic_mapping}</span>  </li>
  </ul>
  <li><span class="li-return"> return values for method: [get]</span> </li>
  <ul class="ul-self">
  <li><span class="li-return">data</span>
  - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
- <li> <span class="li-return"> authen-type </span> - Allowed authentication protocols/methods. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> authorization </span> - Enable/disable TACACS+ authorization. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> dynamic_mapping </span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li> <span class="li-return"> _scope </span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
  <li> <span class="li-return"> name </span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
  <li> <span class="li-return"> vdom </span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
@@ -225,29 +190,13 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
  </ul>
  <li> <span class="li-return"> tertiary-server </span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
  </ul>
- <li> <span class="li-return"> key </span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
- <li><span class="li-return">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
- </ul>
- <li> <span class="li-return"> name </span> - TACACS+ server entry name. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> port </span> - Port number of the TACACS+ server. <span class="li-normal">type: int</span>  </li>
- <li> <span class="li-return"> secondary-key </span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
- <li><span class="li-return">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
- </ul>
- <li> <span class="li-return"> secondary-server </span> - Secondary TACACS+ server CN domain name or IP address. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> server </span> - Primary TACACS+ server CN domain name or IP address. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> source-ip </span> - source IP for communications to TACACS+ server. <span class="li-normal">type: str</span>  </li>
- <li> <span class="li-return"> tertiary-key </span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
- <li><span class="li-return">{no-name}</span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
- </ul>
- <li> <span class="li-return"> tertiary-server </span> - Tertiary TACACS+ server CN domain name or IP address. <span class="li-normal">type: str</span>  </li>
- </ul>
  <li><span class="li-return">status</span>
  - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
  <li> <span class="li-return"> code </span> - No description for the parameter <span class="li-normal">type: int</span>  </li>
  <li> <span class="li-return"> message </span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
  </ul>
  <li><span class="li-return">url</span>
- - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">example: /pm/config/adom/{adom}/obj/user/tacacs+/{tacacs+}</span>  </li>
+ - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">example: /pm/config/adom/{adom}/obj/user/tacacs+/{tacacs+}/dynamic_mapping/{dynamic_mapping}</span>  </li>
  </ul>
  </ul>
 

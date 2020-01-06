@@ -23,13 +23,12 @@ ANSIBLE_METADATA = {'status': ['preview'],
 
 DOCUMENTATION = '''
 ---
-module: fmgr_pm_config_pkg_pkg_firewall_DoS_policy6
+module: fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy_anomaly
 description:
     - This module is able to configure a FortiManager device by allowing the
-      user to [ add get set update ] the following apis:
-    - /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy6
-    - Examples include all parameters and values need to be adjusted to data 
-      sources before usage.
+      user to [ add get set update ] the following apis.
+    - /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly
+    - Examples include all parameters and values need to be adjusted to data sources before usage.
      
 
 version_added: "2.10"
@@ -41,7 +40,7 @@ notes:
       while other two 'params' and 'url_params' can be optional
     - Due to the complexity of fortimanager api schema, the validation is done
       out of Ansible native parameter validation procedure.
-    - The syntax of OPTIONS doen not comply with the standard Ansible argument 
+    - The syntax of OPTIONS doen not comply with the standard Ansible argument
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
@@ -59,86 +58,62 @@ options:
                   - custom dom
             pkg:
                 type: str
+            DoS-policy:
+                type: str
     schema_object0:
         methods: [add, set, update]
-        description: 'Configure IPv6 DoS policies.'
+        description: 'Anomaly name.'
         api_categories: [api_tag0]
         api_tag0:
             data:
                 -
-                    anomaly:
-                        -
-                            action:
-                                type: str
-                                description: 'Action taken when the threshold is reached.'
-                                choices:
-                                    - pass
-                                    - block
-                                    - proxy
-                            log:
-                                type: str
-                                description: 'Enable/disable logging for this anomaly.'
-                                choices:
-                                    - disable
-                                    - enable
-                            name:
-                                type: str
-                                description: 'Anomaly name.'
-                            quarantine:
-                                type: str
-                                description: 'Quarantine method.'
-                                choices:
-                                    - none
-                                    - attacker
-                                    - both
-                                    - interface
-                            quarantine-expiry:
-                                type: str
-                                description: 'Duration of quarantine, from 1 minute to 364 days, 23 hours, and 59 minutes from now. (format: ###d##h##m, default = 5m). Requires quarantine set to attacker.'
-                            quarantine-log:
-                                type: str
-                                description: 'Enable/disable quarantine logging.'
-                                choices:
-                                    - disable
-                                    - enable
-                            status:
-                                type: str
-                                description: 'Enable/disable the active status of this anomaly sensor.'
-                                choices:
-                                    - disable
-                                    - enable
-                            threshold:
-                                type: int
-                                description: 'Number of detected instances per minute which triggers action (1 - 2147483647, default = 1000). Note that each anomaly has a different threshold value assigned to it.'
-                            threshold(default):
-                                type: int
-                    comments:
+                    action:
                         type: str
-                        description: 'Comment.'
-                    dstaddr:
+                        description: 'Action taken when the threshold is reached.'
+                        choices:
+                            - pass
+                            - block
+                            - proxy
+                    log:
                         type: str
-                        description: 'Destination address name from available addresses.'
-                    interface:
-                        type: str
-                        description: 'Incoming interface name from available interfaces.'
-                    policyid:
-                        type: int
-                        description: 'Policy ID.'
-                    service:
-                        type: str
-                        description: 'Service object from available options.'
-                    srcaddr:
-                        type: str
-                        description: 'Source address name from available addresses.'
-                    status:
-                        type: str
-                        description: 'Enable/disable this policy.'
+                        description: 'Enable/disable logging for this anomaly.'
                         choices:
                             - disable
                             - enable
+                    name:
+                        type: str
+                        description: 'Anomaly name.'
+                    quarantine:
+                        type: str
+                        description: 'Quarantine method.'
+                        choices:
+                            - none
+                            - attacker
+                            - both
+                            - interface
+                    quarantine-expiry:
+                        type: str
+                        description: 'Duration of quarantine, from 1 minute to 364 days, 23 hours, and 59 minutes from now. (format: ###d##h##m, default = 5m). Requires quarantine set to attacker.'
+                    quarantine-log:
+                        type: str
+                        description: 'Enable/disable quarantine logging.'
+                        choices:
+                            - disable
+                            - enable
+                    status:
+                        type: str
+                        description: 'Enable/disable the active status of this anomaly sensor.'
+                        choices:
+                            - disable
+                            - enable
+                    threshold:
+                        type: int
+                        description: 'Number of detected instances per minute which triggers action (1 - 2147483647, default = 1000). Note that each anomaly has a different threshold value assigned to it.'
+                    threshold(default):
+                        type: int
     schema_object1:
         methods: [get]
-        description: 'Configure IPv6 DoS policies.'
+        description: 'Anomaly name.'
         api_categories: [api_tag0]
         api_tag0:
             attr:
@@ -149,13 +124,15 @@ options:
                     -
                         type: str
                         choices:
-                            - comments
-                            - dstaddr
-                            - interface
-                            - policyid
-                            - service
-                            - srcaddr
+                            - action
+                            - log
+                            - name
+                            - quarantine
+                            - quarantine-expiry
+                            - quarantine-log
                             - status
+                            - threshold
+                            - threshold(default)
             filter:
                 -
                     type: str
@@ -200,46 +177,39 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy6
-      fmgr_pm_config_pkg_pkg_firewall_DoS_policy6:
+    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly
+      fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy_anomaly:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
             pkg: <value of string>
+            DoS-policy: <value of string>
          params:
             - 
                data: 
                 - 
-                     anomaly: 
-                      - 
-                           action: <value in [pass, block, proxy]>
-                           log: <value in [disable, enable]>
-                           name: <value of string>
-                           quarantine: <value in [none, attacker, both, ...]>
-                           quarantine-expiry: <value of string>
-                           quarantine-log: <value in [disable, enable]>
-                           status: <value in [disable, enable]>
-                           threshold: <value of integer>
-                           threshold(default): <value of integer>
-                     comments: <value of string>
-                     dstaddr: <value of string>
-                     interface: <value of string>
-                     policyid: <value of integer>
-                     service: <value of string>
-                     srcaddr: <value of string>
+                     action: <value in [pass, block, proxy]>
+                     log: <value in [disable, enable]>
+                     name: <value of string>
+                     quarantine: <value in [none, attacker, both, ...]>
+                     quarantine-expiry: <value of string>
+                     quarantine-log: <value in [disable, enable]>
                      status: <value in [disable, enable]>
-    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy6
-      fmgr_pm_config_pkg_pkg_firewall_DoS_policy6:
+                     threshold: <value of integer>
+                     threshold(default): <value of integer>
+    - name: send request to /pm/config/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly
+      fmgr_pm_config_pkg_pkg_firewall_dos_policy_dos_policy_anomaly:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
             pkg: <value of string>
+            DoS-policy: <value of string>
          params:
             - 
                attr: <value of string>
                fields: 
                 - 
-                   - <value in [comments, dstaddr, interface, ...]>
+                   - <value in [action, log, name, ...]>
                filter: 
                 - <value of string>
                get used: <value of integer>
@@ -261,12 +231,6 @@ return_of_api_category_0:
       id:
          type: int
       result:
-         data:
-            type: array
-            suboptions:
-               policyid:
-                  type: int
-                  description: 'Policy ID.'
          status:
             code:
                type: int
@@ -274,7 +238,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy6
+            example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -285,56 +249,32 @@ return_of_api_category_0:
          data:
             type: array
             suboptions:
-               anomaly:
-                  type: array
-                  suboptions:
-                     action:
-                        type: str
-                        description: 'Action taken when the threshold is reached.'
-                     log:
-                        type: str
-                        description: 'Enable/disable logging for this anomaly.'
-                     name:
-                        type: str
-                        description: 'Anomaly name.'
-                     quarantine:
-                        type: str
-                        description: 'Quarantine method.'
-                     quarantine-expiry:
-                        type: str
-                        description: 'Duration of quarantine, from 1 minute to 364 days, 23 hours, and 59 minutes from now. (format: ###d##h##m, default = 5m). Requires quarantine set to attacker.'
-                     quarantine-log:
-                        type: str
-                        description: 'Enable/disable quarantine logging.'
-                     status:
-                        type: str
-                        description: 'Enable/disable the active status of this anomaly sensor.'
-                     threshold:
-                        type: int
-                        description: 'Number of detected instances per minute which triggers action (1 - 2147483647, default = 1000). Note that each anomaly has a different threshold value assigned to it.'
-                     threshold(default):
-                        type: int
-               comments:
+               action:
                   type: str
-                  description: 'Comment.'
-               dstaddr:
+                  description: 'Action taken when the threshold is reached.'
+               log:
                   type: str
-                  description: 'Destination address name from available addresses.'
-               interface:
+                  description: 'Enable/disable logging for this anomaly.'
+               name:
                   type: str
-                  description: 'Incoming interface name from available interfaces.'
-               policyid:
-                  type: int
-                  description: 'Policy ID.'
-               service:
+                  description: 'Anomaly name.'
+               quarantine:
                   type: str
-                  description: 'Service object from available options.'
-               srcaddr:
+                  description: 'Quarantine method.'
+               quarantine-expiry:
                   type: str
-                  description: 'Source address name from available addresses.'
+                  description: 'Duration of quarantine, from 1 minute to 364 days, 23 hours, and 59 minutes from now. (format: ###d##h##m, default = 5m). Requires quarantine set to attacker.'
+               quarantine-log:
+                  type: str
+                  description: 'Enable/disable quarantine logging.'
                status:
                   type: str
-                  description: 'Enable/disable this policy.'
+                  description: 'Enable/disable the active status of this anomaly sensor.'
+               threshold:
+                  type: int
+                  description: 'Number of detected instances per minute which triggers action (1 - 2147483647, default = 1000). Note that each anomaly has a different threshold value assigned to it.'
+               threshold(default):
+                  type: int
          status:
             code:
                type: int
@@ -342,7 +282,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy6
+            example: /pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -355,7 +295,7 @@ from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerH
 
 def main():
     jrpc_urls = [
-        '/pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy6'
+        '/pm/config/adom/{adom}/pkg/{pkg}/firewall/DoS-policy/{DoS-policy}/anomaly'
     ]
 
     url_schema = [
@@ -365,6 +305,10 @@ def main():
         },
         {
             'name': 'pkg',
+            'type': 'string'
+        },
+        {
+            'name': 'DoS-policy',
             'type': 'string'
         }
     ]
@@ -377,78 +321,42 @@ def main():
                     'api_tag': 0,
                     'type': 'array',
                     'items': {
-                        'anomaly': {
-                            'type': 'array',
-                            'items': {
-                                'action': {
-                                    'type': 'string',
-                                    'enum': [
-                                        'pass',
-                                        'block',
-                                        'proxy'
-                                    ]
-                                },
-                                'log': {
-                                    'type': 'string',
-                                    'enum': [
-                                        'disable',
-                                        'enable'
-                                    ]
-                                },
-                                'name': {
-                                    'type': 'string'
-                                },
-                                'quarantine': {
-                                    'type': 'string',
-                                    'enum': [
-                                        'none',
-                                        'attacker',
-                                        'both',
-                                        'interface'
-                                    ]
-                                },
-                                'quarantine-expiry': {
-                                    'type': 'string'
-                                },
-                                'quarantine-log': {
-                                    'type': 'string',
-                                    'enum': [
-                                        'disable',
-                                        'enable'
-                                    ]
-                                },
-                                'status': {
-                                    'type': 'string',
-                                    'enum': [
-                                        'disable',
-                                        'enable'
-                                    ]
-                                },
-                                'threshold': {
-                                    'type': 'integer'
-                                },
-                                'threshold(default)': {
-                                    'type': 'integer'
-                                }
-                            }
+                        'action': {
+                            'type': 'string',
+                            'enum': [
+                                'pass',
+                                'block',
+                                'proxy'
+                            ]
                         },
-                        'comments': {
+                        'log': {
+                            'type': 'string',
+                            'enum': [
+                                'disable',
+                                'enable'
+                            ]
+                        },
+                        'name': {
                             'type': 'string'
                         },
-                        'dstaddr': {
+                        'quarantine': {
+                            'type': 'string',
+                            'enum': [
+                                'none',
+                                'attacker',
+                                'both',
+                                'interface'
+                            ]
+                        },
+                        'quarantine-expiry': {
                             'type': 'string'
                         },
-                        'interface': {
-                            'type': 'string'
-                        },
-                        'policyid': {
-                            'type': 'integer'
-                        },
-                        'service': {
-                            'type': 'string'
-                        },
-                        'srcaddr': {
-                            'type': 'string'
+                        'quarantine-log': {
+                            'type': 'string',
+                            'enum': [
+                                'disable',
+                                'enable'
+                            ]
                         },
                         'status': {
                             'type': 'string',
@@ -456,6 +364,12 @@ def main():
                                 'disable',
                                 'enable'
                             ]
+                        },
+                        'threshold': {
+                            'type': 'integer'
+                        },
+                        'threshold(default)': {
+                            'type': 'integer'
                         }
                     }
                 },
@@ -480,13 +394,15 @@ def main():
                         'items': {
                             'type': 'string',
                             'enum': [
-                                'comments',
-                                'dstaddr',
-                                'interface',
-                                'policyid',
-                                'service',
-                                'srcaddr',
-                                'status'
+                                'action',
+                                'log',
+                                'name',
+                                'quarantine',
+                                'quarantine-expiry',
+                                'quarantine-log',
+                                'status',
+                                'threshold',
+                                'threshold(default)'
                             ]
                         }
                     }

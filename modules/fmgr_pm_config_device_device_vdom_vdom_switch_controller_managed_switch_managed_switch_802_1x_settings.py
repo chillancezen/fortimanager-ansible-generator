@@ -23,13 +23,12 @@ ANSIBLE_METADATA = {'status': ['preview'],
 
 DOCUMENTATION = '''
 ---
-module: fmgr_pm_config_device_device_vdom_vdom_switch_controller_managed_switch_managed_switch_802_1X_settings
+module: fmgr_pm_config_device_device_vdom_vdom_switch_controller_managed_switch_managed_switch_802_1x_settings
 description:
     - This module is able to configure a FortiManager device by allowing the
-      user to [ get set update ] the following apis:
+      user to [ get set update ] the following apis.
     - /pm/config/device/{device}/vdom/{vdom}/switch-controller/managed-switch/{managed-switch}/802-1X-settings
-    - Examples include all parameters and values need to be adjusted to data 
-      sources before usage.
+    - Examples include all parameters and values need to be adjusted to data sources before usage.
      
 
 version_added: "2.10"
@@ -41,7 +40,7 @@ notes:
       while other two 'params' and 'url_params' can be optional
     - Due to the complexity of fortimanager api schema, the validation is done
       out of Ansible native parameter validation procedure.
-    - The syntax of OPTIONS doen not comply with the standard Ansible argument 
+    - The syntax of OPTIONS doen not comply with the standard Ansible argument
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
@@ -89,7 +88,7 @@ EXAMPLES = '''
       ansible_httpapi_port: 443
    tasks:
     - name: send request to /pm/config/device/{device}/vdom/{vdom}/switch-controller/managed-switch/{managed-switch}/802-1X-settings
-      fmgr_pm_config_device_device_vdom_vdom_switch_controller_managed_switch_managed_switch_802_1X_settings:
+      fmgr_pm_config_device_device_vdom_vdom_switch_controller_managed_switch_managed_switch_802_1x_settings:
          method: <value in [get]>
          url_params:
             device: <value of string>
@@ -99,7 +98,7 @@ EXAMPLES = '''
             - 
                option: <value in [object member, chksum, datasrc]>
     - name: send request to /pm/config/device/{device}/vdom/{vdom}/switch-controller/managed-switch/{managed-switch}/802-1X-settings
-      fmgr_pm_config_device_device_vdom_vdom_switch_controller_managed_switch_managed_switch_802_1X_settings:
+      fmgr_pm_config_device_device_vdom_vdom_switch_controller_managed_switch_managed_switch_802_1x_settings:
          method: <value in [set, update]>
          url_params:
             device: <value of string>
