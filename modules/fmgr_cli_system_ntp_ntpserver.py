@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/system/ntp/ntpserver
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -68,7 +67,7 @@ options:
                     key:
                         -
                             type: str
-                            default: 'ENC MTIwNDIxMDA1OTc0MDU5OOCz7ir5CgpbO/J3sN576PgSwbGc703sZpBwnR5CmNxRjhfSM2FPskJvCPZHAzZOjFTd7B1Ay0Ssf3MwFzNWVdOYL88mw7WTGYgcc3j/PFmJ0NiPwuFnT94rAO6yDHtO7QnVfyla+di36FC34BfdtB+S9eva'
+                            default: 'ENC MTIwNDIxMDA1OTc0MDU5OOCz7ir5CgpbO/J3sN576PgSwbGc703sZpBwnR5CmNxRjhfSM2FPskJvCPZHAzZOjFTd7B1Ay0Ssf3MwFzNWVdOYL88mw...'
                     key-id:
                         type: int
                         default: 0
@@ -128,30 +127,32 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/ntp/ntpserver
+
+    - name: REQUESTING /CLI/SYSTEM/NTP/NTPSERVER
       fmgr_cli_system_ntp_ntpserver:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     authentication: <value in [disable, enable] default: disable>
+            -
+               data:
+                 -
+                     authentication: <value in [disable, enable] default: 'disable'>
                      id: <value of integer default: 0>
-                     key: 
-                      - <value of string default: ENC MTIwNDIxMDA1OTc0MDU5OOCz7ir5CgpbO/J3sN576PgSwbGc703sZpBwnR5CmNxRjhfSM2FPskJvCPZHAzZOjFTd7B1Ay0Ssf3MwFzNWVdOYL88mw7WTGYgcc3j/PFmJ0NiPwuFnT94rAO6yDHtO7QnVfyla+di36FC34BfdtB+S9eva>
+                     key:
+                       - <value of string default: 'ENC MTIwNDIxMDA1OTc0MDU5OOCz7ir5CgpbO/J3sN576PgSwbGc703sZpBwnR5CmNxRjhfSM2FP...'>
                      key-id: <value of integer default: 0>
-                     ntpv3: <value in [disable, enable] default: disable>
+                     ntpv3: <value in [disable, enable] default: 'disable'>
                      server: <value of string>
-    - name: send request to /cli/system/ntp/ntpserver
+
+    - name: REQUESTING /CLI/SYSTEM/NTP/NTPSERVER
       fmgr_cli_system_ntp_ntpserver:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [authentication, id, key, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [authentication, id, key, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -172,7 +173,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/ntp/ntpserver
+            example: '/cli/global/system/ntp/ntpserver'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -189,7 +190,7 @@ return_of_api_category_0:
                      'Enable/disable MD5 authentication.'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: disable
+                  example: 'disable'
                id:
                   type: int
                   description: 'Time server ID.'
@@ -198,7 +199,7 @@ return_of_api_category_0:
                   type: array
                   suboptions:
                      type: str
-                     example: ENC MTIwNDIxMDA1OTc0MDU5OOCz7ir5CgpbO/J3sN576PgSwbGc703sZpBwnR5CmNxRjhfSM2FPskJvCPZHAzZOjFTd7B1Ay0Ssf3MwFzNWVdOYL88mw7WTGYgcc3j/PFmJ0NiPwuFnT94rAO6yDHtO7QnVfyla+di36FC34BfdtB+S9eva
+                     example: 'ENC MTIwNDIxMDA1OTc0MDU5OOCz7ir5CgpbO/J3sN576PgSwbGc703sZpBwnR5CmNxRjhfSM2FP...'
                key-id:
                   type: int
                   description: 'Key ID for authentication.'
@@ -209,7 +210,7 @@ return_of_api_category_0:
                      'Enable/disable NTPv3.'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: disable
+                  example: 'disable'
                server:
                   type: str
                   description: 'IP address/hostname of NTP Server.'
@@ -220,7 +221,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/ntp/ntpserver
+            example: '/cli/global/system/ntp/ntpserver'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -231,6 +232,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/ntp/ntpserver'
@@ -239,7 +241,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -249,7 +251,6 @@ def main():
                     'items': {
                         'authentication': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -263,8 +264,7 @@ def main():
                         'key': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC MTIwNDIxMDA1OTc0MDU5OOCz7ir5CgpbO/J3sN576PgSwbGc703sZpBwnR5CmNxRjhfSM2FPskJvCPZHAzZOjFTd7B1Ay0Ssf3MwFzNWVdOYL88mw7WTGYgcc3j/PFmJ0NiPwuFnT94rAO6yDHtO7QnVfyla+di36FC34BfdtB+S9eva'
+                                'type': 'string'
                             }
                         },
                         'key-id': {
@@ -274,7 +274,6 @@ def main():
                         },
                         'ntpv3': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -359,7 +358,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -380,8 +378,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -402,14 +400,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

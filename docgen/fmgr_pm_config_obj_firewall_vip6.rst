@@ -257,22 +257,23 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/firewall/vip6
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/VIP6
       fmgr_pm_config_obj_firewall_vip6:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      arp-reply: <value in [disable, enable]>
                      color: <value of integer>
                      comment: <value of string>
-                     dynamic_mapping: 
-                      - 
-                           _scope: 
-                            - 
+                     dynamic_mapping:
+                       -
+                           _scope:
+                             -
                                  name: <value of string>
                                  vdom: <value of string>
                            arp-reply: <value in [disable, enable]>
@@ -301,8 +302,8 @@ Examples
                            portforward: <value in [disable, enable]>
                            protocol: <value in [tcp, udp, sctp]>
                            server-type: <value in [http, https, ssl, ...]>
-                           src-filter: 
-                            - <value of string>
+                           src-filter:
+                             - <value of string>
                            ssl-algorithm: <value in [high, low, medium, ...]>
                            ssl-certificate: <value of string>
                            ssl-client-fallback: <value in [disable, enable]>
@@ -360,8 +361,8 @@ Examples
                      persistence: <value in [none, http-cookie, ssl-session-id]>
                      portforward: <value in [disable, enable]>
                      protocol: <value in [tcp, udp, sctp]>
-                     realservers: 
-                      - 
+                     realservers:
+                       -
                            client-ip: <value of string>
                            healthcheck: <value in [disable, enable, vip]>
                            holddown-interval: <value of integer>
@@ -374,16 +375,16 @@ Examples
                            status: <value in [active, standby, disable]>
                            weight: <value of integer>
                      server-type: <value in [http, https, ssl, ...]>
-                     src-filter: 
-                      - <value of string>
+                     src-filter:
+                       - <value of string>
                      ssl-algorithm: <value in [high, low, medium, ...]>
                      ssl-certificate: <value of string>
-                     ssl-cipher-suites: 
-                      - 
+                     ssl-cipher-suites:
+                       -
                            cipher: <value in [TLS-RSA-WITH-RC4-128-MD5, TLS-RSA-WITH-RC4-128-SHA, TLS-RSA-WITH-DES-CBC-SHA, ...]>
                            priority: <value of integer>
-                           versions: 
-                            - <value in [ssl-3.0, tls-1.0, tls-1.1, ...]>
+                           versions:
+                             - <value in [ssl-3.0, tls-1.0, tls-1.1, ...]>
                      ssl-client-fallback: <value in [disable, enable]>
                      ssl-client-renegotiation: <value in [deny, allow, secure]>
                      ssl-client-session-state-max: <value of integer>
@@ -407,12 +408,12 @@ Examples
                      ssl-pfs: <value in [require, deny, allow]>
                      ssl-send-empty-frags: <value in [disable, enable]>
                      ssl-server-algorithm: <value in [high, low, medium, ...]>
-                     ssl-server-cipher-suites: 
-                      - 
+                     ssl-server-cipher-suites:
+                       -
                            cipher: <value in [TLS-RSA-WITH-RC4-128-MD5, TLS-RSA-WITH-RC4-128-SHA, TLS-RSA-WITH-DES-CBC-SHA, ...]>
                            priority: <value of integer>
-                           versions: 
-                            - <value in [ssl-3.0, tls-1.0, tls-1.1, ...]>
+                           versions:
+                             - <value in [ssl-3.0, tls-1.0, tls-1.1, ...]>
                      ssl-server-max-version: <value in [ssl-3.0, tls-1.0, tls-1.1, ...]>
                      ssl-server-min-version: <value in [ssl-3.0, tls-1.0, tls-1.1, ...]>
                      ssl-server-session-state-max: <value of integer>
@@ -422,27 +423,28 @@ Examples
                      uuid: <value of string>
                      weblogic-server: <value in [disable, enable]>
                      websphere-server: <value in [disable, enable]>
-    - name: send request to /pm/config/obj/firewall/vip6
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/VIP6
       fmgr_pm_config_obj_firewall_vip6:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [arp-reply, color, comment, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [arp-reply, color, comment, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

@@ -77,15 +77,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/fortiview/auto-cache
+
+    - name: REQUESTING /CLI/SYSTEM/FORTIVIEW/AUTO-CACHE
       fmgr_cli_system_fortiview_auto_cache:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  aggressive-fortiview: <value in [disable, enable] default: disable>
+            -
+               data:
+                  aggressive-fortiview: <value in [disable, enable] default: 'disable'>
                   interval: <value of integer default: 168>
-                  status: <value in [disable, enable] default: enable>
+                  status: <value in [disable, enable] default: 'enable'>
 
 
 

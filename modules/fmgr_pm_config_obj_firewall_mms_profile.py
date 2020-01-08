@@ -30,7 +30,6 @@ description:
     - /pm/config/adom/{adom}/obj/firewall/mms-profile
     - /pm/config/global/obj/firewall/mms-profile
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -45,7 +44,7 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
-    url_params: 
+    url_params:
         description: the parameters in url path
         required: True
         type: dict
@@ -439,7 +438,7 @@ options:
                     type: int
             sortings:
                 -
-                    \{attr_name\}:
+                    varidic.attr_name:
                         type: int
                         choices:
                             - 1
@@ -455,15 +454,16 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/firewall/mms-profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/MMS-PROFILE
       fmgr_pm_config_obj_firewall_mms_profile:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      avnotificationtable: <value of string>
                      bwordtable: <value of string>
                      carrier-endpoint-prefix: <value in [disable, enable]>
@@ -473,8 +473,8 @@ EXAMPLES = '''
                      carrierendpointbwltable: <value of string>
                      comment: <value of string>
                      extended-utm-log: <value in [disable, enable]>
-                     mm1: 
-                      - <value in [avmonitor, block, oversize, ...]>
+                     mm1:
+                       - <value in [avmonitor, block, oversize, ...]>
                      mm1-addr-hdr: <value of string>
                      mm1-addr-source: <value in [http-header, cookie]>
                      mm1-convert-hex: <value in [disable, enable]>
@@ -484,16 +484,16 @@ EXAMPLES = '''
                      mm1comfortamount: <value of integer>
                      mm1comfortinterval: <value of integer>
                      mm1oversizelimit: <value of integer>
-                     mm3: 
-                      - <value in [avmonitor, block, oversize, ...]>
+                     mm3:
+                       - <value in [avmonitor, block, oversize, ...]>
                      mm3-outbreak-prevention: <value in [disabled, files, full-archive]>
                      mm3oversizelimit: <value of integer>
-                     mm4: 
-                      - <value in [avmonitor, block, oversize, ...]>
+                     mm4:
+                       - <value in [avmonitor, block, oversize, ...]>
                      mm4-outbreak-prevention: <value in [disabled, files, full-archive]>
                      mm4oversizelimit: <value of integer>
-                     mm7: 
-                      - <value in [avmonitor, block, oversize, ...]>
+                     mm7:
+                       - <value in [avmonitor, block, oversize, ...]>
                      mm7-addr-hdr: <value of string>
                      mm7-addr-source: <value in [http-header, cookie]>
                      mm7-convert-hex: <value in [disable, enable]>
@@ -512,34 +512,35 @@ EXAMPLES = '''
                      mms-web-content-log: <value in [disable, enable]>
                      mmsbwordthreshold: <value of integer>
                      name: <value of string>
-                     notif-msisdn: 
-                      - 
+                     notif-msisdn:
+                       -
                            msisdn: <value of string>
-                           threshold: 
-                            - <value in [flood-thresh-1, flood-thresh-2, flood-thresh-3, ...]>
+                           threshold:
+                             - <value in [flood-thresh-1, flood-thresh-2, flood-thresh-3, ...]>
                      remove-blocked-const-length: <value in [disable, enable]>
                      replacemsg-group: <value of string>
-    - name: send request to /pm/config/obj/firewall/mms-profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/MMS-PROFILE
       fmgr_pm_config_obj_firewall_mms_profile:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [avnotificationtable, bwordtable, carrier-endpoint-prefix, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [avnotificationtable, bwordtable, carrier-endpoint-prefix, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 '''
 
@@ -558,7 +559,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/firewall/mms-profile
+            example: '/pm/config/adom/{adom}/obj/firewall/mms-profile'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -728,7 +729,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/firewall/mms-profile
+            example: '/pm/config/adom/{adom}/obj/firewall/mms-profile'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -738,6 +739,7 @@ from ansible.module_utils.network.fortimanager.common import DEFAULT_RESULT_OBJ
 from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
+
 
 def main():
     jrpc_urls = [
@@ -752,7 +754,7 @@ def main():
         }
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -1253,7 +1255,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -1274,8 +1275,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -1296,14 +1297,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

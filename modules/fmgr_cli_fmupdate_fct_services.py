@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/fmupdate/fct-services
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -58,7 +57,7 @@ options:
                 port:
                     type: int
                     default: 80
-                    description: 'Configure the port number on which the built-in FortiGuard should provide updates to FortiClient installations (1 - 65535, default = 80).'
+                    description: 'Configure the port number on which the built-in FortiGuard should provide updates to FortiClient installations (1 - 65535,...'
                 status:
                     type: str
                     default: 'enable'
@@ -80,14 +79,15 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/fct-services
+
+    - name: REQUESTING /CLI/FMUPDATE/FCT-SERVICES
       fmgr_cli_fmupdate_fct_services:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   port: <value of integer default: 80>
-                  status: <value in [disable, enable] default: enable>
+                  status: <value in [disable, enable] default: 'enable'>
 
 '''
 
@@ -102,7 +102,7 @@ return_of_api_category_0:
          data:
             port:
                type: int
-               description: 'Configure the port number on which the built-in FortiGuard should provide updates to FortiClient installations (1 - 65535, default = 80).'
+               description: 'Configure the port number on which the built-in FortiGuard should provide updates to FortiClient installations (1 - 65535, defa...'
                example: 80
             status:
                type: str
@@ -110,7 +110,7 @@ return_of_api_category_0:
                   'Enable/disable built-in FortiGuard service to FortiClient installations (default = enable).'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
          status:
             code:
                type: int
@@ -118,7 +118,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/fmupdate/fct-services
+            example: '/cli/global/fmupdate/fct-services'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -133,7 +133,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/fmupdate/fct-services
+            example: '/cli/global/fmupdate/fct-services'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -144,6 +144,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/fmupdate/fct-services'
@@ -152,7 +153,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -173,7 +174,6 @@ def main():
                         },
                         'status': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -196,7 +196,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -216,8 +215,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -238,14 +237,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

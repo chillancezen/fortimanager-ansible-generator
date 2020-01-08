@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/system/route6
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -106,27 +105,29 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/route6
+
+    - name: REQUESTING /CLI/SYSTEM/ROUTE6
       fmgr_cli_system_route6:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      device: <value of string>
-                     dst: <value of string default: ::/0>
-                     gateway: <value of string default: ::>
+                     dst: <value of string default: '::/0'>
+                     gateway: <value of string default: '::'>
                      prio: <value of integer default: 0>
-    - name: send request to /cli/system/route6
+
+    - name: REQUESTING /CLI/SYSTEM/ROUTE6
       fmgr_cli_system_route6:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [device, dst, gateway, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [device, dst, gateway, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -147,7 +148,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/route6
+            example: '/cli/global/system/route6'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -164,11 +165,11 @@ return_of_api_category_0:
                dst:
                   type: str
                   description: 'Destination IP and mask for this route.'
-                  example: ::/0
+                  example: '::/0'
                gateway:
                   type: str
                   description: 'Gateway IP for this route.'
-                  example: ::
+                  example: '::'
                prio:
                   type: int
                   description: 'Entry number.'
@@ -180,7 +181,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/route6
+            example: '/cli/global/system/route6'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -191,6 +192,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/route6'
@@ -199,7 +201,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -211,12 +213,10 @@ def main():
                             'type': 'string'
                         },
                         'dst': {
-                            'type': 'string',
-                            'default': '::/0'
+                            'type': 'string'
                         },
                         'gateway': {
-                            'type': 'string',
-                            'default': '::'
+                            'type': 'string'
                         },
                         'prio': {
                             'type': 'integer',
@@ -297,7 +297,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -318,8 +317,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -340,14 +339,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

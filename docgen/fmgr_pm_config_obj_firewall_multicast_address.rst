@@ -113,15 +113,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/firewall/multicast-address
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/MULTICAST-ADDRESS
       fmgr_pm_config_obj_firewall_multicast_address:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      associated-interface: <value of string>
                      color: <value of integer>
                      comment: <value of string>
@@ -129,35 +130,36 @@ Examples
                      name: <value of string>
                      start-ip: <value of string>
                      subnet: <value of string>
-                     tagging: 
-                      - 
+                     tagging:
+                       -
                            category: <value of string>
                            name: <value of string>
-                           tags: 
-                            - <value of string>
+                           tags:
+                             - <value of string>
                      type: <value in [multicastrange, broadcastmask]>
                      visibility: <value in [disable, enable]>
-    - name: send request to /pm/config/obj/firewall/multicast-address
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/MULTICAST-ADDRESS
       fmgr_pm_config_obj_firewall_multicast_address:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [associated-interface, color, comment, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [associated-interface, color, comment, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

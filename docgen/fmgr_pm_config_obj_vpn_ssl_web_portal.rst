@@ -205,35 +205,36 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/vpn/ssl/web/portal
+
+    - name: REQUESTING /PM/CONFIG/OBJ/VPN/SSL/WEB/PORTAL
       fmgr_pm_config_obj_vpn_ssl_web_portal:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
-                     allow-user-access: 
-                      - <value in [web, ftp, telnet, ...]>
+            -
+               data:
+                 -
+                     allow-user-access:
+                       - <value in [web, ftp, telnet, ...]>
                      auto-connect: <value in [disable, enable]>
-                     bookmark-group: 
-                      - 
-                           bookmarks: 
-                            - 
+                     bookmark-group:
+                       -
+                           bookmarks:
+                             -
                                  additional-params: <value of string>
                                  apptype: <value in [web, telnet, ssh, ...]>
                                  description: <value of string>
                                  folder: <value of string>
-                                 form-data: 
-                                  - 
+                                 form-data:
+                                   -
                                        name: <value of string>
                                        value: <value of string>
                                  host: <value of string>
                                  listening-port: <value of integer>
                                  load-balancing-info: <value of string>
-                                 logon-password: 
-                                  - <value of string>
+                                 logon-password:
+                                   - <value of string>
                                  logon-user: <value of string>
                                  name: <value of string>
                                  port: <value of integer>
@@ -246,8 +247,8 @@ Examples
                                  sso: <value in [disable, static, auto]>
                                  sso-credential: <value in [sslvpn-login, alternative]>
                                  sso-credential-sent-once: <value in [disable, enable]>
-                                 sso-password: 
-                                  - <value of string>
+                                 sso-password:
+                                   - <value of string>
                                  sso-username: <value of string>
                                  url: <value of string>
                            name: <value of string>
@@ -284,10 +285,10 @@ Examples
                      limit-user-logins: <value in [disable, enable]>
                      mac-addr-action: <value in [deny, allow]>
                      mac-addr-check: <value in [disable, enable]>
-                     mac-addr-check-rule: 
-                      - 
-                           mac-addr-list: 
-                            - <value of string>
+                     mac-addr-check-rule:
+                       -
+                           mac-addr-list:
+                             - <value of string>
                            mac-addr-mask: <value of integer>
                            name: <value of string>
                      macos-forticlient-download-url: <value of string>
@@ -300,8 +301,8 @@ Examples
                      skip-check-for-unsupported-os: <value in [disable, enable]>
                      smb-ntlmv1-auth: <value in [disable, enable]>
                      smbv1: <value in [disable, enable]>
-                     split-dns: 
-                      - 
+                     split-dns:
+                       -
                            dns-server1: <value of string>
                            dns-server2: <value of string>
                            domains: <value of string>
@@ -318,27 +319,28 @@ Examples
                      windows-forticlient-download-url: <value of string>
                      wins-server1: <value of string>
                      wins-server2: <value of string>
-    - name: send request to /pm/config/obj/vpn/ssl/web/portal
+
+    - name: REQUESTING /PM/CONFIG/OBJ/VPN/SSL/WEB/PORTAL
       fmgr_pm_config_obj_vpn_ssl_web_portal:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [allow-user-access, auto-connect, custom-lang, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [allow-user-access, auto-connect, custom-lang, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

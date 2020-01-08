@@ -30,7 +30,6 @@ description:
     - /pm/config/adom/{adom}/obj/system/dhcp/server
     - /pm/config/global/obj/system/dhcp/server
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -45,7 +44,7 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
-    url_params: 
+    url_params:
         description: the parameters in url path
         required: True
         type: dict
@@ -469,7 +468,7 @@ options:
                     type: int
             sortings:
                 -
-                    \{attr_name\}:
+                    varidic.attr_name:
                         type: int
                         choices:
                             - 1
@@ -485,15 +484,16 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/system/dhcp/server
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SYSTEM/DHCP/SERVER
       fmgr_pm_config_obj_system_dhcp_server:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      auto-configuration: <value in [disable, enable]>
                      conflicted-ip-timeout: <value of integer>
                      ddns-auth: <value in [disable, tsig]>
@@ -510,8 +510,8 @@ EXAMPLES = '''
                      dns-server3: <value of string>
                      dns-service: <value in [default, specify, local]>
                      domain: <value of string>
-                     exclude-range: 
-                      - 
+                     exclude-range:
+                       -
                            end-ip: <value of string>
                            id: <value of integer>
                            start-ip: <value of string>
@@ -520,8 +520,8 @@ EXAMPLES = '''
                      id: <value of integer>
                      interface: <value of string>
                      ip-mode: <value in [range, usrgrp]>
-                     ip-range: 
-                      - 
+                     ip-range:
+                       -
                            end-ip: <value of string>
                            id: <value of integer>
                            start-ip: <value of string>
@@ -534,16 +534,16 @@ EXAMPLES = '''
                      ntp-server2: <value of string>
                      ntp-server3: <value of string>
                      ntp-service: <value in [default, specify, local]>
-                     options: 
-                      - 
+                     options:
+                       -
                            code: <value of integer>
                            id: <value of integer>
-                           ip: 
-                            - <value of string>
+                           ip:
+                             - <value of string>
                            type: <value in [hex, string, ip, ...]>
                            value: <value of string>
-                     reserved-address: 
-                      - 
+                     reserved-address:
+                       -
                            action: <value in [assign, block, reserved]>
                            description: <value of string>
                            id: <value of integer>
@@ -551,39 +551,40 @@ EXAMPLES = '''
                            mac: <value of string>
                      server-type: <value in [regular, ipsec]>
                      status: <value in [disable, enable]>
-                     tftp-server: 
-                      - <value of string>
+                     tftp-server:
+                       - <value of string>
                      timezone: <value in [00, 01, 02, ...]>
                      timezone-option: <value in [disable, default, specify]>
                      vci-match: <value in [disable, enable]>
-                     vci-string: 
-                      - <value of string>
+                     vci-string:
+                       - <value of string>
                      wifi-ac1: <value of string>
                      wifi-ac2: <value of string>
                      wifi-ac3: <value of string>
                      wins-server1: <value of string>
                      wins-server2: <value of string>
-    - name: send request to /pm/config/obj/system/dhcp/server
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SYSTEM/DHCP/SERVER
       fmgr_pm_config_obj_system_dhcp_server:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [auto-configuration, conflicted-ip-timeout, ddns-auth, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [auto-configuration, conflicted-ip-timeout, ddns-auth, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 '''
 
@@ -608,7 +609,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/system/dhcp/server
+            example: '/pm/config/adom/{adom}/obj/system/dhcp/server'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -815,7 +816,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/system/dhcp/server
+            example: '/pm/config/adom/{adom}/obj/system/dhcp/server'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -825,6 +826,7 @@ from ansible.module_utils.network.fortimanager.common import DEFAULT_RESULT_OBJ
 from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
+
 
 def main():
     jrpc_urls = [
@@ -839,7 +841,7 @@ def main():
         }
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -1363,7 +1365,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -1384,8 +1385,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -1406,14 +1407,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

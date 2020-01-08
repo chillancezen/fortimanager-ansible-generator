@@ -84,21 +84,22 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/web-spam/fgd-setting/server-override
+
+    - name: REQUESTING /CLI/FMUPDATE/WEB-SPAM/FGD-SETTING/SERVER-OVERRIDE
       fmgr_cli_fmupdate_web_spam_fgd_setting_server_override:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  servlist: 
-                   - 
+            -
+               data:
+                  servlist:
+                    -
                         id: <value of integer default: 0>
-                        ip: <value of string default: 0.0.0.0>
-                        ip6: <value of string default: ::>
+                        ip: <value of string default: '0.0.0.0'>
+                        ip6: <value of string default: '::'>
                         port: <value of integer default: 443>
-                        service-type: 
-                         - <value in [fgd, fgc, fsa]>
-                  status: <value in [disable, enable] default: disable>
+                        service-type:
+                          - <value in [fgd, fgc, fsa]>
+                  status: <value in [disable, enable] default: 'disable'>
 
 
 

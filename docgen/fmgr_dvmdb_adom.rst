@@ -115,16 +115,17 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvmdb/adom
+
+    - name: REQUESTING /DVMDB/ADOM
       fmgr_dvmdb_adom:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      desc: <value of string>
-                     flags: 
-                      - <value in [migration, db_export, no_vpn_console, ...]>
+                     flags:
+                       - <value in [migration, db_export, no_vpn_console, ...]>
                      log_db_retention_hours: <value of integer default: 1440>
                      log_disk_quota: <value of integer>
                      log_disk_quota_alert_thres: <value of integer default: 90>
@@ -132,35 +133,36 @@ Examples
                      log_file_retention_hours: <value of integer default: 8760>
                      meta fields: <value of string>
                      mig_mr: <value of integer default: 2>
-                     mig_os_ver: <value in [unknown, 0.0, 1.0, ...] default: 6.0>
-                     mode: <value in [ems, gms, provider] default: gms>
+                     mig_os_ver: <value in [unknown, 0.0, 1.0, ...] default: '6.0'>
+                     mode: <value in [ems, gms, provider] default: 'gms'>
                      mr: <value of integer default: 2>
                      name: <value of string>
-                     os_ver: <value in [unknown, 0.0, 1.0, ...] default: 6.0>
-                     restricted_prds: 
-                      - <value in [fos, foc, fml, ...]>
+                     os_ver: <value in [unknown, 0.0, 1.0, ...] default: '6.0'>
+                     restricted_prds:
+                       - <value in [fos, foc, fml, ...]>
                      state: <value of integer default: 1>
                      uuid: <value of string>
-    - name: send request to /dvmdb/adom
+
+    - name: REQUESTING /DVMDB/ADOM
       fmgr_dvmdb_adom:
          method: <value in [get]>
          params:
-            - 
+            -
                expand member: <value of string>
-               fields: 
-                - 
-                   - <value in [desc, flags, log_db_retention_hours, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [desc, flags, log_db_retention_hours, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
-               meta fields: 
-                - <value of string>
+               meta fields:
+                 - <value of string>
                option: <value in [count, object member, syntax]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

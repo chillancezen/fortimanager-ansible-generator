@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/system/admin/profile
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -231,7 +230,7 @@ options:
                     datamask-key:
                         -
                             type: str
-                            default: 'ENC MzI1Nzc3MjAyNTg1Njg0NNKOn5kCfNawE/VnDbtMpWXduJpvaREIOxBK4PNmJmqeRwgB9loHz7FqcMzTT5DrD50rb65MQrxNOiuHZ7eM/qmDuMiCMym4F4p2r819t/tQ0emIgt9MTrccrMAZN5Mv9Kmkp5KFjedrsRnbofB058Bi9VBs'
+                            default: 'ENC MzI1Nzc3MjAyNTg1Njg0NNKOn5kCfNawE/VnDbtMpWXduJpvaREIOxBK4PNmJmqeRwgB9loHz7FqcMzTT5DrD50rb65MQrxNOiuHZ7eM/qmDuMiCM...'
                     deploy-management:
                         type: str
                         default: 'none'
@@ -697,79 +696,81 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/admin/profile
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/PROFILE
       fmgr_cli_system_admin_profile:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     adom-lock: <value in [none, read, read-write] default: none>
-                     adom-policy-packages: <value in [none, read, read-write] default: none>
-                     adom-switch: <value in [none, read, read-write] default: none>
-                     app-filter: <value in [disable, enable] default: disable>
-                     assignment: <value in [none, read, read-write] default: none>
-                     change-password: <value in [disable, enable] default: disable>
-                     config-retrieve: <value in [none, read, read-write] default: none>
-                     config-revert: <value in [none, read, read-write] default: none>
-                     consistency-check: <value in [none, read, read-write] default: none>
-                     datamask: <value in [disable, enable] default: disable>
-                     datamask-custom-fields: 
-                      - 
-                           field-category: 
-                            - <value in [log, fortiview, alert, ...]>
+            -
+               data:
+                 -
+                     adom-lock: <value in [none, read, read-write] default: 'none'>
+                     adom-policy-packages: <value in [none, read, read-write] default: 'none'>
+                     adom-switch: <value in [none, read, read-write] default: 'none'>
+                     app-filter: <value in [disable, enable] default: 'disable'>
+                     assignment: <value in [none, read, read-write] default: 'none'>
+                     change-password: <value in [disable, enable] default: 'disable'>
+                     config-retrieve: <value in [none, read, read-write] default: 'none'>
+                     config-revert: <value in [none, read, read-write] default: 'none'>
+                     consistency-check: <value in [none, read, read-write] default: 'none'>
+                     datamask: <value in [disable, enable] default: 'disable'>
+                     datamask-custom-fields:
+                       -
+                           field-category:
+                             - <value in [log, fortiview, alert, ...]>
                            field-name: <value of string>
-                           field-status: <value in [disable, enable] default: enable>
-                           field-type: <value in [string, ip, mac, ...] default: string>
-                     datamask-custom-priority: <value in [disable, enable] default: disable>
-                     datamask-fields: 
-                      - <value in [user, srcip, srcname, ...]>
-                     datamask-key: 
-                      - <value of string default: ENC MzI1Nzc3MjAyNTg1Njg0NNKOn5kCfNawE/VnDbtMpWXduJpvaREIOxBK4PNmJmqeRwgB9loHz7FqcMzTT5DrD50rb65MQrxNOiuHZ7eM/qmDuMiCMym4F4p2r819t/tQ0emIgt9MTrccrMAZN5Mv9Kmkp5KFjedrsRnbofB058Bi9VBs>
-                     deploy-management: <value in [none, read, read-write] default: none>
+                           field-status: <value in [disable, enable] default: 'enable'>
+                           field-type: <value in [string, ip, mac, ...] default: 'string'>
+                     datamask-custom-priority: <value in [disable, enable] default: 'disable'>
+                     datamask-fields:
+                       - <value in [user, srcip, srcname, ...]>
+                     datamask-key:
+                       - <value of string default: 'ENC MzI1Nzc3MjAyNTg1Njg0NNKOn5kCfNawE/VnDbtMpWXduJpvaREIOxBK4PNmJmqeRwgB9loH...'>
+                     deploy-management: <value in [none, read, read-write] default: 'none'>
                      description: <value of string>
-                     device-ap: <value in [none, read, read-write] default: none>
-                     device-config: <value in [none, read, read-write] default: none>
-                     device-forticlient: <value in [none, read, read-write] default: none>
-                     device-fortiswitch: <value in [none, read, read-write] default: none>
-                     device-manager: <value in [none, read, read-write] default: none>
-                     device-op: <value in [none, read, read-write] default: none>
-                     device-policy-package-lock: <value in [none, read, read-write] default: none>
-                     device-profile: <value in [none, read, read-write] default: none>
-                     device-revision-deletion: <value in [none, read, read-write] default: none>
-                     device-wan-link-load-balance: <value in [none, read, read-write] default: none>
-                     event-management: <value in [none, read, read-write] default: none>
-                     fgd-center-advanced: <value in [none, read, read-write] default: none>
-                     fgd-center-fmw-mgmt: <value in [none, read, read-write] default: none>
-                     fgd-center-licensing: <value in [none, read, read-write] default: none>
-                     fgd_center: <value in [none, read, read-write] default: none>
-                     global-policy-packages: <value in [none, read, read-write] default: none>
-                     import-policy-packages: <value in [none, read, read-write] default: none>
-                     intf-mapping: <value in [none, read, read-write] default: none>
-                     ips-filter: <value in [disable, enable] default: disable>
-                     log-viewer: <value in [none, read, read-write] default: none>
-                     policy-objects: <value in [none, read, read-write] default: none>
+                     device-ap: <value in [none, read, read-write] default: 'none'>
+                     device-config: <value in [none, read, read-write] default: 'none'>
+                     device-forticlient: <value in [none, read, read-write] default: 'none'>
+                     device-fortiswitch: <value in [none, read, read-write] default: 'none'>
+                     device-manager: <value in [none, read, read-write] default: 'none'>
+                     device-op: <value in [none, read, read-write] default: 'none'>
+                     device-policy-package-lock: <value in [none, read, read-write] default: 'none'>
+                     device-profile: <value in [none, read, read-write] default: 'none'>
+                     device-revision-deletion: <value in [none, read, read-write] default: 'none'>
+                     device-wan-link-load-balance: <value in [none, read, read-write] default: 'none'>
+                     event-management: <value in [none, read, read-write] default: 'none'>
+                     fgd-center-advanced: <value in [none, read, read-write] default: 'none'>
+                     fgd-center-fmw-mgmt: <value in [none, read, read-write] default: 'none'>
+                     fgd-center-licensing: <value in [none, read, read-write] default: 'none'>
+                     fgd_center: <value in [none, read, read-write] default: 'none'>
+                     global-policy-packages: <value in [none, read, read-write] default: 'none'>
+                     import-policy-packages: <value in [none, read, read-write] default: 'none'>
+                     intf-mapping: <value in [none, read, read-write] default: 'none'>
+                     ips-filter: <value in [disable, enable] default: 'disable'>
+                     log-viewer: <value in [none, read, read-write] default: 'none'>
+                     policy-objects: <value in [none, read, read-write] default: 'none'>
                      profileid: <value of string>
-                     read-passwd: <value in [none, read, read-write] default: none>
-                     realtime-monitor: <value in [none, read, read-write] default: none>
-                     report-viewer: <value in [none, read, read-write] default: none>
-                     scope: <value in [global, adom] default: global>
-                     set-install-targets: <value in [none, read, read-write] default: none>
-                     system-setting: <value in [none, read, read-write] default: none>
-                     term-access: <value in [none, read, read-write] default: none>
-                     type: <value in [system, restricted] default: system>
-                     vpn-manager: <value in [none, read, read-write] default: none>
-                     web-filter: <value in [disable, enable] default: disable>
-    - name: send request to /cli/system/admin/profile
+                     read-passwd: <value in [none, read, read-write] default: 'none'>
+                     realtime-monitor: <value in [none, read, read-write] default: 'none'>
+                     report-viewer: <value in [none, read, read-write] default: 'none'>
+                     scope: <value in [global, adom] default: 'global'>
+                     set-install-targets: <value in [none, read, read-write] default: 'none'>
+                     system-setting: <value in [none, read, read-write] default: 'none'>
+                     term-access: <value in [none, read, read-write] default: 'none'>
+                     type: <value in [system, restricted] default: 'system'>
+                     vpn-manager: <value in [none, read, read-write] default: 'none'>
+                     web-filter: <value in [disable, enable] default: 'disable'>
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/PROFILE
       fmgr_cli_system_admin_profile:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [adom-lock, adom-policy-packages, adom-switch, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [adom-lock, adom-policy-packages, adom-switch, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -790,7 +791,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/admin/profile
+            example: '/cli/global/system/admin/profile'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -808,7 +809,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                adom-policy-packages:
                   type: str
                   description: |
@@ -816,7 +817,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                adom-switch:
                   type: str
                   description: |
@@ -824,14 +825,14 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                app-filter:
                   type: str
                   description: |
                      'App filter.'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: disable
+                  example: 'disable'
                assignment:
                   type: str
                   description: |
@@ -839,14 +840,14 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                change-password:
                   type: str
                   description: |
                      'Enable/disable restricted user to change self password.'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: disable
+                  example: 'disable'
                config-retrieve:
                   type: str
                   description: |
@@ -854,7 +855,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                config-revert:
                   type: str
                   description: |
@@ -862,7 +863,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                consistency-check:
                   type: str
                   description: |
@@ -870,14 +871,14 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                datamask:
                   type: str
                   description: |
                      'Enable/disable data masking.'
                      'disable - Disable data masking.'
                      'enable - Enable data masking.'
-                  example: disable
+                  example: 'disable'
                datamask-custom-fields:
                   type: array
                   suboptions:
@@ -894,7 +895,7 @@ return_of_api_category_0:
                            'Field status.'
                            'disable - Disable field.'
                            'enable - Enable field.'
-                        example: enable
+                        example: 'enable'
                      field-type:
                         type: str
                         description: |
@@ -904,14 +905,14 @@ return_of_api_category_0:
                            'mac - MAC address.'
                            'email - Email address.'
                            'unknown - Unknown.'
-                        example: string
+                        example: 'string'
                datamask-custom-priority:
                   type: str
                   description: |
                      'Prioritize custom fields.'
                      'disable - Disable custom field search priority.'
                      'enable - Enable custom field search priority.'
-                  example: disable
+                  example: 'disable'
                datamask-fields:
                   type: array
                   suboptions:
@@ -920,7 +921,7 @@ return_of_api_category_0:
                   type: array
                   suboptions:
                      type: str
-                     example: ENC MzI1Nzc3MjAyNTg1Njg0NNKOn5kCfNawE/VnDbtMpWXduJpvaREIOxBK4PNmJmqeRwgB9loHz7FqcMzTT5DrD50rb65MQrxNOiuHZ7eM/qmDuMiCMym4F4p2r819t/tQ0emIgt9MTrccrMAZN5Mv9Kmkp5KFjedrsRnbofB058Bi9VBs
+                     example: 'ENC MzI1Nzc3MjAyNTg1Njg0NNKOn5kCfNawE/VnDbtMpWXduJpvaREIOxBK4PNmJmqeRwgB9loH...'
                deploy-management:
                   type: str
                   description: |
@@ -928,7 +929,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                description:
                   type: str
                   description: 'Description.'
@@ -939,7 +940,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                device-config:
                   type: str
                   description: |
@@ -947,7 +948,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                device-forticlient:
                   type: str
                   description: |
@@ -955,7 +956,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                device-fortiswitch:
                   type: str
                   description: |
@@ -963,7 +964,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                device-manager:
                   type: str
                   description: |
@@ -971,7 +972,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                device-op:
                   type: str
                   description: |
@@ -979,7 +980,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                device-policy-package-lock:
                   type: str
                   description: |
@@ -987,7 +988,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                device-profile:
                   type: str
                   description: |
@@ -995,7 +996,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                device-revision-deletion:
                   type: str
                   description: |
@@ -1003,7 +1004,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                device-wan-link-load-balance:
                   type: str
                   description: |
@@ -1011,7 +1012,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                event-management:
                   type: str
                   description: |
@@ -1019,7 +1020,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                fgd-center-advanced:
                   type: str
                   description: |
@@ -1027,7 +1028,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                fgd-center-fmw-mgmt:
                   type: str
                   description: |
@@ -1035,7 +1036,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                fgd-center-licensing:
                   type: str
                   description: |
@@ -1043,7 +1044,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                fgd_center:
                   type: str
                   description: |
@@ -1051,7 +1052,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                global-policy-packages:
                   type: str
                   description: |
@@ -1059,7 +1060,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                import-policy-packages:
                   type: str
                   description: |
@@ -1067,7 +1068,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                intf-mapping:
                   type: str
                   description: |
@@ -1075,14 +1076,14 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                ips-filter:
                   type: str
                   description: |
                      'IPS filter.'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: disable
+                  example: 'disable'
                log-viewer:
                   type: str
                   description: |
@@ -1090,7 +1091,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                policy-objects:
                   type: str
                   description: |
@@ -1098,7 +1099,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                profileid:
                   type: str
                   description: 'Profile ID.'
@@ -1109,7 +1110,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                realtime-monitor:
                   type: str
                   description: |
@@ -1117,7 +1118,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                report-viewer:
                   type: str
                   description: |
@@ -1125,14 +1126,14 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                scope:
                   type: str
                   description: |
                      'Scope.'
                      'global - Global scope.'
                      'adom - ADOM scope.'
-                  example: global
+                  example: 'global'
                set-install-targets:
                   type: str
                   description: |
@@ -1140,7 +1141,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                system-setting:
                   type: str
                   description: |
@@ -1148,7 +1149,7 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                term-access:
                   type: str
                   description: |
@@ -1156,14 +1157,14 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                type:
                   type: str
                   description: |
                      'profile type.'
                      'system - System admin.'
                      'restricted - Restricted admin.'
-                  example: system
+                  example: 'system'
                vpn-manager:
                   type: str
                   description: |
@@ -1171,14 +1172,14 @@ return_of_api_category_0:
                      'none - No permission.'
                      'read - Read permission.'
                      'read-write - Read-write permission.'
-                  example: none
+                  example: 'none'
                web-filter:
                   type: str
                   description: |
                      'Web filter.'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: disable
+                  example: 'disable'
          status:
             code:
                type: int
@@ -1186,7 +1187,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/admin/profile
+            example: '/cli/global/system/admin/profile'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -1197,6 +1198,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/admin/profile'
@@ -1205,7 +1207,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -1215,7 +1217,6 @@ def main():
                     'items': {
                         'adom-lock': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1224,7 +1225,6 @@ def main():
                         },
                         'adom-policy-packages': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1233,7 +1233,6 @@ def main():
                         },
                         'adom-switch': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1242,7 +1241,6 @@ def main():
                         },
                         'app-filter': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1250,7 +1248,6 @@ def main():
                         },
                         'assignment': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1259,7 +1256,6 @@ def main():
                         },
                         'change-password': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1267,7 +1263,6 @@ def main():
                         },
                         'config-retrieve': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1276,7 +1271,6 @@ def main():
                         },
                         'config-revert': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1285,7 +1279,6 @@ def main():
                         },
                         'consistency-check': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1294,7 +1287,6 @@ def main():
                         },
                         'datamask': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1321,7 +1313,6 @@ def main():
                                 },
                                 'field-status': {
                                     'type': 'string',
-                                    'default': 'enable',
                                     'enum': [
                                         'disable',
                                         'enable'
@@ -1329,7 +1320,6 @@ def main():
                                 },
                                 'field-type': {
                                     'type': 'string',
-                                    'default': 'string',
                                     'enum': [
                                         'string',
                                         'ip',
@@ -1342,7 +1332,6 @@ def main():
                         },
                         'datamask-custom-priority': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1368,13 +1357,11 @@ def main():
                         'datamask-key': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC MzI1Nzc3MjAyNTg1Njg0NNKOn5kCfNawE/VnDbtMpWXduJpvaREIOxBK4PNmJmqeRwgB9loHz7FqcMzTT5DrD50rb65MQrxNOiuHZ7eM/qmDuMiCMym4F4p2r819t/tQ0emIgt9MTrccrMAZN5Mv9Kmkp5KFjedrsRnbofB058Bi9VBs'
+                                'type': 'string'
                             }
                         },
                         'deploy-management': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1386,7 +1373,6 @@ def main():
                         },
                         'device-ap': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1395,7 +1381,6 @@ def main():
                         },
                         'device-config': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1404,7 +1389,6 @@ def main():
                         },
                         'device-forticlient': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1413,7 +1397,6 @@ def main():
                         },
                         'device-fortiswitch': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1422,7 +1405,6 @@ def main():
                         },
                         'device-manager': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1431,7 +1413,6 @@ def main():
                         },
                         'device-op': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1440,7 +1421,6 @@ def main():
                         },
                         'device-policy-package-lock': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1449,7 +1429,6 @@ def main():
                         },
                         'device-profile': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1458,7 +1437,6 @@ def main():
                         },
                         'device-revision-deletion': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1467,7 +1445,6 @@ def main():
                         },
                         'device-wan-link-load-balance': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1476,7 +1453,6 @@ def main():
                         },
                         'event-management': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1485,7 +1461,6 @@ def main():
                         },
                         'fgd-center-advanced': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1494,7 +1469,6 @@ def main():
                         },
                         'fgd-center-fmw-mgmt': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1503,7 +1477,6 @@ def main():
                         },
                         'fgd-center-licensing': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1512,7 +1485,6 @@ def main():
                         },
                         'fgd_center': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1521,7 +1493,6 @@ def main():
                         },
                         'global-policy-packages': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1530,7 +1501,6 @@ def main():
                         },
                         'import-policy-packages': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1539,7 +1509,6 @@ def main():
                         },
                         'intf-mapping': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1548,7 +1517,6 @@ def main():
                         },
                         'ips-filter': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1556,7 +1524,6 @@ def main():
                         },
                         'log-viewer': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1565,7 +1532,6 @@ def main():
                         },
                         'policy-objects': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1577,7 +1543,6 @@ def main():
                         },
                         'read-passwd': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1586,7 +1551,6 @@ def main():
                         },
                         'realtime-monitor': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1595,7 +1559,6 @@ def main():
                         },
                         'report-viewer': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1604,7 +1567,6 @@ def main():
                         },
                         'scope': {
                             'type': 'string',
-                            'default': 'global',
                             'enum': [
                                 'global',
                                 'adom'
@@ -1612,7 +1574,6 @@ def main():
                         },
                         'set-install-targets': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1621,7 +1582,6 @@ def main():
                         },
                         'system-setting': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1630,7 +1590,6 @@ def main():
                         },
                         'term-access': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1639,7 +1598,6 @@ def main():
                         },
                         'type': {
                             'type': 'string',
-                            'default': 'system',
                             'enum': [
                                 'system',
                                 'restricted'
@@ -1647,7 +1605,6 @@ def main():
                         },
                         'vpn-manager': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'read',
@@ -1656,7 +1613,6 @@ def main():
                         },
                         'web-filter': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1779,7 +1735,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -1800,8 +1755,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -1822,14 +1777,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

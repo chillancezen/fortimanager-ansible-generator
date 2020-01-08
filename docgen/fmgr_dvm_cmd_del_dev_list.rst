@@ -80,19 +80,20 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvm/cmd/del/dev-list
+
+    - name: REQUESTING /DVM/CMD/DEL/DEV-LIST
       fmgr_dvm_cmd_del_dev_list:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   adom: <value of string>
-                  del-dev-member-list: 
-                   - 
+                  del-dev-member-list:
+                    -
                         name: <value of string>
                         vdom: <value of string>
-                  flags: 
-                   - <value in [none, create_task, nonblocking, ...]>
+                  flags:
+                    - <value in [none, create_task, nonblocking, ...]>
 
 
 

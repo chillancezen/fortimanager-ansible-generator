@@ -82,19 +82,20 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/locallog/fortianalyzer3/setting
+
+    - name: REQUESTING /CLI/SYSTEM/LOCALLOG/FORTIANALYZER3/SETTING
       fmgr_cli_system_locallog_fortianalyzer3_setting:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  reliable: <value in [disable, enable] default: disable>
-                  secure-connection: <value in [disable, enable] default: disable>
-                  server-ip: <value of string default: 0.0.0.0>
-                  severity: <value in [emergency, alert, critical, ...] default: notification>
-                  status: <value in [disable, realtime, upload] default: disable>
-                  upload-time: 
-                   - <value of string>
+            -
+               data:
+                  reliable: <value in [disable, enable] default: 'disable'>
+                  secure-connection: <value in [disable, enable] default: 'disable'>
+                  server-ip: <value of string default: '0.0.0.0'>
+                  severity: <value in [emergency, alert, critical, ...] default: 'notification'>
+                  status: <value in [disable, realtime, upload] default: 'disable'>
+                  upload-time:
+                    - <value of string>
 
 
 

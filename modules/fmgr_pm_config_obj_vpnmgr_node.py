@@ -30,7 +30,6 @@ description:
     - /pm/config/adom/{adom}/obj/vpnmgr/node
     - /pm/config/global/obj/vpnmgr/node
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -45,7 +44,7 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
-    url_params: 
+    url_params:
         description: the parameters in url path
         required: True
         type: dict
@@ -353,7 +352,7 @@ options:
                     type: int
             sortings:
                 -
-                    \{attr_name\}:
+                    varidic.attr_name:
                         type: int
                         choices:
                             - 1
@@ -369,20 +368,21 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/vpnmgr/node
+
+    - name: REQUESTING /PM/CONFIG/OBJ/VPNMGR/NODE
       fmgr_pm_config_obj_vpnmgr_node:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      add-route: <value in [disable, enable]>
                      assign-ip: <value in [disable, enable]>
                      assign-ip-from: <value in [range, usrgrp, dhcp, ...]>
-                     authpasswd: 
-                      - <value of string>
+                     authpasswd:
+                       - <value of string>
                      authusr: <value of string>
                      authusrgrp: <value of string>
                      auto-configuration: <value in [disable, enable]>
@@ -400,8 +400,8 @@ EXAMPLES = '''
                      hub_iface: <value of string>
                      id: <value of integer>
                      iface: <value of string>
-                     ip-range: 
-                      - 
+                     ip-range:
+                       -
                            end-ip: <value of string>
                            id: <value of integer>
                            start-ip: <value of string>
@@ -410,8 +410,8 @@ EXAMPLES = '''
                      ipv4-dns-server2: <value of string>
                      ipv4-dns-server3: <value of string>
                      ipv4-end-ip: <value of string>
-                     ipv4-exclude-range: 
-                      - 
+                     ipv4-exclude-range:
+                       -
                            end-ip: <value of string>
                            id: <value of integer>
                            start-ip: <value of string>
@@ -429,16 +429,16 @@ EXAMPLES = '''
                      peergrp: <value of string>
                      peerid: <value of string>
                      peertype: <value in [any, one, dialup, ...]>
-                     protected_subnet: 
-                      - 
+                     protected_subnet:
+                       -
                            addr: <value of string>
                            seq: <value of integer>
                      public-ip: <value of string>
                      role: <value in [hub, spoke]>
                      route-overlap: <value in [use-old, use-new, allow]>
                      spoke-zone: <value of string>
-                     summary_addr: 
-                      - 
+                     summary_addr:
+                       -
                            addr: <value of string>
                            priority: <value of integer>
                            seq: <value of integer>
@@ -449,27 +449,28 @@ EXAMPLES = '''
                      vpn-zone: <value of string>
                      vpntable: <value of string>
                      xauthtype: <value in [disable, client, pap, ...]>
-    - name: send request to /pm/config/obj/vpnmgr/node
+
+    - name: REQUESTING /PM/CONFIG/OBJ/VPNMGR/NODE
       fmgr_pm_config_obj_vpnmgr_node:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [add-route, assign-ip, assign-ip-from, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [add-route, assign-ip, assign-ip-from, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 '''
 
@@ -493,7 +494,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/vpnmgr/node
+            example: '/pm/config/adom/{adom}/obj/vpnmgr/node'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -649,7 +650,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/vpnmgr/node
+            example: '/pm/config/adom/{adom}/obj/vpnmgr/node'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -659,6 +660,7 @@ from ansible.module_utils.network.fortimanager.common import DEFAULT_RESULT_OBJ
 from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
+
 
 def main():
     jrpc_urls = [
@@ -673,7 +675,7 @@ def main():
         }
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -1138,7 +1140,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -1159,8 +1160,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -1181,14 +1182,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

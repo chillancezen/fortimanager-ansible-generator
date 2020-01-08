@@ -88,27 +88,29 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/admin/group
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/GROUP
       fmgr_cli_system_admin_group:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     member: 
-                      - 
+            -
+               data:
+                 -
+                     member:
+                       -
                            name: <value of string>
                      name: <value of string>
-    - name: send request to /cli/system/admin/group
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/GROUP
       fmgr_cli_system_admin_group:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [name]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [name]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

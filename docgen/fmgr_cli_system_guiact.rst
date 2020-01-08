@@ -83,12 +83,13 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/guiact
+
+    - name: REQUESTING /CLI/SYSTEM/GUIACT
       fmgr_cli_system_guiact:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   backup_all: <value of string>
                   backup_conf: <value of string>
                   eventlog_msg: <value of string>

@@ -148,18 +148,19 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/wireless-controller/wids-profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/WIDS-PROFILE
       fmgr_pm_config_obj_wireless_controller_wids_profile:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      ap-auto-suppress: <value in [disable, enable]>
-                     ap-bgscan-disable-day: 
-                      - <value in [sunday, monday, tuesday, ...]>
+                     ap-bgscan-disable-day:
+                       - <value in [sunday, monday, tuesday, ...]>
                      ap-bgscan-disable-end: <value of string>
                      ap-bgscan-disable-start: <value of string>
                      ap-bgscan-duration: <value of integer>
@@ -207,27 +208,28 @@ Examples
                      spoofed-deauth: <value in [disable, enable]>
                      weak-wep-iv: <value in [disable, enable]>
                      wireless-bridge: <value in [disable, enable]>
-    - name: send request to /pm/config/obj/wireless-controller/wids-profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/WIDS-PROFILE
       fmgr_pm_config_obj_wireless_controller_wids_profile:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [ap-auto-suppress, ap-bgscan-disable-day, ap-bgscan-disable-end, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [ap-auto-suppress, ap-bgscan-disable-day, ap-bgscan-disable-end, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

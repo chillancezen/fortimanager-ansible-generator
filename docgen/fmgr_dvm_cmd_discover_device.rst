@@ -75,13 +75,14 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvm/cmd/discover/device
+
+    - name: REQUESTING /DVM/CMD/DISCOVER/DEVICE
       fmgr_dvm_cmd_discover_device:
          method: <value in [exec]>
          params:
-            - 
-               data: 
-                  device: 
+            -
+               data:
+                  device:
                      adm_pass: <value of string>
                      adm_usr: <value of string>
                      ip: <value of string>

@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/system/mail
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -67,7 +66,7 @@ options:
                     passwd:
                         -
                             type: str
-                            default: 'ENC MTI3MTE1Mzc2NTkxNzM3My6VraLxNsD7/K6FZ6oYkYSCjr1/h55a1R9hSJwHMCRyMEgllLUQEhRyvo6NfN3em5zkIyjoe2lL1IiVMHB7akT/z/3KthjsAi7XxuoMxrrTCD22xfmlCWUL9Ic7XgFbGqD4FPOGs6XKMCTZ0SdI+YEcf+pp'
+                            default: 'ENC MTI3MTE1Mzc2NTkxNzM3My6VraLxNsD7/K6FZ6oYkYSCjr1/h55a1R9hSJwHMCRyMEgllLUQEhRyvo6NfN3em5zkIyjoe2lL1IiVMHB7akT/z/3Kt...'
                     port:
                         type: int
                         default: 25
@@ -135,31 +134,33 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/mail
+
+    - name: REQUESTING /CLI/SYSTEM/MAIL
       fmgr_cli_system_mail:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     auth: <value in [disable, enable] default: disable>
+            -
+               data:
+                 -
+                     auth: <value in [disable, enable] default: 'disable'>
                      id: <value of string>
-                     passwd: 
-                      - <value of string default: ENC MTI3MTE1Mzc2NTkxNzM3My6VraLxNsD7/K6FZ6oYkYSCjr1/h55a1R9hSJwHMCRyMEgllLUQEhRyvo6NfN3em5zkIyjoe2lL1IiVMHB7akT/z/3KthjsAi7XxuoMxrrTCD22xfmlCWUL9Ic7XgFbGqD4FPOGs6XKMCTZ0SdI+YEcf+pp>
+                     passwd:
+                       - <value of string default: 'ENC MTI3MTE1Mzc2NTkxNzM3My6VraLxNsD7/K6FZ6oYkYSCjr1/h55a1R9hSJwHMCRyMEgllLUQ...'>
                      port: <value of integer default: 25>
-                     secure-option: <value in [default, none, smtps, ...] default: default>
+                     secure-option: <value in [default, none, smtps, ...] default: 'default'>
                      server: <value of string>
                      user: <value of string>
-    - name: send request to /cli/system/mail
+
+    - name: REQUESTING /CLI/SYSTEM/MAIL
       fmgr_cli_system_mail:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [auth, id, passwd, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [auth, id, passwd, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -180,7 +181,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/mail
+            example: '/cli/global/system/mail'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -197,7 +198,7 @@ return_of_api_category_0:
                      'Enable authentication.'
                      'disable - Disable authentication.'
                      'enable - Enable authentication.'
-                  example: disable
+                  example: 'disable'
                id:
                   type: str
                   description: 'Mail Service ID.'
@@ -205,7 +206,7 @@ return_of_api_category_0:
                   type: array
                   suboptions:
                      type: str
-                     example: ENC MTI3MTE1Mzc2NTkxNzM3My6VraLxNsD7/K6FZ6oYkYSCjr1/h55a1R9hSJwHMCRyMEgllLUQEhRyvo6NfN3em5zkIyjoe2lL1IiVMHB7akT/z/3KthjsAi7XxuoMxrrTCD22xfmlCWUL9Ic7XgFbGqD4FPOGs6XKMCTZ0SdI+YEcf+pp
+                     example: 'ENC MTI3MTE1Mzc2NTkxNzM3My6VraLxNsD7/K6FZ6oYkYSCjr1/h55a1R9hSJwHMCRyMEgllLUQ...'
                port:
                   type: int
                   description: 'SMTP server port.'
@@ -218,7 +219,7 @@ return_of_api_category_0:
                      'none - Communication will be in plain text format.'
                      'smtps - Communication will be protected by SMTPS.'
                      'starttls - Communication will be protected by STARTTLS.'
-                  example: default
+                  example: 'default'
                server:
                   type: str
                   description: 'SMTP server.'
@@ -232,7 +233,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/mail
+            example: '/cli/global/system/mail'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -243,6 +244,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/mail'
@@ -251,7 +253,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -261,7 +263,6 @@ def main():
                     'items': {
                         'auth': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -273,8 +274,7 @@ def main():
                         'passwd': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC MTI3MTE1Mzc2NTkxNzM3My6VraLxNsD7/K6FZ6oYkYSCjr1/h55a1R9hSJwHMCRyMEgllLUQEhRyvo6NfN3em5zkIyjoe2lL1IiVMHB7akT/z/3KthjsAi7XxuoMxrrTCD22xfmlCWUL9Ic7XgFbGqD4FPOGs6XKMCTZ0SdI+YEcf+pp'
+                                'type': 'string'
                             }
                         },
                         'port': {
@@ -284,7 +284,6 @@ def main():
                         },
                         'secure-option': {
                             'type': 'string',
-                            'default': 'default',
                             'enum': [
                                 'default',
                                 'none',
@@ -375,7 +374,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -396,8 +394,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -418,14 +416,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

@@ -75,12 +75,13 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/log/alert
+
+    - name: REQUESTING /CLI/SYSTEM/LOG/ALERT
       fmgr_cli_system_log_alert:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   max-alert-count: <value of integer default: 1000>
 
 

@@ -118,56 +118,58 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvmdb/script
+
+    - name: REQUESTING /DVMDB/SCRIPT
       fmgr_dvmdb_script:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      content: <value of string>
                      desc: <value of string>
                      filter_build: <value of integer>
                      filter_device: <value of integer>
                      filter_hostname: <value of string>
-                     filter_ostype: <value in [unknown, fos] default: unknown>
-                     filter_osver: <value in [unknown, 4.00, 5.00] default: unknown>
+                     filter_ostype: <value in [unknown, fos] default: 'unknown'>
+                     filter_osver: <value in [unknown, 4.00, 5.00] default: 'unknown'>
                      filter_platform: <value of string>
                      filter_serial: <value of string>
                      modification_time: <value of string>
                      name: <value of string>
-                     script_schedule: 
-                      - 
+                     script_schedule:
+                       -
                            datetime: <value of string>
-                           day_of_week: <value in [unknown, sun, mon, ...] default: sun>
+                           day_of_week: <value in [unknown, sun, mon, ...] default: 'sun'>
                            device: <value of integer>
                            name: <value of string>
-                           run_on_db: <value in [disable, enable] default: disable>
+                           run_on_db: <value in [disable, enable] default: 'disable'>
                            type: <value in [auto, onetime, daily, ...]>
-                     target: <value in [device_database, remote_device, adom_database] default: device_database>
+                     target: <value in [device_database, remote_device, adom_database] default: 'device_database'>
                      type: <value in [cli, tcl, cligrp]>
-    - name: send request to /dvmdb/script
+
+    - name: REQUESTING /DVMDB/SCRIPT
       fmgr_dvmdb_script:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                expand member: <value of string>
-               fields: 
-                - 
-                   - <value in [content, desc, filter_build, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [content, desc, filter_build, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, object member, syntax]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

@@ -117,25 +117,26 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/ips/custom
+
+    - name: REQUESTING /PM/CONFIG/OBJ/IPS/CUSTOM
       fmgr_pm_config_obj_ips_custom:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      action: <value in [block, pass]>
-                     application: 
-                      - <value of string>
+                     application:
+                       - <value of string>
                      comment: <value of string>
-                     location: 
-                      - <value of string>
+                     location:
+                       - <value of string>
                      log: <value in [disable, enable]>
                      log-packet: <value in [disable, enable]>
-                     os: 
-                      - <value of string>
+                     os:
+                       - <value of string>
                      protocol: <value of string>
                      rule-id: <value of integer>
                      severity: <value of string>
@@ -143,27 +144,28 @@ Examples
                      signature: <value of string>
                      status: <value in [disable, enable]>
                      tag: <value of string>
-    - name: send request to /pm/config/obj/ips/custom
+
+    - name: REQUESTING /PM/CONFIG/OBJ/IPS/CUSTOM
       fmgr_pm_config_obj_ips_custom:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [action, application, comment, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [action, application, comment, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

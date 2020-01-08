@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/system/locallog/disk/setting
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -176,7 +175,7 @@ options:
                 uploadpass:
                     -
                         type: str
-                        default: 'ENC NDk0NjE4Nzg3MjIwODA3N71+qrz/6PhYvtMUVz84NXNAP8LBSobOqp91xwfif6Oy3+uy8/crasneRp4VbtBQntyLw7E8MbzHoUlJp8Y2cQLnVfVsTQsRfvtq/BZcpTL+c2yDARD0Bvd1khGe4e1mCVFSVuCTSXxm6CmxqPpcGKFfHLyn'
+                        default: 'ENC NDk0NjE4Nzg3MjIwODA3N71+qrz/6PhYvtMUVz84NXNAP8LBSobOqp91xwfif6Oy3+uy8/crasneRp4VbtBQntyLw7E8MbzHoUlJp8Y2cQLnVfVsTQsRf...'
                 uploadport:
                     type: int
                     default: 0
@@ -220,37 +219,38 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/locallog/disk/setting
+
+    - name: REQUESTING /CLI/SYSTEM/LOCALLOG/DISK/SETTING
       fmgr_cli_system_locallog_disk_setting:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  diskfull: <value in [overwrite, nolog] default: overwrite>
+            -
+               data:
+                  diskfull: <value in [overwrite, nolog] default: 'overwrite'>
                   log-disk-full-percentage: <value of integer default: 80>
                   max-log-file-size: <value of integer default: 100>
-                  roll-day: 
-                   - <value in [sunday, monday, tuesday, ...]>
-                  roll-schedule: <value in [none, daily, weekly] default: none>
-                  roll-time: 
-                   - <value of string>
-                  server-type: <value in [FTP, SFTP, SCP] default: FTP>
-                  severity: <value in [emergency, alert, critical, ...] default: information>
-                  status: <value in [disable, enable] default: enable>
-                  upload: <value in [disable, enable] default: disable>
-                  upload-delete-files: <value in [disable, enable] default: enable>
-                  upload-time: 
-                   - <value of string>
+                  roll-day:
+                    - <value in [sunday, monday, tuesday, ...]>
+                  roll-schedule: <value in [none, daily, weekly] default: 'none'>
+                  roll-time:
+                    - <value of string>
+                  server-type: <value in [FTP, SFTP, SCP] default: 'FTP'>
+                  severity: <value in [emergency, alert, critical, ...] default: 'information'>
+                  status: <value in [disable, enable] default: 'enable'>
+                  upload: <value in [disable, enable] default: 'disable'>
+                  upload-delete-files: <value in [disable, enable] default: 'enable'>
+                  upload-time:
+                    - <value of string>
                   uploaddir: <value of string>
-                  uploadip: <value of string default: 0.0.0.0>
-                  uploadpass: 
-                   - <value of string default: ENC NDk0NjE4Nzg3MjIwODA3N71+qrz/6PhYvtMUVz84NXNAP8LBSobOqp91xwfif6Oy3+uy8/crasneRp4VbtBQntyLw7E8MbzHoUlJp8Y2cQLnVfVsTQsRfvtq/BZcpTL+c2yDARD0Bvd1khGe4e1mCVFSVuCTSXxm6CmxqPpcGKFfHLyn>
+                  uploadip: <value of string default: '0.0.0.0'>
+                  uploadpass:
+                    - <value of string default: 'ENC NDk0NjE4Nzg3MjIwODA3N71+qrz/6PhYvtMUVz84NXNAP8LBSobOqp91xwfif6Oy3+uy8/cr...'>
                   uploadport: <value of integer default: 0>
-                  uploadsched: <value in [disable, enable] default: disable>
-                  uploadtype: 
-                   - <value in [event]>
+                  uploadsched: <value in [disable, enable] default: 'disable'>
+                  uploadtype:
+                    - <value in [event]>
                   uploaduser: <value of string>
-                  uploadzip: <value in [disable, enable] default: disable>
+                  uploadzip: <value in [disable, enable] default: 'disable'>
 
 '''
 
@@ -269,7 +269,7 @@ return_of_api_category_0:
                   'Policy to apply when disk is full.'
                   'overwrite - Overwrite oldest log when disk is full.'
                   'nolog - Stop logging when disk is full.'
-               example: overwrite
+               example: 'overwrite'
             log-disk-full-percentage:
                type: int
                description: 'Consider log disk as full at this usage percentage.'
@@ -289,7 +289,7 @@ return_of_api_category_0:
                   'none - Not scheduled.'
                   'daily - Every day.'
                   'weekly - Every week.'
-               example: none
+               example: 'none'
             roll-time:
                type: array
                suboptions:
@@ -301,7 +301,7 @@ return_of_api_category_0:
                   'FTP - Upload via FTP.'
                   'SFTP - Upload via SFTP.'
                   'SCP - Upload via SCP.'
-               example: FTP
+               example: 'FTP'
             severity:
                type: str
                description: |
@@ -314,28 +314,28 @@ return_of_api_category_0:
                   'notification - Notification level.'
                   'information - Information level.'
                   'debug - Debug level.'
-               example: information
+               example: 'information'
             status:
                type: str
                description: |
                   'Enable/disable local disk log.'
                   'disable - Do not log to local disk.'
                   'enable - Log to local disk.'
-               example: enable
+               example: 'enable'
             upload:
                type: str
                description: |
                   'Upload log file when rolling.'
                   'disable - Disable uploading when rolling log file.'
                   'enable - Enable uploading when rolling log file.'
-               example: disable
+               example: 'disable'
             upload-delete-files:
                type: str
                description: |
                   'Delete log files after uploading (default = enable).'
                   'disable - Do not delete log files after uploading.'
                   'enable - Delete log files after uploading.'
-               example: enable
+               example: 'enable'
             upload-time:
                type: array
                suboptions:
@@ -346,12 +346,12 @@ return_of_api_category_0:
             uploadip:
                type: str
                description: 'IP address of log uploading server.'
-               example: 0.0.0.0
+               example: '0.0.0.0'
             uploadpass:
                type: array
                suboptions:
                   type: str
-                  example: ENC NDk0NjE4Nzg3MjIwODA3N71+qrz/6PhYvtMUVz84NXNAP8LBSobOqp91xwfif6Oy3+uy8/crasneRp4VbtBQntyLw7E8MbzHoUlJp8Y2cQLnVfVsTQsRfvtq/BZcpTL+c2yDARD0Bvd1khGe4e1mCVFSVuCTSXxm6CmxqPpcGKFfHLyn
+                  example: 'ENC NDk0NjE4Nzg3MjIwODA3N71+qrz/6PhYvtMUVz84NXNAP8LBSobOqp91xwfif6Oy3+uy8/cr...'
             uploadport:
                type: int
                description: 'Server port (0 = default protocol port).'
@@ -362,7 +362,7 @@ return_of_api_category_0:
                   'Scheduled upload (disable = upload when rolling).'
                   'disable - Upload when rolling.'
                   'enable - Scheduled upload.'
-               example: disable
+               example: 'disable'
             uploadtype:
                type: array
                suboptions:
@@ -376,7 +376,7 @@ return_of_api_category_0:
                   'Compress upload logs.'
                   'disable - Upload log files as plain text.'
                   'enable - Upload log files compressed.'
-               example: disable
+               example: 'disable'
          status:
             code:
                type: int
@@ -384,7 +384,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/locallog/disk/setting
+            example: '/cli/global/system/locallog/disk/setting'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -399,7 +399,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/locallog/disk/setting
+            example: '/cli/global/system/locallog/disk/setting'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -410,6 +410,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/locallog/disk/setting'
@@ -418,7 +419,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -434,7 +435,6 @@ def main():
                     'dict': {
                         'diskfull': {
                             'type': 'string',
-                            'default': 'overwrite',
                             'enum': [
                                 'overwrite',
                                 'nolog'
@@ -467,7 +467,6 @@ def main():
                         },
                         'roll-schedule': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'daily',
@@ -482,7 +481,6 @@ def main():
                         },
                         'server-type': {
                             'type': 'string',
-                            'default': 'FTP',
                             'enum': [
                                 'FTP',
                                 'SFTP',
@@ -491,7 +489,6 @@ def main():
                         },
                         'severity': {
                             'type': 'string',
-                            'default': 'information',
                             'enum': [
                                 'emergency',
                                 'alert',
@@ -505,7 +502,6 @@ def main():
                         },
                         'status': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -513,7 +509,6 @@ def main():
                         },
                         'upload': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -521,7 +516,6 @@ def main():
                         },
                         'upload-delete-files': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -537,14 +531,12 @@ def main():
                             'type': 'string'
                         },
                         'uploadip': {
-                            'type': 'string',
-                            'default': '0.0.0.0'
+                            'type': 'string'
                         },
                         'uploadpass': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC NDk0NjE4Nzg3MjIwODA3N71+qrz/6PhYvtMUVz84NXNAP8LBSobOqp91xwfif6Oy3+uy8/crasneRp4VbtBQntyLw7E8MbzHoUlJp8Y2cQLnVfVsTQsRfvtq/BZcpTL+c2yDARD0Bvd1khGe4e1mCVFSVuCTSXxm6CmxqPpcGKFfHLyn'
+                                'type': 'string'
                             }
                         },
                         'uploadport': {
@@ -554,7 +546,6 @@ def main():
                         },
                         'uploadsched': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -574,7 +565,6 @@ def main():
                         },
                         'uploadzip': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -597,7 +587,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -617,8 +606,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -639,14 +628,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

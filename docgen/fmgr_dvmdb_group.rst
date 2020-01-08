@@ -104,42 +104,44 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvmdb/group
+
+    - name: REQUESTING /DVMDB/GROUP
       fmgr_dvmdb_group:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      desc: <value of string>
                      meta fields: <value of string>
                      name: <value of string>
-                     os_type: <value in [unknown, fos, fsw, ...] default: unknown>
-                     type: <value in [normal, default, auto] default: normal>
-    - name: send request to /dvmdb/group
+                     os_type: <value in [unknown, fos, fsw, ...] default: 'unknown'>
+                     type: <value in [normal, default, auto] default: 'normal'>
+
+    - name: REQUESTING /DVMDB/GROUP
       fmgr_dvmdb_group:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                expand member: <value of string>
-               fields: 
-                - 
-                   - <value in [desc, name, os_type, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [desc, name, os_type, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
-               meta fields: 
-                - <value of string>
+               meta fields:
+                 - <value of string>
                option: <value in [count, object member, syntax]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

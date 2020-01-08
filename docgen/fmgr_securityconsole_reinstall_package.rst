@@ -82,20 +82,21 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /securityconsole/reinstall/package
+
+    - name: REQUESTING /SECURITYCONSOLE/REINSTALL/PACKAGE
       fmgr_securityconsole_reinstall_package:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   adom: <value of string>
-                  flags: 
-                   - <value in [none, cp_all_objs, preview, ...]>
-                  target: 
-                   - 
+                  flags:
+                    - <value in [none, cp_all_objs, preview, ...]>
+                  target:
+                    -
                         pkg: <value of string>
-                        scope: 
-                         - 
+                        scope:
+                          -
                               name: <value of string>
                               vdom: <value of string>
 

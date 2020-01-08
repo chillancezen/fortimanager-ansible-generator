@@ -75,13 +75,14 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/analyzer/virusreport
+
+    - name: REQUESTING /CLI/FMUPDATE/ANALYZER/VIRUSREPORT
       fmgr_cli_fmupdate_analyzer_virusreport:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  status: <value in [disable, enable] default: enable>
+            -
+               data:
+                  status: <value in [disable, enable] default: 'enable'>
 
 
 

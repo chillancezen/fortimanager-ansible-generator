@@ -30,7 +30,6 @@ description:
     - /dvm/cmd/discover/device
     - /dvm/cmd/discover/device
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -69,13 +68,14 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvm/cmd/discover/device
+
+    - name: REQUESTING /DVM/CMD/DISCOVER/DEVICE
       fmgr_dvm_cmd_discover_device:
          method: <value in [exec]>
          params:
-            - 
-               data: 
-                  device: 
+            -
+               data:
+                  device:
                      adm_pass: <value of string>
                      adm_usr: <value of string>
                      ip: <value of string>
@@ -112,21 +112,21 @@ return_of_api_category_0:
                   type: str
                conf_status:
                   type: str
-                  example: unknown
+                  example: 'unknown'
                conn_mode:
                   type: str
-                  example: passive
+                  example: 'passive'
                conn_status:
                   type: str
-                  example: UNKNOWN
+                  example: 'UNKNOWN'
                db_status:
                   type: str
-                  example: unknown
+                  example: 'unknown'
                desc:
                   type: str
                dev_status:
                   type: str
-                  example: unknown
+                  example: 'unknown'
                fap_cnt:
                   type: int
                faz.full_act:
@@ -149,7 +149,7 @@ return_of_api_category_0:
                foslic_dr_site:
                   type: str
                   description: 'VM Meter DR Site status.'
-                  example: disable
+                  example: 'disable'
                foslic_inst_time:
                   type: int
                   description: 'VM Meter first deployment time (in UNIX timestamp).'
@@ -162,7 +162,7 @@ return_of_api_category_0:
                foslic_type:
                   type: str
                   description: 'VM Meter license type.'
-                  example: temporary
+                  example: 'temporary'
                foslic_utm:
                   type: array
                   suboptions:
@@ -176,7 +176,7 @@ return_of_api_category_0:
                ha_mode:
                   type: str
                   description: 'enabled - Value reserved for non-FOS HA devices.'
-                  example: standalone
+                  example: 'standalone'
                ha_slave:
                   type: array
                   suboptions:
@@ -188,7 +188,7 @@ return_of_api_category_0:
                         type: int
                      role:
                         type: str
-                        example: slave
+                        example: 'slave'
                      sn:
                         type: str
                      status:
@@ -234,7 +234,7 @@ return_of_api_category_0:
                   type: str
                mgmt_mode:
                   type: str
-                  example: unreg
+                  example: 'unreg'
                mgt_vdom:
                   type: str
                mr:
@@ -245,10 +245,10 @@ return_of_api_category_0:
                   description: 'Unique name for the device.'
                os_type:
                   type: str
-                  example: unknown
+                  example: 'unknown'
                os_ver:
                   type: str
-                  example: unknown
+                  example: 'unknown'
                patch:
                   type: int
                platform_str:
@@ -267,7 +267,7 @@ return_of_api_category_0:
                         type: str
                      opmode:
                         type: str
-                        example: nat
+                        example: 'nat'
                      rtm_prof_id:
                         type: int
                      status:
@@ -299,7 +299,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /dvm/cmd/discover/device
+            example: '/dvm/cmd/discover/device'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -310,6 +310,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/dvm/cmd/discover/device',
@@ -319,7 +320,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -352,7 +353,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -370,8 +370,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -392,14 +392,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

@@ -87,26 +87,28 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/syslog
+
+    - name: REQUESTING /CLI/SYSTEM/SYSLOG
       fmgr_cli_system_syslog:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      ip: <value of string>
                      name: <value of string>
                      port: <value of integer default: 514>
-    - name: send request to /cli/system/syslog
+
+    - name: REQUESTING /CLI/SYSTEM/SYSLOG
       fmgr_cli_system_syslog:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [ip, name, port]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [ip, name, port]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

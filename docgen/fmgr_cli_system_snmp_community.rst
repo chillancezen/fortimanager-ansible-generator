@@ -108,46 +108,48 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/snmp/community
+
+    - name: REQUESTING /CLI/SYSTEM/SNMP/COMMUNITY
       fmgr_cli_system_snmp_community:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     events: 
-                      - <value in [disk_low, ha_switch, intf_ip_chg, ...]>
-                     hosts: 
-                      - 
+            -
+               data:
+                 -
+                     events:
+                       - <value in [disk_low, ha_switch, intf_ip_chg, ...]>
+                     hosts:
+                       -
                            id: <value of integer default: 0>
                            interface: <value of string>
-                           ip: <value of string default: 0.0.0.0 0.0.0.0>
-                     hosts6: 
-                      - 
+                           ip: <value of string default: '0.0.0.0 0.0.0.0'>
+                     hosts6:
+                       -
                            id: <value of integer default: 0>
                            interface: <value of string>
-                           ip: <value of string default: ::/0>
+                           ip: <value of string default: '::/0'>
                      id: <value of integer default: 0>
                      name: <value of string>
                      query_v1_port: <value of integer default: 161>
-                     query_v1_status: <value in [disable, enable] default: enable>
+                     query_v1_status: <value in [disable, enable] default: 'enable'>
                      query_v2c_port: <value of integer default: 161>
-                     query_v2c_status: <value in [disable, enable] default: enable>
-                     status: <value in [disable, enable] default: enable>
+                     query_v2c_status: <value in [disable, enable] default: 'enable'>
+                     status: <value in [disable, enable] default: 'enable'>
                      trap_v1_rport: <value of integer default: 162>
-                     trap_v1_status: <value in [disable, enable] default: enable>
+                     trap_v1_status: <value in [disable, enable] default: 'enable'>
                      trap_v2c_rport: <value of integer default: 162>
-                     trap_v2c_status: <value in [disable, enable] default: enable>
-    - name: send request to /cli/system/snmp/community
+                     trap_v2c_status: <value in [disable, enable] default: 'enable'>
+
+    - name: REQUESTING /CLI/SYSTEM/SNMP/COMMUNITY
       fmgr_cli_system_snmp_community:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [events, id, name, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [events, id, name, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

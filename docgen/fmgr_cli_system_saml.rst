@@ -97,12 +97,13 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/saml
+
+    - name: REQUESTING /CLI/SYSTEM/SAML
       fmgr_cli_system_saml:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   acs-url: <value of string>
                   cert: <value of string>
                   entity-id: <value of string>
@@ -110,11 +111,11 @@ Examples
                   idp-entity-id: <value of string>
                   idp-single-logout-url: <value of string>
                   idp-single-sign-on-url: <value of string>
-                  login-auto-redirect: <value in [disable, enable] default: disable>
-                  role: <value in [IDP, SP] default: SP>
+                  login-auto-redirect: <value in [disable, enable] default: 'disable'>
+                  role: <value in [IDP, SP] default: 'SP'>
                   server-address: <value of string>
-                  service-providers: 
-                   - 
+                  service-providers:
+                    -
                         idp-entity-id: <value of string>
                         idp-single-logout-url: <value of string>
                         idp-single-sign-on-url: <value of string>
@@ -125,7 +126,7 @@ Examples
                         sp-single-logout-url: <value of string>
                         sp-single-sign-on-url: <value of string>
                   sls-url: <value of string>
-                  status: <value in [disable, enable] default: disable>
+                  status: <value in [disable, enable] default: 'disable'>
 
 
 

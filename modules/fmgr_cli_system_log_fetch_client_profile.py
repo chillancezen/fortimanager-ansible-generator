@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/system/log-fetch/client-profile
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -159,7 +158,7 @@ options:
                     password:
                         -
                             type: str
-                            default: 'ENC NzkzMDg4MDc2MTgwNjUzNhwvJBDjPF8MRvYpIukmL7G++XrKmHYTQF5zcGV+Ss3GXWsKe9F9Ie2B55rWFdty9EbQ6aAhGObDlAP7FQ7Otz0SNL49BDP1poSzSg2PuvFul8YYBSll3W/AAKoDgHm+llvtNz/qEJFyG6JzkDaGLy1ebMpO'
+                            default: 'ENC NzkzMDg4MDc2MTgwNjUzNhwvJBDjPF8MRvYpIukmL7G++XrKmHYTQF5zcGV+Ss3GXWsKe9F9Ie2B55rWFdty9EbQ6aAhGObDlAP7FQ7Otz0SNL49B...'
                     secure-connection:
                         type: str
                         default: 'enable'
@@ -245,54 +244,56 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/log-fetch/client-profile
+
+    - name: REQUESTING /CLI/SYSTEM/LOG-FETCH/CLIENT-PROFILE
       fmgr_cli_system_log_fetch_client_profile:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      client-adom: <value of string>
-                     data-range: <value in [custom] default: custom>
+                     data-range: <value in [custom] default: 'custom'>
                      data-range-value: <value of integer default: 10>
-                     device-filter: 
-                      - 
-                           adom: <value of string default: *>
-                           device: <value of string default: *>
+                     device-filter:
+                       -
+                           adom: <value of string default: '*'>
+                           device: <value of string default: '*'>
                            id: <value of integer default: 0>
-                           vdom: <value of string default: *>
-                     end-time: 
-                      - <value of string>
+                           vdom: <value of string default: '*'>
+                     end-time:
+                       - <value of string>
                      id: <value of integer default: 0>
-                     index-fetch-logs: <value in [disable, enable] default: enable>
-                     log-filter: 
-                      - 
+                     index-fetch-logs: <value in [disable, enable] default: 'enable'>
+                     log-filter:
+                       -
                            field: <value of string>
                            id: <value of integer default: 0>
-                           oper: <value in [=, !=, <, ...] default: =>
+                           oper: <value in [=, !=, <, ...] default: '='>
                            value: <value of string>
-                     log-filter-logic: <value in [and, or] default: or>
-                     log-filter-status: <value in [disable, enable] default: disable>
+                     log-filter-logic: <value in [and, or] default: 'or'>
+                     log-filter-status: <value in [disable, enable] default: 'disable'>
                      name: <value of string>
-                     password: 
-                      - <value of string default: ENC NzkzMDg4MDc2MTgwNjUzNhwvJBDjPF8MRvYpIukmL7G++XrKmHYTQF5zcGV+Ss3GXWsKe9F9Ie2B55rWFdty9EbQ6aAhGObDlAP7FQ7Otz0SNL49BDP1poSzSg2PuvFul8YYBSll3W/AAKoDgHm+llvtNz/qEJFyG6JzkDaGLy1ebMpO>
-                     secure-connection: <value in [disable, enable] default: enable>
+                     password:
+                       - <value of string default: 'ENC NzkzMDg4MDc2MTgwNjUzNhwvJBDjPF8MRvYpIukmL7G++XrKmHYTQF5zcGV+Ss3GXWsKe9F9...'>
+                     secure-connection: <value in [disable, enable] default: 'enable'>
                      server-adom: <value of string>
-                     server-ip: <value of string default: 0.0.0.0>
-                     start-time: 
-                      - <value of string>
-                     sync-adom-config: <value in [disable, enable] default: disable>
+                     server-ip: <value of string default: '0.0.0.0'>
+                     start-time:
+                       - <value of string>
+                     sync-adom-config: <value in [disable, enable] default: 'disable'>
                      user: <value of string>
-    - name: send request to /cli/system/log-fetch/client-profile
+
+    - name: REQUESTING /CLI/SYSTEM/LOG-FETCH/CLIENT-PROFILE
       fmgr_cli_system_log_fetch_client_profile:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [client-adom, data-range, data-range-value, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [client-adom, data-range, data-range-value, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -313,7 +314,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/log-fetch/client-profile
+            example: '/cli/global/system/log-fetch/client-profile'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -332,7 +333,7 @@ return_of_api_category_0:
                   description: |
                      'Data-range for fetched logs.'
                      'custom - Specify some other date and time range.'
-                  example: custom
+                  example: 'custom'
                data-range-value:
                   type: int
                   description: 'Last n days or hours.'
@@ -343,11 +344,11 @@ return_of_api_category_0:
                      adom:
                         type: str
                         description: 'Adom name.'
-                        example: *
+                        example: '*'
                      device:
                         type: str
                         description: 'Device name or Serial number.'
-                        example: *
+                        example: '*'
                      id:
                         type: int
                         description: 'Add or edit a device filter.'
@@ -355,7 +356,7 @@ return_of_api_category_0:
                      vdom:
                         type: str
                         description: 'Vdom filters.'
-                        example: *
+                        example: '*'
                end-time:
                   type: array
                   suboptions:
@@ -370,7 +371,7 @@ return_of_api_category_0:
                      'Enable/Disable indexing logs automatically after fetching logs.'
                      'disable - Disable attribute function.'
                      'enable - Enable attribute function.'
-                  example: enable
+                  example: 'enable'
                log-filter:
                   type: array
                   suboptions:
@@ -390,7 +391,7 @@ return_of_api_category_0:
                            'contain - Contain'
                            'not-contain - Not contain'
                            'match - Match (expression)'
-                        example: =
+                        example: '='
                      value:
                         type: str
                         description: 'Field filter operand or free-text matching expression.'
@@ -400,14 +401,14 @@ return_of_api_category_0:
                      'And/Or logic for log-filters.'
                      'and - Logic And.'
                      'or - Logic Or.'
-                  example: or
+                  example: 'or'
                log-filter-status:
                   type: str
                   description: |
                      'Enable/Disable log-filter.'
                      'disable - Disable attribute function.'
                      'enable - Enable attribute function.'
-                  example: disable
+                  example: 'disable'
                name:
                   type: str
                   description: 'Name of log-fetch client profile.'
@@ -415,21 +416,21 @@ return_of_api_category_0:
                   type: array
                   suboptions:
                      type: str
-                     example: ENC NzkzMDg4MDc2MTgwNjUzNhwvJBDjPF8MRvYpIukmL7G++XrKmHYTQF5zcGV+Ss3GXWsKe9F9Ie2B55rWFdty9EbQ6aAhGObDlAP7FQ7Otz0SNL49BDP1poSzSg2PuvFul8YYBSll3W/AAKoDgHm+llvtNz/qEJFyG6JzkDaGLy1ebMpO
+                     example: 'ENC NzkzMDg4MDc2MTgwNjUzNhwvJBDjPF8MRvYpIukmL7G++XrKmHYTQF5zcGV+Ss3GXWsKe9F9...'
                secure-connection:
                   type: str
                   description: |
                      'Enable/Disable protecting log-fetch connection with TLS/SSL.'
                      'disable - Disable attribute function.'
                      'enable - Enable attribute function.'
-                  example: enable
+                  example: 'enable'
                server-adom:
                   type: str
                   description: 'Log-fetch server sides adom name.'
                server-ip:
                   type: str
                   description: 'Log-fetch server IP address.'
-                  example: 0.0.0.0
+                  example: '0.0.0.0'
                start-time:
                   type: array
                   suboptions:
@@ -440,7 +441,7 @@ return_of_api_category_0:
                      'Enable/Disable sync adom related config.'
                      'disable - Disable attribute function.'
                      'enable - Enable attribute function.'
-                  example: disable
+                  example: 'disable'
                user:
                   type: str
                   description: 'Log-fetch server login username.'
@@ -451,7 +452,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/log-fetch/client-profile
+            example: '/cli/global/system/log-fetch/client-profile'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -462,6 +463,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/log-fetch/client-profile'
@@ -470,7 +472,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -483,7 +485,6 @@ def main():
                         },
                         'data-range': {
                             'type': 'string',
-                            'default': 'custom',
                             'enum': [
                                 'custom'
                             ]
@@ -497,12 +498,10 @@ def main():
                             'type': 'array',
                             'items': {
                                 'adom': {
-                                    'type': 'string',
-                                    'default': '*'
+                                    'type': 'string'
                                 },
                                 'device': {
-                                    'type': 'string',
-                                    'default': '*'
+                                    'type': 'string'
                                 },
                                 'id': {
                                     'type': 'integer',
@@ -510,8 +509,7 @@ def main():
                                     'example': 0
                                 },
                                 'vdom': {
-                                    'type': 'string',
-                                    'default': '*'
+                                    'type': 'string'
                                 }
                             }
                         },
@@ -528,7 +526,6 @@ def main():
                         },
                         'index-fetch-logs': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -547,7 +544,6 @@ def main():
                                 },
                                 'oper': {
                                     'type': 'string',
-                                    'default': '=',
                                     'enum': [
                                         '=',
                                         '!=',
@@ -567,7 +563,6 @@ def main():
                         },
                         'log-filter-logic': {
                             'type': 'string',
-                            'default': 'or',
                             'enum': [
                                 'and',
                                 'or'
@@ -575,7 +570,6 @@ def main():
                         },
                         'log-filter-status': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -587,13 +581,11 @@ def main():
                         'password': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC NzkzMDg4MDc2MTgwNjUzNhwvJBDjPF8MRvYpIukmL7G++XrKmHYTQF5zcGV+Ss3GXWsKe9F9Ie2B55rWFdty9EbQ6aAhGObDlAP7FQ7Otz0SNL49BDP1poSzSg2PuvFul8YYBSll3W/AAKoDgHm+llvtNz/qEJFyG6JzkDaGLy1ebMpO'
+                                'type': 'string'
                             }
                         },
                         'secure-connection': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -603,8 +595,7 @@ def main():
                             'type': 'string'
                         },
                         'server-ip': {
-                            'type': 'string',
-                            'default': '0.0.0.0'
+                            'type': 'string'
                         },
                         'start-time': {
                             'type': 'array',
@@ -614,7 +605,6 @@ def main():
                         },
                         'sync-adom-config': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -709,7 +699,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -730,8 +719,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -752,14 +741,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

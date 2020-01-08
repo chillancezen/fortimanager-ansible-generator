@@ -74,14 +74,15 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /sys/proxy/json
+
+    - name: REQUESTING /SYS/PROXY/JSON
       fmgr_sys_proxy_json:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   action: <value in [get, post, put, ...]>
-                  payload:                   resource: <value of string>
+                  payload:                  resource: <value of string>
                   target: <value of string>
 
 

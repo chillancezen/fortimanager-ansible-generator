@@ -86,25 +86,27 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/sql/ts-index-field
+
+    - name: REQUESTING /CLI/SYSTEM/SQL/TS-INDEX-FIELD
       fmgr_cli_system_sql_ts_index_field:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      category: <value of string>
                      value: <value of string>
-    - name: send request to /cli/system/sql/ts-index-field
+
+    - name: REQUESTING /CLI/SYSTEM/SQL/TS-INDEX-FIELD
       fmgr_cli_system_sql_ts_index_field:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [category, value]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [category, value]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

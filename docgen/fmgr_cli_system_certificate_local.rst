@@ -98,33 +98,35 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/certificate/local
+
+    - name: REQUESTING /CLI/SYSTEM/CERTIFICATE/LOCAL
       fmgr_cli_system_certificate_local:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     certificate: 
-                      - <value of string>
+            -
+               data:
+                 -
+                     certificate:
+                       - <value of string>
                      comment: <value of string>
-                     csr: 
-                      - <value of string>
+                     csr:
+                       - <value of string>
                      name: <value of string>
-                     password: 
-                      - <value of string default: ENC MTU2NTY2MTI5MDA3MDkxNBB2U7GXAKMJnXNp1HA5qlMS8x60LYYPH59UftMARK2yBZSIyOKVdX6+LwsW+HCuCyxLGSjNDtDBuxlRE0O7Wq9sKZOknxG2S1rADC1fQWbul8eYa0wrzplnDD/u8OlHAf4q/+Ubo19o8BlFW8Pg8Fi+WhVP>
-                     private-key: 
-                      - <value of string>
-    - name: send request to /cli/system/certificate/local
+                     password:
+                       - <value of string default: 'ENC MTU2NTY2MTI5MDA3MDkxNBB2U7GXAKMJnXNp1HA5qlMS8x60LYYPH59UftMARK2yBZSIyOKV...'>
+                     private-key:
+                       - <value of string>
+
+    - name: REQUESTING /CLI/SYSTEM/CERTIFICATE/LOCAL
       fmgr_cli_system_certificate_local:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [certificate, comment, csr, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [certificate, comment, csr, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

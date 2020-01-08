@@ -122,21 +122,22 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/firewall/addrgrp6
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/ADDRGRP6
       fmgr_pm_config_obj_firewall_addrgrp6:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      color: <value of integer>
                      comment: <value of string>
-                     dynamic_mapping: 
-                      - 
-                           _scope: 
-                            - 
+                     dynamic_mapping:
+                       -
+                           _scope:
+                             -
                                  name: <value of string>
                                  vdom: <value of string>
                            color: <value of integer>
@@ -147,35 +148,36 @@ Examples
                            visibility: <value in [disable, enable]>
                      member: <value of string>
                      name: <value of string>
-                     tagging: 
-                      - 
+                     tagging:
+                       -
                            category: <value of string>
                            name: <value of string>
-                           tags: 
-                            - <value of string>
+                           tags:
+                             - <value of string>
                      uuid: <value of string>
                      visibility: <value in [disable, enable]>
-    - name: send request to /pm/config/obj/firewall/addrgrp6
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/ADDRGRP6
       fmgr_pm_config_obj_firewall_addrgrp6:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [color, comment, member, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [color, comment, member, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

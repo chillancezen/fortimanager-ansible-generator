@@ -30,7 +30,6 @@ description:
     - /pm/config/adom/{adom}/obj/switch-controller/qos/dot1p-map
     - /pm/config/global/obj/switch-controller/qos/dot1p-map
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -45,7 +44,7 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
-    url_params: 
+    url_params:
         description: the parameters in url path
         required: True
         type: dict
@@ -217,7 +216,7 @@ options:
                     type: int
             sortings:
                 -
-                    \{attr_name\}:
+                    varidic.attr_name:
                         type: int
                         choices:
                             - 1
@@ -233,15 +232,16 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/switch-controller/qos/dot1p-map
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SWITCH-CONTROLLER/QOS/DOT1P-MAP
       fmgr_pm_config_obj_switch_controller_qos_dot1p_map:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      description: <value of string>
                      name: <value of string>
                      priority-0: <value in [queue-0, queue-1, queue-2, ...]>
@@ -252,27 +252,28 @@ EXAMPLES = '''
                      priority-5: <value in [queue-0, queue-1, queue-2, ...]>
                      priority-6: <value in [queue-0, queue-1, queue-2, ...]>
                      priority-7: <value in [queue-0, queue-1, queue-2, ...]>
-    - name: send request to /pm/config/obj/switch-controller/qos/dot1p-map
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SWITCH-CONTROLLER/QOS/DOT1P-MAP
       fmgr_pm_config_obj_switch_controller_qos_dot1p_map:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [description, name, priority-0, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [description, name, priority-0, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 '''
 
@@ -291,7 +292,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/switch-controller/qos/dot1p-map
+            example: '/pm/config/adom/{adom}/obj/switch-controller/qos/dot1p-map'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -339,7 +340,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/switch-controller/qos/dot1p-map
+            example: '/pm/config/adom/{adom}/obj/switch-controller/qos/dot1p-map'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -349,6 +350,7 @@ from ansible.module_utils.network.fortimanager.common import DEFAULT_RESULT_OBJ
 from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
+
 
 def main():
     jrpc_urls = [
@@ -363,7 +365,7 @@ def main():
         }
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -606,7 +608,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -627,8 +628,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -649,14 +650,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

@@ -102,41 +102,43 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/user/pop3
+
+    - name: REQUESTING /PM/CONFIG/OBJ/USER/POP3
       fmgr_pm_config_obj_user_pop3:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      name: <value of string>
                      port: <value of integer>
                      secure: <value in [none, starttls, pop3s]>
                      server: <value of string>
                      ssl-min-proto-version: <value in [default, TLSv1, TLSv1-1, ...]>
-    - name: send request to /pm/config/obj/user/pop3
+
+    - name: REQUESTING /PM/CONFIG/OBJ/USER/POP3
       fmgr_pm_config_obj_user_pop3:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [name, port, secure, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [name, port, secure, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/system/admin/ldap
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -93,7 +92,7 @@ options:
                     password:
                         -
                             type: str
-                            default: 'ENC MTEyODQwMzUzNTU5OTkxNiMZsnjCaX8v5NaNPmglZ1pwQh+wPb8bwCFjVP5hUgQnOleEpUJ7ARHGG9tpPDKAZE74Ep4RHCgPsKLw3wtuNG0kB3r6RBqrFQcvA/t/txyxY2LlhN4+ewvQsITXDVyOmmyE1tqgG/9GpJNNqPCgZsW36+Oo'
+                            default: 'ENC MTEyODQwMzUzNTU5OTkxNiMZsnjCaX8v5NaNPmglZ1pwQh+wPb8bwCFjVP5hUgQnOleEpUJ7ARHGG9tpPDKAZE74Ep4RHCgPsKLw3wtuNG0kB3r6R...'
                     port:
                         type: int
                         default: 389
@@ -192,46 +191,48 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/admin/ldap
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/LDAP
       fmgr_cli_system_admin_ldap:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     adom: 
-                      - 
+            -
+               data:
+                 -
+                     adom:
+                       -
                            adom-name: <value of string>
                      adom-attr: <value of string>
-                     attributes: <value of string default: member,uniquemember,memberuid>
+                     attributes: <value of string default: 'member,uniquemember,memberuid'>
                      ca-cert: <value of string>
-                     cnid: <value of string default: cn>
+                     cnid: <value of string default: 'cn'>
                      connect-timeout: <value of integer default: 500>
                      dn: <value of string>
-                     filter: <value of string default: (objectclass=*)>
+                     filter: <value of string default: '(objectclass=*)'>
                      group: <value of string>
                      memberof-attr: <value of string>
                      name: <value of string>
-                     password: 
-                      - <value of string default: ENC MTEyODQwMzUzNTU5OTkxNiMZsnjCaX8v5NaNPmglZ1pwQh+wPb8bwCFjVP5hUgQnOleEpUJ7ARHGG9tpPDKAZE74Ep4RHCgPsKLw3wtuNG0kB3r6RBqrFQcvA/t/txyxY2LlhN4+ewvQsITXDVyOmmyE1tqgG/9GpJNNqPCgZsW36+Oo>
+                     password:
+                       - <value of string default: 'ENC MTEyODQwMzUzNTU5OTkxNiMZsnjCaX8v5NaNPmglZ1pwQh+wPb8bwCFjVP5hUgQnOleEpUJ7...'>
                      port: <value of integer default: 389>
                      profile-attr: <value of string>
                      secondary-server: <value of string>
-                     secure: <value in [disable, starttls, ldaps] default: disable>
+                     secure: <value in [disable, starttls, ldaps] default: 'disable'>
                      server: <value of string>
                      tertiary-server: <value of string>
-                     type: <value in [simple, anonymous, regular] default: simple>
+                     type: <value in [simple, anonymous, regular] default: 'simple'>
                      username: <value of string>
-    - name: send request to /cli/system/admin/ldap
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/LDAP
       fmgr_cli_system_admin_ldap:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [adom-attr, attributes, ca-cert, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [adom-attr, attributes, ca-cert, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -252,7 +253,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/admin/ldap
+            example: '/cli/global/system/admin/ldap'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -275,14 +276,14 @@ return_of_api_category_0:
                attributes:
                   type: str
                   description: 'Attributes used for group searching.'
-                  example: member,uniquemember,memberuid
+                  example: 'member,uniquemember,memberuid'
                ca-cert:
                   type: str
                   description: 'CA certificate name.'
                cnid:
                   type: str
                   description: 'Common Name Identifier (default = CN).'
-                  example: cn
+                  example: 'cn'
                connect-timeout:
                   type: int
                   description: 'LDAP connection timeout (msec).'
@@ -293,7 +294,7 @@ return_of_api_category_0:
                filter:
                   type: str
                   description: 'Filter used for group searching.'
-                  example: (objectclass=*)
+                  example: '(objectclass=*)'
                group:
                   type: str
                   description: 'Full base DN used for group searching.'
@@ -307,7 +308,7 @@ return_of_api_category_0:
                   type: array
                   suboptions:
                      type: str
-                     example: ENC MTEyODQwMzUzNTU5OTkxNiMZsnjCaX8v5NaNPmglZ1pwQh+wPb8bwCFjVP5hUgQnOleEpUJ7ARHGG9tpPDKAZE74Ep4RHCgPsKLw3wtuNG0kB3r6RBqrFQcvA/t/txyxY2LlhN4+ewvQsITXDVyOmmyE1tqgG/9GpJNNqPCgZsW36+Oo
+                     example: 'ENC MTEyODQwMzUzNTU5OTkxNiMZsnjCaX8v5NaNPmglZ1pwQh+wPb8bwCFjVP5hUgQnOleEpUJ7...'
                port:
                   type: int
                   description: 'Port number of LDAP server (default = 389).'
@@ -325,7 +326,7 @@ return_of_api_category_0:
                      'disable - No SSL.'
                      'starttls - Use StartTLS.'
                      'ldaps - Use LDAPS.'
-                  example: disable
+                  example: 'disable'
                server:
                   type: str
                   description: '{<name_str|ip_str>} LDAP server domain name or IP.'
@@ -339,7 +340,7 @@ return_of_api_category_0:
                      'simple - Simple password authentication without search.'
                      'anonymous - Bind using anonymous user search.'
                      'regular - Bind using username/password and then search.'
-                  example: simple
+                  example: 'simple'
                username:
                   type: str
                   description: 'Username (full DN) for initial binding.'
@@ -350,7 +351,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/admin/ldap
+            example: '/cli/global/system/admin/ldap'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -361,6 +362,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/admin/ldap'
@@ -369,7 +371,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -389,15 +391,13 @@ def main():
                             'type': 'string'
                         },
                         'attributes': {
-                            'type': 'string',
-                            'default': 'member,uniquemember,memberuid'
+                            'type': 'string'
                         },
                         'ca-cert': {
                             'type': 'string'
                         },
                         'cnid': {
-                            'type': 'string',
-                            'default': 'cn'
+                            'type': 'string'
                         },
                         'connect-timeout': {
                             'type': 'integer',
@@ -408,8 +408,7 @@ def main():
                             'type': 'string'
                         },
                         'filter': {
-                            'type': 'string',
-                            'default': '(objectclass=*)'
+                            'type': 'string'
                         },
                         'group': {
                             'type': 'string'
@@ -423,8 +422,7 @@ def main():
                         'password': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC MTEyODQwMzUzNTU5OTkxNiMZsnjCaX8v5NaNPmglZ1pwQh+wPb8bwCFjVP5hUgQnOleEpUJ7ARHGG9tpPDKAZE74Ep4RHCgPsKLw3wtuNG0kB3r6RBqrFQcvA/t/txyxY2LlhN4+ewvQsITXDVyOmmyE1tqgG/9GpJNNqPCgZsW36+Oo'
+                                'type': 'string'
                             }
                         },
                         'port': {
@@ -440,7 +438,6 @@ def main():
                         },
                         'secure': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'starttls',
@@ -455,7 +452,6 @@ def main():
                         },
                         'type': {
                             'type': 'string',
-                            'default': 'simple',
                             'enum': [
                                 'simple',
                                 'anonymous',
@@ -554,7 +550,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -575,8 +570,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -597,14 +592,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

@@ -80,18 +80,19 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/log/ioc
+
+    - name: REQUESTING /CLI/SYSTEM/LOG/IOC
       fmgr_cli_system_log_ioc:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  notification: <value in [disable, enable] default: enable>
+            -
+               data:
+                  notification: <value in [disable, enable] default: 'enable'>
                   notification-throttle: <value of integer default: 1440>
                   rescan-max-runner: <value of integer default: 8>
                   rescan-run-at: <value of integer default: 24>
-                  rescan-status: <value in [disable, enable] default: enable>
-                  status: <value in [disable, enable] default: enable>
+                  rescan-status: <value in [disable, enable] default: 'enable'>
+                  status: <value in [disable, enable] default: 'enable'>
 
 
 

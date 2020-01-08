@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /pm/pkg/global
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -127,17 +126,18 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/pkg/global
+
+    - name: REQUESTING /PM/PKG/GLOBAL
       fmgr_pm_pkg_global:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      name: <value of string>
                      obj ver: <value of integer>
                      oid: <value of integer>
-                     package setting: 
+                     package setting:
                         central-nat: <value in [disable, enable]>
                         consolidated-firewall-mode: <value in [disable, enable]>
                         fwpolicy-implicit-log: <value in [disable, enable]>
@@ -145,19 +145,20 @@ EXAMPLES = '''
                         inspection-mode: <value in [proxy, flow]>
                         ngfw-mode: <value in [profile-based, policy-based]>
                         ssl-ssh-profile: <value of string>
-                     scope member: 
-                      - 
+                     scope member:
+                       -
                            name: <value of string>
                            vdom: <value of string>
                      type: <value in [pkg, folder]>
-    - name: send request to /pm/pkg/global
+
+    - name: REQUESTING /PM/PKG/GLOBAL
       fmgr_pm_pkg_global:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [name, obj ver, oid, ...]>
+            -
+               fields:
+                 -
+                    - <value in [name, obj ver, oid, ...]>
 
 '''
 
@@ -176,7 +177,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/pkg/global
+            example: '/pm/pkg/global'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -224,7 +225,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/pkg/global
+            example: '/pm/pkg/global'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -235,6 +236,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/pm/pkg/global'
@@ -243,7 +245,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -367,7 +369,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -388,8 +389,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -410,14 +411,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

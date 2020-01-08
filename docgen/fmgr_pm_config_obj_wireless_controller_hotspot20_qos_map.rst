@@ -109,48 +109,50 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/wireless-controller/hotspot20/qos-map
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/HOTSPOT20/QOS-MAP
       fmgr_pm_config_obj_wireless_controller_hotspot20_qos_map:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
-                     dscp-except: 
-                      - 
+            -
+               data:
+                 -
+                     dscp-except:
+                       -
                            dscp: <value of integer>
                            index: <value of integer>
                            up: <value of integer>
-                     dscp-range: 
-                      - 
+                     dscp-range:
+                       -
                            high: <value of integer>
                            index: <value of integer>
                            low: <value of integer>
                            up: <value of integer>
                      name: <value of string>
-    - name: send request to /pm/config/obj/wireless-controller/hotspot20/qos-map
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/HOTSPOT20/QOS-MAP
       fmgr_pm_config_obj_wireless_controller_hotspot20_qos_map:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [name]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [name]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

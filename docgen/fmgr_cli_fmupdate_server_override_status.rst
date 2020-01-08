@@ -75,13 +75,14 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/server-override-status
+
+    - name: REQUESTING /CLI/FMUPDATE/SERVER-OVERRIDE-STATUS
       fmgr_cli_fmupdate_server_override_status:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  mode: <value in [strict, loose] default: loose>
+            -
+               data:
+                  mode: <value in [strict, loose] default: 'loose'>
 
 
 

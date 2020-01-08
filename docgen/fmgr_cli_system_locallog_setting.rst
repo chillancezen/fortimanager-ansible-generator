@@ -77,12 +77,13 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/locallog/setting
+
+    - name: REQUESTING /CLI/SYSTEM/LOCALLOG/SETTING
       fmgr_cli_system_locallog_setting:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   log-interval-dev-no-logging: <value of integer default: 1440>
                   log-interval-disk-full: <value of integer default: 5>
                   log-interval-gbday-exceeded: <value of integer default: 1440>

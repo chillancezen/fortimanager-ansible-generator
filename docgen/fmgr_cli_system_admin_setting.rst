@@ -112,48 +112,49 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/admin/setting
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/SETTING
       fmgr_cli_system_admin_setting:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  access-banner: <value in [disable, enable] default: disable>
-                  admin-https-redirect: <value in [disable, enable] default: enable>
+            -
+               data:
+                  access-banner: <value in [disable, enable] default: 'disable'>
+                  admin-https-redirect: <value in [disable, enable] default: 'enable'>
                   admin-login-max: <value of integer default: 256>
-                  admin_server_cert: <value of string default: server.crt>
-                  allow_register: <value in [disable, enable] default: disable>
-                  auto-update: <value in [disable, enable] default: enable>
+                  admin_server_cert: <value of string default: 'server.crt'>
+                  allow_register: <value in [disable, enable] default: 'disable'>
+                  auto-update: <value in [disable, enable] default: 'enable'>
                   banner-message: <value of string>
-                  chassis-mgmt: <value in [disable, enable] default: disable>
+                  chassis-mgmt: <value in [disable, enable] default: 'disable'>
                   chassis-update-interval: <value of integer default: 15>
-                  device_sync_status: <value in [disable, enable] default: enable>
-                  gui-theme: <value in [blue, green, red, ...] default: blue>
+                  device_sync_status: <value in [disable, enable] default: 'enable'>
+                  gui-theme: <value in [blue, green, red, ...] default: 'blue'>
                   http_port: <value of integer default: 80>
                   https_port: <value of integer default: 443>
                   idle_timeout: <value of integer default: 15>
-                  install-ifpolicy-only: <value in [disable, enable] default: disable>
+                  install-ifpolicy-only: <value in [disable, enable] default: 'disable'>
                   mgmt-addr: <value of string>
                   mgmt-fqdn: <value of string>
-                  objects-force-deletion: <value in [disable, enable] default: enable>
-                  offline_mode: <value in [disable, enable] default: disable>
-                  register_passwd: 
-                   - <value of string default: ENC ODA4MzI1MDExMjE4OTgxM/oYbnw5dOwHjdVIoziGMGql3I0Ddz+ewZZfbXj7YeX4ol/rqZveNL7pJsXB6fGh0Bfo+R+211AvBe4558gduEIjb2W9ApZLtp5OAzm78LkH4dyrXL9N/SySeIPG1Oh6i5wvEK4Ox22xdNQmN26CaAMZG9Jl>
-                  sdwan-monitor-history: <value in [disable, enable] default: disable>
-                  shell-access: <value in [disable, enable] default: disable>
-                  shell-password: 
-                   - <value of string default: ENC NDM0ODk3MTk5MDUyMTEzMUbHl/j5CmTEcBmvdfBvKn99O6PWsq0PdmnxFXT9hypS7GvefFaz0oVwvAJ5/jgxY3HaLJDNTuNDNZfGQBezH6DURHCF23i/UXtmSSMrrIS8g2oidOj6e593sP+BSfGpQie0tLXFnMb9Lrd4dUAgfnYZpYLh>
-                  show-add-multiple: <value in [disable, enable] default: disable>
-                  show-adom-devman: <value in [disable, enable] default: enable>
-                  show-checkbox-in-table: <value in [disable, enable] default: disable>
-                  show-device-import-export: <value in [disable, enable] default: disable>
-                  show-hostname: <value in [disable, enable] default: disable>
-                  show_automatic_script: <value in [disable, enable] default: disable>
-                  show_grouping_script: <value in [disable, enable] default: enable>
-                  show_schedule_script: <value in [disable, enable] default: disable>
-                  show_tcl_script: <value in [disable, enable] default: disable>
-                  unreg_dev_opt: <value in [add_no_service, ignore, add_allow_service] default: add_allow_service>
-                  webadmin_language: <value in [auto_detect, english, simplified_chinese, ...] default: auto_detect>
+                  objects-force-deletion: <value in [disable, enable] default: 'enable'>
+                  offline_mode: <value in [disable, enable] default: 'disable'>
+                  register_passwd:
+                    - <value of string default: 'ENC ODA4MzI1MDExMjE4OTgxM/oYbnw5dOwHjdVIoziGMGql3I0Ddz+ewZZfbXj7YeX4ol/rqZve...'>
+                  sdwan-monitor-history: <value in [disable, enable] default: 'disable'>
+                  shell-access: <value in [disable, enable] default: 'disable'>
+                  shell-password:
+                    - <value of string default: 'ENC NDM0ODk3MTk5MDUyMTEzMUbHl/j5CmTEcBmvdfBvKn99O6PWsq0PdmnxFXT9hypS7GvefFaz...'>
+                  show-add-multiple: <value in [disable, enable] default: 'disable'>
+                  show-adom-devman: <value in [disable, enable] default: 'enable'>
+                  show-checkbox-in-table: <value in [disable, enable] default: 'disable'>
+                  show-device-import-export: <value in [disable, enable] default: 'disable'>
+                  show-hostname: <value in [disable, enable] default: 'disable'>
+                  show_automatic_script: <value in [disable, enable] default: 'disable'>
+                  show_grouping_script: <value in [disable, enable] default: 'enable'>
+                  show_schedule_script: <value in [disable, enable] default: 'disable'>
+                  show_tcl_script: <value in [disable, enable] default: 'disable'>
+                  unreg_dev_opt: <value in [add_no_service, ignore, add_allow_service] default: 'add_allow_service'>
+                  webadmin_language: <value in [auto_detect, english, simplified_chinese, ...] default: 'auto_detect'>
 
 
 

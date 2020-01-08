@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/fmupdate/service
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -146,20 +145,21 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/service
+
+    - name: REQUESTING /CLI/FMUPDATE/SERVICE
       fmgr_cli_fmupdate_service:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  avips: <value in [disable, enable] default: enable>
-                  query-antispam: <value in [disable, enable] default: disable>
-                  query-antivirus: <value in [disable, enable] default: disable>
-                  query-filequery: <value in [disable, enable] default: disable>
-                  query-geoip: <value in [disable, enable] default: enable>
-                  query-outbreak-prevention: <value in [disable, enable] default: disable>
-                  query-webfilter: <value in [disable, enable] default: disable>
-                  webfilter-https-traversal: <value in [disable, enable] default: disable>
+            -
+               data:
+                  avips: <value in [disable, enable] default: 'enable'>
+                  query-antispam: <value in [disable, enable] default: 'disable'>
+                  query-antivirus: <value in [disable, enable] default: 'disable'>
+                  query-filequery: <value in [disable, enable] default: 'disable'>
+                  query-geoip: <value in [disable, enable] default: 'enable'>
+                  query-outbreak-prevention: <value in [disable, enable] default: 'disable'>
+                  query-webfilter: <value in [disable, enable] default: 'disable'>
+                  webfilter-https-traversal: <value in [disable, enable] default: 'disable'>
 
 '''
 
@@ -178,56 +178,56 @@ return_of_api_category_0:
                   'Enable/disable the built-in FortiGuard to provide FortiGuard antivirus and IPS updates (default = enable).'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             query-antispam:
                type: str
                description: |
                   'Enable/disable antispam service (default = disable).'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             query-antivirus:
                type: str
                description: |
                   'Enable/disable antivirus query service (default = disable).'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             query-filequery:
                type: str
                description: |
                   'Enable/disable file query service (default = disable).'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             query-geoip:
                type: str
                description: |
                   'Enable/disable geoip service (default = enable).'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             query-outbreak-prevention:
                type: str
                description: |
                   'Enable/disable  outbreak prevention query service (default = disable).'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             query-webfilter:
                type: str
                description: |
                   'Enable/disable Web Filter service (default = disable).'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             webfilter-https-traversal:
                type: str
                description: |
                   'Enable/disable Web Filter HTTPS traversal (default = disable).'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
          status:
             code:
                type: int
@@ -235,7 +235,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/fmupdate/service
+            example: '/cli/global/fmupdate/service'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -250,7 +250,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/fmupdate/service
+            example: '/cli/global/fmupdate/service'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -261,6 +261,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/fmupdate/service'
@@ -269,7 +270,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -285,7 +286,6 @@ def main():
                     'dict': {
                         'avips': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -293,7 +293,6 @@ def main():
                         },
                         'query-antispam': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -301,7 +300,6 @@ def main():
                         },
                         'query-antivirus': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -309,7 +307,6 @@ def main():
                         },
                         'query-filequery': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -317,7 +314,6 @@ def main():
                         },
                         'query-geoip': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -325,7 +321,6 @@ def main():
                         },
                         'query-outbreak-prevention': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -333,7 +328,6 @@ def main():
                         },
                         'query-webfilter': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -341,7 +335,6 @@ def main():
                         },
                         'webfilter-https-traversal': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -364,7 +357,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -384,8 +376,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -406,14 +398,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

@@ -30,7 +30,6 @@ description:
     - /pm/config/adom/{adom}/obj/vpn/ssl/web/portal
     - /pm/config/global/obj/vpn/ssl/web/portal
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -45,7 +44,7 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
-    url_params: 
+    url_params:
         description: the parameters in url path
         required: True
         type: dict
@@ -214,7 +213,7 @@ options:
                                 description: 'Bookmark group name.'
                     custom-lang:
                         type: str
-                        description: 'Change the web portal display language. Overrides config system global set language. You can use config system custom-language and execute system custom-language to add custom language files.'
+                        description: 'Change the web portal display language. Overrides config system global set language. You can use config system custom-...'
                     customize-forticlient-download-url:
                         type: str
                         description: 'Enable support of customized download URL for FortiClient.'
@@ -334,7 +333,7 @@ options:
                             - 'enable'
                     ipv6-split-tunneling-routing-address:
                         type: str
-                        description: 'IPv6 SSL-VPN tunnel mode firewall address objects that override firewall policy destination addresses to control split-tunneling access.'
+                        description: 'IPv6 SSL-VPN tunnel mode firewall address objects that override firewall policy destination addresses to control split...'
                     ipv6-tunnel-mode:
                         type: str
                         description: 'Enable/disable IPv6 SSL-VPN tunnel mode.'
@@ -461,7 +460,7 @@ options:
                             - 'enable'
                     split-tunneling-routing-address:
                         type: str
-                        description: 'IPv4 SSL-VPN tunnel mode firewall address objects that override firewall policy destination addresses to control split-tunneling access.'
+                        description: 'IPv4 SSL-VPN tunnel mode firewall address objects that override firewall policy destination addresses to control split...'
                     theme:
                         type: str
                         description: 'Web portal color scheme.'
@@ -605,7 +604,7 @@ options:
                     type: int
             sortings:
                 -
-                    \{attr_name\}:
+                    varidic.attr_name:
                         type: int
                         choices:
                             - 1
@@ -621,35 +620,36 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/vpn/ssl/web/portal
+
+    - name: REQUESTING /PM/CONFIG/OBJ/VPN/SSL/WEB/PORTAL
       fmgr_pm_config_obj_vpn_ssl_web_portal:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
-                     allow-user-access: 
-                      - <value in [web, ftp, telnet, ...]>
+            -
+               data:
+                 -
+                     allow-user-access:
+                       - <value in [web, ftp, telnet, ...]>
                      auto-connect: <value in [disable, enable]>
-                     bookmark-group: 
-                      - 
-                           bookmarks: 
-                            - 
+                     bookmark-group:
+                       -
+                           bookmarks:
+                             -
                                  additional-params: <value of string>
                                  apptype: <value in [web, telnet, ssh, ...]>
                                  description: <value of string>
                                  folder: <value of string>
-                                 form-data: 
-                                  - 
+                                 form-data:
+                                   -
                                        name: <value of string>
                                        value: <value of string>
                                  host: <value of string>
                                  listening-port: <value of integer>
                                  load-balancing-info: <value of string>
-                                 logon-password: 
-                                  - <value of string>
+                                 logon-password:
+                                   - <value of string>
                                  logon-user: <value of string>
                                  name: <value of string>
                                  port: <value of integer>
@@ -662,8 +662,8 @@ EXAMPLES = '''
                                  sso: <value in [disable, static, auto]>
                                  sso-credential: <value in [sslvpn-login, alternative]>
                                  sso-credential-sent-once: <value in [disable, enable]>
-                                 sso-password: 
-                                  - <value of string>
+                                 sso-password:
+                                   - <value of string>
                                  sso-username: <value of string>
                                  url: <value of string>
                            name: <value of string>
@@ -700,10 +700,10 @@ EXAMPLES = '''
                      limit-user-logins: <value in [disable, enable]>
                      mac-addr-action: <value in [deny, allow]>
                      mac-addr-check: <value in [disable, enable]>
-                     mac-addr-check-rule: 
-                      - 
-                           mac-addr-list: 
-                            - <value of string>
+                     mac-addr-check-rule:
+                       -
+                           mac-addr-list:
+                             - <value of string>
                            mac-addr-mask: <value of integer>
                            name: <value of string>
                      macos-forticlient-download-url: <value of string>
@@ -716,8 +716,8 @@ EXAMPLES = '''
                      skip-check-for-unsupported-os: <value in [disable, enable]>
                      smb-ntlmv1-auth: <value in [disable, enable]>
                      smbv1: <value in [disable, enable]>
-                     split-dns: 
-                      - 
+                     split-dns:
+                       -
                            dns-server1: <value of string>
                            dns-server2: <value of string>
                            domains: <value of string>
@@ -734,27 +734,28 @@ EXAMPLES = '''
                      windows-forticlient-download-url: <value of string>
                      wins-server1: <value of string>
                      wins-server2: <value of string>
-    - name: send request to /pm/config/obj/vpn/ssl/web/portal
+
+    - name: REQUESTING /PM/CONFIG/OBJ/VPN/SSL/WEB/PORTAL
       fmgr_pm_config_obj_vpn_ssl_web_portal:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [allow-user-access, auto-connect, custom-lang, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [allow-user-access, auto-connect, custom-lang, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 '''
 
@@ -773,7 +774,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/vpn/ssl/web/portal
+            example: '/pm/config/adom/{adom}/obj/vpn/ssl/web/portal'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -882,7 +883,7 @@ return_of_api_category_0:
                         description: 'Bookmark group name.'
                custom-lang:
                   type: str
-                  description: 'Change the web portal display language. Overrides config system global set language. You can use config system custom-language and execute system custom-language to add custom language files.'
+                  description: 'Change the web portal display language. Overrides config system global set language. You can use config system custom-langua...'
                customize-forticlient-download-url:
                   type: str
                   description: 'Enable support of customized download URL for FortiClient.'
@@ -957,7 +958,7 @@ return_of_api_category_0:
                   description: 'Enable/disable IPv6 split tunneling.'
                ipv6-split-tunneling-routing-address:
                   type: str
-                  description: 'IPv6 SSL-VPN tunnel mode firewall address objects that override firewall policy destination addresses to control split-tunneling access.'
+                  description: 'IPv6 SSL-VPN tunnel mode firewall address objects that override firewall policy destination addresses to control split-tunne...'
                ipv6-tunnel-mode:
                   type: str
                   description: 'Enable/disable IPv6 SSL-VPN tunnel mode.'
@@ -1048,7 +1049,7 @@ return_of_api_category_0:
                   description: 'Enable/disable IPv4 split tunneling.'
                split-tunneling-routing-address:
                   type: str
-                  description: 'IPv4 SSL-VPN tunnel mode firewall address objects that override firewall policy destination addresses to control split-tunneling access.'
+                  description: 'IPv4 SSL-VPN tunnel mode firewall address objects that override firewall policy destination addresses to control split-tunne...'
                theme:
                   type: str
                   description: 'Web portal color scheme.'
@@ -1080,7 +1081,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/vpn/ssl/web/portal
+            example: '/pm/config/adom/{adom}/obj/vpn/ssl/web/portal'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -1090,6 +1091,7 @@ from ansible.module_utils.network.fortimanager.common import DEFAULT_RESULT_OBJ
 from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
+
 
 def main():
     jrpc_urls = [
@@ -1104,7 +1106,7 @@ def main():
         }
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -1795,7 +1797,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -1816,8 +1817,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -1838,14 +1839,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

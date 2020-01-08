@@ -116,53 +116,55 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/certificate/template
+
+    - name: REQUESTING /PM/CONFIG/OBJ/CERTIFICATE/TEMPLATE
       fmgr_pm_config_obj_certificate_template:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      city: <value of string>
                      country: <value of string>
-                     digest-type: <value in [sha1, sha256] default: sha1>
+                     digest-type: <value in [sha1, sha256] default: 'sha1'>
                      email: <value of string>
-                     id-type: <value in [host-ip, domain-name, email] default: host-ip>
-                     key-size: <value in [512, 1024, 1536, ...] default: 2048>
-                     key-type: <value in [rsa] default: rsa>
+                     id-type: <value in [host-ip, domain-name, email] default: 'host-ip'>
+                     key-size: <value in [512, 1024, 1536, ...] default: '2048'>
+                     key-type: <value in [rsa] default: 'rsa'>
                      name: <value of string>
                      organization: <value of string>
-                     organization-unit: 
-                      - <value of string>
-                     scep-password: 
-                      - <value of string>
+                     organization-unit:
+                       - <value of string>
+                     scep-password:
+                       - <value of string>
                      scep-server: <value of string>
                      state: <value of string>
                      subject-name: <value of string>
-                     type: <value in [external, local] default: external>
-    - name: send request to /pm/config/obj/certificate/template
+                     type: <value in [external, local] default: 'external'>
+
+    - name: REQUESTING /PM/CONFIG/OBJ/CERTIFICATE/TEMPLATE
       fmgr_pm_config_obj_certificate_template:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [city, country, digest-type, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [city, country, digest-type, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

@@ -100,39 +100,41 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/webfilter/ftgd-local-rating
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WEBFILTER/FTGD-LOCAL-RATING
       fmgr_pm_config_obj_webfilter_ftgd_local_rating:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      rating: <value of string>
                      status: <value in [disable, enable]>
                      url: <value of string>
-    - name: send request to /pm/config/obj/webfilter/ftgd-local-rating
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WEBFILTER/FTGD-LOCAL-RATING
       fmgr_pm_config_obj_webfilter_ftgd_local_rating:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [rating, status, url]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [rating, status, url]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

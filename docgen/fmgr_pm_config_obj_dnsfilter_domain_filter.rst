@@ -107,18 +107,19 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/dnsfilter/domain-filter
+
+    - name: REQUESTING /PM/CONFIG/OBJ/DNSFILTER/DOMAIN-FILTER
       fmgr_pm_config_obj_dnsfilter_domain_filter:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      comment: <value of string>
-                     entries: 
-                      - 
+                     entries:
+                       -
                            action: <value in [block, allow, monitor]>
                            domain: <value of string>
                            id: <value of integer>
@@ -126,27 +127,28 @@ Examples
                            type: <value in [simple, regex, wildcard]>
                      id: <value of integer>
                      name: <value of string>
-    - name: send request to /pm/config/obj/dnsfilter/domain-filter
+
+    - name: REQUESTING /PM/CONFIG/OBJ/DNSFILTER/DOMAIN-FILTER
       fmgr_pm_config_obj_dnsfilter_domain_filter:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [comment, id, name]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [comment, id, name]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

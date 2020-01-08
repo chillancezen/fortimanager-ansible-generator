@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/fmupdate/av-ips/web-proxy
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -76,7 +75,7 @@ options:
                 password:
                     -
                         type: str
-                        default: 'ENC MTI2MjAzMTE0MTc0NzY3N96A1AmSDwrXKEo5liF49GmZugX/t86PjMCxqbV67bnu5q3vr1l9kR/jt+BYI+PH3j5ZmUYXO6ZXXHE1wEhZwMirHrcObe3p1h8QGgTiVa/F6CCH3JQkigR5WzWpmW++j9sHqYnfeBZqThZulCaTu1dpr1IF'
+                        default: 'ENC MTI2MjAzMTE0MTc0NzY3N96A1AmSDwrXKEo5liF49GmZugX/t86PjMCxqbV67bnu5q3vr1l9kR/jt+BYI+PH3j5ZmUYXO6ZXXHE1wEhZwMirHrcObe3p1...'
                 port:
                     type: int
                     default: 80
@@ -105,19 +104,20 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/av-ips/web-proxy
+
+    - name: REQUESTING /CLI/FMUPDATE/AV-IPS/WEB-PROXY
       fmgr_cli_fmupdate_av_ips_web_proxy:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  ip: <value of string default: 0.0.0.0>
-                  ip6: <value of string default: ::>
-                  mode: <value in [proxy, tunnel] default: proxy>
-                  password: 
-                   - <value of string default: ENC MTI2MjAzMTE0MTc0NzY3N96A1AmSDwrXKEo5liF49GmZugX/t86PjMCxqbV67bnu5q3vr1l9kR/jt+BYI+PH3j5ZmUYXO6ZXXHE1wEhZwMirHrcObe3p1h8QGgTiVa/F6CCH3JQkigR5WzWpmW++j9sHqYnfeBZqThZulCaTu1dpr1IF>
+            -
+               data:
+                  ip: <value of string default: '0.0.0.0'>
+                  ip6: <value of string default: '::'>
+                  mode: <value in [proxy, tunnel] default: 'proxy'>
+                  password:
+                    - <value of string default: 'ENC MTI2MjAzMTE0MTc0NzY3N96A1AmSDwrXKEo5liF49GmZugX/t86PjMCxqbV67bnu5q3vr1l9...'>
                   port: <value of integer default: 80>
-                  status: <value in [disable, enable] default: disable>
+                  status: <value in [disable, enable] default: 'disable'>
                   username: <value of string>
 
 '''
@@ -134,23 +134,23 @@ return_of_api_category_0:
             ip:
                type: str
                description: 'IPv4 address of the web proxy.'
-               example: 0.0.0.0
+               example: '0.0.0.0'
             ip6:
                type: str
                description: 'IPv6 address of the web proxy.'
-               example: ::
+               example: '::'
             mode:
                type: str
                description: |
                   'Web proxy mode: proxy - http proxy, tunnel - http tunnel (default = proxy).'
                   'proxy - HTTP proxy.'
                   'tunnel - HTTP tunnel.'
-               example: proxy
+               example: 'proxy'
             password:
                type: array
                suboptions:
                   type: str
-                  example: ENC MTI2MjAzMTE0MTc0NzY3N96A1AmSDwrXKEo5liF49GmZugX/t86PjMCxqbV67bnu5q3vr1l9kR/jt+BYI+PH3j5ZmUYXO6ZXXHE1wEhZwMirHrcObe3p1h8QGgTiVa/F6CCH3JQkigR5WzWpmW++j9sHqYnfeBZqThZulCaTu1dpr1IF
+                  example: 'ENC MTI2MjAzMTE0MTc0NzY3N96A1AmSDwrXKEo5liF49GmZugX/t86PjMCxqbV67bnu5q3vr1l9...'
             port:
                type: int
                description: 'The port number of the web proxy (1 - 65535, default = 80).'
@@ -161,7 +161,7 @@ return_of_api_category_0:
                   'Enable/disable connections through the web proxy (default = disable).'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             username:
                type: str
                description: 'The user name used for authentication.'
@@ -172,7 +172,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/fmupdate/av-ips/web-proxy
+            example: '/cli/global/fmupdate/av-ips/web-proxy'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -187,7 +187,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/fmupdate/av-ips/web-proxy
+            example: '/cli/global/fmupdate/av-ips/web-proxy'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -198,6 +198,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/fmupdate/av-ips/web-proxy'
@@ -206,7 +207,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -221,16 +222,13 @@ def main():
                     'type': 'dict',
                     'dict': {
                         'ip': {
-                            'type': 'string',
-                            'default': '0.0.0.0'
+                            'type': 'string'
                         },
                         'ip6': {
-                            'type': 'string',
-                            'default': '::'
+                            'type': 'string'
                         },
                         'mode': {
                             'type': 'string',
-                            'default': 'proxy',
                             'enum': [
                                 'proxy',
                                 'tunnel'
@@ -239,8 +237,7 @@ def main():
                         'password': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC MTI2MjAzMTE0MTc0NzY3N96A1AmSDwrXKEo5liF49GmZugX/t86PjMCxqbV67bnu5q3vr1l9kR/jt+BYI+PH3j5ZmUYXO6ZXXHE1wEhZwMirHrcObe3p1h8QGgTiVa/F6CCH3JQkigR5WzWpmW++j9sHqYnfeBZqThZulCaTu1dpr1IF'
+                                'type': 'string'
                             }
                         },
                         'port': {
@@ -250,7 +247,6 @@ def main():
                         },
                         'status': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -276,7 +272,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -296,8 +291,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -318,14 +313,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

@@ -96,33 +96,35 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/admin/radius
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/RADIUS
       fmgr_cli_system_admin_radius:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     auth-type: <value in [any, pap, chap, ...] default: any>
+            -
+               data:
+                 -
+                     auth-type: <value in [any, pap, chap, ...] default: 'any'>
                      name: <value of string>
-                     nas-ip: <value of string default: 0.0.0.0>
+                     nas-ip: <value of string default: '0.0.0.0'>
                      port: <value of integer default: 1812>
-                     secondary-secret: 
-                      - <value of string default: ENC MjQ1NDY1NzY1NDA5NDc3NsQvpemPPVnDdmjXG2aGMVw2ewhHNWiM5dWsNnfyIP59U/x0Sh3pI2ORfJmJ/m2bQ9guTxrIH8uvVP4gzItuNQvVvgS5sR/Y4x3jjlmrhvA0vK8TjoXt6sFKfKe86/vEo/cg3Y/RJFF1a1dkdDKNjHxCXJIL>
+                     secondary-secret:
+                       - <value of string default: 'ENC MjQ1NDY1NzY1NDA5NDc3NsQvpemPPVnDdmjXG2aGMVw2ewhHNWiM5dWsNnfyIP59U/x0Sh3p...'>
                      secondary-server: <value of string>
-                     secret: 
-                      - <value of string default: ENC ODcxMTExOTAwNDcxNzk4NoWoeEH5WLj2/jjPjplVd8npoc4Pf69w03rfqCi4oVPVPLjIKZTbFLtwEaPQESVBBguR6N1nV9qaAP9EHiMLSzU7Ff/g5ui7hXGXo4hEkXIP09D4PY2eQg9Htz8Oqm42M148kMuPADC3cx8nsiVWb001mIvf>
+                     secret:
+                       - <value of string default: 'ENC ODcxMTExOTAwNDcxNzk4NoWoeEH5WLj2/jjPjplVd8npoc4Pf69w03rfqCi4oVPVPLjIKZTb...'>
                      server: <value of string>
-    - name: send request to /cli/system/admin/radius
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/RADIUS
       fmgr_cli_system_admin_radius:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [auth-type, name, nas-ip, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [auth-type, name, nas-ip, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

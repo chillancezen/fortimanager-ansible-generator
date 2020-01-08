@@ -119,15 +119,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/gtp/message-filter-v2
+
+    - name: REQUESTING /PM/CONFIG/OBJ/GTP/MESSAGE-FILTER-V2
       fmgr_pm_config_obj_gtp_message_filter_v2:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      bearer-resource-cmd-fail: <value in [allow, deny]>
                      change-notification: <value in [allow, deny]>
                      create-bearer: <value in [allow, deny]>
@@ -144,32 +145,33 @@ Examples
                      suspend: <value in [allow, deny]>
                      trace-session: <value in [allow, deny]>
                      unknown-message: <value in [allow, deny]>
-                     unknown-message-white-list: 
-                      - <value of integer>
+                     unknown-message-white-list:
+                       - <value of integer>
                      update-bearer: <value in [allow, deny]>
                      update-pdn-connection-set: <value in [allow, deny]>
                      version-not-support: <value in [allow, deny]>
-    - name: send request to /pm/config/obj/gtp/message-filter-v2
+
+    - name: REQUESTING /PM/CONFIG/OBJ/GTP/MESSAGE-FILTER-V2
       fmgr_pm_config_obj_gtp_message_filter_v2:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [bearer-resource-cmd-fail, change-notification, create-bearer, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [bearer-resource-cmd-fail, change-notification, create-bearer, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

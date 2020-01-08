@@ -72,12 +72,13 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /securityconsole/package/cancel/install
+
+    - name: REQUESTING /SECURITYCONSOLE/PACKAGE/CANCEL/INSTALL
       fmgr_securityconsole_package_cancel_install:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   adom: <value of string>
 
 

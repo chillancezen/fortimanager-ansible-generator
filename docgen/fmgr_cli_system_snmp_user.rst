@@ -101,37 +101,39 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/snmp/user
+
+    - name: REQUESTING /CLI/SYSTEM/SNMP/USER
       fmgr_cli_system_snmp_user:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     auth-proto: <value in [md5, sha] default: sha>
-                     auth-pwd: 
-                      - <value of string default: ENC NjAyNzczNjcyNzY3Nzg1Of2B29hwP1lYq82MXmrQ1PG7EGaRNDqkrqYFYL1NNEgm54idZER+oDi44SCyPKkvrPPrxgkkBtYnh1uQ3hobimfdeMd2rooTubF9B+lKXyq06wTtneMsxzjLK1SP1NNDy91keEpVFpDTpHpRtZ1meW8+NS8k>
-                     events: 
-                      - <value in [disk_low, ha_switch, intf_ip_chg, ...]>
+            -
+               data:
+                 -
+                     auth-proto: <value in [md5, sha] default: 'sha'>
+                     auth-pwd:
+                       - <value of string default: 'ENC NjAyNzczNjcyNzY3Nzg1Of2B29hwP1lYq82MXmrQ1PG7EGaRNDqkrqYFYL1NNEgm54idZER+...'>
+                     events:
+                       - <value in [disk_low, ha_switch, intf_ip_chg, ...]>
                      name: <value of string>
                      notify-hosts: <value of string>
                      notify-hosts6: <value of string>
-                     priv-proto: <value in [aes, des] default: aes>
-                     priv-pwd: 
-                      - <value of string default: ENC OTA3MDU5Nzg1ODQ2MDM2NInoPzPSYfTulrcxKZ65Re1ROZUOMQVvU4dqPX5WkABZ8PkpLAOtCEZJPjCcJbybir6Dw9yptXUDyKN4hUHbzauIOAQ2Az8BlB5n4ifkMNTkDDDxZ7r6oB0GK+QmJM9n2wjUGMCcVi0sG9l4bc9sFFuBi4mJ>
-                     queries: <value in [disable, enable] default: enable>
+                     priv-proto: <value in [aes, des] default: 'aes'>
+                     priv-pwd:
+                       - <value of string default: 'ENC OTA3MDU5Nzg1ODQ2MDM2NInoPzPSYfTulrcxKZ65Re1ROZUOMQVvU4dqPX5WkABZ8PkpLAOt...'>
+                     queries: <value in [disable, enable] default: 'enable'>
                      query-port: <value of integer default: 161>
-                     security-level: <value in [no-auth-no-priv, auth-no-priv, auth-priv] default: no-auth-no-priv>
-    - name: send request to /cli/system/snmp/user
+                     security-level: <value in [no-auth-no-priv, auth-no-priv, auth-priv] default: 'no-auth-no-priv'>
+
+    - name: REQUESTING /CLI/SYSTEM/SNMP/USER
       fmgr_cli_system_snmp_user:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [auth-proto, auth-pwd, events, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [auth-proto, auth-pwd, events, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

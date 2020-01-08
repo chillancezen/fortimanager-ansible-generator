@@ -111,41 +111,42 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/sql
+
+    - name: REQUESTING /CLI/SYSTEM/SQL
       fmgr_cli_system_sql:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  background-rebuild: <value in [disable, enable] default: enable>
-                  custom-index: 
-                   - 
-                        case-sensitive: <value in [disable, enable] default: disable>
-                        device-type: <value in [FortiGate, FortiManager, FortiClient, ...] default: FortiGate>
+            -
+               data:
+                  background-rebuild: <value in [disable, enable] default: 'enable'>
+                  custom-index:
+                    -
+                        case-sensitive: <value in [disable, enable] default: 'disable'>
+                        device-type: <value in [FortiGate, FortiManager, FortiClient, ...] default: 'FortiGate'>
                         id: <value of integer default: 0>
                         index-field: <value of string>
-                        log-type: <value in [none, app-ctrl, attack, ...] default: traffic>
+                        log-type: <value in [none, app-ctrl, attack, ...] default: 'traffic'>
                   database-name: <value of string>
-                  database-type: <value in [mysql, postgres] default: postgres>
-                  device-count-high: <value in [disable, enable] default: disable>
+                  database-type: <value in [mysql, postgres] default: 'postgres'>
+                  device-count-high: <value in [disable, enable] default: 'disable'>
                   event-table-partition-time: <value of integer default: 0>
                   fct-table-partition-time: <value of integer default: 240>
-                  logtype: 
-                   - <value in [none, app-ctrl, attack, ...]>
-                  password: 
-                   - <value of string default: ENC NjQ3NzAyNTQ0MjIyMDUxNUE+4gCrDBIJb7pqPICInSs5KmyrG1Tt8M8Zl+eK2k42FSlwDSDiBpNLwRPdCyo8dSIl+p0KUlKP781RcCnzzGAb/gOob+zQwnCMY730a19D6Tf5E3BBEeL/R375HU5/K0L4aeWS/TsuwFbi0JtMJkVKk0je>
-                  prompt-sql-upgrade: <value in [disable, enable] default: enable>
-                  rebuild-event: <value in [disable, enable] default: enable>
-                  rebuild-event-start-time: 
-                   - <value of string>
+                  logtype:
+                    - <value in [none, app-ctrl, attack, ...]>
+                  password:
+                    - <value of string default: 'ENC NjQ3NzAyNTQ0MjIyMDUxNUE+4gCrDBIJb7pqPICInSs5KmyrG1Tt8M8Zl+eK2k42FSlwDSDi...'>
+                  prompt-sql-upgrade: <value in [disable, enable] default: 'enable'>
+                  rebuild-event: <value in [disable, enable] default: 'enable'>
+                  rebuild-event-start-time:
+                    - <value of string>
                   server: <value of string>
-                  start-time: 
-                   - <value of string>
-                  status: <value in [disable, local] default: local>
-                  text-search-index: <value in [disable, enable] default: disable>
+                  start-time:
+                    - <value of string>
+                  status: <value in [disable, local] default: 'local'>
+                  text-search-index: <value in [disable, enable] default: 'disable'>
                   traffic-table-partition-time: <value of integer default: 0>
-                  ts-index-field: 
-                   - 
+                  ts-index-field:
+                    -
                         category: <value of string>
                         value: <value of string>
                   username: <value of string>

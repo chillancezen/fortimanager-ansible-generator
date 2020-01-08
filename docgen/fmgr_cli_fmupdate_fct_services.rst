@@ -76,14 +76,15 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/fct-services
+
+    - name: REQUESTING /CLI/FMUPDATE/FCT-SERVICES
       fmgr_cli_fmupdate_fct_services:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   port: <value of integer default: 80>
-                  status: <value in [disable, enable] default: enable>
+                  status: <value in [disable, enable] default: 'enable'>
 
 
 

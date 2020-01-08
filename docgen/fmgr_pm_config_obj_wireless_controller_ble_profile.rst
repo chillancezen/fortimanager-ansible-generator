@@ -112,17 +112,18 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/wireless-controller/ble-profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/BLE-PROFILE
       fmgr_pm_config_obj_wireless_controller_ble_profile:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
-                     advertising: 
-                      - <value in [ibeacon, eddystone-uid, eddystone-url]>
+            -
+               data:
+                 -
+                     advertising:
+                       - <value in [ibeacon, eddystone-uid, eddystone-url]>
                      beacon-interval: <value of integer>
                      ble-scanning: <value in [disable, enable]>
                      comment: <value of string>
@@ -135,27 +136,28 @@ Examples
                      minor-id: <value of integer>
                      name: <value of string>
                      txpower: <value in [0, 1, 2, ...]>
-    - name: send request to /pm/config/obj/wireless-controller/ble-profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/BLE-PROFILE
       fmgr_pm_config_obj_wireless_controller_ble_profile:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [advertising, beacon-interval, ble-scanning, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [advertising, beacon-interval, ble-scanning, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

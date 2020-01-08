@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/fmupdate/fds-setting
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -385,61 +384,62 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/fds-setting
+
+    - name: REQUESTING /CLI/FMUPDATE/FDS-SETTING
       fmgr_cli_fmupdate_fds_setting:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  User-Agent: <value of string default: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)>
-                  fds-clt-ssl-protocol: <value in [sslv3, tlsv1.0, tlsv1.1, ...] default: tlsv1.2>
-                  fds-ssl-protocol: <value in [sslv3, tlsv1.0, tlsv1.1, ...] default: tlsv1.2>
-                  fmtr-log: <value in [emergency, alert, critical, ...] default: info>
-                  linkd-log: <value in [emergency, alert, critical, ...] default: info>
+            -
+               data:
+                  User-Agent: <value of string default: 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'>
+                  fds-clt-ssl-protocol: <value in [sslv3, tlsv1.0, tlsv1.1, ...] default: 'tlsv1.2'>
+                  fds-ssl-protocol: <value in [sslv3, tlsv1.0, tlsv1.1, ...] default: 'tlsv1.2'>
+                  fmtr-log: <value in [emergency, alert, critical, ...] default: 'info'>
+                  linkd-log: <value in [emergency, alert, critical, ...] default: 'info'>
                   max-av-ips-version: <value of integer default: 20>
                   max-work: <value of integer default: 1>
-                  push-override: 
-                     ip: <value of string default: 0.0.0.0>
+                  push-override:
+                     ip: <value of string default: '0.0.0.0'>
                      port: <value of integer default: 9443>
-                     status: <value in [disable, enable] default: disable>
-                  push-override-to-client: 
-                     announce-ip: 
-                      - 
+                     status: <value in [disable, enable] default: 'disable'>
+                  push-override-to-client:
+                     announce-ip:
+                       -
                            id: <value of integer default: 0>
-                           ip: <value of string default: 0.0.0.0>
+                           ip: <value of string default: '0.0.0.0'>
                            port: <value of integer default: 8890>
-                     status: <value in [disable, enable] default: disable>
-                  send_report: <value in [disable, enable] default: enable>
-                  send_setup: <value in [disable, enable] default: disable>
-                  server-override: 
-                     servlist: 
-                      - 
+                     status: <value in [disable, enable] default: 'disable'>
+                  send_report: <value in [disable, enable] default: 'enable'>
+                  send_setup: <value in [disable, enable] default: 'disable'>
+                  server-override:
+                     servlist:
+                       -
                            id: <value of integer default: 0>
-                           ip: <value of string default: 0.0.0.0>
-                           ip6: <value of string default: ::>
+                           ip: <value of string default: '0.0.0.0'>
+                           ip6: <value of string default: '::'>
                            port: <value of integer default: 443>
-                           service-type: 
-                            - <value in [fds, fct]>
-                     status: <value in [disable, enable] default: disable>
-                  system-support-fct: 
-                   - <value in [4.x, 5.0, 5.2, ...]>
-                  system-support-fgt: 
-                   - <value in [5.4, 5.6, 6.0, ...]>
-                  system-support-fml: 
-                   - <value in [4.x, 5.x, 6.x]>
-                  system-support-fsa: 
-                   - <value in [1.x, 2.x, 3.x]>
-                  system-support-fsw: 
-                   - <value in [5.4, 5.6, 6.0, ...]>
-                  umsvc-log: <value in [emergency, alert, critical, ...] default: info>
-                  unreg-dev-option: <value in [ignore, svc-only, add-service] default: add-service>
-                  update-schedule: 
-                     day: <value in [Sunday, Monday, Tuesday, ...] default: Monday>
-                     frequency: <value in [every, daily, weekly] default: every>
-                     status: <value in [disable, enable] default: enable>
-                     time: 
-                      - <value of string>
-                  wanip-query-mode: <value in [disable, ipify] default: disable>
+                           service-type:
+                             - <value in [fds, fct]>
+                     status: <value in [disable, enable] default: 'disable'>
+                  system-support-fct:
+                    - <value in [4.x, 5.0, 5.2, ...]>
+                  system-support-fgt:
+                    - <value in [5.4, 5.6, 6.0, ...]>
+                  system-support-fml:
+                    - <value in [4.x, 5.x, 6.x]>
+                  system-support-fsa:
+                    - <value in [1.x, 2.x, 3.x]>
+                  system-support-fsw:
+                    - <value in [5.4, 5.6, 6.0, ...]>
+                  umsvc-log: <value in [emergency, alert, critical, ...] default: 'info'>
+                  unreg-dev-option: <value in [ignore, svc-only, add-service] default: 'add-service'>
+                  update-schedule:
+                     day: <value in [Sunday, Monday, Tuesday, ...] default: 'Monday'>
+                     frequency: <value in [every, daily, weekly] default: 'every'>
+                     status: <value in [disable, enable] default: 'enable'>
+                     time:
+                       - <value of string>
+                  wanip-query-mode: <value in [disable, ipify] default: 'disable'>
 
 '''
 
@@ -455,7 +455,7 @@ return_of_api_category_0:
             User-Agent:
                type: str
                description: 'Configure the user agent string.'
-               example: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)
+               example: 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'
             fds-clt-ssl-protocol:
                type: str
                description: |
@@ -464,7 +464,7 @@ return_of_api_category_0:
                   'tlsv1.0 - set TLSv1.0 as the client version.'
                   'tlsv1.1 - set TLSv1.1 as the client version.'
                   'tlsv1.2 - set TLSv1.2 as the client version (default).'
-               example: tlsv1.2
+               example: 'tlsv1.2'
             fds-ssl-protocol:
                type: str
                description: |
@@ -473,7 +473,7 @@ return_of_api_category_0:
                   'tlsv1.0 - set TLSv1.0 as the lowest version.'
                   'tlsv1.1 - set TLSv1.1 as the lowest version.'
                   'tlsv1.2 - set TLSv1.2 as the lowest version (default).'
-               example: tlsv1.2
+               example: 'tlsv1.2'
             fmtr-log:
                type: str
                description: |
@@ -487,7 +487,7 @@ return_of_api_category_0:
                   'info - Log level - info'
                   'debug - Log level - debug'
                   'disable - Disable linkd log'
-               example: info
+               example: 'info'
             linkd-log:
                type: str
                description: |
@@ -501,7 +501,7 @@ return_of_api_category_0:
                   'info - Log level - info'
                   'debug - Log level - debug'
                   'disable - Disable linkd log'
-               example: info
+               example: 'info'
             max-av-ips-version:
                type: int
                description: 'The maximum number of downloadable, full version AV/IPS packages (1 - 1000, default = 20).'
@@ -514,7 +514,7 @@ return_of_api_category_0:
                ip:
                   type: str
                   description: 'External or virtual IP address of the NAT device that will forward push messages to the FortiManager unit.'
-                  example: 0.0.0.0
+                  example: '0.0.0.0'
                port:
                   type: int
                   description: 'Receiving port number on the NAT device (1 - 65535, default = 9443).'
@@ -525,7 +525,7 @@ return_of_api_category_0:
                      'Enable/disable push updates for clients (default = disable).'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: disable
+                  example: 'disable'
             push-override-to-client:
                announce-ip:
                   type: array
@@ -537,7 +537,7 @@ return_of_api_category_0:
                      ip:
                         type: str
                         description: 'Announce IPv4 address.'
-                        example: 0.0.0.0
+                        example: '0.0.0.0'
                      port:
                         type: int
                         description: 'Announce IP port (1 - 65535, default = 8890).'
@@ -548,21 +548,21 @@ return_of_api_category_0:
                      'Enable/disable push updates (default = disable).'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: disable
+                  example: 'disable'
             send_report:
                type: str
                description: |
                   'send report/fssi to fds server.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             send_setup:
                type: str
                description: |
                   'forward setup to fds server.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             server-override:
                servlist:
                   type: array
@@ -574,11 +574,11 @@ return_of_api_category_0:
                      ip:
                         type: str
                         description: 'IPv4 address of the override server.'
-                        example: 0.0.0.0
+                        example: '0.0.0.0'
                      ip6:
                         type: str
                         description: 'IPv6 address of the override server.'
-                        example: ::
+                        example: '::'
                      port:
                         type: int
                         description: 'Port number to use when contacting FortiGuard (1 - 65535, default = 443).'
@@ -593,7 +593,7 @@ return_of_api_category_0:
                      'Override status.'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: disable
+                  example: 'disable'
             system-support-fct:
                type: array
                suboptions:
@@ -627,7 +627,7 @@ return_of_api_category_0:
                   'info - Log level - info'
                   'debug - Log level - debug'
                   'disable - Disable linkd log'
-               example: info
+               example: 'info'
             unreg-dev-option:
                type: str
                description: |
@@ -635,7 +635,7 @@ return_of_api_category_0:
                   'ignore - Ignore all unregistered devices.'
                   'svc-only - Allow update requests without adding the device.'
                   'add-service - Add unregistered devices and allow update request.'
-               example: add-service
+               example: 'add-service'
             update-schedule:
                day:
                   type: str
@@ -648,7 +648,7 @@ return_of_api_category_0:
                      'Thursday - Update every Thursday.'
                      'Friday - Update every Friday.'
                      'Saturday - Update every Saturday.'
-                  example: Monday
+                  example: 'Monday'
                frequency:
                   type: str
                   description: |
@@ -656,14 +656,14 @@ return_of_api_category_0:
                      'every - Time interval.'
                      'daily - Every day.'
                      'weekly - Every week.'
-                  example: every
+                  example: 'every'
                status:
                   type: str
                   description: |
                      'Enable/disable scheduled updates.'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: enable
+                  example: 'enable'
                time:
                   type: array
                   suboptions:
@@ -674,7 +674,7 @@ return_of_api_category_0:
                   'public ip query mode'
                   'disable - Do not query public ip'
                   'ipify - Get public IP through https://api.ipify.org'
-               example: disable
+               example: 'disable'
          status:
             code:
                type: int
@@ -682,7 +682,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/fmupdate/fds-setting
+            example: '/cli/global/fmupdate/fds-setting'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -697,7 +697,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/fmupdate/fds-setting
+            example: '/cli/global/fmupdate/fds-setting'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -708,6 +708,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/fmupdate/fds-setting'
@@ -716,7 +717,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -731,12 +732,10 @@ def main():
                     'type': 'dict',
                     'dict': {
                         'User-Agent': {
-                            'type': 'string',
-                            'default': 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'
+                            'type': 'string'
                         },
                         'fds-clt-ssl-protocol': {
                             'type': 'string',
-                            'default': 'tlsv1.2',
                             'enum': [
                                 'sslv3',
                                 'tlsv1.0',
@@ -746,7 +745,6 @@ def main():
                         },
                         'fds-ssl-protocol': {
                             'type': 'string',
-                            'default': 'tlsv1.2',
                             'enum': [
                                 'sslv3',
                                 'tlsv1.0',
@@ -756,7 +754,6 @@ def main():
                         },
                         'fmtr-log': {
                             'type': 'string',
-                            'default': 'info',
                             'enum': [
                                 'emergency',
                                 'alert',
@@ -771,7 +768,6 @@ def main():
                         },
                         'linkd-log': {
                             'type': 'string',
-                            'default': 'info',
                             'enum': [
                                 'emergency',
                                 'alert',
@@ -796,8 +792,7 @@ def main():
                         },
                         'push-override': {
                             'ip': {
-                                'type': 'string',
-                                'default': '0.0.0.0'
+                                'type': 'string'
                             },
                             'port': {
                                 'type': 'integer',
@@ -806,7 +801,6 @@ def main():
                             },
                             'status': {
                                 'type': 'string',
-                                'default': 'disable',
                                 'enum': [
                                     'disable',
                                     'enable'
@@ -823,8 +817,7 @@ def main():
                                         'example': 0
                                     },
                                     'ip': {
-                                        'type': 'string',
-                                        'default': '0.0.0.0'
+                                        'type': 'string'
                                     },
                                     'port': {
                                         'type': 'integer',
@@ -835,7 +828,6 @@ def main():
                             },
                             'status': {
                                 'type': 'string',
-                                'default': 'disable',
                                 'enum': [
                                     'disable',
                                     'enable'
@@ -844,7 +836,6 @@ def main():
                         },
                         'send_report': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -852,7 +843,6 @@ def main():
                         },
                         'send_setup': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -868,12 +858,10 @@ def main():
                                         'example': 0
                                     },
                                     'ip': {
-                                        'type': 'string',
-                                        'default': '0.0.0.0'
+                                        'type': 'string'
                                     },
                                     'ip6': {
-                                        'type': 'string',
-                                        'default': '::'
+                                        'type': 'string'
                                     },
                                     'port': {
                                         'type': 'integer',
@@ -894,7 +882,6 @@ def main():
                             },
                             'status': {
                                 'type': 'string',
-                                'default': 'disable',
                                 'enum': [
                                     'disable',
                                     'enable'
@@ -963,7 +950,6 @@ def main():
                         },
                         'umsvc-log': {
                             'type': 'string',
-                            'default': 'info',
                             'enum': [
                                 'emergency',
                                 'alert',
@@ -978,7 +964,6 @@ def main():
                         },
                         'unreg-dev-option': {
                             'type': 'string',
-                            'default': 'add-service',
                             'enum': [
                                 'ignore',
                                 'svc-only',
@@ -988,7 +973,6 @@ def main():
                         'update-schedule': {
                             'day': {
                                 'type': 'string',
-                                'default': 'Monday',
                                 'enum': [
                                     'Sunday',
                                     'Monday',
@@ -1001,7 +985,6 @@ def main():
                             },
                             'frequency': {
                                 'type': 'string',
-                                'default': 'every',
                                 'enum': [
                                     'every',
                                     'daily',
@@ -1010,7 +993,6 @@ def main():
                             },
                             'status': {
                                 'type': 'string',
-                                'default': 'enable',
                                 'enum': [
                                     'disable',
                                     'enable'
@@ -1025,7 +1007,6 @@ def main():
                         },
                         'wanip-query-mode': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'ipify'
@@ -1048,7 +1029,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -1068,8 +1048,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -1090,14 +1070,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

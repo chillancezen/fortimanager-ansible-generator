@@ -124,60 +124,62 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/switch-controller/lldp-profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SWITCH-CONTROLLER/LLDP-PROFILE
       fmgr_pm_config_obj_switch_controller_lldp_profile:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
-                     802.1-tlvs: 
-                      - <value in [port-vlan-id]>
-                     802.3-tlvs: 
-                      - <value in [max-frame-size]>
+            -
+               data:
+                 -
+                     802.1-tlvs:
+                       - <value in [port-vlan-id]>
+                     802.3-tlvs:
+                       - <value in [max-frame-size]>
                      auto-isl: <value in [disable, enable]>
                      auto-isl-hello-timer: <value of integer>
                      auto-isl-port-group: <value of integer>
                      auto-isl-receive-timeout: <value of integer>
-                     custom-tlvs: 
-                      - 
+                     custom-tlvs:
+                       -
                            information-string: <value of string>
                            name: <value of string>
                            oui: <value of string>
                            subtype: <value of integer>
-                     med-network-policy: 
-                      - 
+                     med-network-policy:
+                       -
                            dscp: <value of integer>
                            name: <value of string>
                            priority: <value of integer>
                            status: <value in [disable, enable]>
                            vlan: <value of integer>
-                     med-tlvs: 
-                      - <value in [inventory-management, network-policy, power-management, ...]>
+                     med-tlvs:
+                       - <value in [inventory-management, network-policy, power-management, ...]>
                      name: <value of string>
-    - name: send request to /pm/config/obj/switch-controller/lldp-profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SWITCH-CONTROLLER/LLDP-PROFILE
       fmgr_pm_config_obj_switch_controller_lldp_profile:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [802.1-tlvs, 802.3-tlvs, auto-isl, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [802.1-tlvs, 802.3-tlvs, auto-isl, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

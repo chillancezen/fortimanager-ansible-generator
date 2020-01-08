@@ -78,16 +78,17 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/dns
+
+    - name: REQUESTING /CLI/SYSTEM/DNS
       fmgr_cli_system_dns:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  ip6-primary: <value of string default: ::>
-                  ip6-secondary: <value of string default: ::>
-                  primary: <value of string default: 0.0.0.0>
-                  secondary: <value of string default: 0.0.0.0>
+            -
+               data:
+                  ip6-primary: <value of string default: '::'>
+                  ip6-secondary: <value of string default: '::'>
+                  primary: <value of string default: '0.0.0.0'>
+                  secondary: <value of string default: '0.0.0.0'>
 
 
 

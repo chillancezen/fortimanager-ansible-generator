@@ -30,7 +30,6 @@ description:
     - /pm/config/adom/{adom}/obj/firewall/ldb-monitor
     - /pm/config/global/obj/firewall/ldb-monitor
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -45,7 +44,7 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
-    url_params: 
+    url_params:
         description: the parameters in url path
         required: True
         type: dict
@@ -81,13 +80,13 @@ options:
                         description: 'Monitor name.'
                     port:
                         type: int
-                        description: 'Service port used to perform the health check. If 0, health check monitor inherits port configured for the server (0 - 65635, default = 0).'
+                        description: 'Service port used to perform the health check. If 0, health check monitor inherits port configured for the server (0 -...'
                     retry:
                         type: int
                         description: 'Number health check attempts before the server is considered down (1 - 255, default = 3).'
                     timeout:
                         type: int
-                        description: 'Time to wait to receive response to a health check from a server. Reaching the timeout means the health check failed (1 - 255 sec, default = 2).'
+                        description: 'Time to wait to receive response to a health check from a server. Reaching the timeout means the health check failed (...'
                     type:
                         type: str
                         description: 'Select the Monitor type used by the health check monitor to check the health of the server (PING | TCP | HTTP).'
@@ -146,7 +145,7 @@ options:
                     type: int
             sortings:
                 -
-                    \{attr_name\}:
+                    varidic.attr_name:
                         type: int
                         choices:
                             - 1
@@ -162,15 +161,16 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/firewall/ldb-monitor
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/LDB-MONITOR
       fmgr_pm_config_obj_firewall_ldb_monitor:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      http-get: <value of string>
                      http-match: <value of string>
                      http-max-redirects: <value of integer>
@@ -180,27 +180,28 @@ EXAMPLES = '''
                      retry: <value of integer>
                      timeout: <value of integer>
                      type: <value in [ping, tcp, http, ...]>
-    - name: send request to /pm/config/obj/firewall/ldb-monitor
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/LDB-MONITOR
       fmgr_pm_config_obj_firewall_ldb_monitor:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [http-get, http-match, http-max-redirects, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [http-get, http-match, http-max-redirects, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 '''
 
@@ -219,7 +220,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/firewall/ldb-monitor
+            example: '/pm/config/adom/{adom}/obj/firewall/ldb-monitor'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -247,13 +248,13 @@ return_of_api_category_0:
                   description: 'Monitor name.'
                port:
                   type: int
-                  description: 'Service port used to perform the health check. If 0, health check monitor inherits port configured for the server (0 - 65635, default = 0).'
+                  description: 'Service port used to perform the health check. If 0, health check monitor inherits port configured for the server (0 - 65635...'
                retry:
                   type: int
                   description: 'Number health check attempts before the server is considered down (1 - 255, default = 3).'
                timeout:
                   type: int
-                  description: 'Time to wait to receive response to a health check from a server. Reaching the timeout means the health check failed (1 - 255 sec, default = 2).'
+                  description: 'Time to wait to receive response to a health check from a server. Reaching the timeout means the health check failed (1 - 25...'
                type:
                   type: str
                   description: 'Select the Monitor type used by the health check monitor to check the health of the server (PING | TCP | HTTP).'
@@ -264,7 +265,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/firewall/ldb-monitor
+            example: '/pm/config/adom/{adom}/obj/firewall/ldb-monitor'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -274,6 +275,7 @@ from ansible.module_utils.network.fortimanager.common import DEFAULT_RESULT_OBJ
 from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
+
 
 def main():
     jrpc_urls = [
@@ -288,7 +290,7 @@ def main():
         }
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -453,7 +455,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -474,8 +475,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -496,14 +497,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

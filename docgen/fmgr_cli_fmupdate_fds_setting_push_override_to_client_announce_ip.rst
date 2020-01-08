@@ -87,26 +87,28 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/fds-setting/push-override-to-client/announce-ip
+
+    - name: REQUESTING /CLI/FMUPDATE/FDS-SETTING/PUSH-OVERRIDE-TO-CLIENT/ANNOUNCE-IP
       fmgr_cli_fmupdate_fds_setting_push_override_to_client_announce_ip:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      id: <value of integer default: 0>
-                     ip: <value of string default: 0.0.0.0>
+                     ip: <value of string default: '0.0.0.0'>
                      port: <value of integer default: 8890>
-    - name: send request to /cli/fmupdate/fds-setting/push-override-to-client/announce-ip
+
+    - name: REQUESTING /CLI/FMUPDATE/FDS-SETTING/PUSH-OVERRIDE-TO-CLIENT/ANNOUNCE-IP
       fmgr_cli_fmupdate_fds_setting_push_override_to_client_announce_ip:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [id, ip, port]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [id, ip, port]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

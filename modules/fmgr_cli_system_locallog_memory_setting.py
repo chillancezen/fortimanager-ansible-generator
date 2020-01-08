@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/system/locallog/memory/setting
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -108,15 +107,16 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/locallog/memory/setting
+
+    - name: REQUESTING /CLI/SYSTEM/LOCALLOG/MEMORY/SETTING
       fmgr_cli_system_locallog_memory_setting:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  diskfull: <value in [overwrite, nolog] default: overwrite>
-                  severity: <value in [emergency, alert, critical, ...] default: notification>
-                  status: <value in [disable, enable] default: disable>
+            -
+               data:
+                  diskfull: <value in [overwrite, nolog] default: 'overwrite'>
+                  severity: <value in [emergency, alert, critical, ...] default: 'notification'>
+                  status: <value in [disable, enable] default: 'disable'>
 
 '''
 
@@ -135,7 +135,7 @@ return_of_api_category_0:
                   'Action upon disk full.'
                   'overwrite - Overwrite oldest log when disk is full.'
                   'nolog - Stop logging when disk is full.'
-               example: overwrite
+               example: 'overwrite'
             severity:
                type: str
                description: |
@@ -148,14 +148,14 @@ return_of_api_category_0:
                   'notification - Notification level.'
                   'information - Information level.'
                   'debug - Debug level.'
-               example: notification
+               example: 'notification'
             status:
                type: str
                description: |
                   'Enable/disable memory buffer log.'
                   'disable - Do not log to memory buffer.'
                   'enable - Log to memory buffer.'
-               example: disable
+               example: 'disable'
          status:
             code:
                type: int
@@ -163,7 +163,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/locallog/memory/setting
+            example: '/cli/global/system/locallog/memory/setting'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -178,7 +178,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/locallog/memory/setting
+            example: '/cli/global/system/locallog/memory/setting'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -189,6 +189,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/locallog/memory/setting'
@@ -197,7 +198,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -213,7 +214,6 @@ def main():
                     'dict': {
                         'diskfull': {
                             'type': 'string',
-                            'default': 'overwrite',
                             'enum': [
                                 'overwrite',
                                 'nolog'
@@ -221,7 +221,6 @@ def main():
                         },
                         'severity': {
                             'type': 'string',
-                            'default': 'notification',
                             'enum': [
                                 'emergency',
                                 'alert',
@@ -235,7 +234,6 @@ def main():
                         },
                         'status': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -258,7 +256,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -278,8 +275,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -300,14 +297,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

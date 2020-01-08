@@ -77,15 +77,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/fips
+
+    - name: REQUESTING /CLI/SYSTEM/FIPS
       fmgr_cli_system_fips:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  entropy-token: <value in [enable, disable, dynamic] default: enable>
+            -
+               data:
+                  entropy-token: <value in [enable, disable, dynamic] default: 'enable'>
                   re-seed-interval: <value of integer default: 1440>
-                  status: <value in [disable, enable] default: disable>
+                  status: <value in [disable, enable] default: 'disable'>
 
 
 

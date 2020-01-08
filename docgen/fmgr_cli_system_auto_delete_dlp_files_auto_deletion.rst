@@ -78,15 +78,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/auto-delete/dlp-files-auto-deletion
+
+    - name: REQUESTING /CLI/SYSTEM/AUTO-DELETE/DLP-FILES-AUTO-DELETION
       fmgr_cli_system_auto_delete_dlp_files_auto_deletion:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  retention: <value in [days, weeks, months] default: days>
+            -
+               data:
+                  retention: <value in [days, weeks, months] default: 'days'>
                   runat: <value of integer default: 0>
-                  status: <value in [disable, enable] default: disable>
+                  status: <value in [disable, enable] default: 'disable'>
                   value: <value of integer default: 0>
 
 

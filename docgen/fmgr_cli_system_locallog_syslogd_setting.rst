@@ -79,16 +79,17 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/locallog/syslogd/setting
+
+    - name: REQUESTING /CLI/SYSTEM/LOCALLOG/SYSLOGD/SETTING
       fmgr_cli_system_locallog_syslogd_setting:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  csv: <value in [disable, enable] default: disable>
-                  facility: <value in [kernel, user, ntp, ...] default: local7>
-                  severity: <value in [emergency, alert, critical, ...] default: notification>
-                  status: <value in [disable, enable] default: disable>
+            -
+               data:
+                  csv: <value in [disable, enable] default: 'disable'>
+                  facility: <value in [kernel, user, ntp, ...] default: 'local7'>
+                  severity: <value in [emergency, alert, critical, ...] default: 'notification'>
+                  status: <value in [disable, enable] default: 'disable'>
                   syslog-name: <value of string>
 
 

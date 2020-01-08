@@ -80,19 +80,20 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /securityconsole/assign/package
+
+    - name: REQUESTING /SECURITYCONSOLE/ASSIGN/PACKAGE
       fmgr_securityconsole_assign_package:
          method: <value in [exec]>
          params:
-            - 
-               data: 
-                  flags: 
-                   - <value in [none, cp_all_objs, copy_assigned_pkg, ...]>
+            -
+               data:
+                  flags:
+                    - <value in [none, cp_all_objs, copy_assigned_pkg, ...]>
                   pkg: <value of string>
-                  target: 
-                   - 
+                  target:
+                    -
                         adom: <value of string>
-                        excluded: <value in [disable, enable] default: disable>
+                        excluded: <value in [disable, enable] default: 'disable'>
                         pkg: <value of string>
 
 

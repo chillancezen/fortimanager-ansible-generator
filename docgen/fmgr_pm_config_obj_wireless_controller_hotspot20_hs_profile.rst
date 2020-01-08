@@ -129,15 +129,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/wireless-controller/hotspot20/hs-profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/HOTSPOT20/HS-PROFILE
       fmgr_pm_config_obj_wireless_controller_hotspot20_hs_profile:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      3gpp-plmn: <value of string>
                      access-network-asra: <value in [disable, enable]>
                      access-network-esr: <value in [disable, enable]>
@@ -170,27 +171,28 @@ Examples
                      venue-type: <value in [unspecified, arena, stadium, ...]>
                      wan-metrics: <value of string>
                      wnm-sleep-mode: <value in [disable, enable]>
-    - name: send request to /pm/config/obj/wireless-controller/hotspot20/hs-profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/HOTSPOT20/HS-PROFILE
       fmgr_pm_config_obj_wireless_controller_hotspot20_hs_profile:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [3gpp-plmn, access-network-asra, access-network-esr, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [3gpp-plmn, access-network-asra, access-network-esr, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

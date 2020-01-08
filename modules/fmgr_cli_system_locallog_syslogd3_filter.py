@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/system/locallog/syslogd3/filter
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -455,51 +454,52 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/locallog/syslogd3/filter
+
+    - name: REQUESTING /CLI/SYSTEM/LOCALLOG/SYSLOGD3/FILTER
       fmgr_cli_system_locallog_syslogd3_filter:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  devcfg: <value in [disable, enable] default: enable>
-                  devops: <value in [disable, enable] default: enable>
-                  diskquota: <value in [disable, enable] default: enable>
-                  dm: <value in [disable, enable] default: enable>
-                  dvm: <value in [disable, enable] default: enable>
-                  ediscovery: <value in [disable, enable] default: enable>
-                  epmgr: <value in [disable, enable] default: enable>
-                  event: <value in [disable, enable] default: enable>
-                  eventmgmt: <value in [disable, enable] default: enable>
-                  faz: <value in [disable, enable] default: enable>
-                  fazha: <value in [disable, enable] default: enable>
-                  fazsys: <value in [disable, enable] default: enable>
-                  fgd: <value in [disable, enable] default: enable>
-                  fgfm: <value in [disable, enable] default: enable>
-                  fips: <value in [disable, enable] default: enable>
-                  fmgws: <value in [disable, enable] default: enable>
-                  fmlmgr: <value in [disable, enable] default: enable>
-                  fmwmgr: <value in [disable, enable] default: enable>
-                  fortiview: <value in [disable, enable] default: enable>
-                  glbcfg: <value in [disable, enable] default: enable>
-                  ha: <value in [disable, enable] default: enable>
-                  hcache: <value in [disable, enable] default: enable>
-                  iolog: <value in [disable, enable] default: enable>
-                  logd: <value in [disable, enable] default: enable>
-                  logdb: <value in [disable, enable] default: enable>
-                  logdev: <value in [disable, enable] default: enable>
+            -
+               data:
+                  devcfg: <value in [disable, enable] default: 'enable'>
+                  devops: <value in [disable, enable] default: 'enable'>
+                  diskquota: <value in [disable, enable] default: 'enable'>
+                  dm: <value in [disable, enable] default: 'enable'>
+                  dvm: <value in [disable, enable] default: 'enable'>
+                  ediscovery: <value in [disable, enable] default: 'enable'>
+                  epmgr: <value in [disable, enable] default: 'enable'>
+                  event: <value in [disable, enable] default: 'enable'>
+                  eventmgmt: <value in [disable, enable] default: 'enable'>
+                  faz: <value in [disable, enable] default: 'enable'>
+                  fazha: <value in [disable, enable] default: 'enable'>
+                  fazsys: <value in [disable, enable] default: 'enable'>
+                  fgd: <value in [disable, enable] default: 'enable'>
+                  fgfm: <value in [disable, enable] default: 'enable'>
+                  fips: <value in [disable, enable] default: 'enable'>
+                  fmgws: <value in [disable, enable] default: 'enable'>
+                  fmlmgr: <value in [disable, enable] default: 'enable'>
+                  fmwmgr: <value in [disable, enable] default: 'enable'>
+                  fortiview: <value in [disable, enable] default: 'enable'>
+                  glbcfg: <value in [disable, enable] default: 'enable'>
+                  ha: <value in [disable, enable] default: 'enable'>
+                  hcache: <value in [disable, enable] default: 'enable'>
+                  iolog: <value in [disable, enable] default: 'enable'>
+                  logd: <value in [disable, enable] default: 'enable'>
+                  logdb: <value in [disable, enable] default: 'enable'>
+                  logdev: <value in [disable, enable] default: 'enable'>
                   logfile: <value in [enable, disable]>
-                  logging: <value in [disable, enable] default: enable>
-                  lrmgr: <value in [disable, enable] default: enable>
-                  objcfg: <value in [disable, enable] default: enable>
-                  report: <value in [disable, enable] default: enable>
-                  rev: <value in [disable, enable] default: enable>
-                  rtmon: <value in [disable, enable] default: enable>
-                  scfw: <value in [disable, enable] default: enable>
-                  scply: <value in [disable, enable] default: enable>
-                  scrmgr: <value in [disable, enable] default: enable>
-                  scvpn: <value in [disable, enable] default: enable>
-                  system: <value in [disable, enable] default: enable>
-                  webport: <value in [disable, enable] default: enable>
+                  logging: <value in [disable, enable] default: 'enable'>
+                  lrmgr: <value in [disable, enable] default: 'enable'>
+                  objcfg: <value in [disable, enable] default: 'enable'>
+                  report: <value in [disable, enable] default: 'enable'>
+                  rev: <value in [disable, enable] default: 'enable'>
+                  rtmon: <value in [disable, enable] default: 'enable'>
+                  scfw: <value in [disable, enable] default: 'enable'>
+                  scply: <value in [disable, enable] default: 'enable'>
+                  scrmgr: <value in [disable, enable] default: 'enable'>
+                  scvpn: <value in [disable, enable] default: 'enable'>
+                  system: <value in [disable, enable] default: 'enable'>
+                  webport: <value in [disable, enable] default: 'enable'>
 
 '''
 
@@ -518,182 +518,182 @@ return_of_api_category_0:
                   'Log device configuration message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             devops:
                type: str
                description: |
                   'Managered devices operations messages.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             diskquota:
                type: str
                description: |
                   'Log Fortianalyzer disk quota messages.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             dm:
                type: str
                description: |
                   'Log deployment manager message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             dvm:
                type: str
                description: |
                   'Log device manager messages.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             ediscovery:
                type: str
                description: |
                   'Log Fortianalyzer ediscovery messages.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             epmgr:
                type: str
                description: |
                   'Log endpoint manager message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             event:
                type: str
                description: |
                   'Log event messages.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             eventmgmt:
                type: str
                description: |
                   'Log Fortianalyzer event handler messages.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             faz:
                type: str
                description: |
                   'Log Fortianalyzer messages.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             fazha:
                type: str
                description: |
                   'Log Fortianalyzer HA messages.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             fazsys:
                type: str
                description: |
                   'Log Fortianalyzer system messages.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             fgd:
                type: str
                description: |
                   'Log FortiGuard service message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             fgfm:
                type: str
                description: |
                   'Log FGFM protocol message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             fips:
                type: str
                description: |
                   'Whether to log fips messages.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             fmgws:
                type: str
                description: |
                   'Log web service messages.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             fmlmgr:
                type: str
                description: |
                   'Log FortiMail manager message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             fmwmgr:
                type: str
                description: |
                   'Log firmware manager message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             fortiview:
                type: str
                description: |
                   'Log Fortianalyzer FortiView messages.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             glbcfg:
                type: str
                description: |
                   'Log global database message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             ha:
                type: str
                description: |
                   'Log HA message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             hcache:
                type: str
                description: |
                   'Log Fortianalyzer hcache messages.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             iolog:
                type: str
                description: |
                   'Log debug IO log message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             logd:
                type: str
                description: |
                   'Log the status of log daemon.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             logdb:
                type: str
                description: |
                   'Log Fortianalyzer log DB messages.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             logdev:
                type: str
                description: |
                   'Log Fortianalyzer log device messages.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             logfile:
                type: str
                description: |
@@ -706,84 +706,84 @@ return_of_api_category_0:
                   'Log Fortianalyzer logging messages.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             lrmgr:
                type: str
                description: |
                   'Log log and report manager message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             objcfg:
                type: str
                description: |
                   'Log object configuration change message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             report:
                type: str
                description: |
                   'Log Fortianalyzer report messages.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             rev:
                type: str
                description: |
                   'Log revision history message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             rtmon:
                type: str
                description: |
                   'Log real-time monitor message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             scfw:
                type: str
                description: |
                   'Log firewall objects message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             scply:
                type: str
                description: |
                   'Log policy console message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             scrmgr:
                type: str
                description: |
                   'Log script manager message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             scvpn:
                type: str
                description: |
                   'Log VPN console message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             system:
                type: str
                description: |
                   'Log system manager message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             webport:
                type: str
                description: |
                   'Log web portal message.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
          status:
             code:
                type: int
@@ -791,7 +791,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/locallog/syslogd3/filter
+            example: '/cli/global/system/locallog/syslogd3/filter'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -806,7 +806,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/locallog/syslogd3/filter
+            example: '/cli/global/system/locallog/syslogd3/filter'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -817,6 +817,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/locallog/syslogd3/filter'
@@ -825,7 +826,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -841,7 +842,6 @@ def main():
                     'dict': {
                         'devcfg': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -849,7 +849,6 @@ def main():
                         },
                         'devops': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -857,7 +856,6 @@ def main():
                         },
                         'diskquota': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -865,7 +863,6 @@ def main():
                         },
                         'dm': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -873,7 +870,6 @@ def main():
                         },
                         'dvm': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -881,7 +877,6 @@ def main():
                         },
                         'ediscovery': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -889,7 +884,6 @@ def main():
                         },
                         'epmgr': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -897,7 +891,6 @@ def main():
                         },
                         'event': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -905,7 +898,6 @@ def main():
                         },
                         'eventmgmt': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -913,7 +905,6 @@ def main():
                         },
                         'faz': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -921,7 +912,6 @@ def main():
                         },
                         'fazha': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -929,7 +919,6 @@ def main():
                         },
                         'fazsys': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -937,7 +926,6 @@ def main():
                         },
                         'fgd': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -945,7 +933,6 @@ def main():
                         },
                         'fgfm': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -953,7 +940,6 @@ def main():
                         },
                         'fips': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -961,7 +947,6 @@ def main():
                         },
                         'fmgws': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -969,7 +954,6 @@ def main():
                         },
                         'fmlmgr': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -977,7 +961,6 @@ def main():
                         },
                         'fmwmgr': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -985,7 +968,6 @@ def main():
                         },
                         'fortiview': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -993,7 +975,6 @@ def main():
                         },
                         'glbcfg': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1001,7 +982,6 @@ def main():
                         },
                         'ha': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1009,7 +989,6 @@ def main():
                         },
                         'hcache': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1017,7 +996,6 @@ def main():
                         },
                         'iolog': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1025,7 +1003,6 @@ def main():
                         },
                         'logd': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1033,7 +1010,6 @@ def main():
                         },
                         'logdb': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1041,7 +1017,6 @@ def main():
                         },
                         'logdev': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1056,7 +1031,6 @@ def main():
                         },
                         'logging': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1064,7 +1038,6 @@ def main():
                         },
                         'lrmgr': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1072,7 +1045,6 @@ def main():
                         },
                         'objcfg': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1080,7 +1052,6 @@ def main():
                         },
                         'report': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1088,7 +1059,6 @@ def main():
                         },
                         'rev': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1096,7 +1066,6 @@ def main():
                         },
                         'rtmon': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1104,7 +1073,6 @@ def main():
                         },
                         'scfw': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1112,7 +1080,6 @@ def main():
                         },
                         'scply': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1120,7 +1087,6 @@ def main():
                         },
                         'scrmgr': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1128,7 +1094,6 @@ def main():
                         },
                         'scvpn': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1136,7 +1101,6 @@ def main():
                         },
                         'system': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1144,7 +1108,6 @@ def main():
                         },
                         'webport': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1167,7 +1130,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -1187,8 +1149,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -1209,14 +1171,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

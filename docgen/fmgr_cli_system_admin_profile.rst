@@ -143,79 +143,81 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/admin/profile
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/PROFILE
       fmgr_cli_system_admin_profile:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     adom-lock: <value in [none, read, read-write] default: none>
-                     adom-policy-packages: <value in [none, read, read-write] default: none>
-                     adom-switch: <value in [none, read, read-write] default: none>
-                     app-filter: <value in [disable, enable] default: disable>
-                     assignment: <value in [none, read, read-write] default: none>
-                     change-password: <value in [disable, enable] default: disable>
-                     config-retrieve: <value in [none, read, read-write] default: none>
-                     config-revert: <value in [none, read, read-write] default: none>
-                     consistency-check: <value in [none, read, read-write] default: none>
-                     datamask: <value in [disable, enable] default: disable>
-                     datamask-custom-fields: 
-                      - 
-                           field-category: 
-                            - <value in [log, fortiview, alert, ...]>
+            -
+               data:
+                 -
+                     adom-lock: <value in [none, read, read-write] default: 'none'>
+                     adom-policy-packages: <value in [none, read, read-write] default: 'none'>
+                     adom-switch: <value in [none, read, read-write] default: 'none'>
+                     app-filter: <value in [disable, enable] default: 'disable'>
+                     assignment: <value in [none, read, read-write] default: 'none'>
+                     change-password: <value in [disable, enable] default: 'disable'>
+                     config-retrieve: <value in [none, read, read-write] default: 'none'>
+                     config-revert: <value in [none, read, read-write] default: 'none'>
+                     consistency-check: <value in [none, read, read-write] default: 'none'>
+                     datamask: <value in [disable, enable] default: 'disable'>
+                     datamask-custom-fields:
+                       -
+                           field-category:
+                             - <value in [log, fortiview, alert, ...]>
                            field-name: <value of string>
-                           field-status: <value in [disable, enable] default: enable>
-                           field-type: <value in [string, ip, mac, ...] default: string>
-                     datamask-custom-priority: <value in [disable, enable] default: disable>
-                     datamask-fields: 
-                      - <value in [user, srcip, srcname, ...]>
-                     datamask-key: 
-                      - <value of string default: ENC MzI1Nzc3MjAyNTg1Njg0NNKOn5kCfNawE/VnDbtMpWXduJpvaREIOxBK4PNmJmqeRwgB9loHz7FqcMzTT5DrD50rb65MQrxNOiuHZ7eM/qmDuMiCMym4F4p2r819t/tQ0emIgt9MTrccrMAZN5Mv9Kmkp5KFjedrsRnbofB058Bi9VBs>
-                     deploy-management: <value in [none, read, read-write] default: none>
+                           field-status: <value in [disable, enable] default: 'enable'>
+                           field-type: <value in [string, ip, mac, ...] default: 'string'>
+                     datamask-custom-priority: <value in [disable, enable] default: 'disable'>
+                     datamask-fields:
+                       - <value in [user, srcip, srcname, ...]>
+                     datamask-key:
+                       - <value of string default: 'ENC MzI1Nzc3MjAyNTg1Njg0NNKOn5kCfNawE/VnDbtMpWXduJpvaREIOxBK4PNmJmqeRwgB9loH...'>
+                     deploy-management: <value in [none, read, read-write] default: 'none'>
                      description: <value of string>
-                     device-ap: <value in [none, read, read-write] default: none>
-                     device-config: <value in [none, read, read-write] default: none>
-                     device-forticlient: <value in [none, read, read-write] default: none>
-                     device-fortiswitch: <value in [none, read, read-write] default: none>
-                     device-manager: <value in [none, read, read-write] default: none>
-                     device-op: <value in [none, read, read-write] default: none>
-                     device-policy-package-lock: <value in [none, read, read-write] default: none>
-                     device-profile: <value in [none, read, read-write] default: none>
-                     device-revision-deletion: <value in [none, read, read-write] default: none>
-                     device-wan-link-load-balance: <value in [none, read, read-write] default: none>
-                     event-management: <value in [none, read, read-write] default: none>
-                     fgd-center-advanced: <value in [none, read, read-write] default: none>
-                     fgd-center-fmw-mgmt: <value in [none, read, read-write] default: none>
-                     fgd-center-licensing: <value in [none, read, read-write] default: none>
-                     fgd_center: <value in [none, read, read-write] default: none>
-                     global-policy-packages: <value in [none, read, read-write] default: none>
-                     import-policy-packages: <value in [none, read, read-write] default: none>
-                     intf-mapping: <value in [none, read, read-write] default: none>
-                     ips-filter: <value in [disable, enable] default: disable>
-                     log-viewer: <value in [none, read, read-write] default: none>
-                     policy-objects: <value in [none, read, read-write] default: none>
+                     device-ap: <value in [none, read, read-write] default: 'none'>
+                     device-config: <value in [none, read, read-write] default: 'none'>
+                     device-forticlient: <value in [none, read, read-write] default: 'none'>
+                     device-fortiswitch: <value in [none, read, read-write] default: 'none'>
+                     device-manager: <value in [none, read, read-write] default: 'none'>
+                     device-op: <value in [none, read, read-write] default: 'none'>
+                     device-policy-package-lock: <value in [none, read, read-write] default: 'none'>
+                     device-profile: <value in [none, read, read-write] default: 'none'>
+                     device-revision-deletion: <value in [none, read, read-write] default: 'none'>
+                     device-wan-link-load-balance: <value in [none, read, read-write] default: 'none'>
+                     event-management: <value in [none, read, read-write] default: 'none'>
+                     fgd-center-advanced: <value in [none, read, read-write] default: 'none'>
+                     fgd-center-fmw-mgmt: <value in [none, read, read-write] default: 'none'>
+                     fgd-center-licensing: <value in [none, read, read-write] default: 'none'>
+                     fgd_center: <value in [none, read, read-write] default: 'none'>
+                     global-policy-packages: <value in [none, read, read-write] default: 'none'>
+                     import-policy-packages: <value in [none, read, read-write] default: 'none'>
+                     intf-mapping: <value in [none, read, read-write] default: 'none'>
+                     ips-filter: <value in [disable, enable] default: 'disable'>
+                     log-viewer: <value in [none, read, read-write] default: 'none'>
+                     policy-objects: <value in [none, read, read-write] default: 'none'>
                      profileid: <value of string>
-                     read-passwd: <value in [none, read, read-write] default: none>
-                     realtime-monitor: <value in [none, read, read-write] default: none>
-                     report-viewer: <value in [none, read, read-write] default: none>
-                     scope: <value in [global, adom] default: global>
-                     set-install-targets: <value in [none, read, read-write] default: none>
-                     system-setting: <value in [none, read, read-write] default: none>
-                     term-access: <value in [none, read, read-write] default: none>
-                     type: <value in [system, restricted] default: system>
-                     vpn-manager: <value in [none, read, read-write] default: none>
-                     web-filter: <value in [disable, enable] default: disable>
-    - name: send request to /cli/system/admin/profile
+                     read-passwd: <value in [none, read, read-write] default: 'none'>
+                     realtime-monitor: <value in [none, read, read-write] default: 'none'>
+                     report-viewer: <value in [none, read, read-write] default: 'none'>
+                     scope: <value in [global, adom] default: 'global'>
+                     set-install-targets: <value in [none, read, read-write] default: 'none'>
+                     system-setting: <value in [none, read, read-write] default: 'none'>
+                     term-access: <value in [none, read, read-write] default: 'none'>
+                     type: <value in [system, restricted] default: 'system'>
+                     vpn-manager: <value in [none, read, read-write] default: 'none'>
+                     web-filter: <value in [disable, enable] default: 'disable'>
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/PROFILE
       fmgr_cli_system_admin_profile:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [adom-lock, adom-policy-packages, adom-switch, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [adom-lock, adom-policy-packages, adom-switch, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

@@ -96,12 +96,13 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/dm
+
+    - name: REQUESTING /CLI/SYSTEM/DM
       fmgr_cli_system_dm:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   concurrent-install-image-limit: <value of integer default: 500>
                   concurrent-install-limit: <value of integer default: 480>
                   concurrent-install-script-limit: <value of integer default: 480>
@@ -109,7 +110,7 @@ Examples
                   dpm-logsize: <value of integer default: 10000>
                   fgfm-sock-timeout: <value of integer default: 360>
                   fgfm_keepalive_itvl: <value of integer default: 120>
-                  force-remote-diff: <value in [disable, enable] default: disable>
+                  force-remote-diff: <value in [disable, enable] default: 'disable'>
                   fortiap-refresh-cnt: <value of integer default: 500>
                   fortiap-refresh-itvl: <value of integer default: 10>
                   fortiext-refresh-cnt: <value of integer default: 50>
@@ -117,13 +118,13 @@ Examples
                   install-tunnel-retry-itvl: <value of integer default: 60>
                   max-revs: <value of integer default: 100>
                   nr-retry: <value of integer default: 1>
-                  retry: <value in [disable, enable] default: enable>
+                  retry: <value in [disable, enable] default: 'enable'>
                   retry-intvl: <value of integer default: 15>
-                  rollback-allow-reboot: <value in [disable, enable] default: disable>
+                  rollback-allow-reboot: <value in [disable, enable] default: 'disable'>
                   script-logsize: <value of integer default: 100>
-                  skip-scep-check: <value in [disable, enable] default: disable>
-                  skip-tunnel-fcp-req: <value in [disable, enable] default: enable>
-                  verify-install: <value in [disable, optimal, enable] default: enable>
+                  skip-scep-check: <value in [disable, enable] default: 'disable'>
+                  skip-tunnel-fcp-req: <value in [disable, enable] default: 'enable'>
+                  verify-install: <value in [disable, optimal, enable] default: 'enable'>
 
 
 

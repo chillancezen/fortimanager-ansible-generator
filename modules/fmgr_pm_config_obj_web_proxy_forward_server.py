@@ -30,7 +30,6 @@ description:
     - /pm/config/adom/{adom}/obj/web-proxy/forward-server
     - /pm/config/global/obj/web-proxy/forward-server
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -45,7 +44,7 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
-    url_params: 
+    url_params:
         description: the parameters in url path
         required: True
         type: dict
@@ -78,7 +77,7 @@ options:
                         description: 'Forward server Fully Qualified Domain Name (FQDN).'
                     healthcheck:
                         type: str
-                        description: 'Enable/disable forward server health checking. Attempts to connect through the remote forwarding server to a destination to verify that the forwarding server is operating normally.'
+                        description: 'Enable/disable forward server health checking. Attempts to connect through the remote forwarding server to a destinati...'
                         choices:
                             - 'disable'
                             - 'enable'
@@ -96,7 +95,7 @@ options:
                         description: 'Port number that the forwarding server expects to receive HTTP sessions on (1 - 65535, default = 3128).'
                     server-down-option:
                         type: str
-                        description: 'Action to take when the forward server is found to be down: block sessions until the server is back up or pass sessions to their destination.'
+                        description: 'Action to take when the forward server is found to be down: block sessions until the server is back up or pass session...'
                         choices:
                             - 'block'
                             - 'pass'
@@ -150,7 +149,7 @@ options:
                     type: int
             sortings:
                 -
-                    \{attr_name\}:
+                    varidic.attr_name:
                         type: int
                         choices:
                             - 1
@@ -166,15 +165,16 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/web-proxy/forward-server
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WEB-PROXY/FORWARD-SERVER
       fmgr_pm_config_obj_web_proxy_forward_server:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      addr-type: <value in [fqdn, ip]>
                      comment: <value of string>
                      fqdn: <value of string>
@@ -184,27 +184,28 @@ EXAMPLES = '''
                      name: <value of string>
                      port: <value of integer>
                      server-down-option: <value in [block, pass]>
-    - name: send request to /pm/config/obj/web-proxy/forward-server
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WEB-PROXY/FORWARD-SERVER
       fmgr_pm_config_obj_web_proxy_forward_server:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [addr-type, comment, fqdn, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [addr-type, comment, fqdn, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 '''
 
@@ -223,7 +224,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/web-proxy/forward-server
+            example: '/pm/config/adom/{adom}/obj/web-proxy/forward-server'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -245,7 +246,7 @@ return_of_api_category_0:
                   description: 'Forward server Fully Qualified Domain Name (FQDN).'
                healthcheck:
                   type: str
-                  description: 'Enable/disable forward server health checking. Attempts to connect through the remote forwarding server to a destination to verify that the forwarding server is operating normally.'
+                  description: 'Enable/disable forward server health checking. Attempts to connect through the remote forwarding server to a destination to ...'
                ip:
                   type: str
                   description: 'Forward proxy server IP address.'
@@ -260,7 +261,7 @@ return_of_api_category_0:
                   description: 'Port number that the forwarding server expects to receive HTTP sessions on (1 - 65535, default = 3128).'
                server-down-option:
                   type: str
-                  description: 'Action to take when the forward server is found to be down: block sessions until the server is back up or pass sessions to their destination.'
+                  description: 'Action to take when the forward server is found to be down: block sessions until the server is back up or pass sessions to t...'
          status:
             code:
                type: int
@@ -268,7 +269,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/web-proxy/forward-server
+            example: '/pm/config/adom/{adom}/obj/web-proxy/forward-server'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -278,6 +279,7 @@ from ansible.module_utils.network.fortimanager.common import DEFAULT_RESULT_OBJ
 from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
+
 
 def main():
     jrpc_urls = [
@@ -292,7 +294,7 @@ def main():
         }
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -463,7 +465,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -484,8 +485,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -506,14 +507,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

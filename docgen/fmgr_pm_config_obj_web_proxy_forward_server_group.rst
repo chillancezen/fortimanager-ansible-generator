@@ -105,44 +105,46 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/web-proxy/forward-server-group
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WEB-PROXY/FORWARD-SERVER-GROUP
       fmgr_pm_config_obj_web_proxy_forward_server_group:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      affinity: <value in [disable, enable]>
                      group-down-option: <value in [block, pass]>
                      ldb-method: <value in [weighted, least-session]>
                      name: <value of string>
-                     server-list: 
-                      - 
+                     server-list:
+                       -
                            name: <value of string>
                            weight: <value of integer>
-    - name: send request to /pm/config/obj/web-proxy/forward-server-group
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WEB-PROXY/FORWARD-SERVER-GROUP
       fmgr_pm_config_obj_web_proxy_forward_server_group:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [affinity, group-down-option, ldb-method, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [affinity, group-down-option, ldb-method, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

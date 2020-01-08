@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/system/dm
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -192,12 +191,13 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/dm
+
+    - name: REQUESTING /CLI/SYSTEM/DM
       fmgr_cli_system_dm:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   concurrent-install-image-limit: <value of integer default: 500>
                   concurrent-install-limit: <value of integer default: 480>
                   concurrent-install-script-limit: <value of integer default: 480>
@@ -205,7 +205,7 @@ EXAMPLES = '''
                   dpm-logsize: <value of integer default: 10000>
                   fgfm-sock-timeout: <value of integer default: 360>
                   fgfm_keepalive_itvl: <value of integer default: 120>
-                  force-remote-diff: <value in [disable, enable] default: disable>
+                  force-remote-diff: <value in [disable, enable] default: 'disable'>
                   fortiap-refresh-cnt: <value of integer default: 500>
                   fortiap-refresh-itvl: <value of integer default: 10>
                   fortiext-refresh-cnt: <value of integer default: 50>
@@ -213,13 +213,13 @@ EXAMPLES = '''
                   install-tunnel-retry-itvl: <value of integer default: 60>
                   max-revs: <value of integer default: 100>
                   nr-retry: <value of integer default: 1>
-                  retry: <value in [disable, enable] default: enable>
+                  retry: <value in [disable, enable] default: 'enable'>
                   retry-intvl: <value of integer default: 15>
-                  rollback-allow-reboot: <value in [disable, enable] default: disable>
+                  rollback-allow-reboot: <value in [disable, enable] default: 'disable'>
                   script-logsize: <value of integer default: 100>
-                  skip-scep-check: <value in [disable, enable] default: disable>
-                  skip-tunnel-fcp-req: <value in [disable, enable] default: enable>
-                  verify-install: <value in [disable, optimal, enable] default: enable>
+                  skip-scep-check: <value in [disable, enable] default: 'disable'>
+                  skip-tunnel-fcp-req: <value in [disable, enable] default: 'enable'>
+                  verify-install: <value in [disable, optimal, enable] default: 'enable'>
 
 '''
 
@@ -266,7 +266,7 @@ return_of_api_category_0:
                   'Always use remote diff when installing.'
                   'disable - Disable.'
                   'enable - Enable.'
-               example: disable
+               example: 'disable'
             fortiap-refresh-cnt:
                type: int
                description: 'Max auto refresh FortiAP number each time (1 - 10000).'
@@ -301,7 +301,7 @@ return_of_api_category_0:
                   'Enable/disable configuration install retry.'
                   'disable - Disable.'
                   'enable - Enable.'
-               example: enable
+               example: 'enable'
             retry-intvl:
                type: int
                description: 'Retry interval.'
@@ -312,7 +312,7 @@ return_of_api_category_0:
                   'Enable/disable FortiGate reboot to rollback when installing script/config.'
                   'disable - Disable.'
                   'enable - Enable.'
-               example: disable
+               example: 'disable'
             script-logsize:
                type: int
                description: 'Maximum script log size per device (1 - 10000K).'
@@ -323,14 +323,14 @@ return_of_api_category_0:
                   'Enable/disable installing scep related objects even if scep url is configured.'
                   'disable - Disable.'
                   'enable - Enable.'
-               example: disable
+               example: 'disable'
             skip-tunnel-fcp-req:
                type: str
                description: |
                   'Enable/disable skip the fcp request sent from fgfm tunnel'
                   'disable - Disable.'
                   'enable - Enable.'
-               example: enable
+               example: 'enable'
             verify-install:
                type: str
                description: |
@@ -338,7 +338,7 @@ return_of_api_category_0:
                   'disable - Disable.'
                   'optimal - Verify installation for command errors.'
                   'enable - Always verify installation.'
-               example: enable
+               example: 'enable'
          status:
             code:
                type: int
@@ -346,7 +346,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/dm
+            example: '/cli/global/system/dm'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -361,7 +361,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/dm
+            example: '/cli/global/system/dm'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -372,6 +372,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/dm'
@@ -380,7 +381,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -431,7 +432,6 @@ def main():
                         },
                         'force-remote-diff': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -474,7 +474,6 @@ def main():
                         },
                         'retry': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -487,7 +486,6 @@ def main():
                         },
                         'rollback-allow-reboot': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -500,7 +498,6 @@ def main():
                         },
                         'skip-scep-check': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -508,7 +505,6 @@ def main():
                         },
                         'skip-tunnel-fcp-req': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -516,7 +512,6 @@ def main():
                         },
                         'verify-install': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'optimal',
@@ -540,7 +535,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -560,8 +554,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -582,14 +576,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

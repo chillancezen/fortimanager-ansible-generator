@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/system/password-policy
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -102,18 +101,19 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/password-policy
+
+    - name: REQUESTING /CLI/SYSTEM/PASSWORD-POLICY
       fmgr_cli_system_password_policy:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  change-4-characters: <value in [disable, enable] default: disable>
+            -
+               data:
+                  change-4-characters: <value in [disable, enable] default: 'disable'>
                   expire: <value of integer default: 0>
                   minimum-length: <value of integer default: 8>
-                  must-contain: 
-                   - <value in [upper-case-letter, lower-case-letter, number, ...]>
-                  status: <value in [disable, enable] default: disable>
+                  must-contain:
+                    - <value in [upper-case-letter, lower-case-letter, number, ...]>
+                  status: <value in [disable, enable] default: 'disable'>
 
 '''
 
@@ -132,7 +132,7 @@ return_of_api_category_0:
                   'Enable/disable changing at least 4 characters for new password.'
                   'disable - Disable changing at least 4 characters for new password.'
                   'enable - Enable changing at least 4 characters for new password.'
-               example: disable
+               example: 'disable'
             expire:
                type: int
                description: 'Number of days after which admin users password will expire (0 - 3650, 0 = never expire).'
@@ -151,7 +151,7 @@ return_of_api_category_0:
                   'Enable/disable password policy.'
                   'disable - Disable password policy.'
                   'enable - Enable password policy.'
-               example: disable
+               example: 'disable'
          status:
             code:
                type: int
@@ -159,7 +159,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/password-policy
+            example: '/cli/global/system/password-policy'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -174,7 +174,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/password-policy
+            example: '/cli/global/system/password-policy'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -185,6 +185,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/password-policy'
@@ -193,7 +194,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -209,7 +210,6 @@ def main():
                     'dict': {
                         'change-4-characters': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -239,7 +239,6 @@ def main():
                         },
                         'status': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -262,7 +261,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -282,8 +280,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -304,14 +302,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

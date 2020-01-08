@@ -122,15 +122,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/user/local
+
+    - name: REQUESTING /PM/CONFIG/OBJ/USER/LOCAL
       fmgr_pm_config_obj_user_local:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      auth-concurrent-override: <value in [disable, enable]>
                      auth-concurrent-value: <value of integer>
                      authtimeout: <value of integer>
@@ -139,12 +140,12 @@ Examples
                      id: <value of integer>
                      ldap-server: <value of string>
                      name: <value of string>
-                     passwd: 
-                      - <value of string>
+                     passwd:
+                       - <value of string>
                      passwd-policy: <value of string>
                      ppk-identity: <value of string>
-                     ppk-secret: 
-                      - <value of string>
+                     ppk-secret:
+                       - <value of string>
                      radius-server: <value of string>
                      sms-custom-server: <value of string>
                      sms-phone: <value of string>
@@ -154,27 +155,28 @@ Examples
                      two-factor: <value in [disable, fortitoken, email, ...]>
                      type: <value in [password, radius, tacacs+, ...]>
                      workstation: <value of string>
-    - name: send request to /pm/config/obj/user/local
+
+    - name: REQUESTING /PM/CONFIG/OBJ/USER/LOCAL
       fmgr_pm_config_obj_user_local:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [auth-concurrent-override, auth-concurrent-value, authtimeout, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [auth-concurrent-override, auth-concurrent-value, authtimeout, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

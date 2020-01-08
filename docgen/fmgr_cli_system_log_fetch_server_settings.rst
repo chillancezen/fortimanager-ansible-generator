@@ -77,12 +77,13 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/log-fetch/server-settings
+
+    - name: REQUESTING /CLI/SYSTEM/LOG-FETCH/SERVER-SETTINGS
       fmgr_cli_system_log_fetch_server_settings:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   max-conn-per-session: <value of integer default: 3>
                   max-sessions: <value of integer default: 1>
                   session-timeout: <value of integer default: 10>

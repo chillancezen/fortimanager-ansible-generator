@@ -82,18 +82,19 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvm/cmd/reload/dev-list
+
+    - name: REQUESTING /DVM/CMD/RELOAD/DEV-LIST
       fmgr_dvm_cmd_reload_dev_list:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   adom: <value of string>
-                  flags: 
-                   - <value in [none, create_task, nonblocking, ...]>
-                  from: <value in [um, fgfm, apache, ...] default: json>
-                  reload-dev-member-list: 
-                   - 
+                  flags:
+                    - <value in [none, create_task, nonblocking, ...]>
+                  from: <value in [um, fgfm, apache, ...] default: 'json'>
+                  reload-dev-member-list:
+                    -
                         name: <value of string>
                         vdom: <value of string>
                   tag: <value of string>

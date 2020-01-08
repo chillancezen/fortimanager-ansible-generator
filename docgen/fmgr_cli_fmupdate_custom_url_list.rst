@@ -77,14 +77,15 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/custom-url-list
+
+    - name: REQUESTING /CLI/FMUPDATE/CUSTOM-URL-LIST
       fmgr_cli_fmupdate_custom_url_list:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  db_selection: 
-                   - <value in [both, custom-url, fortiguard-db]>
+            -
+               data:
+                  db_selection:
+                    - <value in [both, custom-url, fortiguard-db]>
 
 
 

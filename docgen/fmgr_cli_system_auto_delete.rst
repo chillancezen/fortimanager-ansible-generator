@@ -91,31 +91,32 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/auto-delete
+
+    - name: REQUESTING /CLI/SYSTEM/AUTO-DELETE
       fmgr_cli_system_auto_delete:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  dlp-files-auto-deletion: 
-                     retention: <value in [days, weeks, months] default: days>
+            -
+               data:
+                  dlp-files-auto-deletion:
+                     retention: <value in [days, weeks, months] default: 'days'>
                      runat: <value of integer default: 0>
-                     status: <value in [disable, enable] default: disable>
+                     status: <value in [disable, enable] default: 'disable'>
                      value: <value of integer default: 0>
-                  log-auto-deletion: 
-                     retention: <value in [days, weeks, months] default: days>
+                  log-auto-deletion:
+                     retention: <value in [days, weeks, months] default: 'days'>
                      runat: <value of integer default: 0>
-                     status: <value in [disable, enable] default: disable>
+                     status: <value in [disable, enable] default: 'disable'>
                      value: <value of integer default: 0>
-                  quarantine-files-auto-deletion: 
-                     retention: <value in [days, weeks, months] default: days>
+                  quarantine-files-auto-deletion:
+                     retention: <value in [days, weeks, months] default: 'days'>
                      runat: <value of integer default: 0>
-                     status: <value in [disable, enable] default: disable>
+                     status: <value in [disable, enable] default: 'disable'>
                      value: <value of integer default: 0>
-                  report-auto-deletion: 
-                     retention: <value in [days, weeks, months] default: days>
+                  report-auto-deletion:
+                     retention: <value in [days, weeks, months] default: 'days'>
                      runat: <value of integer default: 0>
-                     status: <value in [disable, enable] default: disable>
+                     status: <value in [disable, enable] default: 'disable'>
                      value: <value of integer default: 0>
                   status-fake: <value of integer>
 

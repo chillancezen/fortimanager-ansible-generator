@@ -109,44 +109,46 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/alert-event
+
+    - name: REQUESTING /CLI/SYSTEM/ALERT-EVENT
       fmgr_cli_system_alert_event:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     alert-destination: 
-                      - 
+            -
+               data:
+                 -
+                     alert-destination:
+                       -
                            from: <value of string>
                            smtp-name: <value of string>
                            snmp-name: <value of string>
                            syslog-name: <value of string>
                            to: <value of string>
-                           type: <value in [mail, snmp, syslog] default: mail>
-                     enable-generic-text: 
-                      - <value in [enable, disable]>
-                     enable-severity-filter: 
-                      - <value in [enable, disable]>
-                     event-time-period: <value in [0.5, 1, 3, ...] default: 0.5>
+                           type: <value in [mail, snmp, syslog] default: 'mail'>
+                     enable-generic-text:
+                       - <value in [enable, disable]>
+                     enable-severity-filter:
+                       - <value in [enable, disable]>
+                     event-time-period: <value in [0.5, 1, 3, ...] default: '0.5'>
                      generic-text: <value of string>
                      name: <value of string>
-                     num-events: <value in [1, 5, 10, ...] default: 1>
-                     severity-filter: <value in [high, medium-high, medium, ...] default: high>
-                     severity-level-comp: 
-                      - <value in [>=, =, <=]>
-                     severity-level-logs: 
-                      - <value in [no-check, information, notify, ...]>
-    - name: send request to /cli/system/alert-event
+                     num-events: <value in [1, 5, 10, ...] default: '1'>
+                     severity-filter: <value in [high, medium-high, medium, ...] default: 'high'>
+                     severity-level-comp:
+                       - <value in [>=, =, <=]>
+                     severity-level-logs:
+                       - <value in [no-check, information, notify, ...]>
+
+    - name: REQUESTING /CLI/SYSTEM/ALERT-EVENT
       fmgr_cli_system_alert_event:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [enable-generic-text, enable-severity-filter, event-time-period, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [enable-generic-text, enable-severity-filter, event-time-period, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/system/report/setting
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -126,19 +125,20 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/report/setting
+
+    - name: REQUESTING /CLI/SYSTEM/REPORT/SETTING
       fmgr_cli_system_report_setting:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  aggregate-report: <value in [disable, enable] default: disable>
-                  hcache-lossless: <value in [disable, enable] default: disable>
+            -
+               data:
+                  aggregate-report: <value in [disable, enable] default: 'disable'>
+                  hcache-lossless: <value in [disable, enable] default: 'disable'>
                   ldap-cache-timeout: <value of integer default: 60>
                   max-table-rows: <value of integer default: 10000>
-                  report-priority: <value in [high, low, auto] default: auto>
-                  template-auto-install: <value in [default, english] default: default>
-                  week-start: <value in [sun, mon] default: sun>
+                  report-priority: <value in [high, low, auto] default: 'auto'>
+                  template-auto-install: <value in [default, english] default: 'default'>
+                  week-start: <value in [sun, mon] default: 'sun'>
 
 '''
 
@@ -157,14 +157,14 @@ return_of_api_category_0:
                   'Enable/disable including a group report along with the per-device reports.'
                   'disable - Exclude a group report along with the per-device reports.'
                   'enable - Include a group report along with the per-device reports.'
-               example: disable
+               example: 'disable'
             hcache-lossless:
                type: str
                description: |
                   'Usableness of ready-with-loss hcaches.'
                   'disable - Use ready-with-loss hcaches.'
                   'enable - Do not use ready-with-loss hcaches.'
-               example: disable
+               example: 'disable'
             ldap-cache-timeout:
                type: int
                description: 'LDAP cache timeout in minutes, default 60, 0 means not use cache.'
@@ -180,21 +180,21 @@ return_of_api_category_0:
                   'high - High'
                   'low - Low'
                   'auto - Auto'
-               example: auto
+               example: 'auto'
             template-auto-install:
                type: str
                description: |
                   'The language used for new ADOMs (default = default).'
                   'default - Default.'
                   'english - English.'
-               example: default
+               example: 'default'
             week-start:
                type: str
                description: |
                   'Day of the week on which the week starts.'
                   'sun - Sunday.'
                   'mon - Monday.'
-               example: sun
+               example: 'sun'
          status:
             code:
                type: int
@@ -202,7 +202,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/report/setting
+            example: '/cli/global/system/report/setting'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -217,7 +217,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/report/setting
+            example: '/cli/global/system/report/setting'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -228,6 +228,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/report/setting'
@@ -236,7 +237,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -252,7 +253,6 @@ def main():
                     'dict': {
                         'aggregate-report': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -260,7 +260,6 @@ def main():
                         },
                         'hcache-lossless': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -278,7 +277,6 @@ def main():
                         },
                         'report-priority': {
                             'type': 'string',
-                            'default': 'auto',
                             'enum': [
                                 'high',
                                 'low',
@@ -287,7 +285,6 @@ def main():
                         },
                         'template-auto-install': {
                             'type': 'string',
-                            'default': 'default',
                             'enum': [
                                 'default',
                                 'english'
@@ -295,7 +292,6 @@ def main():
                         },
                         'week-start': {
                             'type': 'string',
-                            'default': 'sun',
                             'enum': [
                                 'sun',
                                 'mon'
@@ -318,7 +314,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -338,8 +333,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -360,14 +355,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

@@ -159,38 +159,39 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/application/list
+
+    - name: REQUESTING /PM/CONFIG/OBJ/APPLICATION/LIST
       fmgr_pm_config_obj_application_list:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      app-replacemsg: <value in [disable, enable]>
                      comment: <value of string>
                      deep-app-inspection: <value in [disable, enable]>
-                     entries: 
-                      - 
+                     entries:
+                       -
                            action: <value in [pass, block, reset]>
-                           application: 
-                            - <value of integer>
-                           behavior: 
-                            - <value of string>
+                           application:
+                             - <value of integer>
+                           behavior:
+                             - <value of string>
                            category: <value of string>
                            id: <value of integer>
                            log: <value in [disable, enable]>
                            log-packet: <value in [disable, enable]>
-                           parameters: 
-                            - 
+                           parameters:
+                             -
                                  id: <value of integer>
                                  value: <value of string>
                            per-ip-shaper: <value of string>
-                           popularity: 
-                            - <value in [1, 2, 3, ...]>
-                           protocols: 
-                            - <value of string>
+                           popularity:
+                             - <value in [1, 2, 3, ...]>
+                           protocols:
+                             - <value of string>
                            quarantine: <value in [none, attacker]>
                            quarantine-expiry: <value of string>
                            quarantine-log: <value in [disable, enable]>
@@ -198,49 +199,50 @@ Examples
                            rate-duration: <value of integer>
                            rate-mode: <value in [periodical, continuous]>
                            rate-track: <value in [none, src-ip, dest-ip, ...]>
-                           risk: 
-                            - <value of integer>
+                           risk:
+                             - <value of integer>
                            session-ttl: <value of integer>
                            shaper: <value of string>
                            shaper-reverse: <value of string>
-                           sub-category: 
-                            - <value of integer>
-                           technology: 
-                            - <value of string>
-                           vendor: 
-                            - <value of string>
+                           sub-category:
+                             - <value of integer>
+                           technology:
+                             - <value of string>
+                           vendor:
+                             - <value of string>
                      extended-log: <value in [disable, enable]>
                      name: <value of string>
-                     options: 
-                      - <value in [allow-dns, allow-icmp, allow-http, ...]>
+                     options:
+                       - <value in [allow-dns, allow-icmp, allow-http, ...]>
                      other-application-action: <value in [pass, block]>
                      other-application-log: <value in [disable, enable]>
-                     p2p-black-list: 
-                      - <value in [skype, edonkey, bittorrent]>
+                     p2p-black-list:
+                       - <value in [skype, edonkey, bittorrent]>
                      replacemsg-group: <value of string>
                      unknown-application-action: <value in [pass, block]>
                      unknown-application-log: <value in [disable, enable]>
-    - name: send request to /pm/config/obj/application/list
+
+    - name: REQUESTING /PM/CONFIG/OBJ/APPLICATION/LIST
       fmgr_pm_config_obj_application_list:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [app-replacemsg, comment, deep-app-inspection, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [app-replacemsg, comment, deep-app-inspection, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

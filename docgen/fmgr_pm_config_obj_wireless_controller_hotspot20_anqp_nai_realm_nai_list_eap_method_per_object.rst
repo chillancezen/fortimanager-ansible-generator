@@ -1,0 +1,194 @@
+:source: fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_nai_realm_nai_list_eap_method_per_object.py
+
+:orphan:
+
+.. _fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_nai_realm_nai_list_eap_method_per_object:
+
+fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_nai_realm_nai_list_eap_method_per_object -- EAP Methods.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. versionadded:: 2.10
+
+.. contents::
+   :local:
+   :depth: 1
+
+
+Synopsis
+--------
+
+- This module is able to configure a FortiManager device by allowing the user to **[clone, delete, get, set, update]** the following FortiManager json-rpc urls.
+- `/pm/config/adom/{adom}/obj/wireless-controller/hotspot20/anqp-nai-realm/{anqp-nai-realm}/nai-list/{nai-list}/eap-method/{eap-method}`
+- `/pm/config/global/obj/wireless-controller/hotspot20/anqp-nai-realm/{anqp-nai-realm}/nai-list/{nai-list}/eap-method/{eap-method}`
+- Examples include all parameters and values need to be adjusted to data sources before usage.
+- Tested with FortiManager v6.0.0
+
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- ansible>=2.10.0
+
+
+
+Parameters
+----------
+
+.. raw:: html
+
+ <ul>
+ <li><span class="li-head">url_params</span> - parameters in url path <span class="li-normal">type: dict</span> <span class="li-required">required: true</span></li>
+ <ul class="ul-self">
+ <li><span class="li-head">adom</span> - the domain prefix <span class="li-normal">type: str</span> <span class="li-normal"> choices: none, global, custom dom</span></li>
+ <li><span class="li-head">anqp-nai-realm</span> - the object name <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">nai-list</span> - the object name <span class="li-normal">type: str</span> </li>
+ <li><span class="li-head">eap-method</span> - the object name <span class="li-normal">type: str</span> </li>
+ </ul>
+ <li><span class="li-head">parameters for method: [clone, set, update]</span> - EAP Methods.</li>
+ <ul class="ul-self">
+ <li><span class="li-head">data</span> - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
+ <li><span class="li-head">auth-param</span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
+ <li><span class="li-head">id</span> - ID of authentication parameter. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [non-eap-inner-auth, inner-auth-eap, credential, tunneled-credential]</span> </li>
+ <li><span class="li-head">index</span> - Param index. <span class="li-normal">type: int</span> </li>
+ <li><span class="li-head">val</span> - Value of authentication parameter. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [eap-identity, eap-md5, eap-tls, eap-ttls, eap-peap, eap-sim, eap-aka, eap-aka-prime, non-eap-pap, non-eap-chap, non-eap-mschap, non-eap-mschapv2, cred-sim, cred-usim, cred-nfc, cred-hardware-token, cred-softoken, cred-certificate, cred-user-pwd, cred-none, cred-vendor-specific, tun-cred-sim, tun-cred-usim, tun-cred-nfc, tun-cred-hardware-token, tun-cred-softoken, tun-cred-certificate, tun-cred-user-pwd, tun-cred-anonymous, tun-cred-vendor-specific]</span> </li>
+ </ul>
+ <li><span class="li-head">index</span> - EAP method index. <span class="li-normal">type: int</span> </li>
+ <li><span class="li-head">method</span> - EAP method type. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [eap-identity, eap-md5, eap-tls, eap-ttls, eap-peap, eap-sim, eap-aka, eap-aka-prime]</span> </li>
+ </ul>
+ </ul>
+ <li><span class="li-head">parameters for method: [delete]</span> - EAP Methods.</li>
+ <ul class="ul-self">
+ </ul>
+ <li><span class="li-head">parameters for method: [get]</span> - EAP Methods.</li>
+ <ul class="ul-self">
+ <li><span class="li-head">option</span> - Set fetch option for the request. <span class="li-normal">type: str</span>  <span class="li-normal">choices: [object member, chksum, datasrc]</span> </li>
+ </ul>
+ </ul>
+
+
+
+
+
+
+Notes
+-----
+.. note::
+
+   - The module may supports multiple method, every method has different parameters definition
+
+   - One method may also have more than one parameter definition collection, each collection is dedicated to one API endpoint
+
+   - The module may include domain dependent urls, the domain can be specified in url_params as adom
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+ - hosts: fortimanager-inventory
+   connection: httpapi
+   vars:
+      ansible_httpapi_use_ssl: True
+      ansible_httpapi_validate_certs: False
+      ansible_httpapi_port: 443
+   tasks:
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/HOTSPOT20/ANQP-NAI-REALM/{ANQP-NAI-REALM}/NAI-LIST/{NAI-LIST}/EAP-METHOD/{EAP-METHOD}
+      fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_nai_realm_nai_list_eap_method_per_object:
+         method: <value in [clone, set, update]>
+         url_params:
+            adom: <value in [none, global, custom dom]>
+            anqp-nai-realm: <value of string>
+            nai-list: <value of string>
+            eap-method: <value of string>
+         params:
+            -
+               data:
+                  auth-param:
+                    -
+                        id: <value in [non-eap-inner-auth, inner-auth-eap, credential, ...]>
+                        index: <value of integer>
+                        val: <value in [eap-identity, eap-md5, eap-tls, ...]>
+                  index: <value of integer>
+                  method: <value in [eap-identity, eap-md5, eap-tls, ...]>
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/HOTSPOT20/ANQP-NAI-REALM/{ANQP-NAI-REALM}/NAI-LIST/{NAI-LIST}/EAP-METHOD/{EAP-METHOD}
+      fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_nai_realm_nai_list_eap_method_per_object:
+         method: <value in [get]>
+         url_params:
+            adom: <value in [none, global, custom dom]>
+            anqp-nai-realm: <value of string>
+            nai-list: <value of string>
+            eap-method: <value of string>
+         params:
+            -
+               option: <value in [object member, chksum, datasrc]>
+
+
+
+Return Values
+-------------
+
+
+Common return values are documented: https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values, the following are the fields unique to this module:
+
+
+.. raw:: html
+
+ <ul>
+ <li><span class="li-return"> return values for method: [clone, delete, set, update]</span> </li>
+ <ul class="ul-self">
+ <li><span class="li-return">status</span>
+ - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
+ <li> <span class="li-return"> code </span> - No description for the parameter <span class="li-normal">type: int</span>  </li>
+ <li> <span class="li-return"> message </span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
+ </ul>
+ <li><span class="li-return">url</span>
+ - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">example: /pm/config/adom/{adom}/obj/wireless-controller/hotspot20/anqp-nai-realm/{anqp-nai-realm}/nai-list/{nai-list}/eap-method/{eap-method}</span>  </li>
+ </ul>
+ <li><span class="li-return"> return values for method: [get]</span> </li>
+ <ul class="ul-self">
+ <li><span class="li-return">data</span>
+ - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
+ <li> <span class="li-return"> auth-param </span> - No description for the parameter <span class="li-normal">type: array</span> <ul class="ul-self">
+ <li> <span class="li-return"> id </span> - ID of authentication parameter. <span class="li-normal">type: str</span>  </li>
+ <li> <span class="li-return"> index </span> - Param index. <span class="li-normal">type: int</span>  </li>
+ <li> <span class="li-return"> val </span> - Value of authentication parameter. <span class="li-normal">type: str</span>  </li>
+ </ul>
+ <li> <span class="li-return"> index </span> - EAP method index. <span class="li-normal">type: int</span>  </li>
+ <li> <span class="li-return"> method </span> - EAP method type. <span class="li-normal">type: str</span>  </li>
+ </ul>
+ <li><span class="li-return">status</span>
+ - No description for the parameter <span class="li-normal">type: dict</span> <ul class="ul-self">
+ <li> <span class="li-return"> code </span> - No description for the parameter <span class="li-normal">type: int</span>  </li>
+ <li> <span class="li-return"> message </span> - No description for the parameter <span class="li-normal">type: str</span>  </li>
+ </ul>
+ <li><span class="li-return">url</span>
+ - No description for the parameter <span class="li-normal">type: str</span>  <span class="li-normal">example: /pm/config/adom/{adom}/obj/wireless-controller/hotspot20/anqp-nai-realm/{anqp-nai-realm}/nai-list/{nai-list}/eap-method/{eap-method}</span>  </li>
+ </ul>
+ </ul>
+
+
+
+
+
+Status
+------
+
+- This module is not guaranteed to have a backwards compatible interface.
+
+
+Authors
+-------
+
+- Frank Shen (@fshen01)
+- Link Zheng (@zhengl)
+
+
+.. hint::
+
+    If you notice any issues in this documentation, you can create a pull request to improve it.
+
+
+

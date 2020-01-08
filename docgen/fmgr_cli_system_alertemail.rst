@@ -83,17 +83,18 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/alertemail
+
+    - name: REQUESTING /CLI/SYSTEM/ALERTEMAIL
       fmgr_cli_system_alertemail:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  authentication: <value in [disable, enable] default: enable>
+            -
+               data:
+                  authentication: <value in [disable, enable] default: 'enable'>
                   fromaddress: <value of string>
                   fromname: <value of string>
-                  smtppassword: 
-                   - <value of string default: ENC Njc5MTA0OTM4MjgwOTg5NtX0ToVkdnZh0YWA1a11KmRILNzX/SvsNRI6eyvfnHjApM/z3EzMK7RIz4Tk2qBPs5S0q5zHQLjfAJSzBe2Yfs2kceCgazkW3ea31MNNUFHVxVSESpf5MmEMfwrNNUVLeMDdcUJG4FPu7GyP9/KnOBGte1dA>
+                  smtppassword:
+                    - <value of string default: 'ENC Njc5MTA0OTM4MjgwOTg5NtX0ToVkdnZh0YWA1a11KmRILNzX/SvsNRI6eyvfnHjApM/z3EzM...'>
                   smtpport: <value of integer default: 25>
                   smtpserver: <value of string>
                   smtpuser: <value of string>

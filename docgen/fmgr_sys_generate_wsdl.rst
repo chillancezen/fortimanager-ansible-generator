@@ -73,12 +73,13 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /sys/generate/wsdl
+
+    - name: REQUESTING /SYS/GENERATE/WSDL
       fmgr_sys_generate_wsdl:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   endpoint: <value of string>
                   target: <value of string>
 

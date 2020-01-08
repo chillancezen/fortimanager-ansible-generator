@@ -122,60 +122,62 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/firewall/internet-service-custom
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/INTERNET-SERVICE-CUSTOM
       fmgr_pm_config_obj_firewall_internet_service_custom:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      comment: <value of string>
-                     disable-entry: 
-                      - 
+                     disable-entry:
+                       -
                            id: <value of integer>
-                           ip-range: 
-                            - 
+                           ip-range:
+                             -
                                  end-ip: <value of string>
                                  id: <value of integer>
                                  start-ip: <value of string>
-                           port: 
-                            - <value of integer>
+                           port:
+                             - <value of integer>
                            protocol: <value of integer>
-                     entry: 
-                      - 
+                     entry:
+                       -
                            dst: <value of string>
                            id: <value of integer>
-                           port-range: 
-                            - 
+                           port-range:
+                             -
                                  end-port: <value of integer>
                                  id: <value of integer>
                                  start-port: <value of integer>
                            protocol: <value of integer>
                      master-service-id: <value of string>
                      name: <value of string>
-    - name: send request to /pm/config/obj/firewall/internet-service-custom
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/INTERNET-SERVICE-CUSTOM
       fmgr_pm_config_obj_firewall_internet_service_custom:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [comment, master-service-id, name]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [comment, master-service-id, name]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

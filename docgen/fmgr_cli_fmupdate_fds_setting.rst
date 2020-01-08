@@ -126,61 +126,62 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/fds-setting
+
+    - name: REQUESTING /CLI/FMUPDATE/FDS-SETTING
       fmgr_cli_fmupdate_fds_setting:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  User-Agent: <value of string default: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)>
-                  fds-clt-ssl-protocol: <value in [sslv3, tlsv1.0, tlsv1.1, ...] default: tlsv1.2>
-                  fds-ssl-protocol: <value in [sslv3, tlsv1.0, tlsv1.1, ...] default: tlsv1.2>
-                  fmtr-log: <value in [emergency, alert, critical, ...] default: info>
-                  linkd-log: <value in [emergency, alert, critical, ...] default: info>
+            -
+               data:
+                  User-Agent: <value of string default: 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'>
+                  fds-clt-ssl-protocol: <value in [sslv3, tlsv1.0, tlsv1.1, ...] default: 'tlsv1.2'>
+                  fds-ssl-protocol: <value in [sslv3, tlsv1.0, tlsv1.1, ...] default: 'tlsv1.2'>
+                  fmtr-log: <value in [emergency, alert, critical, ...] default: 'info'>
+                  linkd-log: <value in [emergency, alert, critical, ...] default: 'info'>
                   max-av-ips-version: <value of integer default: 20>
                   max-work: <value of integer default: 1>
-                  push-override: 
-                     ip: <value of string default: 0.0.0.0>
+                  push-override:
+                     ip: <value of string default: '0.0.0.0'>
                      port: <value of integer default: 9443>
-                     status: <value in [disable, enable] default: disable>
-                  push-override-to-client: 
-                     announce-ip: 
-                      - 
+                     status: <value in [disable, enable] default: 'disable'>
+                  push-override-to-client:
+                     announce-ip:
+                       -
                            id: <value of integer default: 0>
-                           ip: <value of string default: 0.0.0.0>
+                           ip: <value of string default: '0.0.0.0'>
                            port: <value of integer default: 8890>
-                     status: <value in [disable, enable] default: disable>
-                  send_report: <value in [disable, enable] default: enable>
-                  send_setup: <value in [disable, enable] default: disable>
-                  server-override: 
-                     servlist: 
-                      - 
+                     status: <value in [disable, enable] default: 'disable'>
+                  send_report: <value in [disable, enable] default: 'enable'>
+                  send_setup: <value in [disable, enable] default: 'disable'>
+                  server-override:
+                     servlist:
+                       -
                            id: <value of integer default: 0>
-                           ip: <value of string default: 0.0.0.0>
-                           ip6: <value of string default: ::>
+                           ip: <value of string default: '0.0.0.0'>
+                           ip6: <value of string default: '::'>
                            port: <value of integer default: 443>
-                           service-type: 
-                            - <value in [fds, fct]>
-                     status: <value in [disable, enable] default: disable>
-                  system-support-fct: 
-                   - <value in [4.x, 5.0, 5.2, ...]>
-                  system-support-fgt: 
-                   - <value in [5.4, 5.6, 6.0, ...]>
-                  system-support-fml: 
-                   - <value in [4.x, 5.x, 6.x]>
-                  system-support-fsa: 
-                   - <value in [1.x, 2.x, 3.x]>
-                  system-support-fsw: 
-                   - <value in [5.4, 5.6, 6.0, ...]>
-                  umsvc-log: <value in [emergency, alert, critical, ...] default: info>
-                  unreg-dev-option: <value in [ignore, svc-only, add-service] default: add-service>
-                  update-schedule: 
-                     day: <value in [Sunday, Monday, Tuesday, ...] default: Monday>
-                     frequency: <value in [every, daily, weekly] default: every>
-                     status: <value in [disable, enable] default: enable>
-                     time: 
-                      - <value of string>
-                  wanip-query-mode: <value in [disable, ipify] default: disable>
+                           service-type:
+                             - <value in [fds, fct]>
+                     status: <value in [disable, enable] default: 'disable'>
+                  system-support-fct:
+                    - <value in [4.x, 5.0, 5.2, ...]>
+                  system-support-fgt:
+                    - <value in [5.4, 5.6, 6.0, ...]>
+                  system-support-fml:
+                    - <value in [4.x, 5.x, 6.x]>
+                  system-support-fsa:
+                    - <value in [1.x, 2.x, 3.x]>
+                  system-support-fsw:
+                    - <value in [5.4, 5.6, 6.0, ...]>
+                  umsvc-log: <value in [emergency, alert, critical, ...] default: 'info'>
+                  unreg-dev-option: <value in [ignore, svc-only, add-service] default: 'add-service'>
+                  update-schedule:
+                     day: <value in [Sunday, Monday, Tuesday, ...] default: 'Monday'>
+                     frequency: <value in [every, daily, weekly] default: 'every'>
+                     status: <value in [disable, enable] default: 'enable'>
+                     time:
+                       - <value of string>
+                  wanip-query-mode: <value in [disable, ipify] default: 'disable'>
 
 
 

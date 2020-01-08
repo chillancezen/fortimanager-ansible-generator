@@ -97,36 +97,38 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/report/group
+
+    - name: REQUESTING /CLI/SYSTEM/REPORT/GROUP
       fmgr_cli_system_report_group:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      adom: <value of string>
-                     case-insensitive: <value in [disable, enable] default: enable>
-                     chart-alternative: 
-                      - 
+                     case-insensitive: <value in [disable, enable] default: 'enable'>
+                     chart-alternative:
+                       -
                            chart-name: <value of string>
                            chart-replace: <value of string>
-                     group-by: 
-                      - 
+                     group-by:
+                       -
                            var-expression: <value of string>
                            var-name: <value of string>
-                           var-type: <value in [integer, string, enum, ...] default: string>
+                           var-type: <value in [integer, string, enum, ...] default: 'string'>
                      group-id: <value of integer default: 0>
                      report-like: <value of string>
-    - name: send request to /cli/system/report/group
+
+    - name: REQUESTING /CLI/SYSTEM/REPORT/GROUP
       fmgr_cli_system_report_group:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [adom, case-insensitive, group-id, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [adom, case-insensitive, group-id, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

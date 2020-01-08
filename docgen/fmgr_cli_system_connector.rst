@@ -78,12 +78,13 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/connector
+
+    - name: REQUESTING /CLI/SYSTEM/CONNECTOR
       fmgr_cli_system_connector:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   fsso-refresh-interval: <value of integer default: 180>
                   fsso-sess-timeout: <value of integer default: 300>
                   px-refresh-interval: <value of integer default: 300>

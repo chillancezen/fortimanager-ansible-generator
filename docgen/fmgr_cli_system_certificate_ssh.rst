@@ -92,29 +92,31 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/certificate/ssh
+
+    - name: REQUESTING /CLI/SYSTEM/CERTIFICATE/SSH
       fmgr_cli_system_certificate_ssh:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     certificate: 
-                      - <value of string>
+            -
+               data:
+                 -
+                     certificate:
+                       - <value of string>
                      comment: <value of string>
                      name: <value of string>
-                     private-key: 
-                      - <value of string>
-    - name: send request to /cli/system/certificate/ssh
+                     private-key:
+                       - <value of string>
+
+    - name: REQUESTING /CLI/SYSTEM/CERTIFICATE/SSH
       fmgr_cli_system_certificate_ssh:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [certificate, comment, name, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [certificate, comment, name, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

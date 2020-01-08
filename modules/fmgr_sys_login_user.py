@@ -29,7 +29,6 @@ description:
       user to [ exec ] the following apis.
     - /sys/login/user
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -46,7 +45,7 @@ notes:
 options:
     schema_object0:
         methods: [exec]
-        description: 'Log into the device with user name and password. A new session cookies will be generated and returned as a property of the response object.'
+        description: 'Log into the device with user name and password. A new session cookies will be generated and returned as a property of the response ob...'
         api_categories: [api_tag0]
         api_tag0:
             data:
@@ -65,12 +64,13 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /sys/login/user
+
+    - name: REQUESTING /SYS/LOGIN/USER
       fmgr_sys_login_user:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   passwd: <value of string>
                   user: <value of string>
 
@@ -96,7 +96,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /sys/login/user
+            example: '/sys/login/user'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -107,6 +107,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/sys/login/user'
@@ -115,7 +116,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -143,7 +144,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -161,8 +161,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -183,14 +183,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

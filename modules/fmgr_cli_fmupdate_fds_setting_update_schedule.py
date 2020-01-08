@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/fmupdate/fds-setting/update-schedule
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -111,17 +110,18 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/fds-setting/update-schedule
+
+    - name: REQUESTING /CLI/FMUPDATE/FDS-SETTING/UPDATE-SCHEDULE
       fmgr_cli_fmupdate_fds_setting_update_schedule:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  day: <value in [Sunday, Monday, Tuesday, ...] default: Monday>
-                  frequency: <value in [every, daily, weekly] default: every>
-                  status: <value in [disable, enable] default: enable>
-                  time: 
-                   - <value of string>
+            -
+               data:
+                  day: <value in [Sunday, Monday, Tuesday, ...] default: 'Monday'>
+                  frequency: <value in [every, daily, weekly] default: 'every'>
+                  status: <value in [disable, enable] default: 'enable'>
+                  time:
+                    - <value of string>
 
 '''
 
@@ -145,7 +145,7 @@ return_of_api_category_0:
                   'Thursday - Update every Thursday.'
                   'Friday - Update every Friday.'
                   'Saturday - Update every Saturday.'
-               example: Monday
+               example: 'Monday'
             frequency:
                type: str
                description: |
@@ -153,14 +153,14 @@ return_of_api_category_0:
                   'every - Time interval.'
                   'daily - Every day.'
                   'weekly - Every week.'
-               example: every
+               example: 'every'
             status:
                type: str
                description: |
                   'Enable/disable scheduled updates.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             time:
                type: array
                suboptions:
@@ -172,7 +172,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/fmupdate/fds-setting/update-schedule
+            example: '/cli/global/fmupdate/fds-setting/update-schedule'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -187,7 +187,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/fmupdate/fds-setting/update-schedule
+            example: '/cli/global/fmupdate/fds-setting/update-schedule'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -198,6 +198,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/fmupdate/fds-setting/update-schedule'
@@ -206,7 +207,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -222,7 +223,6 @@ def main():
                     'dict': {
                         'day': {
                             'type': 'string',
-                            'default': 'Monday',
                             'enum': [
                                 'Sunday',
                                 'Monday',
@@ -235,7 +235,6 @@ def main():
                         },
                         'frequency': {
                             'type': 'string',
-                            'default': 'every',
                             'enum': [
                                 'every',
                                 'daily',
@@ -244,7 +243,6 @@ def main():
                         },
                         'status': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -273,7 +271,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -293,8 +290,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -315,14 +312,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

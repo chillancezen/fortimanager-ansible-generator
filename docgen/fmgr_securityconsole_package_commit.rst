@@ -76,15 +76,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /securityconsole/package/commit
+
+    - name: REQUESTING /SECURITYCONSOLE/PACKAGE/COMMIT
       fmgr_securityconsole_package_commit:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   adom: <value of string>
-                  scope: 
-                   - 
+                  scope:
+                    -
                         name: <value of string>
                         vdom: <value of string>
 

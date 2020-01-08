@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/system/sql/custom-index
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -185,28 +184,30 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/sql/custom-index
+
+    - name: REQUESTING /CLI/SYSTEM/SQL/CUSTOM-INDEX
       fmgr_cli_system_sql_custom_index:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     case-sensitive: <value in [disable, enable] default: disable>
-                     device-type: <value in [FortiGate, FortiManager, FortiClient, ...] default: FortiGate>
+            -
+               data:
+                 -
+                     case-sensitive: <value in [disable, enable] default: 'disable'>
+                     device-type: <value in [FortiGate, FortiManager, FortiClient, ...] default: 'FortiGate'>
                      id: <value of integer default: 0>
                      index-field: <value of string>
-                     log-type: <value in [none, app-ctrl, attack, ...] default: traffic>
-    - name: send request to /cli/system/sql/custom-index
+                     log-type: <value in [none, app-ctrl, attack, ...] default: 'traffic'>
+
+    - name: REQUESTING /CLI/SYSTEM/SQL/CUSTOM-INDEX
       fmgr_cli_system_sql_custom_index:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [case-sensitive, device-type, id, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [case-sensitive, device-type, id, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -227,7 +228,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/sql/custom-index
+            example: '/cli/global/system/sql/custom-index'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -244,7 +245,7 @@ return_of_api_category_0:
                      'Disable/Enable case sensitive index.'
                      'disable - Build a case insensitive index.'
                      'enable - Build a case sensitive index.'
-                  example: disable
+                  example: 'disable'
                device-type:
                   type: str
                   description: |
@@ -259,7 +260,7 @@ return_of_api_category_0:
                      'FortiDDoS - Set device type to FortiDDoS'
                      'FortiAuthenticator - Set device type to FortiAuthenticator'
                      'FortiProxy - Set device type to FortiProxy'
-                  example: FortiGate
+                  example: 'FortiGate'
                id:
                   type: int
                   description: 'Add or Edit log index fields.'
@@ -293,7 +294,7 @@ return_of_api_category_0:
                      'dns '
                      'ssh '
                      'ssl '
-                  example: traffic
+                  example: 'traffic'
          status:
             code:
                type: int
@@ -301,7 +302,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/sql/custom-index
+            example: '/cli/global/system/sql/custom-index'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -312,6 +313,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/sql/custom-index'
@@ -320,7 +322,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -330,7 +332,6 @@ def main():
                     'items': {
                         'case-sensitive': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -338,7 +339,6 @@ def main():
                         },
                         'device-type': {
                             'type': 'string',
-                            'default': 'FortiGate',
                             'enum': [
                                 'FortiGate',
                                 'FortiManager',
@@ -362,7 +362,6 @@ def main():
                         },
                         'log-type': {
                             'type': 'string',
-                            'default': 'traffic',
                             'enum': [
                                 'none',
                                 'app-ctrl',
@@ -463,7 +462,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -484,8 +482,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -506,14 +504,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

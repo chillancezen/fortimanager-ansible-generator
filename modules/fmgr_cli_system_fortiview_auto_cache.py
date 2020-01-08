@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/system/fortiview/auto-cache
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -90,15 +89,16 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/fortiview/auto-cache
+
+    - name: REQUESTING /CLI/SYSTEM/FORTIVIEW/AUTO-CACHE
       fmgr_cli_system_fortiview_auto_cache:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  aggressive-fortiview: <value in [disable, enable] default: disable>
+            -
+               data:
+                  aggressive-fortiview: <value in [disable, enable] default: 'disable'>
                   interval: <value of integer default: 168>
-                  status: <value in [disable, enable] default: enable>
+                  status: <value in [disable, enable] default: 'enable'>
 
 '''
 
@@ -117,7 +117,7 @@ return_of_api_category_0:
                   'Enable/disable auto-cache on fortiview aggressively.'
                   'disable - Disable the aggressive fortiview auto-cache.'
                   'enable - Enable the aggressive fortiview auto-cache.'
-               example: disable
+               example: 'disable'
             interval:
                type: int
                description: 'The time interval in hours for fortiview auto-cache.'
@@ -128,7 +128,7 @@ return_of_api_category_0:
                   'Enable/disable fortiview auto-cache.'
                   'disable - Disable the fortiview auto-cache.'
                   'enable - Enable the fortiview auto-cache.'
-               example: enable
+               example: 'enable'
          status:
             code:
                type: int
@@ -136,7 +136,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/fortiview/auto-cache
+            example: '/cli/global/system/fortiview/auto-cache'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -151,7 +151,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/fortiview/auto-cache
+            example: '/cli/global/system/fortiview/auto-cache'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -162,6 +162,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/fortiview/auto-cache'
@@ -170,7 +171,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -186,7 +187,6 @@ def main():
                     'dict': {
                         'aggressive-fortiview': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -199,7 +199,6 @@ def main():
                         },
                         'status': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -222,7 +221,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -242,8 +240,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -264,14 +262,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

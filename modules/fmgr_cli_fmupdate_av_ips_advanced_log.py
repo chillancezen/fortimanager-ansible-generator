@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/fmupdate/av-ips/advanced-log
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -86,14 +85,15 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/av-ips/advanced-log
+
+    - name: REQUESTING /CLI/FMUPDATE/AV-IPS/ADVANCED-LOG
       fmgr_cli_fmupdate_av_ips_advanced_log:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  log-fortigate: <value in [disable, enable] default: disable>
-                  log-server: <value in [disable, enable] default: enable>
+            -
+               data:
+                  log-fortigate: <value in [disable, enable] default: 'disable'>
+                  log-server: <value in [disable, enable] default: 'enable'>
 
 '''
 
@@ -112,14 +112,14 @@ return_of_api_category_0:
                   'Enable/disable logging of FortiGuard antivirus and IPS service updates of FortiGate devices (default = disable).'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             log-server:
                type: str
                description: |
                   'Enable/disable logging of update packages received by the build-in FortiGuard server (default = disable).'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
          status:
             code:
                type: int
@@ -127,7 +127,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/fmupdate/av-ips/advanced-log
+            example: '/cli/global/fmupdate/av-ips/advanced-log'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -142,7 +142,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/fmupdate/av-ips/advanced-log
+            example: '/cli/global/fmupdate/av-ips/advanced-log'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -153,6 +153,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/fmupdate/av-ips/advanced-log'
@@ -161,7 +162,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -177,7 +178,6 @@ def main():
                     'dict': {
                         'log-fortigate': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -185,7 +185,6 @@ def main():
                         },
                         'log-server': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -208,7 +207,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -228,8 +226,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -250,14 +248,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

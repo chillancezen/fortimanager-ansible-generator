@@ -178,37 +178,38 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/ips/sensor
+
+    - name: REQUESTING /PM/CONFIG/OBJ/IPS/SENSOR
       fmgr_pm_config_obj_ips_sensor:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      block-malicious-url: <value in [disable, enable]>
                      comment: <value of string>
-                     entries: 
-                      - 
+                     entries:
+                       -
                            action: <value in [pass, block, reset, ...]>
-                           application: 
-                            - <value of string>
-                           exempt-ip: 
-                            - 
+                           application:
+                             - <value of string>
+                           exempt-ip:
+                             -
                                  dst-ip: <value of string>
                                  id: <value of integer>
                                  src-ip: <value of string>
                            id: <value of integer>
-                           location: 
-                            - <value of string>
+                           location:
+                             - <value of string>
                            log: <value in [disable, enable]>
                            log-attack-context: <value in [disable, enable]>
                            log-packet: <value in [disable, enable]>
-                           os: 
-                            - <value of string>
-                           protocol: 
-                            - <value of string>
+                           os:
+                             - <value of string>
+                           protocol:
+                             - <value of string>
                            quarantine: <value in [none, attacker, both, ...]>
                            quarantine-expiry: <value of string>
                            quarantine-log: <value in [disable, enable]>
@@ -217,36 +218,36 @@ Examples
                            rate-mode: <value in [periodical, continuous]>
                            rate-track: <value in [none, src-ip, dest-ip, ...]>
                            rule: <value of string>
-                           severity: 
-                            - <value of string>
+                           severity:
+                             - <value of string>
                            status: <value in [disable, enable, default]>
                      extended-log: <value in [disable, enable]>
-                     filter: 
-                      - 
+                     filter:
+                       -
                            action: <value in [pass, block, default, ...]>
-                           application: 
-                            - <value of string>
-                           location: 
-                            - <value of string>
+                           application:
+                             - <value of string>
+                           location:
+                             - <value of string>
                            log: <value in [disable, enable, default]>
                            log-packet: <value in [disable, enable, default]>
                            name: <value of string>
-                           os: 
-                            - <value of string>
-                           protocol: 
-                            - <value of string>
+                           os:
+                             - <value of string>
+                           protocol:
+                             - <value of string>
                            quarantine: <value in [none, attacker, both, ...]>
                            quarantine-expiry: <value of integer>
                            quarantine-log: <value in [disable, enable]>
-                           severity: 
-                            - <value of string>
+                           severity:
+                             - <value of string>
                            status: <value in [disable, enable, default]>
                      name: <value of string>
-                     override: 
-                      - 
+                     override:
+                       -
                            action: <value in [pass, block, reset]>
-                           exempt-ip: 
-                            - 
+                           exempt-ip:
+                             -
                                  dst-ip: <value of string>
                                  id: <value of integer>
                                  src-ip: <value of string>
@@ -258,27 +259,28 @@ Examples
                            rule-id: <value of integer>
                            status: <value in [disable, enable]>
                      replacemsg-group: <value of string>
-    - name: send request to /pm/config/obj/ips/sensor
+
+    - name: REQUESTING /PM/CONFIG/OBJ/IPS/SENSOR
       fmgr_pm_config_obj_ips_sensor:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [block-malicious-url, comment, extended-log, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [block-malicious-url, comment, extended-log, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

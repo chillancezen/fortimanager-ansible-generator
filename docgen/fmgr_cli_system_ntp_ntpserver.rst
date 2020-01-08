@@ -92,30 +92,32 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/ntp/ntpserver
+
+    - name: REQUESTING /CLI/SYSTEM/NTP/NTPSERVER
       fmgr_cli_system_ntp_ntpserver:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     authentication: <value in [disable, enable] default: disable>
+            -
+               data:
+                 -
+                     authentication: <value in [disable, enable] default: 'disable'>
                      id: <value of integer default: 0>
-                     key: 
-                      - <value of string default: ENC MTIwNDIxMDA1OTc0MDU5OOCz7ir5CgpbO/J3sN576PgSwbGc703sZpBwnR5CmNxRjhfSM2FPskJvCPZHAzZOjFTd7B1Ay0Ssf3MwFzNWVdOYL88mw7WTGYgcc3j/PFmJ0NiPwuFnT94rAO6yDHtO7QnVfyla+di36FC34BfdtB+S9eva>
+                     key:
+                       - <value of string default: 'ENC MTIwNDIxMDA1OTc0MDU5OOCz7ir5CgpbO/J3sN576PgSwbGc703sZpBwnR5CmNxRjhfSM2FP...'>
                      key-id: <value of integer default: 0>
-                     ntpv3: <value in [disable, enable] default: disable>
+                     ntpv3: <value in [disable, enable] default: 'disable'>
                      server: <value of string>
-    - name: send request to /cli/system/ntp/ntpserver
+
+    - name: REQUESTING /CLI/SYSTEM/NTP/NTPSERVER
       fmgr_cli_system_ntp_ntpserver:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [authentication, id, key, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [authentication, id, key, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

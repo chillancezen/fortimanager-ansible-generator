@@ -118,54 +118,56 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/log-fetch/client-profile
+
+    - name: REQUESTING /CLI/SYSTEM/LOG-FETCH/CLIENT-PROFILE
       fmgr_cli_system_log_fetch_client_profile:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      client-adom: <value of string>
-                     data-range: <value in [custom] default: custom>
+                     data-range: <value in [custom] default: 'custom'>
                      data-range-value: <value of integer default: 10>
-                     device-filter: 
-                      - 
-                           adom: <value of string default: *>
-                           device: <value of string default: *>
+                     device-filter:
+                       -
+                           adom: <value of string default: '*'>
+                           device: <value of string default: '*'>
                            id: <value of integer default: 0>
-                           vdom: <value of string default: *>
-                     end-time: 
-                      - <value of string>
+                           vdom: <value of string default: '*'>
+                     end-time:
+                       - <value of string>
                      id: <value of integer default: 0>
-                     index-fetch-logs: <value in [disable, enable] default: enable>
-                     log-filter: 
-                      - 
+                     index-fetch-logs: <value in [disable, enable] default: 'enable'>
+                     log-filter:
+                       -
                            field: <value of string>
                            id: <value of integer default: 0>
-                           oper: <value in [=, !=, <, ...] default: =>
+                           oper: <value in [=, !=, <, ...] default: '='>
                            value: <value of string>
-                     log-filter-logic: <value in [and, or] default: or>
-                     log-filter-status: <value in [disable, enable] default: disable>
+                     log-filter-logic: <value in [and, or] default: 'or'>
+                     log-filter-status: <value in [disable, enable] default: 'disable'>
                      name: <value of string>
-                     password: 
-                      - <value of string default: ENC NzkzMDg4MDc2MTgwNjUzNhwvJBDjPF8MRvYpIukmL7G++XrKmHYTQF5zcGV+Ss3GXWsKe9F9Ie2B55rWFdty9EbQ6aAhGObDlAP7FQ7Otz0SNL49BDP1poSzSg2PuvFul8YYBSll3W/AAKoDgHm+llvtNz/qEJFyG6JzkDaGLy1ebMpO>
-                     secure-connection: <value in [disable, enable] default: enable>
+                     password:
+                       - <value of string default: 'ENC NzkzMDg4MDc2MTgwNjUzNhwvJBDjPF8MRvYpIukmL7G++XrKmHYTQF5zcGV+Ss3GXWsKe9F9...'>
+                     secure-connection: <value in [disable, enable] default: 'enable'>
                      server-adom: <value of string>
-                     server-ip: <value of string default: 0.0.0.0>
-                     start-time: 
-                      - <value of string>
-                     sync-adom-config: <value in [disable, enable] default: disable>
+                     server-ip: <value of string default: '0.0.0.0'>
+                     start-time:
+                       - <value of string>
+                     sync-adom-config: <value in [disable, enable] default: 'disable'>
                      user: <value of string>
-    - name: send request to /cli/system/log-fetch/client-profile
+
+    - name: REQUESTING /CLI/SYSTEM/LOG-FETCH/CLIENT-PROFILE
       fmgr_cli_system_log_fetch_client_profile:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [client-adom, data-range, data-range-value, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [client-adom, data-range, data-range-value, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

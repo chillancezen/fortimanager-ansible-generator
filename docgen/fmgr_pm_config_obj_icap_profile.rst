@@ -111,17 +111,18 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/icap/profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/ICAP/PROFILE
       fmgr_pm_config_obj_icap_profile:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
-                     methods: 
-                      - <value in [delete, get, head, ...]>
+            -
+               data:
+                 -
+                     methods:
+                       - <value in [delete, get, head, ...]>
                      name: <value of string>
                      replacemsg-group: <value of string>
                      request: <value in [disable, enable]>
@@ -133,27 +134,28 @@ Examples
                      response-path: <value of string>
                      response-server: <value of string>
                      streaming-content-bypass: <value in [disable, enable]>
-    - name: send request to /pm/config/obj/icap/profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/ICAP/PROFILE
       fmgr_pm_config_obj_icap_profile:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [methods, name, replacemsg-group, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [methods, name, replacemsg-group, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

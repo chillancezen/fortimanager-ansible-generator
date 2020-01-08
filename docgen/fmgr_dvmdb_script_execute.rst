@@ -84,18 +84,19 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvmdb/script/execute
+
+    - name: REQUESTING /DVMDB/SCRIPT/EXECUTE
       fmgr_dvmdb_script_execute:
          method: <value in [exec]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               workflow: 
+            -
+               workflow:
                   adom: <value of string>
                   package: <value of string>
-                  scope: 
-                   - 
+                  scope:
+                    -
                         name: <value of string>
                         vdom: <value of string>
                   script: <value of string>

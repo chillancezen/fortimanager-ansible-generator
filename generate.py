@@ -23,10 +23,40 @@ def underscore2hyphen(string):
 def hyphen2underscore(string):
     return string.replace('-', '_')
 
+def extract_one_url_param(uri):
+    left_bracket_pos = uri.find('{')
+    if left_bracket_pos < 0:
+        return None
+    right_bracket_pos = uri.find('}')
+    assert(right_bracket_pos > 0)
+    param = uri[left_bracket_pos + 1: right_bracket_pos]
+    assert(param != '')
+    return param
+
+def extract_url_params(uri):
+    lst = list()
+    while True:
+        param = extract_one_url_param(uri)
+        if not param:
+            break
+        lst.append(param)
+        uri = uri.replace('/{' + param + '}', '')
+    return lst
+
+def shorten_url(uri):
+    params = extract_url_params(uri)
+    short_url = uri
+    if len(params):
+        for param in params:
+            short_url = short_url.replace('/{' + param + '}', '')
+        if uri.endswith('/{' + params[-1] + '}'):
+            short_url += '/per_object'
+    return short_url
 
 def canonicalize_url_as_path(url):
     url = url.replace('/adom/{adom}/', '/')
     url = url.replace('/global/', '/')
+    url = shorten_url(url)
     canocial_url_path = 'fmgr'
     fields = url.split('/')
     for field in fields:
@@ -36,7 +66,7 @@ def canonicalize_url_as_path(url):
         field = field.strip('{')
         field = field.strip('}')
         canocial_url_path += '_' + field
-    return canocial_url_path.lower().replace('+', '')
+    return canocial_url_path.lower().replace('+', '').replace('__', '_')
 
 
 def canonicalize_text(raw_text):
@@ -59,7 +89,11 @@ def canonicalize_text(raw_text):
         stripped_data = stripped_data.replace('\'', '')
         ret_lst.append('\'' + stripped_data + '\'')
     return ret_lst
-
+def shorten_description(raw_desc, nr_start_pos):
+    nr_left = 160 - nr_start_pos
+    if len(raw_desc) <= nr_left:
+        return raw_desc
+    return raw_desc[: nr_left - 4] + '...' + ('\'' if raw_desc[0] == '\'' else '')
 
 def split_text(text, offset, max_length):
     length_per_line = max_length - offset
@@ -98,7 +132,7 @@ def tailor_schema(in_body_params):
     elif isinstance(in_body_params, dict):
         dct = dict()
         for param_key in in_body_params:
-            if param_key in ['in', 'format', 'description', 'example']:
+            if param_key in ['in', 'format', 'description', 'example', 'default']:
                 if isinstance(in_body_params[param_key], str):
                     continue
             dct[param_key] = tailor_schema(in_body_params[param_key])
@@ -172,8 +206,11 @@ def _generate_schema_document_options_recursilve(schema, depth):
             'string', 'integer', 'array', 'dict']:
         for discrete_schema_key in schema:
             discrete_schema = schema[discrete_schema_key]
-            rdata += ' ' * depth * 4 + \
-                discrete_schema_key.replace('{', r'\{').replace('}', r'\}') + ':\n'
+            if '{' in discrete_schema_key and '}' in discrete_schema_key:
+                discrete_schema_key = discrete_schema_key.replace('{', '')
+                discrete_schema_key = discrete_schema_key.replace('}', '')
+                discrete_schema_key = 'varidic.' + discrete_schema_key
+            rdata += ' ' * depth * 4 + discrete_schema_key + ':\n'
             rdata += _generate_schema_document_options_recursilve(
                 discrete_schema, depth + 1)
         return rdata
@@ -183,17 +220,19 @@ def _generate_schema_document_options_recursilve(schema, depth):
         rdata += ' ' * depth * 4 + 'type: ' + \
             schematype_displayname_mapping[schema['type']] + '\n'
         if 'default' in schema:
-            rdata += ' ' * depth * 4 + 'default: ' + quote + str(schema['default']) + quote + '\n'
+            default_value = str(schema['default'])
+            default_value = shorten_description(default_value, depth * 4 + len('default: ') + 2)
+            rdata += ' ' * depth * 4 + 'default: ' + quote + default_value + quote + '\n'
         # FIXED: some characters in description are not recognized by yaml.
         if 'description' in schema:
             desc_list = canonicalize_text(schema['description'])
             if (len(desc_list) > 1):
                 rdata += ' ' * depth * 4 + 'description:\n'
                 for item in desc_list:
-                    rdata += ' ' * depth * 4 + ' - %s\n' % (item)
+                    rdata += ' ' * depth * 4 + ' - %s\n' % (shorten_description(item, depth * 4 + 3))
             else:
                 rdata += ' ' * depth * 4 + 'description: '
-                rdata += '\n' if not len(desc_list) else (desc_list[0] + '\n')
+                rdata += '\n' if not len(desc_list) else (shorten_description(desc_list[0], depth * 4 + len('description: ')) + '\n')
         if 'enum' in schema:
             rdata += ' ' * depth * 4 + 'choices:\n'
             for item in schema['enum']:
@@ -217,7 +256,7 @@ def generate_schema_document_options(
     options_data = ''
     body_schema = transform_schema(raw_body_schemas)
     if len(in_path_params):
-        options_data += ' ' * 4 + 'url_params: \n'
+        options_data += ' ' * 4 + 'url_params:\n'
         options_data += ' ' * 8 + 'description: the parameters in url path\n'
         options_data += ' ' * 8 + 'required: True\n'
         options_data += ' ' * 8 + 'type: dict\n'
@@ -240,7 +279,7 @@ def generate_schema_document_options(
         options_data += ' ' * 4 + schema_object_key_display_name + ':\n'
         options_data += ' ' * 8 + 'methods: ' + str(method_list).replace('\'', '') + '\n'
         options_data += ' ' * 8 + \
-            'description: %s\n' % (canonicalize_text(api_endpoint_tags[method_list[0]])[0])
+            'description: %s\n' % (shorten_description(canonicalize_text(api_endpoint_tags[method_list[0]])[0], 8 + len('description: ')))
         tagged_params = dict()
         for param in schema_object:
             assert('api_tag' in param)
@@ -364,13 +403,17 @@ def _generate_schema_document_examples_recursive(schema, depth):
             if to_fold:
                 rdata += '\n'
                 to_fold = False
-            rdata += ' ' * depth * 3 + \
-                discrete_schema_key.replace('{', r'\{').replace('}', r'\}') + ': '
+            if '{' in discrete_schema_key and '}' in discrete_schema_key:
+                discrete_schema_key = discrete_schema_key.replace('{', '')
+                discrete_schema_key = discrete_schema_key.replace('}', '')
+                discrete_schema_key = 'varidic.' + discrete_schema_key
+            rdata += ' ' * depth * 3 + discrete_schema_key + ':'
             rdata += _generate_schema_document_examples_recursive(
                 discrete_schema, depth + 1)
         return rdata
 
     if schema['type'] in ['string', 'integer']:
+        quote = '\'' if schema['type'] == 'string' else ''
         if 'enum' in schema:
             enum_list = list()
             enum_index = 0
@@ -381,16 +424,14 @@ def _generate_schema_document_examples_recursive(schema, depth):
                 else:
                     enum_list.append(item)
                 enum_index += 1
-            rdata += '<value in %s%s>' % (str(enum_list).replace('\'', ''),
-                                          ' default: %s' % (str(schema['default'])) if 'default' in
+            rdata += ' <value in %s%s>' % (str(enum_list).replace('\'', ''),
+                                          (' default: ' + quote + '%s' + quote) % (shorten_description(str(schema['default']), 80)) if 'default' in
                                           schema and schema['default'] != '' else '') + '\n'
         else:
-            rdata += '<value of %s%s>' % (schema['type'], ' default: %s' % (str(
-                     schema['default'])) if 'default' in schema and schema[
-                'default'] != '' else '') + '\n'
+            rdata += ' <value of %s%s>' % (schema['type'], (' default: ' + quote + '%s' + quote) % (shorten_description(str(schema['default']), 80)) if 'default' in schema and schema['default'] != '' else '') + '\n'
     elif schema['type'] is 'array':
         rdata += '\n'
-        rdata += ' ' * (depth - 1) * 3 + ' - '
+        rdata += ' ' * (depth - 1) * 3 + '  -'
         assert('items' in schema)
         rdata += _generate_schema_document_examples_recursive(schema['items'], depth + 1)
     elif schema['type'] is 'dict':
@@ -426,7 +467,10 @@ def generate_schema_document_examples(
                 tagged_params[api_tag] = list()
             tagged_params[api_tag].append(param)
         for tag in tagged_params:
-            example_data += ' ' * 3 + ' - name: send request to %s\n' % (jrpc_url.replace('/adom/{adom}/', '/').replace('/global/', '/'))
+            example_data += '\n'
+            example_data += ' ' * 3 + ' - name: '
+            example_data += shorten_description(('requesting %s' % (jrpc_url.replace('/adom/{adom}/', '/').replace('/global/', '/'))).upper(), 3 + len(' - name: '))
+            example_data += '\n'
             example_data += ' ' * 6 + module_name + ':\n'
             example_data += ' ' * 9 + \
                 'method: <value in %s>\n' % (str(method_list).replace('\'', ''))
@@ -439,9 +483,9 @@ def generate_schema_document_examples(
                     example_data += ' ' * 12 + \
                         url_param['name'] + ': <value of %s>\n' % (url_param['type'])
             example_data += ' ' * 9 + 'params:\n'
-            example_data += ' ' * 12 + '- \n'
+            example_data += ' ' * 12 + '-\n'
             for param in tagged_params[tag]:
-                example_data += ' ' * 15 + '%s: ' % (param['name'])
+                example_data += ' ' * 15 + '%s:' % (param['name'])
                 example_data += _generate_schema_document_examples_recursive(param, 6)
     return example_data
 
@@ -459,6 +503,7 @@ def _generate_schema_document_return_recursive(schema, depth):
                 discrete_schema, depth + 1)
         return rdata
     if schema['type'] in ['string', 'integer']:
+        quote = '\'' if schema['type'] == 'string' else ''
         rdata += ' ' * depth * 3 + \
             'type: %s\n' % (schematype_displayname_mapping[schema['type']])
         if 'description' in schema:
@@ -466,12 +511,12 @@ def _generate_schema_document_return_recursive(schema, depth):
             if (len(desc_list) > 1):
                 rdata += ' ' * depth * 3 + 'description: |\n'
                 for item in desc_list:
-                    rdata += ' ' * depth * 3 + '   %s\n' % (item)
+                    rdata += ' ' * depth * 3 + '   %s\n' % (shorten_description(item, depth * 3 + 4))
             else:
                 rdata += ' ' * depth * 3 + 'description: '
-                rdata += '\n' if not len(desc_list) else (desc_list[0] + '\n')
+                rdata += '\n' if not len(desc_list) else (shorten_description(desc_list[0], depth * 3 + len('description: ')) + '\n')
         if 'example' in schema:
-            rdata += ' ' * depth * 3 + 'example: %s\n' % (schema['example'])
+            rdata += ' ' * depth * 3 + 'example: ' + (quote + '%s' + quote +'\n') % (shorten_description(str(schema['example']), 80))
     elif schema['type'] is 'array':
         assert('items' in schema)
         rdata += ' ' * depth * 3 + 'type: array\n'
@@ -644,7 +689,7 @@ def validate_multiurls_schema(url, schema, multiurls):
                 assert(the_one_result_schema == result_schema)
         assert(len(per_method_api_endpoint_tags) == 1)
 
-
+url_mod_tracking = dict()
 def resolve_schema(url, schema, doc_template, code_template, multiurls):
     validate_multiurls_schema(url, schema, multiurls)
     body_schemas = dict()
@@ -701,6 +746,10 @@ def resolve_schema(url, schema, doc_template, code_template, multiurls):
 
     # Now we have all the parameters in path for all the urls which can be merged
     # dump lots of useful information to screen.
+    global url_mod_tracking
+    if canonical_path not in url_mod_tracking:
+        url_mod_tracking[canonical_path] = list()
+    url_mod_tracking[canonical_path].append(url)
     mutiurls_names = [_url for _url, _schema in multiurls]
     print('\t\033[36mmodule.name:\033[0m \033[37m%s\033[0m' % (canonical_path))
     print('\t\033[36mfull.url.params:\033[0m \033[37m%s\033[0m' % (str([item['name'] for item in the_one_in_path_params]).replace('\'', '')))
@@ -844,3 +893,7 @@ if __name__ == '__main__':
         url0, schema0 = domain_independent_urls[stripped_url][0]
         print('\033[32mprocessing multi-domain url:\033[0m', stripped_url)
         resolve_schema(url0, schema0, doc_template, code_template, domain_independent_urls[stripped_url])
+    # There should be no modules in conflict
+    for mod in url_mod_tracking:
+        urls = url_mod_tracking[mod]
+        assert(len(urls) == 1)

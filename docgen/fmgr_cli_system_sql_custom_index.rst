@@ -89,28 +89,30 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/sql/custom-index
+
+    - name: REQUESTING /CLI/SYSTEM/SQL/CUSTOM-INDEX
       fmgr_cli_system_sql_custom_index:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     case-sensitive: <value in [disable, enable] default: disable>
-                     device-type: <value in [FortiGate, FortiManager, FortiClient, ...] default: FortiGate>
+            -
+               data:
+                 -
+                     case-sensitive: <value in [disable, enable] default: 'disable'>
+                     device-type: <value in [FortiGate, FortiManager, FortiClient, ...] default: 'FortiGate'>
                      id: <value of integer default: 0>
                      index-field: <value of string>
-                     log-type: <value in [none, app-ctrl, attack, ...] default: traffic>
-    - name: send request to /cli/system/sql/custom-index
+                     log-type: <value in [none, app-ctrl, attack, ...] default: 'traffic'>
+
+    - name: REQUESTING /CLI/SYSTEM/SQL/CUSTOM-INDEX
       fmgr_cli_system_sql_custom_index:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [case-sensitive, device-type, id, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [case-sensitive, device-type, id, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

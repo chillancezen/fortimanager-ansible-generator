@@ -80,17 +80,18 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/fds-setting/update-schedule
+
+    - name: REQUESTING /CLI/FMUPDATE/FDS-SETTING/UPDATE-SCHEDULE
       fmgr_cli_fmupdate_fds_setting_update_schedule:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  day: <value in [Sunday, Monday, Tuesday, ...] default: Monday>
-                  frequency: <value in [every, daily, weekly] default: every>
-                  status: <value in [disable, enable] default: enable>
-                  time: 
-                   - <value of string>
+            -
+               data:
+                  day: <value in [Sunday, Monday, Tuesday, ...] default: 'Monday'>
+                  frequency: <value in [every, daily, weekly] default: 'every'>
+                  status: <value in [disable, enable] default: 'enable'>
+                  time:
+                    - <value of string>
 
 
 

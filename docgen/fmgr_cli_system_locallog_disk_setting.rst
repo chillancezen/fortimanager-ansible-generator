@@ -104,37 +104,38 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/locallog/disk/setting
+
+    - name: REQUESTING /CLI/SYSTEM/LOCALLOG/DISK/SETTING
       fmgr_cli_system_locallog_disk_setting:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  diskfull: <value in [overwrite, nolog] default: overwrite>
+            -
+               data:
+                  diskfull: <value in [overwrite, nolog] default: 'overwrite'>
                   log-disk-full-percentage: <value of integer default: 80>
                   max-log-file-size: <value of integer default: 100>
-                  roll-day: 
-                   - <value in [sunday, monday, tuesday, ...]>
-                  roll-schedule: <value in [none, daily, weekly] default: none>
-                  roll-time: 
-                   - <value of string>
-                  server-type: <value in [FTP, SFTP, SCP] default: FTP>
-                  severity: <value in [emergency, alert, critical, ...] default: information>
-                  status: <value in [disable, enable] default: enable>
-                  upload: <value in [disable, enable] default: disable>
-                  upload-delete-files: <value in [disable, enable] default: enable>
-                  upload-time: 
-                   - <value of string>
+                  roll-day:
+                    - <value in [sunday, monday, tuesday, ...]>
+                  roll-schedule: <value in [none, daily, weekly] default: 'none'>
+                  roll-time:
+                    - <value of string>
+                  server-type: <value in [FTP, SFTP, SCP] default: 'FTP'>
+                  severity: <value in [emergency, alert, critical, ...] default: 'information'>
+                  status: <value in [disable, enable] default: 'enable'>
+                  upload: <value in [disable, enable] default: 'disable'>
+                  upload-delete-files: <value in [disable, enable] default: 'enable'>
+                  upload-time:
+                    - <value of string>
                   uploaddir: <value of string>
-                  uploadip: <value of string default: 0.0.0.0>
-                  uploadpass: 
-                   - <value of string default: ENC NDk0NjE4Nzg3MjIwODA3N71+qrz/6PhYvtMUVz84NXNAP8LBSobOqp91xwfif6Oy3+uy8/crasneRp4VbtBQntyLw7E8MbzHoUlJp8Y2cQLnVfVsTQsRfvtq/BZcpTL+c2yDARD0Bvd1khGe4e1mCVFSVuCTSXxm6CmxqPpcGKFfHLyn>
+                  uploadip: <value of string default: '0.0.0.0'>
+                  uploadpass:
+                    - <value of string default: 'ENC NDk0NjE4Nzg3MjIwODA3N71+qrz/6PhYvtMUVz84NXNAP8LBSobOqp91xwfif6Oy3+uy8/cr...'>
                   uploadport: <value of integer default: 0>
-                  uploadsched: <value in [disable, enable] default: disable>
-                  uploadtype: 
-                   - <value in [event]>
+                  uploadsched: <value in [disable, enable] default: 'disable'>
+                  uploadtype:
+                    - <value in [event]>
                   uploaduser: <value of string>
-                  uploadzip: <value in [disable, enable] default: disable>
+                  uploadzip: <value in [disable, enable] default: 'disable'>
 
 
 

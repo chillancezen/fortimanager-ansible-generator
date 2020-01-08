@@ -82,22 +82,24 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/adom/options
+
+    - name: REQUESTING /PM/CONFIG/OBJ/ADOM/OPTIONS
       fmgr_pm_config_obj_adom_options:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                option: <value in [object member, chksum, datasrc]>
-    - name: send request to /pm/config/obj/adom/options
+
+    - name: REQUESTING /PM/CONFIG/OBJ/ADOM/OPTIONS
       fmgr_pm_config_obj_adom_options:
          method: <value in [set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
+            -
+               data:
                   assign_excluded: <value in [disable, enable]>
                   specify_assign_pkg_list: <value in [disable, enable]>
 

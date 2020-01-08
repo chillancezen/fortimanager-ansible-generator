@@ -108,46 +108,48 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/admin/ldap
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/LDAP
       fmgr_cli_system_admin_ldap:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     adom: 
-                      - 
+            -
+               data:
+                 -
+                     adom:
+                       -
                            adom-name: <value of string>
                      adom-attr: <value of string>
-                     attributes: <value of string default: member,uniquemember,memberuid>
+                     attributes: <value of string default: 'member,uniquemember,memberuid'>
                      ca-cert: <value of string>
-                     cnid: <value of string default: cn>
+                     cnid: <value of string default: 'cn'>
                      connect-timeout: <value of integer default: 500>
                      dn: <value of string>
-                     filter: <value of string default: (objectclass=*)>
+                     filter: <value of string default: '(objectclass=*)'>
                      group: <value of string>
                      memberof-attr: <value of string>
                      name: <value of string>
-                     password: 
-                      - <value of string default: ENC MTEyODQwMzUzNTU5OTkxNiMZsnjCaX8v5NaNPmglZ1pwQh+wPb8bwCFjVP5hUgQnOleEpUJ7ARHGG9tpPDKAZE74Ep4RHCgPsKLw3wtuNG0kB3r6RBqrFQcvA/t/txyxY2LlhN4+ewvQsITXDVyOmmyE1tqgG/9GpJNNqPCgZsW36+Oo>
+                     password:
+                       - <value of string default: 'ENC MTEyODQwMzUzNTU5OTkxNiMZsnjCaX8v5NaNPmglZ1pwQh+wPb8bwCFjVP5hUgQnOleEpUJ7...'>
                      port: <value of integer default: 389>
                      profile-attr: <value of string>
                      secondary-server: <value of string>
-                     secure: <value in [disable, starttls, ldaps] default: disable>
+                     secure: <value in [disable, starttls, ldaps] default: 'disable'>
                      server: <value of string>
                      tertiary-server: <value of string>
-                     type: <value in [simple, anonymous, regular] default: simple>
+                     type: <value in [simple, anonymous, regular] default: 'simple'>
                      username: <value of string>
-    - name: send request to /cli/system/admin/ldap
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/LDAP
       fmgr_cli_system_admin_ldap:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [adom-attr, attributes, ca-cert, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [adom-attr, attributes, ca-cert, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

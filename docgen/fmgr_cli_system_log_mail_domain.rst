@@ -88,27 +88,29 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/log/mail-domain
+
+    - name: REQUESTING /CLI/SYSTEM/LOG/MAIL-DOMAIN
       fmgr_cli_system_log_mail_domain:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     devices: <value of string default: All_FortiMail>
+            -
+               data:
+                 -
+                     devices: <value of string default: 'All_FortiMail'>
                      domain: <value of string>
                      id: <value of integer default: 0>
                      vdom: <value of string>
-    - name: send request to /cli/system/log/mail-domain
+
+    - name: REQUESTING /CLI/SYSTEM/LOG/MAIL-DOMAIN
       fmgr_cli_system_log_mail_domain:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [devices, domain, id, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [devices, domain, id, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

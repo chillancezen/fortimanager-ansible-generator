@@ -83,21 +83,22 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/server-access-priorities
+
+    - name: REQUESTING /CLI/FMUPDATE/SERVER-ACCESS-PRIORITIES
       fmgr_cli_fmupdate_server_access_priorities:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  access-public: <value in [disable, enable] default: disable>
-                  av-ips: <value in [disable, enable] default: disable>
-                  private-server: 
-                   - 
+            -
+               data:
+                  access-public: <value in [disable, enable] default: 'disable'>
+                  av-ips: <value in [disable, enable] default: 'disable'>
+                  private-server:
+                    -
                         id: <value of integer default: 0>
-                        ip: <value of string default: 0.0.0.0>
-                        ip6: <value of string default: ::>
+                        ip: <value of string default: '0.0.0.0'>
+                        ip6: <value of string default: '::'>
                         time_zone: <value of integer default: -24>
-                  web-spam: <value in [disable, enable] default: enable>
+                  web-spam: <value in [disable, enable] default: 'enable'>
 
 
 

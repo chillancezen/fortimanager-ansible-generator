@@ -77,15 +77,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/fds-setting/push-override
+
+    - name: REQUESTING /CLI/FMUPDATE/FDS-SETTING/PUSH-OVERRIDE
       fmgr_cli_fmupdate_fds_setting_push_override:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  ip: <value of string default: 0.0.0.0>
+            -
+               data:
+                  ip: <value of string default: '0.0.0.0'>
                   port: <value of integer default: 9443>
-                  status: <value in [disable, enable] default: disable>
+                  status: <value in [disable, enable] default: 'disable'>
 
 
 

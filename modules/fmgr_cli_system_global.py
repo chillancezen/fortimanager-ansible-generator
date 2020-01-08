@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/system/global
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -744,76 +743,77 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/global
+
+    - name: REQUESTING /CLI/SYSTEM/GLOBAL
       fmgr_cli_system_global:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   admin-lockout-duration: <value of integer default: 60>
                   admin-lockout-threshold: <value of integer default: 3>
-                  adom-mode: <value in [normal, advanced] default: normal>
-                  adom-rev-auto-delete: <value in [disable, by-revisions, by-days] default: by-revisions>
+                  adom-mode: <value in [normal, advanced] default: 'normal'>
+                  adom-rev-auto-delete: <value in [disable, by-revisions, by-days] default: 'by-revisions'>
                   adom-rev-max-backup-revisions: <value of integer default: 5>
                   adom-rev-max-days: <value of integer default: 30>
                   adom-rev-max-revisions: <value of integer default: 120>
-                  adom-select: <value in [disable, enable] default: enable>
-                  adom-status: <value in [disable, enable] default: disable>
-                  clt-cert-req: <value in [disable, enable, optional] default: disable>
-                  console-output: <value in [standard, more] default: standard>
-                  country-flag: <value in [disable, enable] default: enable>
-                  create-revision: <value in [disable, enable] default: disable>
-                  daylightsavetime: <value in [disable, enable] default: enable>
+                  adom-select: <value in [disable, enable] default: 'enable'>
+                  adom-status: <value in [disable, enable] default: 'disable'>
+                  clt-cert-req: <value in [disable, enable, optional] default: 'disable'>
+                  console-output: <value in [standard, more] default: 'standard'>
+                  country-flag: <value in [disable, enable] default: 'enable'>
+                  create-revision: <value in [disable, enable] default: 'disable'>
+                  daylightsavetime: <value in [disable, enable] default: 'enable'>
                   default-disk-quota: <value of integer default: 1000>
-                  detect-unregistered-log-device: <value in [disable, enable] default: enable>
-                  device-view-mode: <value in [regular, tree] default: regular>
-                  dh-params: <value in [1024, 1536, 2048, ...] default: 2048>
-                  disable-module: 
-                   - <value in [fortiview-noc]>
-                  enc-algorithm: <value in [low, medium, high] default: high>
-                  faz-status: <value in [disable, enable] default: disable>
+                  detect-unregistered-log-device: <value in [disable, enable] default: 'enable'>
+                  device-view-mode: <value in [regular, tree] default: 'regular'>
+                  dh-params: <value in [1024, 1536, 2048, ...] default: '2048'>
+                  disable-module:
+                    - <value in [fortiview-noc]>
+                  enc-algorithm: <value in [low, medium, high] default: 'high'>
+                  faz-status: <value in [disable, enable] default: 'disable'>
                   fgfm-local-cert: <value of string>
-                  fgfm-ssl-protocol: <value in [sslv3, tlsv1.0, tlsv1.1, ...] default: tlsv1.2>
-                  ha-member-auto-grouping: <value in [disable, enable] default: enable>
+                  fgfm-ssl-protocol: <value in [sslv3, tlsv1.0, tlsv1.1, ...] default: 'tlsv1.2'>
+                  ha-member-auto-grouping: <value in [disable, enable] default: 'enable'>
                   hitcount_concurrent: <value of integer default: 100>
                   hitcount_interval: <value of integer default: 300>
-                  hostname: <value of string default: FMG-VM64>
-                  import-ignore-addr-cmt: <value in [disable, enable] default: disable>
-                  language: <value in [english, simch, japanese, ...] default: english>
+                  hostname: <value of string default: 'FMG-VM64'>
+                  import-ignore-addr-cmt: <value in [disable, enable] default: 'disable'>
+                  language: <value in [english, simch, japanese, ...] default: 'english'>
                   latitude: <value of string>
                   ldap-cache-timeout: <value of integer default: 86400>
                   ldapconntimeout: <value of integer default: 60000>
-                  lock-preempt: <value in [disable, enable] default: disable>
-                  log-checksum: <value in [none, md5, md5-auth] default: none>
+                  lock-preempt: <value in [disable, enable] default: 'disable'>
+                  log-checksum: <value in [none, md5, md5-auth] default: 'none'>
                   log-forward-cache-size: <value of integer default: 0>
                   longitude: <value of string>
                   max-log-forward: <value of integer default: 5>
                   max-running-reports: <value of integer default: 1>
-                  oftp-ssl-protocol: <value in [sslv3, tlsv1.0, tlsv1.1, ...] default: tlsv1.2>
-                  partial-install: <value in [disable, enable] default: disable>
-                  partial-install-force: <value in [disable, enable] default: disable>
-                  partial-install-rev: <value in [disable, enable] default: disable>
-                  perform-improve-by-ha: <value in [disable, enable] default: disable>
-                  policy-hit-count: <value in [disable, enable] default: disable>
-                  policy-object-in-dual-pane: <value in [disable, enable] default: disable>
-                  pre-login-banner: <value in [disable, enable] default: disable>
+                  oftp-ssl-protocol: <value in [sslv3, tlsv1.0, tlsv1.1, ...] default: 'tlsv1.2'>
+                  partial-install: <value in [disable, enable] default: 'disable'>
+                  partial-install-force: <value in [disable, enable] default: 'disable'>
+                  partial-install-rev: <value in [disable, enable] default: 'disable'>
+                  perform-improve-by-ha: <value in [disable, enable] default: 'disable'>
+                  policy-hit-count: <value in [disable, enable] default: 'disable'>
+                  policy-object-in-dual-pane: <value in [disable, enable] default: 'disable'>
+                  pre-login-banner: <value in [disable, enable] default: 'disable'>
                   pre-login-banner-message: <value of string>
                   remoteauthtimeout: <value of integer default: 10>
-                  search-all-adoms: <value in [disable, enable] default: disable>
-                  ssl-low-encryption: <value in [disable, enable] default: disable>
-                  ssl-protocol: 
-                   - <value in [tlsv1.2, tlsv1.1, tlsv1.0, ...]>
-                  ssl-static-key-ciphers: <value in [disable, enable] default: enable>
+                  search-all-adoms: <value in [disable, enable] default: 'disable'>
+                  ssl-low-encryption: <value in [disable, enable] default: 'disable'>
+                  ssl-protocol:
+                    - <value in [tlsv1.2, tlsv1.1, tlsv1.0, ...]>
+                  ssl-static-key-ciphers: <value in [disable, enable] default: 'enable'>
                   task-list-size: <value of integer default: 2000>
-                  tftp: <value in [disable, enable] default: disable>
-                  timezone: <value in [00, 01, 02, ...] default: 04>
+                  tftp: <value in [disable, enable] default: 'disable'>
+                  timezone: <value in [00, 01, 02, ...] default: '04'>
                   tunnel-mtu: <value of integer default: 1500>
-                  usg: <value in [disable, enable] default: disable>
-                  vdom-mirror: <value in [disable, enable] default: disable>
-                  webservice-proto: 
-                   - <value in [tlsv1.2, tlsv1.1, tlsv1.0, ...]>
+                  usg: <value in [disable, enable] default: 'disable'>
+                  vdom-mirror: <value in [disable, enable] default: 'disable'>
+                  webservice-proto:
+                    - <value in [tlsv1.2, tlsv1.1, tlsv1.0, ...]>
                   workflow-max-sessions: <value of integer default: 500>
-                  workspace-mode: <value in [disabled, normal, workflow] default: disabled>
+                  workspace-mode: <value in [disabled, normal, workflow] default: 'disabled'>
 
 '''
 
@@ -840,7 +840,7 @@ return_of_api_category_0:
                   'ADOM mode.'
                   'normal - Normal ADOM mode.'
                   'advanced - Advanced ADOM mode.'
-               example: normal
+               example: 'normal'
             adom-rev-auto-delete:
                type: str
                description: |
@@ -848,7 +848,7 @@ return_of_api_category_0:
                   'disable - Disable auto delete function for ADOM revision.'
                   'by-revisions - Auto delete ADOM revisions by maximum number of revisions.'
                   'by-days - Auto delete ADOM revisions by maximum days.'
-               example: by-revisions
+               example: 'by-revisions'
             adom-rev-max-backup-revisions:
                type: int
                description: 'Maximum number of ADOM revisions to backup.'
@@ -867,14 +867,14 @@ return_of_api_category_0:
                   'Enable/disable select ADOM after login.'
                   'disable - Disable select ADOM after login.'
                   'enable - Enable select ADOM after login.'
-               example: enable
+               example: 'enable'
             adom-status:
                type: str
                description: |
                   'ADOM status.'
                   'disable - Disable ADOM mode.'
                   'enable - Enable ADOM mode.'
-               example: disable
+               example: 'disable'
             clt-cert-req:
                type: str
                description: |
@@ -882,35 +882,35 @@ return_of_api_category_0:
                   'disable - Disable setting.'
                   'enable - Require client certificate for GUI login.'
                   'optional - Optional client certificate for GUI login.'
-               example: disable
+               example: 'disable'
             console-output:
                type: str
                description: |
                   'Console output mode.'
                   'standard - Standard output.'
                   'more - More page output.'
-               example: standard
+               example: 'standard'
             country-flag:
                type: str
                description: |
                   'Country flag Status.'
                   'disable - Disable country flag icon beside ip address.'
                   'enable - Enable country flag icon beside ip address.'
-               example: enable
+               example: 'enable'
             create-revision:
                type: str
                description: |
                   'Enable/disable create revision by default.'
                   'disable - Disable create revision by default.'
                   'enable - Enable create revision by default.'
-               example: disable
+               example: 'disable'
             daylightsavetime:
                type: str
                description: |
                   'Enable/disable daylight saving time.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             default-disk-quota:
                type: int
                description: 'Default disk quota for registered device (MB).'
@@ -921,14 +921,14 @@ return_of_api_category_0:
                   'Detect unregistered logging device from log message.'
                   'disable - Disable attribute function.'
                   'enable - Enable attribute function.'
-               example: enable
+               example: 'enable'
             device-view-mode:
                type: str
                description: |
                   'Set devices/groups view mode.'
                   'regular - Regular view mode.'
                   'tree - Tree view mode.'
-               example: regular
+               example: 'regular'
             dh-params:
                type: str
                description: |
@@ -940,7 +940,7 @@ return_of_api_category_0:
                   '4096 - 4096 bits.'
                   '6144 - 6144 bits.'
                   '8192 - 8192 bits.'
-               example: 2048
+               example: '2048'
             disable-module:
                type: array
                suboptions:
@@ -952,14 +952,14 @@ return_of_api_category_0:
                   'low - SSL communication using all available encryption algorithms.'
                   'medium - SSL communication using high and medium encryption algorithms.'
                   'high - SSL communication using high encryption algorithms.'
-               example: high
+               example: 'high'
             faz-status:
                type: str
                description: |
                   'FAZ status.'
                   'disable - Disable FAZ feature.'
                   'enable - Enable FAZ feature.'
-               example: disable
+               example: 'disable'
             fgfm-local-cert:
                type: str
                description: 'set the fgfm local certificate.'
@@ -971,14 +971,14 @@ return_of_api_category_0:
                   'tlsv1.0 - set TLSv1.0 as the lowest version.'
                   'tlsv1.1 - set TLSv1.1 as the lowest version.'
                   'tlsv1.2 - set TLSv1.2 as the lowest version (default).'
-               example: tlsv1.2
+               example: 'tlsv1.2'
             ha-member-auto-grouping:
                type: str
                description: |
                   'Enable/disable automatically group HA members feature'
                   'disable - Disable automatically grouping HA members feature.'
                   'enable - Enable automatically grouping HA members only when group name is unique in your network.'
-               example: enable
+               example: 'enable'
             hitcount_concurrent:
                type: int
                description: 'The number of FortiGates that FortiManager polls at one time (10 - 500, default = 100).'
@@ -990,14 +990,14 @@ return_of_api_category_0:
             hostname:
                type: str
                description: 'System hostname.'
-               example: FMG-VM64
+               example: 'FMG-VM64'
             import-ignore-addr-cmt:
                type: str
                description: |
                   'Enable/Disable import ignore of address comments.'
                   'disable - Disable import ignore of address comments.'
                   'enable - Enable import ignore of address comments.'
-               example: disable
+               example: 'disable'
             language:
                type: str
                description: |
@@ -1008,7 +1008,7 @@ return_of_api_category_0:
                   'korean - Korean'
                   'spanish - Spanish'
                   'trach - Traditional Chinese'
-               example: english
+               example: 'english'
             latitude:
                type: str
                description: 'fmg location latitude'
@@ -1026,7 +1026,7 @@ return_of_api_category_0:
                   'Enable/disable ADOM lock override.'
                   'disable - Disable lock preempt.'
                   'enable - Enable lock preempt.'
-               example: disable
+               example: 'disable'
             log-checksum:
                type: str
                description: |
@@ -1034,7 +1034,7 @@ return_of_api_category_0:
                   'none - No record log file checksum.'
                   'md5 - Record log files MD5 hash value only.'
                   'md5-auth - Record log files MD5 hash value and authentication code.'
-               example: none
+               example: 'none'
             log-forward-cache-size:
                type: int
                description: 'Log forwarding disk cache size (GB).'
@@ -1058,56 +1058,56 @@ return_of_api_category_0:
                   'tlsv1.0 - set TLSv1.0 as the lowest version.'
                   'tlsv1.1 - set TLSv1.1 as the lowest version.'
                   'tlsv1.2 - set TLSv1.2 as the lowest version (default).'
-               example: tlsv1.2
+               example: 'tlsv1.2'
             partial-install:
                type: str
                description: |
                   'Enable/Disable partial install (install some objects).'
                   'disable - Disable partial install function.'
                   'enable - Enable partial install function.'
-               example: disable
+               example: 'disable'
             partial-install-force:
                type: str
                description: |
                   'Enable/Disable partial install when devdb is modified.'
                   'disable - Disable partial install when devdb is modified.'
                   'enable - Enable partial install when devdb is modified.'
-               example: disable
+               example: 'disable'
             partial-install-rev:
                type: str
                description: |
                   'Enable/Disable auto creating adom revision for partial install.'
                   'disable - Disable partial install revision.'
                   'enable - Enable partial install revision.'
-               example: disable
+               example: 'disable'
             perform-improve-by-ha:
                type: str
                description: |
                   'Enable/Disable performance improvement by distributing tasks to HA slaves.'
                   'disable - Disable performance improvement by HA.'
                   'enable - Enable performance improvement by HA.'
-               example: disable
+               example: 'disable'
             policy-hit-count:
                type: str
                description: |
                   'show policy hit count.'
                   'disable - Disable policy hit count.'
                   'enable - Enable policy hit count.'
-               example: disable
+               example: 'disable'
             policy-object-in-dual-pane:
                type: str
                description: |
                   'show policies and objects in dual pane.'
                   'disable - Disable polices and objects in dual pane.'
                   'enable - Enable polices and objects in dual pane.'
-               example: disable
+               example: 'disable'
             pre-login-banner:
                type: str
                description: |
                   'Enable/disable pre-login banner.'
                   'disable - Disable pre-login banner.'
                   'enable - Enable pre-login banner.'
-               example: disable
+               example: 'disable'
             pre-login-banner-message:
                type: str
                description: 'Pre-login banner message.'
@@ -1121,14 +1121,14 @@ return_of_api_category_0:
                   'Enable/Disable Search all ADOMs for where-used query.'
                   'disable - Disable search all ADOMs for where-used queries.'
                   'enable - Enable search all ADOMs for where-used queries.'
-               example: disable
+               example: 'disable'
             ssl-low-encryption:
                type: str
                description: |
                   'SSL low-grade encryption.'
                   'disable - Disable SSL low-grade encryption.'
                   'enable - Enable SSL low-grade encryption.'
-               example: disable
+               example: 'disable'
             ssl-protocol:
                type: array
                suboptions:
@@ -1139,7 +1139,7 @@ return_of_api_category_0:
                   'Enable/disable SSL static key ciphers.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             task-list-size:
                type: int
                description: 'Maximum number of completed tasks to keep.'
@@ -1150,7 +1150,7 @@ return_of_api_category_0:
                   'Enable/disable TFTP in `exec restore image` command (disabled by default in FIPS mode)'
                   'disable - Disable TFTP'
                   'enable - Enable TFTP'
-               example: disable
+               example: 'disable'
             timezone:
                type: str
                description: |
@@ -1245,7 +1245,7 @@ return_of_api_category_0:
                   '87 - (GMT) Casablanca.'
                   '88 - (GMT+3:00) Moscow.'
                   '89 - (GMT) Greenwich Mean Time.'
-               example: 04
+               example: '04'
             tunnel-mtu:
                type: int
                description: 'Maximum transportation unit(68 - 9000).'
@@ -1256,14 +1256,14 @@ return_of_api_category_0:
                   'Enable/disable Fortiguard server restriction.'
                   'disable - Contact any Fortiguard server'
                   'enable - Contact Fortiguard server in USA only'
-               example: disable
+               example: 'disable'
             vdom-mirror:
                type: str
                description: |
                   'VDOM mirror.'
                   'disable - Disable VDOM mirror function.'
                   'enable - Enable VDOM mirror function.'
-               example: disable
+               example: 'disable'
             webservice-proto:
                type: array
                suboptions:
@@ -1279,7 +1279,7 @@ return_of_api_category_0:
                   'disabled - Workspace disabled.'
                   'normal - Workspace lock mode.'
                   'workflow - Workspace workflow mode.'
-               example: disabled
+               example: 'disabled'
          status:
             code:
                type: int
@@ -1287,7 +1287,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/global
+            example: '/cli/global/system/global'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -1302,7 +1302,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/global
+            example: '/cli/global/system/global'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -1313,6 +1313,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/global'
@@ -1321,7 +1322,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -1347,7 +1348,6 @@ def main():
                         },
                         'adom-mode': {
                             'type': 'string',
-                            'default': 'normal',
                             'enum': [
                                 'normal',
                                 'advanced'
@@ -1355,7 +1355,6 @@ def main():
                         },
                         'adom-rev-auto-delete': {
                             'type': 'string',
-                            'default': 'by-revisions',
                             'enum': [
                                 'disable',
                                 'by-revisions',
@@ -1379,7 +1378,6 @@ def main():
                         },
                         'adom-select': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1387,7 +1385,6 @@ def main():
                         },
                         'adom-status': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1395,7 +1392,6 @@ def main():
                         },
                         'clt-cert-req': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable',
@@ -1404,7 +1400,6 @@ def main():
                         },
                         'console-output': {
                             'type': 'string',
-                            'default': 'standard',
                             'enum': [
                                 'standard',
                                 'more'
@@ -1412,7 +1407,6 @@ def main():
                         },
                         'country-flag': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1420,7 +1414,6 @@ def main():
                         },
                         'create-revision': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1428,7 +1421,6 @@ def main():
                         },
                         'daylightsavetime': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1441,7 +1433,6 @@ def main():
                         },
                         'detect-unregistered-log-device': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1449,7 +1440,6 @@ def main():
                         },
                         'device-view-mode': {
                             'type': 'string',
-                            'default': 'regular',
                             'enum': [
                                 'regular',
                                 'tree'
@@ -1457,7 +1447,6 @@ def main():
                         },
                         'dh-params': {
                             'type': 'string',
-                            'default': '2048',
                             'enum': [
                                 '1024',
                                 '1536',
@@ -1479,7 +1468,6 @@ def main():
                         },
                         'enc-algorithm': {
                             'type': 'string',
-                            'default': 'high',
                             'enum': [
                                 'low',
                                 'medium',
@@ -1488,7 +1476,6 @@ def main():
                         },
                         'faz-status': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1499,7 +1486,6 @@ def main():
                         },
                         'fgfm-ssl-protocol': {
                             'type': 'string',
-                            'default': 'tlsv1.2',
                             'enum': [
                                 'sslv3',
                                 'tlsv1.0',
@@ -1509,7 +1495,6 @@ def main():
                         },
                         'ha-member-auto-grouping': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1526,12 +1511,10 @@ def main():
                             'example': 300
                         },
                         'hostname': {
-                            'type': 'string',
-                            'default': 'FMG-VM64'
+                            'type': 'string'
                         },
                         'import-ignore-addr-cmt': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1539,7 +1522,6 @@ def main():
                         },
                         'language': {
                             'type': 'string',
-                            'default': 'english',
                             'enum': [
                                 'english',
                                 'simch',
@@ -1564,7 +1546,6 @@ def main():
                         },
                         'lock-preempt': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1572,7 +1553,6 @@ def main():
                         },
                         'log-checksum': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'md5',
@@ -1599,7 +1579,6 @@ def main():
                         },
                         'oftp-ssl-protocol': {
                             'type': 'string',
-                            'default': 'tlsv1.2',
                             'enum': [
                                 'sslv3',
                                 'tlsv1.0',
@@ -1609,7 +1588,6 @@ def main():
                         },
                         'partial-install': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1617,7 +1595,6 @@ def main():
                         },
                         'partial-install-force': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1625,7 +1602,6 @@ def main():
                         },
                         'partial-install-rev': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1633,7 +1609,6 @@ def main():
                         },
                         'perform-improve-by-ha': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1641,7 +1616,6 @@ def main():
                         },
                         'policy-hit-count': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1649,7 +1623,6 @@ def main():
                         },
                         'policy-object-in-dual-pane': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1657,7 +1630,6 @@ def main():
                         },
                         'pre-login-banner': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1673,7 +1645,6 @@ def main():
                         },
                         'search-all-adoms': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1681,7 +1652,6 @@ def main():
                         },
                         'ssl-low-encryption': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1701,7 +1671,6 @@ def main():
                         },
                         'ssl-static-key-ciphers': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1714,7 +1683,6 @@ def main():
                         },
                         'tftp': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1722,7 +1690,6 @@ def main():
                         },
                         'timezone': {
                             'type': 'string',
-                            'default': '04',
                             'enum': [
                                 '00',
                                 '01',
@@ -1823,7 +1790,6 @@ def main():
                         },
                         'usg': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1831,7 +1797,6 @@ def main():
                         },
                         'vdom-mirror': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1857,7 +1822,6 @@ def main():
                         },
                         'workspace-mode': {
                             'type': 'string',
-                            'default': 'disabled',
                             'enum': [
                                 'disabled',
                                 'normal',
@@ -1881,7 +1845,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -1901,8 +1864,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -1923,14 +1886,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

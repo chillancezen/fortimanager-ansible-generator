@@ -30,7 +30,6 @@ description:
     - /pm/config/adom/{adom}/obj/firewall/vip6
     - /pm/config/global/obj/firewall/vip6
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -45,7 +44,7 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
-    url_params: 
+    url_params:
         description: the parameters in url path
         required: True
         type: dict
@@ -354,7 +353,7 @@ options:
                                     - 'enable'
                     extip:
                         type: str
-                        description: 'IP address or address range on the external interface that you want to map to an address or address range on the destination network.'
+                        description: 'IP address or address range on the external interface that you want to map to an address or address range on the desti...'
                     extport:
                         type: str
                         description: 'Incoming port number range that you want to map to a port number range on the destination network.'
@@ -378,7 +377,7 @@ options:
                         description: 'Limit HTTP cookie persistence to the specified path.'
                     http-cookie-share:
                         type: str
-                        description: 'Control sharing of cookies across virtual servers. same-ip means a cookie from one virtual server can be used by another. Disable stops cookie sharing.'
+                        description: 'Control sharing of cookies across virtual servers. same-ip means a cookie from one virtual server can be used by anoth...'
                         choices:
                             - 'disable'
                             - 'same-ip'
@@ -390,7 +389,7 @@ options:
                             - 'enable'
                     http-ip-header-name:
                         type: str
-                        description: 'For HTTP multiplexing, enter a custom HTTPS header name. The original client IP address is added to this header. If empty, X-Forwarded-For is used.'
+                        description: 'For HTTP multiplexing, enter a custom HTTPS header name. The original client IP address is added to this header. If em...'
                     http-multiplex:
                         type: str
                         description: 'Enable/disable HTTP multiplexing.'
@@ -440,7 +439,7 @@ options:
                             - 'enable'
                     persistence:
                         type: str
-                        description: 'Configure how to make sure that clients connect to the same server every time they make a request that is part of the same session.'
+                        description: 'Configure how to make sure that clients connect to the same server every time they make a request that is part of the ...'
                         choices:
                             - 'none'
                             - 'http-cookie'
@@ -484,7 +483,7 @@ options:
                                 description: 'IPv6 address of the real server.'
                             max-connections:
                                 type: int
-                                description: 'Max number of active connections that can directed to the real server. When reached, sessions are sent to other real servers.'
+                                description: 'Max number of active connections that can directed to the real server. When reached, sessions are sent to othe...'
                             monitor:
                                 type: str
                                 description: 'Name of the health check monitor to use when polling to determine a virtual servers connectivity status.'
@@ -493,14 +492,14 @@ options:
                                 description: 'Port for communicating with the real server. Required if port forwarding is enabled.'
                             status:
                                 type: str
-                                description: 'Set the status of the real server to active so that it can accept traffic, or on standby or disabled so no traffic is sent.'
+                                description: 'Set the status of the real server to active so that it can accept traffic, or on standby or disabled so no tra...'
                                 choices:
                                     - 'active'
                                     - 'standby'
                                     - 'disable'
                             weight:
                                 type: int
-                                description: 'Weight of the real server. If weighted load balancing is enabled, the server with the highest weight gets more connections.'
+                                description: 'Weight of the real server. If weighted load balancing is enabled, the server with the highest weight gets more...'
                     server-type:
                         type: str
                         description: 'Protocol to be load balanced by the virtual server (also called the server load balance virtual IP).'
@@ -719,20 +718,20 @@ options:
                             - 'tls-1.2'
                     ssl-mode:
                         type: str
-                        description: 'Apply SSL offloading between the client and the FortiGate (half) or from the client to the FortiGate and from the FortiGate to the server (full).'
+                        description: 'Apply SSL offloading between the client and the FortiGate (half) or from the client to the FortiGate and from the Fort...'
                         choices:
                             - 'half'
                             - 'full'
                     ssl-pfs:
                         type: str
-                        description: 'Select the cipher suites that can be used for SSL perfect forward secrecy (PFS). Applies to both client and server sessions.'
+                        description: 'Select the cipher suites that can be used for SSL perfect forward secrecy (PFS). Applies to both client and server ses...'
                         choices:
                             - 'require'
                             - 'deny'
                             - 'allow'
                     ssl-send-empty-frags:
                         type: str
-                        description: 'Enable/disable sending empty fragments to avoid CBC IV attacks (SSL 3.0 & TLS 1.0 only). May need to be disabled for compatibility with older systems.'
+                        description: 'Enable/disable sending empty fragments to avoid CBC IV attacks (SSL 3.0 & TLS 1.0 only). May need to be disabled for c...'
                         choices:
                             - 'disable'
                             - 'enable'
@@ -985,7 +984,7 @@ options:
                     type: int
             sortings:
                 -
-                    \{attr_name\}:
+                    varidic.attr_name:
                         type: int
                         choices:
                             - 1
@@ -1001,22 +1000,23 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/firewall/vip6
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/VIP6
       fmgr_pm_config_obj_firewall_vip6:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      arp-reply: <value in [disable, enable]>
                      color: <value of integer>
                      comment: <value of string>
-                     dynamic_mapping: 
-                      - 
-                           _scope: 
-                            - 
+                     dynamic_mapping:
+                       -
+                           _scope:
+                             -
                                  name: <value of string>
                                  vdom: <value of string>
                            arp-reply: <value in [disable, enable]>
@@ -1045,8 +1045,8 @@ EXAMPLES = '''
                            portforward: <value in [disable, enable]>
                            protocol: <value in [tcp, udp, sctp]>
                            server-type: <value in [http, https, ssl, ...]>
-                           src-filter: 
-                            - <value of string>
+                           src-filter:
+                             - <value of string>
                            ssl-algorithm: <value in [high, low, medium, ...]>
                            ssl-certificate: <value of string>
                            ssl-client-fallback: <value in [disable, enable]>
@@ -1104,8 +1104,8 @@ EXAMPLES = '''
                      persistence: <value in [none, http-cookie, ssl-session-id]>
                      portforward: <value in [disable, enable]>
                      protocol: <value in [tcp, udp, sctp]>
-                     realservers: 
-                      - 
+                     realservers:
+                       -
                            client-ip: <value of string>
                            healthcheck: <value in [disable, enable, vip]>
                            holddown-interval: <value of integer>
@@ -1118,16 +1118,16 @@ EXAMPLES = '''
                            status: <value in [active, standby, disable]>
                            weight: <value of integer>
                      server-type: <value in [http, https, ssl, ...]>
-                     src-filter: 
-                      - <value of string>
+                     src-filter:
+                       - <value of string>
                      ssl-algorithm: <value in [high, low, medium, ...]>
                      ssl-certificate: <value of string>
-                     ssl-cipher-suites: 
-                      - 
+                     ssl-cipher-suites:
+                       -
                            cipher: <value in [TLS-RSA-WITH-RC4-128-MD5, TLS-RSA-WITH-RC4-128-SHA, TLS-RSA-WITH-DES-CBC-SHA, ...]>
                            priority: <value of integer>
-                           versions: 
-                            - <value in [ssl-3.0, tls-1.0, tls-1.1, ...]>
+                           versions:
+                             - <value in [ssl-3.0, tls-1.0, tls-1.1, ...]>
                      ssl-client-fallback: <value in [disable, enable]>
                      ssl-client-renegotiation: <value in [deny, allow, secure]>
                      ssl-client-session-state-max: <value of integer>
@@ -1151,12 +1151,12 @@ EXAMPLES = '''
                      ssl-pfs: <value in [require, deny, allow]>
                      ssl-send-empty-frags: <value in [disable, enable]>
                      ssl-server-algorithm: <value in [high, low, medium, ...]>
-                     ssl-server-cipher-suites: 
-                      - 
+                     ssl-server-cipher-suites:
+                       -
                            cipher: <value in [TLS-RSA-WITH-RC4-128-MD5, TLS-RSA-WITH-RC4-128-SHA, TLS-RSA-WITH-DES-CBC-SHA, ...]>
                            priority: <value of integer>
-                           versions: 
-                            - <value in [ssl-3.0, tls-1.0, tls-1.1, ...]>
+                           versions:
+                             - <value in [ssl-3.0, tls-1.0, tls-1.1, ...]>
                      ssl-server-max-version: <value in [ssl-3.0, tls-1.0, tls-1.1, ...]>
                      ssl-server-min-version: <value in [ssl-3.0, tls-1.0, tls-1.1, ...]>
                      ssl-server-session-state-max: <value of integer>
@@ -1166,27 +1166,28 @@ EXAMPLES = '''
                      uuid: <value of string>
                      weblogic-server: <value in [disable, enable]>
                      websphere-server: <value in [disable, enable]>
-    - name: send request to /pm/config/obj/firewall/vip6
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/VIP6
       fmgr_pm_config_obj_firewall_vip6:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [arp-reply, color, comment, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [arp-reply, color, comment, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 '''
 
@@ -1205,7 +1206,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/firewall/vip6
+            example: '/pm/config/adom/{adom}/obj/firewall/vip6'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -1361,7 +1362,7 @@ return_of_api_category_0:
                         type: str
                extip:
                   type: str
-                  description: 'IP address or address range on the external interface that you want to map to an address or address range on the destination network.'
+                  description: 'IP address or address range on the external interface that you want to map to an address or address range on the destination...'
                extport:
                   type: str
                   description: 'Incoming port number range that you want to map to a port number range on the destination network.'
@@ -1382,13 +1383,13 @@ return_of_api_category_0:
                   description: 'Limit HTTP cookie persistence to the specified path.'
                http-cookie-share:
                   type: str
-                  description: 'Control sharing of cookies across virtual servers. same-ip means a cookie from one virtual server can be used by another. Disable stops cookie sharing.'
+                  description: 'Control sharing of cookies across virtual servers. same-ip means a cookie from one virtual server can be used by another. Di...'
                http-ip-header:
                   type: str
                   description: 'For HTTP multiplexing, enable to add the original client IP address in the XForwarded-For HTTP header.'
                http-ip-header-name:
                   type: str
-                  description: 'For HTTP multiplexing, enter a custom HTTPS header name. The original client IP address is added to this header. If empty, X-Forwarded-For is used.'
+                  description: 'For HTTP multiplexing, enter a custom HTTPS header name. The original client IP address is added to this header. If empty, X...'
                http-multiplex:
                   type: str
                   description: 'Enable/disable HTTP multiplexing.'
@@ -1421,7 +1422,7 @@ return_of_api_category_0:
                   description: 'Enable to add the Front-End-Https header for Microsoft Outlook Web Access.'
                persistence:
                   type: str
-                  description: 'Configure how to make sure that clients connect to the same server every time they make a request that is part of the same session.'
+                  description: 'Configure how to make sure that clients connect to the same server every time they make a request that is part of the same s...'
                portforward:
                   type: str
                   description: 'Enable port forwarding.'
@@ -1451,7 +1452,7 @@ return_of_api_category_0:
                         description: 'IPv6 address of the real server.'
                      max-connections:
                         type: int
-                        description: 'Max number of active connections that can directed to the real server. When reached, sessions are sent to other real servers.'
+                        description: 'Max number of active connections that can directed to the real server. When reached, sessions are sent to other real s...'
                      monitor:
                         type: str
                         description: 'Name of the health check monitor to use when polling to determine a virtual servers connectivity status.'
@@ -1460,10 +1461,10 @@ return_of_api_category_0:
                         description: 'Port for communicating with the real server. Required if port forwarding is enabled.'
                      status:
                         type: str
-                        description: 'Set the status of the real server to active so that it can accept traffic, or on standby or disabled so no traffic is sent.'
+                        description: 'Set the status of the real server to active so that it can accept traffic, or on standby or disabled so no traffic is ...'
                      weight:
                         type: int
-                        description: 'Weight of the real server. If weighted load balancing is enabled, the server with the highest weight gets more connections.'
+                        description: 'Weight of the real server. If weighted load balancing is enabled, the server with the highest weight gets more connect...'
                server-type:
                   type: str
                   description: 'Protocol to be load balanced by the virtual server (also called the server load balance virtual IP).'
@@ -1549,13 +1550,13 @@ return_of_api_category_0:
                   description: 'Lowest SSL/TLS version acceptable from a client.'
                ssl-mode:
                   type: str
-                  description: 'Apply SSL offloading between the client and the FortiGate (half) or from the client to the FortiGate and from the FortiGate to the server (full).'
+                  description: 'Apply SSL offloading between the client and the FortiGate (half) or from the client to the FortiGate and from the FortiGate ...'
                ssl-pfs:
                   type: str
                   description: 'Select the cipher suites that can be used for SSL perfect forward secrecy (PFS). Applies to both client and server sessions.'
                ssl-send-empty-frags:
                   type: str
-                  description: 'Enable/disable sending empty fragments to avoid CBC IV attacks (SSL 3.0 & TLS 1.0 only). May need to be disabled for compatibility with older systems.'
+                  description: 'Enable/disable sending empty fragments to avoid CBC IV attacks (SSL 3.0 & TLS 1.0 only). May need to be disabled for compati...'
                ssl-server-algorithm:
                   type: str
                   description: 'Permitted encryption algorithms for the server side of SSL full mode sessions according to encryption strength.'
@@ -1606,7 +1607,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/firewall/vip6
+            example: '/pm/config/adom/{adom}/obj/firewall/vip6'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -1616,6 +1617,7 @@ from ansible.module_utils.network.fortimanager.common import DEFAULT_RESULT_OBJ
 from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
+
 
 def main():
     jrpc_urls = [
@@ -1630,7 +1632,7 @@ def main():
         }
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -2798,7 +2800,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -2819,8 +2820,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -2841,14 +2842,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

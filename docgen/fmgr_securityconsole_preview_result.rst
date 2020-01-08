@@ -73,12 +73,13 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /securityconsole/preview/result
+
+    - name: REQUESTING /SECURITYCONSOLE/PREVIEW/RESULT
       fmgr_securityconsole_preview_result:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   adom: <value of string>
                   device: <value of string>
 

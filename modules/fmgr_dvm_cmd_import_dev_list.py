@@ -30,7 +30,6 @@ description:
     - /dvm/cmd/import/dev-list
     - /dvm/cmd/import/dev-list
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -489,25 +488,26 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvm/cmd/import/dev-list
+
+    - name: REQUESTING /DVM/CMD/IMPORT/DEV-LIST
       fmgr_dvm_cmd_import_dev_list:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   adom: <value of string>
-                  flags: 
-                   - <value in [none, create_task, nonblocking, ...]>
-                  import-adom-members: 
-                   - 
+                  flags:
+                    - <value in [none, create_task, nonblocking, ...]>
+                  import-adom-members:
+                    -
                         adom: <value of string>
                         dev: <value of string>
                         vdom: <value of string>
-                  import-adoms: 
-                   - 
+                  import-adoms:
+                    -
                         desc: <value of string>
-                        flags: 
-                         - <value in [migration, db_export, no_vpn_console, ...]>
+                        flags:
+                          - <value in [migration, db_export, no_vpn_console, ...]>
                         log_db_retention_hours: <value of integer default: 1440>
                         log_disk_quota: <value of integer>
                         log_disk_quota_alert_thres: <value of integer default: 90>
@@ -515,19 +515,19 @@ EXAMPLES = '''
                         log_file_retention_hours: <value of integer default: 8760>
                         meta fields: <value of string>
                         mig_mr: <value of integer default: 2>
-                        mig_os_ver: <value in [unknown, 0.0, 1.0, ...] default: 6.0>
-                        mode: <value in [ems, gms, provider] default: gms>
+                        mig_os_ver: <value in [unknown, 0.0, 1.0, ...] default: '6.0'>
+                        mode: <value in [ems, gms, provider] default: 'gms'>
                         mr: <value of integer default: 2>
                         name: <value of string>
-                        os_ver: <value in [unknown, 0.0, 1.0, ...] default: 6.0>
-                        restricted_prds: 
-                         - <value in [fos, foc, fml, ...]>
+                        os_ver: <value in [unknown, 0.0, 1.0, ...] default: '6.0'>
+                        restricted_prds:
+                          - <value in [fos, foc, fml, ...]>
                         state: <value of integer default: 1>
                         uuid: <value of string>
-                  import-devices: 
-                   - 
-                        adm_pass: 
-                         - <value of string>
+                  import-devices:
+                    -
+                        adm_pass:
+                          - <value of string>
                         adm_usr: <value of string>
                         app_ver: <value of string>
                         av_ver: <value of string>
@@ -535,38 +535,38 @@ EXAMPLES = '''
                         branch_pt: <value of integer>
                         build: <value of integer>
                         checksum: <value of string>
-                        conf_status: <value in [unknown, insync, outofsync] default: unknown>
-                        conn_mode: <value in [active, passive] default: passive>
-                        conn_status: <value in [UNKNOWN, up, down] default: UNKNOWN>
-                        db_status: <value in [unknown, nomod, mod] default: unknown>
+                        conf_status: <value in [unknown, insync, outofsync] default: 'unknown'>
+                        conn_mode: <value in [active, passive] default: 'passive'>
+                        conn_status: <value in [UNKNOWN, up, down] default: 'UNKNOWN'>
+                        db_status: <value in [unknown, nomod, mod] default: 'unknown'>
                         desc: <value of string>
-                        dev_status: <value in [none, unknown, checkedin, ...] default: unknown>
+                        dev_status: <value in [none, unknown, checkedin, ...] default: 'unknown'>
                         fap_cnt: <value of integer>
                         faz.full_act: <value of integer>
                         faz.perm: <value of integer>
                         faz.quota: <value of integer>
                         faz.used: <value of integer>
                         fex_cnt: <value of integer>
-                        flags: 
-                         - <value in [has_hdd, vdom_enabled, discover, ...]>
+                        flags:
+                          - <value in [has_hdd, vdom_enabled, discover, ...]>
                         foslic_cpu: <value of integer>
-                        foslic_dr_site: <value in [disable, enable] default: disable>
+                        foslic_dr_site: <value in [disable, enable] default: 'disable'>
                         foslic_inst_time: <value of integer>
                         foslic_last_sync: <value of integer>
                         foslic_ram: <value of integer>
-                        foslic_type: <value in [temporary, trial, regular, ...] default: temporary>
-                        foslic_utm: 
-                         - <value in [fw, av, ips, ...]>
+                        foslic_type: <value in [temporary, trial, regular, ...] default: 'temporary'>
+                        foslic_utm:
+                          - <value in [fw, av, ips, ...]>
                         fsw_cnt: <value of integer>
                         ha_group_id: <value of integer>
                         ha_group_name: <value of string>
-                        ha_mode: <value in [standalone, AP, AA, ...] default: standalone>
-                        ha_slave: 
-                         - 
+                        ha_mode: <value in [standalone, AP, AA, ...] default: 'standalone'>
+                        ha_slave:
+                          -
                               idx: <value of integer>
                               name: <value of string>
                               prio: <value of integer>
-                              role: <value in [slave, master] default: slave>
+                              role: <value in [slave, master] default: 'slave'>
                               sn: <value of string>
                               status: <value of integer>
                         hdisk_size: <value of integer>
@@ -588,21 +588,21 @@ EXAMPLES = '''
                         meta fields: <value of string>
                         mgmt_id: <value of integer>
                         mgmt_if: <value of string>
-                        mgmt_mode: <value in [unreg, fmg, faz, ...] default: unreg>
+                        mgmt_mode: <value in [unreg, fmg, faz, ...] default: 'unreg'>
                         mgt_vdom: <value of string>
                         mr: <value of integer default: -1>
                         name: <value of string>
-                        os_type: <value in [unknown, fos, fsw, ...] default: unknown>
-                        os_ver: <value in [unknown, 0.0, 1.0, ...] default: unknown>
+                        os_type: <value in [unknown, fos, fsw, ...] default: 'unknown'>
+                        os_ver: <value in [unknown, 0.0, 1.0, ...] default: 'unknown'>
                         patch: <value of integer>
                         platform_str: <value of string>
                         psk: <value of string>
                         sn: <value of string>
-                        vdom: 
-                         - 
+                        vdom:
+                          -
                               comments: <value of string>
                               name: <value of string>
-                              opmode: <value in [nat, transparent] default: nat>
+                              opmode: <value in [nat, transparent] default: 'nat'>
                               rtm_prof_id: <value of integer>
                               status: <value of string>
                         version: <value of integer>
@@ -612,8 +612,8 @@ EXAMPLES = '''
                         vm_mem: <value of integer>
                         vm_mem_limit: <value of integer>
                         vm_status: <value of integer>
-                  import-group-members: 
-                   - 
+                  import-group-members:
+                    -
                         adom: <value of string>
                         dev: <value of string>
                         grp: <value of string>
@@ -643,7 +643,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /dvm/cmd/import/dev-list
+            example: '/dvm/cmd/import/dev-list'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -654,6 +654,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/dvm/cmd/import/dev-list',
@@ -663,7 +664,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -757,7 +758,6 @@ def main():
                                 },
                                 'mig_os_ver': {
                                     'type': 'string',
-                                    'default': '6.0',
                                     'enum': [
                                         'unknown',
                                         '0.0',
@@ -771,7 +771,6 @@ def main():
                                 },
                                 'mode': {
                                     'type': 'string',
-                                    'default': 'gms',
                                     'enum': [
                                         'ems',
                                         'gms',
@@ -788,7 +787,6 @@ def main():
                                 },
                                 'os_ver': {
                                     'type': 'string',
-                                    'default': '6.0',
                                     'enum': [
                                         'unknown',
                                         '0.0',
@@ -864,7 +862,6 @@ def main():
                                 },
                                 'conf_status': {
                                     'type': 'string',
-                                    'default': 'unknown',
                                     'enum': [
                                         'unknown',
                                         'insync',
@@ -873,7 +870,6 @@ def main():
                                 },
                                 'conn_mode': {
                                     'type': 'string',
-                                    'default': 'passive',
                                     'enum': [
                                         'active',
                                         'passive'
@@ -881,7 +877,6 @@ def main():
                                 },
                                 'conn_status': {
                                     'type': 'string',
-                                    'default': 'UNKNOWN',
                                     'enum': [
                                         'UNKNOWN',
                                         'up',
@@ -890,7 +885,6 @@ def main():
                                 },
                                 'db_status': {
                                     'type': 'string',
-                                    'default': 'unknown',
                                     'enum': [
                                         'unknown',
                                         'nomod',
@@ -902,7 +896,6 @@ def main():
                                 },
                                 'dev_status': {
                                     'type': 'string',
-                                    'default': 'unknown',
                                     'enum': [
                                         'none',
                                         'unknown',
@@ -964,7 +957,6 @@ def main():
                                 },
                                 'foslic_dr_site': {
                                     'type': 'string',
-                                    'default': 'disable',
                                     'enum': [
                                         'disable',
                                         'enable'
@@ -981,7 +973,6 @@ def main():
                                 },
                                 'foslic_type': {
                                     'type': 'string',
-                                    'default': 'temporary',
                                     'enum': [
                                         'temporary',
                                         'trial',
@@ -1015,7 +1006,6 @@ def main():
                                 },
                                 'ha_mode': {
                                     'type': 'string',
-                                    'default': 'standalone',
                                     'enum': [
                                         'standalone',
                                         'AP',
@@ -1040,7 +1030,6 @@ def main():
                                         },
                                         'role': {
                                             'type': 'string',
-                                            'default': 'slave',
                                             'enum': [
                                                 'slave',
                                                 'master'
@@ -1115,7 +1104,6 @@ def main():
                                 },
                                 'mgmt_mode': {
                                     'type': 'string',
-                                    'default': 'unreg',
                                     'enum': [
                                         'unreg',
                                         'fmg',
@@ -1136,7 +1124,6 @@ def main():
                                 },
                                 'os_type': {
                                     'type': 'string',
-                                    'default': 'unknown',
                                     'enum': [
                                         'unknown',
                                         'fos',
@@ -1157,7 +1144,6 @@ def main():
                                 },
                                 'os_ver': {
                                     'type': 'string',
-                                    'default': 'unknown',
                                     'enum': [
                                         'unknown',
                                         '0.0',
@@ -1192,7 +1178,6 @@ def main():
                                         },
                                         'opmode': {
                                             'type': 'string',
-                                            'default': 'nat',
                                             'enum': [
                                                 'nat',
                                                 'transparent'
@@ -1261,7 +1246,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -1279,8 +1263,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -1301,14 +1285,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

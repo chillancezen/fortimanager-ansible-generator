@@ -166,34 +166,35 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/user/fsso
+
+    - name: REQUESTING /PM/CONFIG/OBJ/USER/FSSO
       fmgr_pm_config_obj_user_fsso:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      _gui_meta: <value of string>
-                     dynamic_mapping: 
-                      - 
+                     dynamic_mapping:
+                       -
                            _gui_meta: <value of string>
-                           _scope: 
-                            - 
+                           _scope:
+                             -
                                  name: <value of string>
                                  vdom: <value of string>
                            ldap-server: <value of string>
-                           password: 
-                            - <value of string>
-                           password2: 
-                            - <value of string>
-                           password3: 
-                            - <value of string>
-                           password4: 
-                            - <value of string>
-                           password5: 
-                            - <value of string>
+                           password:
+                             - <value of string>
+                           password2:
+                             - <value of string>
+                           password3:
+                             - <value of string>
+                           password4:
+                             - <value of string>
+                           password5:
+                             - <value of string>
                            port: <value of integer>
                            port2: <value of integer>
                            port3: <value of integer>
@@ -212,16 +213,16 @@ Examples
                            user-info-server: <value of string>
                      ldap-server: <value of string>
                      name: <value of string>
-                     password: 
-                      - <value of string>
-                     password2: 
-                      - <value of string>
-                     password3: 
-                      - <value of string>
-                     password4: 
-                      - <value of string>
-                     password5: 
-                      - <value of string>
+                     password:
+                       - <value of string>
+                     password2:
+                       - <value of string>
+                     password3:
+                       - <value of string>
+                     password4:
+                       - <value of string>
+                     password5:
+                       - <value of string>
                      port: <value of integer>
                      port2: <value of integer>
                      port3: <value of integer>
@@ -234,27 +235,28 @@ Examples
                      server5: <value of string>
                      source-ip: <value of string>
                      source-ip6: <value of string>
-    - name: send request to /pm/config/obj/user/fsso
+
+    - name: REQUESTING /PM/CONFIG/OBJ/USER/FSSO
       fmgr_pm_config_obj_user_fsso:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [_gui_meta, ldap-server, name, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [_gui_meta, ldap-server, name, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

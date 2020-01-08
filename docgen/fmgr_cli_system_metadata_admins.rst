@@ -88,27 +88,29 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/metadata/admins
+
+    - name: REQUESTING /CLI/SYSTEM/METADATA/ADMINS
       fmgr_cli_system_metadata_admins:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     fieldlength: <value in [20, 50, 255] default: 50>
+            -
+               data:
+                 -
+                     fieldlength: <value in [20, 50, 255] default: '50'>
                      fieldname: <value of string>
-                     importance: <value in [optional, required] default: required>
-                     status: <value in [disabled, enabled] default: enabled>
-    - name: send request to /cli/system/metadata/admins
+                     importance: <value in [optional, required] default: 'required'>
+                     status: <value in [disabled, enabled] default: 'enabled'>
+
+    - name: REQUESTING /CLI/SYSTEM/METADATA/ADMINS
       fmgr_cli_system_metadata_admins:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [fieldlength, fieldname, importance, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [fieldlength, fieldname, importance, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

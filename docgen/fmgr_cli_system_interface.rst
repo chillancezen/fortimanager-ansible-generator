@@ -102,39 +102,41 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/interface
+
+    - name: REQUESTING /CLI/SYSTEM/INTERFACE
       fmgr_cli_system_interface:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      alias: <value of string>
-                     allowaccess: 
-                      - <value in [ping, https, ssh, ...]>
+                     allowaccess:
+                       - <value in [ping, https, ssh, ...]>
                      description: <value of string>
-                     ip: <value of string default: 0.0.0.0 0.0.0.0>
-                     ipv6: 
-                        ip6-address: <value of string default: ::/0>
-                        ip6-allowaccess: 
-                         - <value in [ping, https, ssh, ...]>
-                        ip6-autoconf: <value in [disable, enable] default: enable>
+                     ip: <value of string default: '0.0.0.0 0.0.0.0'>
+                     ipv6:
+                        ip6-address: <value of string default: '::/0'>
+                        ip6-allowaccess:
+                          - <value in [ping, https, ssh, ...]>
+                        ip6-autoconf: <value in [disable, enable] default: 'enable'>
                      mtu: <value of integer default: 1500>
                      name: <value of string>
-                     serviceaccess: 
-                      - <value in [fgtupdates, fclupdates, webfilter-antispam]>
-                     speed: <value in [auto, 10full, 10half, ...] default: auto>
-                     status: <value in [down, up] default: up>
-    - name: send request to /cli/system/interface
+                     serviceaccess:
+                       - <value in [fgtupdates, fclupdates, webfilter-antispam]>
+                     speed: <value in [auto, 10full, 10half, ...] default: 'auto'>
+                     status: <value in [down, up] default: 'up'>
+
+    - name: REQUESTING /CLI/SYSTEM/INTERFACE
       fmgr_cli_system_interface:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [alias, allowaccess, description, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [alias, allowaccess, description, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

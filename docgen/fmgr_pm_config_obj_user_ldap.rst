@@ -164,24 +164,25 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/user/ldap
+
+    - name: REQUESTING /PM/CONFIG/OBJ/USER/LDAP
       fmgr_pm_config_obj_user_ldap:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      account-key-filter: <value of string>
                      account-key-processing: <value in [same, strip]>
                      ca-cert: <value of string>
                      cnid: <value of string>
                      dn: <value of string>
-                     dynamic_mapping: 
-                      - 
-                           _scope: 
-                            - 
+                     dynamic_mapping:
+                       -
+                           _scope:
+                             -
                                  name: <value of string>
                                  vdom: <value of string>
                            account-key-filter: <value of string>
@@ -199,14 +200,14 @@ Examples
                            group-search-base: <value of string>
                            member-attr: <value of string>
                            obtain-user-info: <value in [disable, enable]>
-                           password: 
-                            - <value of string>
+                           password:
+                             - <value of string>
                            password-expiry-warning: <value in [disable, enable]>
                            password-renewal: <value in [disable, enable]>
                            port: <value of integer>
                            retrieve-protection-profile: <value of string>
-                           search-type: 
-                            - <value in [nested, recursive]>
+                           search-type:
+                             - <value in [nested, recursive]>
                            secondary-server: <value of string>
                            secure: <value in [disable, starttls, ldaps]>
                            server: <value of string>
@@ -223,8 +224,8 @@ Examples
                      group-search-base: <value of string>
                      member-attr: <value of string>
                      name: <value of string>
-                     password: 
-                      - <value of string>
+                     password:
+                       - <value of string>
                      password-expiry-warning: <value in [disable, enable]>
                      password-renewal: <value in [disable, enable]>
                      port: <value of integer>
@@ -237,27 +238,28 @@ Examples
                      tertiary-server: <value of string>
                      type: <value in [simple, anonymous, regular]>
                      username: <value of string>
-    - name: send request to /pm/config/obj/user/ldap
+
+    - name: REQUESTING /PM/CONFIG/OBJ/USER/LDAP
       fmgr_pm_config_obj_user_ldap:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [account-key-filter, account-key-processing, ca-cert, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [account-key-filter, account-key-processing, ca-cert, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

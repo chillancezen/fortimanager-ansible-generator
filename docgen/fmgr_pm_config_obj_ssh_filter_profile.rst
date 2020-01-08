@@ -114,23 +114,24 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/ssh-filter/profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SSH-FILTER/PROFILE
       fmgr_pm_config_obj_ssh_filter_profile:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
-                     block: 
-                      - <value in [x11, shell, exec, ...]>
+            -
+               data:
+                 -
+                     block:
+                       - <value in [x11, shell, exec, ...]>
                      default-command-log: <value in [disable, enable]>
-                     log: 
-                      - <value in [x11, shell, exec, ...]>
+                     log:
+                       - <value in [x11, shell, exec, ...]>
                      name: <value of string>
-                     shell-commands: 
-                      - 
+                     shell-commands:
+                       -
                            action: <value in [block, allow]>
                            alert: <value in [disable, enable]>
                            id: <value of integer>
@@ -138,27 +139,28 @@ Examples
                            pattern: <value of string>
                            severity: <value in [low, medium, high, ...]>
                            type: <value in [regex, simple]>
-    - name: send request to /pm/config/obj/ssh-filter/profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SSH-FILTER/PROFILE
       fmgr_pm_config_obj_ssh_filter_profile:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [block, default-command-log, log, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [block, default-command-log, log, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

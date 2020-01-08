@@ -81,19 +81,20 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/report/setting
+
+    - name: REQUESTING /CLI/SYSTEM/REPORT/SETTING
       fmgr_cli_system_report_setting:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  aggregate-report: <value in [disable, enable] default: disable>
-                  hcache-lossless: <value in [disable, enable] default: disable>
+            -
+               data:
+                  aggregate-report: <value in [disable, enable] default: 'disable'>
+                  hcache-lossless: <value in [disable, enable] default: 'disable'>
                   ldap-cache-timeout: <value of integer default: 60>
                   max-table-rows: <value of integer default: 10000>
-                  report-priority: <value in [high, low, auto] default: auto>
-                  template-auto-install: <value in [default, english] default: default>
-                  week-start: <value in [sun, mon] default: sun>
+                  report-priority: <value in [high, low, auto] default: 'auto'>
+                  template-auto-install: <value in [default, english] default: 'default'>
+                  week-start: <value in [sun, mon] default: 'sun'>
 
 
 

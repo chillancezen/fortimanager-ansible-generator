@@ -106,44 +106,46 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/system/object-tagging
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SYSTEM/OBJECT-TAGGING
       fmgr_pm_config_obj_system_object_tagging:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      address: <value in [optional, mandatory, disable]>
                      category: <value of string>
                      color: <value of integer>
                      device: <value in [optional, mandatory, disable]>
                      interface: <value in [optional, mandatory, disable]>
                      multiple: <value in [disable, enable]>
-                     tags: 
-                      - <value of string>
-    - name: send request to /pm/config/obj/system/object-tagging
+                     tags:
+                       - <value of string>
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SYSTEM/OBJECT-TAGGING
       fmgr_pm_config_obj_system_object_tagging:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [address, category, color, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [address, category, color, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

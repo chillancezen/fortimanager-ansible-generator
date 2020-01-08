@@ -107,15 +107,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/switch-controller/qos/dot1p-map
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SWITCH-CONTROLLER/QOS/DOT1P-MAP
       fmgr_pm_config_obj_switch_controller_qos_dot1p_map:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      description: <value of string>
                      name: <value of string>
                      priority-0: <value in [queue-0, queue-1, queue-2, ...]>
@@ -126,27 +127,28 @@ Examples
                      priority-5: <value in [queue-0, queue-1, queue-2, ...]>
                      priority-6: <value in [queue-0, queue-1, queue-2, ...]>
                      priority-7: <value in [queue-0, queue-1, queue-2, ...]>
-    - name: send request to /pm/config/obj/switch-controller/qos/dot1p-map
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SWITCH-CONTROLLER/QOS/DOT1P-MAP
       fmgr_pm_config_obj_switch_controller_qos_dot1p_map:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [description, name, priority-0, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [description, name, priority-0, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

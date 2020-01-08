@@ -105,39 +105,40 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/log/settings/rolling-analyzer
+
+    - name: REQUESTING /CLI/SYSTEM/LOG/SETTINGS/ROLLING-ANALYZER
       fmgr_cli_system_log_settings_rolling_analyzer:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  days: 
-                   - <value in [sun, mon, tue, ...]>
-                  del-files: <value in [disable, enable] default: disable>
+            -
+               data:
+                  days:
+                    - <value in [sun, mon, tue, ...]>
+                  del-files: <value in [disable, enable] default: 'disable'>
                   directory: <value of string>
                   file-size: <value of integer default: 200>
-                  gzip-format: <value in [disable, enable] default: disable>
+                  gzip-format: <value in [disable, enable] default: 'disable'>
                   hour: <value of integer default: 0>
-                  ip: <value of string default: 0.0.0.0>
-                  ip2: <value of string default: 0.0.0.0>
-                  ip3: <value of string default: 0.0.0.0>
-                  log-format: <value in [native, text, csv] default: native>
+                  ip: <value of string default: '0.0.0.0'>
+                  ip2: <value of string default: '0.0.0.0'>
+                  ip3: <value of string default: '0.0.0.0'>
+                  log-format: <value in [native, text, csv] default: 'native'>
                   min: <value of integer default: 0>
-                  password: 
-                   - <value of string default: ENC MzQ3NjYyODIxOTc1MTg3NhVVByJnhjVIRIq22N8+MG0by/Mxs5TUnkVnhHtwoRdEVnaNNj6P9rGxNsGaBAn2SVhBLt6V9QWnTm1fbC1hAWycBDzkxK37kTzWEwu5NE66yvC4sVh53l+CSOPZabxA2n7XCNB9Kce1X8EeGUr4PqPCtCej>
-                  password2: 
-                   - <value of string default: ENC MTAwODg0NTQxNDE5OTQwMaPdJv8JESXhogoJmBIvID8+U03pvD8I9Yr/Q1NGxPnlvLKVEOISmJ/IRPZauTQ/oJ5KlJE3LSzrXEOWAhn2mNaoS+nFbu0seQqMEhUdLbx41Q0yi4dCM9n3PF8RETPiFayOQ5sWWPRD7ALjlthRLogqkua5>
-                  password3: 
-                   - <value of string default: ENC MTMyOTA3MjY4MTgxMTk2N1UB1GKpBMmb5vgQRJTsjWS9sBfCvYmhBhdgf+ipyNKwY43YcyKBx3TaUcf6QLEdeVgFD2ymJHzfX99dusp8IfxNYj7ITnobzP+GcHYMOyPtjtcORJqwHTpEy9rnqCfy6nKz2Sdj1D1SnqOfRhn0R8sonnED>
-                  server-type: <value in [ftp, sftp, scp] default: ftp>
-                  upload: <value in [disable, enable] default: disable>
+                  password:
+                    - <value of string default: 'ENC MzQ3NjYyODIxOTc1MTg3NhVVByJnhjVIRIq22N8+MG0by/Mxs5TUnkVnhHtwoRdEVnaNNj6P...'>
+                  password2:
+                    - <value of string default: 'ENC MTAwODg0NTQxNDE5OTQwMaPdJv8JESXhogoJmBIvID8+U03pvD8I9Yr/Q1NGxPnlvLKVEOIS...'>
+                  password3:
+                    - <value of string default: 'ENC MTMyOTA3MjY4MTgxMTk2N1UB1GKpBMmb5vgQRJTsjWS9sBfCvYmhBhdgf+ipyNKwY43YcyKB...'>
+                  server-type: <value in [ftp, sftp, scp] default: 'ftp'>
+                  upload: <value in [disable, enable] default: 'disable'>
                   upload-hour: <value of integer default: 0>
-                  upload-mode: <value in [backup, mirror] default: backup>
-                  upload-trigger: <value in [on-roll, on-schedule] default: on-roll>
+                  upload-mode: <value in [backup, mirror] default: 'backup'>
+                  upload-trigger: <value in [on-roll, on-schedule] default: 'on-roll'>
                   username: <value of string>
                   username2: <value of string>
                   username3: <value of string>
-                  when: <value in [none, daily, weekly] default: none>
+                  when: <value in [none, daily, weekly] default: 'none'>
 
 
 

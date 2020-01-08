@@ -83,21 +83,22 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /securityconsole/install/package
+
+    - name: REQUESTING /SECURITYCONSOLE/INSTALL/PACKAGE
       fmgr_securityconsole_install_package:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   adom: <value of string>
                   adom_rev_comments: <value of string>
                   adom_rev_name: <value of string>
                   dev_rev_comments: <value of string>
-                  flags: 
-                   - <value in [none, cp_all_objs, preview, ...]>
+                  flags:
+                    - <value in [none, cp_all_objs, preview, ...]>
                   pkg: <value of string>
-                  scope: 
-                   - 
+                  scope:
+                    -
                         name: <value of string>
                         vdom: <value of string>
 

@@ -29,7 +29,6 @@ description:
       user to [ exec ] the following apis.
     - /securityconsole/sign/certificate/template
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -72,15 +71,16 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /securityconsole/sign/certificate/template
+
+    - name: REQUESTING /SECURITYCONSOLE/SIGN/CERTIFICATE/TEMPLATE
       fmgr_securityconsole_sign_certificate_template:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   adom: <value of string>
-                  scope: 
-                   - 
+                  scope:
+                    -
                         name: <value of string>
                         vdom: <value of string>
                   template: <value of string>
@@ -105,7 +105,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /securityconsole/sign/certificate/template
+            example: '/securityconsole/sign/certificate/template'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -116,6 +116,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/securityconsole/sign/certificate/template'
@@ -124,7 +125,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -163,7 +164,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -181,8 +181,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -203,14 +203,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

@@ -117,55 +117,57 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/user/device-group
+
+    - name: REQUESTING /PM/CONFIG/OBJ/USER/DEVICE-GROUP
       fmgr_pm_config_obj_user_device_group:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      _if_unmanaged: <value of integer>
                      comment: <value of string>
-                     dynamic_mapping: 
-                      - 
+                     dynamic_mapping:
+                       -
                            _if_unmanaged: <value of integer>
-                           _scope: 
-                            - 
+                           _scope:
+                             -
                                  name: <value of string>
                                  vdom: <value of string>
                            comment: <value of string>
                            member: <value of string>
                      member: <value of string>
                      name: <value of string>
-                     tagging: 
-                      - 
+                     tagging:
+                       -
                            category: <value of string>
                            name: <value of string>
-                           tags: 
-                            - <value of string>
-    - name: send request to /pm/config/obj/user/device-group
+                           tags:
+                             - <value of string>
+
+    - name: REQUESTING /PM/CONFIG/OBJ/USER/DEVICE-GROUP
       fmgr_pm_config_obj_user_device_group:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [_if_unmanaged, comment, member, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [_if_unmanaged, comment, member, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

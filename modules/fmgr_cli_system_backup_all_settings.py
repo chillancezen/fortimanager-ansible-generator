@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/system/backup/all-settings
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -61,14 +60,14 @@ options:
                 crptpasswd:
                     -
                         type: str
-                        default: 'ENC MTMzMDc1MDgxNzQ0ODY0M2NSZUKD2VMvwzY+fu/IOqXefv5r84Cvz6X817vduD08gM1BG0K7muAtsALrSSvZjpqR08ZjShNGdhTR6Y7clcN6rnCh7jFAA9qF9cXracjbMmMkmLh2JuJH35O0EplcfinZKTXky8RCyig4J/DXAtiQpW7l'
+                        default: 'ENC MTMzMDc1MDgxNzQ0ODY0M2NSZUKD2VMvwzY+fu/IOqXefv5r84Cvz6X817vduD08gM1BG0K7muAtsALrSSvZjpqR08ZjShNGdhTR6Y7clcN6rnCh7jFAA...'
                 directory:
                     type: str
                     description: 'Directory in which file will be stored on backup server.'
                 passwd:
                     -
                         type: str
-                        default: 'ENC NjE1OTk5NjcxODE1MDYyOR9zgwo4rNRY0psUIe6ZdXfehJTrTnmzU4GJWXfob8IxqxmLrU/5rQxywxo85lXVAnrjLD1WUkUEls6PMhOwReIaAQVP0y0g8qNzjlHU+Tsm6L13KblsH7G+yJEdMMyVj8MNSwdwJiXw9s94q+hXRCAs4iwJ'
+                        default: 'ENC NjE1OTk5NjcxODE1MDYyOR9zgwo4rNRY0psUIe6ZdXfehJTrTnmzU4GJWXfob8IxqxmLrU/5rQxywxo85lXVAnrjLD1WUkUEls6PMhOwReIaAQVP0y0g8...'
                 protocol:
                     type: str
                     default: 'sftp'
@@ -122,25 +121,26 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/backup/all-settings
+
+    - name: REQUESTING /CLI/SYSTEM/BACKUP/ALL-SETTINGS
       fmgr_cli_system_backup_all_settings:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   cert: <value of string>
-                  crptpasswd: 
-                   - <value of string default: ENC MTMzMDc1MDgxNzQ0ODY0M2NSZUKD2VMvwzY+fu/IOqXefv5r84Cvz6X817vduD08gM1BG0K7muAtsALrSSvZjpqR08ZjShNGdhTR6Y7clcN6rnCh7jFAA9qF9cXracjbMmMkmLh2JuJH35O0EplcfinZKTXky8RCyig4J/DXAtiQpW7l>
+                  crptpasswd:
+                    - <value of string default: 'ENC MTMzMDc1MDgxNzQ0ODY0M2NSZUKD2VMvwzY+fu/IOqXefv5r84Cvz6X817vduD08gM1BG0K7...'>
                   directory: <value of string>
-                  passwd: 
-                   - <value of string default: ENC NjE1OTk5NjcxODE1MDYyOR9zgwo4rNRY0psUIe6ZdXfehJTrTnmzU4GJWXfob8IxqxmLrU/5rQxywxo85lXVAnrjLD1WUkUEls6PMhOwReIaAQVP0y0g8qNzjlHU+Tsm6L13KblsH7G+yJEdMMyVj8MNSwdwJiXw9s94q+hXRCAs4iwJ>
-                  protocol: <value in [sftp, ftp, scp] default: sftp>
+                  passwd:
+                    - <value of string default: 'ENC NjE1OTk5NjcxODE1MDYyOR9zgwo4rNRY0psUIe6ZdXfehJTrTnmzU4GJWXfob8IxqxmLrU/5...'>
+                  protocol: <value in [sftp, ftp, scp] default: 'sftp'>
                   server: <value of string>
-                  status: <value in [disable, enable] default: disable>
+                  status: <value in [disable, enable] default: 'disable'>
                   time: <value of string>
                   user: <value of string>
-                  week_days: 
-                   - <value in [monday, tuesday, wednesday, ...]>
+                  week_days:
+                    - <value in [monday, tuesday, wednesday, ...]>
 
 '''
 
@@ -160,7 +160,7 @@ return_of_api_category_0:
                type: array
                suboptions:
                   type: str
-                  example: ENC MTMzMDc1MDgxNzQ0ODY0M2NSZUKD2VMvwzY+fu/IOqXefv5r84Cvz6X817vduD08gM1BG0K7muAtsALrSSvZjpqR08ZjShNGdhTR6Y7clcN6rnCh7jFAA9qF9cXracjbMmMkmLh2JuJH35O0EplcfinZKTXky8RCyig4J/DXAtiQpW7l
+                  example: 'ENC MTMzMDc1MDgxNzQ0ODY0M2NSZUKD2VMvwzY+fu/IOqXefv5r84Cvz6X817vduD08gM1BG0K7...'
             directory:
                type: str
                description: 'Directory in which file will be stored on backup server.'
@@ -168,7 +168,7 @@ return_of_api_category_0:
                type: array
                suboptions:
                   type: str
-                  example: ENC NjE1OTk5NjcxODE1MDYyOR9zgwo4rNRY0psUIe6ZdXfehJTrTnmzU4GJWXfob8IxqxmLrU/5rQxywxo85lXVAnrjLD1WUkUEls6PMhOwReIaAQVP0y0g8qNzjlHU+Tsm6L13KblsH7G+yJEdMMyVj8MNSwdwJiXw9s94q+hXRCAs4iwJ
+                  example: 'ENC NjE1OTk5NjcxODE1MDYyOR9zgwo4rNRY0psUIe6ZdXfehJTrTnmzU4GJWXfob8IxqxmLrU/5...'
             protocol:
                type: str
                description: |
@@ -176,7 +176,7 @@ return_of_api_category_0:
                   'sftp - SFTP.'
                   'ftp - FTP.'
                   'scp - SCP.'
-               example: sftp
+               example: 'sftp'
             server:
                type: str
                description: 'Backup server name/IP.'
@@ -186,7 +186,7 @@ return_of_api_category_0:
                   'Enable/disable schedule backup.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             time:
                type: str
                description: 'Time to backup.'
@@ -204,7 +204,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/backup/all-settings
+            example: '/cli/global/system/backup/all-settings'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -219,7 +219,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/backup/all-settings
+            example: '/cli/global/system/backup/all-settings'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -230,6 +230,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/backup/all-settings'
@@ -238,7 +239,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -258,8 +259,7 @@ def main():
                         'crptpasswd': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC MTMzMDc1MDgxNzQ0ODY0M2NSZUKD2VMvwzY+fu/IOqXefv5r84Cvz6X817vduD08gM1BG0K7muAtsALrSSvZjpqR08ZjShNGdhTR6Y7clcN6rnCh7jFAA9qF9cXracjbMmMkmLh2JuJH35O0EplcfinZKTXky8RCyig4J/DXAtiQpW7l'
+                                'type': 'string'
                             }
                         },
                         'directory': {
@@ -268,13 +268,11 @@ def main():
                         'passwd': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC NjE1OTk5NjcxODE1MDYyOR9zgwo4rNRY0psUIe6ZdXfehJTrTnmzU4GJWXfob8IxqxmLrU/5rQxywxo85lXVAnrjLD1WUkUEls6PMhOwReIaAQVP0y0g8qNzjlHU+Tsm6L13KblsH7G+yJEdMMyVj8MNSwdwJiXw9s94q+hXRCAs4iwJ'
+                                'type': 'string'
                             }
                         },
                         'protocol': {
                             'type': 'string',
-                            'default': 'sftp',
                             'enum': [
                                 'sftp',
                                 'ftp',
@@ -286,7 +284,6 @@ def main():
                         },
                         'status': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -330,7 +327,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -350,8 +346,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -372,14 +368,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

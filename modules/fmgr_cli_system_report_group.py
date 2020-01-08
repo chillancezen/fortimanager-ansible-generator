@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/system/report/group
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -141,36 +140,38 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/report/group
+
+    - name: REQUESTING /CLI/SYSTEM/REPORT/GROUP
       fmgr_cli_system_report_group:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      adom: <value of string>
-                     case-insensitive: <value in [disable, enable] default: enable>
-                     chart-alternative: 
-                      - 
+                     case-insensitive: <value in [disable, enable] default: 'enable'>
+                     chart-alternative:
+                       -
                            chart-name: <value of string>
                            chart-replace: <value of string>
-                     group-by: 
-                      - 
+                     group-by:
+                       -
                            var-expression: <value of string>
                            var-name: <value of string>
-                           var-type: <value in [integer, string, enum, ...] default: string>
+                           var-type: <value in [integer, string, enum, ...] default: 'string'>
                      group-id: <value of integer default: 0>
                      report-like: <value of string>
-    - name: send request to /cli/system/report/group
+
+    - name: REQUESTING /CLI/SYSTEM/REPORT/GROUP
       fmgr_cli_system_report_group:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [adom, case-insensitive, group-id, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [adom, case-insensitive, group-id, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -191,7 +192,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/report/group
+            example: '/cli/global/system/report/group'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -211,7 +212,7 @@ return_of_api_category_0:
                      'Case insensitive.'
                      'disable - Disable the case insensitive match.'
                      'enable - Enable the case insensitive match.'
-                  example: enable
+                  example: 'enable'
                chart-alternative:
                   type: array
                   suboptions:
@@ -238,7 +239,7 @@ return_of_api_category_0:
                            'string - String.'
                            'enum - Enum.'
                            'ip - IP.'
-                        example: string
+                        example: 'string'
                group-id:
                   type: int
                   description: 'Group ID.'
@@ -253,7 +254,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/report/group
+            example: '/cli/global/system/report/group'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -264,6 +265,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/report/group'
@@ -272,7 +274,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -285,7 +287,6 @@ def main():
                         },
                         'case-insensitive': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -313,7 +314,6 @@ def main():
                                 },
                                 'var-type': {
                                     'type': 'string',
-                                    'default': 'string',
                                     'enum': [
                                         'integer',
                                         'string',
@@ -405,7 +405,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -426,8 +425,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -448,14 +447,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

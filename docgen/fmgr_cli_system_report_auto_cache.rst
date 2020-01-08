@@ -77,15 +77,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/report/auto-cache
+
+    - name: REQUESTING /CLI/SYSTEM/REPORT/AUTO-CACHE
       fmgr_cli_system_report_auto_cache:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  aggressive-schedule: <value in [disable, enable] default: disable>
-                  order: <value in [oldest-first] default: oldest-first>
-                  status: <value in [disable, enable] default: enable>
+            -
+               data:
+                  aggressive-schedule: <value in [disable, enable] default: 'disable'>
+                  order: <value in [oldest-first] default: 'oldest-first'>
+                  status: <value in [disable, enable] default: 'enable'>
 
 
 

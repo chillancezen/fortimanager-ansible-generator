@@ -75,13 +75,14 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/multilayer
+
+    - name: REQUESTING /CLI/FMUPDATE/MULTILAYER
       fmgr_cli_fmupdate_multilayer:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  webspam-rating: <value in [disable, enable] default: enable>
+            -
+               data:
+                  webspam-rating: <value in [disable, enable] default: 'enable'>
 
 
 

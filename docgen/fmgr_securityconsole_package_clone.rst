@@ -79,18 +79,19 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /securityconsole/package/clone
+
+    - name: REQUESTING /SECURITYCONSOLE/PACKAGE/CLONE
       fmgr_securityconsole_package_clone:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   adom: <value of string>
                   dst_name: <value of string>
                   dst_parent: <value of string>
                   pkg: <value of string>
-                  scope: 
-                   - 
+                  scope:
+                    -
                         name: <value of string>
                         vdom: <value of string>
 

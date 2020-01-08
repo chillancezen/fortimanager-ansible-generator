@@ -113,51 +113,52 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/locallog/memory/filter
+
+    - name: REQUESTING /CLI/SYSTEM/LOCALLOG/MEMORY/FILTER
       fmgr_cli_system_locallog_memory_filter:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  devcfg: <value in [disable, enable] default: enable>
-                  devops: <value in [disable, enable] default: enable>
-                  diskquota: <value in [disable, enable] default: enable>
-                  dm: <value in [disable, enable] default: enable>
-                  dvm: <value in [disable, enable] default: enable>
-                  ediscovery: <value in [disable, enable] default: enable>
-                  epmgr: <value in [disable, enable] default: enable>
-                  event: <value in [disable, enable] default: enable>
-                  eventmgmt: <value in [disable, enable] default: enable>
-                  faz: <value in [disable, enable] default: enable>
-                  fazha: <value in [disable, enable] default: enable>
-                  fazsys: <value in [disable, enable] default: enable>
-                  fgd: <value in [disable, enable] default: enable>
-                  fgfm: <value in [disable, enable] default: enable>
-                  fips: <value in [disable, enable] default: enable>
-                  fmgws: <value in [disable, enable] default: enable>
-                  fmlmgr: <value in [disable, enable] default: enable>
-                  fmwmgr: <value in [disable, enable] default: enable>
-                  fortiview: <value in [disable, enable] default: enable>
-                  glbcfg: <value in [disable, enable] default: enable>
-                  ha: <value in [disable, enable] default: enable>
-                  hcache: <value in [disable, enable] default: enable>
-                  iolog: <value in [disable, enable] default: enable>
-                  logd: <value in [disable, enable] default: enable>
-                  logdb: <value in [disable, enable] default: enable>
-                  logdev: <value in [disable, enable] default: enable>
+            -
+               data:
+                  devcfg: <value in [disable, enable] default: 'enable'>
+                  devops: <value in [disable, enable] default: 'enable'>
+                  diskquota: <value in [disable, enable] default: 'enable'>
+                  dm: <value in [disable, enable] default: 'enable'>
+                  dvm: <value in [disable, enable] default: 'enable'>
+                  ediscovery: <value in [disable, enable] default: 'enable'>
+                  epmgr: <value in [disable, enable] default: 'enable'>
+                  event: <value in [disable, enable] default: 'enable'>
+                  eventmgmt: <value in [disable, enable] default: 'enable'>
+                  faz: <value in [disable, enable] default: 'enable'>
+                  fazha: <value in [disable, enable] default: 'enable'>
+                  fazsys: <value in [disable, enable] default: 'enable'>
+                  fgd: <value in [disable, enable] default: 'enable'>
+                  fgfm: <value in [disable, enable] default: 'enable'>
+                  fips: <value in [disable, enable] default: 'enable'>
+                  fmgws: <value in [disable, enable] default: 'enable'>
+                  fmlmgr: <value in [disable, enable] default: 'enable'>
+                  fmwmgr: <value in [disable, enable] default: 'enable'>
+                  fortiview: <value in [disable, enable] default: 'enable'>
+                  glbcfg: <value in [disable, enable] default: 'enable'>
+                  ha: <value in [disable, enable] default: 'enable'>
+                  hcache: <value in [disable, enable] default: 'enable'>
+                  iolog: <value in [disable, enable] default: 'enable'>
+                  logd: <value in [disable, enable] default: 'enable'>
+                  logdb: <value in [disable, enable] default: 'enable'>
+                  logdev: <value in [disable, enable] default: 'enable'>
                   logfile: <value in [enable, disable]>
-                  logging: <value in [disable, enable] default: enable>
-                  lrmgr: <value in [disable, enable] default: enable>
-                  objcfg: <value in [disable, enable] default: enable>
-                  report: <value in [disable, enable] default: enable>
-                  rev: <value in [disable, enable] default: enable>
-                  rtmon: <value in [disable, enable] default: enable>
-                  scfw: <value in [disable, enable] default: enable>
-                  scply: <value in [disable, enable] default: enable>
-                  scrmgr: <value in [disable, enable] default: enable>
-                  scvpn: <value in [disable, enable] default: enable>
-                  system: <value in [disable, enable] default: enable>
-                  webport: <value in [disable, enable] default: enable>
+                  logging: <value in [disable, enable] default: 'enable'>
+                  lrmgr: <value in [disable, enable] default: 'enable'>
+                  objcfg: <value in [disable, enable] default: 'enable'>
+                  report: <value in [disable, enable] default: 'enable'>
+                  rev: <value in [disable, enable] default: 'enable'>
+                  rtmon: <value in [disable, enable] default: 'enable'>
+                  scfw: <value in [disable, enable] default: 'enable'>
+                  scply: <value in [disable, enable] default: 'enable'>
+                  scrmgr: <value in [disable, enable] default: 'enable'>
+                  scvpn: <value in [disable, enable] default: 'enable'>
+                  system: <value in [disable, enable] default: 'enable'>
+                  webport: <value in [disable, enable] default: 'enable'>
 
 
 

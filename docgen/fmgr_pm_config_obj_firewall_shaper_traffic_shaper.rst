@@ -105,15 +105,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/firewall/shaper/traffic-shaper
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/SHAPER/TRAFFIC-SHAPER
       fmgr_pm_config_obj_firewall_shaper_traffic_shaper:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      bandwidth-unit: <value in [kbps, mbps, gbps]>
                      diffserv: <value in [disable, enable]>
                      diffservcode: <value of string>
@@ -122,27 +123,28 @@ Examples
                      name: <value of string>
                      per-policy: <value in [disable, enable]>
                      priority: <value in [high, medium, low]>
-    - name: send request to /pm/config/obj/firewall/shaper/traffic-shaper
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/SHAPER/TRAFFIC-SHAPER
       fmgr_pm_config_obj_firewall_shaper_traffic_shaper:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [bandwidth-unit, diffserv, diffservcode, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [bandwidth-unit, diffserv, diffservcode, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

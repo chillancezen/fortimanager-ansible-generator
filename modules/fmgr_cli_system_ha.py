@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/system/ha
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -86,7 +85,7 @@ options:
                 password:
                     -
                         type: str
-                        default: 'ENC Njg3MTI2ODY4ODEyMzY2NtF8Bgn7rP641A/Sf8QzaQhOnUfyVTFTNoFxfoZ5gzjrvXiDpQmIecJchwHMf6cMUMYR/EPxGUXBEohaVdi4YNK74+fWHu9m1Hd8UTU4tZ9UtBelMIOQUT1HMDGLFwqwKg/NXibio9aMJDW6WYPLMYpBnPng'
+                        default: 'ENC Njg3MTI2ODY4ODEyMzY2NtF8Bgn7rP641A/Sf8QzaQhOnUfyVTFTNoFxfoZ5gzjrvXiDpQmIecJchwHMf6cMUMYR/EPxGUXBEohaVdi4YNK74+fWHu9m1...'
                 peer:
                     -
                         id:
@@ -125,26 +124,27 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/ha
+
+    - name: REQUESTING /CLI/SYSTEM/HA
       fmgr_cli_system_ha:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   clusterid: <value of integer default: 1>
                   file-quota: <value of integer default: 4096>
                   hb-interval: <value of integer default: 5>
                   hb-lost-threshold: <value of integer default: 3>
-                  mode: <value in [standalone, master, slave] default: standalone>
-                  password: 
-                   - <value of string default: ENC Njg3MTI2ODY4ODEyMzY2NtF8Bgn7rP641A/Sf8QzaQhOnUfyVTFTNoFxfoZ5gzjrvXiDpQmIecJchwHMf6cMUMYR/EPxGUXBEohaVdi4YNK74+fWHu9m1Hd8UTU4tZ9UtBelMIOQUT1HMDGLFwqwKg/NXibio9aMJDW6WYPLMYpBnPng>
-                  peer: 
-                   - 
+                  mode: <value in [standalone, master, slave] default: 'standalone'>
+                  password:
+                    - <value of string default: 'ENC Njg3MTI2ODY4ODEyMzY2NtF8Bgn7rP641A/Sf8QzaQhOnUfyVTFTNoFxfoZ5gzjrvXiDpQmI...'>
+                  peer:
+                    -
                         id: <value of integer default: 0>
-                        ip: <value of string default: 0.0.0.0>
-                        ip6: <value of string default: ::>
+                        ip: <value of string default: '0.0.0.0'>
+                        ip6: <value of string default: '::'>
                         serial-number: <value of string>
-                        status: <value in [disable, enable] default: enable>
+                        status: <value in [disable, enable] default: 'enable'>
 
 '''
 
@@ -180,12 +180,12 @@ return_of_api_category_0:
                   'standalone - Standalone.'
                   'master - Master.'
                   'slave - Slave.'
-               example: standalone
+               example: 'standalone'
             password:
                type: array
                suboptions:
                   type: str
-                  example: ENC Njg3MTI2ODY4ODEyMzY2NtF8Bgn7rP641A/Sf8QzaQhOnUfyVTFTNoFxfoZ5gzjrvXiDpQmIecJchwHMf6cMUMYR/EPxGUXBEohaVdi4YNK74+fWHu9m1Hd8UTU4tZ9UtBelMIOQUT1HMDGLFwqwKg/NXibio9aMJDW6WYPLMYpBnPng
+                  example: 'ENC Njg3MTI2ODY4ODEyMzY2NtF8Bgn7rP641A/Sf8QzaQhOnUfyVTFTNoFxfoZ5gzjrvXiDpQmI...'
             peer:
                type: array
                suboptions:
@@ -196,11 +196,11 @@ return_of_api_category_0:
                   ip:
                      type: str
                      description: 'IP address of peer.'
-                     example: 0.0.0.0
+                     example: '0.0.0.0'
                   ip6:
                      type: str
                      description: 'IP address (V6) of peer.'
-                     example: ::
+                     example: '::'
                   serial-number:
                      type: str
                      description: 'Serial number of peer.'
@@ -210,7 +210,7 @@ return_of_api_category_0:
                         'Peer admin status.'
                         'disable - Disable.'
                         'enable - Enable.'
-                     example: enable
+                     example: 'enable'
          status:
             code:
                type: int
@@ -218,7 +218,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/ha
+            example: '/cli/global/system/ha'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -233,7 +233,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/ha
+            example: '/cli/global/system/ha'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -244,6 +244,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/ha'
@@ -252,7 +253,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -288,7 +289,6 @@ def main():
                         },
                         'mode': {
                             'type': 'string',
-                            'default': 'standalone',
                             'enum': [
                                 'standalone',
                                 'master',
@@ -298,8 +298,7 @@ def main():
                         'password': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC Njg3MTI2ODY4ODEyMzY2NtF8Bgn7rP641A/Sf8QzaQhOnUfyVTFTNoFxfoZ5gzjrvXiDpQmIecJchwHMf6cMUMYR/EPxGUXBEohaVdi4YNK74+fWHu9m1Hd8UTU4tZ9UtBelMIOQUT1HMDGLFwqwKg/NXibio9aMJDW6WYPLMYpBnPng'
+                                'type': 'string'
                             }
                         },
                         'peer': {
@@ -311,19 +310,16 @@ def main():
                                     'example': 0
                                 },
                                 'ip': {
-                                    'type': 'string',
-                                    'default': '0.0.0.0'
+                                    'type': 'string'
                                 },
                                 'ip6': {
-                                    'type': 'string',
-                                    'default': '::'
+                                    'type': 'string'
                                 },
                                 'serial-number': {
                                     'type': 'string'
                                 },
                                 'status': {
                                     'type': 'string',
-                                    'default': 'enable',
                                     'enum': [
                                         'disable',
                                         'enable'
@@ -348,7 +344,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -368,8 +363,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -390,14 +385,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

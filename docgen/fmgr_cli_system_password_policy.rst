@@ -81,18 +81,19 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/password-policy
+
+    - name: REQUESTING /CLI/SYSTEM/PASSWORD-POLICY
       fmgr_cli_system_password_policy:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  change-4-characters: <value in [disable, enable] default: disable>
+            -
+               data:
+                  change-4-characters: <value in [disable, enable] default: 'disable'>
                   expire: <value of integer default: 0>
                   minimum-length: <value of integer default: 8>
-                  must-contain: 
-                   - <value in [upper-case-letter, lower-case-letter, number, ...]>
-                  status: <value in [disable, enable] default: disable>
+                  must-contain:
+                    - <value in [upper-case-letter, lower-case-letter, number, ...]>
+                  status: <value in [disable, enable] default: 'disable'>
 
 
 

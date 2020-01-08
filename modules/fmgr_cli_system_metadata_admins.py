@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/system/metadata/admins
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -126,27 +125,29 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/metadata/admins
+
+    - name: REQUESTING /CLI/SYSTEM/METADATA/ADMINS
       fmgr_cli_system_metadata_admins:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     fieldlength: <value in [20, 50, 255] default: 50>
+            -
+               data:
+                 -
+                     fieldlength: <value in [20, 50, 255] default: '50'>
                      fieldname: <value of string>
-                     importance: <value in [optional, required] default: required>
-                     status: <value in [disabled, enabled] default: enabled>
-    - name: send request to /cli/system/metadata/admins
+                     importance: <value in [optional, required] default: 'required'>
+                     status: <value in [disabled, enabled] default: 'enabled'>
+
+    - name: REQUESTING /CLI/SYSTEM/METADATA/ADMINS
       fmgr_cli_system_metadata_admins:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [fieldlength, fieldname, importance, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [fieldlength, fieldname, importance, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -167,7 +168,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/metadata/admins
+            example: '/cli/global/system/metadata/admins'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -185,7 +186,7 @@ return_of_api_category_0:
                      '20 - Field length of 20.'
                      '50 - Field length of 50.'
                      '255 - Field length of 255.'
-                  example: 50
+                  example: '50'
                fieldname:
                   type: str
                   description: 'Field name.'
@@ -195,14 +196,14 @@ return_of_api_category_0:
                      'Field importance.'
                      'optional - This field is optional.'
                      'required - This field is required.'
-                  example: required
+                  example: 'required'
                status:
                   type: str
                   description: |
                      'Field status.'
                      'disabled - This field is disabled.'
                      'enabled - This field is enabled.'
-                  example: enabled
+                  example: 'enabled'
          status:
             code:
                type: int
@@ -210,7 +211,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/metadata/admins
+            example: '/cli/global/system/metadata/admins'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -221,6 +222,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/metadata/admins'
@@ -229,7 +231,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -239,7 +241,6 @@ def main():
                     'items': {
                         'fieldlength': {
                             'type': 'string',
-                            'default': '50',
                             'enum': [
                                 '20',
                                 '50',
@@ -251,7 +252,6 @@ def main():
                         },
                         'importance': {
                             'type': 'string',
-                            'default': 'required',
                             'enum': [
                                 'optional',
                                 'required'
@@ -259,7 +259,6 @@ def main():
                         },
                         'status': {
                             'type': 'string',
-                            'default': 'enabled',
                             'enum': [
                                 'disabled',
                                 'enabled'
@@ -339,7 +338,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -360,8 +358,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -382,14 +380,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

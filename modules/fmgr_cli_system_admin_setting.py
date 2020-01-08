@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/system/admin/setting
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -237,7 +236,7 @@ options:
                 register_passwd:
                     -
                         type: str
-                        default: 'ENC ODA4MzI1MDExMjE4OTgxM/oYbnw5dOwHjdVIoziGMGql3I0Ddz+ewZZfbXj7YeX4ol/rqZveNL7pJsXB6fGh0Bfo+R+211AvBe4558gduEIjb2W9ApZLtp5OAzm78LkH4dyrXL9N/SySeIPG1Oh6i5wvEK4Ox22xdNQmN26CaAMZG9Jl'
+                        default: 'ENC ODA4MzI1MDExMjE4OTgxM/oYbnw5dOwHjdVIoziGMGql3I0Ddz+ewZZfbXj7YeX4ol/rqZveNL7pJsXB6fGh0Bfo+R+211AvBe4558gduEIjb2W9ApZLt...'
                 sdwan-monitor-history:
                     type: str
                     default: 'disable'
@@ -261,7 +260,7 @@ options:
                 shell-password:
                     -
                         type: str
-                        default: 'ENC NDM0ODk3MTk5MDUyMTEzMUbHl/j5CmTEcBmvdfBvKn99O6PWsq0PdmnxFXT9hypS7GvefFaz0oVwvAJ5/jgxY3HaLJDNTuNDNZfGQBezH6DURHCF23i/UXtmSSMrrIS8g2oidOj6e593sP+BSfGpQie0tLXFnMb9Lrd4dUAgfnYZpYLh'
+                        default: 'ENC NDM0ODk3MTk5MDUyMTEzMUbHl/j5CmTEcBmvdfBvKn99O6PWsq0PdmnxFXT9hypS7GvefFaz0oVwvAJ5/jgxY3HaLJDNTuNDNZfGQBezH6DURHCF23i/U...'
                 show-add-multiple:
                     type: str
                     default: 'disable'
@@ -395,48 +394,49 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/admin/setting
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/SETTING
       fmgr_cli_system_admin_setting:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  access-banner: <value in [disable, enable] default: disable>
-                  admin-https-redirect: <value in [disable, enable] default: enable>
+            -
+               data:
+                  access-banner: <value in [disable, enable] default: 'disable'>
+                  admin-https-redirect: <value in [disable, enable] default: 'enable'>
                   admin-login-max: <value of integer default: 256>
-                  admin_server_cert: <value of string default: server.crt>
-                  allow_register: <value in [disable, enable] default: disable>
-                  auto-update: <value in [disable, enable] default: enable>
+                  admin_server_cert: <value of string default: 'server.crt'>
+                  allow_register: <value in [disable, enable] default: 'disable'>
+                  auto-update: <value in [disable, enable] default: 'enable'>
                   banner-message: <value of string>
-                  chassis-mgmt: <value in [disable, enable] default: disable>
+                  chassis-mgmt: <value in [disable, enable] default: 'disable'>
                   chassis-update-interval: <value of integer default: 15>
-                  device_sync_status: <value in [disable, enable] default: enable>
-                  gui-theme: <value in [blue, green, red, ...] default: blue>
+                  device_sync_status: <value in [disable, enable] default: 'enable'>
+                  gui-theme: <value in [blue, green, red, ...] default: 'blue'>
                   http_port: <value of integer default: 80>
                   https_port: <value of integer default: 443>
                   idle_timeout: <value of integer default: 15>
-                  install-ifpolicy-only: <value in [disable, enable] default: disable>
+                  install-ifpolicy-only: <value in [disable, enable] default: 'disable'>
                   mgmt-addr: <value of string>
                   mgmt-fqdn: <value of string>
-                  objects-force-deletion: <value in [disable, enable] default: enable>
-                  offline_mode: <value in [disable, enable] default: disable>
-                  register_passwd: 
-                   - <value of string default: ENC ODA4MzI1MDExMjE4OTgxM/oYbnw5dOwHjdVIoziGMGql3I0Ddz+ewZZfbXj7YeX4ol/rqZveNL7pJsXB6fGh0Bfo+R+211AvBe4558gduEIjb2W9ApZLtp5OAzm78LkH4dyrXL9N/SySeIPG1Oh6i5wvEK4Ox22xdNQmN26CaAMZG9Jl>
-                  sdwan-monitor-history: <value in [disable, enable] default: disable>
-                  shell-access: <value in [disable, enable] default: disable>
-                  shell-password: 
-                   - <value of string default: ENC NDM0ODk3MTk5MDUyMTEzMUbHl/j5CmTEcBmvdfBvKn99O6PWsq0PdmnxFXT9hypS7GvefFaz0oVwvAJ5/jgxY3HaLJDNTuNDNZfGQBezH6DURHCF23i/UXtmSSMrrIS8g2oidOj6e593sP+BSfGpQie0tLXFnMb9Lrd4dUAgfnYZpYLh>
-                  show-add-multiple: <value in [disable, enable] default: disable>
-                  show-adom-devman: <value in [disable, enable] default: enable>
-                  show-checkbox-in-table: <value in [disable, enable] default: disable>
-                  show-device-import-export: <value in [disable, enable] default: disable>
-                  show-hostname: <value in [disable, enable] default: disable>
-                  show_automatic_script: <value in [disable, enable] default: disable>
-                  show_grouping_script: <value in [disable, enable] default: enable>
-                  show_schedule_script: <value in [disable, enable] default: disable>
-                  show_tcl_script: <value in [disable, enable] default: disable>
-                  unreg_dev_opt: <value in [add_no_service, ignore, add_allow_service] default: add_allow_service>
-                  webadmin_language: <value in [auto_detect, english, simplified_chinese, ...] default: auto_detect>
+                  objects-force-deletion: <value in [disable, enable] default: 'enable'>
+                  offline_mode: <value in [disable, enable] default: 'disable'>
+                  register_passwd:
+                    - <value of string default: 'ENC ODA4MzI1MDExMjE4OTgxM/oYbnw5dOwHjdVIoziGMGql3I0Ddz+ewZZfbXj7YeX4ol/rqZve...'>
+                  sdwan-monitor-history: <value in [disable, enable] default: 'disable'>
+                  shell-access: <value in [disable, enable] default: 'disable'>
+                  shell-password:
+                    - <value of string default: 'ENC NDM0ODk3MTk5MDUyMTEzMUbHl/j5CmTEcBmvdfBvKn99O6PWsq0PdmnxFXT9hypS7GvefFaz...'>
+                  show-add-multiple: <value in [disable, enable] default: 'disable'>
+                  show-adom-devman: <value in [disable, enable] default: 'enable'>
+                  show-checkbox-in-table: <value in [disable, enable] default: 'disable'>
+                  show-device-import-export: <value in [disable, enable] default: 'disable'>
+                  show-hostname: <value in [disable, enable] default: 'disable'>
+                  show_automatic_script: <value in [disable, enable] default: 'disable'>
+                  show_grouping_script: <value in [disable, enable] default: 'enable'>
+                  show_schedule_script: <value in [disable, enable] default: 'disable'>
+                  show_tcl_script: <value in [disable, enable] default: 'disable'>
+                  unreg_dev_opt: <value in [add_no_service, ignore, add_allow_service] default: 'add_allow_service'>
+                  webadmin_language: <value in [auto_detect, english, simplified_chinese, ...] default: 'auto_detect'>
 
 '''
 
@@ -455,14 +455,14 @@ return_of_api_category_0:
                   'Enable/disable access banner.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             admin-https-redirect:
                type: str
                description: |
                   'Enable/disable redirection of HTTP admin traffic to HTTPS.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             admin-login-max:
                type: int
                description: 'Maximum number admin users logged in at one time (1 - 256).'
@@ -470,21 +470,21 @@ return_of_api_category_0:
             admin_server_cert:
                type: str
                description: 'HTTPS & Web Service server certificate.'
-               example: server.crt
+               example: 'server.crt'
             allow_register:
                type: str
                description: |
                   'Enable/disable allowance of register an unregistered device.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             auto-update:
                type: str
                description: |
                   'Enable/disable FortiGate automatic update.'
                   'disable - Disable device automatic update.'
                   'enable - Enable device automatic update.'
-               example: enable
+               example: 'enable'
             banner-message:
                type: str
                description: 'Banner message.'
@@ -494,7 +494,7 @@ return_of_api_category_0:
                   'Enable or disable chassis management.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             chassis-update-interval:
                type: int
                description: 'Chassis background update interval (4 - 1440 mins).'
@@ -505,7 +505,7 @@ return_of_api_category_0:
                   'Enable/disable device synchronization status indication.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             gui-theme:
                type: str
                description: |
@@ -535,7 +535,7 @@ return_of_api_category_0:
                   'polar-bear - Polar Bear'
                   'parrot - Parrot'
                   'cave - Cave'
-               example: blue
+               example: 'blue'
             http_port:
                type: int
                description: 'HTTP port.'
@@ -554,7 +554,7 @@ return_of_api_category_0:
                   'Allow install interface policy only.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             mgmt-addr:
                type: str
                description: 'IP of FortiManager used by FGFM.'
@@ -567,101 +567,101 @@ return_of_api_category_0:
                   'Enable/disable used objects force deletion.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             offline_mode:
                type: str
                description: |
                   'Enable/disable offline mode.'
                   'disable - Disable offline mode.'
                   'enable - Enable offline mode.'
-               example: disable
+               example: 'disable'
             register_passwd:
                type: array
                suboptions:
                   type: str
-                  example: ENC ODA4MzI1MDExMjE4OTgxM/oYbnw5dOwHjdVIoziGMGql3I0Ddz+ewZZfbXj7YeX4ol/rqZveNL7pJsXB6fGh0Bfo+R+211AvBe4558gduEIjb2W9ApZLtp5OAzm78LkH4dyrXL9N/SySeIPG1Oh6i5wvEK4Ox22xdNQmN26CaAMZG9Jl
+                  example: 'ENC ODA4MzI1MDExMjE4OTgxM/oYbnw5dOwHjdVIoziGMGql3I0Ddz+ewZZfbXj7YeX4ol/rqZve...'
             sdwan-monitor-history:
                type: str
                description: |
                   'Enable/disable hostname display in the GUI login page.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             shell-access:
                type: str
                description: |
                   'Enable/disable shell access.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             shell-password:
                type: array
                suboptions:
                   type: str
-                  example: ENC NDM0ODk3MTk5MDUyMTEzMUbHl/j5CmTEcBmvdfBvKn99O6PWsq0PdmnxFXT9hypS7GvefFaz0oVwvAJ5/jgxY3HaLJDNTuNDNZfGQBezH6DURHCF23i/UXtmSSMrrIS8g2oidOj6e593sP+BSfGpQie0tLXFnMb9Lrd4dUAgfnYZpYLh
+                  example: 'ENC NDM0ODk3MTk5MDUyMTEzMUbHl/j5CmTEcBmvdfBvKn99O6PWsq0PdmnxFXT9hypS7GvefFaz...'
             show-add-multiple:
                type: str
                description: |
                   'Show add multiple button.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             show-adom-devman:
                type: str
                description: |
                   'Show ADOM device manager tools on GUI.'
                   'disable - Hide device manager tools on GUI.'
                   'enable - Show device manager tools on GUI.'
-               example: enable
+               example: 'enable'
             show-checkbox-in-table:
                type: str
                description: |
                   'Show checkboxs in tables on GUI.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             show-device-import-export:
                type: str
                description: |
                   'Enable/disable import/export of ADOM, device, and group lists.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             show-hostname:
                type: str
                description: |
                   'Enable/disable hostname display in the GUI login page.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
             show_automatic_script:
                type: str
                description: |
                   'Enable/disable automatic script.'
                   'disable - Disable script option.'
                   'enable - Enable script option.'
-               example: disable
+               example: 'disable'
             show_grouping_script:
                type: str
                description: |
                   'Enable/disable grouping script.'
                   'disable - Disable script option.'
                   'enable - Enable script option.'
-               example: enable
+               example: 'enable'
             show_schedule_script:
                type: str
                description: |
                   'Enable or disable schedule script.'
                   'disable - Disable script option.'
                   'enable - Enable script option.'
-               example: disable
+               example: 'disable'
             show_tcl_script:
                type: str
                description: |
                   'Enable/disable TCL script.'
                   'disable - Disable script option.'
                   'enable - Enable script option.'
-               example: disable
+               example: 'disable'
             unreg_dev_opt:
                type: str
                description: |
@@ -669,7 +669,7 @@ return_of_api_category_0:
                   'add_no_service - Add unregistered devices but deny service requests.'
                   'ignore - Ignore unregistered devices.'
                   'add_allow_service - Add unregistered devices and allow service requests.'
-               example: add_allow_service
+               example: 'add_allow_service'
             webadmin_language:
                type: str
                description: |
@@ -681,7 +681,7 @@ return_of_api_category_0:
                   'japanese - Japanese.'
                   'korean - Korean.'
                   'spanish - Spanish.'
-               example: auto_detect
+               example: 'auto_detect'
          status:
             code:
                type: int
@@ -689,7 +689,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/admin/setting
+            example: '/cli/global/system/admin/setting'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -704,7 +704,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/admin/setting
+            example: '/cli/global/system/admin/setting'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -715,6 +715,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/admin/setting'
@@ -723,7 +724,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -739,7 +740,6 @@ def main():
                     'dict': {
                         'access-banner': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -747,7 +747,6 @@ def main():
                         },
                         'admin-https-redirect': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -759,12 +758,10 @@ def main():
                             'example': 256
                         },
                         'admin_server_cert': {
-                            'type': 'string',
-                            'default': 'server.crt'
+                            'type': 'string'
                         },
                         'allow_register': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -772,7 +769,6 @@ def main():
                         },
                         'auto-update': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -783,7 +779,6 @@ def main():
                         },
                         'chassis-mgmt': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -796,7 +791,6 @@ def main():
                         },
                         'device_sync_status': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -804,7 +798,6 @@ def main():
                         },
                         'gui-theme': {
                             'type': 'string',
-                            'default': 'blue',
                             'enum': [
                                 'blue',
                                 'green',
@@ -850,7 +843,6 @@ def main():
                         },
                         'install-ifpolicy-only': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -864,7 +856,6 @@ def main():
                         },
                         'objects-force-deletion': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -872,7 +863,6 @@ def main():
                         },
                         'offline_mode': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -881,13 +871,11 @@ def main():
                         'register_passwd': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC ODA4MzI1MDExMjE4OTgxM/oYbnw5dOwHjdVIoziGMGql3I0Ddz+ewZZfbXj7YeX4ol/rqZveNL7pJsXB6fGh0Bfo+R+211AvBe4558gduEIjb2W9ApZLtp5OAzm78LkH4dyrXL9N/SySeIPG1Oh6i5wvEK4Ox22xdNQmN26CaAMZG9Jl'
+                                'type': 'string'
                             }
                         },
                         'sdwan-monitor-history': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -895,7 +883,6 @@ def main():
                         },
                         'shell-access': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -904,13 +891,11 @@ def main():
                         'shell-password': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC NDM0ODk3MTk5MDUyMTEzMUbHl/j5CmTEcBmvdfBvKn99O6PWsq0PdmnxFXT9hypS7GvefFaz0oVwvAJ5/jgxY3HaLJDNTuNDNZfGQBezH6DURHCF23i/UXtmSSMrrIS8g2oidOj6e593sP+BSfGpQie0tLXFnMb9Lrd4dUAgfnYZpYLh'
+                                'type': 'string'
                             }
                         },
                         'show-add-multiple': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -918,7 +903,6 @@ def main():
                         },
                         'show-adom-devman': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -926,7 +910,6 @@ def main():
                         },
                         'show-checkbox-in-table': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -934,7 +917,6 @@ def main():
                         },
                         'show-device-import-export': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -942,7 +924,6 @@ def main():
                         },
                         'show-hostname': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -950,7 +931,6 @@ def main():
                         },
                         'show_automatic_script': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -958,7 +938,6 @@ def main():
                         },
                         'show_grouping_script': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -966,7 +945,6 @@ def main():
                         },
                         'show_schedule_script': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -974,7 +952,6 @@ def main():
                         },
                         'show_tcl_script': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -982,7 +959,6 @@ def main():
                         },
                         'unreg_dev_opt': {
                             'type': 'string',
-                            'default': 'add_allow_service',
                             'enum': [
                                 'add_no_service',
                                 'ignore',
@@ -991,7 +967,6 @@ def main():
                         },
                         'webadmin_language': {
                             'type': 'string',
-                            'default': 'auto_detect',
                             'enum': [
                                 'auto_detect',
                                 'english',
@@ -1019,7 +994,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -1039,8 +1013,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -1061,14 +1035,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

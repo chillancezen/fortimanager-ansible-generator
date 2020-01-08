@@ -72,12 +72,13 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /securityconsole/abort
+
+    - name: REQUESTING /SECURITYCONSOLE/ABORT
       fmgr_securityconsole_abort:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   adom: <value of string>
 
 

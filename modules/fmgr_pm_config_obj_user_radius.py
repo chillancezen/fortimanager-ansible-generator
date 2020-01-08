@@ -30,7 +30,6 @@ description:
     - /pm/config/adom/{adom}/obj/user/radius
     - /pm/config/global/obj/user/radius
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -45,7 +44,7 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
-    url_params: 
+    url_params:
         description: the parameters in url path
         required: True
         type: dict
@@ -730,7 +729,7 @@ options:
                             - 'enable'
                     radius-coa:
                         type: str
-                        description: 'Enable to allow a mechanism to change the attributes of an authentication, authorization, and accounting session after it is authenticated.'
+                        description: 'Enable to allow a mechanism to change the attributes of an authentication, authorization, and accounting session after...'
                         choices:
                             - 'disable'
                             - 'enable'
@@ -860,7 +859,7 @@ options:
                             - 'Login-LAT-Port'
                     rsso-ep-one-ip-only:
                         type: str
-                        description: 'Enable/disable the replacement of old IP addresses with new ones for the same endpoint on RADIUS accounting Start messages.'
+                        description: 'Enable/disable the replacement of old IP addresses with new ones for the same endpoint on RADIUS accounting Start mess...'
                         choices:
                             - 'disable'
                             - 'enable'
@@ -1082,7 +1081,7 @@ options:
                     type: int
             sortings:
                 -
-                    \{attr_name\}:
+                    varidic.attr_name:
                         type: int
                         choices:
                             - 1
@@ -1098,21 +1097,22 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/user/radius
+
+    - name: REQUESTING /PM/CONFIG/OBJ/USER/RADIUS
       fmgr_pm_config_obj_user_radius:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
-                     accounting-server: 
-                      - 
+            -
+               data:
+                 -
+                     accounting-server:
+                       -
                            id: <value of integer>
                            port: <value of integer>
-                           secret: 
-                            - <value of string>
+                           secret:
+                             - <value of string>
                            server: <value of string>
                            source-ip: <value of string>
                            status: <value in [disable, enable]>
@@ -1120,20 +1120,20 @@ EXAMPLES = '''
                      acct-interim-interval: <value of integer>
                      all-usergroup: <value in [disable, enable]>
                      auth-type: <value in [pap, chap, ms_chap, ...]>
-                     class: 
-                      - <value of string>
-                     dynamic_mapping: 
-                      - 
-                           _scope: 
-                            - 
+                     class:
+                       - <value of string>
+                     dynamic_mapping:
+                       -
+                           _scope:
+                             -
                                  name: <value of string>
                                  vdom: <value of string>
                            acct-all-servers: <value in [disable, enable]>
                            acct-interim-interval: <value of integer>
                            all-usergroup: <value in [disable, enable]>
                            auth-type: <value in [pap, chap, ms_chap, ...]>
-                           class: 
-                            - <value of string>
+                           class:
+                             - <value of string>
                            dp-carrier-endpoint-attribute: <value in [User-Name, User-Password, CHAP-Password, ...]>
                            dp-carrier-endpoint-block-attribute: <value in [User-Name, User-Password, CHAP-Password, ...]>
                            dp-context-timeout: <value of integer>
@@ -1143,16 +1143,16 @@ EXAMPLES = '''
                            dp-http-header-fallback: <value in [ip-header-address, default-profile]>
                            dp-http-header-status: <value in [disable, enable]>
                            dp-http-header-suppress: <value in [disable, enable]>
-                           dp-log-dyn_flags: 
-                            - <value in [none, protocol-error, profile-missing, ...]>
+                           dp-log-dyn_flags:
+                             - <value in [none, protocol-error, profile-missing, ...]>
                            dp-log-period: <value of integer>
                            dp-mem-percent: <value of integer>
                            dp-profile-attribute: <value in [User-Name, User-Password, CHAP-Password, ...]>
                            dp-profile-attribute-key: <value of string>
                            dp-radius-response: <value in [disable, enable]>
                            dp-radius-server-port: <value of integer>
-                           dp-secret: 
-                            - <value of string>
+                           dp-secret:
+                             - <value of string>
                            dp-validate-request-secret: <value in [disable, enable]>
                            dynamic-profile: <value in [disable, enable]>
                            endpoint-translation: <value in [disable, enable]>
@@ -1180,26 +1180,26 @@ EXAMPLES = '''
                            rsso-endpoint-block-attribute: <value in [User-Name, User-Password, CHAP-Password, ...]>
                            rsso-ep-one-ip-only: <value in [disable, enable]>
                            rsso-flush-ip-session: <value in [disable, enable]>
-                           rsso-log-flags: 
-                            - <value in [none, protocol-error, profile-missing, ...]>
+                           rsso-log-flags:
+                             - <value in [none, protocol-error, profile-missing, ...]>
                            rsso-log-period: <value of integer>
                            rsso-radius-response: <value in [disable, enable]>
                            rsso-radius-server-port: <value of integer>
-                           rsso-secret: 
-                            - <value of string>
+                           rsso-secret:
+                             - <value of string>
                            rsso-validate-request-secret: <value in [disable, enable]>
-                           secondary-secret: 
-                            - <value of string>
+                           secondary-secret:
+                             - <value of string>
                            secondary-server: <value of string>
-                           secret: 
-                            - <value of string>
+                           secret:
+                             - <value of string>
                            server: <value of string>
                            source-ip: <value of string>
                            sso-attribute: <value in [User-Name, User-Password, CHAP-Password, ...]>
                            sso-attribute-key: <value of string>
                            sso-attribute-value-override: <value in [disable, enable]>
-                           tertiary-secret: 
-                            - <value of string>
+                           tertiary-secret:
+                             - <value of string>
                            tertiary-server: <value of string>
                            timeout: <value of integer>
                            use-group-for-profile: <value in [disable, enable]>
@@ -1218,51 +1218,52 @@ EXAMPLES = '''
                      rsso-endpoint-block-attribute: <value in [User-Name, User-Password, CHAP-Password, ...]>
                      rsso-ep-one-ip-only: <value in [disable, enable]>
                      rsso-flush-ip-session: <value in [disable, enable]>
-                     rsso-log-flags: 
-                      - <value in [none, protocol-error, profile-missing, ...]>
+                     rsso-log-flags:
+                       - <value in [none, protocol-error, profile-missing, ...]>
                      rsso-log-period: <value of integer>
                      rsso-radius-response: <value in [disable, enable]>
                      rsso-radius-server-port: <value of integer>
-                     rsso-secret: 
-                      - <value of string>
+                     rsso-secret:
+                       - <value of string>
                      rsso-validate-request-secret: <value in [disable, enable]>
-                     secondary-secret: 
-                      - <value of string>
+                     secondary-secret:
+                       - <value of string>
                      secondary-server: <value of string>
-                     secret: 
-                      - <value of string>
+                     secret:
+                       - <value of string>
                      server: <value of string>
                      source-ip: <value of string>
                      sso-attribute: <value in [User-Name, User-Password, CHAP-Password, ...]>
                      sso-attribute-key: <value of string>
                      sso-attribute-value-override: <value in [disable, enable]>
-                     tertiary-secret: 
-                      - <value of string>
+                     tertiary-secret:
+                       - <value of string>
                      tertiary-server: <value of string>
                      timeout: <value of integer>
                      use-management-vdom: <value in [disable, enable]>
                      username-case-sensitive: <value in [disable, enable]>
-    - name: send request to /pm/config/obj/user/radius
+
+    - name: REQUESTING /PM/CONFIG/OBJ/USER/RADIUS
       fmgr_pm_config_obj_user_radius:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [acct-all-servers, acct-interim-interval, all-usergroup, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [acct-all-servers, acct-interim-interval, all-usergroup, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 '''
 
@@ -1281,7 +1282,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/user/radius
+            example: '/pm/config/adom/{adom}/obj/user/radius'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -1511,7 +1512,7 @@ return_of_api_category_0:
                   description: 'Enable/disable password renewal.'
                radius-coa:
                   type: str
-                  description: 'Enable to allow a mechanism to change the attributes of an authentication, authorization, and accounting session after it is authenticated.'
+                  description: 'Enable to allow a mechanism to change the attributes of an authentication, authorization, and accounting session after it is...'
                radius-port:
                   type: int
                   description: 'RADIUS service port number.'
@@ -1602,7 +1603,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/user/radius
+            example: '/pm/config/adom/{adom}/obj/user/radius'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -1612,6 +1613,7 @@ from ansible.module_utils.network.fortimanager.common import DEFAULT_RESULT_OBJ
 from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
+
 
 def main():
     jrpc_urls = [
@@ -1626,7 +1628,7 @@ def main():
         }
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -2902,7 +2904,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -2923,8 +2924,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -2945,14 +2946,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

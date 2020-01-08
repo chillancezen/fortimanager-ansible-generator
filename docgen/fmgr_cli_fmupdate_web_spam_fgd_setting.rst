@@ -118,27 +118,28 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/web-spam/fgd-setting
+
+    - name: REQUESTING /CLI/FMUPDATE/WEB-SPAM/FGD-SETTING
       fmgr_cli_fmupdate_web_spam_fgd_setting:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   as-cache: <value of integer default: 300>
-                  as-log: <value in [disable, nospam, all] default: nospam>
-                  as-preload: <value in [disable, enable] default: disable>
+                  as-log: <value in [disable, nospam, all] default: 'nospam'>
+                  as-preload: <value in [disable, enable] default: 'disable'>
                   av-cache: <value of integer default: 300>
-                  av-log: <value in [disable, novirus, all] default: novirus>
-                  av-preload: <value in [disable, enable] default: disable>
+                  av-log: <value in [disable, novirus, all] default: 'novirus'>
+                  av-preload: <value in [disable, enable] default: 'disable'>
                   av2-cache: <value of integer default: 800>
-                  av2-log: <value in [disable, noav2, all] default: noav2>
-                  av2-preload: <value in [disable, enable] default: disable>
-                  eventlog-query: <value in [disable, enable] default: disable>
+                  av2-log: <value in [disable, noav2, all] default: 'noav2'>
+                  av2-preload: <value in [disable, enable] default: 'disable'>
+                  eventlog-query: <value in [disable, enable] default: 'disable'>
                   fgd-pull-interval: <value of integer default: 10>
                   fq-cache: <value of integer default: 300>
-                  fq-log: <value in [disable, nofilequery, all] default: nofilequery>
-                  fq-preload: <value in [disable, enable] default: disable>
-                  linkd-log: <value in [emergency, alert, critical, ...] default: debug>
+                  fq-log: <value in [disable, nofilequery, all] default: 'nofilequery'>
+                  fq-preload: <value in [disable, enable] default: 'disable'>
+                  linkd-log: <value in [emergency, alert, critical, ...] default: 'debug'>
                   max-client-worker: <value of integer default: 0>
                   max-log-quota: <value of integer default: 6144>
                   max-unrated-site: <value of integer default: 500>
@@ -149,25 +150,25 @@ Examples
                   restrict-av2-dbver: <value of string>
                   restrict-fq-dbver: <value of string>
                   restrict-wf-dbver: <value of string>
-                  server-override: 
-                     servlist: 
-                      - 
+                  server-override:
+                     servlist:
+                       -
                            id: <value of integer default: 0>
-                           ip: <value of string default: 0.0.0.0>
-                           ip6: <value of string default: ::>
+                           ip: <value of string default: '0.0.0.0'>
+                           ip6: <value of string default: '::'>
                            port: <value of integer default: 443>
-                           service-type: 
-                            - <value in [fgd, fgc, fsa]>
-                     status: <value in [disable, enable] default: disable>
+                           service-type:
+                             - <value in [fgd, fgc, fsa]>
+                     status: <value in [disable, enable] default: 'disable'>
                   stat-log-interval: <value of integer default: 60>
                   stat-sync-interval: <value of integer default: 60>
                   update-interval: <value of integer default: 6>
-                  update-log: <value in [disable, enable] default: enable>
+                  update-log: <value in [disable, enable] default: 'enable'>
                   wf-cache: <value of integer default: 0>
                   wf-dn-cache-expire-time: <value of integer default: 30>
                   wf-dn-cache-max-number: <value of integer default: 10000>
-                  wf-log: <value in [disable, nourl, all] default: nourl>
-                  wf-preload: <value in [disable, enable] default: enable>
+                  wf-log: <value in [disable, nourl, all] default: 'nourl'>
+                  wf-preload: <value in [disable, enable] default: 'enable'>
 
 
 

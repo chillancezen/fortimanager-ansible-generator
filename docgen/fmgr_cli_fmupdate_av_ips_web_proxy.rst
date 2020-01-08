@@ -83,19 +83,20 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/av-ips/web-proxy
+
+    - name: REQUESTING /CLI/FMUPDATE/AV-IPS/WEB-PROXY
       fmgr_cli_fmupdate_av_ips_web_proxy:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  ip: <value of string default: 0.0.0.0>
-                  ip6: <value of string default: ::>
-                  mode: <value in [proxy, tunnel] default: proxy>
-                  password: 
-                   - <value of string default: ENC MTI2MjAzMTE0MTc0NzY3N96A1AmSDwrXKEo5liF49GmZugX/t86PjMCxqbV67bnu5q3vr1l9kR/jt+BYI+PH3j5ZmUYXO6ZXXHE1wEhZwMirHrcObe3p1h8QGgTiVa/F6CCH3JQkigR5WzWpmW++j9sHqYnfeBZqThZulCaTu1dpr1IF>
+            -
+               data:
+                  ip: <value of string default: '0.0.0.0'>
+                  ip6: <value of string default: '::'>
+                  mode: <value in [proxy, tunnel] default: 'proxy'>
+                  password:
+                    - <value of string default: 'ENC MTI2MjAzMTE0MTc0NzY3N96A1AmSDwrXKEo5liF49GmZugX/t86PjMCxqbV67bnu5q3vr1l9...'>
                   port: <value of integer default: 80>
-                  status: <value in [disable, enable] default: disable>
+                  status: <value in [disable, enable] default: 'disable'>
                   username: <value of string>
 
 

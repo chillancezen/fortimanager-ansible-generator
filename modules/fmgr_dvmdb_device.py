@@ -30,7 +30,6 @@ description:
     - /dvmdb/adom/{adom}/device
     - /dvmdb/device
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -45,7 +44,7 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
-    url_params: 
+    url_params:
         description: the parameters in url path
         required: True
         type: dict
@@ -59,7 +58,7 @@ options:
                   - custom dom
     schema_object0:
         methods: [get]
-        description: 'Device table, most attributes are read-only and can only be changed internally. Refer to Device Manager Command module for API to add, delete, and manage devices.'
+        description: 'Device table, most attributes are read-only and can only be changed internally. Refer to Device Manager Command module for API to add,...'
         api_categories: [api_tag0]
         api_tag0:
             expand member:
@@ -162,14 +161,14 @@ options:
                     type: int
             sortings:
                 -
-                    \{attr_name\}:
+                    varidic.attr_name:
                         type: int
                         choices:
                             - 1
                             - -1
     schema_object1:
         methods: [set, update]
-        description: 'Device table, most attributes are read-only and can only be changed internally. Refer to Device Manager Command module for API to add, delete, and manage devices.'
+        description: 'Device table, most attributes are read-only and can only be changed internally. Refer to Device Manager Command module for API to add,...'
         api_categories: [api_tag0]
         api_tag0:
             data:
@@ -460,39 +459,41 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvmdb/device
+
+    - name: REQUESTING /DVMDB/DEVICE
       fmgr_dvmdb_device:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                expand member: <value of string>
-               fields: 
-                - 
-                   - <value in [adm_pass, adm_usr, app_ver, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [adm_pass, adm_usr, app_ver, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
-               meta fields: 
-                - <value of string>
+               meta fields:
+                 - <value of string>
                option: <value in [count, object member, syntax]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
-    - name: send request to /dvmdb/device
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
+
+    - name: REQUESTING /DVMDB/DEVICE
       fmgr_dvmdb_device:
          method: <value in [set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
-                     adm_pass: 
-                      - <value of string>
+            -
+               data:
+                 -
+                     adm_pass:
+                       - <value of string>
                      adm_usr: <value of string>
                      app_ver: <value of string>
                      av_ver: <value of string>
@@ -500,32 +501,32 @@ EXAMPLES = '''
                      branch_pt: <value of integer>
                      build: <value of integer>
                      checksum: <value of string>
-                     conf_status: <value in [unknown, insync, outofsync] default: unknown>
-                     conn_mode: <value in [active, passive] default: passive>
-                     conn_status: <value in [UNKNOWN, up, down] default: UNKNOWN>
-                     db_status: <value in [unknown, nomod, mod] default: unknown>
+                     conf_status: <value in [unknown, insync, outofsync] default: 'unknown'>
+                     conn_mode: <value in [active, passive] default: 'passive'>
+                     conn_status: <value in [UNKNOWN, up, down] default: 'UNKNOWN'>
+                     db_status: <value in [unknown, nomod, mod] default: 'unknown'>
                      desc: <value of string>
-                     dev_status: <value in [none, unknown, checkedin, ...] default: unknown>
+                     dev_status: <value in [none, unknown, checkedin, ...] default: 'unknown'>
                      fap_cnt: <value of integer>
                      faz.full_act: <value of integer>
                      faz.perm: <value of integer>
                      faz.quota: <value of integer>
                      faz.used: <value of integer>
                      fex_cnt: <value of integer>
-                     flags: 
-                      - <value in [has_hdd, vdom_enabled, discover, ...]>
+                     flags:
+                       - <value in [has_hdd, vdom_enabled, discover, ...]>
                      foslic_cpu: <value of integer>
-                     foslic_dr_site: <value in [disable, enable] default: disable>
+                     foslic_dr_site: <value in [disable, enable] default: 'disable'>
                      foslic_inst_time: <value of integer>
                      foslic_last_sync: <value of integer>
                      foslic_ram: <value of integer>
-                     foslic_type: <value in [temporary, trial, regular, ...] default: temporary>
-                     foslic_utm: 
-                      - <value in [fw, av, ips, ...]>
+                     foslic_type: <value in [temporary, trial, regular, ...] default: 'temporary'>
+                     foslic_utm:
+                       - <value in [fw, av, ips, ...]>
                      fsw_cnt: <value of integer>
                      ha_group_id: <value of integer>
                      ha_group_name: <value of string>
-                     ha_mode: <value in [standalone, AP, AA, ...] default: standalone>
+                     ha_mode: <value in [standalone, AP, AA, ...] default: 'standalone'>
                      hdisk_size: <value of integer>
                      hostname: <value of string>
                      hw_rev_major: <value of integer>
@@ -545,21 +546,21 @@ EXAMPLES = '''
                      meta fields: <value of string>
                      mgmt_id: <value of integer>
                      mgmt_if: <value of string>
-                     mgmt_mode: <value in [unreg, fmg, faz, ...] default: unreg>
+                     mgmt_mode: <value in [unreg, fmg, faz, ...] default: 'unreg'>
                      mgt_vdom: <value of string>
                      mr: <value of integer default: -1>
                      name: <value of string>
-                     os_type: <value in [unknown, fos, fsw, ...] default: unknown>
-                     os_ver: <value in [unknown, 0.0, 1.0, ...] default: unknown>
+                     os_type: <value in [unknown, fos, fsw, ...] default: 'unknown'>
+                     os_ver: <value in [unknown, 0.0, 1.0, ...] default: 'unknown'>
                      patch: <value of integer>
                      platform_str: <value of string>
                      psk: <value of string>
                      sn: <value of string>
-                     vdom: 
-                      - 
+                     vdom:
+                       -
                            comments: <value of string>
                            name: <value of string>
-                           opmode: <value in [nat, transparent] default: nat>
+                           opmode: <value in [nat, transparent] default: 'nat'>
                            rtm_prof_id: <value of integer>
                            status: <value of string>
                      version: <value of integer>
@@ -603,21 +604,21 @@ return_of_api_category_0:
                   type: str
                conf_status:
                   type: str
-                  example: unknown
+                  example: 'unknown'
                conn_mode:
                   type: str
-                  example: passive
+                  example: 'passive'
                conn_status:
                   type: str
-                  example: UNKNOWN
+                  example: 'UNKNOWN'
                db_status:
                   type: str
-                  example: unknown
+                  example: 'unknown'
                desc:
                   type: str
                dev_status:
                   type: str
-                  example: unknown
+                  example: 'unknown'
                fap_cnt:
                   type: int
                faz.full_act:
@@ -640,7 +641,7 @@ return_of_api_category_0:
                foslic_dr_site:
                   type: str
                   description: 'VM Meter DR Site status.'
-                  example: disable
+                  example: 'disable'
                foslic_inst_time:
                   type: int
                   description: 'VM Meter first deployment time (in UNIX timestamp).'
@@ -653,7 +654,7 @@ return_of_api_category_0:
                foslic_type:
                   type: str
                   description: 'VM Meter license type.'
-                  example: temporary
+                  example: 'temporary'
                foslic_utm:
                   type: array
                   suboptions:
@@ -667,7 +668,7 @@ return_of_api_category_0:
                ha_mode:
                   type: str
                   description: 'enabled - Value reserved for non-FOS HA devices.'
-                  example: standalone
+                  example: 'standalone'
                hdisk_size:
                   type: int
                hostname:
@@ -709,7 +710,7 @@ return_of_api_category_0:
                   type: str
                mgmt_mode:
                   type: str
-                  example: unreg
+                  example: 'unreg'
                mgt_vdom:
                   type: str
                mr:
@@ -720,10 +721,10 @@ return_of_api_category_0:
                   description: 'Unique name for the device.'
                os_type:
                   type: str
-                  example: unknown
+                  example: 'unknown'
                os_ver:
                   type: str
-                  example: unknown
+                  example: 'unknown'
                patch:
                   type: int
                platform_str:
@@ -742,7 +743,7 @@ return_of_api_category_0:
                         type: str
                      opmode:
                         type: str
-                        example: nat
+                        example: 'nat'
                      rtm_prof_id:
                         type: int
                      status:
@@ -768,7 +769,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /dvmdb/adom/{adom}/device
+            example: '/dvmdb/adom/{adom}/device'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -783,7 +784,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /dvmdb/adom/{adom}/device
+            example: '/dvmdb/adom/{adom}/device'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -793,6 +794,7 @@ from ansible.module_utils.network.fortimanager.common import DEFAULT_RESULT_OBJ
 from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
+
 
 def main():
     jrpc_urls = [
@@ -807,7 +809,7 @@ def main():
         }
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -1010,7 +1012,6 @@ def main():
                         },
                         'conf_status': {
                             'type': 'string',
-                            'default': 'unknown',
                             'enum': [
                                 'unknown',
                                 'insync',
@@ -1019,7 +1020,6 @@ def main():
                         },
                         'conn_mode': {
                             'type': 'string',
-                            'default': 'passive',
                             'enum': [
                                 'active',
                                 'passive'
@@ -1027,7 +1027,6 @@ def main():
                         },
                         'conn_status': {
                             'type': 'string',
-                            'default': 'UNKNOWN',
                             'enum': [
                                 'UNKNOWN',
                                 'up',
@@ -1036,7 +1035,6 @@ def main():
                         },
                         'db_status': {
                             'type': 'string',
-                            'default': 'unknown',
                             'enum': [
                                 'unknown',
                                 'nomod',
@@ -1048,7 +1046,6 @@ def main():
                         },
                         'dev_status': {
                             'type': 'string',
-                            'default': 'unknown',
                             'enum': [
                                 'none',
                                 'unknown',
@@ -1110,7 +1107,6 @@ def main():
                         },
                         'foslic_dr_site': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1127,7 +1123,6 @@ def main():
                         },
                         'foslic_type': {
                             'type': 'string',
-                            'default': 'temporary',
                             'enum': [
                                 'temporary',
                                 'trial',
@@ -1161,7 +1156,6 @@ def main():
                         },
                         'ha_mode': {
                             'type': 'string',
-                            'default': 'standalone',
                             'enum': [
                                 'standalone',
                                 'AP',
@@ -1233,7 +1227,6 @@ def main():
                         },
                         'mgmt_mode': {
                             'type': 'string',
-                            'default': 'unreg',
                             'enum': [
                                 'unreg',
                                 'fmg',
@@ -1254,7 +1247,6 @@ def main():
                         },
                         'os_type': {
                             'type': 'string',
-                            'default': 'unknown',
                             'enum': [
                                 'unknown',
                                 'fos',
@@ -1275,7 +1267,6 @@ def main():
                         },
                         'os_ver': {
                             'type': 'string',
-                            'default': 'unknown',
                             'enum': [
                                 'unknown',
                                 '0.0',
@@ -1310,7 +1301,6 @@ def main():
                                 },
                                 'opmode': {
                                     'type': 'string',
-                                    'default': 'nat',
                                     'enum': [
                                         'nat',
                                         'transparent'
@@ -1361,7 +1351,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -1381,8 +1370,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -1403,14 +1392,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

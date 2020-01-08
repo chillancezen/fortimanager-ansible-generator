@@ -82,20 +82,21 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/service
+
+    - name: REQUESTING /CLI/FMUPDATE/SERVICE
       fmgr_cli_fmupdate_service:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  avips: <value in [disable, enable] default: enable>
-                  query-antispam: <value in [disable, enable] default: disable>
-                  query-antivirus: <value in [disable, enable] default: disable>
-                  query-filequery: <value in [disable, enable] default: disable>
-                  query-geoip: <value in [disable, enable] default: enable>
-                  query-outbreak-prevention: <value in [disable, enable] default: disable>
-                  query-webfilter: <value in [disable, enable] default: disable>
-                  webfilter-https-traversal: <value in [disable, enable] default: disable>
+            -
+               data:
+                  avips: <value in [disable, enable] default: 'enable'>
+                  query-antispam: <value in [disable, enable] default: 'disable'>
+                  query-antivirus: <value in [disable, enable] default: 'disable'>
+                  query-filequery: <value in [disable, enable] default: 'disable'>
+                  query-geoip: <value in [disable, enable] default: 'enable'>
+                  query-outbreak-prevention: <value in [disable, enable] default: 'disable'>
+                  query-webfilter: <value in [disable, enable] default: 'disable'>
+                  webfilter-https-traversal: <value in [disable, enable] default: 'disable'>
 
 
 

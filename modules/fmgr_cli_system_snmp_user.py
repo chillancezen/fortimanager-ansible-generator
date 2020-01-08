@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/system/snmp/user
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -64,7 +63,7 @@ options:
                     auth-pwd:
                         -
                             type: str
-                            default: 'ENC NjAyNzczNjcyNzY3Nzg1Of2B29hwP1lYq82MXmrQ1PG7EGaRNDqkrqYFYL1NNEgm54idZER+oDi44SCyPKkvrPPrxgkkBtYnh1uQ3hobimfdeMd2rooTubF9B+lKXyq06wTtneMsxzjLK1SP1NNDy91keEpVFpDTpHpRtZ1meW8+NS8k'
+                            default: 'ENC NjAyNzczNjcyNzY3Nzg1Of2B29hwP1lYq82MXmrQ1PG7EGaRNDqkrqYFYL1NNEgm54idZER+oDi44SCyPKkvrPPrxgkkBtYnh1uQ3hobimfdeMd2r...'
                     events:
                         -
                             type: str
@@ -103,7 +102,7 @@ options:
                     priv-pwd:
                         -
                             type: str
-                            default: 'ENC OTA3MDU5Nzg1ODQ2MDM2NInoPzPSYfTulrcxKZ65Re1ROZUOMQVvU4dqPX5WkABZ8PkpLAOtCEZJPjCcJbybir6Dw9yptXUDyKN4hUHbzauIOAQ2Az8BlB5n4ifkMNTkDDDxZ7r6oB0GK+QmJM9n2wjUGMCcVi0sG9l4bc9sFFuBi4mJ'
+                            default: 'ENC OTA3MDU5Nzg1ODQ2MDM2NInoPzPSYfTulrcxKZ65Re1ROZUOMQVvU4dqPX5WkABZ8PkpLAOtCEZJPjCcJbybir6Dw9yptXUDyKN4hUHbzauIOAQ2A...'
                     queries:
                         type: str
                         default: 'enable'
@@ -177,37 +176,39 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/snmp/user
+
+    - name: REQUESTING /CLI/SYSTEM/SNMP/USER
       fmgr_cli_system_snmp_user:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     auth-proto: <value in [md5, sha] default: sha>
-                     auth-pwd: 
-                      - <value of string default: ENC NjAyNzczNjcyNzY3Nzg1Of2B29hwP1lYq82MXmrQ1PG7EGaRNDqkrqYFYL1NNEgm54idZER+oDi44SCyPKkvrPPrxgkkBtYnh1uQ3hobimfdeMd2rooTubF9B+lKXyq06wTtneMsxzjLK1SP1NNDy91keEpVFpDTpHpRtZ1meW8+NS8k>
-                     events: 
-                      - <value in [disk_low, ha_switch, intf_ip_chg, ...]>
+            -
+               data:
+                 -
+                     auth-proto: <value in [md5, sha] default: 'sha'>
+                     auth-pwd:
+                       - <value of string default: 'ENC NjAyNzczNjcyNzY3Nzg1Of2B29hwP1lYq82MXmrQ1PG7EGaRNDqkrqYFYL1NNEgm54idZER+...'>
+                     events:
+                       - <value in [disk_low, ha_switch, intf_ip_chg, ...]>
                      name: <value of string>
                      notify-hosts: <value of string>
                      notify-hosts6: <value of string>
-                     priv-proto: <value in [aes, des] default: aes>
-                     priv-pwd: 
-                      - <value of string default: ENC OTA3MDU5Nzg1ODQ2MDM2NInoPzPSYfTulrcxKZ65Re1ROZUOMQVvU4dqPX5WkABZ8PkpLAOtCEZJPjCcJbybir6Dw9yptXUDyKN4hUHbzauIOAQ2Az8BlB5n4ifkMNTkDDDxZ7r6oB0GK+QmJM9n2wjUGMCcVi0sG9l4bc9sFFuBi4mJ>
-                     queries: <value in [disable, enable] default: enable>
+                     priv-proto: <value in [aes, des] default: 'aes'>
+                     priv-pwd:
+                       - <value of string default: 'ENC OTA3MDU5Nzg1ODQ2MDM2NInoPzPSYfTulrcxKZ65Re1ROZUOMQVvU4dqPX5WkABZ8PkpLAOt...'>
+                     queries: <value in [disable, enable] default: 'enable'>
                      query-port: <value of integer default: 161>
-                     security-level: <value in [no-auth-no-priv, auth-no-priv, auth-priv] default: no-auth-no-priv>
-    - name: send request to /cli/system/snmp/user
+                     security-level: <value in [no-auth-no-priv, auth-no-priv, auth-priv] default: 'no-auth-no-priv'>
+
+    - name: REQUESTING /CLI/SYSTEM/SNMP/USER
       fmgr_cli_system_snmp_user:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [auth-proto, auth-pwd, events, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [auth-proto, auth-pwd, events, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -228,7 +229,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/snmp/user
+            example: '/cli/global/system/snmp/user'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -245,12 +246,12 @@ return_of_api_category_0:
                      'Authentication protocol.'
                      'md5 - HMAC-MD5-96 authentication protocol.'
                      'sha - HMAC-SHA-96 authentication protocol.'
-                  example: sha
+                  example: 'sha'
                auth-pwd:
                   type: array
                   suboptions:
                      type: str
-                     example: ENC NjAyNzczNjcyNzY3Nzg1Of2B29hwP1lYq82MXmrQ1PG7EGaRNDqkrqYFYL1NNEgm54idZER+oDi44SCyPKkvrPPrxgkkBtYnh1uQ3hobimfdeMd2rooTubF9B+lKXyq06wTtneMsxzjLK1SP1NNDy91keEpVFpDTpHpRtZ1meW8+NS8k
+                     example: 'ENC NjAyNzczNjcyNzY3Nzg1Of2B29hwP1lYq82MXmrQ1PG7EGaRNDqkrqYFYL1NNEgm54idZER+...'
                events:
                   type: array
                   suboptions:
@@ -270,19 +271,19 @@ return_of_api_category_0:
                      'Privacy (encryption) protocol.'
                      'aes - CFB128-AES-128 symmetric encryption protocol.'
                      'des - CBC-DES symmetric encryption protocol.'
-                  example: aes
+                  example: 'aes'
                priv-pwd:
                   type: array
                   suboptions:
                      type: str
-                     example: ENC OTA3MDU5Nzg1ODQ2MDM2NInoPzPSYfTulrcxKZ65Re1ROZUOMQVvU4dqPX5WkABZ8PkpLAOtCEZJPjCcJbybir6Dw9yptXUDyKN4hUHbzauIOAQ2Az8BlB5n4ifkMNTkDDDxZ7r6oB0GK+QmJM9n2wjUGMCcVi0sG9l4bc9sFFuBi4mJ
+                     example: 'ENC OTA3MDU5Nzg1ODQ2MDM2NInoPzPSYfTulrcxKZ65Re1ROZUOMQVvU4dqPX5WkABZ8PkpLAOt...'
                queries:
                   type: str
                   description: |
                      'Enable/disable queries for this user.'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: enable
+                  example: 'enable'
                query-port:
                   type: int
                   description: 'SNMPv3 query port.'
@@ -294,7 +295,7 @@ return_of_api_category_0:
                      'no-auth-no-priv - Message with no authentication and no privacy (encryption).'
                      'auth-no-priv - Message with authentication but no privacy (encryption).'
                      'auth-priv - Message with authentication and privacy (encryption).'
-                  example: no-auth-no-priv
+                  example: 'no-auth-no-priv'
          status:
             code:
                type: int
@@ -302,7 +303,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/snmp/user
+            example: '/cli/global/system/snmp/user'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -313,6 +314,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/snmp/user'
@@ -321,7 +323,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -331,7 +333,6 @@ def main():
                     'items': {
                         'auth-proto': {
                             'type': 'string',
-                            'default': 'sha',
                             'enum': [
                                 'md5',
                                 'sha'
@@ -340,8 +341,7 @@ def main():
                         'auth-pwd': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC NjAyNzczNjcyNzY3Nzg1Of2B29hwP1lYq82MXmrQ1PG7EGaRNDqkrqYFYL1NNEgm54idZER+oDi44SCyPKkvrPPrxgkkBtYnh1uQ3hobimfdeMd2rooTubF9B+lKXyq06wTtneMsxzjLK1SP1NNDy91keEpVFpDTpHpRtZ1meW8+NS8k'
+                                'type': 'string'
                             }
                         },
                         'events': {
@@ -375,7 +375,6 @@ def main():
                         },
                         'priv-proto': {
                             'type': 'string',
-                            'default': 'aes',
                             'enum': [
                                 'aes',
                                 'des'
@@ -384,13 +383,11 @@ def main():
                         'priv-pwd': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC OTA3MDU5Nzg1ODQ2MDM2NInoPzPSYfTulrcxKZ65Re1ROZUOMQVvU4dqPX5WkABZ8PkpLAOtCEZJPjCcJbybir6Dw9yptXUDyKN4hUHbzauIOAQ2Az8BlB5n4ifkMNTkDDDxZ7r6oB0GK+QmJM9n2wjUGMCcVi0sG9l4bc9sFFuBi4mJ'
+                                'type': 'string'
                             }
                         },
                         'queries': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -403,7 +400,6 @@ def main():
                         },
                         'security-level': {
                             'type': 'string',
-                            'default': 'no-auth-no-priv',
                             'enum': [
                                 'no-auth-no-priv',
                                 'auth-no-priv',
@@ -491,7 +487,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -512,8 +507,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -534,14 +529,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

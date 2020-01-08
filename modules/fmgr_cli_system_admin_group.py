@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/system/admin/group
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -96,27 +95,29 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/admin/group
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/GROUP
       fmgr_cli_system_admin_group:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     member: 
-                      - 
+            -
+               data:
+                 -
+                     member:
+                       -
                            name: <value of string>
                      name: <value of string>
-    - name: send request to /cli/system/admin/group
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/GROUP
       fmgr_cli_system_admin_group:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [name]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [name]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -137,7 +138,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/admin/group
+            example: '/cli/global/system/admin/group'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -164,7 +165,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/admin/group
+            example: '/cli/global/system/admin/group'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -175,6 +176,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/admin/group'
@@ -183,7 +185,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -273,7 +275,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -294,8 +295,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -316,14 +317,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

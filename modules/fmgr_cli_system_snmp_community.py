@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/system/snmp/community
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -214,46 +213,48 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/snmp/community
+
+    - name: REQUESTING /CLI/SYSTEM/SNMP/COMMUNITY
       fmgr_cli_system_snmp_community:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     events: 
-                      - <value in [disk_low, ha_switch, intf_ip_chg, ...]>
-                     hosts: 
-                      - 
+            -
+               data:
+                 -
+                     events:
+                       - <value in [disk_low, ha_switch, intf_ip_chg, ...]>
+                     hosts:
+                       -
                            id: <value of integer default: 0>
                            interface: <value of string>
-                           ip: <value of string default: 0.0.0.0 0.0.0.0>
-                     hosts6: 
-                      - 
+                           ip: <value of string default: '0.0.0.0 0.0.0.0'>
+                     hosts6:
+                       -
                            id: <value of integer default: 0>
                            interface: <value of string>
-                           ip: <value of string default: ::/0>
+                           ip: <value of string default: '::/0'>
                      id: <value of integer default: 0>
                      name: <value of string>
                      query_v1_port: <value of integer default: 161>
-                     query_v1_status: <value in [disable, enable] default: enable>
+                     query_v1_status: <value in [disable, enable] default: 'enable'>
                      query_v2c_port: <value of integer default: 161>
-                     query_v2c_status: <value in [disable, enable] default: enable>
-                     status: <value in [disable, enable] default: enable>
+                     query_v2c_status: <value in [disable, enable] default: 'enable'>
+                     status: <value in [disable, enable] default: 'enable'>
                      trap_v1_rport: <value of integer default: 162>
-                     trap_v1_status: <value in [disable, enable] default: enable>
+                     trap_v1_status: <value in [disable, enable] default: 'enable'>
                      trap_v2c_rport: <value of integer default: 162>
-                     trap_v2c_status: <value in [disable, enable] default: enable>
-    - name: send request to /cli/system/snmp/community
+                     trap_v2c_status: <value in [disable, enable] default: 'enable'>
+
+    - name: REQUESTING /CLI/SYSTEM/SNMP/COMMUNITY
       fmgr_cli_system_snmp_community:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [events, id, name, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [events, id, name, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -274,7 +275,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/snmp/community
+            example: '/cli/global/system/snmp/community'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -302,7 +303,7 @@ return_of_api_category_0:
                      ip:
                         type: str
                         description: 'Allow host IP address.'
-                        example: 0.0.0.0 0.0.0.0
+                        example: '0.0.0.0 0.0.0.0'
                hosts6:
                   type: array
                   suboptions:
@@ -316,7 +317,7 @@ return_of_api_category_0:
                      ip:
                         type: str
                         description: 'Allow host IP address.'
-                        example: ::/0
+                        example: '::/0'
                id:
                   type: int
                   description: 'Community ID.'
@@ -334,7 +335,7 @@ return_of_api_category_0:
                      'Enable/disable SNMP v1 query.'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: enable
+                  example: 'enable'
                query_v2c_port:
                   type: int
                   description: 'SNMP v2c query port.'
@@ -345,14 +346,14 @@ return_of_api_category_0:
                      'Enable/disable SNMP v2c query.'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: enable
+                  example: 'enable'
                status:
                   type: str
                   description: |
                      'Enable/disable community.'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: enable
+                  example: 'enable'
                trap_v1_rport:
                   type: int
                   description: 'SNMP v1 trap remote port.'
@@ -363,7 +364,7 @@ return_of_api_category_0:
                      'Enable/disable SNMP v1 trap.'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: enable
+                  example: 'enable'
                trap_v2c_rport:
                   type: int
                   description: 'SNMP v2c trap remote port.'
@@ -374,7 +375,7 @@ return_of_api_category_0:
                      'Enable/disable SNMP v2c trap.'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: enable
+                  example: 'enable'
          status:
             code:
                type: int
@@ -382,7 +383,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/snmp/community
+            example: '/cli/global/system/snmp/community'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -393,6 +394,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/snmp/community'
@@ -401,7 +403,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -441,8 +443,7 @@ def main():
                                     'type': 'string'
                                 },
                                 'ip': {
-                                    'type': 'string',
-                                    'default': '0.0.0.0 0.0.0.0'
+                                    'type': 'string'
                                 }
                             }
                         },
@@ -458,8 +459,7 @@ def main():
                                     'type': 'string'
                                 },
                                 'ip': {
-                                    'type': 'string',
-                                    'default': '::/0'
+                                    'type': 'string'
                                 }
                             }
                         },
@@ -478,7 +478,6 @@ def main():
                         },
                         'query_v1_status': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -491,7 +490,6 @@ def main():
                         },
                         'query_v2c_status': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -499,7 +497,6 @@ def main():
                         },
                         'status': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -512,7 +509,6 @@ def main():
                         },
                         'trap_v1_status': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -525,7 +521,6 @@ def main():
                         },
                         'trap_v2c_status': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -613,7 +608,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -634,8 +628,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -656,14 +650,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

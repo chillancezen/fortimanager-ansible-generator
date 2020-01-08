@@ -81,21 +81,22 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /securityconsole/import/dev/objs
+
+    - name: REQUESTING /SECURITYCONSOLE/IMPORT/DEV/OBJS
       fmgr_securityconsole_import_dev_objs:
          method: <value in [exec]>
          params:
-            - 
-               data: 
-                  add_mappings: <value in [disable, enable] default: disable>
+            -
+               data:
+                  add_mappings: <value in [disable, enable] default: 'disable'>
                   adom: <value of string>
                   dst_name: <value of string>
                   dst_parent: <value of string>
-                  if_all_objs: <value in [none, all, filter] default: none>
-                  if_all_policy: <value in [disable, enable] default: disable>
-                  import_action: <value in [do, policy_search, obj_search] default: do>
+                  if_all_objs: <value in [none, all, filter] default: 'none'>
+                  if_all_policy: <value in [disable, enable] default: 'disable'>
+                  import_action: <value in [do, policy_search, obj_search] default: 'do'>
                   name: <value of string>
-                  position: <value in [bottom, top] default: top>
+                  position: <value in [bottom, top] default: 'top'>
                   vdom: <value of string>
 
 

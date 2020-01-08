@@ -136,69 +136,71 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/user/tacacs+
+
+    - name: REQUESTING /PM/CONFIG/OBJ/USER/TACACS+
       fmgr_pm_config_obj_user_tacacs:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      authen-type: <value in [auto, ascii, pap, ...]>
                      authorization: <value in [disable, enable]>
-                     dynamic_mapping: 
-                      - 
-                           _scope: 
-                            - 
+                     dynamic_mapping:
+                       -
+                           _scope:
+                             -
                                  name: <value of string>
                                  vdom: <value of string>
                            authen-type: <value in [auto, ascii, pap, ...]>
                            authorization: <value in [disable, enable]>
-                           key: 
-                            - <value of string>
+                           key:
+                             - <value of string>
                            port: <value of integer>
-                           secondary-key: 
-                            - <value of string>
+                           secondary-key:
+                             - <value of string>
                            secondary-server: <value of string>
                            server: <value of string>
                            source-ip: <value of string>
-                           tertiary-key: 
-                            - <value of string>
+                           tertiary-key:
+                             - <value of string>
                            tertiary-server: <value of string>
-                     key: 
-                      - <value of string>
+                     key:
+                       - <value of string>
                      name: <value of string>
                      port: <value of integer>
-                     secondary-key: 
-                      - <value of string>
+                     secondary-key:
+                       - <value of string>
                      secondary-server: <value of string>
                      server: <value of string>
                      source-ip: <value of string>
-                     tertiary-key: 
-                      - <value of string>
+                     tertiary-key:
+                       - <value of string>
                      tertiary-server: <value of string>
-    - name: send request to /pm/config/obj/user/tacacs+
+
+    - name: REQUESTING /PM/CONFIG/OBJ/USER/TACACS+
       fmgr_pm_config_obj_user_tacacs:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [authen-type, authorization, key, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [authen-type, authorization, key, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

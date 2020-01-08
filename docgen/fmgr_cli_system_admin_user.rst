@@ -198,132 +198,134 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/admin/user
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/USER
       fmgr_cli_system_admin_user:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     adom: 
-                      - 
+            -
+               data:
+                 -
+                     adom:
+                       -
                            adom-name: <value of string>
-                     adom-exclude: 
-                      - 
+                     adom-exclude:
+                       -
                            adom-name: <value of string>
-                     app-filter: 
-                      - 
+                     app-filter:
+                       -
                            app-filter-name: <value of string>
                      avatar: <value of string>
                      ca: <value of string>
-                     change-password: <value in [disable, enable] default: disable>
-                     dashboard: 
-                      - 
+                     change-password: <value in [disable, enable] default: 'disable'>
+                     dashboard:
+                       -
                            column: <value of integer default: 0>
-                           diskio-content-type: <value in [util, iops, blks] default: util>
-                           diskio-period: <value in [1hour, 8hour, 24hour] default: 1hour>
+                           diskio-content-type: <value in [util, iops, blks] default: 'util'>
+                           diskio-period: <value in [1hour, 8hour, 24hour] default: '1hour'>
                            log-rate-period: <value in [2min , 1hour, 6hours]>
-                           log-rate-topn: <value in [1, 2, 3, ...] default: 5>
-                           log-rate-type: <value in [log, device] default: device>
+                           log-rate-topn: <value in [1, 2, 3, ...] default: '5'>
+                           log-rate-type: <value in [log, device] default: 'device'>
                            moduleid: <value of integer default: 0>
                            name: <value of string>
                            num-entries: <value of integer default: 10>
                            refresh-interval: <value of integer default: 300>
-                           res-cpu-display: <value in [average , each] default: average >
-                           res-period: <value in [10min , hour, day] default: 10min >
-                           res-view-type: <value in [real-time , history] default: history>
-                           status: <value in [close, open] default: open>
+                           res-cpu-display: <value in [average , each] default: 'average '>
+                           res-period: <value in [10min , hour, day] default: '10min '>
+                           res-view-type: <value in [real-time , history] default: 'history'>
+                           status: <value in [close, open] default: 'open'>
                            tabid: <value of integer default: 0>
-                           time-period: <value in [1hour, 8hour, 24hour] default: 1hour>
+                           time-period: <value in [1hour, 8hour, 24hour] default: '1hour'>
                            widget-type: <value in [top-lograte, sysres, sysinfo, ...]>
-                     dashboard-tabs: 
-                      - 
+                     dashboard-tabs:
+                       -
                            name: <value of string>
                            tabid: <value of integer default: 0>
                      description: <value of string>
                      dev-group: <value of string>
                      email-address: <value of string>
-                     ext-auth-accprofile-override: <value in [disable, enable] default: disable>
-                     ext-auth-adom-override: <value in [disable, enable] default: disable>
+                     ext-auth-accprofile-override: <value in [disable, enable] default: 'disable'>
+                     ext-auth-adom-override: <value in [disable, enable] default: 'disable'>
                      ext-auth-group-match: <value of string>
                      first-name: <value of string>
-                     force-password-change: <value in [disable, enable] default: disable>
+                     force-password-change: <value in [disable, enable] default: 'disable'>
                      group: <value of string>
                      hidden: <value of integer default: 0>
-                     ips-filter: 
-                      - 
+                     ips-filter:
+                       -
                            ips-filter-name: <value of string>
-                     ipv6_trusthost1: <value of string default: ::/0>
-                     ipv6_trusthost10: <value of string default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128>
-                     ipv6_trusthost2: <value of string default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128>
-                     ipv6_trusthost3: <value of string default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128>
-                     ipv6_trusthost4: <value of string default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128>
-                     ipv6_trusthost5: <value of string default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128>
-                     ipv6_trusthost6: <value of string default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128>
-                     ipv6_trusthost7: <value of string default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128>
-                     ipv6_trusthost8: <value of string default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128>
-                     ipv6_trusthost9: <value of string default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128>
+                     ipv6_trusthost1: <value of string default: '::/0'>
+                     ipv6_trusthost10: <value of string default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'>
+                     ipv6_trusthost2: <value of string default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'>
+                     ipv6_trusthost3: <value of string default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'>
+                     ipv6_trusthost4: <value of string default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'>
+                     ipv6_trusthost5: <value of string default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'>
+                     ipv6_trusthost6: <value of string default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'>
+                     ipv6_trusthost7: <value of string default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'>
+                     ipv6_trusthost8: <value of string default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'>
+                     ipv6_trusthost9: <value of string default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'>
                      last-name: <value of string>
                      ldap-server: <value of string>
-                     meta-data: 
-                      - 
+                     meta-data:
+                       -
                            fieldlength: <value of integer default: 0>
                            fieldname: <value of string>
                            fieldvalue: <value of string>
-                           importance: <value in [optional, required] default: optional>
-                           status: <value in [disabled, enabled] default: enabled>
+                           importance: <value in [optional, required] default: 'optional'>
+                           status: <value in [disabled, enabled] default: 'enabled'>
                      mobile-number: <value of string>
                      pager-number: <value of string>
-                     password: 
-                      - <value of string default: ENC ODU0NTM3NDg1NTMxMDg0MEm8OIAeHq0agoeKH1cknBy7orKo5c0jSfMSXT+VuqYN+atv8wiIW7W8PMzVMSjUkVEnbEpEW/komaek5rcWGIHzpijPphfS09Vlm0vEArsMz6UNqGxf5qLL/MxjITcW4WPWIFLPTPxZQAMoakc7pn8jNgVL>
-                     password-expire: 
-                      - <value of string>
+                     password:
+                       - <value of string default: 'ENC ODU0NTM3NDg1NTMxMDg0MEm8OIAeHq0agoeKH1cknBy7orKo5c0jSfMSXT+VuqYN+atv8wiI...'>
+                     password-expire:
+                       - <value of string>
                      phone-number: <value of string>
-                     policy-package: 
-                      - 
+                     policy-package:
+                       -
                            policy-package-name: <value of string>
-                     profileid: <value of string default: Restricted_User>
+                     profileid: <value of string default: 'Restricted_User'>
                      radius_server: <value of string>
-                     restrict-access: <value in [disable, enable] default: disable>
-                     restrict-dev-vdom: 
-                      - 
+                     restrict-access: <value in [disable, enable] default: 'disable'>
+                     restrict-dev-vdom:
+                       -
                            dev-vdom: <value of string>
-                     rpc-permit: <value in [read-write, none, read] default: none>
-                     ssh-public-key1: 
-                      - <value of string>
-                     ssh-public-key2: 
-                      - <value of string>
-                     ssh-public-key3: 
-                      - <value of string>
+                     rpc-permit: <value in [read-write, none, read] default: 'none'>
+                     ssh-public-key1:
+                       - <value of string>
+                     ssh-public-key2:
+                       - <value of string>
+                     ssh-public-key3:
+                       - <value of string>
                      subject: <value of string>
                      tacacs-plus-server: <value of string>
-                     trusthost1: <value of string default: 0.0.0.0 0.0.0.0>
-                     trusthost10: <value of string default: 255.255.255.255 255.255.255.255>
-                     trusthost2: <value of string default: 255.255.255.255 255.255.255.255>
-                     trusthost3: <value of string default: 255.255.255.255 255.255.255.255>
-                     trusthost4: <value of string default: 255.255.255.255 255.255.255.255>
-                     trusthost5: <value of string default: 255.255.255.255 255.255.255.255>
-                     trusthost6: <value of string default: 255.255.255.255 255.255.255.255>
-                     trusthost7: <value of string default: 255.255.255.255 255.255.255.255>
-                     trusthost8: <value of string default: 255.255.255.255 255.255.255.255>
-                     trusthost9: <value of string default: 255.255.255.255 255.255.255.255>
-                     two-factor-auth: <value in [disable, enable] default: disable>
-                     user_type: <value in [local, radius, ldap, ...] default: local>
+                     trusthost1: <value of string default: '0.0.0.0 0.0.0.0'>
+                     trusthost10: <value of string default: '255.255.255.255 255.255.255.255'>
+                     trusthost2: <value of string default: '255.255.255.255 255.255.255.255'>
+                     trusthost3: <value of string default: '255.255.255.255 255.255.255.255'>
+                     trusthost4: <value of string default: '255.255.255.255 255.255.255.255'>
+                     trusthost5: <value of string default: '255.255.255.255 255.255.255.255'>
+                     trusthost6: <value of string default: '255.255.255.255 255.255.255.255'>
+                     trusthost7: <value of string default: '255.255.255.255 255.255.255.255'>
+                     trusthost8: <value of string default: '255.255.255.255 255.255.255.255'>
+                     trusthost9: <value of string default: '255.255.255.255 255.255.255.255'>
+                     two-factor-auth: <value in [disable, enable] default: 'disable'>
+                     user_type: <value in [local, radius, ldap, ...] default: 'local'>
                      userid: <value of string>
-                     web-filter: 
-                      - 
+                     web-filter:
+                       -
                            web-filter-name: <value of string>
-                     wildcard: <value in [disable, enable] default: disable>
-    - name: send request to /cli/system/admin/user
+                     wildcard: <value in [disable, enable] default: 'disable'>
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/USER
       fmgr_cli_system_admin_user:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [avatar, ca, change-password, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [avatar, ca, change-password, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

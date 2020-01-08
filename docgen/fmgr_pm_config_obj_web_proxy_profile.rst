@@ -113,15 +113,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/web-proxy/profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WEB-PROXY/PROFILE
       fmgr_pm_config_obj_web_proxy_profile:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      header-client-ip: <value in [pass, add, remove]>
                      header-front-end-https: <value in [pass, add, remove]>
                      header-via-request: <value in [pass, add, remove]>
@@ -129,8 +130,8 @@ Examples
                      header-x-authenticated-groups: <value in [pass, add, remove]>
                      header-x-authenticated-user: <value in [pass, add, remove]>
                      header-x-forwarded-for: <value in [pass, add, remove]>
-                     headers: 
-                      - 
+                     headers:
+                       -
                            action: <value in [add-to-request, add-to-response, remove-from-request, ...]>
                            content: <value of string>
                            id: <value of integer>
@@ -138,27 +139,28 @@ Examples
                      log-header-change: <value in [disable, enable]>
                      name: <value of string>
                      strip-encoding: <value in [disable, enable]>
-    - name: send request to /pm/config/obj/web-proxy/profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WEB-PROXY/PROFILE
       fmgr_pm_config_obj_web_proxy_profile:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [header-client-ip, header-front-end-https, header-via-request, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [header-client-ip, header-front-end-https, header-via-request, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

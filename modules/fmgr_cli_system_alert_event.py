@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/system/alert-event
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -216,44 +215,46 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/alert-event
+
+    - name: REQUESTING /CLI/SYSTEM/ALERT-EVENT
       fmgr_cli_system_alert_event:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     alert-destination: 
-                      - 
+            -
+               data:
+                 -
+                     alert-destination:
+                       -
                            from: <value of string>
                            smtp-name: <value of string>
                            snmp-name: <value of string>
                            syslog-name: <value of string>
                            to: <value of string>
-                           type: <value in [mail, snmp, syslog] default: mail>
-                     enable-generic-text: 
-                      - <value in [enable, disable]>
-                     enable-severity-filter: 
-                      - <value in [enable, disable]>
-                     event-time-period: <value in [0.5, 1, 3, ...] default: 0.5>
+                           type: <value in [mail, snmp, syslog] default: 'mail'>
+                     enable-generic-text:
+                       - <value in [enable, disable]>
+                     enable-severity-filter:
+                       - <value in [enable, disable]>
+                     event-time-period: <value in [0.5, 1, 3, ...] default: '0.5'>
                      generic-text: <value of string>
                      name: <value of string>
-                     num-events: <value in [1, 5, 10, ...] default: 1>
-                     severity-filter: <value in [high, medium-high, medium, ...] default: high>
-                     severity-level-comp: 
-                      - <value in [>=, =, <=]>
-                     severity-level-logs: 
-                      - <value in [no-check, information, notify, ...]>
-    - name: send request to /cli/system/alert-event
+                     num-events: <value in [1, 5, 10, ...] default: '1'>
+                     severity-filter: <value in [high, medium-high, medium, ...] default: 'high'>
+                     severity-level-comp:
+                       - <value in [>=, =, <=]>
+                     severity-level-logs:
+                       - <value in [no-check, information, notify, ...]>
+
+    - name: REQUESTING /CLI/SYSTEM/ALERT-EVENT
       fmgr_cli_system_alert_event:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [enable-generic-text, enable-severity-filter, event-time-period, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [enable-generic-text, enable-severity-filter, event-time-period, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -274,7 +275,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/alert-event
+            example: '/cli/global/system/alert-event'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -310,7 +311,7 @@ return_of_api_category_0:
                            'mail - Send email alert.'
                            'snmp - Send SNMP trap.'
                            'syslog - Send syslog message.'
-                        example: mail
+                        example: 'mail'
                enable-generic-text:
                   type: array
                   suboptions:
@@ -331,7 +332,7 @@ return_of_api_category_0:
                      '24 - 1 day.'
                      '72 - 3 days.'
                      '168 - 1 week.'
-                  example: 0.5
+                  example: '0.5'
                generic-text:
                   type: str
                   description: 'Text that must be contained in a log to trigger alert.'
@@ -347,7 +348,7 @@ return_of_api_category_0:
                      '10 - 10 events.'
                      '50 - 50 events.'
                      '100 - 100 events.'
-                  example: 1
+                  example: '1'
                severity-filter:
                   type: str
                   description: |
@@ -357,7 +358,7 @@ return_of_api_category_0:
                      'medium - Medium level alert.'
                      'medium-low - Medium-low level alert.'
                      'low - Low level alert.'
-                  example: high
+                  example: 'high'
                severity-level-comp:
                   type: array
                   suboptions:
@@ -373,7 +374,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/alert-event
+            example: '/cli/global/system/alert-event'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -384,6 +385,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/alert-event'
@@ -392,7 +394,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -420,7 +422,6 @@ def main():
                                 },
                                 'type': {
                                     'type': 'string',
-                                    'default': 'mail',
                                     'enum': [
                                         'mail',
                                         'snmp',
@@ -451,7 +452,6 @@ def main():
                         },
                         'event-time-period': {
                             'type': 'string',
-                            'default': '0.5',
                             'enum': [
                                 '0.5',
                                 '1',
@@ -471,7 +471,6 @@ def main():
                         },
                         'num-events': {
                             'type': 'string',
-                            'default': '1',
                             'enum': [
                                 '1',
                                 '5',
@@ -482,7 +481,6 @@ def main():
                         },
                         'severity-filter': {
                             'type': 'string',
-                            'default': 'high',
                             'enum': [
                                 'high',
                                 'medium-high',
@@ -597,7 +595,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -618,8 +615,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -640,14 +637,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

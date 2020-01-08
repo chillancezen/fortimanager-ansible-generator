@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/system/admin/user
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -412,7 +411,7 @@ options:
                     password:
                         -
                             type: str
-                            default: 'ENC ODU0NTM3NDg1NTMxMDg0MEm8OIAeHq0agoeKH1cknBy7orKo5c0jSfMSXT+VuqYN+atv8wiIW7W8PMzVMSjUkVEnbEpEW/komaek5rcWGIHzpijPphfS09Vlm0vEArsMz6UNqGxf5qLL/MxjITcW4WPWIFLPTPxZQAMoakc7pn8jNgVL'
+                            default: 'ENC ODU0NTM3NDg1NTMxMDg0MEm8OIAeHq0agoeKH1cknBy7orKo5c0jSfMSXT+VuqYN+atv8wiIW7W8PMzVMSjUkVEnbEpEW/komaek5rcWGIHzpijPp...'
                     password-expire:
                         -
                             type: str
@@ -648,132 +647,134 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/admin/user
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/USER
       fmgr_cli_system_admin_user:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     adom: 
-                      - 
+            -
+               data:
+                 -
+                     adom:
+                       -
                            adom-name: <value of string>
-                     adom-exclude: 
-                      - 
+                     adom-exclude:
+                       -
                            adom-name: <value of string>
-                     app-filter: 
-                      - 
+                     app-filter:
+                       -
                            app-filter-name: <value of string>
                      avatar: <value of string>
                      ca: <value of string>
-                     change-password: <value in [disable, enable] default: disable>
-                     dashboard: 
-                      - 
+                     change-password: <value in [disable, enable] default: 'disable'>
+                     dashboard:
+                       -
                            column: <value of integer default: 0>
-                           diskio-content-type: <value in [util, iops, blks] default: util>
-                           diskio-period: <value in [1hour, 8hour, 24hour] default: 1hour>
+                           diskio-content-type: <value in [util, iops, blks] default: 'util'>
+                           diskio-period: <value in [1hour, 8hour, 24hour] default: '1hour'>
                            log-rate-period: <value in [2min , 1hour, 6hours]>
-                           log-rate-topn: <value in [1, 2, 3, ...] default: 5>
-                           log-rate-type: <value in [log, device] default: device>
+                           log-rate-topn: <value in [1, 2, 3, ...] default: '5'>
+                           log-rate-type: <value in [log, device] default: 'device'>
                            moduleid: <value of integer default: 0>
                            name: <value of string>
                            num-entries: <value of integer default: 10>
                            refresh-interval: <value of integer default: 300>
-                           res-cpu-display: <value in [average , each] default: average >
-                           res-period: <value in [10min , hour, day] default: 10min >
-                           res-view-type: <value in [real-time , history] default: history>
-                           status: <value in [close, open] default: open>
+                           res-cpu-display: <value in [average , each] default: 'average '>
+                           res-period: <value in [10min , hour, day] default: '10min '>
+                           res-view-type: <value in [real-time , history] default: 'history'>
+                           status: <value in [close, open] default: 'open'>
                            tabid: <value of integer default: 0>
-                           time-period: <value in [1hour, 8hour, 24hour] default: 1hour>
+                           time-period: <value in [1hour, 8hour, 24hour] default: '1hour'>
                            widget-type: <value in [top-lograte, sysres, sysinfo, ...]>
-                     dashboard-tabs: 
-                      - 
+                     dashboard-tabs:
+                       -
                            name: <value of string>
                            tabid: <value of integer default: 0>
                      description: <value of string>
                      dev-group: <value of string>
                      email-address: <value of string>
-                     ext-auth-accprofile-override: <value in [disable, enable] default: disable>
-                     ext-auth-adom-override: <value in [disable, enable] default: disable>
+                     ext-auth-accprofile-override: <value in [disable, enable] default: 'disable'>
+                     ext-auth-adom-override: <value in [disable, enable] default: 'disable'>
                      ext-auth-group-match: <value of string>
                      first-name: <value of string>
-                     force-password-change: <value in [disable, enable] default: disable>
+                     force-password-change: <value in [disable, enable] default: 'disable'>
                      group: <value of string>
                      hidden: <value of integer default: 0>
-                     ips-filter: 
-                      - 
+                     ips-filter:
+                       -
                            ips-filter-name: <value of string>
-                     ipv6_trusthost1: <value of string default: ::/0>
-                     ipv6_trusthost10: <value of string default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128>
-                     ipv6_trusthost2: <value of string default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128>
-                     ipv6_trusthost3: <value of string default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128>
-                     ipv6_trusthost4: <value of string default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128>
-                     ipv6_trusthost5: <value of string default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128>
-                     ipv6_trusthost6: <value of string default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128>
-                     ipv6_trusthost7: <value of string default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128>
-                     ipv6_trusthost8: <value of string default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128>
-                     ipv6_trusthost9: <value of string default: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128>
+                     ipv6_trusthost1: <value of string default: '::/0'>
+                     ipv6_trusthost10: <value of string default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'>
+                     ipv6_trusthost2: <value of string default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'>
+                     ipv6_trusthost3: <value of string default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'>
+                     ipv6_trusthost4: <value of string default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'>
+                     ipv6_trusthost5: <value of string default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'>
+                     ipv6_trusthost6: <value of string default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'>
+                     ipv6_trusthost7: <value of string default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'>
+                     ipv6_trusthost8: <value of string default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'>
+                     ipv6_trusthost9: <value of string default: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'>
                      last-name: <value of string>
                      ldap-server: <value of string>
-                     meta-data: 
-                      - 
+                     meta-data:
+                       -
                            fieldlength: <value of integer default: 0>
                            fieldname: <value of string>
                            fieldvalue: <value of string>
-                           importance: <value in [optional, required] default: optional>
-                           status: <value in [disabled, enabled] default: enabled>
+                           importance: <value in [optional, required] default: 'optional'>
+                           status: <value in [disabled, enabled] default: 'enabled'>
                      mobile-number: <value of string>
                      pager-number: <value of string>
-                     password: 
-                      - <value of string default: ENC ODU0NTM3NDg1NTMxMDg0MEm8OIAeHq0agoeKH1cknBy7orKo5c0jSfMSXT+VuqYN+atv8wiIW7W8PMzVMSjUkVEnbEpEW/komaek5rcWGIHzpijPphfS09Vlm0vEArsMz6UNqGxf5qLL/MxjITcW4WPWIFLPTPxZQAMoakc7pn8jNgVL>
-                     password-expire: 
-                      - <value of string>
+                     password:
+                       - <value of string default: 'ENC ODU0NTM3NDg1NTMxMDg0MEm8OIAeHq0agoeKH1cknBy7orKo5c0jSfMSXT+VuqYN+atv8wiI...'>
+                     password-expire:
+                       - <value of string>
                      phone-number: <value of string>
-                     policy-package: 
-                      - 
+                     policy-package:
+                       -
                            policy-package-name: <value of string>
-                     profileid: <value of string default: Restricted_User>
+                     profileid: <value of string default: 'Restricted_User'>
                      radius_server: <value of string>
-                     restrict-access: <value in [disable, enable] default: disable>
-                     restrict-dev-vdom: 
-                      - 
+                     restrict-access: <value in [disable, enable] default: 'disable'>
+                     restrict-dev-vdom:
+                       -
                            dev-vdom: <value of string>
-                     rpc-permit: <value in [read-write, none, read] default: none>
-                     ssh-public-key1: 
-                      - <value of string>
-                     ssh-public-key2: 
-                      - <value of string>
-                     ssh-public-key3: 
-                      - <value of string>
+                     rpc-permit: <value in [read-write, none, read] default: 'none'>
+                     ssh-public-key1:
+                       - <value of string>
+                     ssh-public-key2:
+                       - <value of string>
+                     ssh-public-key3:
+                       - <value of string>
                      subject: <value of string>
                      tacacs-plus-server: <value of string>
-                     trusthost1: <value of string default: 0.0.0.0 0.0.0.0>
-                     trusthost10: <value of string default: 255.255.255.255 255.255.255.255>
-                     trusthost2: <value of string default: 255.255.255.255 255.255.255.255>
-                     trusthost3: <value of string default: 255.255.255.255 255.255.255.255>
-                     trusthost4: <value of string default: 255.255.255.255 255.255.255.255>
-                     trusthost5: <value of string default: 255.255.255.255 255.255.255.255>
-                     trusthost6: <value of string default: 255.255.255.255 255.255.255.255>
-                     trusthost7: <value of string default: 255.255.255.255 255.255.255.255>
-                     trusthost8: <value of string default: 255.255.255.255 255.255.255.255>
-                     trusthost9: <value of string default: 255.255.255.255 255.255.255.255>
-                     two-factor-auth: <value in [disable, enable] default: disable>
-                     user_type: <value in [local, radius, ldap, ...] default: local>
+                     trusthost1: <value of string default: '0.0.0.0 0.0.0.0'>
+                     trusthost10: <value of string default: '255.255.255.255 255.255.255.255'>
+                     trusthost2: <value of string default: '255.255.255.255 255.255.255.255'>
+                     trusthost3: <value of string default: '255.255.255.255 255.255.255.255'>
+                     trusthost4: <value of string default: '255.255.255.255 255.255.255.255'>
+                     trusthost5: <value of string default: '255.255.255.255 255.255.255.255'>
+                     trusthost6: <value of string default: '255.255.255.255 255.255.255.255'>
+                     trusthost7: <value of string default: '255.255.255.255 255.255.255.255'>
+                     trusthost8: <value of string default: '255.255.255.255 255.255.255.255'>
+                     trusthost9: <value of string default: '255.255.255.255 255.255.255.255'>
+                     two-factor-auth: <value in [disable, enable] default: 'disable'>
+                     user_type: <value in [local, radius, ldap, ...] default: 'local'>
                      userid: <value of string>
-                     web-filter: 
-                      - 
+                     web-filter:
+                       -
                            web-filter-name: <value of string>
-                     wildcard: <value in [disable, enable] default: disable>
-    - name: send request to /cli/system/admin/user
+                     wildcard: <value in [disable, enable] default: 'disable'>
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/USER
       fmgr_cli_system_admin_user:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [avatar, ca, change-password, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [avatar, ca, change-password, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -794,7 +795,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/admin/user
+            example: '/cli/global/system/admin/user'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -835,7 +836,7 @@ return_of_api_category_0:
                      'Enable/disable restricted user to change self password.'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: disable
+                  example: 'disable'
                dashboard:
                   type: array
                   suboptions:
@@ -850,7 +851,7 @@ return_of_api_category_0:
                            'util - bandwidth utilization.'
                            'iops - the number of I/O requests.'
                            'blks - the amount of data of I/O requests.'
-                        example: util
+                        example: 'util'
                      diskio-period:
                         type: str
                         description: |
@@ -858,7 +859,7 @@ return_of_api_category_0:
                            '1hour - 1 hour.'
                            '8hour - 8 hour.'
                            '24hour - 24 hour.'
-                        example: 1hour
+                        example: '1hour'
                      log-rate-period:
                         type: str
                         description: |
@@ -875,14 +876,14 @@ return_of_api_category_0:
                            '3 - Top 3.'
                            '4 - Top 4.'
                            '5 - Top 5.'
-                        example: 5
+                        example: '5'
                      log-rate-type:
                         type: str
                         description: |
                            'Log receive monitor widgets statistics breakdown options.'
                            'log - Show log rates for each log type.'
                            'device - Show log rates for each device.'
-                        example: device
+                        example: 'device'
                      moduleid:
                         type: int
                         description: 'Widget ID.'
@@ -904,7 +905,7 @@ return_of_api_category_0:
                            'Widgets CPU display type.'
                            'average  - Average usage of CPU.'
                            'each - Each usage of CPU.'
-                        example: average 
+                        example: 'average '
                      res-period:
                         type: str
                         description: |
@@ -912,21 +913,21 @@ return_of_api_category_0:
                            '10min  - Last 10 minutes.'
                            'hour - Last hour.'
                            'day - Last day.'
-                        example: 10min 
+                        example: '10min '
                      res-view-type:
                         type: str
                         description: |
                            'Widgets data view type.'
                            'real-time  - Real-time view.'
                            'history - History view.'
-                        example: history
+                        example: 'history'
                      status:
                         type: str
                         description: |
                            'Widgets opened/closed state.'
                            'close - Widget closed.'
                            'open - Widget opened.'
-                        example: open
+                        example: 'open'
                      tabid:
                         type: int
                         description: 'ID of tab where widget is displayed.'
@@ -938,7 +939,7 @@ return_of_api_category_0:
                            '1hour - 1 hour.'
                            '8hour - 8 hour.'
                            '24hour - 24 hour.'
-                        example: 1hour
+                        example: '1hour'
                      widget-type:
                         type: str
                         description: |
@@ -984,14 +985,14 @@ return_of_api_category_0:
                      'Allow to use the access profile provided by the remote authentication server.'
                      'disable - Disable access profile override.'
                      'enable - Enable access profile override.'
-                  example: disable
+                  example: 'disable'
                ext-auth-adom-override:
                   type: str
                   description: |
                      'Allow to use the ADOM provided by the remote authentication server.'
                      'disable - Disable ADOM override.'
                      'enable - Enable ADOM override.'
-                  example: disable
+                  example: 'disable'
                ext-auth-group-match:
                   type: str
                   description: 'Only administrators belonging to this group can login.'
@@ -1004,7 +1005,7 @@ return_of_api_category_0:
                      'Enable/disable force password change on next login.'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: disable
+                  example: 'disable'
                group:
                   type: str
                   description: 'Group name.'
@@ -1021,43 +1022,43 @@ return_of_api_category_0:
                ipv6_trusthost1:
                   type: str
                   description: 'Admin user trusted host IPv6, default ::/0 for all.'
-                  example: ::/0
+                  example: '::/0'
                ipv6_trusthost10:
                   type: str
                   description: 'Admin user trusted host IPv6, default ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128 for none.'
-                  example: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128
+                  example: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
                ipv6_trusthost2:
                   type: str
                   description: 'Admin user trusted host IPv6, default ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128 for none.'
-                  example: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128
+                  example: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
                ipv6_trusthost3:
                   type: str
                   description: 'Admin user trusted host IPv6, default ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128 for none.'
-                  example: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128
+                  example: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
                ipv6_trusthost4:
                   type: str
                   description: 'Admin user trusted host IPv6, default ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128 for none.'
-                  example: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128
+                  example: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
                ipv6_trusthost5:
                   type: str
                   description: 'Admin user trusted host IPv6, default ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128 for none.'
-                  example: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128
+                  example: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
                ipv6_trusthost6:
                   type: str
                   description: 'Admin user trusted host IPv6, default ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128 for none.'
-                  example: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128
+                  example: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
                ipv6_trusthost7:
                   type: str
                   description: 'Admin user trusted host IPv6, default ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128 for none.'
-                  example: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128
+                  example: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
                ipv6_trusthost8:
                   type: str
                   description: 'Admin user trusted host IPv6, default ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128 for none.'
-                  example: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128
+                  example: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
                ipv6_trusthost9:
                   type: str
                   description: 'Admin user trusted host IPv6, default ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128 for none.'
-                  example: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128
+                  example: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
                last-name:
                   type: str
                   description: 'Last name.'
@@ -1083,14 +1084,14 @@ return_of_api_category_0:
                            'Importance.'
                            'optional - This field is optional.'
                            'required - This field is required.'
-                        example: optional
+                        example: 'optional'
                      status:
                         type: str
                         description: |
                            'Status.'
                            'disabled - This field is disabled.'
                            'enabled - This field is enabled.'
-                        example: enabled
+                        example: 'enabled'
                mobile-number:
                   type: str
                   description: 'Mobile number.'
@@ -1101,7 +1102,7 @@ return_of_api_category_0:
                   type: array
                   suboptions:
                      type: str
-                     example: ENC ODU0NTM3NDg1NTMxMDg0MEm8OIAeHq0agoeKH1cknBy7orKo5c0jSfMSXT+VuqYN+atv8wiIW7W8PMzVMSjUkVEnbEpEW/komaek5rcWGIHzpijPphfS09Vlm0vEArsMz6UNqGxf5qLL/MxjITcW4WPWIFLPTPxZQAMoakc7pn8jNgVL
+                     example: 'ENC ODU0NTM3NDg1NTMxMDg0MEm8OIAeHq0agoeKH1cknBy7orKo5c0jSfMSXT+VuqYN+atv8wiI...'
                password-expire:
                   type: array
                   suboptions:
@@ -1118,7 +1119,7 @@ return_of_api_category_0:
                profileid:
                   type: str
                   description: 'Profile ID.'
-                  example: Restricted_User
+                  example: 'Restricted_User'
                radius_server:
                   type: str
                   description: 'RADIUS server name.'
@@ -1128,7 +1129,7 @@ return_of_api_category_0:
                      'Enable/disable restricted access to development VDOM.'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: disable
+                  example: 'disable'
                restrict-dev-vdom:
                   type: array
                   suboptions:
@@ -1142,7 +1143,7 @@ return_of_api_category_0:
                      'read-write - Read-write permission.'
                      'none - No permission.'
                      'read - Read-only permission.'
-                  example: none
+                  example: 'none'
                ssh-public-key1:
                   type: array
                   suboptions:
@@ -1164,50 +1165,50 @@ return_of_api_category_0:
                trusthost1:
                   type: str
                   description: 'Admin user trusted host IP, default 0.0.0.0 0.0.0.0 for all.'
-                  example: 0.0.0.0 0.0.0.0
+                  example: '0.0.0.0 0.0.0.0'
                trusthost10:
                   type: str
                   description: 'Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none.'
-                  example: 255.255.255.255 255.255.255.255
+                  example: '255.255.255.255 255.255.255.255'
                trusthost2:
                   type: str
                   description: 'Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none.'
-                  example: 255.255.255.255 255.255.255.255
+                  example: '255.255.255.255 255.255.255.255'
                trusthost3:
                   type: str
                   description: 'Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none.'
-                  example: 255.255.255.255 255.255.255.255
+                  example: '255.255.255.255 255.255.255.255'
                trusthost4:
                   type: str
                   description: 'Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none.'
-                  example: 255.255.255.255 255.255.255.255
+                  example: '255.255.255.255 255.255.255.255'
                trusthost5:
                   type: str
                   description: 'Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none.'
-                  example: 255.255.255.255 255.255.255.255
+                  example: '255.255.255.255 255.255.255.255'
                trusthost6:
                   type: str
                   description: 'Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none.'
-                  example: 255.255.255.255 255.255.255.255
+                  example: '255.255.255.255 255.255.255.255'
                trusthost7:
                   type: str
                   description: 'Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none.'
-                  example: 255.255.255.255 255.255.255.255
+                  example: '255.255.255.255 255.255.255.255'
                trusthost8:
                   type: str
                   description: 'Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none.'
-                  example: 255.255.255.255 255.255.255.255
+                  example: '255.255.255.255 255.255.255.255'
                trusthost9:
                   type: str
                   description: 'Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none.'
-                  example: 255.255.255.255 255.255.255.255
+                  example: '255.255.255.255 255.255.255.255'
                two-factor-auth:
                   type: str
                   description: |
                      'Enable 2-factor authentication (certificate + password).'
                      'disable - Disable 2-factor authentication.'
                      'enable - Enable 2-factor authentication.'
-                  example: disable
+                  example: 'disable'
                user_type:
                   type: str
                   description: |
@@ -1218,7 +1219,7 @@ return_of_api_category_0:
                      'tacacs-plus - TACACS+ user.'
                      'pki-auth - PKI user.'
                      'group - Group user.'
-                  example: local
+                  example: 'local'
                userid:
                   type: str
                   description: 'User name.'
@@ -1234,7 +1235,7 @@ return_of_api_category_0:
                      'Enable/disable wildcard remote authentication.'
                      'disable - Disable username wildcard.'
                      'enable - Enable username wildcard.'
-                  example: disable
+                  example: 'disable'
          status:
             code:
                type: int
@@ -1242,7 +1243,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/admin/user
+            example: '/cli/global/system/admin/user'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -1253,6 +1254,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/admin/user'
@@ -1261,7 +1263,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -1301,7 +1303,6 @@ def main():
                         },
                         'change-password': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1317,7 +1318,6 @@ def main():
                                 },
                                 'diskio-content-type': {
                                     'type': 'string',
-                                    'default': 'util',
                                     'enum': [
                                         'util',
                                         'iops',
@@ -1326,7 +1326,6 @@ def main():
                                 },
                                 'diskio-period': {
                                     'type': 'string',
-                                    'default': '1hour',
                                     'enum': [
                                         '1hour',
                                         '8hour',
@@ -1343,7 +1342,6 @@ def main():
                                 },
                                 'log-rate-topn': {
                                     'type': 'string',
-                                    'default': '5',
                                     'enum': [
                                         '1',
                                         '2',
@@ -1354,7 +1352,6 @@ def main():
                                 },
                                 'log-rate-type': {
                                     'type': 'string',
-                                    'default': 'device',
                                     'enum': [
                                         'log',
                                         'device'
@@ -1380,7 +1377,6 @@ def main():
                                 },
                                 'res-cpu-display': {
                                     'type': 'string',
-                                    'default': 'average ',
                                     'enum': [
                                         'average ',
                                         'each'
@@ -1388,7 +1384,6 @@ def main():
                                 },
                                 'res-period': {
                                     'type': 'string',
-                                    'default': '10min ',
                                     'enum': [
                                         '10min ',
                                         'hour',
@@ -1397,7 +1392,6 @@ def main():
                                 },
                                 'res-view-type': {
                                     'type': 'string',
-                                    'default': 'history',
                                     'enum': [
                                         'real-time ',
                                         'history'
@@ -1405,7 +1399,6 @@ def main():
                                 },
                                 'status': {
                                     'type': 'string',
-                                    'default': 'open',
                                     'enum': [
                                         'close',
                                         'open'
@@ -1418,7 +1411,6 @@ def main():
                                 },
                                 'time-period': {
                                     'type': 'string',
-                                    'default': '1hour',
                                     'enum': [
                                         '1hour',
                                         '8hour',
@@ -1472,7 +1464,6 @@ def main():
                         },
                         'ext-auth-accprofile-override': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1480,7 +1471,6 @@ def main():
                         },
                         'ext-auth-adom-override': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1494,7 +1484,6 @@ def main():
                         },
                         'force-password-change': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1517,44 +1506,34 @@ def main():
                             }
                         },
                         'ipv6_trusthost1': {
-                            'type': 'string',
-                            'default': '::/0'
+                            'type': 'string'
                         },
                         'ipv6_trusthost10': {
-                            'type': 'string',
-                            'default': 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
+                            'type': 'string'
                         },
                         'ipv6_trusthost2': {
-                            'type': 'string',
-                            'default': 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
+                            'type': 'string'
                         },
                         'ipv6_trusthost3': {
-                            'type': 'string',
-                            'default': 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
+                            'type': 'string'
                         },
                         'ipv6_trusthost4': {
-                            'type': 'string',
-                            'default': 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
+                            'type': 'string'
                         },
                         'ipv6_trusthost5': {
-                            'type': 'string',
-                            'default': 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
+                            'type': 'string'
                         },
                         'ipv6_trusthost6': {
-                            'type': 'string',
-                            'default': 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
+                            'type': 'string'
                         },
                         'ipv6_trusthost7': {
-                            'type': 'string',
-                            'default': 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
+                            'type': 'string'
                         },
                         'ipv6_trusthost8': {
-                            'type': 'string',
-                            'default': 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
+                            'type': 'string'
                         },
                         'ipv6_trusthost9': {
-                            'type': 'string',
-                            'default': 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128'
+                            'type': 'string'
                         },
                         'last-name': {
                             'type': 'string'
@@ -1578,7 +1557,6 @@ def main():
                                 },
                                 'importance': {
                                     'type': 'string',
-                                    'default': 'optional',
                                     'enum': [
                                         'optional',
                                         'required'
@@ -1586,7 +1564,6 @@ def main():
                                 },
                                 'status': {
                                     'type': 'string',
-                                    'default': 'enabled',
                                     'enum': [
                                         'disabled',
                                         'enabled'
@@ -1603,8 +1580,7 @@ def main():
                         'password': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC ODU0NTM3NDg1NTMxMDg0MEm8OIAeHq0agoeKH1cknBy7orKo5c0jSfMSXT+VuqYN+atv8wiIW7W8PMzVMSjUkVEnbEpEW/komaek5rcWGIHzpijPphfS09Vlm0vEArsMz6UNqGxf5qLL/MxjITcW4WPWIFLPTPxZQAMoakc7pn8jNgVL'
+                                'type': 'string'
                             }
                         },
                         'password-expire': {
@@ -1625,15 +1601,13 @@ def main():
                             }
                         },
                         'profileid': {
-                            'type': 'string',
-                            'default': 'Restricted_User'
+                            'type': 'string'
                         },
                         'radius_server': {
                             'type': 'string'
                         },
                         'restrict-access': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1649,7 +1623,6 @@ def main():
                         },
                         'rpc-permit': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'read-write',
                                 'none',
@@ -1681,48 +1654,37 @@ def main():
                             'type': 'string'
                         },
                         'trusthost1': {
-                            'type': 'string',
-                            'default': '0.0.0.0 0.0.0.0'
+                            'type': 'string'
                         },
                         'trusthost10': {
-                            'type': 'string',
-                            'default': '255.255.255.255 255.255.255.255'
+                            'type': 'string'
                         },
                         'trusthost2': {
-                            'type': 'string',
-                            'default': '255.255.255.255 255.255.255.255'
+                            'type': 'string'
                         },
                         'trusthost3': {
-                            'type': 'string',
-                            'default': '255.255.255.255 255.255.255.255'
+                            'type': 'string'
                         },
                         'trusthost4': {
-                            'type': 'string',
-                            'default': '255.255.255.255 255.255.255.255'
+                            'type': 'string'
                         },
                         'trusthost5': {
-                            'type': 'string',
-                            'default': '255.255.255.255 255.255.255.255'
+                            'type': 'string'
                         },
                         'trusthost6': {
-                            'type': 'string',
-                            'default': '255.255.255.255 255.255.255.255'
+                            'type': 'string'
                         },
                         'trusthost7': {
-                            'type': 'string',
-                            'default': '255.255.255.255 255.255.255.255'
+                            'type': 'string'
                         },
                         'trusthost8': {
-                            'type': 'string',
-                            'default': '255.255.255.255 255.255.255.255'
+                            'type': 'string'
                         },
                         'trusthost9': {
-                            'type': 'string',
-                            'default': '255.255.255.255 255.255.255.255'
+                            'type': 'string'
                         },
                         'two-factor-auth': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1730,7 +1692,6 @@ def main():
                         },
                         'user_type': {
                             'type': 'string',
-                            'default': 'local',
                             'enum': [
                                 'local',
                                 'radius',
@@ -1753,7 +1714,6 @@ def main():
                         },
                         'wildcard': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1882,7 +1842,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -1903,8 +1862,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -1925,14 +1884,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

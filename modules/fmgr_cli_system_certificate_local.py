@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/system/certificate/local
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -66,7 +65,7 @@ options:
                     password:
                         -
                             type: str
-                            default: 'ENC MTU2NTY2MTI5MDA3MDkxNBB2U7GXAKMJnXNp1HA5qlMS8x60LYYPH59UftMARK2yBZSIyOKVdX6+LwsW+HCuCyxLGSjNDtDBuxlRE0O7Wq9sKZOknxG2S1rADC1fQWbul8eYa0wrzplnDD/u8OlHAf4q/+Ubo19o8BlFW8Pg8Fi+WhVP'
+                            default: 'ENC MTU2NTY2MTI5MDA3MDkxNBB2U7GXAKMJnXNp1HA5qlMS8x60LYYPH59UftMARK2yBZSIyOKVdX6+LwsW+HCuCyxLGSjNDtDBuxlRE0O7Wq9sKZOkn...'
                     private-key:
                         -
                             type: str
@@ -112,33 +111,35 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/certificate/local
+
+    - name: REQUESTING /CLI/SYSTEM/CERTIFICATE/LOCAL
       fmgr_cli_system_certificate_local:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     certificate: 
-                      - <value of string>
+            -
+               data:
+                 -
+                     certificate:
+                       - <value of string>
                      comment: <value of string>
-                     csr: 
-                      - <value of string>
+                     csr:
+                       - <value of string>
                      name: <value of string>
-                     password: 
-                      - <value of string default: ENC MTU2NTY2MTI5MDA3MDkxNBB2U7GXAKMJnXNp1HA5qlMS8x60LYYPH59UftMARK2yBZSIyOKVdX6+LwsW+HCuCyxLGSjNDtDBuxlRE0O7Wq9sKZOknxG2S1rADC1fQWbul8eYa0wrzplnDD/u8OlHAf4q/+Ubo19o8BlFW8Pg8Fi+WhVP>
-                     private-key: 
-                      - <value of string>
-    - name: send request to /cli/system/certificate/local
+                     password:
+                       - <value of string default: 'ENC MTU2NTY2MTI5MDA3MDkxNBB2U7GXAKMJnXNp1HA5qlMS8x60LYYPH59UftMARK2yBZSIyOKV...'>
+                     private-key:
+                       - <value of string>
+
+    - name: REQUESTING /CLI/SYSTEM/CERTIFICATE/LOCAL
       fmgr_cli_system_certificate_local:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [certificate, comment, csr, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [certificate, comment, csr, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -159,7 +160,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/certificate/local
+            example: '/cli/global/system/certificate/local'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -188,7 +189,7 @@ return_of_api_category_0:
                   type: array
                   suboptions:
                      type: str
-                     example: ENC MTU2NTY2MTI5MDA3MDkxNBB2U7GXAKMJnXNp1HA5qlMS8x60LYYPH59UftMARK2yBZSIyOKVdX6+LwsW+HCuCyxLGSjNDtDBuxlRE0O7Wq9sKZOknxG2S1rADC1fQWbul8eYa0wrzplnDD/u8OlHAf4q/+Ubo19o8BlFW8Pg8Fi+WhVP
+                     example: 'ENC MTU2NTY2MTI5MDA3MDkxNBB2U7GXAKMJnXNp1HA5qlMS8x60LYYPH59UftMARK2yBZSIyOKV...'
                private-key:
                   type: array
                   suboptions:
@@ -200,7 +201,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/certificate/local
+            example: '/cli/global/system/certificate/local'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -211,6 +212,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/certificate/local'
@@ -219,7 +221,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -248,8 +250,7 @@ def main():
                         'password': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC MTU2NTY2MTI5MDA3MDkxNBB2U7GXAKMJnXNp1HA5qlMS8x60LYYPH59UftMARK2yBZSIyOKVdX6+LwsW+HCuCyxLGSjNDtDBuxlRE0O7Wq9sKZOknxG2S1rADC1fQWbul8eYa0wrzplnDD/u8OlHAf4q/+Ubo19o8BlFW8Pg8Fi+WhVP'
+                                'type': 'string'
                             }
                         },
                         'private-key': {
@@ -334,7 +335,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -355,8 +355,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -377,14 +377,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

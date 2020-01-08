@@ -78,16 +78,17 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvm/cmd/change-ha-seq
+
+    - name: REQUESTING /DVM/CMD/CHANGE-HA-SEQ
       fmgr_dvm_cmd_change_ha_seq:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   adom: <value of string>
                   device: <value of string>
-                  flags: 
-                   - <value in [none, create_task, nonblocking, ...]>
+                  flags:
+                    - <value in [none, create_task, nonblocking, ...]>
                   new_master: <value of string>
 
 

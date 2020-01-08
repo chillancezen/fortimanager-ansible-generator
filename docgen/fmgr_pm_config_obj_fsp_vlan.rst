@@ -116,24 +116,25 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/fsp/vlan
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FSP/VLAN
       fmgr_pm_config_obj_fsp_vlan:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      _dhcp-status: <value in [disable, enable]>
                      auth: <value in [radius, usergroup]>
                      color: <value of integer>
                      comments: <value of string>
-                     dynamic_mapping: 
-                      - 
+                     dynamic_mapping:
+                       -
                            _dhcp-status: <value in [disable, enable]>
-                           _scope: 
-                            - 
+                           _scope:
+                             -
                                  name: <value of string>
                                  vdom: <value of string>
                      name: <value of string>
@@ -144,27 +145,28 @@ Examples
                      usergroup: <value of string>
                      vdom: <value of string>
                      vlanid: <value of integer>
-    - name: send request to /pm/config/obj/fsp/vlan
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FSP/VLAN
       fmgr_pm_config_obj_fsp_vlan:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [_dhcp-status, auth, color, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [_dhcp-status, auth, color, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

@@ -180,39 +180,41 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvmdb/device
+
+    - name: REQUESTING /DVMDB/DEVICE
       fmgr_dvmdb_device:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                expand member: <value of string>
-               fields: 
-                - 
-                   - <value in [adm_pass, adm_usr, app_ver, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [adm_pass, adm_usr, app_ver, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
-               meta fields: 
-                - <value of string>
+               meta fields:
+                 - <value of string>
                option: <value in [count, object member, syntax]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
-    - name: send request to /dvmdb/device
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
+
+    - name: REQUESTING /DVMDB/DEVICE
       fmgr_dvmdb_device:
          method: <value in [set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
-                     adm_pass: 
-                      - <value of string>
+            -
+               data:
+                 -
+                     adm_pass:
+                       - <value of string>
                      adm_usr: <value of string>
                      app_ver: <value of string>
                      av_ver: <value of string>
@@ -220,32 +222,32 @@ Examples
                      branch_pt: <value of integer>
                      build: <value of integer>
                      checksum: <value of string>
-                     conf_status: <value in [unknown, insync, outofsync] default: unknown>
-                     conn_mode: <value in [active, passive] default: passive>
-                     conn_status: <value in [UNKNOWN, up, down] default: UNKNOWN>
-                     db_status: <value in [unknown, nomod, mod] default: unknown>
+                     conf_status: <value in [unknown, insync, outofsync] default: 'unknown'>
+                     conn_mode: <value in [active, passive] default: 'passive'>
+                     conn_status: <value in [UNKNOWN, up, down] default: 'UNKNOWN'>
+                     db_status: <value in [unknown, nomod, mod] default: 'unknown'>
                      desc: <value of string>
-                     dev_status: <value in [none, unknown, checkedin, ...] default: unknown>
+                     dev_status: <value in [none, unknown, checkedin, ...] default: 'unknown'>
                      fap_cnt: <value of integer>
                      faz.full_act: <value of integer>
                      faz.perm: <value of integer>
                      faz.quota: <value of integer>
                      faz.used: <value of integer>
                      fex_cnt: <value of integer>
-                     flags: 
-                      - <value in [has_hdd, vdom_enabled, discover, ...]>
+                     flags:
+                       - <value in [has_hdd, vdom_enabled, discover, ...]>
                      foslic_cpu: <value of integer>
-                     foslic_dr_site: <value in [disable, enable] default: disable>
+                     foslic_dr_site: <value in [disable, enable] default: 'disable'>
                      foslic_inst_time: <value of integer>
                      foslic_last_sync: <value of integer>
                      foslic_ram: <value of integer>
-                     foslic_type: <value in [temporary, trial, regular, ...] default: temporary>
-                     foslic_utm: 
-                      - <value in [fw, av, ips, ...]>
+                     foslic_type: <value in [temporary, trial, regular, ...] default: 'temporary'>
+                     foslic_utm:
+                       - <value in [fw, av, ips, ...]>
                      fsw_cnt: <value of integer>
                      ha_group_id: <value of integer>
                      ha_group_name: <value of string>
-                     ha_mode: <value in [standalone, AP, AA, ...] default: standalone>
+                     ha_mode: <value in [standalone, AP, AA, ...] default: 'standalone'>
                      hdisk_size: <value of integer>
                      hostname: <value of string>
                      hw_rev_major: <value of integer>
@@ -265,21 +267,21 @@ Examples
                      meta fields: <value of string>
                      mgmt_id: <value of integer>
                      mgmt_if: <value of string>
-                     mgmt_mode: <value in [unreg, fmg, faz, ...] default: unreg>
+                     mgmt_mode: <value in [unreg, fmg, faz, ...] default: 'unreg'>
                      mgt_vdom: <value of string>
                      mr: <value of integer default: -1>
                      name: <value of string>
-                     os_type: <value in [unknown, fos, fsw, ...] default: unknown>
-                     os_ver: <value in [unknown, 0.0, 1.0, ...] default: unknown>
+                     os_type: <value in [unknown, fos, fsw, ...] default: 'unknown'>
+                     os_ver: <value in [unknown, 0.0, 1.0, ...] default: 'unknown'>
                      patch: <value of integer>
                      platform_str: <value of string>
                      psk: <value of string>
                      sn: <value of string>
-                     vdom: 
-                      - 
+                     vdom:
+                       -
                            comments: <value of string>
                            name: <value of string>
-                           opmode: <value in [nat, transparent] default: nat>
+                           opmode: <value in [nat, transparent] default: 'nat'>
                            rtm_prof_id: <value of integer>
                            status: <value of string>
                      version: <value of integer>

@@ -77,16 +77,17 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvm/cmd/del/device
+
+    - name: REQUESTING /DVM/CMD/DEL/DEVICE
       fmgr_dvm_cmd_del_device:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   adom: <value of string>
                   device: <value of string>
-                  flags: 
-                   - <value in [none, create_task, nonblocking, ...]>
+                  flags:
+                    - <value in [none, create_task, nonblocking, ...]>
 
 
 

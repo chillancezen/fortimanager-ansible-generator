@@ -119,56 +119,58 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/dynamic/interface
+
+    - name: REQUESTING /PM/CONFIG/OBJ/DYNAMIC/INTERFACE
       fmgr_pm_config_obj_dynamic_interface:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      color: <value of integer>
                      default-mapping: <value in [disable, enable]>
                      defmap-intf: <value of string>
                      defmap-intrazone-deny: <value in [disable, enable]>
-                     defmap-zonemember: 
-                      - <value of string>
+                     defmap-zonemember:
+                       - <value of string>
                      description: <value of string>
-                     dynamic_mapping: 
-                      - 
-                           _scope: 
-                            - 
+                     dynamic_mapping:
+                       -
+                           _scope:
+                             -
                                  name: <value of string>
                                  vdom: <value of string>
                            egress-shaping-profile: <value of string>
                            intrazone-deny: <value in [disable, enable]>
-                           local-intf: 
-                            - <value of string>
+                           local-intf:
+                             - <value of string>
                      egress-shaping-profile: <value of string>
                      name: <value of string>
-                     single-intf: <value in [disable, enable] default: enable>
-    - name: send request to /pm/config/obj/dynamic/interface
+                     single-intf: <value in [disable, enable] default: 'enable'>
+
+    - name: REQUESTING /PM/CONFIG/OBJ/DYNAMIC/INTERFACE
       fmgr_pm_config_obj_dynamic_interface:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [color, default-mapping, defmap-intf, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [color, default-mapping, defmap-intf, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

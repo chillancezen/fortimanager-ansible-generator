@@ -74,12 +74,13 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /sys/api/sdnconnector
+
+    - name: REQUESTING /SYS/API/SDNCONNECTOR
       fmgr_sys_api_sdnconnector:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   adom: <value of string>
                   command: <value of string>
                   connector_name: <value of string>

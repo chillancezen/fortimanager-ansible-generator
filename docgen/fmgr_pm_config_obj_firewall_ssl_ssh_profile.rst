@@ -128,15 +128,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/firewall/ssl-ssh-profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/SSL-SSH-PROFILE
       fmgr_pm_config_obj_firewall_ssl_ssh_profile:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      caname: <value of string>
                      comment: <value of string>
                      mapi-over-https: <value in [disable, enable]>
@@ -145,8 +146,8 @@ Examples
                      server-cert: <value of string>
                      server-cert-mode: <value in [re-sign, replace]>
                      ssl-anomalies-log: <value in [disable, enable]>
-                     ssl-exempt: 
-                      - 
+                     ssl-exempt:
+                       -
                            address: <value of string>
                            address6: <value of string>
                            fortiguard-category: <value of string>
@@ -155,8 +156,8 @@ Examples
                            type: <value in [fortiguard-category, address, address6, ...]>
                            wildcard-fqdn: <value of string>
                      ssl-exemptions-log: <value in [disable, enable]>
-                     ssl-server: 
-                      - 
+                     ssl-server:
+                       -
                            ftps-client-cert-request: <value in [bypass, inspect, block]>
                            https-client-cert-request: <value in [bypass, inspect, block]>
                            id: <value of integer>
@@ -168,27 +169,28 @@ Examples
                      untrusted-caname: <value of string>
                      use-ssl-server: <value in [disable, enable]>
                      whitelist: <value in [disable, enable]>
-    - name: send request to /pm/config/obj/firewall/ssl-ssh-profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/SSL-SSH-PROFILE
       fmgr_pm_config_obj_firewall_ssl_ssh_profile:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [caname, comment, mapi-over-https, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [caname, comment, mapi-over-https, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

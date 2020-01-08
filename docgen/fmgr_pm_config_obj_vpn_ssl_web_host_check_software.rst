@@ -112,21 +112,22 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/vpn/ssl/web/host-check-software
+
+    - name: REQUESTING /PM/CONFIG/OBJ/VPN/SSL/WEB/HOST-CHECK-SOFTWARE
       fmgr_pm_config_obj_vpn_ssl_web_host_check_software:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
-                     check-item-list: 
-                      - 
+            -
+               data:
+                 -
+                     check-item-list:
+                       -
                            action: <value in [deny, require]>
                            id: <value of integer>
-                           md5s: 
-                            - <value of string>
+                           md5s:
+                             - <value of string>
                            target: <value of string>
                            type: <value in [file, registry, process]>
                            version: <value of string>
@@ -135,27 +136,28 @@ Examples
                      os-type: <value in [macos, windows]>
                      type: <value in [av, fw]>
                      version: <value of string>
-    - name: send request to /pm/config/obj/vpn/ssl/web/host-check-software
+
+    - name: REQUESTING /PM/CONFIG/OBJ/VPN/SSL/WEB/HOST-CHECK-SOFTWARE
       fmgr_pm_config_obj_vpn_ssl_web_host_check_software:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [guid, name, os-type, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [guid, name, os-type, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

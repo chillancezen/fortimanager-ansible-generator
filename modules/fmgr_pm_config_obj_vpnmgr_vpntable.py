@@ -30,7 +30,6 @@ description:
     - /pm/config/adom/{adom}/obj/vpnmgr/vpntable
     - /pm/config/global/obj/vpnmgr/vpntable
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -45,7 +44,7 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
-    url_params: 
+    url_params:
         description: the parameters in url path
         required: True
         type: dict
@@ -453,7 +452,7 @@ options:
                     type: int
             sortings:
                 -
-                    \{attr_name\}:
+                    varidic.attr_name:
                         type: int
                         choices:
                             - 1
@@ -469,28 +468,29 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/vpnmgr/vpntable
+
+    - name: REQUESTING /PM/CONFIG/OBJ/VPNMGR/VPNTABLE
       fmgr_pm_config_obj_vpnmgr_vpntable:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      authmethod: <value in [psk, rsa-signature, signature]>
-                     auto-zone-policy: <value in [disable, enable] default: enable>
+                     auto-zone-policy: <value in [disable, enable] default: 'enable'>
                      certificate: <value of string>
                      description: <value of string>
                      dpd: <value in [disable, enable, on-idle, ...]>
                      dpd-retrycount: <value of integer>
-                     dpd-retryinterval: 
-                      - <value of integer>
+                     dpd-retryinterval:
+                       - <value of integer>
                      fcc-enforcement: <value in [disable, enable]>
                      hub2spoke-zone: <value of string>
                      ike-version: <value in [1, 2]>
-                     ike1dhgroup: 
-                      - <value in [1, 2, 5, ...]>
+                     ike1dhgroup:
+                       - <value in [1, 2, 5, ...]>
                      ike1dpd: <value in [disable, enable]>
                      ike1keylifesec: <value of integer>
                      ike1localid: <value of string>
@@ -499,8 +499,8 @@ EXAMPLES = '''
                      ike1nattraversal: <value in [disable, enable, forced]>
                      ike1proposal: <value in [des-md5, des-sha1, 3des-md5, ...]>
                      ike2autonego: <value in [disable, enable]>
-                     ike2dhgroup: 
-                      - <value in [1, 2, 5, ...]>
+                     ike2dhgroup:
+                       - <value in [1, 2, 5, ...]>
                      ike2keepalive: <value in [disable, enable]>
                      ike2keylifekbs: <value of integer>
                      ike2keylifesec: <value of integer>
@@ -511,37 +511,38 @@ EXAMPLES = '''
                      localid-type: <value in [auto, fqdn, user-fqdn, ...]>
                      name: <value of string>
                      negotiate-timeout: <value of integer default: 30>
-                     npu-offload: <value in [disable, enable] default: enable>
+                     npu-offload: <value in [disable, enable] default: 'enable'>
                      pfs: <value in [disable, enable]>
                      psk-auto-generate: <value in [disable, enable]>
-                     psksecret: 
-                      - <value of string>
+                     psksecret:
+                       - <value of string>
                      replay: <value in [disable, enable]>
                      rsa-certificate: <value of string>
                      spoke2hub-zone: <value of string>
                      topology: <value in [meshed, star, dialup]>
                      vpn-zone: <value of string>
-    - name: send request to /pm/config/obj/vpnmgr/vpntable
+
+    - name: REQUESTING /PM/CONFIG/OBJ/VPNMGR/VPNTABLE
       fmgr_pm_config_obj_vpnmgr_vpntable:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [authmethod, auto-zone-policy, certificate, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [authmethod, auto-zone-policy, certificate, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 '''
 
@@ -560,7 +561,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/vpnmgr/vpntable
+            example: '/pm/config/adom/{adom}/obj/vpnmgr/vpntable'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -575,7 +576,7 @@ return_of_api_category_0:
                   type: str
                auto-zone-policy:
                   type: str
-                  example: enable
+                  example: 'enable'
                certificate:
                   type: str
                description:
@@ -641,7 +642,7 @@ return_of_api_category_0:
                   example: 30
                npu-offload:
                   type: str
-                  example: enable
+                  example: 'enable'
                pfs:
                   type: str
                psk-auto-generate:
@@ -667,7 +668,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/vpnmgr/vpntable
+            example: '/pm/config/adom/{adom}/obj/vpnmgr/vpntable'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -677,6 +678,7 @@ from ansible.module_utils.network.fortimanager.common import DEFAULT_RESULT_OBJ
 from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
+
 
 def main():
     jrpc_urls = [
@@ -691,7 +693,7 @@ def main():
         }
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -709,7 +711,6 @@ def main():
                         },
                         'auto-zone-policy': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1029,7 +1030,6 @@ def main():
                         },
                         'npu-offload': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -1233,7 +1233,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -1254,8 +1253,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -1276,14 +1275,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

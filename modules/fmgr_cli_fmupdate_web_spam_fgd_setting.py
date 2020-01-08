@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/fmupdate/web-spam/fgd-setting
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -333,27 +332,28 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/web-spam/fgd-setting
+
+    - name: REQUESTING /CLI/FMUPDATE/WEB-SPAM/FGD-SETTING
       fmgr_cli_fmupdate_web_spam_fgd_setting:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   as-cache: <value of integer default: 300>
-                  as-log: <value in [disable, nospam, all] default: nospam>
-                  as-preload: <value in [disable, enable] default: disable>
+                  as-log: <value in [disable, nospam, all] default: 'nospam'>
+                  as-preload: <value in [disable, enable] default: 'disable'>
                   av-cache: <value of integer default: 300>
-                  av-log: <value in [disable, novirus, all] default: novirus>
-                  av-preload: <value in [disable, enable] default: disable>
+                  av-log: <value in [disable, novirus, all] default: 'novirus'>
+                  av-preload: <value in [disable, enable] default: 'disable'>
                   av2-cache: <value of integer default: 800>
-                  av2-log: <value in [disable, noav2, all] default: noav2>
-                  av2-preload: <value in [disable, enable] default: disable>
-                  eventlog-query: <value in [disable, enable] default: disable>
+                  av2-log: <value in [disable, noav2, all] default: 'noav2'>
+                  av2-preload: <value in [disable, enable] default: 'disable'>
+                  eventlog-query: <value in [disable, enable] default: 'disable'>
                   fgd-pull-interval: <value of integer default: 10>
                   fq-cache: <value of integer default: 300>
-                  fq-log: <value in [disable, nofilequery, all] default: nofilequery>
-                  fq-preload: <value in [disable, enable] default: disable>
-                  linkd-log: <value in [emergency, alert, critical, ...] default: debug>
+                  fq-log: <value in [disable, nofilequery, all] default: 'nofilequery'>
+                  fq-preload: <value in [disable, enable] default: 'disable'>
+                  linkd-log: <value in [emergency, alert, critical, ...] default: 'debug'>
                   max-client-worker: <value of integer default: 0>
                   max-log-quota: <value of integer default: 6144>
                   max-unrated-site: <value of integer default: 500>
@@ -364,25 +364,25 @@ EXAMPLES = '''
                   restrict-av2-dbver: <value of string>
                   restrict-fq-dbver: <value of string>
                   restrict-wf-dbver: <value of string>
-                  server-override: 
-                     servlist: 
-                      - 
+                  server-override:
+                     servlist:
+                       -
                            id: <value of integer default: 0>
-                           ip: <value of string default: 0.0.0.0>
-                           ip6: <value of string default: ::>
+                           ip: <value of string default: '0.0.0.0'>
+                           ip6: <value of string default: '::'>
                            port: <value of integer default: 443>
-                           service-type: 
-                            - <value in [fgd, fgc, fsa]>
-                     status: <value in [disable, enable] default: disable>
+                           service-type:
+                             - <value in [fgd, fgc, fsa]>
+                     status: <value in [disable, enable] default: 'disable'>
                   stat-log-interval: <value of integer default: 60>
                   stat-sync-interval: <value of integer default: 60>
                   update-interval: <value of integer default: 6>
-                  update-log: <value in [disable, enable] default: enable>
+                  update-log: <value in [disable, enable] default: 'enable'>
                   wf-cache: <value of integer default: 0>
                   wf-dn-cache-expire-time: <value of integer default: 30>
                   wf-dn-cache-max-number: <value of integer default: 10000>
-                  wf-log: <value in [disable, nourl, all] default: nourl>
-                  wf-preload: <value in [disable, enable] default: enable>
+                  wf-log: <value in [disable, nourl, all] default: 'nourl'>
+                  wf-preload: <value in [disable, enable] default: 'enable'>
 
 '''
 
@@ -406,14 +406,14 @@ return_of_api_category_0:
                   'disable - Disable spam log.'
                   'nospam - Log non-spam events.'
                   'all - Log all spam lookups.'
-               example: nospam
+               example: 'nospam'
             as-preload:
                type: str
                description: |
                   'Enable/disable preloading antispam database to memory (default = disable).'
                   'disable - Disable antispam database preload.'
                   'enable - Enable antispam database preload.'
-               example: disable
+               example: 'disable'
             av-cache:
                type: int
                description: 'Antivirus service maximum memory usage, in megabytes (100 - 500, default = 300).'
@@ -425,14 +425,14 @@ return_of_api_category_0:
                   'disable - Disable virus log.'
                   'novirus - Log non-virus events.'
                   'all - Log all virus lookups.'
-               example: novirus
+               example: 'novirus'
             av-preload:
                type: str
                description: |
                   'Enable/disable preloading antivirus database to memory (default = disable).'
                   'disable - Disable antivirus database preload.'
                   'enable - Enable antivirus database preload.'
-               example: disable
+               example: 'disable'
             av2-cache:
                type: int
                description: 'Antispam service maximum memory usage in megabytes (Maximum = Physical memory-1024, 0: no limit, default = 800).'
@@ -444,21 +444,21 @@ return_of_api_category_0:
                   'disable - Disable av2 log.'
                   'noav2 - Log non-av2 events.'
                   'all - Log all av2 lookups.'
-               example: noav2
+               example: 'noav2'
             av2-preload:
                type: str
                description: |
                   'Enable/disable preloading outbreak prevention database to memory (default = disable).'
                   'disable - Disable outbreak prevention database preload.'
                   'enable - Enable outbreak prevention database preload.'
-               example: disable
+               example: 'disable'
             eventlog-query:
                type: str
                description: |
                   'Enable/disable record query to event-log besides fgd-log (default = disable).'
                   'disable - Record query to event-log besides fgd-log.'
                   'enable - Do not log to event-log.'
-               example: disable
+               example: 'disable'
             fgd-pull-interval:
                type: int
                description: 'Fgd pull interval setting, in minutes (1 - 1440, default = 10).'
@@ -474,14 +474,14 @@ return_of_api_category_0:
                   'disable - Disable file query log.'
                   'nofilequery - Log non-file query events.'
                   'all - Log all file query events.'
-               example: nofilequery
+               example: 'nofilequery'
             fq-preload:
                type: str
                description: |
                   'Enable/disable preloading file query database to memory (default = disable).'
                   'disable - Disable file query db preload.'
                   'enable - Enable file query db preload.'
-               example: disable
+               example: 'disable'
             linkd-log:
                type: str
                description: |
@@ -495,7 +495,7 @@ return_of_api_category_0:
                   'info - General information.'
                   'debug - Debug information.'
                   'disable - Linkd logging is disabled.'
-               example: debug
+               example: 'debug'
             max-client-worker:
                type: int
                description: 'max worker for tcp client connection (0~16: 0 means use cpu number up to 4).'
@@ -540,11 +540,11 @@ return_of_api_category_0:
                      ip:
                         type: str
                         description: 'IPv4 address of the override server.'
-                        example: 0.0.0.0
+                        example: '0.0.0.0'
                      ip6:
                         type: str
                         description: 'IPv6 address of the override server.'
-                        example: ::
+                        example: '::'
                      port:
                         type: int
                         description: 'Port number to use when contacting FortiGuard (1 - 65535, default = 443).'
@@ -559,7 +559,7 @@ return_of_api_category_0:
                      'Override status.'
                      'disable - Disable setting.'
                      'enable - Enable setting.'
-                  example: disable
+                  example: 'disable'
             stat-log-interval:
                type: int
                description: 'Statistic log interval setting, in minutes (1 - 1440, default = 60).'
@@ -578,7 +578,7 @@ return_of_api_category_0:
                   'Enable/disable update log setting (default = enable).'
                   'disable - Disable update log.'
                   'enable - Enable update log.'
-               example: enable
+               example: 'enable'
             wf-cache:
                type: int
                description: 'Web filter service maximum memory usage, in megabytes (maximum = Physical memory-1024, 0 = no limit, default = 600).'
@@ -598,14 +598,14 @@ return_of_api_category_0:
                   'disable - Disable URL log.'
                   'nourl - Log non-URL events.'
                   'all - Log all URL lookups.'
-               example: nourl
+               example: 'nourl'
             wf-preload:
                type: str
                description: |
                   'Enable/disable preloading the web filter database into memory (default = disable).'
                   'disable - Disable web filter database preload.'
                   'enable - Enable web filter database preload.'
-               example: enable
+               example: 'enable'
          status:
             code:
                type: int
@@ -613,7 +613,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/fmupdate/web-spam/fgd-setting
+            example: '/cli/global/fmupdate/web-spam/fgd-setting'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -628,7 +628,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/fmupdate/web-spam/fgd-setting
+            example: '/cli/global/fmupdate/web-spam/fgd-setting'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -639,6 +639,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/fmupdate/web-spam/fgd-setting'
@@ -647,7 +648,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -668,7 +669,6 @@ def main():
                         },
                         'as-log': {
                             'type': 'string',
-                            'default': 'nospam',
                             'enum': [
                                 'disable',
                                 'nospam',
@@ -677,7 +677,6 @@ def main():
                         },
                         'as-preload': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -690,7 +689,6 @@ def main():
                         },
                         'av-log': {
                             'type': 'string',
-                            'default': 'novirus',
                             'enum': [
                                 'disable',
                                 'novirus',
@@ -699,7 +697,6 @@ def main():
                         },
                         'av-preload': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -712,7 +709,6 @@ def main():
                         },
                         'av2-log': {
                             'type': 'string',
-                            'default': 'noav2',
                             'enum': [
                                 'disable',
                                 'noav2',
@@ -721,7 +717,6 @@ def main():
                         },
                         'av2-preload': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -729,7 +724,6 @@ def main():
                         },
                         'eventlog-query': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -747,7 +741,6 @@ def main():
                         },
                         'fq-log': {
                             'type': 'string',
-                            'default': 'nofilequery',
                             'enum': [
                                 'disable',
                                 'nofilequery',
@@ -756,7 +749,6 @@ def main():
                         },
                         'fq-preload': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -764,7 +756,6 @@ def main():
                         },
                         'linkd-log': {
                             'type': 'string',
-                            'default': 'debug',
                             'enum': [
                                 'emergency',
                                 'alert',
@@ -823,12 +814,10 @@ def main():
                                         'example': 0
                                     },
                                     'ip': {
-                                        'type': 'string',
-                                        'default': '0.0.0.0'
+                                        'type': 'string'
                                     },
                                     'ip6': {
-                                        'type': 'string',
-                                        'default': '::'
+                                        'type': 'string'
                                     },
                                     'port': {
                                         'type': 'integer',
@@ -850,7 +839,6 @@ def main():
                             },
                             'status': {
                                 'type': 'string',
-                                'default': 'disable',
                                 'enum': [
                                     'disable',
                                     'enable'
@@ -874,7 +862,6 @@ def main():
                         },
                         'update-log': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -897,7 +884,6 @@ def main():
                         },
                         'wf-log': {
                             'type': 'string',
-                            'default': 'nourl',
                             'enum': [
                                 'disable',
                                 'nourl',
@@ -906,7 +892,6 @@ def main():
                         },
                         'wf-preload': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -929,7 +914,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -949,8 +933,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -971,14 +955,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

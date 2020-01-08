@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/system/admin/radius
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -79,14 +78,14 @@ options:
                     secondary-secret:
                         -
                             type: str
-                            default: 'ENC MjQ1NDY1NzY1NDA5NDc3NsQvpemPPVnDdmjXG2aGMVw2ewhHNWiM5dWsNnfyIP59U/x0Sh3pI2ORfJmJ/m2bQ9guTxrIH8uvVP4gzItuNQvVvgS5sR/Y4x3jjlmrhvA0vK8TjoXt6sFKfKe86/vEo/cg3Y/RJFF1a1dkdDKNjHxCXJIL'
+                            default: 'ENC MjQ1NDY1NzY1NDA5NDc3NsQvpemPPVnDdmjXG2aGMVw2ewhHNWiM5dWsNnfyIP59U/x0Sh3pI2ORfJmJ/m2bQ9guTxrIH8uvVP4gzItuNQvVvgS5s...'
                     secondary-server:
                         type: str
                         description: 'Secondary server name/IP.'
                     secret:
                         -
                             type: str
-                            default: 'ENC ODcxMTExOTAwNDcxNzk4NoWoeEH5WLj2/jjPjplVd8npoc4Pf69w03rfqCi4oVPVPLjIKZTbFLtwEaPQESVBBguR6N1nV9qaAP9EHiMLSzU7Ff/g5ui7hXGXo4hEkXIP09D4PY2eQg9Htz8Oqm42M148kMuPADC3cx8nsiVWb001mIvf'
+                            default: 'ENC ODcxMTExOTAwNDcxNzk4NoWoeEH5WLj2/jjPjplVd8npoc4Pf69w03rfqCi4oVPVPLjIKZTbFLtwEaPQESVBBguR6N1nV9qaAP9EHiMLSzU7Ff/g5...'
                     server:
                         type: str
                         description: 'Server name/IP.'
@@ -134,33 +133,35 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/admin/radius
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/RADIUS
       fmgr_cli_system_admin_radius:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     auth-type: <value in [any, pap, chap, ...] default: any>
+            -
+               data:
+                 -
+                     auth-type: <value in [any, pap, chap, ...] default: 'any'>
                      name: <value of string>
-                     nas-ip: <value of string default: 0.0.0.0>
+                     nas-ip: <value of string default: '0.0.0.0'>
                      port: <value of integer default: 1812>
-                     secondary-secret: 
-                      - <value of string default: ENC MjQ1NDY1NzY1NDA5NDc3NsQvpemPPVnDdmjXG2aGMVw2ewhHNWiM5dWsNnfyIP59U/x0Sh3pI2ORfJmJ/m2bQ9guTxrIH8uvVP4gzItuNQvVvgS5sR/Y4x3jjlmrhvA0vK8TjoXt6sFKfKe86/vEo/cg3Y/RJFF1a1dkdDKNjHxCXJIL>
+                     secondary-secret:
+                       - <value of string default: 'ENC MjQ1NDY1NzY1NDA5NDc3NsQvpemPPVnDdmjXG2aGMVw2ewhHNWiM5dWsNnfyIP59U/x0Sh3p...'>
                      secondary-server: <value of string>
-                     secret: 
-                      - <value of string default: ENC ODcxMTExOTAwNDcxNzk4NoWoeEH5WLj2/jjPjplVd8npoc4Pf69w03rfqCi4oVPVPLjIKZTbFLtwEaPQESVBBguR6N1nV9qaAP9EHiMLSzU7Ff/g5ui7hXGXo4hEkXIP09D4PY2eQg9Htz8Oqm42M148kMuPADC3cx8nsiVWb001mIvf>
+                     secret:
+                       - <value of string default: 'ENC ODcxMTExOTAwNDcxNzk4NoWoeEH5WLj2/jjPjplVd8npoc4Pf69w03rfqCi4oVPVPLjIKZTb...'>
                      server: <value of string>
-    - name: send request to /cli/system/admin/radius
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/RADIUS
       fmgr_cli_system_admin_radius:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [auth-type, name, nas-ip, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [auth-type, name, nas-ip, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -181,7 +182,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/admin/radius
+            example: '/cli/global/system/admin/radius'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -200,14 +201,14 @@ return_of_api_category_0:
                      'pap - PAP.'
                      'chap - CHAP.'
                      'mschap2 - MSCHAPv2.'
-                  example: any
+                  example: 'any'
                name:
                   type: str
                   description: 'Name.'
                nas-ip:
                   type: str
                   description: 'NAS IP address and called station ID.'
-                  example: 0.0.0.0
+                  example: '0.0.0.0'
                port:
                   type: int
                   description: 'Server port.'
@@ -216,7 +217,7 @@ return_of_api_category_0:
                   type: array
                   suboptions:
                      type: str
-                     example: ENC MjQ1NDY1NzY1NDA5NDc3NsQvpemPPVnDdmjXG2aGMVw2ewhHNWiM5dWsNnfyIP59U/x0Sh3pI2ORfJmJ/m2bQ9guTxrIH8uvVP4gzItuNQvVvgS5sR/Y4x3jjlmrhvA0vK8TjoXt6sFKfKe86/vEo/cg3Y/RJFF1a1dkdDKNjHxCXJIL
+                     example: 'ENC MjQ1NDY1NzY1NDA5NDc3NsQvpemPPVnDdmjXG2aGMVw2ewhHNWiM5dWsNnfyIP59U/x0Sh3p...'
                secondary-server:
                   type: str
                   description: 'Secondary server name/IP.'
@@ -224,7 +225,7 @@ return_of_api_category_0:
                   type: array
                   suboptions:
                      type: str
-                     example: ENC ODcxMTExOTAwNDcxNzk4NoWoeEH5WLj2/jjPjplVd8npoc4Pf69w03rfqCi4oVPVPLjIKZTbFLtwEaPQESVBBguR6N1nV9qaAP9EHiMLSzU7Ff/g5ui7hXGXo4hEkXIP09D4PY2eQg9Htz8Oqm42M148kMuPADC3cx8nsiVWb001mIvf
+                     example: 'ENC ODcxMTExOTAwNDcxNzk4NoWoeEH5WLj2/jjPjplVd8npoc4Pf69w03rfqCi4oVPVPLjIKZTb...'
                server:
                   type: str
                   description: 'Server name/IP.'
@@ -235,7 +236,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/admin/radius
+            example: '/cli/global/system/admin/radius'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -246,6 +247,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/admin/radius'
@@ -254,7 +256,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -264,7 +266,6 @@ def main():
                     'items': {
                         'auth-type': {
                             'type': 'string',
-                            'default': 'any',
                             'enum': [
                                 'any',
                                 'pap',
@@ -276,8 +277,7 @@ def main():
                             'type': 'string'
                         },
                         'nas-ip': {
-                            'type': 'string',
-                            'default': '0.0.0.0'
+                            'type': 'string'
                         },
                         'port': {
                             'type': 'integer',
@@ -287,8 +287,7 @@ def main():
                         'secondary-secret': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC MjQ1NDY1NzY1NDA5NDc3NsQvpemPPVnDdmjXG2aGMVw2ewhHNWiM5dWsNnfyIP59U/x0Sh3pI2ORfJmJ/m2bQ9guTxrIH8uvVP4gzItuNQvVvgS5sR/Y4x3jjlmrhvA0vK8TjoXt6sFKfKe86/vEo/cg3Y/RJFF1a1dkdDKNjHxCXJIL'
+                                'type': 'string'
                             }
                         },
                         'secondary-server': {
@@ -297,8 +296,7 @@ def main():
                         'secret': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC ODcxMTExOTAwNDcxNzk4NoWoeEH5WLj2/jjPjplVd8npoc4Pf69w03rfqCi4oVPVPLjIKZTbFLtwEaPQESVBBguR6N1nV9qaAP9EHiMLSzU7Ff/g5ui7hXGXo4hEkXIP09D4PY2eQg9Htz8Oqm42M148kMuPADC3cx8nsiVWb001mIvf'
+                                'type': 'string'
                             }
                         },
                         'server': {
@@ -382,7 +380,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -403,8 +400,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -425,14 +422,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

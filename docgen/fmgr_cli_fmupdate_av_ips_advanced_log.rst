@@ -76,14 +76,15 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/av-ips/advanced-log
+
+    - name: REQUESTING /CLI/FMUPDATE/AV-IPS/ADVANCED-LOG
       fmgr_cli_fmupdate_av_ips_advanced_log:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  log-fortigate: <value in [disable, enable] default: disable>
-                  log-server: <value in [disable, enable] default: enable>
+            -
+               data:
+                  log-fortigate: <value in [disable, enable] default: 'disable'>
+                  log-server: <value in [disable, enable] default: 'enable'>
 
 
 

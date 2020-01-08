@@ -93,13 +93,14 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/saml/service-providers
+
+    - name: REQUESTING /CLI/SYSTEM/SAML/SERVICE-PROVIDERS
       fmgr_cli_system_saml_service_providers:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      idp-entity-id: <value of string>
                      idp-single-logout-url: <value of string>
                      idp-single-sign-on-url: <value of string>
@@ -109,16 +110,17 @@ Examples
                      sp-entity-id: <value of string>
                      sp-single-logout-url: <value of string>
                      sp-single-sign-on-url: <value of string>
-    - name: send request to /cli/system/saml/service-providers
+
+    - name: REQUESTING /CLI/SYSTEM/SAML/SERVICE-PROVIDERS
       fmgr_cli_system_saml_service_providers:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [idp-entity-id, idp-single-logout-url, idp-single-sign-on-url, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [idp-entity-id, idp-single-logout-url, idp-single-sign-on-url, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

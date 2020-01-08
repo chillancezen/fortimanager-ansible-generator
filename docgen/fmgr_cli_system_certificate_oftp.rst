@@ -85,20 +85,21 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/certificate/oftp
+
+    - name: REQUESTING /CLI/SYSTEM/CERTIFICATE/OFTP
       fmgr_cli_system_certificate_oftp:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  certificate: 
-                   - <value of string>
+            -
+               data:
+                  certificate:
+                    - <value of string>
                   comment: <value of string>
-                  custom: <value in [disable, enable] default: disable>
-                  password: 
-                   - <value of string default: ENC MTI5NjYzMDEzODE4NDg1NVPJciKIaIk4c9RaJExLIhIeE1CWLHxjPU7i6K/MH/r6Et25GbRk+XSVylgi6eEZfsdO9enC3RNAgJVBT5MBtxnKZPQs3OSqP30a3KlVKWDLIUqFDpwZwWgCEJOM+g3iR9i958iDsfa0BamlMUBM23bb8Yve>
-                  private-key: 
-                   - <value of string>
+                  custom: <value in [disable, enable] default: 'disable'>
+                  password:
+                    - <value of string default: 'ENC MTI5NjYzMDEzODE4NDg1NVPJciKIaIk4c9RaJExLIhIeE1CWLHxjPU7i6K/MH/r6Et25GbRk...'>
+                  private-key:
+                    - <value of string>
 
 
 

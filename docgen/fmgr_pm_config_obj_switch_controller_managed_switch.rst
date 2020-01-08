@@ -147,20 +147,21 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/switch-controller/managed-switch
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SWITCH-CONTROLLER/MANAGED-SWITCH
       fmgr_pm_config_obj_switch_controller_managed_switch:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      _platform: <value of string>
                      description: <value of string>
                      name: <value of string>
-                     ports: 
-                      - 
+                     ports:
+                       -
                            allowed-vlans: <value of string>
                            allowed-vlans-all: <value in [disable, enable]>
                            arp-inspection-trust: <value in [untrusted, trusted]>
@@ -182,8 +183,8 @@ Examples
                            max-bundle: <value of integer>
                            mclag: <value in [disable, enable]>
                            member-withdrawal-behavior: <value in [forward, block]>
-                           members: 
-                            - <value of string>
+                           members:
+                             - <value of string>
                            min-bundle: <value of integer>
                            mode: <value in [static, lacp-passive, lacp-active]>
                            poe-pre-standard-detection: <value in [disable, enable]>
@@ -205,27 +206,28 @@ Examples
                            untagged-vlans: <value of string>
                            vlan: <value of string>
                      switch-id: <value of string>
-    - name: send request to /pm/config/obj/switch-controller/managed-switch
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SWITCH-CONTROLLER/MANAGED-SWITCH
       fmgr_pm_config_obj_switch_controller_managed_switch:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [_platform, description, name, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [_platform, description, name, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

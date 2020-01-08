@@ -89,26 +89,27 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/ha
+
+    - name: REQUESTING /CLI/SYSTEM/HA
       fmgr_cli_system_ha:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   clusterid: <value of integer default: 1>
                   file-quota: <value of integer default: 4096>
                   hb-interval: <value of integer default: 5>
                   hb-lost-threshold: <value of integer default: 3>
-                  mode: <value in [standalone, master, slave] default: standalone>
-                  password: 
-                   - <value of string default: ENC Njg3MTI2ODY4ODEyMzY2NtF8Bgn7rP641A/Sf8QzaQhOnUfyVTFTNoFxfoZ5gzjrvXiDpQmIecJchwHMf6cMUMYR/EPxGUXBEohaVdi4YNK74+fWHu9m1Hd8UTU4tZ9UtBelMIOQUT1HMDGLFwqwKg/NXibio9aMJDW6WYPLMYpBnPng>
-                  peer: 
-                   - 
+                  mode: <value in [standalone, master, slave] default: 'standalone'>
+                  password:
+                    - <value of string default: 'ENC Njg3MTI2ODY4ODEyMzY2NtF8Bgn7rP641A/Sf8QzaQhOnUfyVTFTNoFxfoZ5gzjrvXiDpQmI...'>
+                  peer:
+                    -
                         id: <value of integer default: 0>
-                        ip: <value of string default: 0.0.0.0>
-                        ip6: <value of string default: ::>
+                        ip: <value of string default: '0.0.0.0'>
+                        ip6: <value of string default: '::'>
                         serial-number: <value of string>
-                        status: <value in [disable, enable] default: enable>
+                        status: <value in [disable, enable] default: 'enable'>
 
 
 

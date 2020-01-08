@@ -31,7 +31,6 @@ description:
     - /dvmdb/global/script
     - /dvmdb/script
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -46,7 +45,7 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
-    url_params: 
+    url_params:
         description: the parameters in url path
         required: True
         type: dict
@@ -72,7 +71,7 @@ options:
                         type: str
                     filter_build:
                         type: int
-                        description: 'The value will be ignored in add/set/update requests if filter_ostype is not set. It has no effect if target is "adom_database".'
+                        description: 'The value will be ignored in add/set/update requests if filter_ostype is not set. It has no effect if target is "adom_...'
                     filter_device:
                         type: int
                         description: 'Name or id of an existing device in the database. It has no effect if target is "adom_database".'
@@ -89,20 +88,20 @@ options:
                     filter_osver:
                         type: str
                         default: 'unknown'
-                        description: 'The value will be ignored in add/set/update requests if filter_ostype is not set. It has no effect if target is "adom_database".'
+                        description: 'The value will be ignored in add/set/update requests if filter_ostype is not set. It has no effect if target is "adom_...'
                         choices:
                             - 'unknown'
                             - '4.00'
                             - '5.00'
                     filter_platform:
                         type: str
-                        description: 'The value will be ignored in add/set/update requests if filter_ostype is not set. It has no effect if target is "adom_database".'
+                        description: 'The value will be ignored in add/set/update requests if filter_ostype is not set. It has no effect if target is "adom_...'
                     filter_serial:
                         type: str
                         description: 'The value has no effect if target is "adom_database".'
                     modification_time:
                         type: str
-                        description: 'It is a read-only attribute indicating the time when the script was created or modified. The value will be ignored in add/set/update requests.'
+                        description: 'It is a read-only attribute indicating the time when the script was created or modified. The value will be ignored in ...'
                     name:
                         type: str
                     script_schedule:
@@ -135,7 +134,7 @@ options:
                             run_on_db:
                                 type: str
                                 default: 'disable'
-                                description: 'Indicates if the scheduled script should be executed on device database. It should always be disable for tcl scripts.'
+                                description: 'Indicates if the scheduled script should be executed on device database. It should always be disable for tcl s...'
                                 choices:
                                     - 'disable'
                                     - 'enable'
@@ -208,7 +207,7 @@ options:
                     type: int
             sortings:
                 -
-                    \{attr_name\}:
+                    varidic.attr_name:
                         type: int
                         choices:
                             - 1
@@ -224,56 +223,58 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvmdb/script
+
+    - name: REQUESTING /DVMDB/SCRIPT
       fmgr_dvmdb_script:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      content: <value of string>
                      desc: <value of string>
                      filter_build: <value of integer>
                      filter_device: <value of integer>
                      filter_hostname: <value of string>
-                     filter_ostype: <value in [unknown, fos] default: unknown>
-                     filter_osver: <value in [unknown, 4.00, 5.00] default: unknown>
+                     filter_ostype: <value in [unknown, fos] default: 'unknown'>
+                     filter_osver: <value in [unknown, 4.00, 5.00] default: 'unknown'>
                      filter_platform: <value of string>
                      filter_serial: <value of string>
                      modification_time: <value of string>
                      name: <value of string>
-                     script_schedule: 
-                      - 
+                     script_schedule:
+                       -
                            datetime: <value of string>
-                           day_of_week: <value in [unknown, sun, mon, ...] default: sun>
+                           day_of_week: <value in [unknown, sun, mon, ...] default: 'sun'>
                            device: <value of integer>
                            name: <value of string>
-                           run_on_db: <value in [disable, enable] default: disable>
+                           run_on_db: <value in [disable, enable] default: 'disable'>
                            type: <value in [auto, onetime, daily, ...]>
-                     target: <value in [device_database, remote_device, adom_database] default: device_database>
+                     target: <value in [device_database, remote_device, adom_database] default: 'device_database'>
                      type: <value in [cli, tcl, cligrp]>
-    - name: send request to /dvmdb/script
+
+    - name: REQUESTING /DVMDB/SCRIPT
       fmgr_dvmdb_script:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                expand member: <value of string>
-               fields: 
-                - 
-                   - <value in [content, desc, filter_build, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [content, desc, filter_build, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, object member, syntax]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 '''
 
@@ -292,7 +293,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /dvmdb/adom/{adom}/script
+            example: '/dvmdb/adom/{adom}/script'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -310,7 +311,7 @@ return_of_api_category_0:
                   type: str
                filter_build:
                   type: int
-                  description: 'The value will be ignored in add/set/update requests if filter_ostype is not set. It has no effect if target is "adom_database".'
+                  description: 'The value will be ignored in add/set/update requests if filter_ostype is not set. It has no effect if target is "adom_databa...'
                filter_device:
                   type: int
                   description: 'Name or id of an existing device in the database. It has no effect if target is "adom_database".'
@@ -320,20 +321,20 @@ return_of_api_category_0:
                filter_ostype:
                   type: str
                   description: 'The value has no effect if target is "adom_database".'
-                  example: unknown
+                  example: 'unknown'
                filter_osver:
                   type: str
-                  description: 'The value will be ignored in add/set/update requests if filter_ostype is not set. It has no effect if target is "adom_database".'
-                  example: unknown
+                  description: 'The value will be ignored in add/set/update requests if filter_ostype is not set. It has no effect if target is "adom_databa...'
+                  example: 'unknown'
                filter_platform:
                   type: str
-                  description: 'The value will be ignored in add/set/update requests if filter_ostype is not set. It has no effect if target is "adom_database".'
+                  description: 'The value will be ignored in add/set/update requests if filter_ostype is not set. It has no effect if target is "adom_databa...'
                filter_serial:
                   type: str
                   description: 'The value has no effect if target is "adom_database".'
                modification_time:
                   type: str
-                  description: 'It is a read-only attribute indicating the time when the script was created or modified. The value will be ignored in add/set/update requests.'
+                  description: 'It is a read-only attribute indicating the time when the script was created or modified. The value will be ignored in add/se...'
                name:
                   type: str
                script_schedule:
@@ -349,7 +350,7 @@ return_of_api_category_0:
                            'monthly: "DD hh:mm"'
                      day_of_week:
                         type: str
-                        example: sun
+                        example: 'sun'
                      device:
                         type: int
                         description: 'Name or id of an existing device in the database.'
@@ -358,12 +359,12 @@ return_of_api_category_0:
                      run_on_db:
                         type: str
                         description: 'Indicates if the scheduled script should be executed on device database. It should always be disable for tcl scripts.'
-                        example: disable
+                        example: 'disable'
                      type:
                         type: str
                target:
                   type: str
-                  example: device_database
+                  example: 'device_database'
                type:
                   type: str
          status:
@@ -373,7 +374,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /dvmdb/adom/{adom}/script
+            example: '/dvmdb/adom/{adom}/script'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -383,6 +384,7 @@ from ansible.module_utils.network.fortimanager.common import DEFAULT_RESULT_OBJ
 from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
+
 
 def main():
     jrpc_urls = [
@@ -398,7 +400,7 @@ def main():
         }
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -423,7 +425,6 @@ def main():
                         },
                         'filter_ostype': {
                             'type': 'string',
-                            'default': 'unknown',
                             'enum': [
                                 'unknown',
                                 'fos'
@@ -431,7 +432,6 @@ def main():
                         },
                         'filter_osver': {
                             'type': 'string',
-                            'default': 'unknown',
                             'enum': [
                                 'unknown',
                                 '4.00',
@@ -458,7 +458,6 @@ def main():
                                 },
                                 'day_of_week': {
                                     'type': 'string',
-                                    'default': 'sun',
                                     'enum': [
                                         'unknown',
                                         'sun',
@@ -478,7 +477,6 @@ def main():
                                 },
                                 'run_on_db': {
                                     'type': 'string',
-                                    'default': 'disable',
                                     'enum': [
                                         'disable',
                                         'enable'
@@ -498,7 +496,6 @@ def main():
                         },
                         'target': {
                             'type': 'string',
-                            'default': 'device_database',
                             'enum': [
                                 'device_database',
                                 'remote_device',
@@ -634,7 +631,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -655,8 +651,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -677,14 +673,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

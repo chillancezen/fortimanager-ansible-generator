@@ -169,15 +169,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/system/dhcp/server
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SYSTEM/DHCP/SERVER
       fmgr_pm_config_obj_system_dhcp_server:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      auto-configuration: <value in [disable, enable]>
                      conflicted-ip-timeout: <value of integer>
                      ddns-auth: <value in [disable, tsig]>
@@ -194,8 +195,8 @@ Examples
                      dns-server3: <value of string>
                      dns-service: <value in [default, specify, local]>
                      domain: <value of string>
-                     exclude-range: 
-                      - 
+                     exclude-range:
+                       -
                            end-ip: <value of string>
                            id: <value of integer>
                            start-ip: <value of string>
@@ -204,8 +205,8 @@ Examples
                      id: <value of integer>
                      interface: <value of string>
                      ip-mode: <value in [range, usrgrp]>
-                     ip-range: 
-                      - 
+                     ip-range:
+                       -
                            end-ip: <value of string>
                            id: <value of integer>
                            start-ip: <value of string>
@@ -218,16 +219,16 @@ Examples
                      ntp-server2: <value of string>
                      ntp-server3: <value of string>
                      ntp-service: <value in [default, specify, local]>
-                     options: 
-                      - 
+                     options:
+                       -
                            code: <value of integer>
                            id: <value of integer>
-                           ip: 
-                            - <value of string>
+                           ip:
+                             - <value of string>
                            type: <value in [hex, string, ip, ...]>
                            value: <value of string>
-                     reserved-address: 
-                      - 
+                     reserved-address:
+                       -
                            action: <value in [assign, block, reserved]>
                            description: <value of string>
                            id: <value of integer>
@@ -235,39 +236,40 @@ Examples
                            mac: <value of string>
                      server-type: <value in [regular, ipsec]>
                      status: <value in [disable, enable]>
-                     tftp-server: 
-                      - <value of string>
+                     tftp-server:
+                       - <value of string>
                      timezone: <value in [00, 01, 02, ...]>
                      timezone-option: <value in [disable, default, specify]>
                      vci-match: <value in [disable, enable]>
-                     vci-string: 
-                      - <value of string>
+                     vci-string:
+                       - <value of string>
                      wifi-ac1: <value of string>
                      wifi-ac2: <value of string>
                      wifi-ac3: <value of string>
                      wins-server1: <value of string>
                      wins-server2: <value of string>
-    - name: send request to /pm/config/obj/system/dhcp/server
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SYSTEM/DHCP/SERVER
       fmgr_pm_config_obj_system_dhcp_server:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [auto-configuration, conflicted-ip-timeout, ddns-auth, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [auto-configuration, conflicted-ip-timeout, ddns-auth, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

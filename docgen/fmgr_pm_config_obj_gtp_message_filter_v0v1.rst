@@ -136,15 +136,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/gtp/message-filter-v0v1
+
+    - name: REQUESTING /PM/CONFIG/OBJ/GTP/MESSAGE-FILTER-V0V1
       fmgr_pm_config_obj_gtp_message_filter_v0v1:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      create-mbms: <value in [allow, deny]>
                      create-pdp: <value in [allow, deny]>
                      data-record: <value in [allow, deny]>
@@ -177,33 +178,34 @@ Examples
                      sgsn-context: <value in [allow, deny]>
                      support-extension: <value in [allow, deny]>
                      unknown-message: <value in [allow, deny]>
-                     unknown-message-white-list: 
-                      - <value of integer>
+                     unknown-message-white-list:
+                       - <value of integer>
                      update-mbms: <value in [allow, deny]>
                      update-pdp: <value in [allow, deny]>
                      v0-create-aa-pdp--v1-init-pdp-ctx: <value in [deny, allow]>
                      version-not-support: <value in [allow, deny]>
-    - name: send request to /pm/config/obj/gtp/message-filter-v0v1
+
+    - name: REQUESTING /PM/CONFIG/OBJ/GTP/MESSAGE-FILTER-V0V1
       fmgr_pm_config_obj_gtp_message_filter_v0v1:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [create-mbms, create-pdp, data-record, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [create-mbms, create-pdp, data-record, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

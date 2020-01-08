@@ -100,36 +100,38 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/admin/tacacs
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/TACACS
       fmgr_cli_system_admin_tacacs:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     authen-type: <value in [auto, ascii, pap, ...] default: auto>
-                     authorization: <value in [disable, enable] default: disable>
-                     key: 
-                      - <value of string default: ENC MTM1NzgxNTEwMTQ3MzkyN6Bf+SUc1DH38ALtjfXS+4tsPEStofpzICCe9zH2nI/U1uDRuS4ysXoRMhkM/i6ypV7BvpqVqu3wnaI3lWsFOh6+06ydV9EyGZ+z+v4JkMDSSJ5UHQdPh8DxRdsVvWS3WpWWGFXk4064PiT2A1zTZuT+ZqDM>
+            -
+               data:
+                 -
+                     authen-type: <value in [auto, ascii, pap, ...] default: 'auto'>
+                     authorization: <value in [disable, enable] default: 'disable'>
+                     key:
+                       - <value of string default: 'ENC MTM1NzgxNTEwMTQ3MzkyN6Bf+SUc1DH38ALtjfXS+4tsPEStofpzICCe9zH2nI/U1uDRuS4y...'>
                      name: <value of string>
                      port: <value of integer default: 49>
-                     secondary-key: 
-                      - <value of string default: ENC MTM3MzM0NTI4MzQ3MTQ4OftOEtzg8U8bz+L2zW2yOkzO1vkOesoOkTy2j02IrPnwTVEVz7aOODvx+zGMUtELHdsY22GW20r4Q0OasjCqkmZgjt9PbfLA2Np3vyJ5ZPtz0IUohnN5frAIVPy7p2VtSHJmvOK3PrMoiwLcSesT0RKSn//Q>
+                     secondary-key:
+                       - <value of string default: 'ENC MTM3MzM0NTI4MzQ3MTQ4OftOEtzg8U8bz+L2zW2yOkzO1vkOesoOkTy2j02IrPnwTVEVz7aO...'>
                      secondary-server: <value of string>
                      server: <value of string>
-                     tertiary-key: 
-                      - <value of string default: ENC MjAzNTE3MDIwNDI1OTEwMgAtMeOT5CzyMlsFCmOGJ8cTlQYpjv7BJI+uC5QN2LxVGteUJ87W++EYhPaChx42doThcM3Gtb7w8PfrihahuU7S+qoi9weI6eVMq6AUQ7Zw0AomShHbqS8QLEsNf1a59nYX+Lp2wFPwgSYT4xlLOXCNX18h>
+                     tertiary-key:
+                       - <value of string default: 'ENC MjAzNTE3MDIwNDI1OTEwMgAtMeOT5CzyMlsFCmOGJ8cTlQYpjv7BJI+uC5QN2LxVGteUJ87W...'>
                      tertiary-server: <value of string>
-    - name: send request to /cli/system/admin/tacacs
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/TACACS
       fmgr_cli_system_admin_tacacs:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [authen-type, authorization, key, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [authen-type, authorization, key, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

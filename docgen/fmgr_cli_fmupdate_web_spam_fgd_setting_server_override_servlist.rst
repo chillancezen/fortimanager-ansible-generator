@@ -91,29 +91,31 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/web-spam/fgd-setting/server-override/servlist
+
+    - name: REQUESTING /CLI/FMUPDATE/WEB-SPAM/FGD-SETTING/SERVER-OVERRIDE/SERVLIST
       fmgr_cli_fmupdate_web_spam_fgd_setting_server_override_servlist:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      id: <value of integer default: 0>
-                     ip: <value of string default: 0.0.0.0>
-                     ip6: <value of string default: ::>
+                     ip: <value of string default: '0.0.0.0'>
+                     ip6: <value of string default: '::'>
                      port: <value of integer default: 443>
-                     service-type: 
-                      - <value in [fgd, fgc, fsa]>
-    - name: send request to /cli/fmupdate/web-spam/fgd-setting/server-override/servlist
+                     service-type:
+                       - <value in [fgd, fgc, fsa]>
+
+    - name: REQUESTING /CLI/FMUPDATE/WEB-SPAM/FGD-SETTING/SERVER-OVERRIDE/SERVLIST
       fmgr_cli_fmupdate_web_spam_fgd_setting_server_override_servlist:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [id, ip, ip6, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [id, ip, ip6, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

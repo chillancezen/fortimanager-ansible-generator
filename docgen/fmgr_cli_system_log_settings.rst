@@ -185,12 +185,13 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/log/settings
+
+    - name: REQUESTING /CLI/SYSTEM/LOG/SETTINGS
       fmgr_cli_system_log_settings:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   FAC-custom-field1: <value of string>
                   FAZ-custom-field1: <value of string>
                   FCH-custom-field1: <value of string>
@@ -203,95 +204,95 @@ Examples
                   FSA-custom-field1: <value of string>
                   FWB-custom-field1: <value of string>
                   browse-max-logfiles: <value of integer default: 10000>
-                  dns-resolve-dstip: <value in [disable, enable] default: disable>
+                  dns-resolve-dstip: <value in [disable, enable] default: 'disable'>
                   download-max-logs: <value of integer default: 500000>
-                  ha-auto-migrate: <value in [disable, enable] default: disable>
+                  ha-auto-migrate: <value in [disable, enable] default: 'disable'>
                   import-max-logfiles: <value of integer default: 10000>
-                  log-file-archive-name: <value in [basic, extended] default: basic>
-                  rolling-analyzer: 
-                     days: 
-                      - <value in [sun, mon, tue, ...]>
-                     del-files: <value in [disable, enable] default: disable>
+                  log-file-archive-name: <value in [basic, extended] default: 'basic'>
+                  rolling-analyzer:
+                     days:
+                       - <value in [sun, mon, tue, ...]>
+                     del-files: <value in [disable, enable] default: 'disable'>
                      directory: <value of string>
                      file-size: <value of integer default: 200>
-                     gzip-format: <value in [disable, enable] default: disable>
+                     gzip-format: <value in [disable, enable] default: 'disable'>
                      hour: <value of integer default: 0>
-                     ip: <value of string default: 0.0.0.0>
-                     ip2: <value of string default: 0.0.0.0>
-                     ip3: <value of string default: 0.0.0.0>
-                     log-format: <value in [native, text, csv] default: native>
+                     ip: <value of string default: '0.0.0.0'>
+                     ip2: <value of string default: '0.0.0.0'>
+                     ip3: <value of string default: '0.0.0.0'>
+                     log-format: <value in [native, text, csv] default: 'native'>
                      min: <value of integer default: 0>
-                     password: 
-                      - <value of string default: ENC MzQ3NjYyODIxOTc1MTg3NhVVByJnhjVIRIq22N8+MG0by/Mxs5TUnkVnhHtwoRdEVnaNNj6P9rGxNsGaBAn2SVhBLt6V9QWnTm1fbC1hAWycBDzkxK37kTzWEwu5NE66yvC4sVh53l+CSOPZabxA2n7XCNB9Kce1X8EeGUr4PqPCtCej>
-                     password2: 
-                      - <value of string default: ENC MTAwODg0NTQxNDE5OTQwMaPdJv8JESXhogoJmBIvID8+U03pvD8I9Yr/Q1NGxPnlvLKVEOISmJ/IRPZauTQ/oJ5KlJE3LSzrXEOWAhn2mNaoS+nFbu0seQqMEhUdLbx41Q0yi4dCM9n3PF8RETPiFayOQ5sWWPRD7ALjlthRLogqkua5>
-                     password3: 
-                      - <value of string default: ENC MTMyOTA3MjY4MTgxMTk2N1UB1GKpBMmb5vgQRJTsjWS9sBfCvYmhBhdgf+ipyNKwY43YcyKBx3TaUcf6QLEdeVgFD2ymJHzfX99dusp8IfxNYj7ITnobzP+GcHYMOyPtjtcORJqwHTpEy9rnqCfy6nKz2Sdj1D1SnqOfRhn0R8sonnED>
-                     server-type: <value in [ftp, sftp, scp] default: ftp>
-                     upload: <value in [disable, enable] default: disable>
+                     password:
+                       - <value of string default: 'ENC MzQ3NjYyODIxOTc1MTg3NhVVByJnhjVIRIq22N8+MG0by/Mxs5TUnkVnhHtwoRdEVnaNNj6P...'>
+                     password2:
+                       - <value of string default: 'ENC MTAwODg0NTQxNDE5OTQwMaPdJv8JESXhogoJmBIvID8+U03pvD8I9Yr/Q1NGxPnlvLKVEOIS...'>
+                     password3:
+                       - <value of string default: 'ENC MTMyOTA3MjY4MTgxMTk2N1UB1GKpBMmb5vgQRJTsjWS9sBfCvYmhBhdgf+ipyNKwY43YcyKB...'>
+                     server-type: <value in [ftp, sftp, scp] default: 'ftp'>
+                     upload: <value in [disable, enable] default: 'disable'>
                      upload-hour: <value of integer default: 0>
-                     upload-mode: <value in [backup, mirror] default: backup>
-                     upload-trigger: <value in [on-roll, on-schedule] default: on-roll>
+                     upload-mode: <value in [backup, mirror] default: 'backup'>
+                     upload-trigger: <value in [on-roll, on-schedule] default: 'on-roll'>
                      username: <value of string>
                      username2: <value of string>
                      username3: <value of string>
-                     when: <value in [none, daily, weekly] default: none>
-                  rolling-local: 
-                     days: 
-                      - <value in [sun, mon, tue, ...]>
-                     del-files: <value in [disable, enable] default: disable>
+                     when: <value in [none, daily, weekly] default: 'none'>
+                  rolling-local:
+                     days:
+                       - <value in [sun, mon, tue, ...]>
+                     del-files: <value in [disable, enable] default: 'disable'>
                      directory: <value of string>
                      file-size: <value of integer default: 200>
-                     gzip-format: <value in [disable, enable] default: disable>
+                     gzip-format: <value in [disable, enable] default: 'disable'>
                      hour: <value of integer default: 0>
-                     ip: <value of string default: 0.0.0.0>
-                     ip2: <value of string default: 0.0.0.0>
-                     ip3: <value of string default: 0.0.0.0>
-                     log-format: <value in [native, text, csv] default: native>
+                     ip: <value of string default: '0.0.0.0'>
+                     ip2: <value of string default: '0.0.0.0'>
+                     ip3: <value of string default: '0.0.0.0'>
+                     log-format: <value in [native, text, csv] default: 'native'>
                      min: <value of integer default: 0>
-                     password: 
-                      - <value of string default: ENC MTA3MjA4MzMzNDU1NjUyNKTuKbF8PktnhHOXsSkxjhxlHjwIE22BP2ak2RRotV+wsRkGD/HamAdeTJyxk8NUM5OZPMpAHhPZssCynPvryOwf6S7Bq6wiH2BSRxNp+JDC+OcO7KbXMy+0JRgHFegouXqd2l9n+MweBcSP4qsn/P2nZEbm>
-                     password2: 
-                      - <value of string default: ENC NjYyODA3OTExODQ2OTQ0N1452tPlCQK0/AvB5jye7GpFLLpArdcOazRo1BOGPYnKcgz2Iqn/Nt+7ZZereH6gM4nFNmsLipjwaznrIUtA2dAogsuYgiTXfCbK5hwOSXo5AniueUP1/fJcBeU7xnIUqTCWf8OBrStYnmyEHg0QHHzSmvRq>
-                     password3: 
-                      - <value of string default: ENC Mzk3ODgxMDA2MjU0NzUwNft3N0w+quBucyAJLuI78/qyOQAkHkRQnCPqX7Crikas/93czxOX2okFGGyPN7MhHEFPwsNyxKziYau12Szy5r5kYxSVnovhsE6m4D9uMiOEfqIm+ZM8t8x0vvZiERLvbNCwn8E4nMkDvz09rKXJdDK1lelu>
-                     server-type: <value in [ftp, sftp, scp] default: ftp>
-                     upload: <value in [disable, enable] default: disable>
+                     password:
+                       - <value of string default: 'ENC MTA3MjA4MzMzNDU1NjUyNKTuKbF8PktnhHOXsSkxjhxlHjwIE22BP2ak2RRotV+wsRkGD/Ha...'>
+                     password2:
+                       - <value of string default: 'ENC NjYyODA3OTExODQ2OTQ0N1452tPlCQK0/AvB5jye7GpFLLpArdcOazRo1BOGPYnKcgz2Iqn/...'>
+                     password3:
+                       - <value of string default: 'ENC Mzk3ODgxMDA2MjU0NzUwNft3N0w+quBucyAJLuI78/qyOQAkHkRQnCPqX7Crikas/93czxOX...'>
+                     server-type: <value in [ftp, sftp, scp] default: 'ftp'>
+                     upload: <value in [disable, enable] default: 'disable'>
                      upload-hour: <value of integer default: 0>
-                     upload-mode: <value in [backup, mirror] default: backup>
-                     upload-trigger: <value in [on-roll, on-schedule] default: on-roll>
+                     upload-mode: <value in [backup, mirror] default: 'backup'>
+                     upload-trigger: <value in [on-roll, on-schedule] default: 'on-roll'>
                      username: <value of string>
                      username2: <value of string>
                      username3: <value of string>
-                     when: <value in [none, daily, weekly] default: none>
-                  rolling-regular: 
-                     days: 
-                      - <value in [sun, mon, tue, ...]>
-                     del-files: <value in [disable, enable] default: disable>
+                     when: <value in [none, daily, weekly] default: 'none'>
+                  rolling-regular:
+                     days:
+                       - <value in [sun, mon, tue, ...]>
+                     del-files: <value in [disable, enable] default: 'disable'>
                      directory: <value of string>
                      file-size: <value of integer default: 200>
-                     gzip-format: <value in [disable, enable] default: disable>
+                     gzip-format: <value in [disable, enable] default: 'disable'>
                      hour: <value of integer default: 0>
-                     ip: <value of string default: 0.0.0.0>
-                     ip2: <value of string default: 0.0.0.0>
-                     ip3: <value of string default: 0.0.0.0>
-                     log-format: <value in [native, text, csv] default: native>
+                     ip: <value of string default: '0.0.0.0'>
+                     ip2: <value of string default: '0.0.0.0'>
+                     ip3: <value of string default: '0.0.0.0'>
+                     log-format: <value in [native, text, csv] default: 'native'>
                      min: <value of integer default: 0>
-                     password: 
-                      - <value of string default: ENC ODAwOTQ3NjUzMDIwNzk1OIPHW/nEK7BO24JYo1Em7rYn7CdH7TdDmHCHkrjwr+SVjdV8BYqBZBky2+zlZseWknPUDVeGjpRxz5S4sOpVJpepIlmEWlA52qtz+8yR98QYwq7x6zet0/xPAsnFJfQ5hkw+glg4dEZe8dYhZqUIpBTG3A1f>
-                     password2: 
-                      - <value of string default: ENC NDI4MzA1MDAwNDc5MDM1NCgaDuO8BbylW468/v7rkRIUl/sgtzU4EClw6xY77UANoEcktN7+aT2a+gQ1XwPLrlWn+8x5CURG3MmkJULSMu2wqfWLPA7C1rIwlHY7Z22A1SW04YvTiPiKK/LY7OjYalTgHqL33VerBXP7/Sgyn5dlEZnu>
-                     password3: 
-                      - <value of string default: ENC MTI4Mzk5OTgyODM4NjQ2NbWPjK9Eo8bsyoRiMK1soj62ZQgC0L38apk7ls82V9kbFawm+/xT594RzdZD3WU8luDAAvtCGVOECxVPu4I9owGyeS2ioYrWcqFmjTCrgZrM9D0Vb4UvHpENCMz/qImwFE+ka+Y/f8+c79d9b0unoAUgOi6M>
-                     server-type: <value in [ftp, sftp, scp] default: ftp>
-                     upload: <value in [disable, enable] default: disable>
+                     password:
+                       - <value of string default: 'ENC ODAwOTQ3NjUzMDIwNzk1OIPHW/nEK7BO24JYo1Em7rYn7CdH7TdDmHCHkrjwr+SVjdV8BYqB...'>
+                     password2:
+                       - <value of string default: 'ENC NDI4MzA1MDAwNDc5MDM1NCgaDuO8BbylW468/v7rkRIUl/sgtzU4EClw6xY77UANoEcktN7+...'>
+                     password3:
+                       - <value of string default: 'ENC MTI4Mzk5OTgyODM4NjQ2NbWPjK9Eo8bsyoRiMK1soj62ZQgC0L38apk7ls82V9kbFawm+/xT...'>
+                     server-type: <value in [ftp, sftp, scp] default: 'ftp'>
+                     upload: <value in [disable, enable] default: 'disable'>
                      upload-hour: <value of integer default: 0>
-                     upload-mode: <value in [backup, mirror] default: backup>
-                     upload-trigger: <value in [on-roll, on-schedule] default: on-roll>
+                     upload-mode: <value in [backup, mirror] default: 'backup'>
+                     upload-trigger: <value in [on-roll, on-schedule] default: 'on-roll'>
                      username: <value of string>
                      username2: <value of string>
                      username3: <value of string>
-                     when: <value in [none, daily, weekly] default: none>
+                     when: <value in [none, daily, weekly] default: 'none'>
                   sync-search-timeout: <value of integer default: 60>
 
 

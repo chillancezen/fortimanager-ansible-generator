@@ -75,12 +75,13 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /securityconsole/package/move
+
+    - name: REQUESTING /SECURITYCONSOLE/PACKAGE/MOVE
       fmgr_securityconsole_package_move:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   adom: <value of string>
                   dst_name: <value of string>
                   dst_parent: <value of string>

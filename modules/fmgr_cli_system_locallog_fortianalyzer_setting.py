@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/system/locallog/fortianalyzer/setting
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -127,19 +126,20 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/locallog/fortianalyzer/setting
+
+    - name: REQUESTING /CLI/SYSTEM/LOCALLOG/FORTIANALYZER/SETTING
       fmgr_cli_system_locallog_fortianalyzer_setting:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  reliable: <value in [disable, enable] default: disable>
-                  secure-connection: <value in [disable, enable] default: disable>
-                  server-ip: <value of string default: 0.0.0.0>
-                  severity: <value in [emergency, alert, critical, ...] default: notification>
-                  status: <value in [disable, realtime, upload] default: disable>
-                  upload-time: 
-                   - <value of string>
+            -
+               data:
+                  reliable: <value in [disable, enable] default: 'disable'>
+                  secure-connection: <value in [disable, enable] default: 'disable'>
+                  server-ip: <value of string default: '0.0.0.0'>
+                  severity: <value in [emergency, alert, critical, ...] default: 'notification'>
+                  status: <value in [disable, realtime, upload] default: 'disable'>
+                  upload-time:
+                    - <value of string>
 
 '''
 
@@ -158,18 +158,18 @@ return_of_api_category_0:
                   'Enable/disable reliable realtime logging.'
                   'disable - Disable reliable realtime logging.'
                   'enable - Enable reliable realtime logging.'
-               example: disable
+               example: 'disable'
             secure-connection:
                type: str
                description: |
                   'Enable/disable connection secured by TLS/SSL.'
                   'disable - Disable SSL connection.'
                   'enable - Enable SSL connection.'
-               example: disable
+               example: 'disable'
             server-ip:
                type: str
                description: 'Remote FortiAnalyzer server IP address.'
-               example: 0.0.0.0
+               example: '0.0.0.0'
             severity:
                type: str
                description: |
@@ -182,7 +182,7 @@ return_of_api_category_0:
                   'notification - Notification level.'
                   'information - Information level.'
                   'debug - Debug level.'
-               example: notification
+               example: 'notification'
             status:
                type: str
                description: |
@@ -190,7 +190,7 @@ return_of_api_category_0:
                   'disable - Log to FortiAnalyzer disabled.'
                   'realtime - Log to FortiAnalyzer in realtime.'
                   'upload - Log to FortiAnalyzer at schedule time.'
-               example: disable
+               example: 'disable'
             upload-time:
                type: array
                suboptions:
@@ -202,7 +202,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/locallog/fortianalyzer/setting
+            example: '/cli/global/system/locallog/fortianalyzer/setting'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -217,7 +217,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/locallog/fortianalyzer/setting
+            example: '/cli/global/system/locallog/fortianalyzer/setting'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -228,6 +228,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/locallog/fortianalyzer/setting'
@@ -236,7 +237,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -252,7 +253,6 @@ def main():
                     'dict': {
                         'reliable': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -260,19 +260,16 @@ def main():
                         },
                         'secure-connection': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
                             ]
                         },
                         'server-ip': {
-                            'type': 'string',
-                            'default': '0.0.0.0'
+                            'type': 'string'
                         },
                         'severity': {
                             'type': 'string',
-                            'default': 'notification',
                             'enum': [
                                 'emergency',
                                 'alert',
@@ -286,7 +283,6 @@ def main():
                         },
                         'status': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'realtime',
@@ -316,7 +312,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -336,8 +331,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -358,14 +353,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

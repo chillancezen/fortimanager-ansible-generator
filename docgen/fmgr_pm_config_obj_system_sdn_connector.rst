@@ -165,34 +165,35 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/system/sdn-connector
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SYSTEM/SDN-CONNECTOR
       fmgr_pm_config_obj_system_sdn_connector:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      _local_cert: <value of string>
                      access-key: <value of string>
                      azure-region: <value in [global, china, germany, ...]>
                      client-id: <value of string>
-                     client-secret: 
-                      - <value of string>
+                     client-secret:
+                       - <value of string>
                      compartment-id: <value of string>
-                     external-ip: 
-                      - 
+                     external-ip:
+                       -
                            name: <value of string>
                      gcp-project: <value of string>
-                     key-passwd: 
-                      - <value of string>
+                     key-passwd:
+                       - <value of string>
                      login-endpoint: <value of string>
                      name: <value of string>
-                     nic: 
-                      - 
-                           ip: 
-                            - 
+                     nic:
+                       -
+                           ip:
+                             -
                                  name: <value of string>
                                  public-ip: <value of string>
                            name: <value of string>
@@ -200,29 +201,29 @@ Examples
                      oci-cert: <value of string>
                      oci-fingerprint: <value of string>
                      oci-region: <value in [phoenix, ashburn, frankfurt, ...]>
-                     password: 
-                      - <value of string>
+                     password:
+                       - <value of string>
                      private-key: <value of string>
                      region: <value of string>
                      resource-group: <value of string>
                      resource-url: <value of string>
                      rest-interface: <value in [mgmt, sync]>
-                     rest-password: 
-                      - <value of string>
+                     rest-password:
+                       - <value of string>
                      rest-sport: <value of integer>
                      rest-ssl: <value in [disable, enable]>
-                     route: 
-                      - 
+                     route:
+                       -
                            name: <value of string>
-                     route-table: 
-                      - 
+                     route-table:
+                       -
                            name: <value of string>
-                           route: 
-                            - 
+                           route:
+                             -
                                  name: <value of string>
                                  next-hop: <value of string>
-                     secret-key: 
-                      - <value of string>
+                     secret-key:
+                       - <value of string>
                      server: <value of string>
                      server-port: <value of integer>
                      service-account: <value of string>
@@ -237,27 +238,28 @@ Examples
                      vmx-image-url: <value of string>
                      vmx-service-name: <value of string>
                      vpc-id: <value of string>
-    - name: send request to /pm/config/obj/system/sdn-connector
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SYSTEM/SDN-CONNECTOR
       fmgr_pm_config_obj_system_sdn_connector:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [_local_cert, access-key, azure-region, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [_local_cert, access-key, azure-region, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

@@ -77,15 +77,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /securityconsole/sign/certificate/template
+
+    - name: REQUESTING /SECURITYCONSOLE/SIGN/CERTIFICATE/TEMPLATE
       fmgr_securityconsole_sign_certificate_template:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   adom: <value of string>
-                  scope: 
-                   - 
+                  scope:
+                    -
                         name: <value of string>
                         vdom: <value of string>
                   template: <value of string>

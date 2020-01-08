@@ -102,41 +102,43 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/firewall/schedule/onetime
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/SCHEDULE/ONETIME
       fmgr_pm_config_obj_firewall_schedule_onetime:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      color: <value of integer>
                      end: <value of string>
                      expiration-days: <value of integer>
                      name: <value of string>
                      start: <value of string>
-    - name: send request to /pm/config/obj/firewall/schedule/onetime
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/SCHEDULE/ONETIME
       fmgr_pm_config_obj_firewall_schedule_onetime:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [color, end, expiration-days, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [color, end, expiration-days, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

@@ -150,22 +150,23 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/firewall/address6
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/ADDRESS6
       fmgr_pm_config_obj_firewall_address6:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      cache-ttl: <value of integer>
                      color: <value of integer>
                      comment: <value of string>
-                     dynamic_mapping: 
-                      - 
-                           _scope: 
-                            - 
+                     dynamic_mapping:
+                       -
+                           _scope:
+                             -
                                  name: <value of string>
                                  vdom: <value of string>
                            cache-ttl: <value of integer>
@@ -189,49 +190,50 @@ Examples
                      host: <value of string>
                      host-type: <value in [any, specific]>
                      ip6: <value of string>
-                     list: 
-                      - 
+                     list:
+                       -
                            ip: <value of string>
                      name: <value of string>
                      obj-id: <value of string>
                      sdn: <value in [nsx]>
                      start-ip: <value of string>
-                     subnet-segment: 
-                      - 
+                     subnet-segment:
+                       -
                            name: <value of string>
                            type: <value in [any, specific]>
                            value: <value of string>
-                     tagging: 
-                      - 
+                     tagging:
+                       -
                            category: <value of string>
                            name: <value of string>
-                           tags: 
-                            - <value of string>
+                           tags:
+                             - <value of string>
                      template: <value of string>
                      type: <value in [ipprefix, iprange, nsx, ...]>
                      uuid: <value of string>
                      visibility: <value in [disable, enable]>
-    - name: send request to /pm/config/obj/firewall/address6
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/ADDRESS6
       fmgr_pm_config_obj_firewall_address6:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [cache-ttl, color, comment, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [cache-ttl, color, comment, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

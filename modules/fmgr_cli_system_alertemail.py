@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/system/alertemail
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -74,7 +73,7 @@ options:
                 smtppassword:
                     -
                         type: str
-                        default: 'ENC Njc5MTA0OTM4MjgwOTg5NtX0ToVkdnZh0YWA1a11KmRILNzX/SvsNRI6eyvfnHjApM/z3EzMK7RIz4Tk2qBPs5S0q5zHQLjfAJSzBe2Yfs2kceCgazkW3ea31MNNUFHVxVSESpf5MmEMfwrNNUVLeMDdcUJG4FPu7GyP9/KnOBGte1dA'
+                        default: 'ENC Njc5MTA0OTM4MjgwOTg5NtX0ToVkdnZh0YWA1a11KmRILNzX/SvsNRI6eyvfnHjApM/z3EzMK7RIz4Tk2qBPs5S0q5zHQLjfAJSzBe2Yfs2kceCgazkW3...'
                 smtpport:
                     type: int
                     default: 25
@@ -96,17 +95,18 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/alertemail
+
+    - name: REQUESTING /CLI/SYSTEM/ALERTEMAIL
       fmgr_cli_system_alertemail:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  authentication: <value in [disable, enable] default: enable>
+            -
+               data:
+                  authentication: <value in [disable, enable] default: 'enable'>
                   fromaddress: <value of string>
                   fromname: <value of string>
-                  smtppassword: 
-                   - <value of string default: ENC Njc5MTA0OTM4MjgwOTg5NtX0ToVkdnZh0YWA1a11KmRILNzX/SvsNRI6eyvfnHjApM/z3EzMK7RIz4Tk2qBPs5S0q5zHQLjfAJSzBe2Yfs2kceCgazkW3ea31MNNUFHVxVSESpf5MmEMfwrNNUVLeMDdcUJG4FPu7GyP9/KnOBGte1dA>
+                  smtppassword:
+                    - <value of string default: 'ENC Njc5MTA0OTM4MjgwOTg5NtX0ToVkdnZh0YWA1a11KmRILNzX/SvsNRI6eyvfnHjApM/z3EzM...'>
                   smtpport: <value of integer default: 25>
                   smtpserver: <value of string>
                   smtpuser: <value of string>
@@ -128,7 +128,7 @@ return_of_api_category_0:
                   'Enable/disable authentication.'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: enable
+               example: 'enable'
             fromaddress:
                type: str
                description: 'SMTP from address.'
@@ -139,7 +139,7 @@ return_of_api_category_0:
                type: array
                suboptions:
                   type: str
-                  example: ENC Njc5MTA0OTM4MjgwOTg5NtX0ToVkdnZh0YWA1a11KmRILNzX/SvsNRI6eyvfnHjApM/z3EzMK7RIz4Tk2qBPs5S0q5zHQLjfAJSzBe2Yfs2kceCgazkW3ea31MNNUFHVxVSESpf5MmEMfwrNNUVLeMDdcUJG4FPu7GyP9/KnOBGte1dA
+                  example: 'ENC Njc5MTA0OTM4MjgwOTg5NtX0ToVkdnZh0YWA1a11KmRILNzX/SvsNRI6eyvfnHjApM/z3EzM...'
             smtpport:
                type: int
                description: 'SMTP server port.'
@@ -157,7 +157,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/alertemail
+            example: '/cli/global/system/alertemail'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -172,7 +172,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/alertemail
+            example: '/cli/global/system/alertemail'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -183,6 +183,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/alertemail'
@@ -191,7 +192,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -207,7 +208,6 @@ def main():
                     'dict': {
                         'authentication': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -222,8 +222,7 @@ def main():
                         'smtppassword': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC Njc5MTA0OTM4MjgwOTg5NtX0ToVkdnZh0YWA1a11KmRILNzX/SvsNRI6eyvfnHjApM/z3EzMK7RIz4Tk2qBPs5S0q5zHQLjfAJSzBe2Yfs2kceCgazkW3ea31MNNUFHVxVSESpf5MmEMfwrNNUVLeMDdcUJG4FPu7GyP9/KnOBGte1dA'
+                                'type': 'string'
                             }
                         },
                         'smtpport': {
@@ -254,7 +253,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -274,8 +272,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -296,14 +294,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

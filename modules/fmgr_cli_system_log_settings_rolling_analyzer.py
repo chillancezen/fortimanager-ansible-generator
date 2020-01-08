@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/system/log/settings/rolling-analyzer
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -128,15 +127,15 @@ options:
                 password:
                     -
                         type: str
-                        default: 'ENC MzQ3NjYyODIxOTc1MTg3NhVVByJnhjVIRIq22N8+MG0by/Mxs5TUnkVnhHtwoRdEVnaNNj6P9rGxNsGaBAn2SVhBLt6V9QWnTm1fbC1hAWycBDzkxK37kTzWEwu5NE66yvC4sVh53l+CSOPZabxA2n7XCNB9Kce1X8EeGUr4PqPCtCej'
+                        default: 'ENC MzQ3NjYyODIxOTc1MTg3NhVVByJnhjVIRIq22N8+MG0by/Mxs5TUnkVnhHtwoRdEVnaNNj6P9rGxNsGaBAn2SVhBLt6V9QWnTm1fbC1hAWycBDzkxK37k...'
                 password2:
                     -
                         type: str
-                        default: 'ENC MTAwODg0NTQxNDE5OTQwMaPdJv8JESXhogoJmBIvID8+U03pvD8I9Yr/Q1NGxPnlvLKVEOISmJ/IRPZauTQ/oJ5KlJE3LSzrXEOWAhn2mNaoS+nFbu0seQqMEhUdLbx41Q0yi4dCM9n3PF8RETPiFayOQ5sWWPRD7ALjlthRLogqkua5'
+                        default: 'ENC MTAwODg0NTQxNDE5OTQwMaPdJv8JESXhogoJmBIvID8+U03pvD8I9Yr/Q1NGxPnlvLKVEOISmJ/IRPZauTQ/oJ5KlJE3LSzrXEOWAhn2mNaoS+nFbu0se...'
                 password3:
                     -
                         type: str
-                        default: 'ENC MTMyOTA3MjY4MTgxMTk2N1UB1GKpBMmb5vgQRJTsjWS9sBfCvYmhBhdgf+ipyNKwY43YcyKBx3TaUcf6QLEdeVgFD2ymJHzfX99dusp8IfxNYj7ITnobzP+GcHYMOyPtjtcORJqwHTpEy9rnqCfy6nKz2Sdj1D1SnqOfRhn0R8sonnED'
+                        default: 'ENC MTMyOTA3MjY4MTgxMTk2N1UB1GKpBMmb5vgQRJTsjWS9sBfCvYmhBhdgf+ipyNKwY43YcyKBx3TaUcf6QLEdeVgFD2ymJHzfX99dusp8IfxNYj7ITnobz...'
                 server-type:
                     type: str
                     default: 'ftp'
@@ -215,39 +214,40 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/log/settings/rolling-analyzer
+
+    - name: REQUESTING /CLI/SYSTEM/LOG/SETTINGS/ROLLING-ANALYZER
       fmgr_cli_system_log_settings_rolling_analyzer:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  days: 
-                   - <value in [sun, mon, tue, ...]>
-                  del-files: <value in [disable, enable] default: disable>
+            -
+               data:
+                  days:
+                    - <value in [sun, mon, tue, ...]>
+                  del-files: <value in [disable, enable] default: 'disable'>
                   directory: <value of string>
                   file-size: <value of integer default: 200>
-                  gzip-format: <value in [disable, enable] default: disable>
+                  gzip-format: <value in [disable, enable] default: 'disable'>
                   hour: <value of integer default: 0>
-                  ip: <value of string default: 0.0.0.0>
-                  ip2: <value of string default: 0.0.0.0>
-                  ip3: <value of string default: 0.0.0.0>
-                  log-format: <value in [native, text, csv] default: native>
+                  ip: <value of string default: '0.0.0.0'>
+                  ip2: <value of string default: '0.0.0.0'>
+                  ip3: <value of string default: '0.0.0.0'>
+                  log-format: <value in [native, text, csv] default: 'native'>
                   min: <value of integer default: 0>
-                  password: 
-                   - <value of string default: ENC MzQ3NjYyODIxOTc1MTg3NhVVByJnhjVIRIq22N8+MG0by/Mxs5TUnkVnhHtwoRdEVnaNNj6P9rGxNsGaBAn2SVhBLt6V9QWnTm1fbC1hAWycBDzkxK37kTzWEwu5NE66yvC4sVh53l+CSOPZabxA2n7XCNB9Kce1X8EeGUr4PqPCtCej>
-                  password2: 
-                   - <value of string default: ENC MTAwODg0NTQxNDE5OTQwMaPdJv8JESXhogoJmBIvID8+U03pvD8I9Yr/Q1NGxPnlvLKVEOISmJ/IRPZauTQ/oJ5KlJE3LSzrXEOWAhn2mNaoS+nFbu0seQqMEhUdLbx41Q0yi4dCM9n3PF8RETPiFayOQ5sWWPRD7ALjlthRLogqkua5>
-                  password3: 
-                   - <value of string default: ENC MTMyOTA3MjY4MTgxMTk2N1UB1GKpBMmb5vgQRJTsjWS9sBfCvYmhBhdgf+ipyNKwY43YcyKBx3TaUcf6QLEdeVgFD2ymJHzfX99dusp8IfxNYj7ITnobzP+GcHYMOyPtjtcORJqwHTpEy9rnqCfy6nKz2Sdj1D1SnqOfRhn0R8sonnED>
-                  server-type: <value in [ftp, sftp, scp] default: ftp>
-                  upload: <value in [disable, enable] default: disable>
+                  password:
+                    - <value of string default: 'ENC MzQ3NjYyODIxOTc1MTg3NhVVByJnhjVIRIq22N8+MG0by/Mxs5TUnkVnhHtwoRdEVnaNNj6P...'>
+                  password2:
+                    - <value of string default: 'ENC MTAwODg0NTQxNDE5OTQwMaPdJv8JESXhogoJmBIvID8+U03pvD8I9Yr/Q1NGxPnlvLKVEOIS...'>
+                  password3:
+                    - <value of string default: 'ENC MTMyOTA3MjY4MTgxMTk2N1UB1GKpBMmb5vgQRJTsjWS9sBfCvYmhBhdgf+ipyNKwY43YcyKB...'>
+                  server-type: <value in [ftp, sftp, scp] default: 'ftp'>
+                  upload: <value in [disable, enable] default: 'disable'>
                   upload-hour: <value of integer default: 0>
-                  upload-mode: <value in [backup, mirror] default: backup>
-                  upload-trigger: <value in [on-roll, on-schedule] default: on-roll>
+                  upload-mode: <value in [backup, mirror] default: 'backup'>
+                  upload-trigger: <value in [on-roll, on-schedule] default: 'on-roll'>
                   username: <value of string>
                   username2: <value of string>
                   username3: <value of string>
-                  when: <value in [none, daily, weekly] default: none>
+                  when: <value in [none, daily, weekly] default: 'none'>
 
 '''
 
@@ -270,7 +270,7 @@ return_of_api_category_0:
                   'Enable/disable log file deletion after uploading.'
                   'disable - Disable log file deletion.'
                   'enable - Enable log file deletion.'
-               example: disable
+               example: 'disable'
             directory:
                type: str
                description: 'Upload server directory, for Unix server, use absolute'
@@ -284,7 +284,7 @@ return_of_api_category_0:
                   'Enable/disable compression of uploaded log files.'
                   'disable - Disable compression.'
                   'enable - Enable compression.'
-               example: disable
+               example: 'disable'
             hour:
                type: int
                description: 'Log files rolling schedule (hour).'
@@ -292,15 +292,15 @@ return_of_api_category_0:
             ip:
                type: str
                description: 'Upload server IP address.'
-               example: 0.0.0.0
+               example: '0.0.0.0'
             ip2:
                type: str
                description: 'Upload server IP2 address.'
-               example: 0.0.0.0
+               example: '0.0.0.0'
             ip3:
                type: str
                description: 'Upload server IP3 address.'
-               example: 0.0.0.0
+               example: '0.0.0.0'
             log-format:
                type: str
                description: |
@@ -308,7 +308,7 @@ return_of_api_category_0:
                   'native - Native format (text or compact).'
                   'text - Text format (convert if necessary).'
                   'csv - CSV (comma-separated value) format.'
-               example: native
+               example: 'native'
             min:
                type: int
                description: 'Log files rolling schedule (minutes).'
@@ -317,17 +317,17 @@ return_of_api_category_0:
                type: array
                suboptions:
                   type: str
-                  example: ENC MzQ3NjYyODIxOTc1MTg3NhVVByJnhjVIRIq22N8+MG0by/Mxs5TUnkVnhHtwoRdEVnaNNj6P9rGxNsGaBAn2SVhBLt6V9QWnTm1fbC1hAWycBDzkxK37kTzWEwu5NE66yvC4sVh53l+CSOPZabxA2n7XCNB9Kce1X8EeGUr4PqPCtCej
+                  example: 'ENC MzQ3NjYyODIxOTc1MTg3NhVVByJnhjVIRIq22N8+MG0by/Mxs5TUnkVnhHtwoRdEVnaNNj6P...'
             password2:
                type: array
                suboptions:
                   type: str
-                  example: ENC MTAwODg0NTQxNDE5OTQwMaPdJv8JESXhogoJmBIvID8+U03pvD8I9Yr/Q1NGxPnlvLKVEOISmJ/IRPZauTQ/oJ5KlJE3LSzrXEOWAhn2mNaoS+nFbu0seQqMEhUdLbx41Q0yi4dCM9n3PF8RETPiFayOQ5sWWPRD7ALjlthRLogqkua5
+                  example: 'ENC MTAwODg0NTQxNDE5OTQwMaPdJv8JESXhogoJmBIvID8+U03pvD8I9Yr/Q1NGxPnlvLKVEOIS...'
             password3:
                type: array
                suboptions:
                   type: str
-                  example: ENC MTMyOTA3MjY4MTgxMTk2N1UB1GKpBMmb5vgQRJTsjWS9sBfCvYmhBhdgf+ipyNKwY43YcyKBx3TaUcf6QLEdeVgFD2ymJHzfX99dusp8IfxNYj7ITnobzP+GcHYMOyPtjtcORJqwHTpEy9rnqCfy6nKz2Sdj1D1SnqOfRhn0R8sonnED
+                  example: 'ENC MTMyOTA3MjY4MTgxMTk2N1UB1GKpBMmb5vgQRJTsjWS9sBfCvYmhBhdgf+ipyNKwY43YcyKB...'
             server-type:
                type: str
                description: |
@@ -335,14 +335,14 @@ return_of_api_category_0:
                   'ftp - Upload via FTP.'
                   'sftp - Upload via SFTP.'
                   'scp - Upload via SCP.'
-               example: ftp
+               example: 'ftp'
             upload:
                type: str
                description: |
                   'Enable/disable log file uploads.'
                   'disable - Disable log files uploading.'
                   'enable - Enable log files uploading.'
-               example: disable
+               example: 'disable'
             upload-hour:
                type: int
                description: 'Log files upload schedule (hour).'
@@ -353,14 +353,14 @@ return_of_api_category_0:
                   'Upload mode with multiple servers.'
                   'backup - Servers are attempted and used one after the other upon failure to connect.'
                   'mirror - All configured servers are attempted and used.'
-               example: backup
+               example: 'backup'
             upload-trigger:
                type: str
                description: |
                   'Event triggering log files upload.'
                   'on-roll - Upload log files after they are rolled.'
                   'on-schedule - Upload log files daily.'
-               example: on-roll
+               example: 'on-roll'
             username:
                type: str
                description: 'Upload server login username.'
@@ -377,7 +377,7 @@ return_of_api_category_0:
                   'none - Do not roll log files periodically.'
                   'daily - Roll log files daily.'
                   'weekly - Roll log files on certain days of week.'
-               example: none
+               example: 'none'
          status:
             code:
                type: int
@@ -385,7 +385,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/log/settings/rolling-analyzer
+            example: '/cli/global/system/log/settings/rolling-analyzer'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -400,7 +400,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/log/settings/rolling-analyzer
+            example: '/cli/global/system/log/settings/rolling-analyzer'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -411,6 +411,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/log/settings/rolling-analyzer'
@@ -419,7 +420,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -450,7 +451,6 @@ def main():
                         },
                         'del-files': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -466,7 +466,6 @@ def main():
                         },
                         'gzip-format': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -478,20 +477,16 @@ def main():
                             'example': 0
                         },
                         'ip': {
-                            'type': 'string',
-                            'default': '0.0.0.0'
+                            'type': 'string'
                         },
                         'ip2': {
-                            'type': 'string',
-                            'default': '0.0.0.0'
+                            'type': 'string'
                         },
                         'ip3': {
-                            'type': 'string',
-                            'default': '0.0.0.0'
+                            'type': 'string'
                         },
                         'log-format': {
                             'type': 'string',
-                            'default': 'native',
                             'enum': [
                                 'native',
                                 'text',
@@ -506,27 +501,23 @@ def main():
                         'password': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC MzQ3NjYyODIxOTc1MTg3NhVVByJnhjVIRIq22N8+MG0by/Mxs5TUnkVnhHtwoRdEVnaNNj6P9rGxNsGaBAn2SVhBLt6V9QWnTm1fbC1hAWycBDzkxK37kTzWEwu5NE66yvC4sVh53l+CSOPZabxA2n7XCNB9Kce1X8EeGUr4PqPCtCej'
+                                'type': 'string'
                             }
                         },
                         'password2': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC MTAwODg0NTQxNDE5OTQwMaPdJv8JESXhogoJmBIvID8+U03pvD8I9Yr/Q1NGxPnlvLKVEOISmJ/IRPZauTQ/oJ5KlJE3LSzrXEOWAhn2mNaoS+nFbu0seQqMEhUdLbx41Q0yi4dCM9n3PF8RETPiFayOQ5sWWPRD7ALjlthRLogqkua5'
+                                'type': 'string'
                             }
                         },
                         'password3': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC MTMyOTA3MjY4MTgxMTk2N1UB1GKpBMmb5vgQRJTsjWS9sBfCvYmhBhdgf+ipyNKwY43YcyKBx3TaUcf6QLEdeVgFD2ymJHzfX99dusp8IfxNYj7ITnobzP+GcHYMOyPtjtcORJqwHTpEy9rnqCfy6nKz2Sdj1D1SnqOfRhn0R8sonnED'
+                                'type': 'string'
                             }
                         },
                         'server-type': {
                             'type': 'string',
-                            'default': 'ftp',
                             'enum': [
                                 'ftp',
                                 'sftp',
@@ -535,7 +526,6 @@ def main():
                         },
                         'upload': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -548,7 +538,6 @@ def main():
                         },
                         'upload-mode': {
                             'type': 'string',
-                            'default': 'backup',
                             'enum': [
                                 'backup',
                                 'mirror'
@@ -556,7 +545,6 @@ def main():
                         },
                         'upload-trigger': {
                             'type': 'string',
-                            'default': 'on-roll',
                             'enum': [
                                 'on-roll',
                                 'on-schedule'
@@ -573,7 +561,6 @@ def main():
                         },
                         'when': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'daily',
@@ -597,7 +584,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -617,8 +603,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -639,14 +625,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

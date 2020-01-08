@@ -88,27 +88,29 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/route6
+
+    - name: REQUESTING /CLI/SYSTEM/ROUTE6
       fmgr_cli_system_route6:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      device: <value of string>
-                     dst: <value of string default: ::/0>
-                     gateway: <value of string default: ::>
+                     dst: <value of string default: '::/0'>
+                     gateway: <value of string default: '::'>
                      prio: <value of integer default: 0>
-    - name: send request to /cli/system/route6
+
+    - name: REQUESTING /CLI/SYSTEM/ROUTE6
       fmgr_cli_system_route6:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [device, dst, gateway, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [device, dst, gateway, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

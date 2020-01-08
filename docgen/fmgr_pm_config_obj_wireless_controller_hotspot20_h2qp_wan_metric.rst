@@ -106,15 +106,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/wireless-controller/hotspot20/h2qp-wan-metric
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/HOTSPOT20/H2QP-WAN-METRIC
       fmgr_pm_config_obj_wireless_controller_hotspot20_h2qp_wan_metric:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      downlink-load: <value of integer>
                      downlink-speed: <value of integer>
                      link-at-capacity: <value in [disable, enable]>
@@ -124,27 +125,28 @@ Examples
                      symmetric-wan-link: <value in [asymmetric, symmetric]>
                      uplink-load: <value of integer>
                      uplink-speed: <value of integer>
-    - name: send request to /pm/config/obj/wireless-controller/hotspot20/h2qp-wan-metric
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/HOTSPOT20/H2QP-WAN-METRIC
       fmgr_pm_config_obj_wireless_controller_hotspot20_h2qp_wan_metric:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [downlink-load, downlink-speed, link-at-capacity, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [downlink-load, downlink-speed, link-at-capacity, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

@@ -30,7 +30,6 @@ description:
     - /pm/config/adom/{adom}/obj/certificate/template
     - /pm/config/global/obj/certificate/template
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -45,7 +44,7 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
-    url_params: 
+    url_params:
         description: the parameters in url path
         required: True
         type: dict
@@ -174,7 +173,7 @@ options:
                     type: int
             sortings:
                 -
-                    \{attr_name\}:
+                    varidic.attr_name:
                         type: int
                         choices:
                             - 1
@@ -190,53 +189,55 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/certificate/template
+
+    - name: REQUESTING /PM/CONFIG/OBJ/CERTIFICATE/TEMPLATE
       fmgr_pm_config_obj_certificate_template:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      city: <value of string>
                      country: <value of string>
-                     digest-type: <value in [sha1, sha256] default: sha1>
+                     digest-type: <value in [sha1, sha256] default: 'sha1'>
                      email: <value of string>
-                     id-type: <value in [host-ip, domain-name, email] default: host-ip>
-                     key-size: <value in [512, 1024, 1536, ...] default: 2048>
-                     key-type: <value in [rsa] default: rsa>
+                     id-type: <value in [host-ip, domain-name, email] default: 'host-ip'>
+                     key-size: <value in [512, 1024, 1536, ...] default: '2048'>
+                     key-type: <value in [rsa] default: 'rsa'>
                      name: <value of string>
                      organization: <value of string>
-                     organization-unit: 
-                      - <value of string>
-                     scep-password: 
-                      - <value of string>
+                     organization-unit:
+                       - <value of string>
+                     scep-password:
+                       - <value of string>
                      scep-server: <value of string>
                      state: <value of string>
                      subject-name: <value of string>
-                     type: <value in [external, local] default: external>
-    - name: send request to /pm/config/obj/certificate/template
+                     type: <value in [external, local] default: 'external'>
+
+    - name: REQUESTING /PM/CONFIG/OBJ/CERTIFICATE/TEMPLATE
       fmgr_pm_config_obj_certificate_template:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [city, country, digest-type, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [city, country, digest-type, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 '''
 
@@ -255,7 +256,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/certificate/template
+            example: '/pm/config/adom/{adom}/obj/certificate/template'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -272,18 +273,18 @@ return_of_api_category_0:
                   type: str
                digest-type:
                   type: str
-                  example: sha1
+                  example: 'sha1'
                email:
                   type: str
                id-type:
                   type: str
-                  example: host-ip
+                  example: 'host-ip'
                key-size:
                   type: str
-                  example: 2048
+                  example: '2048'
                key-type:
                   type: str
-                  example: rsa
+                  example: 'rsa'
                name:
                   type: str
                organization:
@@ -304,7 +305,7 @@ return_of_api_category_0:
                   type: str
                type:
                   type: str
-                  example: external
+                  example: 'external'
          status:
             code:
                type: int
@@ -312,7 +313,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/certificate/template
+            example: '/pm/config/adom/{adom}/obj/certificate/template'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -322,6 +323,7 @@ from ansible.module_utils.network.fortimanager.common import DEFAULT_RESULT_OBJ
 from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
+
 
 def main():
     jrpc_urls = [
@@ -336,7 +338,7 @@ def main():
         }
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -352,7 +354,6 @@ def main():
                         },
                         'digest-type': {
                             'type': 'string',
-                            'default': 'sha1',
                             'enum': [
                                 'sha1',
                                 'sha256'
@@ -363,7 +364,6 @@ def main():
                         },
                         'id-type': {
                             'type': 'string',
-                            'default': 'host-ip',
                             'enum': [
                                 'host-ip',
                                 'domain-name',
@@ -372,7 +372,6 @@ def main():
                         },
                         'key-size': {
                             'type': 'string',
-                            'default': '2048',
                             'enum': [
                                 '512',
                                 '1024',
@@ -382,7 +381,6 @@ def main():
                         },
                         'key-type': {
                             'type': 'string',
-                            'default': 'rsa',
                             'enum': [
                                 'rsa'
                             ]
@@ -416,7 +414,6 @@ def main():
                         },
                         'type': {
                             'type': 'string',
-                            'default': 'external',
                             'enum': [
                                 'external',
                                 'local'
@@ -552,7 +549,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -573,8 +569,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -595,14 +591,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

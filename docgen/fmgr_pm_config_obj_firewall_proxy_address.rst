@@ -131,22 +131,23 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/firewall/proxy-address
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/PROXY-ADDRESS
       fmgr_pm_config_obj_firewall_proxy_address:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      case-sensitivity: <value in [disable, enable]>
                      category: <value of string>
                      color: <value of integer>
                      comment: <value of string>
                      header: <value of string>
-                     header-group: 
-                      - 
+                     header-group:
+                       -
                            case-sensitivity: <value in [disable, enable]>
                            header: <value of string>
                            header-name: <value of string>
@@ -154,44 +155,45 @@ Examples
                      header-name: <value of string>
                      host: <value of string>
                      host-regex: <value of string>
-                     method: 
-                      - <value in [delete, get, head, ...]>
+                     method:
+                       - <value in [delete, get, head, ...]>
                      name: <value of string>
                      path: <value of string>
                      query: <value of string>
                      referrer: <value in [disable, enable]>
-                     tagging: 
-                      - 
+                     tagging:
+                       -
                            category: <value of string>
                            name: <value of string>
-                           tags: 
-                            - <value of string>
+                           tags:
+                             - <value of string>
                      type: <value in [host-regex, url, category, ...]>
-                     ua: 
-                      - <value in [chrome, ms, firefox, ...]>
+                     ua:
+                       - <value in [chrome, ms, firefox, ...]>
                      uuid: <value of string>
                      visibility: <value in [disable, enable]>
-    - name: send request to /pm/config/obj/firewall/proxy-address
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/PROXY-ADDRESS
       fmgr_pm_config_obj_firewall_proxy_address:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [case-sensitivity, category, color, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [case-sensitivity, category, color, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

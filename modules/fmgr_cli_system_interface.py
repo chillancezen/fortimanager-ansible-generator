@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/system/interface
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -187,39 +186,41 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/interface
+
+    - name: REQUESTING /CLI/SYSTEM/INTERFACE
       fmgr_cli_system_interface:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      alias: <value of string>
-                     allowaccess: 
-                      - <value in [ping, https, ssh, ...]>
+                     allowaccess:
+                       - <value in [ping, https, ssh, ...]>
                      description: <value of string>
-                     ip: <value of string default: 0.0.0.0 0.0.0.0>
-                     ipv6: 
-                        ip6-address: <value of string default: ::/0>
-                        ip6-allowaccess: 
-                         - <value in [ping, https, ssh, ...]>
-                        ip6-autoconf: <value in [disable, enable] default: enable>
+                     ip: <value of string default: '0.0.0.0 0.0.0.0'>
+                     ipv6:
+                        ip6-address: <value of string default: '::/0'>
+                        ip6-allowaccess:
+                          - <value in [ping, https, ssh, ...]>
+                        ip6-autoconf: <value in [disable, enable] default: 'enable'>
                      mtu: <value of integer default: 1500>
                      name: <value of string>
-                     serviceaccess: 
-                      - <value in [fgtupdates, fclupdates, webfilter-antispam]>
-                     speed: <value in [auto, 10full, 10half, ...] default: auto>
-                     status: <value in [down, up] default: up>
-    - name: send request to /cli/system/interface
+                     serviceaccess:
+                       - <value in [fgtupdates, fclupdates, webfilter-antispam]>
+                     speed: <value in [auto, 10full, 10half, ...] default: 'auto'>
+                     status: <value in [down, up] default: 'up'>
+
+    - name: REQUESTING /CLI/SYSTEM/INTERFACE
       fmgr_cli_system_interface:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [alias, allowaccess, description, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [alias, allowaccess, description, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -240,7 +241,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/interface
+            example: '/cli/global/system/interface'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -264,12 +265,12 @@ return_of_api_category_0:
                ip:
                   type: str
                   description: 'IP address of interface.'
-                  example: 0.0.0.0 0.0.0.0
+                  example: '0.0.0.0 0.0.0.0'
                ipv6:
                   ip6-address:
                      type: str
                      description: 'IPv6 address/prefix of interface.'
-                     example: ::/0
+                     example: '::/0'
                   ip6-allowaccess:
                      type: array
                      suboptions:
@@ -280,7 +281,7 @@ return_of_api_category_0:
                         'Enable/disable address auto config (SLAAC).'
                         'disable - Disable setting.'
                         'enable - Enable setting.'
-                     example: enable
+                     example: 'enable'
                mtu:
                   type: int
                   description: 'Maximum transportation unit(68 - 9000).'
@@ -303,14 +304,14 @@ return_of_api_category_0:
                      '100half - 100M half-duplex.'
                      '1000full - 1000M full-duplex.'
                      '10000full - 10000M full-duplex.'
-                  example: auto
+                  example: 'auto'
                status:
                   type: str
                   description: |
                      'Interface status.'
                      'down - Interface down.'
                      'up - Interface up.'
-                  example: up
+                  example: 'up'
          status:
             code:
                type: int
@@ -318,7 +319,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/interface
+            example: '/cli/global/system/interface'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -329,6 +330,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/interface'
@@ -337,7 +339,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -367,13 +369,11 @@ def main():
                             'type': 'string'
                         },
                         'ip': {
-                            'type': 'string',
-                            'default': '0.0.0.0 0.0.0.0'
+                            'type': 'string'
                         },
                         'ipv6': {
                             'ip6-address': {
-                                'type': 'string',
-                                'default': '::/0'
+                                'type': 'string'
                             },
                             'ip6-allowaccess': {
                                 'type': 'array',
@@ -392,7 +392,6 @@ def main():
                             },
                             'ip6-autoconf': {
                                 'type': 'string',
-                                'default': 'enable',
                                 'enum': [
                                     'disable',
                                     'enable'
@@ -420,7 +419,6 @@ def main():
                         },
                         'speed': {
                             'type': 'string',
-                            'default': 'auto',
                             'enum': [
                                 'auto',
                                 '10full',
@@ -433,7 +431,6 @@ def main():
                         },
                         'status': {
                             'type': 'string',
-                            'default': 'up',
                             'enum': [
                                 'down',
                                 'up'
@@ -518,7 +515,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -539,8 +535,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -561,14 +557,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

@@ -76,14 +76,15 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/report/est-browse-time
+
+    - name: REQUESTING /CLI/SYSTEM/REPORT/EST-BROWSE-TIME
       fmgr_cli_system_report_est_browse_time:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   max-read-time: <value of integer default: 180>
-                  status: <value in [disable, enable] default: enable>
+                  status: <value in [disable, enable] default: 'enable'>
 
 
 

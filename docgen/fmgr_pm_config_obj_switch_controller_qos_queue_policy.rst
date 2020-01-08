@@ -107,17 +107,18 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/switch-controller/qos/queue-policy
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SWITCH-CONTROLLER/QOS/QUEUE-POLICY
       fmgr_pm_config_obj_switch_controller_qos_queue_policy:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
-                     cos-queue: 
-                      - 
+            -
+               data:
+                 -
+                     cos-queue:
+                       -
                            description: <value of string>
                            drop-policy: <value in [taildrop, weighted-random-early-detection]>
                            max-rate: <value of integer>
@@ -126,27 +127,28 @@ Examples
                            weight: <value of integer>
                      name: <value of string>
                      schedule: <value in [strict, round-robin, weighted]>
-    - name: send request to /pm/config/obj/switch-controller/qos/queue-policy
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SWITCH-CONTROLLER/QOS/QUEUE-POLICY
       fmgr_pm_config_obj_switch_controller_qos_queue_policy:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [name, schedule]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [name, schedule]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

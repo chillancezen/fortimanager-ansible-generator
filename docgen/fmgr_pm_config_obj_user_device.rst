@@ -126,23 +126,24 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/user/device
+
+    - name: REQUESTING /PM/CONFIG/OBJ/USER/DEVICE
       fmgr_pm_config_obj_user_device:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      alias: <value of string>
                      avatar: <value of string>
                      category: <value in [none, android-device, blackberry-device, ...]>
                      comment: <value of string>
-                     dynamic_mapping: 
-                      - 
-                           _scope: 
-                            - 
+                     dynamic_mapping:
+                       -
+                           _scope:
+                             -
                                  name: <value of string>
                                  vdom: <value of string>
                            avatar: <value of string>
@@ -155,35 +156,36 @@ Examples
                            user: <value of string>
                      mac: <value of string>
                      master-device: <value of string>
-                     tagging: 
-                      - 
+                     tagging:
+                       -
                            category: <value of string>
                            name: <value of string>
-                           tags: 
-                            - <value of string>
+                           tags:
+                             - <value of string>
                      type: <value in [ipad, iphone, gaming-console, ...]>
                      user: <value of string>
-    - name: send request to /pm/config/obj/user/device
+
+    - name: REQUESTING /PM/CONFIG/OBJ/USER/DEVICE
       fmgr_pm_config_obj_user_device:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [alias, avatar, category, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [alias, avatar, category, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

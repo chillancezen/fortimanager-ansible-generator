@@ -89,28 +89,30 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/ha/peer
+
+    - name: REQUESTING /CLI/SYSTEM/HA/PEER
       fmgr_cli_system_ha_peer:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      id: <value of integer default: 0>
-                     ip: <value of string default: 0.0.0.0>
-                     ip6: <value of string default: ::>
+                     ip: <value of string default: '0.0.0.0'>
+                     ip6: <value of string default: '::'>
                      serial-number: <value of string>
-                     status: <value in [disable, enable] default: enable>
-    - name: send request to /cli/system/ha/peer
+                     status: <value in [disable, enable] default: 'enable'>
+
+    - name: REQUESTING /CLI/SYSTEM/HA/PEER
       fmgr_cli_system_ha_peer:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [id, ip, ip6, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [id, ip, ip6, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/system/sql
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -220,7 +219,7 @@ options:
                 password:
                     -
                         type: str
-                        default: 'ENC NjQ3NzAyNTQ0MjIyMDUxNUE+4gCrDBIJb7pqPICInSs5KmyrG1Tt8M8Zl+eK2k42FSlwDSDiBpNLwRPdCyo8dSIl+p0KUlKP781RcCnzzGAb/gOob+zQwnCMY730a19D6Tf5E3BBEeL/R375HU5/K0L4aeWS/TsuwFbi0JtMJkVKk0je'
+                        default: 'ENC NjQ3NzAyNTQ0MjIyMDUxNUE+4gCrDBIJb7pqPICInSs5KmyrG1Tt8M8Zl+eK2k42FSlwDSDiBpNLwRPdCyo8dSIl+p0KUlKP781RcCnzzGAb/gOob+zQw...'
                 prompt-sql-upgrade:
                     type: str
                     default: 'enable'
@@ -300,41 +299,42 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/sql
+
+    - name: REQUESTING /CLI/SYSTEM/SQL
       fmgr_cli_system_sql:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  background-rebuild: <value in [disable, enable] default: enable>
-                  custom-index: 
-                   - 
-                        case-sensitive: <value in [disable, enable] default: disable>
-                        device-type: <value in [FortiGate, FortiManager, FortiClient, ...] default: FortiGate>
+            -
+               data:
+                  background-rebuild: <value in [disable, enable] default: 'enable'>
+                  custom-index:
+                    -
+                        case-sensitive: <value in [disable, enable] default: 'disable'>
+                        device-type: <value in [FortiGate, FortiManager, FortiClient, ...] default: 'FortiGate'>
                         id: <value of integer default: 0>
                         index-field: <value of string>
-                        log-type: <value in [none, app-ctrl, attack, ...] default: traffic>
+                        log-type: <value in [none, app-ctrl, attack, ...] default: 'traffic'>
                   database-name: <value of string>
-                  database-type: <value in [mysql, postgres] default: postgres>
-                  device-count-high: <value in [disable, enable] default: disable>
+                  database-type: <value in [mysql, postgres] default: 'postgres'>
+                  device-count-high: <value in [disable, enable] default: 'disable'>
                   event-table-partition-time: <value of integer default: 0>
                   fct-table-partition-time: <value of integer default: 240>
-                  logtype: 
-                   - <value in [none, app-ctrl, attack, ...]>
-                  password: 
-                   - <value of string default: ENC NjQ3NzAyNTQ0MjIyMDUxNUE+4gCrDBIJb7pqPICInSs5KmyrG1Tt8M8Zl+eK2k42FSlwDSDiBpNLwRPdCyo8dSIl+p0KUlKP781RcCnzzGAb/gOob+zQwnCMY730a19D6Tf5E3BBEeL/R375HU5/K0L4aeWS/TsuwFbi0JtMJkVKk0je>
-                  prompt-sql-upgrade: <value in [disable, enable] default: enable>
-                  rebuild-event: <value in [disable, enable] default: enable>
-                  rebuild-event-start-time: 
-                   - <value of string>
+                  logtype:
+                    - <value in [none, app-ctrl, attack, ...]>
+                  password:
+                    - <value of string default: 'ENC NjQ3NzAyNTQ0MjIyMDUxNUE+4gCrDBIJb7pqPICInSs5KmyrG1Tt8M8Zl+eK2k42FSlwDSDi...'>
+                  prompt-sql-upgrade: <value in [disable, enable] default: 'enable'>
+                  rebuild-event: <value in [disable, enable] default: 'enable'>
+                  rebuild-event-start-time:
+                    - <value of string>
                   server: <value of string>
-                  start-time: 
-                   - <value of string>
-                  status: <value in [disable, local] default: local>
-                  text-search-index: <value in [disable, enable] default: disable>
+                  start-time:
+                    - <value of string>
+                  status: <value in [disable, local] default: 'local'>
+                  text-search-index: <value in [disable, enable] default: 'disable'>
                   traffic-table-partition-time: <value of integer default: 0>
-                  ts-index-field: 
-                   - 
+                  ts-index-field:
+                    -
                         category: <value of string>
                         value: <value of string>
                   username: <value of string>
@@ -357,7 +357,7 @@ return_of_api_category_0:
                   'Disable/Enable rebuild SQL database in the background.'
                   'disable - Rebuild SQL database not in the background.'
                   'enable - Rebuild SQL database in the background.'
-               example: enable
+               example: 'enable'
             custom-index:
                type: array
                suboptions:
@@ -367,7 +367,7 @@ return_of_api_category_0:
                         'Disable/Enable case sensitive index.'
                         'disable - Build a case insensitive index.'
                         'enable - Build a case sensitive index.'
-                     example: disable
+                     example: 'disable'
                   device-type:
                      type: str
                      description: |
@@ -382,7 +382,7 @@ return_of_api_category_0:
                         'FortiDDoS - Set device type to FortiDDoS'
                         'FortiAuthenticator - Set device type to FortiAuthenticator'
                         'FortiProxy - Set device type to FortiProxy'
-                     example: FortiGate
+                     example: 'FortiGate'
                   id:
                      type: int
                      description: 'Add or Edit log index fields.'
@@ -416,7 +416,7 @@ return_of_api_category_0:
                         'dns '
                         'ssh '
                         'ssl '
-                     example: traffic
+                     example: 'traffic'
             database-name:
                type: str
                description: 'Database name.'
@@ -426,14 +426,14 @@ return_of_api_category_0:
                   'Database type.'
                   'mysql - MySQL database.'
                   'postgres - PostgreSQL local database.'
-               example: postgres
+               example: 'postgres'
             device-count-high:
                type: str
                description: |
                   'Must set to enable if the count of registered devices is greater than 8000.'
                   'disable - Set to disable if device count is less than 8000.'
                   'enable - Set to enable if device count is equal to or greater than 8000.'
-               example: disable
+               example: 'disable'
             event-table-partition-time:
                type: int
                description: 'Maximum SQL database table partitioning time range in minute (0 for unlimited) for event logs.'
@@ -450,21 +450,21 @@ return_of_api_category_0:
                type: array
                suboptions:
                   type: str
-                  example: ENC NjQ3NzAyNTQ0MjIyMDUxNUE+4gCrDBIJb7pqPICInSs5KmyrG1Tt8M8Zl+eK2k42FSlwDSDiBpNLwRPdCyo8dSIl+p0KUlKP781RcCnzzGAb/gOob+zQwnCMY730a19D6Tf5E3BBEeL/R375HU5/K0L4aeWS/TsuwFbi0JtMJkVKk0je
+                  example: 'ENC NjQ3NzAyNTQ0MjIyMDUxNUE+4gCrDBIJb7pqPICInSs5KmyrG1Tt8M8Zl+eK2k42FSlwDSDi...'
             prompt-sql-upgrade:
                type: str
                description: |
                   'Prompt to convert log database into SQL database at start time on GUI.'
                   'disable - Do not prompt to upgrade log database to SQL database at start time on GUI.'
                   'enable - Prompt to upgrade log database to SQL database at start time on GUI.'
-               example: enable
+               example: 'enable'
             rebuild-event:
                type: str
                description: |
                   'Disable/Enable rebuild event during SQL database rebuilding.'
                   'disable - Do not rebuild event during SQL database rebuilding.'
                   'enable - Rebuild event during SQL database rebuilding.'
-               example: enable
+               example: 'enable'
             rebuild-event-start-time:
                type: array
                suboptions:
@@ -482,14 +482,14 @@ return_of_api_category_0:
                   'SQL database status.'
                   'disable - Disable SQL database.'
                   'local - Enable local database.'
-               example: local
+               example: 'local'
             text-search-index:
                type: str
                description: |
                   'Disable/Enable text search index.'
                   'disable - Do not create text search index.'
                   'enable - Create text search index.'
-               example: disable
+               example: 'disable'
             traffic-table-partition-time:
                type: int
                description: 'Maximum SQL database table partitioning time range in minute (0 for unlimited) for traffic logs.'
@@ -517,7 +517,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/sql
+            example: '/cli/global/system/sql'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -532,7 +532,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/sql
+            example: '/cli/global/system/sql'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -543,6 +543,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/sql'
@@ -551,7 +552,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -567,7 +568,6 @@ def main():
                     'dict': {
                         'background-rebuild': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -578,7 +578,6 @@ def main():
                             'items': {
                                 'case-sensitive': {
                                     'type': 'string',
-                                    'default': 'disable',
                                     'enum': [
                                         'disable',
                                         'enable'
@@ -586,7 +585,6 @@ def main():
                                 },
                                 'device-type': {
                                     'type': 'string',
-                                    'default': 'FortiGate',
                                     'enum': [
                                         'FortiGate',
                                         'FortiManager',
@@ -610,7 +608,6 @@ def main():
                                 },
                                 'log-type': {
                                     'type': 'string',
-                                    'default': 'traffic',
                                     'enum': [
                                         'none',
                                         'app-ctrl',
@@ -643,7 +640,6 @@ def main():
                         },
                         'database-type': {
                             'type': 'string',
-                            'default': 'postgres',
                             'enum': [
                                 'mysql',
                                 'postgres'
@@ -651,7 +647,6 @@ def main():
                         },
                         'device-count-high': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -700,13 +695,11 @@ def main():
                         'password': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC NjQ3NzAyNTQ0MjIyMDUxNUE+4gCrDBIJb7pqPICInSs5KmyrG1Tt8M8Zl+eK2k42FSlwDSDiBpNLwRPdCyo8dSIl+p0KUlKP781RcCnzzGAb/gOob+zQwnCMY730a19D6Tf5E3BBEeL/R375HU5/K0L4aeWS/TsuwFbi0JtMJkVKk0je'
+                                'type': 'string'
                             }
                         },
                         'prompt-sql-upgrade': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -714,7 +707,6 @@ def main():
                         },
                         'rebuild-event': {
                             'type': 'string',
-                            'default': 'enable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -737,7 +729,6 @@ def main():
                         },
                         'status': {
                             'type': 'string',
-                            'default': 'local',
                             'enum': [
                                 'disable',
                                 'local'
@@ -745,7 +736,6 @@ def main():
                         },
                         'text-search-index': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -792,7 +782,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -812,8 +801,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -834,14 +823,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

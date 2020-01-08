@@ -114,52 +114,54 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/wireless-controller/hotspot20/h2qp-osu-provider
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/HOTSPOT20/H2QP-OSU-PROVIDER
       fmgr_pm_config_obj_wireless_controller_hotspot20_h2qp_osu_provider:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
-                     friendly-name: 
-                      - 
+            -
+               data:
+                 -
+                     friendly-name:
+                       -
                            friendly-name: <value of string>
                            index: <value of integer>
                            lang: <value of string>
                      icon: <value of string>
                      name: <value of string>
-                     osu-method: 
-                      - <value in [oma-dm, soap-xml-spp, reserved]>
+                     osu-method:
+                       - <value in [oma-dm, soap-xml-spp, reserved]>
                      osu-nai: <value of string>
                      server-uri: <value of string>
-                     service-description: 
-                      - 
+                     service-description:
+                       -
                            lang: <value of string>
                            service-description: <value of string>
                            service-id: <value of integer>
-    - name: send request to /pm/config/obj/wireless-controller/hotspot20/h2qp-osu-provider
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/HOTSPOT20/H2QP-OSU-PROVIDER
       fmgr_pm_config_obj_wireless_controller_hotspot20_h2qp_osu_provider:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [icon, name, osu-method, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [icon, name, osu-method, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

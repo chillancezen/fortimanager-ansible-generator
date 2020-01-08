@@ -30,7 +30,6 @@ description:
     - /pm/config/adom/{adom}/obj/firewall/gtp
     - /pm/config/global/obj/firewall/gtp
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -45,7 +44,7 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
-    url_params: 
+    url_params:
         description: the parameters in url path
         required: True
         type: dict
@@ -654,7 +653,7 @@ options:
                     type: int
             sortings:
                 -
-                    \{attr_name\}:
+                    varidic.attr_name:
                         type: int
                         choices:
                             - 1
@@ -670,23 +669,24 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/firewall/gtp
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/GTP
       fmgr_pm_config_obj_firewall_gtp:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      addr-notify: <value of string>
-                     apn: 
-                      - 
+                     apn:
+                       -
                            action: <value in [allow, deny]>
                            apnmember: <value of string>
                            id: <value of integer>
-                           selection-mode: 
-                            - <value in [ms, net, vrf]>
+                           selection-mode:
+                             - <value in [ms, net, vrf]>
                      apn-filter: <value in [disable, enable]>
                      authorized-ggsns: <value of string>
                      authorized-sgsns: <value of string>
@@ -710,31 +710,31 @@ EXAMPLES = '''
                      half-close-timeout: <value of integer>
                      half-open-timeout: <value of integer>
                      handover-group: <value of string>
-                     ie-remove-policy: 
-                      - 
+                     ie-remove-policy:
+                       -
                            id: <value of integer>
-                           remove-ies: 
-                            - <value in [apn-restriction, rat-type, rai, ...]>
+                           remove-ies:
+                             - <value in [apn-restriction, rat-type, rai, ...]>
                            sgsn-addr: <value of string>
                      ie-remover: <value in [disable, enable]>
                      ie-white-list-v0v1: <value of string>
                      ie-white-list-v2: <value of string>
-                     imsi: 
-                      - 
+                     imsi:
+                       -
                            action: <value in [allow, deny]>
                            apnmember: <value of string>
                            id: <value of integer>
                            mcc-mnc: <value of string>
                            msisdn-prefix: <value of string>
-                           selection-mode: 
-                            - <value in [ms, net, vrf]>
+                           selection-mode:
+                             - <value in [ms, net, vrf]>
                      imsi-filter: <value in [disable, enable]>
                      interface-notify: <value of string>
                      invalid-reserved-field: <value in [allow, deny]>
                      invalid-sgsns-to-log: <value of string>
                      ip-filter: <value in [disable, enable]>
-                     ip-policy: 
-                      - 
+                     ip-policy:
+                       -
                            action: <value in [allow, deny]>
                            dstaddr: <value of string>
                            id: <value of integer>
@@ -751,8 +751,8 @@ EXAMPLES = '''
                      monitor-mode: <value in [disable, enable, vdom]>
                      name: <value of string>
                      noip-filter: <value in [disable, enable]>
-                     noip-policy: 
-                      - 
+                     noip-policy:
+                       -
                            action: <value in [allow, deny]>
                            end: <value of integer>
                            id: <value of integer>
@@ -760,28 +760,28 @@ EXAMPLES = '''
                            type: <value in [etsi, ietf]>
                      out-of-state-ie: <value in [allow, deny]>
                      out-of-state-message: <value in [allow, deny]>
-                     per-apn-shaper: 
-                      - 
+                     per-apn-shaper:
+                       -
                            apn: <value of string>
                            id: <value of integer>
                            rate-limit: <value of integer>
                            version: <value of integer>
-                     policy: 
-                      - 
+                     policy:
+                       -
                            action: <value in [allow, deny]>
-                           apn-sel-mode: 
-                            - <value in [ms, net, vrf]>
+                           apn-sel-mode:
+                             - <value in [ms, net, vrf]>
                            apnmember: <value of string>
                            id: <value of integer>
                            imei: <value of string>
                            imsi: <value of string>
                            max-apn-restriction: <value in [all, public-1, public-2, ...]>
-                           messages: 
-                            - <value in [create-req, create-res, update-req, ...]>
+                           messages:
+                             - <value in [create-req, create-res, update-req, ...]>
                            msisdn: <value of string>
                            rai: <value of string>
-                           rat-type: 
-                            - <value in [any, utran, geran, ...]>
+                           rat-type:
+                             - <value in [any, utran, geran, ...]>
                            uli: <value of string>
                      policy-filter: <value in [disable, enable]>
                      port-notify: <value of integer>
@@ -802,27 +802,28 @@ EXAMPLES = '''
                      unknown-version-action: <value in [allow, deny]>
                      user-plane-message-rate-limit: <value of integer>
                      warning-threshold: <value of integer>
-    - name: send request to /pm/config/obj/firewall/gtp
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/GTP
       fmgr_pm_config_obj_firewall_gtp:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [addr-notify, apn-filter, authorized-ggsns, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [addr-notify, apn-filter, authorized-ggsns, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 '''
 
@@ -841,7 +842,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/firewall/gtp
+            example: '/pm/config/adom/{adom}/obj/firewall/gtp'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -1195,7 +1196,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/firewall/gtp
+            example: '/pm/config/adom/{adom}/obj/firewall/gtp'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -1205,6 +1206,7 @@ from ansible.module_utils.network.fortimanager.common import DEFAULT_RESULT_OBJ
 from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
+
 
 def main():
     jrpc_urls = [
@@ -1219,7 +1221,7 @@ def main():
         }
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -1977,7 +1979,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -1998,8 +1999,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -2020,14 +2021,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

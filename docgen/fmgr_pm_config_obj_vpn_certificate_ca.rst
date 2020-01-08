@@ -108,15 +108,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/vpn/certificate/ca
+
+    - name: REQUESTING /PM/CONFIG/OBJ/VPN/CERTIFICATE/CA
       fmgr_pm_config_obj_vpn_certificate_ca:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      _private_key: <value of string>
                      auto-update-days: <value of integer>
                      auto-update-days-warning: <value of integer>
@@ -128,27 +129,28 @@ Examples
                      source: <value in [factory, user, bundle, ...]>
                      source-ip: <value of string>
                      trusted: <value in [disable, enable]>
-    - name: send request to /pm/config/obj/vpn/certificate/ca
+
+    - name: REQUESTING /PM/CONFIG/OBJ/VPN/CERTIFICATE/CA
       fmgr_pm_config_obj_vpn_certificate_ca:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [_private_key, auto-update-days, auto-update-days-warning, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [_private_key, auto-update-days, auto-update-days-warning, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

@@ -73,12 +73,13 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /sys/login/user
+
+    - name: REQUESTING /SYS/LOGIN/USER
       fmgr_sys_login_user:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   passwd: <value of string>
                   user: <value of string>
 

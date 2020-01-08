@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/fmupdate/fds-setting/push-override-to-client
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -46,12 +45,12 @@ notes:
 options:
     schema_object0:
         methods: [get]
-        description: 'Enable/disable push updates, and override the default IP address and port used by FortiGuard to send antivirus and IPS push messages for clients.'
+        description: 'Enable/disable push updates, and override the default IP address and port used by FortiGuard to send antivirus and IPS push messages f...'
         api_categories: [api_tag0]
         api_tag0:
     schema_object1:
         methods: [set, update]
-        description: 'Enable/disable push updates, and override the default IP address and port used by FortiGuard to send antivirus and IPS push messages for clients.'
+        description: 'Enable/disable push updates, and override the default IP address and port used by FortiGuard to send antivirus and IPS push messages f...'
         api_categories: [api_tag0]
         api_tag0:
             data:
@@ -90,18 +89,19 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/fds-setting/push-override-to-client
+
+    - name: REQUESTING /CLI/FMUPDATE/FDS-SETTING/PUSH-OVERRIDE-TO-CLIENT
       fmgr_cli_fmupdate_fds_setting_push_override_to_client:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  announce-ip: 
-                   - 
+            -
+               data:
+                  announce-ip:
+                    -
                         id: <value of integer default: 0>
-                        ip: <value of string default: 0.0.0.0>
+                        ip: <value of string default: '0.0.0.0'>
                         port: <value of integer default: 8890>
-                  status: <value in [disable, enable] default: disable>
+                  status: <value in [disable, enable] default: 'disable'>
 
 '''
 
@@ -124,7 +124,7 @@ return_of_api_category_0:
                   ip:
                      type: str
                      description: 'Announce IPv4 address.'
-                     example: 0.0.0.0
+                     example: '0.0.0.0'
                   port:
                      type: int
                      description: 'Announce IP port (1 - 65535, default = 8890).'
@@ -135,7 +135,7 @@ return_of_api_category_0:
                   'Enable/disable push updates (default = disable).'
                   'disable - Disable setting.'
                   'enable - Enable setting.'
-               example: disable
+               example: 'disable'
          status:
             code:
                type: int
@@ -143,7 +143,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/fmupdate/fds-setting/push-override-to-client
+            example: '/cli/global/fmupdate/fds-setting/push-override-to-client'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -158,7 +158,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/fmupdate/fds-setting/push-override-to-client
+            example: '/cli/global/fmupdate/fds-setting/push-override-to-client'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -169,6 +169,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/fmupdate/fds-setting/push-override-to-client'
@@ -177,7 +178,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -200,8 +201,7 @@ def main():
                                     'example': 0
                                 },
                                 'ip': {
-                                    'type': 'string',
-                                    'default': '0.0.0.0'
+                                    'type': 'string'
                                 },
                                 'port': {
                                     'type': 'integer',
@@ -212,7 +212,6 @@ def main():
                         },
                         'status': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -235,7 +234,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -255,8 +253,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -277,14 +275,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

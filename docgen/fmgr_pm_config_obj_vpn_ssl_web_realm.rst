@@ -101,40 +101,42 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/vpn/ssl/web/realm
+
+    - name: REQUESTING /PM/CONFIG/OBJ/VPN/SSL/WEB/REALM
       fmgr_pm_config_obj_vpn_ssl_web_realm:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      login-page: <value of string>
                      max-concurrent-user: <value of integer>
                      url-path: <value of string>
                      virtual-host: <value of string>
-    - name: send request to /pm/config/obj/vpn/ssl/web/realm
+
+    - name: REQUESTING /PM/CONFIG/OBJ/VPN/SSL/WEB/REALM
       fmgr_pm_config_obj_vpn_ssl_web_realm:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [login-page, max-concurrent-user, url-path, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [login-page, max-concurrent-user, url-path, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

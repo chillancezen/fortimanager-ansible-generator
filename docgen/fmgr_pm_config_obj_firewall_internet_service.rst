@@ -97,31 +97,33 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/firewall/internet-service
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/INTERNET-SERVICE
       fmgr_pm_config_obj_firewall_internet_service:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                option: <value in [object member, chksum, datasrc]>
-    - name: send request to /pm/config/obj/firewall/internet-service
+
+    - name: REQUESTING /PM/CONFIG/OBJ/FIREWALL/INTERNET-SERVICE
       fmgr_pm_config_obj_firewall_internet_service:
          method: <value in [set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
+            -
+               data:
                   database: <value in [isdb, irdb]>
                   direction: <value in [src, dst, both]>
-                  entry: 
-                   - 
+                  entry:
+                    -
                         id: <value of integer>
                         ip-number: <value of integer>
                         ip-range-number: <value of integer>
-                        port: 
-                         - <value of integer>
+                        port:
+                          - <value of integer>
                         protocol: <value of integer>
                   icon-id: <value of integer>
                   id: <value of integer>

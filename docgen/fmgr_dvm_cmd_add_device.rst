@@ -97,16 +97,17 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvm/cmd/add/device
+
+    - name: REQUESTING /DVM/CMD/ADD/DEVICE
       fmgr_dvm_cmd_add_device:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   adom: <value of string>
-                  device: 
-                     adm_pass: 
-                      - <value of string>
+                  device:
+                     adm_pass:
+                       - <value of string>
                      adm_usr: <value of string>
                      desc: <value of string>
                      device action: <value of string>
@@ -121,10 +122,10 @@ Examples
                      patch: <value of integer>
                      platform_str: <value of string>
                      sn: <value of string>
-                  flags: 
-                   - <value in [none, create_task, nonblocking, ...]>
-                  groups: 
-                   - 
+                  flags:
+                    - <value in [none, create_task, nonblocking, ...]>
+                  groups:
+                    -
                         name: <value of string>
                         vdom: <value of string>
 

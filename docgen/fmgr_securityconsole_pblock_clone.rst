@@ -74,12 +74,13 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /securityconsole/pblock/clone
+
+    - name: REQUESTING /SECURITYCONSOLE/PBLOCK/CLONE
       fmgr_securityconsole_pblock_clone:
          method: <value in [exec]>
          params:
-            - 
-               data: 
+            -
+               data:
                   adom: <value of string>
                   dst_name: <value of string>
                   pblock: <value of string>

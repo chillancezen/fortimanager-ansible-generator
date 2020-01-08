@@ -76,14 +76,15 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/fortiview/setting
+
+    - name: REQUESTING /CLI/SYSTEM/FORTIVIEW/SETTING
       fmgr_cli_system_fortiview_setting:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  not-scanned-apps: <value in [exclude, include] default: include>
-                  resolve-ip: <value in [disable, enable] default: disable>
+            -
+               data:
+                  not-scanned-apps: <value in [exclude, include] default: 'include'>
+                  resolve-ip: <value in [disable, enable] default: 'disable'>
 
 
 

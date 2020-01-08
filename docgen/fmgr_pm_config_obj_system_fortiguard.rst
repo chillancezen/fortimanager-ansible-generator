@@ -113,22 +113,24 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/system/fortiguard
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SYSTEM/FORTIGUARD
       fmgr_pm_config_obj_system_fortiguard:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                option: <value in [object member, chksum, datasrc]>
-    - name: send request to /pm/config/obj/system/fortiguard
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SYSTEM/FORTIGUARD
       fmgr_pm_config_obj_system_fortiguard:
          method: <value in [set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
+            -
+               data:
                   antispam-cache: <value in [disable, enable]>
                   antispam-cache-mpercent: <value of integer>
                   antispam-cache-ttl: <value of integer>
@@ -148,8 +150,8 @@ Examples
                   outbreak-prevention-license: <value of integer>
                   outbreak-prevention-timeout: <value of integer>
                   port: <value in [53, 80, 8888]>
-                  sdns-server-ip: 
-                   - <value of string>
+                  sdns-server-ip:
+                    - <value of string>
                   sdns-server-port: <value of integer>
                   service-account-id: <value of string>
                   source-ip: <value of string>

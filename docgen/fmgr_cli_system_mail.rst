@@ -93,31 +93,33 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/mail
+
+    - name: REQUESTING /CLI/SYSTEM/MAIL
       fmgr_cli_system_mail:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     auth: <value in [disable, enable] default: disable>
+            -
+               data:
+                 -
+                     auth: <value in [disable, enable] default: 'disable'>
                      id: <value of string>
-                     passwd: 
-                      - <value of string default: ENC MTI3MTE1Mzc2NTkxNzM3My6VraLxNsD7/K6FZ6oYkYSCjr1/h55a1R9hSJwHMCRyMEgllLUQEhRyvo6NfN3em5zkIyjoe2lL1IiVMHB7akT/z/3KthjsAi7XxuoMxrrTCD22xfmlCWUL9Ic7XgFbGqD4FPOGs6XKMCTZ0SdI+YEcf+pp>
+                     passwd:
+                       - <value of string default: 'ENC MTI3MTE1Mzc2NTkxNzM3My6VraLxNsD7/K6FZ6oYkYSCjr1/h55a1R9hSJwHMCRyMEgllLUQ...'>
                      port: <value of integer default: 25>
-                     secure-option: <value in [default, none, smtps, ...] default: default>
+                     secure-option: <value in [default, none, smtps, ...] default: 'default'>
                      server: <value of string>
                      user: <value of string>
-    - name: send request to /cli/system/mail
+
+    - name: REQUESTING /CLI/SYSTEM/MAIL
       fmgr_cli_system_mail:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [auth, id, passwd, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [auth, id, passwd, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 

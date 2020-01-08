@@ -112,15 +112,16 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/switch-controller/security-policy/802-1X
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SWITCH-CONTROLLER/SECURITY-POLICY/802-1X
       fmgr_pm_config_obj_switch_controller_security_policy_802_1x:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      auth-fail-vlan: <value in [disable, enable]>
                      auth-fail-vlan-id: <value of string>
                      auth-fail-vlanid: <value of integer>
@@ -136,27 +137,28 @@ Examples
                      radius-timeout-overwrite: <value in [disable, enable]>
                      security-mode: <value in [802.1X, 802.1X-mac-based]>
                      user-group: <value of string>
-    - name: send request to /pm/config/obj/switch-controller/security-policy/802-1X
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SWITCH-CONTROLLER/SECURITY-POLICY/802-1X
       fmgr_pm_config_obj_switch_controller_security_policy_802_1x:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [auth-fail-vlan, auth-fail-vlan-id, auth-fail-vlanid, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [auth-fail-vlan, auth-fail-vlan-id, auth-fail-vlanid, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

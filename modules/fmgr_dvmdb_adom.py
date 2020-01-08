@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /dvmdb/adom
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -203,7 +202,7 @@ options:
                     type: int
             sortings:
                 -
-                    \{attr_name\}:
+                    varidic.attr_name:
                         type: int
                         choices:
                             - 1
@@ -219,16 +218,17 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvmdb/adom
+
+    - name: REQUESTING /DVMDB/ADOM
       fmgr_dvmdb_adom:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      desc: <value of string>
-                     flags: 
-                      - <value in [migration, db_export, no_vpn_console, ...]>
+                     flags:
+                       - <value in [migration, db_export, no_vpn_console, ...]>
                      log_db_retention_hours: <value of integer default: 1440>
                      log_disk_quota: <value of integer>
                      log_disk_quota_alert_thres: <value of integer default: 90>
@@ -236,35 +236,36 @@ EXAMPLES = '''
                      log_file_retention_hours: <value of integer default: 8760>
                      meta fields: <value of string>
                      mig_mr: <value of integer default: 2>
-                     mig_os_ver: <value in [unknown, 0.0, 1.0, ...] default: 6.0>
-                     mode: <value in [ems, gms, provider] default: gms>
+                     mig_os_ver: <value in [unknown, 0.0, 1.0, ...] default: '6.0'>
+                     mode: <value in [ems, gms, provider] default: 'gms'>
                      mr: <value of integer default: 2>
                      name: <value of string>
-                     os_ver: <value in [unknown, 0.0, 1.0, ...] default: 6.0>
-                     restricted_prds: 
-                      - <value in [fos, foc, fml, ...]>
+                     os_ver: <value in [unknown, 0.0, 1.0, ...] default: '6.0'>
+                     restricted_prds:
+                       - <value in [fos, foc, fml, ...]>
                      state: <value of integer default: 1>
                      uuid: <value of string>
-    - name: send request to /dvmdb/adom
+
+    - name: REQUESTING /DVMDB/ADOM
       fmgr_dvmdb_adom:
          method: <value in [get]>
          params:
-            - 
+            -
                expand member: <value of string>
-               fields: 
-                - 
-                   - <value in [desc, flags, log_db_retention_hours, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [desc, flags, log_db_retention_hours, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
-               meta fields: 
-                - <value of string>
+               meta fields:
+                 - <value of string>
                option: <value in [count, object member, syntax]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 '''
 
@@ -283,7 +284,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /dvmdb/adom
+            example: '/dvmdb/adom'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -321,13 +322,13 @@ return_of_api_category_0:
                   example: 2
                mig_os_ver:
                   type: str
-                  example: 6.0
+                  example: '6.0'
                mode:
                   type: str
                   description: |
                      'ems - (Value no longer used as of 4.3)'
                      'provider - Global database.'
-                  example: gms
+                  example: 'gms'
                mr:
                   type: int
                   example: 2
@@ -335,7 +336,7 @@ return_of_api_category_0:
                   type: str
                os_ver:
                   type: str
-                  example: 6.0
+                  example: '6.0'
                restricted_prds:
                   type: array
                   suboptions:
@@ -352,7 +353,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /dvmdb/adom
+            example: '/dvmdb/adom'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -363,6 +364,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/dvmdb/adom'
@@ -371,7 +373,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -434,7 +436,6 @@ def main():
                         },
                         'mig_os_ver': {
                             'type': 'string',
-                            'default': '6.0',
                             'enum': [
                                 'unknown',
                                 '0.0',
@@ -448,7 +449,6 @@ def main():
                         },
                         'mode': {
                             'type': 'string',
-                            'default': 'gms',
                             'enum': [
                                 'ems',
                                 'gms',
@@ -465,7 +465,6 @@ def main():
                         },
                         'os_ver': {
                             'type': 'string',
-                            'default': '6.0',
                             'enum': [
                                 'unknown',
                                 '0.0',
@@ -639,7 +638,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -660,8 +658,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -682,14 +680,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

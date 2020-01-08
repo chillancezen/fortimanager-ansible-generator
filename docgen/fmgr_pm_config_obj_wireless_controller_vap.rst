@@ -415,45 +415,46 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/wireless-controller/vap
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/VAP
       fmgr_pm_config_obj_wireless_controller_vap:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
-                     _centmgmt: <value in [disable, enable] default: disable>
+            -
+               data:
+                 -
+                     _centmgmt: <value in [disable, enable] default: 'disable'>
                      _dhcp_svr_id: <value of string>
-                     _intf_allowaccess: 
-                      - <value in [https, ping, ssh, ...]>
-                     _intf_device-identification: <value in [disable, enable] default: disable>
-                     _intf_device-netscan: <value in [disable, enable] default: disable>
-                     _intf_dhcp-relay-ip: 
-                      - <value of string>
-                     _intf_dhcp-relay-service: <value in [disable, enable] default: disable>
-                     _intf_dhcp-relay-type: <value in [regular, ipsec] default: regular>
+                     _intf_allowaccess:
+                       - <value in [https, ping, ssh, ...]>
+                     _intf_device-identification: <value in [disable, enable] default: 'disable'>
+                     _intf_device-netscan: <value in [disable, enable] default: 'disable'>
+                     _intf_dhcp-relay-ip:
+                       - <value of string>
+                     _intf_dhcp-relay-service: <value in [disable, enable] default: 'disable'>
+                     _intf_dhcp-relay-type: <value in [regular, ipsec] default: 'regular'>
                      _intf_dhcp6-relay-ip: <value of string>
-                     _intf_dhcp6-relay-service: <value in [disable, enable] default: disable>
-                     _intf_dhcp6-relay-type: <value in [regular] default: regular>
+                     _intf_dhcp6-relay-service: <value in [disable, enable] default: 'disable'>
+                     _intf_dhcp6-relay-type: <value in [regular] default: 'regular'>
                      _intf_ip: <value of string>
                      _intf_ip6-address: <value of string>
-                     _intf_ip6-allowaccess: 
-                      - <value in [https, ping, ssh, ...]>
-                     _intf_listen-forticlient-connection: <value in [disable, enable] default: disable>
+                     _intf_ip6-allowaccess:
+                       - <value in [https, ping, ssh, ...]>
+                     _intf_listen-forticlient-connection: <value in [disable, enable] default: 'disable'>
                      acct-interim-interval: <value of integer>
                      alias: <value of string>
                      auth: <value in [PSK, psk, RADIUS, ...]>
                      broadcast-ssid: <value in [disable, enable]>
-                     broadcast-suppression: 
-                      - <value in [dhcp, arp, dhcp2, ...]>
+                     broadcast-suppression:
+                       - <value in [dhcp, arp, dhcp2, ...]>
                      captive-portal-ac-name: <value of string>
-                     captive-portal-macauth-radius-secret: 
-                      - <value of string>
+                     captive-portal-macauth-radius-secret:
+                       - <value of string>
                      captive-portal-macauth-radius-server: <value of string>
-                     captive-portal-radius-secret: 
-                      - <value of string>
+                     captive-portal-radius-secret:
+                       - <value of string>
                      captive-portal-radius-server: <value of string>
                      captive-portal-session-timeout-interval: <value of integer>
                      dhcp-lease-time: <value of integer>
@@ -461,28 +462,28 @@ Examples
                      dhcp-option82-insertion: <value in [disable, enable]>
                      dhcp-option82-remote-id-insertion: <value in [disable, style-1]>
                      dynamic-vlan: <value in [disable, enable]>
-                     dynamic_mapping: 
-                      - 
-                           _centmgmt: <value in [disable, enable] default: disable>
+                     dynamic_mapping:
+                       -
+                           _centmgmt: <value in [disable, enable] default: 'disable'>
                            _dhcp_svr_id: <value of string>
-                           _intf_allowaccess: 
-                            - <value in [https, ping, ssh, ...]>
-                           _intf_device-identification: <value in [disable, enable] default: disable>
-                           _intf_device-netscan: <value in [disable, enable] default: disable>
-                           _intf_dhcp-relay-ip: 
-                            - <value of string>
-                           _intf_dhcp-relay-service: <value in [disable, enable] default: disable>
-                           _intf_dhcp-relay-type: <value in [regular, ipsec] default: regular>
+                           _intf_allowaccess:
+                             - <value in [https, ping, ssh, ...]>
+                           _intf_device-identification: <value in [disable, enable] default: 'disable'>
+                           _intf_device-netscan: <value in [disable, enable] default: 'disable'>
+                           _intf_dhcp-relay-ip:
+                             - <value of string>
+                           _intf_dhcp-relay-service: <value in [disable, enable] default: 'disable'>
+                           _intf_dhcp-relay-type: <value in [regular, ipsec] default: 'regular'>
                            _intf_dhcp6-relay-ip: <value of string>
-                           _intf_dhcp6-relay-service: <value in [disable, enable] default: disable>
-                           _intf_dhcp6-relay-type: <value in [regular] default: regular>
+                           _intf_dhcp6-relay-service: <value in [disable, enable] default: 'disable'>
+                           _intf_dhcp6-relay-type: <value in [regular] default: 'regular'>
                            _intf_ip: <value of string>
                            _intf_ip6-address: <value of string>
-                           _intf_ip6-allowaccess: 
-                            - <value in [https, ping, ssh, ...]>
-                           _intf_listen-forticlient-connection: <value in [disable, enable] default: disable>
-                           _scope: 
-                            - 
+                           _intf_ip6-allowaccess:
+                             - <value in [https, ping, ssh, ...]>
+                           _intf_listen-forticlient-connection: <value in [disable, enable] default: 'disable'>
+                           _scope:
+                             -
                                  name: <value of string>
                                  vdom: <value of string>
                            acct-interim-interval: <value of integer>
@@ -491,14 +492,14 @@ Examples
                            atf-weight: <value of integer>
                            auth: <value in [PSK, psk, RADIUS, ...]>
                            broadcast-ssid: <value in [disable, enable]>
-                           broadcast-suppression: 
-                            - <value in [dhcp, arp, dhcp2, ...]>
+                           broadcast-suppression:
+                             - <value in [dhcp, arp, dhcp2, ...]>
                            captive-portal-ac-name: <value of string>
-                           captive-portal-macauth-radius-secret: 
-                            - <value of string>
+                           captive-portal-macauth-radius-secret:
+                             - <value of string>
                            captive-portal-macauth-radius-server: <value of string>
-                           captive-portal-radius-secret: 
-                            - <value of string>
+                           captive-portal-radius-secret:
+                             - <value of string>
                            captive-portal-radius-server: <value of string>
                            captive-portal-session-timeout-interval: <value of integer>
                            client-count: <value of integer>
@@ -524,8 +525,8 @@ Examples
                            hotspot20-profile: <value of string>
                            intra-vap-privacy: <value in [disable, enable]>
                            ip: <value of string>
-                           key: 
-                            - <value of string>
+                           key:
+                             - <value of string>
                            keyindex: <value of integer>
                            ldpc: <value in [disable, tx, rx, ...]>
                            local-authentication: <value in [disable, enable]>
@@ -546,12 +547,12 @@ Examples
                            multicast-enhance: <value in [disable, enable]>
                            multicast-rate: <value in [0, 6000, 12000, ...]>
                            okc: <value in [disable, enable]>
-                           owe-groups: 
-                            - <value in [19, 20, 21]>
+                           owe-groups:
+                             - <value in [19, 20, 21]>
                            owe-transition: <value in [disable, enable]>
                            owe-transition-ssid: <value of string>
-                           passphrase: 
-                            - <value of string>
+                           passphrase:
+                             - <value of string>
                            pmf: <value in [disable, enable, optional]>
                            pmf-assoc-comeback-timeout: <value of integer>
                            pmf-sa-query-retry-timeout: <value of integer>
@@ -568,25 +569,25 @@ Examples
                            radio-sensitivity: <value in [disable, enable]>
                            radius-mac-auth: <value in [disable, enable]>
                            radius-mac-auth-server: <value of string>
-                           radius-mac-auth-usergroups: 
-                            - <value of string>
+                           radius-mac-auth-usergroups:
+                             - <value of string>
                            radius-server: <value of string>
-                           rates-11a: 
-                            - <value in [1, 1-basic, 2, ...]>
-                           rates-11ac-ss12: 
-                            - <value in [mcs0/1, mcs1/1, mcs2/1, ...]>
-                           rates-11ac-ss34: 
-                            - <value in [mcs0/3, mcs1/3, mcs2/3, ...]>
-                           rates-11bg: 
-                            - <value in [1, 1-basic, 2, ...]>
-                           rates-11n-ss12: 
-                            - <value in [mcs0/1, mcs1/1, mcs2/1, ...]>
-                           rates-11n-ss34: 
-                            - <value in [mcs16/3, mcs17/3, mcs18/3, ...]>
-                           sae-groups: 
-                            - <value in [1, 2, 5, ...]>
-                           sae-password: 
-                            - <value of string>
+                           rates-11a:
+                             - <value in [1, 1-basic, 2, ...]>
+                           rates-11ac-ss12:
+                             - <value in [mcs0/1, mcs1/1, mcs2/1, ...]>
+                           rates-11ac-ss34:
+                             - <value in [mcs0/3, mcs1/3, mcs2/3, ...]>
+                           rates-11bg:
+                             - <value in [1, 1-basic, 2, ...]>
+                           rates-11n-ss12:
+                             - <value in [mcs0/1, mcs1/1, mcs2/1, ...]>
+                           rates-11n-ss34:
+                             - <value in [mcs16/3, mcs17/3, mcs18/3, ...]>
+                           sae-groups:
+                             - <value in [1, 2, 5, ...]>
+                           sae-password:
+                             - <value of string>
                            schedule: <value of string>
                            security: <value in [None, WEP64, wep64, ...]>
                            security-exempt-list: <value of string>
@@ -620,8 +621,8 @@ Examples
                      hotspot20-profile: <value of string>
                      intra-vap-privacy: <value in [disable, enable]>
                      ip: <value of string>
-                     key: 
-                      - <value of string>
+                     key:
+                       - <value of string>
                      keyindex: <value of integer>
                      ldpc: <value in [disable, tx, rx, ...]>
                      local-authentication: <value in [disable, enable]>
@@ -631,8 +632,8 @@ Examples
                      local-standalone-nat: <value in [disable, enable]>
                      mac-auth-bypass: <value in [disable, enable]>
                      mac-filter: <value in [disable, enable]>
-                     mac-filter-list: 
-                      - 
+                     mac-filter-list:
+                       -
                            id: <value of integer>
                            mac: <value of string>
                            mac-filter-policy: <value in [deny, allow]>
@@ -643,19 +644,19 @@ Examples
                      mesh-backhaul: <value in [disable, enable]>
                      mpsk: <value in [disable, enable]>
                      mpsk-concurrent-clients: <value of integer>
-                     mpsk-key: 
-                      - 
+                     mpsk-key:
+                       -
                            comment: <value of string>
                            concurrent-clients: <value of string>
                            key-name: <value of string>
-                           passphrase: 
-                            - <value of string>
+                           passphrase:
+                             - <value of string>
                      multicast-enhance: <value in [disable, enable]>
                      multicast-rate: <value in [0, 6000, 12000, ...]>
                      name: <value of string>
                      okc: <value in [disable, enable]>
-                     passphrase: 
-                      - <value of string>
+                     passphrase:
+                       - <value of string>
                      pmf: <value in [disable, enable, optional]>
                      pmf-assoc-comeback-timeout: <value of integer>
                      pmf-sa-query-retry-timeout: <value of integer>
@@ -672,21 +673,21 @@ Examples
                      radio-sensitivity: <value in [disable, enable]>
                      radius-mac-auth: <value in [disable, enable]>
                      radius-mac-auth-server: <value of string>
-                     radius-mac-auth-usergroups: 
-                      - <value of string>
+                     radius-mac-auth-usergroups:
+                       - <value of string>
                      radius-server: <value of string>
-                     rates-11a: 
-                      - <value in [1, 1-basic, 2, ...]>
-                     rates-11ac-ss12: 
-                      - <value in [mcs0/1, mcs1/1, mcs2/1, ...]>
-                     rates-11ac-ss34: 
-                      - <value in [mcs0/3, mcs1/3, mcs2/3, ...]>
-                     rates-11bg: 
-                      - <value in [1, 1-basic, 2, ...]>
-                     rates-11n-ss12: 
-                      - <value in [mcs0/1, mcs1/1, mcs2/1, ...]>
-                     rates-11n-ss34: 
-                      - <value in [mcs16/3, mcs17/3, mcs18/3, ...]>
+                     rates-11a:
+                       - <value in [1, 1-basic, 2, ...]>
+                     rates-11ac-ss12:
+                       - <value in [mcs0/1, mcs1/1, mcs2/1, ...]>
+                     rates-11ac-ss34:
+                       - <value in [mcs0/3, mcs1/3, mcs2/3, ...]>
+                     rates-11bg:
+                       - <value in [1, 1-basic, 2, ...]>
+                     rates-11n-ss12:
+                       - <value in [mcs0/1, mcs1/1, mcs2/1, ...]>
+                     rates-11n-ss34:
+                       - <value in [mcs16/3, mcs17/3, mcs18/3, ...]>
                      schedule: <value of string>
                      security: <value in [None, WEP64, wep64, ...]>
                      security-exempt-list: <value of string>
@@ -700,35 +701,36 @@ Examples
                      utm-profile: <value of string>
                      vdom: <value of string>
                      vlan-auto: <value in [disable, enable]>
-                     vlan-pool: 
-                      - 
+                     vlan-pool:
+                       -
                            _wtp-group: <value of string>
                            id: <value of integer>
                            wtp-group: <value of string>
                      vlan-pooling: <value in [wtp-group, round-robin, hash, ...]>
                      vlanid: <value of integer>
                      voice-enterprise: <value in [disable, enable]>
-    - name: send request to /pm/config/obj/wireless-controller/vap
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/VAP
       fmgr_pm_config_obj_wireless_controller_vap:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [_centmgmt, _dhcp_svr_id, _intf_allowaccess, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [_centmgmt, _dhcp_svr_id, _intf_allowaccess, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

@@ -92,26 +92,27 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvmdb/workflow
+
+    - name: REQUESTING /DVMDB/WORKFLOW
       fmgr_dvmdb_workflow:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                expand member: <value of string>
-               fields: 
-                - 
-                   - <value in [audit_time, audit_user, create_time, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [audit_time, audit_user, create_time, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, object member, syntax]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

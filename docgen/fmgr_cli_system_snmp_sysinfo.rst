@@ -82,17 +82,18 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/snmp/sysinfo
+
+    - name: REQUESTING /CLI/SYSTEM/SNMP/SYSINFO
       fmgr_cli_system_snmp_sysinfo:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   contact_info: <value of string>
                   description: <value of string>
                   engine-id: <value of string>
                   location: <value of string>
-                  status: <value in [disable, enable] default: disable>
+                  status: <value in [disable, enable] default: 'disable'>
                   trap-cpu-high-exclude-nice-threshold: <value of integer default: 80>
                   trap-high-cpu-threshold: <value of integer default: 80>
                   trap-low-memory-threshold: <value of integer default: 80>

@@ -100,39 +100,41 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/system/replacemsg-image
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SYSTEM/REPLACEMSG-IMAGE
       fmgr_pm_config_obj_system_replacemsg_image:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      image-base64: <value of string>
                      image-type: <value in [gif, jpg, tiff, ...]>
                      name: <value of string>
-    - name: send request to /pm/config/obj/system/replacemsg-image
+
+    - name: REQUESTING /PM/CONFIG/OBJ/SYSTEM/REPLACEMSG-IMAGE
       fmgr_pm_config_obj_system_replacemsg_image:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [image-base64, image-type, name]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [image-base64, image-type, name]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

@@ -94,17 +94,18 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/pkg/global
+
+    - name: REQUESTING /PM/PKG/GLOBAL
       fmgr_pm_pkg_global:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      name: <value of string>
                      obj ver: <value of integer>
                      oid: <value of integer>
-                     package setting: 
+                     package setting:
                         central-nat: <value in [disable, enable]>
                         consolidated-firewall-mode: <value in [disable, enable]>
                         fwpolicy-implicit-log: <value in [disable, enable]>
@@ -112,19 +113,20 @@ Examples
                         inspection-mode: <value in [proxy, flow]>
                         ngfw-mode: <value in [profile-based, policy-based]>
                         ssl-ssh-profile: <value of string>
-                     scope member: 
-                      - 
+                     scope member:
+                       -
                            name: <value of string>
                            vdom: <value of string>
                      type: <value in [pkg, folder]>
-    - name: send request to /pm/pkg/global
+
+    - name: REQUESTING /PM/PKG/GLOBAL
       fmgr_pm_pkg_global:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [name, obj ver, oid, ...]>
+            -
+               fields:
+                 -
+                    - <value in [name, obj ver, oid, ...]>
 
 
 

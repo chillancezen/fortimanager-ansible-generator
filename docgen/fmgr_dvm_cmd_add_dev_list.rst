@@ -95,16 +95,17 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvm/cmd/add/dev-list
+
+    - name: REQUESTING /DVM/CMD/ADD/DEV-LIST
       fmgr_dvm_cmd_add_dev_list:
          method: <value in [exec]>
          params:
-            - 
-               data: 
-                  add-dev-list: 
-                   - 
-                        adm_pass: 
-                         - <value of string>
+            -
+               data:
+                  add-dev-list:
+                    -
+                        adm_pass:
+                          - <value of string>
                         adm_usr: <value of string>
                         desc: <value of string>
                         device action: <value of string>
@@ -120,8 +121,8 @@ Examples
                         platform_str: <value of string>
                         sn: <value of string>
                   adom: <value of string>
-                  flags: 
-                   - <value in [none, create_task, nonblocking, ...]>
+                  flags:
+                    - <value in [none, create_task, nonblocking, ...]>
 
 
 

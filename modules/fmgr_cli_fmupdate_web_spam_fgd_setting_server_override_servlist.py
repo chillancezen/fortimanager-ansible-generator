@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/fmupdate/web-spam/fgd-setting/server-override/servlist
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -115,29 +114,31 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/fmupdate/web-spam/fgd-setting/server-override/servlist
+
+    - name: REQUESTING /CLI/FMUPDATE/WEB-SPAM/FGD-SETTING/SERVER-OVERRIDE/SERVLIST
       fmgr_cli_fmupdate_web_spam_fgd_setting_server_override_servlist:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      id: <value of integer default: 0>
-                     ip: <value of string default: 0.0.0.0>
-                     ip6: <value of string default: ::>
+                     ip: <value of string default: '0.0.0.0'>
+                     ip6: <value of string default: '::'>
                      port: <value of integer default: 443>
-                     service-type: 
-                      - <value in [fgd, fgc, fsa]>
-    - name: send request to /cli/fmupdate/web-spam/fgd-setting/server-override/servlist
+                     service-type:
+                       - <value in [fgd, fgc, fsa]>
+
+    - name: REQUESTING /CLI/FMUPDATE/WEB-SPAM/FGD-SETTING/SERVER-OVERRIDE/SERVLIST
       fmgr_cli_fmupdate_web_spam_fgd_setting_server_override_servlist:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [id, ip, ip6, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [id, ip, ip6, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -158,7 +159,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/fmupdate/web-spam/fgd-setting/server-override/servlist
+            example: '/cli/global/fmupdate/web-spam/fgd-setting/server-override/servlist'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -176,11 +177,11 @@ return_of_api_category_0:
                ip:
                   type: str
                   description: 'IPv4 address of the override server.'
-                  example: 0.0.0.0
+                  example: '0.0.0.0'
                ip6:
                   type: str
                   description: 'IPv6 address of the override server.'
-                  example: ::
+                  example: '::'
                port:
                   type: int
                   description: 'Port number to use when contacting FortiGuard (1 - 65535, default = 443).'
@@ -196,7 +197,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/fmupdate/web-spam/fgd-setting/server-override/servlist
+            example: '/cli/global/fmupdate/web-spam/fgd-setting/server-override/servlist'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -207,6 +208,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/fmupdate/web-spam/fgd-setting/server-override/servlist'
@@ -215,7 +217,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -229,12 +231,10 @@ def main():
                             'example': 0
                         },
                         'ip': {
-                            'type': 'string',
-                            'default': '0.0.0.0'
+                            'type': 'string'
                         },
                         'ip6': {
-                            'type': 'string',
-                            'default': '::'
+                            'type': 'string'
                         },
                         'port': {
                             'type': 'integer',
@@ -327,7 +327,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -348,8 +347,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -370,14 +369,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

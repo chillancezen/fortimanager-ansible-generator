@@ -29,7 +29,6 @@ description:
       user to [ exec ] the following apis.
     - /securityconsole/import/dev/objs
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -53,7 +52,7 @@ options:
                 add_mappings:
                     type: str
                     default: 'disable'
-                    description: 'Automatically add required dynamic mappings for the device during the search stages.<br/>When used in policy_search action, add dynamic interface and zone mappings; in obj_search action, add ADOM object mappings.<br/>This attribute is not available for the do action.'
+                    description: 'Automatically add required dynamic mappings for the device during the search stages.<br/>When used in policy_search action...'
                     choices:
                         - 'disable'
                         - 'enable'
@@ -62,7 +61,7 @@ options:
                     description: 'Source ADOM name.'
                 dst_name:
                     type: str
-                    description: 'Name of the policy package where the objects are to be imported. If the package does not already exist in the database, a new one will be created.'
+                    description: 'Name of the policy package where the objects are to be imported. If the package does not already exist in the database, a ...'
                 dst_parent:
                     type: str
                     description: 'Path to the folder for the target package. If the package is to be placed in root, leave this field blank.'
@@ -84,8 +83,8 @@ options:
                     default: 'do'
                     description:
                      - 'do - Perform the policy and object import.'
-                     - 'policy_search - Preprocess and scan through device database to gather information about policies that need to be imported. Can automatically add interface and zone mappings if add_mappings is enabled.'
-                     - 'obj_search - Preprocess and scan through device database to collect objects that are required to be imported. Can automatically add object mappings if add_mappings is enabled.'
+                     - 'policy_search - Preprocess and scan through device database to gather information about policies that need to be imported. Can autom...'
+                     - 'obj_search - Preprocess and scan through device database to collect objects that are required to be imported. Can automatically add ...'
                     choices:
                         - 'do'
                         - 'policy_search'
@@ -112,21 +111,22 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /securityconsole/import/dev/objs
+
+    - name: REQUESTING /SECURITYCONSOLE/IMPORT/DEV/OBJS
       fmgr_securityconsole_import_dev_objs:
          method: <value in [exec]>
          params:
-            - 
-               data: 
-                  add_mappings: <value in [disable, enable] default: disable>
+            -
+               data:
+                  add_mappings: <value in [disable, enable] default: 'disable'>
                   adom: <value of string>
                   dst_name: <value of string>
                   dst_parent: <value of string>
-                  if_all_objs: <value in [none, all, filter] default: none>
-                  if_all_policy: <value in [disable, enable] default: disable>
-                  import_action: <value in [do, policy_search, obj_search] default: do>
+                  if_all_objs: <value in [none, all, filter] default: 'none'>
+                  if_all_policy: <value in [disable, enable] default: 'disable'>
+                  import_action: <value in [do, policy_search, obj_search] default: 'do'>
                   name: <value of string>
-                  position: <value in [bottom, top] default: top>
+                  position: <value in [bottom, top] default: 'top'>
                   vdom: <value of string>
 
 '''
@@ -149,7 +149,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /securityconsole/import/dev/objs
+            example: '/securityconsole/import/dev/objs'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -160,6 +160,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/securityconsole/import/dev/objs'
@@ -168,7 +169,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -177,7 +178,6 @@ def main():
                     'dict': {
                         'add_mappings': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -194,7 +194,6 @@ def main():
                         },
                         'if_all_objs': {
                             'type': 'string',
-                            'default': 'none',
                             'enum': [
                                 'none',
                                 'all',
@@ -203,7 +202,6 @@ def main():
                         },
                         'if_all_policy': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -211,7 +209,6 @@ def main():
                         },
                         'import_action': {
                             'type': 'string',
-                            'default': 'do',
                             'enum': [
                                 'do',
                                 'policy_search',
@@ -223,7 +220,6 @@ def main():
                         },
                         'position': {
                             'type': 'string',
-                            'default': 'top',
                             'enum': [
                                 'bottom',
                                 'top'
@@ -247,7 +243,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -265,8 +260,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -287,14 +282,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

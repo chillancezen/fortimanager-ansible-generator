@@ -100,39 +100,41 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/wireless-controller/hotspot20/anqp-network-auth-type
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/HOTSPOT20/ANQP-NETWORK-AUTH-TYPE
       fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_network_auth_type:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      auth-type: <value in [acceptance-of-terms, online-enrollment, http-redirection, ...]>
                      name: <value of string>
                      url: <value of string>
-    - name: send request to /pm/config/obj/wireless-controller/hotspot20/anqp-network-auth-type
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/HOTSPOT20/ANQP-NETWORK-AUTH-TYPE
       fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_network_auth_type:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [auth-type, name, url]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [auth-type, name, url]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

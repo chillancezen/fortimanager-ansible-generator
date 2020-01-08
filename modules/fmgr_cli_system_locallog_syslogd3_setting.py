@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/system/locallog/syslogd3/setting
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -165,16 +164,17 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/locallog/syslogd3/setting
+
+    - name: REQUESTING /CLI/SYSTEM/LOCALLOG/SYSLOGD3/SETTING
       fmgr_cli_system_locallog_syslogd3_setting:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  csv: <value in [disable, enable] default: disable>
-                  facility: <value in [kernel, user, ntp, ...] default: local7>
-                  severity: <value in [emergency, alert, critical, ...] default: notification>
-                  status: <value in [disable, enable] default: disable>
+            -
+               data:
+                  csv: <value in [disable, enable] default: 'disable'>
+                  facility: <value in [kernel, user, ntp, ...] default: 'local7'>
+                  severity: <value in [emergency, alert, critical, ...] default: 'notification'>
+                  status: <value in [disable, enable] default: 'disable'>
                   syslog-name: <value of string>
 
 '''
@@ -194,7 +194,7 @@ return_of_api_category_0:
                   'CSV format.'
                   'disable - Disable CSV format.'
                   'enable - Enable CSV format.'
-               example: disable
+               example: 'disable'
             facility:
                type: str
                description: |
@@ -223,7 +223,7 @@ return_of_api_category_0:
                   'local5 - Reserved for local use.'
                   'local6 - Reserved for local use.'
                   'local7 - Reserved for local use.'
-               example: local7
+               example: 'local7'
             severity:
                type: str
                description: |
@@ -236,14 +236,14 @@ return_of_api_category_0:
                   'notification - Notification level.'
                   'information - Information level.'
                   'debug - Debug level.'
-               example: notification
+               example: 'notification'
             status:
                type: str
                description: |
                   'Remote syslog log.'
                   'disable - Do not log to remote syslog server.'
                   'enable - Log to remote syslog server.'
-               example: disable
+               example: 'disable'
             syslog-name:
                type: str
                description: 'Remote syslog server name.'
@@ -254,7 +254,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/locallog/syslogd3/setting
+            example: '/cli/global/system/locallog/syslogd3/setting'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -269,7 +269,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/locallog/syslogd3/setting
+            example: '/cli/global/system/locallog/syslogd3/setting'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -280,6 +280,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/locallog/syslogd3/setting'
@@ -288,7 +289,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -304,7 +305,6 @@ def main():
                     'dict': {
                         'csv': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -312,7 +312,6 @@ def main():
                         },
                         'facility': {
                             'type': 'string',
-                            'default': 'local7',
                             'enum': [
                                 'kernel',
                                 'user',
@@ -342,7 +341,6 @@ def main():
                         },
                         'severity': {
                             'type': 'string',
-                            'default': 'notification',
                             'enum': [
                                 'emergency',
                                 'alert',
@@ -356,7 +354,6 @@ def main():
                         },
                         'status': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -382,7 +379,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -402,8 +398,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -424,14 +420,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

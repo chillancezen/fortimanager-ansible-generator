@@ -141,47 +141,48 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/wireless-controller/wtp-profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/WTP-PROFILE
       fmgr_pm_config_obj_wireless_controller_wtp_profile:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
-                     allowaccess: 
-                      - <value in [https, ssh, snmp, ...]>
+            -
+               data:
+                 -
+                     allowaccess:
+                       - <value in [https, ssh, snmp, ...]>
                      ap-country: <value in [AL, DZ, AR, ...]>
                      ble-profile: <value of string>
                      comment: <value of string>
-                     control-message-offload: 
-                      - <value in [ebp-frame, aeroscout-tag, ap-list, ...]>
-                     deny-mac-list: 
-                      - 
+                     control-message-offload:
+                       - <value in [ebp-frame, aeroscout-tag, ap-list, ...]>
+                     deny-mac-list:
+                       -
                            id: <value of integer>
                            mac: <value of string>
                      dtls-in-kernel: <value in [disable, enable]>
-                     dtls-policy: 
-                      - <value in [clear-text, dtls-enabled, ipsec-vpn]>
+                     dtls-policy:
+                       - <value in [clear-text, dtls-enabled, ipsec-vpn]>
                      energy-efficient-ethernet: <value in [disable, enable]>
                      ext-info-enable: <value in [disable, enable]>
                      handoff-roaming: <value in [disable, enable]>
                      handoff-rssi: <value of integer>
                      handoff-sta-thresh: <value of integer>
-                     ip-fragment-preventing: 
-                      - <value in [tcp-mss-adjust, icmp-unreachable]>
+                     ip-fragment-preventing:
+                       - <value in [tcp-mss-adjust, icmp-unreachable]>
                      led-schedules: <value of string>
                      led-state: <value in [disable, enable]>
                      lldp: <value in [disable, enable]>
-                     login-passwd: 
-                      - <value of string>
+                     login-passwd:
+                       - <value of string>
                      login-passwd-change: <value in [no, yes, default]>
                      max-clients: <value of integer>
                      name: <value of string>
                      poe-mode: <value in [auto, 8023af, 8023at, ...]>
-                     split-tunneling-acl: 
-                      - 
+                     split-tunneling-acl:
+                       -
                            dest-ip: <value of string>
                            id: <value of integer>
                      split-tunneling-acl-local-ap-subnet: <value in [disable, enable]>
@@ -189,27 +190,28 @@ Examples
                      tun-mtu-downlink: <value of integer>
                      tun-mtu-uplink: <value of integer>
                      wan-port-mode: <value in [wan-lan, wan-only]>
-    - name: send request to /pm/config/obj/wireless-controller/wtp-profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/WTP-PROFILE
       fmgr_pm_config_obj_wireless_controller_wtp_profile:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [allowaccess, ap-country, ble-profile, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [allowaccess, ap-country, ble-profile, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 
 

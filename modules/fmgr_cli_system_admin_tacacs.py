@@ -29,7 +29,6 @@ description:
       user to [ add get set update ] the following apis.
     - /cli/global/system/admin/tacacs
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -80,7 +79,7 @@ options:
                     key:
                         -
                             type: str
-                            default: 'ENC MTM1NzgxNTEwMTQ3MzkyN6Bf+SUc1DH38ALtjfXS+4tsPEStofpzICCe9zH2nI/U1uDRuS4ysXoRMhkM/i6ypV7BvpqVqu3wnaI3lWsFOh6+06ydV9EyGZ+z+v4JkMDSSJ5UHQdPh8DxRdsVvWS3WpWWGFXk4064PiT2A1zTZuT+ZqDM'
+                            default: 'ENC MTM1NzgxNTEwMTQ3MzkyN6Bf+SUc1DH38ALtjfXS+4tsPEStofpzICCe9zH2nI/U1uDRuS4ysXoRMhkM/i6ypV7BvpqVqu3wnaI3lWsFOh6+06ydV...'
                     name:
                         type: str
                         description: 'TACACS+ server entry name.'
@@ -91,7 +90,7 @@ options:
                     secondary-key:
                         -
                             type: str
-                            default: 'ENC MTM3MzM0NTI4MzQ3MTQ4OftOEtzg8U8bz+L2zW2yOkzO1vkOesoOkTy2j02IrPnwTVEVz7aOODvx+zGMUtELHdsY22GW20r4Q0OasjCqkmZgjt9PbfLA2Np3vyJ5ZPtz0IUohnN5frAIVPy7p2VtSHJmvOK3PrMoiwLcSesT0RKSn//Q'
+                            default: 'ENC MTM3MzM0NTI4MzQ3MTQ4OftOEtzg8U8bz+L2zW2yOkzO1vkOesoOkTy2j02IrPnwTVEVz7aOODvx+zGMUtELHdsY22GW20r4Q0OasjCqkmZgjt9Pb...'
                     secondary-server:
                         type: str
                         description: '{<name_str|ip_str>} secondary server domain name or IP.'
@@ -101,7 +100,7 @@ options:
                     tertiary-key:
                         -
                             type: str
-                            default: 'ENC MjAzNTE3MDIwNDI1OTEwMgAtMeOT5CzyMlsFCmOGJ8cTlQYpjv7BJI+uC5QN2LxVGteUJ87W++EYhPaChx42doThcM3Gtb7w8PfrihahuU7S+qoi9weI6eVMq6AUQ7Zw0AomShHbqS8QLEsNf1a59nYX+Lp2wFPwgSYT4xlLOXCNX18h'
+                            default: 'ENC MjAzNTE3MDIwNDI1OTEwMgAtMeOT5CzyMlsFCmOGJ8cTlQYpjv7BJI+uC5QN2LxVGteUJ87W++EYhPaChx42doThcM3Gtb7w8PfrihahuU7S+qoi9...'
                     tertiary-server:
                         type: str
                         description: '{<name_str|ip_str>} tertiary server domain name or IP.'
@@ -151,36 +150,38 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/admin/tacacs
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/TACACS
       fmgr_cli_system_admin_tacacs:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
-                     authen-type: <value in [auto, ascii, pap, ...] default: auto>
-                     authorization: <value in [disable, enable] default: disable>
-                     key: 
-                      - <value of string default: ENC MTM1NzgxNTEwMTQ3MzkyN6Bf+SUc1DH38ALtjfXS+4tsPEStofpzICCe9zH2nI/U1uDRuS4ysXoRMhkM/i6ypV7BvpqVqu3wnaI3lWsFOh6+06ydV9EyGZ+z+v4JkMDSSJ5UHQdPh8DxRdsVvWS3WpWWGFXk4064PiT2A1zTZuT+ZqDM>
+            -
+               data:
+                 -
+                     authen-type: <value in [auto, ascii, pap, ...] default: 'auto'>
+                     authorization: <value in [disable, enable] default: 'disable'>
+                     key:
+                       - <value of string default: 'ENC MTM1NzgxNTEwMTQ3MzkyN6Bf+SUc1DH38ALtjfXS+4tsPEStofpzICCe9zH2nI/U1uDRuS4y...'>
                      name: <value of string>
                      port: <value of integer default: 49>
-                     secondary-key: 
-                      - <value of string default: ENC MTM3MzM0NTI4MzQ3MTQ4OftOEtzg8U8bz+L2zW2yOkzO1vkOesoOkTy2j02IrPnwTVEVz7aOODvx+zGMUtELHdsY22GW20r4Q0OasjCqkmZgjt9PbfLA2Np3vyJ5ZPtz0IUohnN5frAIVPy7p2VtSHJmvOK3PrMoiwLcSesT0RKSn//Q>
+                     secondary-key:
+                       - <value of string default: 'ENC MTM3MzM0NTI4MzQ3MTQ4OftOEtzg8U8bz+L2zW2yOkzO1vkOesoOkTy2j02IrPnwTVEVz7aO...'>
                      secondary-server: <value of string>
                      server: <value of string>
-                     tertiary-key: 
-                      - <value of string default: ENC MjAzNTE3MDIwNDI1OTEwMgAtMeOT5CzyMlsFCmOGJ8cTlQYpjv7BJI+uC5QN2LxVGteUJ87W++EYhPaChx42doThcM3Gtb7w8PfrihahuU7S+qoi9weI6eVMq6AUQ7Zw0AomShHbqS8QLEsNf1a59nYX+Lp2wFPwgSYT4xlLOXCNX18h>
+                     tertiary-key:
+                       - <value of string default: 'ENC MjAzNTE3MDIwNDI1OTEwMgAtMeOT5CzyMlsFCmOGJ8cTlQYpjv7BJI+uC5QN2LxVGteUJ87W...'>
                      tertiary-server: <value of string>
-    - name: send request to /cli/system/admin/tacacs
+
+    - name: REQUESTING /CLI/SYSTEM/ADMIN/TACACS
       fmgr_cli_system_admin_tacacs:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [authen-type, authorization, key, ...]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [authen-type, authorization, key, ...]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
@@ -201,7 +202,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/admin/tacacs
+            example: '/cli/global/system/admin/tacacs'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -221,19 +222,19 @@ return_of_api_category_0:
                      'pap - PAP.'
                      'chap - CHAP.'
                      'mschap - MSCHAP.'
-                  example: auto
+                  example: 'auto'
                authorization:
                   type: str
                   description: |
                      'Enable/disable TACACS+ authorization.'
                      'disable - Disable TACACS+ authorization.'
                      'enable - Enable TACACS+ authorization (service = fortigate).'
-                  example: disable
+                  example: 'disable'
                key:
                   type: array
                   suboptions:
                      type: str
-                     example: ENC MTM1NzgxNTEwMTQ3MzkyN6Bf+SUc1DH38ALtjfXS+4tsPEStofpzICCe9zH2nI/U1uDRuS4ysXoRMhkM/i6ypV7BvpqVqu3wnaI3lWsFOh6+06ydV9EyGZ+z+v4JkMDSSJ5UHQdPh8DxRdsVvWS3WpWWGFXk4064PiT2A1zTZuT+ZqDM
+                     example: 'ENC MTM1NzgxNTEwMTQ3MzkyN6Bf+SUc1DH38ALtjfXS+4tsPEStofpzICCe9zH2nI/U1uDRuS4y...'
                name:
                   type: str
                   description: 'TACACS+ server entry name.'
@@ -245,7 +246,7 @@ return_of_api_category_0:
                   type: array
                   suboptions:
                      type: str
-                     example: ENC MTM3MzM0NTI4MzQ3MTQ4OftOEtzg8U8bz+L2zW2yOkzO1vkOesoOkTy2j02IrPnwTVEVz7aOODvx+zGMUtELHdsY22GW20r4Q0OasjCqkmZgjt9PbfLA2Np3vyJ5ZPtz0IUohnN5frAIVPy7p2VtSHJmvOK3PrMoiwLcSesT0RKSn//Q
+                     example: 'ENC MTM3MzM0NTI4MzQ3MTQ4OftOEtzg8U8bz+L2zW2yOkzO1vkOesoOkTy2j02IrPnwTVEVz7aO...'
                secondary-server:
                   type: str
                   description: '{<name_str|ip_str>} secondary server domain name or IP.'
@@ -256,7 +257,7 @@ return_of_api_category_0:
                   type: array
                   suboptions:
                      type: str
-                     example: ENC MjAzNTE3MDIwNDI1OTEwMgAtMeOT5CzyMlsFCmOGJ8cTlQYpjv7BJI+uC5QN2LxVGteUJ87W++EYhPaChx42doThcM3Gtb7w8PfrihahuU7S+qoi9weI6eVMq6AUQ7Zw0AomShHbqS8QLEsNf1a59nYX+Lp2wFPwgSYT4xlLOXCNX18h
+                     example: 'ENC MjAzNTE3MDIwNDI1OTEwMgAtMeOT5CzyMlsFCmOGJ8cTlQYpjv7BJI+uC5QN2LxVGteUJ87W...'
                tertiary-server:
                   type: str
                   description: '{<name_str|ip_str>} tertiary server domain name or IP.'
@@ -267,7 +268,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/admin/tacacs
+            example: '/cli/global/system/admin/tacacs'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -278,6 +279,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/admin/tacacs'
@@ -286,7 +288,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -296,7 +298,6 @@ def main():
                     'items': {
                         'authen-type': {
                             'type': 'string',
-                            'default': 'auto',
                             'enum': [
                                 'auto',
                                 'ascii',
@@ -307,7 +308,6 @@ def main():
                         },
                         'authorization': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -316,8 +316,7 @@ def main():
                         'key': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC MTM1NzgxNTEwMTQ3MzkyN6Bf+SUc1DH38ALtjfXS+4tsPEStofpzICCe9zH2nI/U1uDRuS4ysXoRMhkM/i6ypV7BvpqVqu3wnaI3lWsFOh6+06ydV9EyGZ+z+v4JkMDSSJ5UHQdPh8DxRdsVvWS3WpWWGFXk4064PiT2A1zTZuT+ZqDM'
+                                'type': 'string'
                             }
                         },
                         'name': {
@@ -331,8 +330,7 @@ def main():
                         'secondary-key': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC MTM3MzM0NTI4MzQ3MTQ4OftOEtzg8U8bz+L2zW2yOkzO1vkOesoOkTy2j02IrPnwTVEVz7aOODvx+zGMUtELHdsY22GW20r4Q0OasjCqkmZgjt9PbfLA2Np3vyJ5ZPtz0IUohnN5frAIVPy7p2VtSHJmvOK3PrMoiwLcSesT0RKSn//Q'
+                                'type': 'string'
                             }
                         },
                         'secondary-server': {
@@ -344,8 +342,7 @@ def main():
                         'tertiary-key': {
                             'type': 'array',
                             'items': {
-                                'type': 'string',
-                                'default': 'ENC MjAzNTE3MDIwNDI1OTEwMgAtMeOT5CzyMlsFCmOGJ8cTlQYpjv7BJI+uC5QN2LxVGteUJ87W++EYhPaChx42doThcM3Gtb7w8PfrihahuU7S+qoi9weI6eVMq6AUQ7Zw0AomShHbqS8QLEsNf1a59nYX+Lp2wFPwgSYT4xlLOXCNX18h'
+                                'type': 'string'
                             }
                         },
                         'tertiary-server': {
@@ -431,7 +428,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -452,8 +448,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -474,14 +470,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

@@ -30,7 +30,6 @@ description:
     - /pm/config/adom/{adom}/obj/webfilter/profile
     - /pm/config/global/obj/webfilter/profile
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -45,7 +44,7 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
-    url_params: 
+    url_params:
         description: the parameters in url path
         required: True
         type: dict
@@ -334,7 +333,7 @@ options:
                     type: int
             sortings:
                 -
-                    \{attr_name\}:
+                    varidic.attr_name:
                         type: int
                         choices:
                             - 1
@@ -350,25 +349,26 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /pm/config/obj/webfilter/profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WEBFILTER/PROFILE
       fmgr_pm_config_obj_webfilter_profile:
          method: <value in [add, set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      comment: <value of string>
                      extended-log: <value in [disable, enable]>
                      https-replacemsg: <value in [disable, enable]>
                      inspection-mode: <value in [proxy, flow-based, dns]>
                      log-all-url: <value in [disable, enable]>
                      name: <value of string>
-                     options: 
-                      - <value in [block-invalid-url, jscript, js, ...]>
-                     ovrd-perm: 
-                      - <value in [bannedword-override, urlfilter-override, fortiguard-wf-override, ...]>
+                     options:
+                       - <value in [block-invalid-url, jscript, js, ...]>
+                     ovrd-perm:
+                       - <value in [bannedword-override, urlfilter-override, fortiguard-wf-override, ...]>
                      post-action: <value in [normal, comfort, block]>
                      replacemsg-group: <value of string>
                      web-content-log: <value in [disable, enable]>
@@ -390,33 +390,34 @@ EXAMPLES = '''
                      wisp: <value in [disable, enable]>
                      wisp-algorithm: <value in [auto-learning, primary-secondary, round-robin]>
                      wisp-servers: <value of string>
-                     youtube-channel-filter: 
-                      - 
+                     youtube-channel-filter:
+                       -
                            channel-id: <value of string>
                            comment: <value of string>
                            id: <value of integer>
                      youtube-channel-status: <value in [disable, blacklist, whitelist]>
-    - name: send request to /pm/config/obj/webfilter/profile
+
+    - name: REQUESTING /PM/CONFIG/OBJ/WEBFILTER/PROFILE
       fmgr_pm_config_obj_webfilter_profile:
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
          params:
-            - 
+            -
                attr: <value of string>
-               fields: 
-                - 
-                   - <value in [comment, extended-log, https-replacemsg, ...]>
-               filter: 
-                - <value of string>
+               fields:
+                 -
+                    - <value in [comment, extended-log, https-replacemsg, ...]>
+               filter:
+                 - <value of string>
                get used: <value of integer>
                loadsub: <value of integer>
                option: <value in [count, object member, datasrc, ...]>
-               range: 
-                - <value of integer>
-               sortings: 
-                - 
-                     \{attr_name\}: <value in [1, -1]>
+               range:
+                 - <value of integer>
+               sortings:
+                 -
+                     varidic.attr_name: <value in [1, -1]>
 
 '''
 
@@ -435,7 +436,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/webfilter/profile
+            example: '/pm/config/adom/{adom}/obj/webfilter/profile'
 return_of_api_category_0:
    description: items returned for method:[get]
    returned: always
@@ -557,7 +558,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /pm/config/adom/{adom}/obj/webfilter/profile
+            example: '/pm/config/adom/{adom}/obj/webfilter/profile'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -567,6 +568,7 @@ from ansible.module_utils.network.fortimanager.common import DEFAULT_RESULT_OBJ
 from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
+
 
 def main():
     jrpc_urls = [
@@ -581,7 +583,7 @@ def main():
         }
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -968,7 +970,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -989,8 +990,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -1011,14 +1012,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

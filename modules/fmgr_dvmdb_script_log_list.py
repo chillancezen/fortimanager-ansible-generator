@@ -30,7 +30,6 @@ description:
     - /dvmdb/adom/{adom}/script/log/list
     - /dvmdb/global/script/log/list
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -45,7 +44,7 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
-    url_params: 
+    url_params:
         description: the parameters in url path
         required: True
         type: dict
@@ -61,7 +60,7 @@ options:
                 type: str
     schema_object0:
         methods: [get]
-        description: 'Get the of script logs of the ADOM. The amount of data to retrieve can be controlled by the range option.<br/><br/>This API call return the full script run result; however, retrieve all result may be slow and result in a large response. It is suggested to retrieve the summary list first to determine the proper range.'
+        description: 'Get the of script logs of the ADOM. The amount of data to retrieve can be controlled by the range option.<br/><br/>This API call retur...'
         api_categories: [api_tag0]
         api_tag0:
 
@@ -106,7 +105,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /dvmdb/adom/{adom}/script/log/list
+            example: '/dvmdb/adom/{adom}/script/log/list'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -116,6 +115,7 @@ from ansible.module_utils.network.fortimanager.common import DEFAULT_RESULT_OBJ
 from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
+
 
 def main():
     jrpc_urls = [
@@ -134,7 +134,7 @@ def main():
         }
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -148,7 +148,6 @@ def main():
             'get': 'object0'
         }
     }
-
 
     module_arg_spec = {
         'params': {
@@ -167,8 +166,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -189,14 +188,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

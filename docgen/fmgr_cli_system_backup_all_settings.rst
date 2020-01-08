@@ -90,25 +90,26 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/backup/all-settings
+
+    - name: REQUESTING /CLI/SYSTEM/BACKUP/ALL-SETTINGS
       fmgr_cli_system_backup_all_settings:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
+            -
+               data:
                   cert: <value of string>
-                  crptpasswd: 
-                   - <value of string default: ENC MTMzMDc1MDgxNzQ0ODY0M2NSZUKD2VMvwzY+fu/IOqXefv5r84Cvz6X817vduD08gM1BG0K7muAtsALrSSvZjpqR08ZjShNGdhTR6Y7clcN6rnCh7jFAA9qF9cXracjbMmMkmLh2JuJH35O0EplcfinZKTXky8RCyig4J/DXAtiQpW7l>
+                  crptpasswd:
+                    - <value of string default: 'ENC MTMzMDc1MDgxNzQ0ODY0M2NSZUKD2VMvwzY+fu/IOqXefv5r84Cvz6X817vduD08gM1BG0K7...'>
                   directory: <value of string>
-                  passwd: 
-                   - <value of string default: ENC NjE1OTk5NjcxODE1MDYyOR9zgwo4rNRY0psUIe6ZdXfehJTrTnmzU4GJWXfob8IxqxmLrU/5rQxywxo85lXVAnrjLD1WUkUEls6PMhOwReIaAQVP0y0g8qNzjlHU+Tsm6L13KblsH7G+yJEdMMyVj8MNSwdwJiXw9s94q+hXRCAs4iwJ>
-                  protocol: <value in [sftp, ftp, scp] default: sftp>
+                  passwd:
+                    - <value of string default: 'ENC NjE1OTk5NjcxODE1MDYyOR9zgwo4rNRY0psUIe6ZdXfehJTrTnmzU4GJWXfob8IxqxmLrU/5...'>
+                  protocol: <value in [sftp, ftp, scp] default: 'sftp'>
                   server: <value of string>
-                  status: <value in [disable, enable] default: disable>
+                  status: <value in [disable, enable] default: 'disable'>
                   time: <value of string>
                   user: <value of string>
-                  week_days: 
-                   - <value in [monday, tuesday, wednesday, ...]>
+                  week_days:
+                    - <value in [monday, tuesday, wednesday, ...]>
 
 
 

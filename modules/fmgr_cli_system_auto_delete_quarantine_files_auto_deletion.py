@@ -29,7 +29,6 @@ description:
       user to [ get set update ] the following apis.
     - /cli/global/system/auto-delete/quarantine-files-auto-deletion
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -96,15 +95,16 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/auto-delete/quarantine-files-auto-deletion
+
+    - name: REQUESTING /CLI/SYSTEM/AUTO-DELETE/QUARANTINE-FILES-AUTO-DELETION
       fmgr_cli_system_auto_delete_quarantine_files_auto_deletion:
          method: <value in [set, update]>
          params:
-            - 
-               data: 
-                  retention: <value in [days, weeks, months] default: days>
+            -
+               data:
+                  retention: <value in [days, weeks, months] default: 'days'>
                   runat: <value of integer default: 0>
-                  status: <value in [disable, enable] default: disable>
+                  status: <value in [disable, enable] default: 'disable'>
                   value: <value of integer default: 0>
 
 '''
@@ -125,7 +125,7 @@ return_of_api_category_0:
                   'days - Auto-delete data older than <value> days.'
                   'weeks - Auto-delete data older than <value> weeks.'
                   'months - Auto-delete data older than <value> months.'
-               example: days
+               example: 'days'
             runat:
                type: int
                description: 'Automatic deletion run at (0 - 23) oclock.'
@@ -136,7 +136,7 @@ return_of_api_category_0:
                   'Enable/disable automatic deletion.'
                   'disable - Disable automatic deletion.'
                   'enable - Enable automatic deletion.'
-               example: disable
+               example: 'disable'
             value:
                type: int
                description: 'Automatic deletion in x days, weeks, or months.'
@@ -148,7 +148,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/auto-delete/quarantine-files-auto-deletion
+            example: '/cli/global/system/auto-delete/quarantine-files-auto-deletion'
 return_of_api_category_0:
    description: items returned for method:[set, update]
    returned: always
@@ -163,7 +163,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /cli/global/system/auto-delete/quarantine-files-auto-deletion
+            example: '/cli/global/system/auto-delete/quarantine-files-auto-deletion'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -174,6 +174,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/cli/global/system/auto-delete/quarantine-files-auto-deletion'
@@ -182,7 +183,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -198,7 +199,6 @@ def main():
                     'dict': {
                         'retention': {
                             'type': 'string',
-                            'default': 'days',
                             'enum': [
                                 'days',
                                 'weeks',
@@ -212,7 +212,6 @@ def main():
                         },
                         'status': {
                             'type': 'string',
-                            'default': 'disable',
                             'enum': [
                                 'disable',
                                 'enable'
@@ -240,7 +239,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -260,8 +258,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -282,14 +280,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

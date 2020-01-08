@@ -30,7 +30,6 @@ description:
     - /dvm/cmd/add/dev-list
     - /dvm/cmd/add/dev-list
     - Examples include all parameters and values need to be adjusted to data sources before usage.
-     
 
 version_added: "2.10"
 author:
@@ -128,7 +127,7 @@ options:
                             description: '<i>add model device only</i>. Required for determine the platform for VM platforms.'
                         sn:
                             type: str
-                            description: '<i>add model device only</i>. This attribute will be used to determine the device platform, except for VM platforms, where <i>platform_str</i> is also required.'
+                            description: '<i>add model device only</i>. This attribute will be used to determine the device platform, except for VM platform...'
                 adom:
                     type: str
                     description: 'Name or ID of the ADOM where the command is to be executed on.'
@@ -151,16 +150,17 @@ EXAMPLES = '''
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /dvm/cmd/add/dev-list
+
+    - name: REQUESTING /DVM/CMD/ADD/DEV-LIST
       fmgr_dvm_cmd_add_dev_list:
          method: <value in [exec]>
          params:
-            - 
-               data: 
-                  add-dev-list: 
-                   - 
-                        adm_pass: 
-                         - <value of string>
+            -
+               data:
+                  add-dev-list:
+                    -
+                        adm_pass:
+                          - <value of string>
                         adm_usr: <value of string>
                         desc: <value of string>
                         device action: <value of string>
@@ -176,8 +176,8 @@ EXAMPLES = '''
                         platform_str: <value of string>
                         sn: <value of string>
                   adom: <value of string>
-                  flags: 
-                   - <value in [none, create_task, nonblocking, ...]>
+                  flags:
+                    - <value in [none, create_task, nonblocking, ...]>
 
 '''
 
@@ -203,7 +203,7 @@ return_of_api_category_0:
                type: str
          url:
             type: str
-            example: /dvm/cmd/add/dev-list
+            example: '/dvm/cmd/add/dev-list'
 
 '''
 from ansible.module_utils.basic import AnsibleModule
@@ -214,6 +214,7 @@ from ansible.module_utils.network.fortimanager.common import FMGRCommon
 from ansible.module_utils.network.fortimanager.common import FMGBaseException
 from ansible.module_utils.network.fortimanager.fortimanager import FortiManagerHandler
 
+
 def main():
     jrpc_urls = [
         '/dvm/cmd/add/dev-list',
@@ -223,7 +224,7 @@ def main():
     url_schema = [
     ]
 
-    body_schema =  {
+    body_schema = {
         'schema_objects': {
             'object0': [
                 {
@@ -344,7 +345,6 @@ def main():
         }
     }
 
-
     module_arg_spec = {
         'params': {
             'type': 'list',
@@ -362,8 +362,8 @@ def main():
             'required': False
         }
     }
-    module = AnsibleModule(argument_spec = module_arg_spec,
-                           supports_check_mode = False)
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
     method = module.params['method']
 
     fmgr = None
@@ -384,14 +384,14 @@ def main():
 
     try:
         response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module = module, results = response,
-                             msg = 'Operation Finished',
-                             ansible_facts = fmgr.construct_ansible_facts(
-                                response, module.params, module.params))
+        fmgr.govern_response(module=module, results=response,
+                             msg='Operation Finished',
+                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
 
     module.exit_json(**response[1])
+
 
 if __name__ == '__main__':
     main()

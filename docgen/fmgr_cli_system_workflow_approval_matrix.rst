@@ -91,30 +91,32 @@ Examples
       ansible_httpapi_validate_certs: False
       ansible_httpapi_port: 443
    tasks:
-    - name: send request to /cli/system/workflow/approval-matrix
+
+    - name: REQUESTING /CLI/SYSTEM/WORKFLOW/APPROVAL-MATRIX
       fmgr_cli_system_workflow_approval_matrix:
          method: <value in [add, set, update]>
          params:
-            - 
-               data: 
-                - 
+            -
+               data:
+                 -
                      adom-name: <value of string>
-                     approver: 
-                      - 
+                     approver:
+                       -
                            member: <value of string>
                            seq_num: <value of integer default: 0>
                      mail-server: <value of string>
                      notify: <value of string>
-    - name: send request to /cli/system/workflow/approval-matrix
+
+    - name: REQUESTING /CLI/SYSTEM/WORKFLOW/APPROVAL-MATRIX
       fmgr_cli_system_workflow_approval_matrix:
          method: <value in [get]>
          params:
-            - 
-               fields: 
-                - 
-                   - <value in [adom-name, mail-server, notify]>
-               filter: 
-                - <value of string>
+            -
+               fields:
+                 -
+                    - <value in [adom-name, mail-server, notify]>
+               filter:
+                 - <value of string>
                loadsub: <value of integer>
                option: <value in [count, syntax]>
 
