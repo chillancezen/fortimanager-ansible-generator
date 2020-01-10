@@ -27,7 +27,7 @@ all the generated docs are under `ReadTheDocs`.
 https://chillancezen.github.io/index.html
 
 
-### 4. module naming rules
+### 5. module naming rules
 One module is named after its url, however some text are stripped or replaced in order to make the module name as short.
 
 
@@ -54,8 +54,8 @@ e.g, `pm_config_obj_wireless-controller_hotspot20_anqp-nai-realm_nai-list_eap-me
 7). if the url ends with a parameter, it is considered as a per-object url, it usually conflicts with existing module name, we add a suffix `_per_object` to the module name.
 
 
-### 4. modules inventory
-#### 4.1 non-per-object modules
+### 6. modules inventory
+#### 6.1 non-per-object modules
 * `fmgr_cli_fmupdate_analyzer_virusreport`  Send virus detection notification to FortiGuard.
 * `fmgr_cli_fmupdate_av_ips_advanced_log`  Enable/disable logging of FortiGuard antivirus and IPS update packages received by FortiManager's built-in FortiGuard.
 * `fmgr_cli_fmupdate_av_ips_web_proxy`  Configure the web proxy for use with FortiGuard antivirus and IPS updates.
@@ -672,7 +672,7 @@ e.g, `pm_config_obj_wireless-controller_hotspot20_anqp-nai-realm_nai-list_eap-me
 * `fmgr_task_task_line`  Read-only table.
 * `fmgr_task_task`  Read-only table containing the 10000 most recent tasks of the system.
 
-#### 4.2 per-object modules
+#### 6.2 per-object modules
 * `fmgr_cli_exec_fgfm_reclaim_dev_tunnel_per_object`  Reclaim management tunnel to device.
 * `fmgr_cli_fmupdate_fds_setting_push_override_to_client_announce_ip_per_object`  Announce IP addresses for the device.
 * `fmgr_cli_fmupdate_fds_setting_server_override_servlist_per_object`  Override server.
