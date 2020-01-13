@@ -56,155 +56,102 @@ e.g, `pm_config_obj_wireless-controller_hotspot20_anqp-nai-realm_nai-list_eap-me
 
 ### 6. modules inventory
 #### 6.1 non-per-object modules
-* `fmgr_cli_fmupdate_analyzer_virusreport`  Send virus detection notification to FortiGuard.
-* `fmgr_cli_fmupdate_av_ips_advanced_log`  Enable/disable logging of FortiGuard antivirus and IPS update packages received by FortiManager's built-in FortiGuard.
-* `fmgr_cli_fmupdate_av_ips_web_proxy`  Configure the web proxy for use with FortiGuard antivirus and IPS updates.
-* `fmgr_cli_fmupdate_custom_url_list`  Configure the URL database for rating and filtering.
-* `fmgr_cli_fmupdate_disk_quota`  Configure disk space available for use by the Upgrade Manager.
-* `fmgr_cli_fmupdate_fct_services`  Configure FortiGuard to provide services to FortiClient installations.
-* `fmgr_cli_fmupdate_fds_setting_push_override`  Enable/disable push updates, and override the default IP address and port used by FortiGuard to send antivirus and IPS push messages for clients.
-* `fmgr_cli_fmupdate_fds_setting_push_override_to_client_announce_ip`  Announce IP addresses for the device.
-* `fmgr_cli_fmupdate_fds_setting_push_override_to_client`  Enable/disable push updates, and override the default IP address and port used by FortiGuard to send antivirus and IPS push messages for clients.
-* `fmgr_cli_fmupdate_fds_setting`  Configure FortiGuard settings.
-* `fmgr_cli_fmupdate_fds_setting_server_override`  Server override configure.
-* `fmgr_cli_fmupdate_fds_setting_server_override_servlist`  Override server.
-* `fmgr_cli_fmupdate_fds_setting_update_schedule`  Configure the schedule when built-in FortiGuard retrieves antivirus and IPS updates.
-* `fmgr_cli_fmupdate_multilayer`  Configure multilayer mode.
-* `fmgr_cli_fmupdate_publicnetwork`  Enable/disable access to the public FortiGuard.
-* `fmgr_cli_fmupdate_server_access_priorities_private_server`  Configure multiple FortiManager units and private servers.
-* `fmgr_cli_fmupdate_server_access_priorities`  Configure priorities for FortiGate units accessing antivirus updates and web filtering services.
-* `fmgr_cli_fmupdate_server_override_status`  Configure strict/loose server override.
-* `fmgr_cli_fmupdate_service`  Enable/disable services provided by the built-in FortiGuard.
-* `fmgr_cli_fmupdate_web_spam_fgd_setting`  Configure the FortiGuard run parameters.
-* `fmgr_cli_fmupdate_web_spam_fgd_setting_server_override`  Server override configure.
-* `fmgr_cli_fmupdate_web_spam_fgd_setting_server_override_servlist`  Override server.
-* `fmgr_cli_fmupdate_web_spam_web_proxy`  Configure the web proxy for use with FortiGuard antivirus and IPS updates.
-* `fmgr_cli_system_admin_group_member`  Group members.
-* `fmgr_cli_system_admin_group`  User group.
-* `fmgr_cli_system_admin_ldap_adom`  Admin domain.
-* `fmgr_cli_system_admin_ldap`  LDAP server entry configuration.
-* `fmgr_cli_system_admin_profile_datamask_custom_fields`  Customized datamask fields.
-* `fmgr_cli_system_admin_profile`  Admin profile.
-* `fmgr_cli_system_admin_radius`  Configure radius.
-* `fmgr_cli_system_admin_setting`  Admin setting.
-* `fmgr_cli_system_admin_tacacs`  TACACS+ server entry configuration.
-* `fmgr_cli_system_admin_user_adom_exclude`  Excluding admin domain.
-* `fmgr_cli_system_admin_user_adom`  Admin domain.
-* `fmgr_cli_system_admin_user_app_filter`  App filter.
-* `fmgr_cli_system_admin_user_dashboard`  Custom dashboard widgets.
-* `fmgr_cli_system_admin_user_dashboard_tabs`  Custom dashboard.
-* `fmgr_cli_system_admin_user_ips_filter`  IPS filter.
-* `fmgr_cli_system_admin_user_meta_data`  Configure meta data.
-* `fmgr_cli_system_admin_user_policy_package`  Policy package access.
-* `fmgr_cli_system_admin_user_restrict_dev_vdom`  Restricted to these devices/VDOMs.
-* `fmgr_cli_system_admin_user`  Admin user.
-* `fmgr_cli_system_admin_user_web_filter`  Web filter.
-* `fmgr_cli_system_alert_console`  Alert console.
-* `fmgr_cli_system_alertemail`  Configure alertemail.
-* `fmgr_cli_system_alert_event_alert_destination`  Alert destination.
-* `fmgr_cli_system_alert_event`  Alert events.
-* `fmgr_cli_system_auto_delete_dlp_files_auto_deletion`  Automatic deletion policy for DLP archives.
-* `fmgr_cli_system_auto_delete_log_auto_deletion`  Automatic deletion policy for device logs.
-* `fmgr_cli_system_auto_delete_quarantine_files_auto_deletion`  Automatic deletion policy for quarantined files.
-* `fmgr_cli_system_auto_delete_report_auto_deletion`  Automatic deletion policy for reports.
-* `fmgr_cli_system_auto_delete`  Automatic deletion policy for logs, reports, archived, and quarantined files.
-* `fmgr_cli_system_backup_all_settings`  Scheduled backup settings.
-* `fmgr_cli_system_certificate_ca`  CA certificate.
-* `fmgr_cli_system_certificate_crl`  Certificate Revocation List.
-* `fmgr_cli_system_certificate_local`  Local keys and certificates.
-* `fmgr_cli_system_certificate_oftp`  OFTP certificates and keys.
-* `fmgr_cli_system_certificate_remote`  Remote certificate.
-* `fmgr_cli_system_certificate_ssh`  SSH certificates and keys.
-* `fmgr_cli_system_connector`  Configure connector.
-* `fmgr_cli_system_dm`  Configure dm.
-* `fmgr_cli_system_dns`  DNS configuration.
-* `fmgr_cli_system_fips`  Settings for FIPS-CC mode.
-* `fmgr_cli_system_fortiview_auto_cache`  FortiView auto-cache settings.
-* `fmgr_cli_system_fortiview_setting`  FortiView settings.
-* `fmgr_cli_system_global`  Global range attributes.
-* `fmgr_cli_system_guiact`  System settings through GUI.
-* `fmgr_cli_system_ha_peer`  Peer.
-* `fmgr_cli_system_ha`  HA configuration.
-* `fmgr_cli_system_interface_ipv6`  IPv6 of interface.
-* `fmgr_cli_system_interface`  Interface configuration.
-* `fmgr_cli_system_locallog_disk_filter`  Filter for disk logging.
-* `fmgr_cli_system_locallog_disk_setting`  Settings for local disk logging.
-* `fmgr_cli_system_locallog_fortianalyzer2_filter`  Filter for FortiAnalyzer2 logging.
-* `fmgr_cli_system_locallog_fortianalyzer2_setting`  Settings for locallog to fortianalyzer.
-* `fmgr_cli_system_locallog_fortianalyzer3_filter`  Filter for FortiAnalyzer3 logging.
-* `fmgr_cli_system_locallog_fortianalyzer3_setting`  Settings for locallog to fortianalyzer.
-* `fmgr_cli_system_locallog_fortianalyzer_filter`  Filter for FortiAnalyzer logging.
-* `fmgr_cli_system_locallog_fortianalyzer_setting`  Settings for locallog to fortianalyzer.
-* `fmgr_cli_system_locallog_memory_filter`  Filter for memory logging.
-* `fmgr_cli_system_locallog_memory_setting`  Settings for memory buffer.
-* `fmgr_cli_system_locallog_setting`  Settings for locallog logging.
-* `fmgr_cli_system_locallog_syslogd2_filter`  Filter for syslog logging.
-* `fmgr_cli_system_locallog_syslogd2_setting`  Settings for remote syslog server.
-* `fmgr_cli_system_locallog_syslogd3_filter`  Filter for syslog logging.
-* `fmgr_cli_system_locallog_syslogd3_setting`  Settings for remote syslog server.
-* `fmgr_cli_system_locallog_syslogd_filter`  Filter for syslog logging.
-* `fmgr_cli_system_locallog_syslogd_setting`  Settings for remote syslog server.
-* `fmgr_cli_system_log_alert`  Log based alert settings.
-* `fmgr_cli_system_log_fetch_client_profile_device_filter`  List of device filter.
-* `fmgr_cli_system_log_fetch_client_profile_log_filter`  Log content filters.
-* `fmgr_cli_system_log_fetch_client_profile`  Log-fetch client profile settings.
-* `fmgr_cli_system_log_fetch_server_settings`  Log-fetch server settings.
-* `fmgr_cli_system_log_ioc`  IoC settings.
-* `fmgr_cli_system_log_mail_domain`  FortiMail domain setting.
-* `fmgr_cli_system_log_settings_rolling_analyzer`  Log rolling policy for Network Analyzer logs.
-* `fmgr_cli_system_log_settings_rolling_local`  Log rolling policy for local logs.
-* `fmgr_cli_system_log_settings_rolling_regular`  Log rolling policy for device logs.
-* `fmgr_cli_system_log_settings`  Log settings.
-* `fmgr_cli_system_mail`  Alert emails.
-* `fmgr_cli_system_metadata_admins`  Configure admins.
-* `fmgr_cli_system_ntp_ntpserver`  NTP server.
-* `fmgr_cli_system_ntp`  NTP settings.
-* `fmgr_cli_system_password_policy`  Password policy.
-* `fmgr_cli_system_performance`  System performance.
-* `fmgr_cli_system_report_auto_cache`  Report auto-cache settings.
-* `fmgr_cli_system_report_est_browse_time`  Report estimated browse time settings
-* `fmgr_cli_system_report_group_chart_alternative`  Chart alternatives.
-* `fmgr_cli_system_report_group_group_by`  Group-by variables.
-* `fmgr_cli_system_report_group`  Report group.
-* `fmgr_cli_system_report_setting`  Report settings.
-* `fmgr_cli_system_route6`  Routing table configuration.
-* `fmgr_cli_system_route`  Routing table configuration.
-* `fmgr_cli_system_saml`  Global settings for SAML authentication.
-* `fmgr_cli_system_saml_service_providers`  Authorized service providers.
-* `fmgr_cli_system_snmp_community_hosts6`  Allow hosts configuration for IPv6.
-* `fmgr_cli_system_snmp_community_hosts`  Allow hosts configuration.
-* `fmgr_cli_system_snmp_community`  SNMP community configuration.
-* `fmgr_cli_system_snmp_sysinfo`  SNMP configuration.
-* `fmgr_cli_system_snmp_user`  SNMP user configuration.
-* `fmgr_cli_system_sql_custom_index`  List of SQL index fields.
-* `fmgr_cli_system_sql`  SQL settings.
-* `fmgr_cli_system_sql_ts_index_field`  List of SQL text search index fields.
-* `fmgr_cli_system_status`  Obtain system status.
-* `fmgr_cli_system_syslog`  Syslog servers.
-* `fmgr_cli_system_workflow_approval_matrix_approver`  Approver.
-* `fmgr_cli_system_workflow_approval_matrix`  workflow approval matrix.
+* `fmgr_adom_options`  No description
+* `fmgr_antivirus_mmschecksum`  Configure MMS content checksum list.
+* `fmgr_antivirus_mmschecksum_entries`  modify this MMS content checksum list
+* `fmgr_antivirus_notification`  Configure AntiVirus notification lists.
+* `fmgr_antivirus_notification_entries`  modify this antivirus notification list
+* `fmgr_antivirus_profile`  Configure AntiVirus profiles.
+* `fmgr_antivirus_profile_contentdisarm`  AV Content Disarm and Reconstruction settings.
+* `fmgr_antivirus_profile_ftp`  Configure FTP AntiVirus options.
+* `fmgr_antivirus_profile_http`  Configure HTTP AntiVirus options.
+* `fmgr_antivirus_profile_imap`  Configure IMAP AntiVirus options.
+* `fmgr_antivirus_profile_mapi`  Configure MAPI AntiVirus options.
+* `fmgr_antivirus_profile_nacquar`  Configure AntiVirus quarantine settings.
+* `fmgr_antivirus_profile_nntp`  Configure NNTP AntiVirus options.
+* `fmgr_antivirus_profile_pop3`  Configure POP3 AntiVirus options.
+* `fmgr_antivirus_profile_smb`  Configure SMB AntiVirus options.
+* `fmgr_antivirus_profile_smtp`  Configure SMTP AntiVirus options.
+* `fmgr_application_categories`  No description
+* `fmgr_application_custom`  Configure custom application signatures.
+* `fmgr_application_group`  Configure firewall application groups.
+* `fmgr_application_list`  Configure application control lists.
+* `fmgr_application_list_entries`  Application list entries.
+* `fmgr_application_list_entries_parameters`  Application parameters.
+* `fmgr_bleprofile`  Configure Bluetooth Low Energy profile.
+* `fmgr_bonjourprofile`  Configure Bonjour profiles.
+* `fmgr_bonjourprofile_policylist`  Bonjour policy list.
+* `fmgr_certificate_template`  No description
+* `fmgr_devprof_device_profile_fortianalyzer`  No description
+* `fmgr_devprof_device_profile_fortiguard`  No description
+* `fmgr_devprof_log_fortianalyzer_setting`  Global FortiAnalyzer settings.
+* `fmgr_devprof_log_syslogd_filter`  Filters for remote system server.
+* `fmgr_devprof_log_syslogd_setting`  Global settings for remote syslog server.
+* `fmgr_devprof_system_centralmanagement`  Configure central management.
+* `fmgr_devprof_system_centralmanagement_serverlist`  Additional severs that the FortiGate can use for updates (for AV, IPS, updates) and ratings (for web filter and antispam ratings) servers.
+* `fmgr_devprof_system_dns`  Configure DNS.
+* `fmgr_devprof_system_emailserver`  Configure the email server used by the FortiGate various things.
+* `fmgr_devprof_system_global`  Configure global attributes.
+* `fmgr_devprof_system_ntp`  Configure system NTP information.
+* `fmgr_devprof_system_ntp_ntpserver`  Configure the FortiGate to connect to any available third-party NTP server.
+* `fmgr_devprof_system_replacemsg_admin`  Replacement messages.
+* `fmgr_devprof_system_replacemsg_alertmail`  Replacement messages.
+* `fmgr_devprof_system_replacemsg_auth`  Replacement messages.
+* `fmgr_devprof_system_replacemsg_devicedetectionportal`  Replacement messages.
+* `fmgr_devprof_system_replacemsg_ec`  Replacement messages.
+* `fmgr_devprof_system_replacemsg_fortiguardwf`  Replacement messages.
+* `fmgr_devprof_system_replacemsg_ftp`  Replacement messages.
+* `fmgr_devprof_system_replacemsg_http`  Replacement messages.
+* `fmgr_devprof_system_replacemsg_mail`  Replacement messages.
+* `fmgr_devprof_system_replacemsg_mms`  Replacement messages.
+* `fmgr_devprof_system_replacemsg_nacquar`  Replacement messages.
+* `fmgr_devprof_system_replacemsg_nntp`  Replacement messages.
+* `fmgr_devprof_system_replacemsg_spam`  Replacement messages.
+* `fmgr_devprof_system_replacemsg_sslvpn`  Replacement messages.
+* `fmgr_devprof_system_replacemsg_trafficquota`  Replacement messages.
+* `fmgr_devprof_system_replacemsg_utm`  Replacement messages.
+* `fmgr_devprof_system_replacemsg_webproxy`  Replacement messages.
+* `fmgr_devprof_system_snmp_community_hosts6`  Configure IPv6 SNMP managers.
+* `fmgr_devprof_system_snmp_community_hosts`  Configure IPv4 SNMP managers (hosts).
+* `fmgr_devprof_system_snmp_community`  SNMP community configuration.
+* `fmgr_devprof_system_snmp_sysinfo`  SNMP system info configuration.
+* `fmgr_devprof_system_snmp_user`  SNMP user configuration.
+* `fmgr_dlp_filepattern`  Configure file patterns used by DLP blocking.
+* `fmgr_dlp_filepattern_entries`  Configure file patterns used by DLP blocking.
+* `fmgr_dlp_fpsensitivity`  Create self-explanatory DLP sensitivity levels to be used when setting sensitivity under config fp-doc-source.
+* `fmgr_dlp_sensor`  Configure DLP sensors.
+* `fmgr_dlp_sensor_filter`  Set up DLP filters for this sensor.
+* `fmgr_dnsfilter_domainfilter`  Configure DNS domain filters.
+* `fmgr_dnsfilter_domainfilter_entries`  DNS domain filter entries.
+* `fmgr_dnsfilter_profile`  Configure DNS domain filter profiles.
+* `fmgr_dnsfilter_profile_domainfilter`  Domain filter settings.
+* `fmgr_dnsfilter_profile_ftgddns_filters`  FortiGuard DNS domain filters.
+* `fmgr_dnsfilter_profile_ftgddns`  FortiGuard DNS Filter settings.
 * `fmgr_dvm_cmd_add_device`  Add a device to the Device Manager database.
-* `fmgr_dvm_cmd_add_dev_list`  Add multiple devices to the Device Manager database.
-* `fmgr_dvm_cmd_change_ha_seq`  Modify HA sequence to promote a slave to become the master of the cluster.
+* `fmgr_dvm_cmd_add_devlist`  Add multiple devices to the Device Manager database.
+* `fmgr_dvm_cmd_changehaseq`  Modify HA sequence to promote a slave to become the master of the cluster.
 * `fmgr_dvm_cmd_del_device`  Delete a device.
-* `fmgr_dvm_cmd_del_dev_list`  Delete a list of devices.
+* `fmgr_dvm_cmd_del_devlist`  Delete a list of devices.
 * `fmgr_dvm_cmd_discover_device`  Probe a remote device and retrieve its device information and system status.
-* `fmgr_dvm_cmd_import_dev_list`  Import a list of ADOMs and devices.
-* `fmgr_dvm_cmd_reload_dev_list`  Retrieve a list of devices.
+* `fmgr_dvm_cmd_import_devlist`  Import a list of ADOMs and devices.
+* `fmgr_dvm_cmd_reload_devlist`  Retrieve a list of devices.
 * `fmgr_dvm_cmd_update_device`  Refresh the FGFM connection and system information of a device.
-* `fmgr_dvm_cmd_update_dev_list`  Refresh FGFM connection and system information for a list of devices.
+* `fmgr_dvm_cmd_update_devlist`  Refresh FGFM connection and system information for a list of devices.
 * `fmgr_dvmdb_adom`  ADOM table, most attributes are read-only and can only be changed internally.
-* `fmgr_dvmdb_device_ha_slave`  HA Slave table, read-only.
 * `fmgr_dvmdb_device`  Device table, most attributes are read-only and can only be changed internally.
+* `fmgr_dvmdb_device_haslave`  HA Slave table, read-only.
 * `fmgr_dvmdb_device_vdom`  Device VDOM table.
 * `fmgr_dvmdb_group`  Device group table.
+* `fmgr_dvmdb_metafields_adom`  No description
+* `fmgr_dvmdb_metafields_device`  No description
+* `fmgr_dvmdb_metafields_group`  No description
 * `fmgr_dvmdb_revision`  ADOM revision table.
 * `fmgr_dvmdb_script_execute`  Run script.
 * `fmgr_dvmdb_script_log_latest`  Get the latest script log of the ADOM.
 * `fmgr_dvmdb_script_log_list`  Get the of script logs of the ADOM.
 * `fmgr_dvmdb_script_log_summary`  Get a list of script logs of the ADOM.
+* `fmgr_dvmdb_script_scriptschedule`  Script schedule table.
 * `fmgr_dvmdb_script`  Script table.
-* `fmgr_dvmdb_script_script_schedule`  Script schedule table.
 * `fmgr_dvmdb_workflow`  Read workflow session information.
 * `fmgr_dvmdb_workflow_wflog`  Read workflow session log.
 * `fmgr_dvmdb_workspace_commit`  Commit change(s) of an entire ADOM.
@@ -212,454 +159,324 @@ e.g, `pm_config_obj_wireless-controller_hotspot20_anqp-nai-realm_nai-list_eap-me
 * `fmgr_dvmdb_workspace_lockinfo`  Get the lock information of an ADOM.
 * `fmgr_dvmdb_workspace_lock`  Lock an entire ADOM.
 * `fmgr_dvmdb_workspace_unlock`  Unlock an entire ADOM.
-* `fmgr_pm_config_device_vdom_switch_controller_managed_switch_802_1x_settings`  Configuration method to edit FortiSwitch 802.
-* `fmgr_pm_config_device_vdom_switch_controller_managed_switch_custom_command`  Configuration method to edit FortiSwitch commands to be pushed to this FortiSwitch device upon rebooting the FortiGate switch controller or the FortiSwitch.
-* `fmgr_pm_config_device_vdom_switch_controller_managed_switch_igmp_snooping`  Configure FortiSwitch IGMP snooping global settings.
-* `fmgr_pm_config_device_vdom_switch_controller_managed_switch_mirror`  Configuration method to edit FortiSwitch packet mirror.
-* `fmgr_pm_config_device_vdom_switch_controller_managed_switch_storm_control`  Configuration method to edit FortiSwitch storm control for measuring traffic activity using data rates to prevent traffic disruption.
-* `fmgr_pm_config_device_vdom_switch_controller_managed_switch_stp_settings`  Configuration method to edit Spanning Tree Protocol (STP) settings used to prevent bridge loops.
-* `fmgr_pm_config_device_vdom_switch_controller_managed_switch_switch_log`  Configuration method to edit FortiSwitch logging settings (logs are transferred to and inserted into the FortiGate event log).
-* `fmgr_pm_config_device_vdom_switch_controller_managed_switch_switch_stp_settings`  Configure spanning tree protocol (STP).
-* `fmgr_pm_config_devprof_log_fortianalyzer_setting`  Global FortiAnalyzer settings.
-* `fmgr_pm_config_devprof_log_syslogd_filter`  Filters for remote system server.
-* `fmgr_pm_config_devprof_log_syslogd_setting`  Global settings for remote syslog server.
-* `fmgr_pm_config_devprof_system_central_management`  Configure central management.
-* `fmgr_pm_config_devprof_system_central_management_server_list`  Additional severs that the FortiGate can use for updates (for AV, IPS, updates) and ratings (for web filter and antispam ratings) servers.
-* `fmgr_pm_config_devprof_system_dns`  Configure DNS.
-* `fmgr_pm_config_devprof_system_email_server`  Configure the email server used by the FortiGate various things.
-* `fmgr_pm_config_devprof_system_global`  Configure global attributes.
-* `fmgr_pm_config_devprof_system_ntp_ntpserver`  Configure the FortiGate to connect to any available third-party NTP server.
-* `fmgr_pm_config_devprof_system_ntp`  Configure system NTP information.
-* `fmgr_pm_config_devprof_system_replacemsg_admin`  Replacement messages.
-* `fmgr_pm_config_devprof_system_replacemsg_alertmail`  Replacement messages.
-* `fmgr_pm_config_devprof_system_replacemsg_auth`  Replacement messages.
-* `fmgr_pm_config_devprof_system_replacemsg_device_detection_portal`  Replacement messages.
-* `fmgr_pm_config_devprof_system_replacemsg_ec`  Replacement messages.
-* `fmgr_pm_config_devprof_system_replacemsg_fortiguard_wf`  Replacement messages.
-* `fmgr_pm_config_devprof_system_replacemsg_ftp`  Replacement messages.
-* `fmgr_pm_config_devprof_system_replacemsg_http`  Replacement messages.
-* `fmgr_pm_config_devprof_system_replacemsg_mail`  Replacement messages.
-* `fmgr_pm_config_devprof_system_replacemsg_mms`  Replacement messages.
-* `fmgr_pm_config_devprof_system_replacemsg_nac_quar`  Replacement messages.
-* `fmgr_pm_config_devprof_system_replacemsg_nntp`  Replacement messages.
-* `fmgr_pm_config_devprof_system_replacemsg_spam`  Replacement messages.
-* `fmgr_pm_config_devprof_system_replacemsg_sslvpn`  Replacement messages.
-* `fmgr_pm_config_devprof_system_replacemsg_traffic_quota`  Replacement messages.
-* `fmgr_pm_config_devprof_system_replacemsg_utm`  Replacement messages.
-* `fmgr_pm_config_devprof_system_replacemsg_webproxy`  Replacement messages.
-* `fmgr_pm_config_devprof_system_snmp_community_hosts6`  Configure IPv6 SNMP managers.
-* `fmgr_pm_config_devprof_system_snmp_community_hosts`  Configure IPv4 SNMP managers (hosts).
-* `fmgr_pm_config_devprof_system_snmp_community`  SNMP community configuration.
-* `fmgr_pm_config_devprof_system_snmp_sysinfo`  SNMP system info configuration.
-* `fmgr_pm_config_devprof_system_snmp_user`  SNMP user configuration.
-* `fmgr_pm_config_obj_antivirus_mms_checksum_entries`  modify this MMS content checksum list
-* `fmgr_pm_config_obj_antivirus_mms_checksum`  Configure MMS content checksum list.
-* `fmgr_pm_config_obj_antivirus_notification_entries`  modify this antivirus notification list
-* `fmgr_pm_config_obj_antivirus_notification`  Configure AntiVirus notification lists.
-* `fmgr_pm_config_obj_antivirus_profile_content_disarm`  AV Content Disarm and Reconstruction settings.
-* `fmgr_pm_config_obj_antivirus_profile_ftp`  Configure FTP AntiVirus options.
-* `fmgr_pm_config_obj_antivirus_profile_http`  Configure HTTP AntiVirus options.
-* `fmgr_pm_config_obj_antivirus_profile_imap`  Configure IMAP AntiVirus options.
-* `fmgr_pm_config_obj_antivirus_profile_mapi`  Configure MAPI AntiVirus options.
-* `fmgr_pm_config_obj_antivirus_profile_nac_quar`  Configure AntiVirus quarantine settings.
-* `fmgr_pm_config_obj_antivirus_profile_nntp`  Configure NNTP AntiVirus options.
-* `fmgr_pm_config_obj_antivirus_profile_pop3`  Configure POP3 AntiVirus options.
-* `fmgr_pm_config_obj_antivirus_profile`  Configure AntiVirus profiles.
-* `fmgr_pm_config_obj_antivirus_profile_smb`  Configure SMB AntiVirus options.
-* `fmgr_pm_config_obj_antivirus_profile_smtp`  Configure SMTP AntiVirus options.
-* `fmgr_pm_config_obj_application_custom`  Configure custom application signatures.
-* `fmgr_pm_config_obj_application_group`  Configure firewall application groups.
-* `fmgr_pm_config_obj_application_list_entries_parameters`  Application parameters.
-* `fmgr_pm_config_obj_application_list_entries`  Application list entries.
-* `fmgr_pm_config_obj_application_list`  Configure application control lists.
-* `fmgr_pm_config_obj_dlp_filepattern_entries`  Configure file patterns used by DLP blocking.
-* `fmgr_pm_config_obj_dlp_filepattern`  Configure file patterns used by DLP blocking.
-* `fmgr_pm_config_obj_dlp_fp_sensitivity`  Create self-explanatory DLP sensitivity levels to be used when setting sensitivity under config fp-doc-source.
-* `fmgr_pm_config_obj_dlp_sensor_filter`  Set up DLP filters for this sensor.
-* `fmgr_pm_config_obj_dlp_sensor`  Configure DLP sensors.
-* `fmgr_pm_config_obj_dnsfilter_domain_filter_entries`  DNS domain filter entries.
-* `fmgr_pm_config_obj_dnsfilter_domain_filter`  Configure DNS domain filters.
-* `fmgr_pm_config_obj_dnsfilter_profile_domain_filter`  Domain filter settings.
-* `fmgr_pm_config_obj_dnsfilter_profile_ftgd_dns_filters`  FortiGuard DNS domain filters.
-* `fmgr_pm_config_obj_dnsfilter_profile_ftgd_dns`  FortiGuard DNS Filter settings.
-* `fmgr_pm_config_obj_dnsfilter_profile`  Configure DNS domain filter profiles.
-* `fmgr_pm_config_obj_firewall_address6_list`  IP address list.
-* `fmgr_pm_config_obj_firewall_address6`  Configure IPv6 firewall addresses.
-* `fmgr_pm_config_obj_firewall_address6_subnet_segment`  IPv6 subnet segments.
-* `fmgr_pm_config_obj_firewall_address6_tagging`  Config object tagging
-* `fmgr_pm_config_obj_firewall_address6_template`  Configure IPv6 address templates.
-* `fmgr_pm_config_obj_firewall_address6_template_subnet_segment`  IPv6 subnet segments.
-* `fmgr_pm_config_obj_firewall_address6_template_subnet_segment_values`  Subnet segment values.
-* `fmgr_pm_config_obj_firewall_address_list`  IP address list.
-* `fmgr_pm_config_obj_firewall_address`  Configure IPv4 addresses.
-* `fmgr_pm_config_obj_firewall_address_tagging`  Config object tagging.
-* `fmgr_pm_config_obj_firewall_addrgrp6`  Configure IPv6 address groups.
-* `fmgr_pm_config_obj_firewall_addrgrp6_tagging`  Config object tagging.
-* `fmgr_pm_config_obj_firewall_addrgrp`  Configure IPv4 address groups.
-* `fmgr_pm_config_obj_firewall_addrgrp_tagging`  Config object tagging.
-* `fmgr_pm_config_obj_firewall_carrier_endpoint_bwl_entries`  Carrier end point black/white list.
-* `fmgr_pm_config_obj_firewall_carrier_endpoint_bwl`  Carrier end point black/white list tables.
-* `fmgr_pm_config_obj_firewall_gtp_apn`  APN.
-* `fmgr_pm_config_obj_firewall_gtp_ie_remove_policy`  IE remove policy.
-* `fmgr_pm_config_obj_firewall_gtp_ie_validation`  IE validation.
-* `fmgr_pm_config_obj_firewall_gtp_imsi`  IMSI.
-* `fmgr_pm_config_obj_firewall_gtp_ip_policy`  IP policy.
-* `fmgr_pm_config_obj_firewall_gtp_message_rate_limit`  Message rate limiting.
-* `fmgr_pm_config_obj_firewall_gtp_message_rate_limit_v0`  Message rate limiting for GTP version 0.
-* `fmgr_pm_config_obj_firewall_gtp_message_rate_limit_v1`  Message rate limiting for GTP version 1.
-* `fmgr_pm_config_obj_firewall_gtp_message_rate_limit_v2`  Message rate limiting for GTP version 2.
-* `fmgr_pm_config_obj_firewall_gtp_noip_policy`  No IP policy.
-* `fmgr_pm_config_obj_firewall_gtp_per_apn_shaper`  Per APN shaper.
-* `fmgr_pm_config_obj_firewall_gtp_policy`  Policy.
-* `fmgr_pm_config_obj_firewall_gtp`  Configure GTP.
-* `fmgr_pm_config_obj_firewall_identity_based_route`  Configure identity based routing.
-* `fmgr_pm_config_obj_firewall_identity_based_route_rule`  Rule.
-* `fmgr_pm_config_obj_firewall_internet_service_custom_disable_entry_ip_range`  IP ranges in the disable entry.
-* `fmgr_pm_config_obj_firewall_internet_service_custom_disable_entry`  Disable entries in the Internet Service database.
-* `fmgr_pm_config_obj_firewall_internet_service_custom_entry_port_range`  Port ranges in the custom entry.
-* `fmgr_pm_config_obj_firewall_internet_service_custom_entry`  Entries added to the Internet Service database and custom database.
-* `fmgr_pm_config_obj_firewall_internet_service_custom_group`  Configure custom Internet Service group.
-* `fmgr_pm_config_obj_firewall_internet_service_custom`  Configure custom Internet Services.
-* `fmgr_pm_config_obj_firewall_internet_service_entry`  Entries in the Internet Service database.
-* `fmgr_pm_config_obj_firewall_internet_service_group`  Configure group of Internet Service.
-* `fmgr_pm_config_obj_firewall_internet_service`  Show Internet Service application.
-* `fmgr_pm_config_obj_firewall_ippool6`  Configure IPv6 IP pools.
-* `fmgr_pm_config_obj_firewall_ippool`  Configure IPv4 IP pools.
-* `fmgr_pm_config_obj_firewall_ldb_monitor`  Configure server load balancing health monitors.
-* `fmgr_pm_config_obj_firewall_mms_profile_dupe`  Duplicate configuration.
-* `fmgr_pm_config_obj_firewall_mms_profile_flood`  Flood configuration.
-* `fmgr_pm_config_obj_firewall_mms_profile_notification`  Notification configuration.
-* `fmgr_pm_config_obj_firewall_mms_profile_notif_msisdn`  Notification for MSISDNs.
-* `fmgr_pm_config_obj_firewall_mms_profile`  Configure MMS profiles.
-* `fmgr_pm_config_obj_firewall_multicast_address6`  Configure IPv6 multicast address.
-* `fmgr_pm_config_obj_firewall_multicast_address6_tagging`  Config object tagging.
-* `fmgr_pm_config_obj_firewall_multicast_address`  Configure multicast addresses.
-* `fmgr_pm_config_obj_firewall_multicast_address_tagging`  Config object tagging.
-* `fmgr_pm_config_obj_firewall_profile_group`  Configure profile groups.
-* `fmgr_pm_config_obj_firewall_profile_protocol_options_dns`  Configure DNS protocol options.
-* `fmgr_pm_config_obj_firewall_profile_protocol_options_ftp`  Configure FTP protocol options.
-* `fmgr_pm_config_obj_firewall_profile_protocol_options_http`  Configure HTTP protocol options.
-* `fmgr_pm_config_obj_firewall_profile_protocol_options_imap`  Configure IMAP protocol options.
-* `fmgr_pm_config_obj_firewall_profile_protocol_options_mail_signature`  Configure Mail signature.
-* `fmgr_pm_config_obj_firewall_profile_protocol_options_mapi`  Configure MAPI protocol options.
-* `fmgr_pm_config_obj_firewall_profile_protocol_options_nntp`  Configure NNTP protocol options.
-* `fmgr_pm_config_obj_firewall_profile_protocol_options_pop3`  Configure POP3 protocol options.
-* `fmgr_pm_config_obj_firewall_profile_protocol_options`  Configure protocol options.
-* `fmgr_pm_config_obj_firewall_profile_protocol_options_smtp`  Configure SMTP protocol options.
-* `fmgr_pm_config_obj_firewall_proxy_address_header_group`  HTTP header group.
-* `fmgr_pm_config_obj_firewall_proxy_address`  Web proxy address configuration.
-* `fmgr_pm_config_obj_firewall_proxy_address_tagging`  Config object tagging.
-* `fmgr_pm_config_obj_firewall_proxy_addrgrp`  Web proxy address group configuration.
-* `fmgr_pm_config_obj_firewall_proxy_addrgrp_tagging`  Config object tagging.
-* `fmgr_pm_config_obj_firewall_schedule_group`  Schedule group configuration.
-* `fmgr_pm_config_obj_firewall_schedule_onetime`  Onetime schedule configuration.
-* `fmgr_pm_config_obj_firewall_schedule_recurring`  Recurring schedule configuration.
-* `fmgr_pm_config_obj_firewall_service_category`  Configure service categories.
-* `fmgr_pm_config_obj_firewall_service_custom`  Configure custom services.
-* `fmgr_pm_config_obj_firewall_service_group`  Configure service groups.
-* `fmgr_pm_config_obj_firewall_shaper_per_ip_shaper`  Configure per-IP traffic shaper.
-* `fmgr_pm_config_obj_firewall_shaper_traffic_shaper`  Configure shared traffic shaper.
-* `fmgr_pm_config_obj_firewall_shaping_profile`  Configure shaping profiles.
-* `fmgr_pm_config_obj_firewall_shaping_profile_shaping_entries`  Define shaping entries of this shaping profile.
-* `fmgr_pm_config_obj_firewall_ssl_ssh_profile_ftps`  Configure FTPS options.
-* `fmgr_pm_config_obj_firewall_ssl_ssh_profile_https`  Configure HTTPS options.
-* `fmgr_pm_config_obj_firewall_ssl_ssh_profile_imaps`  Configure IMAPS options.
-* `fmgr_pm_config_obj_firewall_ssl_ssh_profile_pop3s`  Configure POP3S options.
-* `fmgr_pm_config_obj_firewall_ssl_ssh_profile`  Configure SSL/SSH protocol options.
-* `fmgr_pm_config_obj_firewall_ssl_ssh_profile_smtps`  Configure SMTPS options.
-* `fmgr_pm_config_obj_firewall_ssl_ssh_profile_ssh`  Configure SSH options.
-* `fmgr_pm_config_obj_firewall_ssl_ssh_profile_ssl_exempt`  Servers to exempt from SSL inspection.
-* `fmgr_pm_config_obj_firewall_ssl_ssh_profile_ssl`  Configure SSL options.
-* `fmgr_pm_config_obj_firewall_ssl_ssh_profile_ssl_server`  SSL servers.
-* `fmgr_pm_config_obj_firewall_vip46_realservers`  Real servers.
-* `fmgr_pm_config_obj_firewall_vip46`  Configure IPv4 to IPv6 virtual IPs.
-* `fmgr_pm_config_obj_firewall_vip64_realservers`  Real servers.
-* `fmgr_pm_config_obj_firewall_vip64`  Configure IPv6 to IPv4 virtual IPs.
-* `fmgr_pm_config_obj_firewall_vip6_realservers`  Select the real servers that this server load balancing VIP will distribute traffic to.
-* `fmgr_pm_config_obj_firewall_vip6`  Configure virtual IP for IPv6.
-* `fmgr_pm_config_obj_firewall_vip6_ssl_cipher_suites`  SSL/TLS cipher suites acceptable from a client, ordered by priority.
-* `fmgr_pm_config_obj_firewall_vip6_ssl_server_cipher_suites`  SSL/TLS cipher suites to offer to a server, ordered by priority.
-* `fmgr_pm_config_obj_firewall_vipgrp46`  Configure IPv4 to IPv6 virtual IP groups.
-* `fmgr_pm_config_obj_firewall_vipgrp64`  Configure IPv6 to IPv4 virtual IP groups.
-* `fmgr_pm_config_obj_firewall_vipgrp6`  Configure IPv6 virtual IP groups.
-* `fmgr_pm_config_obj_firewall_vipgrp`  Configure IPv4 virtual IP groups.
-* `fmgr_pm_config_obj_firewall_vip_realservers`  Select the real servers that this server load balancing VIP will distribute traffic to.
-* `fmgr_pm_config_obj_firewall_vip`  Configure virtual IP for IPv4.
-* `fmgr_pm_config_obj_firewall_vip_ssl_cipher_suites`  SSL/TLS cipher suites acceptable from a client, ordered by priority.
-* `fmgr_pm_config_obj_firewall_vip_ssl_server_cipher_suites`  SSL/TLS cipher suites to offer to a server, ordered by priority.
-* `fmgr_pm_config_obj_firewall_wildcard_fqdn_custom`  Config global/VDOM Wildcard FQDN address.
-* `fmgr_pm_config_obj_firewall_wildcard_fqdn_group`  Config global Wildcard FQDN address groups.
-* `fmgr_pm_config_obj_gtp_apngrp`  Configure APN groups for GTP.
-* `fmgr_pm_config_obj_gtp_apn`  Configure APN for GTP.
-* `fmgr_pm_config_obj_gtp_ie_white_list_entries`  Entries of white list (to allow) for unknown or out-of-state IEs.
-* `fmgr_pm_config_obj_gtp_ie_white_list`  IE white list.
-* `fmgr_pm_config_obj_gtp_message_filter_v0v1`  Message filter for GTPv0/v1 messages.
-* `fmgr_pm_config_obj_gtp_message_filter_v2`  Message filter for GTPv2 messages.
-* `fmgr_pm_config_obj_gtp_tunnel_limit`  GTP tunnel limiter.
-* `fmgr_pm_config_obj_icap_profile`  Configure ICAP profiles.
-* `fmgr_pm_config_obj_icap_server`  Configure ICAP servers.
-* `fmgr_pm_config_obj_ips_custom`  Configure IPS custom signature.
-* `fmgr_pm_config_obj_ips_sensor_entries_exempt_ip`  Traffic from selected source or destination IP addresses is exempt from this signature.
-* `fmgr_pm_config_obj_ips_sensor_entries`  IPS sensor filter.
-* `fmgr_pm_config_obj_ips_sensor_filter`  IPS sensor filter.
-* `fmgr_pm_config_obj_ips_sensor_override_exempt_ip`  Exempted IP.
-* `fmgr_pm_config_obj_ips_sensor_override`  IPS override rule.
-* `fmgr_pm_config_obj_ips_sensor`  Configure IPS sensor.
-* `fmgr_pm_config_obj_log_custom_field`  Configure custom log fields.
-* `fmgr_pm_config_obj_spamfilter_bwl_entries`  Anti-spam black/white list entries.
-* `fmgr_pm_config_obj_spamfilter_bwl`  Configure anti-spam black/white list.
-* `fmgr_pm_config_obj_spamfilter_bword_entries`  Spam filter banned word.
-* `fmgr_pm_config_obj_spamfilter_bword`  Configure AntiSpam banned word list.
-* `fmgr_pm_config_obj_spamfilter_dnsbl_entries`  Spam filter DNSBL and ORBL server.
-* `fmgr_pm_config_obj_spamfilter_dnsbl`  Configure AntiSpam DNSBL/ORBL.
-* `fmgr_pm_config_obj_spamfilter_iptrust_entries`  Spam filter trusted IP addresses.
-* `fmgr_pm_config_obj_spamfilter_iptrust`  Configure AntiSpam IP trust.
-* `fmgr_pm_config_obj_spamfilter_mheader_entries`  Spam filter mime header content.
-* `fmgr_pm_config_obj_spamfilter_mheader`  Configure AntiSpam MIME header.
-* `fmgr_pm_config_obj_spamfilter_profile_gmail`  Gmail.
-* `fmgr_pm_config_obj_spamfilter_profile_imap`  IMAP.
-* `fmgr_pm_config_obj_spamfilter_profile_mapi`  MAPI.
-* `fmgr_pm_config_obj_spamfilter_profile_msn_hotmail`  MSN Hotmail.
-* `fmgr_pm_config_obj_spamfilter_profile_pop3`  POP3.
-* `fmgr_pm_config_obj_spamfilter_profile`  Configure AntiSpam profiles.
-* `fmgr_pm_config_obj_spamfilter_profile_smtp`  SMTP.
-* `fmgr_pm_config_obj_spamfilter_profile_yahoo_mail`  Yahoo! Mail.
-* `fmgr_pm_config_obj_ssh_filter_profile`  SSH filter profile.
-* `fmgr_pm_config_obj_ssh_filter_profile_shell_commands`  SSH command filter.
-* `fmgr_pm_config_obj_switch_controller_lldp_profile_custom_tlvs`  Configuration method to edit custom TLV entries.
-* `fmgr_pm_config_obj_switch_controller_lldp_profile_med_network_policy`  Configuration method to edit Media Endpoint Discovery (MED) network policy type-length-value (TLV) categories.
-* `fmgr_pm_config_obj_switch_controller_lldp_profile`  Configure FortiSwitch LLDP profiles.
-* `fmgr_pm_config_obj_switch_controller_managed_switch_ports`  Managed-switch port list.
-* `fmgr_pm_config_obj_switch_controller_managed_switch`  Configure FortiSwitch devices that are managed by this FortiGate.
-* `fmgr_pm_config_obj_switch_controller_qos_dot1p_map`  Configure FortiSwitch QoS 802.
-* `fmgr_pm_config_obj_switch_controller_qos_ip_dscp_map_map`  Maps between IP-DSCP value to COS queue.
-* `fmgr_pm_config_obj_switch_controller_qos_ip_dscp_map`  Configure FortiSwitch QoS IP precedence/DSCP.
-* `fmgr_pm_config_obj_switch_controller_qos_qos_policy`  Configure FortiSwitch QoS policy.
-* `fmgr_pm_config_obj_switch_controller_qos_queue_policy_cos_queue`  COS queue configuration.
-* `fmgr_pm_config_obj_switch_controller_qos_queue_policy`  Configure FortiSwitch QoS egress queue policy.
-* `fmgr_pm_config_obj_switch_controller_security_policy_802_1x`  Configure 802.
-* `fmgr_pm_config_obj_switch_controller_security_policy_captive_portal`  Names of VLANs that use captive portal authentication.
-* `fmgr_pm_config_obj_system_custom_language`  Configure custom languages.
-* `fmgr_pm_config_obj_system_dhcp_server_exclude_range`  Exclude one or more ranges of IP addresses from being assigned to clients.
-* `fmgr_pm_config_obj_system_dhcp_server_ip_range`  DHCP IP range configuration.
-* `fmgr_pm_config_obj_system_dhcp_server_options`  DHCP options.
-* `fmgr_pm_config_obj_system_dhcp_server_reserved_address`  Options for the DHCP server to assign IP settings to specific MAC addresses.
-* `fmgr_pm_config_obj_system_dhcp_server`  Configure DHCP servers.
-* `fmgr_pm_config_obj_system_external_resource`  Configure external resource.
-* `fmgr_pm_config_obj_system_fortiguard`  Configure FortiGuard services.
-* `fmgr_pm_config_obj_system_geoip_override_ip_range`  Table of IP ranges assigned to country.
-* `fmgr_pm_config_obj_system_geoip_override`  Configure geographical location mapping for IP address(es) to override mappings from FortiGuard.
-* `fmgr_pm_config_obj_system_object_tagging`  Configure object tagging.
-* `fmgr_pm_config_obj_system_replacemsg_group_admin`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_alertmail`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_auth`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_custom_message`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_device_detection_portal`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_ec`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_fortiguard_wf`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_ftp`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_http`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_icap`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_mail`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_mm1`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_mm3`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_mm4`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_mm7`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_mms`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_nac_quar`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_nntp`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group`  Configure replacement message groups.
-* `fmgr_pm_config_obj_system_replacemsg_group_spam`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_sslvpn`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_traffic_quota`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_utm`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_webproxy`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_image`  Configure replacement message images.
-* `fmgr_pm_config_obj_system_sdn_connector_external_ip`  Configure GCP external IP.
-* `fmgr_pm_config_obj_system_sdn_connector_nic_ip`  Configure IP configuration.
-* `fmgr_pm_config_obj_system_sdn_connector_nic`  Configure Azure network interface.
-* `fmgr_pm_config_obj_system_sdn_connector_route`  Configure GCP route.
-* `fmgr_pm_config_obj_system_sdn_connector_route_table_route`  Configure Azure route.
-* `fmgr_pm_config_obj_system_sdn_connector_route_table`  Configure Azure route table.
-* `fmgr_pm_config_obj_system_sdn_connector`  Configure connection to SDN Connector.
-* `fmgr_pm_config_obj_system_sms_server`  Configure SMS server for sending SMS messages to support user authentication.
-* `fmgr_pm_config_obj_system_virtual_wire_pair`  Configure virtual wire pairs.
-* `fmgr_pm_config_obj_user_adgrp`  Configure FSSO groups.
-* `fmgr_pm_config_obj_user_device_category`  Configure device categories.
-* `fmgr_pm_config_obj_user_device_group`  Configure device groups.
-* `fmgr_pm_config_obj_user_device_group_tagging`  Config object tagging.
-* `fmgr_pm_config_obj_user_device`  Configure devices.
-* `fmgr_pm_config_obj_user_device_tagging`  Config object tagging.
-* `fmgr_pm_config_obj_user_fortitoken`  Configure FortiToken.
-* `fmgr_pm_config_obj_user_fsso_polling_adgrp`  LDAP Group Info.
-* `fmgr_pm_config_obj_user_fsso_polling`  Configure FSSO active directory servers for polling mode.
-* `fmgr_pm_config_obj_user_fsso`  Configure Fortinet Single Sign On (FSSO) agents.
-* `fmgr_pm_config_obj_user_group_guest`  Guest User.
-* `fmgr_pm_config_obj_user_group_match`  Group matches.
-* `fmgr_pm_config_obj_user_group`  Configure user groups.
-* `fmgr_pm_config_obj_user_ldap`  Configure LDAP server entries.
-* `fmgr_pm_config_obj_user_local`  Configure local users.
-* `fmgr_pm_config_obj_user_password_policy`  Configure user password policy.
-* `fmgr_pm_config_obj_user_peergrp`  Configure peer groups.
-* `fmgr_pm_config_obj_user_peer`  Configure peer users.
-* `fmgr_pm_config_obj_user_pop3`  POP3 server entry configuration.
-* `fmgr_pm_config_obj_user_radius_accounting_server`  Additional accounting servers.
-* `fmgr_pm_config_obj_user_radius`  Configure RADIUS server entries.
-* `fmgr_pm_config_obj_user_security_exempt_list`  Configure security exemption list.
-* `fmgr_pm_config_obj_user_security_exempt_list_rule`  Configure rules for exempting users from captive portal authentication.
-* `fmgr_pm_config_obj_user_tacacs`  Configure TACACS+ server entries.
-* `fmgr_pm_config_obj_voip_profile`  Configure VoIP profiles.
-* `fmgr_pm_config_obj_voip_profile_sccp`  SCCP.
-* `fmgr_pm_config_obj_voip_profile_sip`  SIP.
-* `fmgr_pm_config_obj_vpn_certificate_ca`  CA certificate.
-* `fmgr_pm_config_obj_vpn_certificate_ocsp_server`  OCSP server configuration.
-* `fmgr_pm_config_obj_vpn_certificate_remote`  Remote certificate as a PEM file.
-* `fmgr_pm_config_obj_vpnmgr_node`  VPN node for VPN Manager.
-* `fmgr_pm_config_obj_vpn_ssl_web_host_check_software_check_item_list`  Check item list.
-* `fmgr_pm_config_obj_vpn_ssl_web_host_check_software`  SSL-VPN host check software.
-* `fmgr_pm_config_obj_vpn_ssl_web_portal_bookmark_group_bookmarks_form_data`  Form data.
-* `fmgr_pm_config_obj_vpn_ssl_web_portal_bookmark_group_bookmarks`  Bookmark table.
-* `fmgr_pm_config_obj_vpn_ssl_web_portal_bookmark_group`  Portal bookmark group.
-* `fmgr_pm_config_obj_vpn_ssl_web_portal_mac_addr_check_rule`  Client MAC address check rule.
-* `fmgr_pm_config_obj_vpn_ssl_web_portal_os_check_list`  SSL VPN OS checks.
-* `fmgr_pm_config_obj_vpn_ssl_web_portal`  Portal.
-* `fmgr_pm_config_obj_vpn_ssl_web_portal_split_dns`  Split DNS for SSL VPN.
-* `fmgr_pm_config_obj_vpn_ssl_web_realm`  Realm.
-* `fmgr_pm_config_obj_waf_main_class`  Hidden table for datasource.
-* `fmgr_pm_config_obj_waf_profile_address_list`  Black address list and white address list.
-* `fmgr_pm_config_obj_waf_profile_constraint_content_length`  HTTP content length in request.
-* `fmgr_pm_config_obj_waf_profile_constraint_exception`  HTTP constraint exception.
-* `fmgr_pm_config_obj_waf_profile_constraint_header_length`  HTTP header length in request.
-* `fmgr_pm_config_obj_waf_profile_constraint_hostname`  Enable/disable hostname check.
-* `fmgr_pm_config_obj_waf_profile_constraint_line_length`  HTTP line length in request.
-* `fmgr_pm_config_obj_waf_profile_constraint_malformed`  Enable/disable malformed HTTP request check.
-* `fmgr_pm_config_obj_waf_profile_constraint_max_cookie`  Maximum number of cookies in HTTP request.
-* `fmgr_pm_config_obj_waf_profile_constraint_max_header_line`  Maximum number of HTTP header line.
-* `fmgr_pm_config_obj_waf_profile_constraint_max_range_segment`  Maximum number of range segments in HTTP range line.
-* `fmgr_pm_config_obj_waf_profile_constraint_max_url_param`  Maximum number of parameters in URL.
-* `fmgr_pm_config_obj_waf_profile_constraint_method`  Enable/disable HTTP method check.
-* `fmgr_pm_config_obj_waf_profile_constraint_param_length`  Maximum length of parameter in URL, HTTP POST request or HTTP body.
-* `fmgr_pm_config_obj_waf_profile_constraint`  WAF HTTP protocol restrictions.
-* `fmgr_pm_config_obj_waf_profile_constraint_url_param_length`  Maximum length of parameter in URL.
-* `fmgr_pm_config_obj_waf_profile_constraint_version`  Enable/disable HTTP version check.
-* `fmgr_pm_config_obj_waf_profile_method_method_policy`  HTTP method policy.
-* `fmgr_pm_config_obj_waf_profile_method`  Method restriction.
-* `fmgr_pm_config_obj_waf_profile`  Web application firewall configuration.
-* `fmgr_pm_config_obj_waf_profile_signature_custom_signature`  Custom signature.
-* `fmgr_pm_config_obj_waf_profile_signature_main_class`  Main signature class.
-* `fmgr_pm_config_obj_waf_profile_signature`  WAF signatures.
-* `fmgr_pm_config_obj_waf_profile_url_access_access_pattern`  URL access pattern.
-* `fmgr_pm_config_obj_waf_profile_url_access`  URL access list
-* `fmgr_pm_config_obj_waf_signature`  Hidden table for datasource.
-* `fmgr_pm_config_obj_waf_sub_class`  Hidden table for datasource.
-* `fmgr_pm_config_obj_wanopt_auth_group`  Configure WAN optimization authentication groups.
-* `fmgr_pm_config_obj_wanopt_peer`  Configure WAN optimization peers.
-* `fmgr_pm_config_obj_wanopt_profile_cifs`  Enable/disable CIFS (Windows sharing) WAN Optimization and configure CIFS WAN Optimization features.
-* `fmgr_pm_config_obj_wanopt_profile_ftp`  Enable/disable FTP WAN Optimization and configure FTP WAN Optimization features.
-* `fmgr_pm_config_obj_wanopt_profile_http`  Enable/disable HTTP WAN Optimization and configure HTTP WAN Optimization features.
-* `fmgr_pm_config_obj_wanopt_profile_mapi`  Enable/disable MAPI email WAN Optimization and configure MAPI WAN Optimization features.
-* `fmgr_pm_config_obj_wanopt_profile`  Configure WAN optimization profiles.
-* `fmgr_pm_config_obj_wanopt_profile_tcp`  Enable/disable TCP WAN Optimization and configure TCP WAN Optimization features.
-* `fmgr_pm_config_obj_webfilter_content_entries`  Configure banned word entries.
-* `fmgr_pm_config_obj_webfilter_content_header_entries`  Configure content types used by web filter.
-* `fmgr_pm_config_obj_webfilter_content_header`  Configure content types used by Web filter.
-* `fmgr_pm_config_obj_webfilter_content`  Configure Web filter banned word table.
-* `fmgr_pm_config_obj_webfilter_ftgd_local_cat`  Configure FortiGuard Web Filter local categories.
-* `fmgr_pm_config_obj_webfilter_ftgd_local_rating`  Configure local FortiGuard Web Filter local ratings.
-* `fmgr_pm_config_obj_webfilter_profile_ftgd_wf_filters`  FortiGuard filters.
-* `fmgr_pm_config_obj_webfilter_profile_ftgd_wf_quota`  FortiGuard traffic quota settings.
-* `fmgr_pm_config_obj_webfilter_profile_ftgd_wf`  FortiGuard Web Filter settings.
-* `fmgr_pm_config_obj_webfilter_profile_override`  Web Filter override settings.
-* `fmgr_pm_config_obj_webfilter_profile`  Configure Web filter profiles.
-* `fmgr_pm_config_obj_webfilter_profile_url_extraction`  Configure URL Extraction
-* `fmgr_pm_config_obj_webfilter_profile_web`  Web content filtering settings.
-* `fmgr_pm_config_obj_webfilter_profile_youtube_channel_filter`  YouTube channel filter.
-* `fmgr_pm_config_obj_webfilter_urlfilter_entries`  URL filter entries.
-* `fmgr_pm_config_obj_webfilter_urlfilter`  Configure URL filter lists.
-* `fmgr_pm_config_obj_web_proxy_forward_server_group`  Configure a forward server group consisting or multiple forward servers.
-* `fmgr_pm_config_obj_web_proxy_forward_server_group_server_list`  Add web forward servers to a list to form a server group.
-* `fmgr_pm_config_obj_web_proxy_forward_server`  Configure forward-server addresses.
-* `fmgr_pm_config_obj_web_proxy_profile_headers`  Configure HTTP forwarded requests headers.
-* `fmgr_pm_config_obj_web_proxy_profile`  Configure web proxy profiles.
-* `fmgr_pm_config_obj_web_proxy_wisp`  Configure Wireless Internet service provider (WISP) servers.
-* `fmgr_pm_config_obj_wireless_controller_ble_profile`  Configure Bluetooth Low Energy profile.
-* `fmgr_pm_config_obj_wireless_controller_bonjour_profile_policy_list`  Bonjour policy list.
-* `fmgr_pm_config_obj_wireless_controller_bonjour_profile`  Configure Bonjour profiles.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_3gpp_cellular_mcc_mnc_list`  Mobile Country Code and Mobile Network Code configuration.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_3gpp_cellular`  Configure 3GPP public land mobile network (PLMN).
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_ip_address_type`  Configure IP address type availability.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_nai_realm_nai_list_eap_method_auth_param`  EAP auth param.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_nai_realm_nai_list_eap_method`  EAP Methods.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_nai_realm_nai_list`  NAI list.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_nai_realm`  Configure network access identifier (NAI) realm.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_network_auth_type`  Configure network authentication type.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_roaming_consortium_oi_list`  Organization identifier list.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_roaming_consortium`  Configure roaming consortium.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_venue_name`  Configure venue name duple.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_venue_name_value_list`  Name list.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_h2qp_conn_capability`  Configure connection capability.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_h2qp_operator_name`  Configure operator friendly name.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_h2qp_operator_name_value_list`  Name list.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_h2qp_osu_provider_friendly_name`  OSU provider friendly name.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_h2qp_osu_provider`  Configure online sign up (OSU) provider list.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_h2qp_osu_provider_service_description`  OSU service name.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_h2qp_wan_metric`  Configure WAN metrics.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_hs_profile`  Configure hotspot profile.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_qos_map_dscp_except`  Differentiated Services Code Point (DSCP) exceptions.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_qos_map_dscp_range`  Differentiated Services Code Point (DSCP) ranges.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_qos_map`  Configure QoS map set.
-* `fmgr_pm_config_obj_wireless_controller_qos_profile`  Configure WiFi quality of service (QoS) profiles.
-* `fmgr_pm_config_obj_wireless_controller_vap_group`  Configure virtual Access Point (VAP) groups.
-* `fmgr_pm_config_obj_wireless_controller_vap_mac_filter_list`  Create a list of MAC addresses for MAC address filtering.
-* `fmgr_pm_config_obj_wireless_controller_vap_mpsk_key`  Pre-shared keys that can be used to connect to this virtual access point.
-* `fmgr_pm_config_obj_wireless_controller_vap_portal_message_overrides`  Individual message overrides.
-* `fmgr_pm_config_obj_wireless_controller_vap`  Configure Virtual Access Points (VAPs).
-* `fmgr_pm_config_obj_wireless_controller_vap_vlan_pool`  VLAN pool.
-* `fmgr_pm_config_obj_wireless_controller_wids_profile`  Configure wireless intrusion detection system (WIDS) profiles.
-* `fmgr_pm_config_obj_wireless_controller_wtp_profile_deny_mac_list`  List of MAC addresses that are denied access to this WTP, FortiAP, or AP.
-* `fmgr_pm_config_obj_wireless_controller_wtp_profile_lan`  WTP LAN port mapping.
-* `fmgr_pm_config_obj_wireless_controller_wtp_profile_lbs`  Set various location based service (LBS) options.
-* `fmgr_pm_config_obj_wireless_controller_wtp_profile_platform`  WTP, FortiAP, or AP platform.
-* `fmgr_pm_config_obj_wireless_controller_wtp_profile_radio_1`  Configuration options for radio 1.
-* `fmgr_pm_config_obj_wireless_controller_wtp_profile_radio_2`  Configuration options for radio 2.
-* `fmgr_pm_config_obj_wireless_controller_wtp_profile`  Configure WTP profiles or FortiAP profiles that define radio settings for manageable FortiAP platforms.
-* `fmgr_pm_config_obj_wireless_controller_wtp_profile_split_tunneling_acl`  Split tunneling ACL filter list.
-* `fmgr_pm_config_pkg_firewall_central_snat_map`  Configure central SNAT policies.
-* `fmgr_pm_config_pkg_firewall_dos_policy6_anomaly`  Anomaly name.
-* `fmgr_pm_config_pkg_firewall_dos_policy6`  Configure IPv6 DoS policies.
-* `fmgr_pm_config_pkg_firewall_dos_policy_anomaly`  Anomaly name.
-* `fmgr_pm_config_pkg_firewall_dos_policy`  Configure IPv4 DoS policies.
-* `fmgr_pm_config_pkg_firewall_interface_policy6`  Configure IPv6 interface policies.
-* `fmgr_pm_config_pkg_firewall_interface_policy`  Configure IPv4 interface policies.
-* `fmgr_pm_config_pkg_firewall_local_in_policy6`  Configure user defined IPv6 local-in policies.
-* `fmgr_pm_config_pkg_firewall_local_in_policy`  Configure user defined IPv4 local-in policies.
-* `fmgr_pm_config_pkg_firewall_multicast_policy6`  Configure IPv6 multicast NAT policies.
-* `fmgr_pm_config_pkg_firewall_multicast_policy`  Configure multicast NAT policies.
-* `fmgr_pm_config_pkg_firewall_policy46`  Configure IPv4 to IPv6 policies.
-* `fmgr_pm_config_pkg_firewall_policy64`  Configure IPv6 to IPv4 policies.
-* `fmgr_pm_config_pkg_firewall_policy6`  Configure IPv6 policies.
-* `fmgr_pm_config_pkg_firewall_policy`  Configure IPv4 policies.
-* `fmgr_pm_config_pkg_firewall_proxy_policy`  Configure proxy policies.
-* `fmgr_pm_config_pkg_firewall_shaping_policy`  Configure shaping policies.
-* `fmgr_pm_config_wanprof_system_virtual_wan_link_health_check`  SD-WAN status checking or health checking.
-* `fmgr_pm_config_wanprof_system_virtual_wan_link_health_check_sla`  Service level agreement (SLA).
-* `fmgr_pm_config_wanprof_system_virtual_wan_link_members`  Physical FortiGate interfaces added to the virtual-wan-link.
-* `fmgr_pm_config_wanprof_system_virtual_wan_link`  Configure redundant internet connections using SD-WAN (formerly virtual WAN link).
-* `fmgr_pm_config_wanprof_system_virtual_wan_link_service`  Create SD-WAN rules or priority rules (also called services) to control how sessions are distributed to physical interfaces in the SD-WAN.
-* `fmgr_pm_config_wanprof_system_virtual_wan_link_service_sla`  Service level agreement (SLA).
+* `fmgr_dynamic_address_dynamicaddrmapping`  No description
+* `fmgr_dynamic_address`  No description
+* `fmgr_dynamic_certificate_local_dynamicmapping`  No description
+* `fmgr_dynamic_certificate_local`  No description
+* `fmgr_dynamic_interface_dynamicmapping`  No description
+* `fmgr_dynamic_interface`  No description
+* `fmgr_dynamic_ippool`  No description
+* `fmgr_dynamic_multicast_interface_dynamicmapping`  No description
+* `fmgr_dynamic_multicast_interface`  No description
+* `fmgr_dynamic_vip`  No description
+* `fmgr_dynamic_virtualwanlink_members_dynamicmapping`  No description
+* `fmgr_dynamic_virtualwanlink_members`  No description
+* `fmgr_dynamic_virtualwanlink_server_dynamicmapping`  No description
+* `fmgr_dynamic_virtualwanlink_server`  No description
+* `fmgr_dynamic_vpntunnel_dynamicmapping`  No description
+* `fmgr_dynamic_vpntunnel`  No description
+* `fmgr_firewall_address6`  Configure IPv6 firewall addresses.
+* `fmgr_firewall_address6_dynamicmapping`  No description
+* `fmgr_firewall_address6_list`  IP address list.
+* `fmgr_firewall_address6_subnetsegment`  IPv6 subnet segments.
+* `fmgr_firewall_address6_tagging`  Config object tagging
+* `fmgr_firewall_address6template`  Configure IPv6 address templates.
+* `fmgr_firewall_address6template_subnetsegment`  IPv6 subnet segments.
+* `fmgr_firewall_address6template_subnetsegment_values`  Subnet segment values.
+* `fmgr_firewall_address`  Configure IPv4 addresses.
+* `fmgr_firewall_address_dynamicmapping`  No description
+* `fmgr_firewall_address_list`  IP address list.
+* `fmgr_firewall_address_tagging`  Config object tagging.
+* `fmgr_firewall_addrgrp6`  Configure IPv6 address groups.
+* `fmgr_firewall_addrgrp6_dynamicmapping`  No description
+* `fmgr_firewall_addrgrp6_tagging`  Config object tagging.
+* `fmgr_firewall_addrgrp`  Configure IPv4 address groups.
+* `fmgr_firewall_addrgrp_dynamicmapping`  No description
+* `fmgr_firewall_addrgrp_tagging`  Config object tagging.
+* `fmgr_firewall_carrierendpointbwl`  Carrier end point black/white list tables.
+* `fmgr_firewall_carrierendpointbwl_entries`  Carrier end point black/white list.
+* `fmgr_firewall_gtp_apn`  APN.
+* `fmgr_firewall_gtp`  Configure GTP.
+* `fmgr_firewall_gtp_ieremovepolicy`  IE remove policy.
+* `fmgr_firewall_gtp_ievalidation`  IE validation.
+* `fmgr_firewall_gtp_imsi`  IMSI.
+* `fmgr_firewall_gtp_ippolicy`  IP policy.
+* `fmgr_firewall_gtp_messageratelimit`  Message rate limiting.
+* `fmgr_firewall_gtp_messageratelimitv0`  Message rate limiting for GTP version 0.
+* `fmgr_firewall_gtp_messageratelimitv1`  Message rate limiting for GTP version 1.
+* `fmgr_firewall_gtp_messageratelimitv2`  Message rate limiting for GTP version 2.
+* `fmgr_firewall_gtp_noippolicy`  No IP policy.
+* `fmgr_firewall_gtp_perapnshaper`  Per APN shaper.
+* `fmgr_firewall_gtp_policy`  Policy.
+* `fmgr_firewall_identitybasedroute`  Configure identity based routing.
+* `fmgr_firewall_identitybasedroute_rule`  Rule.
+* `fmgr_firewall_internetservicecustom`  Configure custom Internet Services.
+* `fmgr_firewall_internetservicecustom_disableentry`  Disable entries in the Internet Service database.
+* `fmgr_firewall_internetservicecustom_disableentry_iprange`  IP ranges in the disable entry.
+* `fmgr_firewall_internetservicecustom_entry`  Entries added to the Internet Service database and custom database.
+* `fmgr_firewall_internetservicecustom_entry_portrange`  Port ranges in the custom entry.
+* `fmgr_firewall_internetservicecustomgroup`  Configure custom Internet Service group.
+* `fmgr_firewall_internetservice_entry`  Entries in the Internet Service database.
+* `fmgr_firewall_internetservicegroup`  Configure group of Internet Service.
+* `fmgr_firewall_internetservice`  Show Internet Service application.
+* `fmgr_firewall_ippool6`  Configure IPv6 IP pools.
+* `fmgr_firewall_ippool6_dynamicmapping`  No description
+* `fmgr_firewall_ippool`  Configure IPv4 IP pools.
+* `fmgr_firewall_ippool_dynamicmapping`  No description
+* `fmgr_firewall_ldbmonitor`  Configure server load balancing health monitors.
+* `fmgr_firewall_mmsprofile`  Configure MMS profiles.
+* `fmgr_firewall_mmsprofile_dupe`  Duplicate configuration.
+* `fmgr_firewall_mmsprofile_flood`  Flood configuration.
+* `fmgr_firewall_mmsprofile_notification`  Notification configuration.
+* `fmgr_firewall_mmsprofile_notifmsisdn`  Notification for MSISDNs.
+* `fmgr_firewall_multicastaddress6`  Configure IPv6 multicast address.
+* `fmgr_firewall_multicastaddress6_tagging`  Config object tagging.
+* `fmgr_firewall_multicastaddress`  Configure multicast addresses.
+* `fmgr_firewall_multicastaddress_tagging`  Config object tagging.
+* `fmgr_firewall_profilegroup`  Configure profile groups.
+* `fmgr_firewall_profileprotocoloptions`  Configure protocol options.
+* `fmgr_firewall_profileprotocoloptions_dns`  Configure DNS protocol options.
+* `fmgr_firewall_profileprotocoloptions_ftp`  Configure FTP protocol options.
+* `fmgr_firewall_profileprotocoloptions_http`  Configure HTTP protocol options.
+* `fmgr_firewall_profileprotocoloptions_imap`  Configure IMAP protocol options.
+* `fmgr_firewall_profileprotocoloptions_mailsignature`  Configure Mail signature.
+* `fmgr_firewall_profileprotocoloptions_mapi`  Configure MAPI protocol options.
+* `fmgr_firewall_profileprotocoloptions_nntp`  Configure NNTP protocol options.
+* `fmgr_firewall_profileprotocoloptions_pop3`  Configure POP3 protocol options.
+* `fmgr_firewall_profileprotocoloptions_smtp`  Configure SMTP protocol options.
+* `fmgr_firewall_proxyaddress_headergroup`  HTTP header group.
+* `fmgr_firewall_proxyaddress_tagging`  Config object tagging.
+* `fmgr_firewall_proxyaddress`  Web proxy address configuration.
+* `fmgr_firewall_proxyaddrgrp_tagging`  Config object tagging.
+* `fmgr_firewall_proxyaddrgrp`  Web proxy address group configuration.
+* `fmgr_firewall_schedule_group`  Schedule group configuration.
+* `fmgr_firewall_schedule_onetime`  Onetime schedule configuration.
+* `fmgr_firewall_schedule_recurring`  Recurring schedule configuration.
+* `fmgr_firewall_service_category`  Configure service categories.
+* `fmgr_firewall_service_custom`  Configure custom services.
+* `fmgr_firewall_service_group`  Configure service groups.
+* `fmgr_firewall_shaper_peripshaper`  Configure per-IP traffic shaper.
+* `fmgr_firewall_shaper_trafficshaper`  Configure shared traffic shaper.
+* `fmgr_firewall_shapingprofile`  Configure shaping profiles.
+* `fmgr_firewall_shapingprofile_shapingentries`  Define shaping entries of this shaping profile.
+* `fmgr_firewall_sslsshprofile`  Configure SSL/SSH protocol options.
+* `fmgr_firewall_sslsshprofile_ftps`  Configure FTPS options.
+* `fmgr_firewall_sslsshprofile_https`  Configure HTTPS options.
+* `fmgr_firewall_sslsshprofile_imaps`  Configure IMAPS options.
+* `fmgr_firewall_sslsshprofile_pop3s`  Configure POP3S options.
+* `fmgr_firewall_sslsshprofile_smtps`  Configure SMTPS options.
+* `fmgr_firewall_sslsshprofile_ssh`  Configure SSH options.
+* `fmgr_firewall_sslsshprofile_ssl`  Configure SSL options.
+* `fmgr_firewall_sslsshprofile_sslexempt`  Servers to exempt from SSL inspection.
+* `fmgr_firewall_sslsshprofile_sslserver`  SSL servers.
+* `fmgr_firewall_vip46`  Configure IPv4 to IPv6 virtual IPs.
+* `fmgr_firewall_vip46_dynamicmapping`  No description
+* `fmgr_firewall_vip46_realservers`  Real servers.
+* `fmgr_firewall_vip64`  Configure IPv6 to IPv4 virtual IPs.
+* `fmgr_firewall_vip64_dynamicmapping`  No description
+* `fmgr_firewall_vip64_realservers`  Real servers.
+* `fmgr_firewall_vip6`  Configure virtual IP for IPv6.
+* `fmgr_firewall_vip6_dynamicmapping`  No description
+* `fmgr_firewall_vip6_realservers`  Select the real servers that this server load balancing VIP will distribute traffic to.
+* `fmgr_firewall_vip6_sslciphersuites`  SSL/TLS cipher suites acceptable from a client, ordered by priority.
+* `fmgr_firewall_vip6_sslserverciphersuites`  SSL/TLS cipher suites to offer to a server, ordered by priority.
+* `fmgr_firewall_vip`  Configure virtual IP for IPv4.
+* `fmgr_firewall_vip_dynamicmapping`  No description
+* `fmgr_firewall_vip_dynamicmapping_realservers`  No description
+* `fmgr_firewall_vip_dynamicmapping_sslciphersuites`  No description
+* `fmgr_firewall_vipgrp46`  Configure IPv4 to IPv6 virtual IP groups.
+* `fmgr_firewall_vipgrp64`  Configure IPv6 to IPv4 virtual IP groups.
+* `fmgr_firewall_vipgrp6`  Configure IPv6 virtual IP groups.
+* `fmgr_firewall_vipgrp`  Configure IPv4 virtual IP groups.
+* `fmgr_firewall_vipgrp_dynamicmapping`  No description
+* `fmgr_firewall_vip_realservers`  Select the real servers that this server load balancing VIP will distribute traffic to.
+* `fmgr_firewall_vip_sslciphersuites`  SSL/TLS cipher suites acceptable from a client, ordered by priority.
+* `fmgr_firewall_vip_sslserverciphersuites`  SSL/TLS cipher suites to offer to a server, ordered by priority.
+* `fmgr_firewall_wildcardfqdn_custom`  Config global/VDOM Wildcard FQDN address.
+* `fmgr_firewall_wildcardfqdn_group`  Config global Wildcard FQDN address groups.
+* `fmgr_fmupdate_analyzer_virusreport`  Send virus detection notification to FortiGuard.
+* `fmgr_fmupdate_avips_advancedlog`  Enable/disable logging of FortiGuard antivirus and IPS update packages received by FortiManager's built-in FortiGuard.
+* `fmgr_fmupdate_avips_webproxy`  Configure the web proxy for use with FortiGuard antivirus and IPS updates.
+* `fmgr_fmupdate_customurllist`  Configure the URL database for rating and filtering.
+* `fmgr_fmupdate_diskquota`  Configure disk space available for use by the Upgrade Manager.
+* `fmgr_fmupdate_fctservices`  Configure FortiGuard to provide services to FortiClient installations.
+* `fmgr_fmupdate_fdssetting`  Configure FortiGuard settings.
+* `fmgr_fmupdate_fdssetting_pushoverride`  Enable/disable push updates, and override the default IP address and port used by FortiGuard to send antivirus and IPS push messages for clients.
+* `fmgr_fmupdate_fdssetting_pushoverridetoclient_announceip`  Announce IP addresses for the device.
+* `fmgr_fmupdate_fdssetting_pushoverridetoclient`  Enable/disable push updates, and override the default IP address and port used by FortiGuard to send antivirus and IPS push messages for clients.
+* `fmgr_fmupdate_fdssetting_serveroverride`  Server override configure.
+* `fmgr_fmupdate_fdssetting_serveroverride_servlist`  Override server.
+* `fmgr_fmupdate_fdssetting_updateschedule`  Configure the schedule when built-in FortiGuard retrieves antivirus and IPS updates.
+* `fmgr_fmupdate_multilayer`  Configure multilayer mode.
+* `fmgr_fmupdate_publicnetwork`  Enable/disable access to the public FortiGuard.
+* `fmgr_fmupdate_serveraccesspriorities`  Configure priorities for FortiGate units accessing antivirus updates and web filtering services.
+* `fmgr_fmupdate_serveraccesspriorities_privateserver`  Configure multiple FortiManager units and private servers.
+* `fmgr_fmupdate_serveroverridestatus`  Configure strict/loose server override.
+* `fmgr_fmupdate_service`  Enable/disable services provided by the built-in FortiGuard.
+* `fmgr_fmupdate_webspam_fgdsetting`  Configure the FortiGuard run parameters.
+* `fmgr_fmupdate_webspam_fgdsetting_serveroverride`  Server override configure.
+* `fmgr_fmupdate_webspam_fgdsetting_serveroverride_servlist`  Override server.
+* `fmgr_fmupdate_webspam_webproxy`  Configure the web proxy for use with FortiGuard antivirus and IPS updates.
+* `fmgr_footer_consolidated_policy`  No description
+* `fmgr_footer_policy6_identitybasedpolicy6`  No description
+* `fmgr_footer_policy6`  No description
+* `fmgr_footer_policy_identitybasedpolicy`  No description
+* `fmgr_footer_policy`  No description
+* `fmgr_footer_shapingpolicy`  No description
+* `fmgr_fsp_vlan_dhcpserver_excluderange`  No description
+* `fmgr_fsp_vlan_dhcpserver_iprange`  No description
+* `fmgr_fsp_vlan_dhcpserver`  No description
+* `fmgr_fsp_vlan_dhcpserver_options`  No description
+* `fmgr_fsp_vlan_dhcpserver_reservedaddress`  No description
+* `fmgr_fsp_vlan_dynamicmapping_dhcpserver_excluderange`  No description
+* `fmgr_fsp_vlan_dynamicmapping_dhcpserver_iprange`  No description
+* `fmgr_fsp_vlan_dynamicmapping_dhcpserver`  No description
+* `fmgr_fsp_vlan_dynamicmapping_dhcpserver_options`  No description
+* `fmgr_fsp_vlan_dynamicmapping_dhcpserver_reservedaddress`  No description
+* `fmgr_fsp_vlan_dynamicmapping_interface`  No description
+* `fmgr_fsp_vlan_dynamicmapping`  No description
+* `fmgr_fsp_vlan_interface_ipv6`  No description
+* `fmgr_fsp_vlan_interface`  No description
+* `fmgr_fsp_vlan_interface_secondaryip`  No description
+* `fmgr_fsp_vlan_interface_vrrp`  No description
+* `fmgr_fsp_vlan`  No description
+* `fmgr_gtp_apn`  Configure APN for GTP.
+* `fmgr_gtp_apngrp`  Configure APN groups for GTP.
+* `fmgr_gtp_iewhitelist_entries`  Entries of white list (to allow) for unknown or out-of-state IEs.
+* `fmgr_gtp_iewhitelist`  IE white list.
+* `fmgr_gtp_messagefilterv0v1`  Message filter for GTPv0/v1 messages.
+* `fmgr_gtp_messagefilterv2`  Message filter for GTPv2 messages.
+* `fmgr_gtp_tunnellimit`  GTP tunnel limiter.
+* `fmgr_header_consolidated_policy`  No description
+* `fmgr_header_policy6_identitybasedpolicy6`  No description
+* `fmgr_header_policy6`  No description
+* `fmgr_header_policy_identitybasedpolicy`  No description
+* `fmgr_header_policy`  No description
+* `fmgr_header_shapingpolicy`  No description
+* `fmgr_hotspot20_anqp3gppcellular`  Configure 3GPP public land mobile network (PLMN).
+* `fmgr_hotspot20_anqp3gppcellular_mccmnclist`  Mobile Country Code and Mobile Network Code configuration.
+* `fmgr_hotspot20_anqpipaddresstype`  Configure IP address type availability.
+* `fmgr_hotspot20_anqpnairealm`  Configure network access identifier (NAI) realm.
+* `fmgr_hotspot20_anqpnairealm_nailist_eapmethod_authparam`  EAP auth param.
+* `fmgr_hotspot20_anqpnairealm_nailist_eapmethod`  EAP Methods.
+* `fmgr_hotspot20_anqpnairealm_nailist`  NAI list.
+* `fmgr_hotspot20_anqpnetworkauthtype`  Configure network authentication type.
+* `fmgr_hotspot20_anqproamingconsortium`  Configure roaming consortium.
+* `fmgr_hotspot20_anqproamingconsortium_oilist`  Organization identifier list.
+* `fmgr_hotspot20_anqpvenuename`  Configure venue name duple.
+* `fmgr_hotspot20_anqpvenuename_valuelist`  Name list.
+* `fmgr_hotspot20_h2qpconncapability`  Configure connection capability.
+* `fmgr_hotspot20_h2qpoperatorname`  Configure operator friendly name.
+* `fmgr_hotspot20_h2qpoperatorname_valuelist`  Name list.
+* `fmgr_hotspot20_h2qposuprovider`  Configure online sign up (OSU) provider list.
+* `fmgr_hotspot20_h2qposuprovider_friendlyname`  OSU provider friendly name.
+* `fmgr_hotspot20_h2qposuprovider_servicedescription`  OSU service name.
+* `fmgr_hotspot20_h2qpwanmetric`  Configure WAN metrics.
+* `fmgr_hotspot20_hsprofile`  Configure hotspot profile.
+* `fmgr_hotspot20_qosmap`  Configure QoS map set.
+* `fmgr_hotspot20_qosmap_dscpexcept`  Differentiated Services Code Point (DSCP) exceptions.
+* `fmgr_hotspot20_qosmap_dscprange`  Differentiated Services Code Point (DSCP) ranges.
+* `fmgr_icap_profile`  Configure ICAP profiles.
+* `fmgr_icap_server`  Configure ICAP servers.
+* `fmgr_ips_custom`  Configure IPS custom signature.
+* `fmgr_ips_sensor`  Configure IPS sensor.
+* `fmgr_ips_sensor_entries_exemptip`  Traffic from selected source or destination IP addresses is exempt from this signature.
+* `fmgr_ips_sensor_entries`  IPS sensor filter.
+* `fmgr_ips_sensor_filter`  IPS sensor filter.
+* `fmgr_ips_sensor_override_exemptip`  Exempted IP.
+* `fmgr_ips_sensor_override`  IPS override rule.
+* `fmgr_log_customfield`  Configure custom log fields.
+* `fmgr_metafields_system_admin_user`  No description
+* `fmgr_pkg_central_dnat`  No description
+* `fmgr_pkg_firewall_centralsnatmap`  Configure central SNAT policies.
+* `fmgr_pkg_firewall_dospolicy6_anomaly`  Anomaly name.
+* `fmgr_pkg_firewall_dospolicy6`  Configure IPv6 DoS policies.
+* `fmgr_pkg_firewall_dospolicy_anomaly`  Anomaly name.
+* `fmgr_pkg_firewall_dospolicy`  Configure IPv4 DoS policies.
+* `fmgr_pkg_firewall_interfacepolicy6`  Configure IPv6 interface policies.
+* `fmgr_pkg_firewall_interfacepolicy`  Configure IPv4 interface policies.
+* `fmgr_pkg_firewall_localinpolicy6`  Configure user defined IPv6 local-in policies.
+* `fmgr_pkg_firewall_localinpolicy`  Configure user defined IPv4 local-in policies.
+* `fmgr_pkg_firewall_multicastpolicy6`  Configure IPv6 multicast NAT policies.
+* `fmgr_pkg_firewall_multicastpolicy`  Configure multicast NAT policies.
+* `fmgr_pkg_firewall_policy46`  Configure IPv4 to IPv6 policies.
+* `fmgr_pkg_firewall_policy64`  Configure IPv6 to IPv4 policies.
+* `fmgr_pkg_firewall_policy6`  Configure IPv6 policies.
+* `fmgr_pkg_firewall_policy`  Configure IPv4 policies.
+* `fmgr_pkg_firewall_policy_vpndstnode`  No description
+* `fmgr_pkg_firewall_policy_vpnsrcnode`  No description
+* `fmgr_pkg_firewall_proxypolicy`  Configure proxy policies.
+* `fmgr_pkg_firewall_shapingpolicy`  Configure shaping policies.
+* `fmgr_pkg_footer_consolidated_policy`  No description
+* `fmgr_pkg_footer_policy6_identitybasedpolicy6`  No description
+* `fmgr_pkg_footer_policy6`  No description
+* `fmgr_pkg_footer_policy_identitybasedpolicy`  No description
+* `fmgr_pkg_footer_policy`  No description
+* `fmgr_pkg_footer_shapingpolicy`  No description
+* `fmgr_pkg_header_consolidated_policy`  No description
+* `fmgr_pkg_header_policy6_identitybasedpolicy6`  No description
+* `fmgr_pkg_header_policy6`  No description
+* `fmgr_pkg_header_policy_identitybasedpolicy`  No description
+* `fmgr_pkg_header_policy`  No description
+* `fmgr_pkg_header_shapingpolicy`  No description
+* `fmgr_pm_pkg_global`  No description
 * `fmgr_pm_pkg_schedule`  Installation schedule of a policy package to devices.
+* `fmgr_qosprofile`  Configure WiFi quality of service (QoS) profiles.
 * `fmgr_securityconsole_abort`  Abort and cancel a security console task.
 * `fmgr_securityconsole_assign_package`  Assign or unassign global policy package to ADOM packages.
 * `fmgr_securityconsole_import_dev_objs`  Import objects from device to ADOM, or from ADOM to Global.
+* `fmgr_securityconsole_install_device`  No description
 * `fmgr_securityconsole_install_package`  Copy and install a policy package to devices.
 * `fmgr_securityconsole_install_preview`  Generate install preview for a device.
 * `fmgr_securityconsole_package_cancel_install`  Cancel policy install and clear preview cache.
 * `fmgr_securityconsole_package_clone`  Clone a policy package within the same ADOM.
 * `fmgr_securityconsole_package_commit`  Install policies to device from preview cache.
 * `fmgr_securityconsole_package_move`  Move and/or rename a policy package within the same ADOM.
+* `fmgr_securityconsole_pblock_clone`  No description
 * `fmgr_securityconsole_preview_result`  Retrieve the result of previous install/preview command.
 * `fmgr_securityconsole_reinstall_package`  Re-install a policy package that had been previously installed.
 * `fmgr_securityconsole_sign_certificate_template`  Generate and sign certificate on the target device.
+* `fmgr_spamfilter_bwl`  Configure anti-spam black/white list.
+* `fmgr_spamfilter_bwl_entries`  Anti-spam black/white list entries.
+* `fmgr_spamfilter_bword`  Configure AntiSpam banned word list.
+* `fmgr_spamfilter_bword_entries`  Spam filter banned word.
+* `fmgr_spamfilter_dnsbl`  Configure AntiSpam DNSBL/ORBL.
+* `fmgr_spamfilter_dnsbl_entries`  Spam filter DNSBL and ORBL server.
+* `fmgr_spamfilter_iptrust`  Configure AntiSpam IP trust.
+* `fmgr_spamfilter_iptrust_entries`  Spam filter trusted IP addresses.
+* `fmgr_spamfilter_mheader`  Configure AntiSpam MIME header.
+* `fmgr_spamfilter_mheader_entries`  Spam filter mime header content.
+* `fmgr_spamfilter_profile`  Configure AntiSpam profiles.
+* `fmgr_spamfilter_profile_gmail`  Gmail.
+* `fmgr_spamfilter_profile_imap`  IMAP.
+* `fmgr_spamfilter_profile_mapi`  MAPI.
+* `fmgr_spamfilter_profile_msnhotmail`  MSN Hotmail.
+* `fmgr_spamfilter_profile_pop3`  POP3.
+* `fmgr_spamfilter_profile_smtp`  SMTP.
+* `fmgr_spamfilter_profile_yahoomail`  Yahoo! Mail.
+* `fmgr_sshfilter_profile_shellcommands`  SSH command filter.
+* `fmgr_sshfilter_profile`  SSH filter profile.
+* `fmgr_switchcontroller_lldpprofile`  Configure FortiSwitch LLDP profiles.
+* `fmgr_switchcontroller_lldpprofile_customtlvs`  Configuration method to edit custom TLV entries.
+* `fmgr_switchcontroller_lldpprofile_mednetworkpolicy`  Configuration method to edit Media Endpoint Discovery (MED) network policy type-length-value (TLV) categories.
+* `fmgr_switchcontroller_managedswitch_8021xsettings`  Configuration method to edit FortiSwitch 802.
+* `fmgr_switchcontroller_managedswitch`  Configure FortiSwitch devices that are managed by this FortiGate.
+* `fmgr_switchcontroller_managedswitch_customcommand`  Configuration method to edit FortiSwitch commands to be pushed to this FortiSwitch device upon rebooting the FortiGate switch controller or the FortiSwitch.
+* `fmgr_switchcontroller_managedswitch_igmpsnooping`  Configure FortiSwitch IGMP snooping global settings.
+* `fmgr_switchcontroller_managedswitch_mirror`  Configuration method to edit FortiSwitch packet mirror.
+* `fmgr_switchcontroller_managedswitch_ports`  Managed-switch port list.
+* `fmgr_switchcontroller_managedswitch_stormcontrol`  Configuration method to edit FortiSwitch storm control for measuring traffic activity using data rates to prevent traffic disruption.
+* `fmgr_switchcontroller_managedswitch_stpsettings`  Configuration method to edit Spanning Tree Protocol (STP) settings used to prevent bridge loops.
+* `fmgr_switchcontroller_managedswitch_switchlog`  Configuration method to edit FortiSwitch logging settings (logs are transferred to and inserted into the FortiGate event log).
+* `fmgr_switchcontroller_managedswitch_switchstpsettings`  Configure spanning tree protocol (STP).
+* `fmgr_switchcontroller_qos_dot1pmap`  Configure FortiSwitch QoS 802.
+* `fmgr_switchcontroller_qos_ipdscpmap`  Configure FortiSwitch QoS IP precedence/DSCP.
+* `fmgr_switchcontroller_qos_ipdscpmap_map`  Maps between IP-DSCP value to COS queue.
+* `fmgr_switchcontroller_qos_qospolicy`  Configure FortiSwitch QoS policy.
+* `fmgr_switchcontroller_qos_queuepolicy`  Configure FortiSwitch QoS egress queue policy.
+* `fmgr_switchcontroller_qos_queuepolicy_cosqueue`  COS queue configuration.
+* `fmgr_switchcontroller_securitypolicy_8021x`  Configure 802.
+* `fmgr_switchcontroller_securitypolicy_captiveportal`  Names of VLANs that use captive portal authentication.
 * `fmgr_sys_api_sdnconnector`  Query SDN connector data.
 * `fmgr_sys_generate_wsdl`  Generate WSDL for specific module and objects.
 * `fmgr_sys_ha_status`  Obtain HA information and status of the system.
@@ -668,417 +485,807 @@ e.g, `pm_config_obj_wireless-controller_hotspot20_anqp-nai-realm_nai-list_eap-me
 * `fmgr_sys_logout`  Log out a session.
 * `fmgr_sys_proxy_json`  Send and receive JSON request to/from managed devices.
 * `fmgr_sys_status`  Obtain system status.
+* `fmgr_system_admin_group_member`  Group members.
+* `fmgr_system_admin_group`  User group.
+* `fmgr_system_admin_ldap_adom`  Admin domain.
+* `fmgr_system_admin_ldap`  LDAP server entry configuration.
+* `fmgr_system_admin_profile`  Admin profile.
+* `fmgr_system_admin_profile_datamaskcustomfields`  Customized datamask fields.
+* `fmgr_system_admin_radius`  Configure radius.
+* `fmgr_system_admin_setting`  Admin setting.
+* `fmgr_system_admin_tacacs`  TACACS+ server entry configuration.
+* `fmgr_system_admin_user`  Admin user.
+* `fmgr_system_admin_user_adom`  Admin domain.
+* `fmgr_system_admin_user_adomexclude`  Excluding admin domain.
+* `fmgr_system_admin_user_appfilter`  App filter.
+* `fmgr_system_admin_user_dashboard`  Custom dashboard widgets.
+* `fmgr_system_admin_user_dashboardtabs`  Custom dashboard.
+* `fmgr_system_admin_user_ipsfilter`  IPS filter.
+* `fmgr_system_admin_user_metadata`  Configure meta data.
+* `fmgr_system_admin_user_policypackage`  Policy package access.
+* `fmgr_system_admin_user_restrictdevvdom`  Restricted to these devices/VDOMs.
+* `fmgr_system_admin_user_webfilter`  Web filter.
+* `fmgr_system_alertconsole`  Alert console.
+* `fmgr_system_alertemail`  Configure alertemail.
+* `fmgr_system_alertevent_alertdestination`  Alert destination.
+* `fmgr_system_alertevent`  Alert events.
+* `fmgr_system_autodelete`  Automatic deletion policy for logs, reports, archived, and quarantined files.
+* `fmgr_system_autodelete_dlpfilesautodeletion`  Automatic deletion policy for DLP archives.
+* `fmgr_system_autodelete_logautodeletion`  Automatic deletion policy for device logs.
+* `fmgr_system_autodelete_quarantinefilesautodeletion`  Automatic deletion policy for quarantined files.
+* `fmgr_system_autodelete_reportautodeletion`  Automatic deletion policy for reports.
+* `fmgr_system_backup_allsettings`  Scheduled backup settings.
+* `fmgr_system_certificate_ca`  CA certificate.
+* `fmgr_system_certificate_crl`  Certificate Revocation List.
+* `fmgr_system_certificate_local`  Local keys and certificates.
+* `fmgr_system_certificate_oftp`  OFTP certificates and keys.
+* `fmgr_system_certificate_remote`  Remote certificate.
+* `fmgr_system_certificate_ssh`  SSH certificates and keys.
+* `fmgr_system_connector`  Configure connector.
+* `fmgr_system_customlanguage`  Configure custom languages.
+* `fmgr_system_dhcp_server`  Configure DHCP servers.
+* `fmgr_system_dhcp_server_excluderange`  Exclude one or more ranges of IP addresses from being assigned to clients.
+* `fmgr_system_dhcp_server_iprange`  DHCP IP range configuration.
+* `fmgr_system_dhcp_server_options`  DHCP options.
+* `fmgr_system_dhcp_server_reservedaddress`  Options for the DHCP server to assign IP settings to specific MAC addresses.
+* `fmgr_system_dm`  Configure dm.
+* `fmgr_system_dns`  DNS configuration.
+* `fmgr_system_externalresource`  Configure external resource.
+* `fmgr_system_fips`  Settings for FIPS-CC mode.
+* `fmgr_system_fortiguard`  Configure FortiGuard services.
+* `fmgr_system_fortiview_autocache`  FortiView auto-cache settings.
+* `fmgr_system_fortiview_setting`  FortiView settings.
+* `fmgr_system_geoipcountry`  No description
+* `fmgr_system_geoipoverride`  Configure geographical location mapping for IP address(es) to override mappings from FortiGuard.
+* `fmgr_system_geoipoverride_iprange`  Table of IP ranges assigned to country.
+* `fmgr_system_global`  Global range attributes.
+* `fmgr_system_guiact`  System settings through GUI.
+* `fmgr_system_ha`  HA configuration.
+* `fmgr_system_ha_peer`  Peer.
+* `fmgr_system_interface`  Interface configuration.
+* `fmgr_system_interface_ipv6`  IPv6 of interface.
+* `fmgr_system_locallog_disk_filter`  Filter for disk logging.
+* `fmgr_system_locallog_disk_setting`  Settings for local disk logging.
+* `fmgr_system_locallog_fortianalyzer2_filter`  Filter for FortiAnalyzer2 logging.
+* `fmgr_system_locallog_fortianalyzer2_setting`  Settings for locallog to fortianalyzer.
+* `fmgr_system_locallog_fortianalyzer3_filter`  Filter for FortiAnalyzer3 logging.
+* `fmgr_system_locallog_fortianalyzer3_setting`  Settings for locallog to fortianalyzer.
+* `fmgr_system_locallog_fortianalyzer_filter`  Filter for FortiAnalyzer logging.
+* `fmgr_system_locallog_fortianalyzer_setting`  Settings for locallog to fortianalyzer.
+* `fmgr_system_locallog_memory_filter`  Filter for memory logging.
+* `fmgr_system_locallog_memory_setting`  Settings for memory buffer.
+* `fmgr_system_locallog_setting`  Settings for locallog logging.
+* `fmgr_system_locallog_syslogd2_filter`  Filter for syslog logging.
+* `fmgr_system_locallog_syslogd2_setting`  Settings for remote syslog server.
+* `fmgr_system_locallog_syslogd3_filter`  Filter for syslog logging.
+* `fmgr_system_locallog_syslogd3_setting`  Settings for remote syslog server.
+* `fmgr_system_locallog_syslogd_filter`  Filter for syslog logging.
+* `fmgr_system_locallog_syslogd_setting`  Settings for remote syslog server.
+* `fmgr_system_log_alert`  Log based alert settings.
+* `fmgr_system_logfetch_clientprofile_devicefilter`  List of device filter.
+* `fmgr_system_logfetch_clientprofile`  Log-fetch client profile settings.
+* `fmgr_system_logfetch_clientprofile_logfilter`  Log content filters.
+* `fmgr_system_logfetch_serversettings`  Log-fetch server settings.
+* `fmgr_system_log_ioc`  IoC settings.
+* `fmgr_system_log_maildomain`  FortiMail domain setting.
+* `fmgr_system_log_settings`  Log settings.
+* `fmgr_system_log_settings_rollinganalyzer`  Log rolling policy for Network Analyzer logs.
+* `fmgr_system_log_settings_rollinglocal`  Log rolling policy for local logs.
+* `fmgr_system_log_settings_rollingregular`  Log rolling policy for device logs.
+* `fmgr_system_mail`  Alert emails.
+* `fmgr_system_metadata_admins`  Configure admins.
+* `fmgr_system_meta`  No description
+* `fmgr_system_meta_sysmetafields`  No description
+* `fmgr_system_ntp_ntpserver`  NTP server.
+* `fmgr_system_ntp`  NTP settings.
+* `fmgr_system_objecttagging`  Configure object tagging.
+* `fmgr_system_passwordpolicy`  Password policy.
+* `fmgr_system_performance`  System performance.
+* `fmgr_system_replacemsggroup_admin`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_alertmail`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_auth`  Replacement message table entries.
+* `fmgr_system_replacemsggroup`  Configure replacement message groups.
+* `fmgr_system_replacemsggroup_custommessage`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_devicedetectionportal`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_ec`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_fortiguardwf`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_ftp`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_http`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_icap`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_mail`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_mm1`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_mm3`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_mm4`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_mm7`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_mms`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_nacquar`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_nntp`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_spam`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_sslvpn`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_trafficquota`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_utm`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_webproxy`  Replacement message table entries.
+* `fmgr_system_replacemsgimage`  Configure replacement message images.
+* `fmgr_system_report_autocache`  Report auto-cache settings.
+* `fmgr_system_report_estbrowsetime`  Report estimated browse time settings
+* `fmgr_system_report_group_chartalternative`  Chart alternatives.
+* `fmgr_system_report_group_groupby`  Group-by variables.
+* `fmgr_system_report_group`  Report group.
+* `fmgr_system_report_setting`  Report settings.
+* `fmgr_system_route6`  Routing table configuration.
+* `fmgr_system_route`  Routing table configuration.
+* `fmgr_system_saml`  Global settings for SAML authentication.
+* `fmgr_system_saml_serviceproviders`  Authorized service providers.
+* `fmgr_system_sdnconnector`  Configure connection to SDN Connector.
+* `fmgr_system_sdnconnector_externalip`  Configure GCP external IP.
+* `fmgr_system_sdnconnector_nic`  Configure Azure network interface.
+* `fmgr_system_sdnconnector_nic_ip`  Configure IP configuration.
+* `fmgr_system_sdnconnector_route`  Configure GCP route.
+* `fmgr_system_sdnconnector_routetable`  Configure Azure route table.
+* `fmgr_system_sdnconnector_routetable_route`  Configure Azure route.
+* `fmgr_system_smsserver`  Configure SMS server for sending SMS messages to support user authentication.
+* `fmgr_system_snmp_community_hosts6`  Allow hosts configuration for IPv6.
+* `fmgr_system_snmp_community_hosts`  Allow hosts configuration.
+* `fmgr_system_snmp_community`  SNMP community configuration.
+* `fmgr_system_snmp_sysinfo`  SNMP configuration.
+* `fmgr_system_snmp_user`  SNMP user configuration.
+* `fmgr_system_sql_customindex`  List of SQL index fields.
+* `fmgr_system_sql`  SQL settings.
+* `fmgr_system_sql_tsindexfield`  List of SQL text search index fields.
+* `fmgr_system_status`  Obtain system status.
+* `fmgr_system_syslog`  Syslog servers.
+* `fmgr_system_virtualwirepair`  Configure virtual wire pairs.
+* `fmgr_system_workflow_approvalmatrix_approver`  Approver.
+* `fmgr_system_workflow_approvalmatrix`  workflow approval matrix.
 * `fmgr_task_task_history`  Read-only table contains the history of task line with matching "name" and "vdom" attributes.
 * `fmgr_task_task_line`  Read-only table.
 * `fmgr_task_task`  Read-only table containing the 10000 most recent tasks of the system.
-
+* `fmgr_templategroup`  No description
+* `fmgr_template`  No description
+* `fmgr_user_adgrp`  Configure FSSO groups.
+* `fmgr_user_devicecategory`  Configure device categories.
+* `fmgr_user_device`  Configure devices.
+* `fmgr_user_device_dynamicmapping`  No description
+* `fmgr_user_devicegroup`  Configure device groups.
+* `fmgr_user_devicegroup_dynamicmapping`  No description
+* `fmgr_user_devicegroup_tagging`  Config object tagging.
+* `fmgr_user_device_tagging`  Config object tagging.
+* `fmgr_user_fortitoken`  Configure FortiToken.
+* `fmgr_user_fsso`  Configure Fortinet Single Sign On (FSSO) agents.
+* `fmgr_user_fsso_dynamicmapping`  No description
+* `fmgr_user_fssopolling_adgrp`  LDAP Group Info.
+* `fmgr_user_fssopolling`  Configure FSSO active directory servers for polling mode.
+* `fmgr_user_group`  Configure user groups.
+* `fmgr_user_group_guest`  Guest User.
+* `fmgr_user_group_match`  Group matches.
+* `fmgr_user_ldap`  Configure LDAP server entries.
+* `fmgr_user_ldap_dynamicmapping`  No description
+* `fmgr_user_local`  Configure local users.
+* `fmgr_user_passwordpolicy`  Configure user password policy.
+* `fmgr_user_peer`  Configure peer users.
+* `fmgr_user_peergrp`  Configure peer groups.
+* `fmgr_user_pop3`  POP3 server entry configuration.
+* `fmgr_user_pxgrid`  No description
+* `fmgr_user_radius_accountingserver`  Additional accounting servers.
+* `fmgr_user_radius`  Configure RADIUS server entries.
+* `fmgr_user_radius_dynamicmapping`  No description
+* `fmgr_user_securityexemptlist`  Configure security exemption list.
+* `fmgr_user_securityexemptlist_rule`  Configure rules for exempting users from captive portal authentication.
+* `fmgr_user_tacacs`  Configure TACACS+ server entries.
+* `fmgr_user_tacacs_dynamicmapping`  No description
+* `fmgr_vap`  Configure Virtual Access Points (VAPs).
+* `fmgr_vap_dynamicmapping`  No description
+* `fmgr_vapgroup`  Configure virtual Access Point (VAP) groups.
+* `fmgr_vap_macfilterlist`  Create a list of MAC addresses for MAC address filtering.
+* `fmgr_vap_mpskkey`  Pre-shared keys that can be used to connect to this virtual access point.
+* `fmgr_vap_portalmessageoverrides`  Individual message overrides.
+* `fmgr_vap_vlanpool`  VLAN pool.
+* `fmgr_voip_profile`  Configure VoIP profiles.
+* `fmgr_voip_profile_sccp`  SCCP.
+* `fmgr_voip_profile_sip`  SIP.
+* `fmgr_vpn_certificate_ca`  CA certificate.
+* `fmgr_vpn_certificate_ocspserver`  OCSP server configuration.
+* `fmgr_vpn_certificate_remote`  Remote certificate as a PEM file.
+* `fmgr_vpnmgr_node_iprange`  No description
+* `fmgr_vpnmgr_node_ipv4excluderange`  No description
+* `fmgr_vpnmgr_node_protectedsubnet`  No description
+* `fmgr_vpnmgr_node_summaryaddr`  No description
+* `fmgr_vpnmgr_node`  VPN node for VPN Manager.
+* `fmgr_vpnmgr_vpntable`  No description
+* `fmgr_vpnsslweb_hostchecksoftware_checkitemlist`  Check item list.
+* `fmgr_vpnsslweb_hostchecksoftware`  SSL-VPN host check software.
+* `fmgr_vpnsslweb_portal_bookmarkgroup_bookmarks`  Bookmark table.
+* `fmgr_vpnsslweb_portal_bookmarkgroup_bookmarks_formdata`  Form data.
+* `fmgr_vpnsslweb_portal_bookmarkgroup`  Portal bookmark group.
+* `fmgr_vpnsslweb_portal_macaddrcheckrule`  Client MAC address check rule.
+* `fmgr_vpnsslweb_portal_oschecklist`  SSL VPN OS checks.
+* `fmgr_vpnsslweb_portal`  Portal.
+* `fmgr_vpnsslweb_portal_splitdns`  Split DNS for SSL VPN.
+* `fmgr_vpnsslweb_realm`  Realm.
+* `fmgr_waf_mainclass`  Hidden table for datasource.
+* `fmgr_waf_profile_addresslist`  Black address list and white address list.
+* `fmgr_waf_profile_constraint_contentlength`  HTTP content length in request.
+* `fmgr_waf_profile_constraint_exception`  HTTP constraint exception.
+* `fmgr_waf_profile_constraint_headerlength`  HTTP header length in request.
+* `fmgr_waf_profile_constraint_hostname`  Enable/disable hostname check.
+* `fmgr_waf_profile_constraint_linelength`  HTTP line length in request.
+* `fmgr_waf_profile_constraint_malformed`  Enable/disable malformed HTTP request check.
+* `fmgr_waf_profile_constraint_maxcookie`  Maximum number of cookies in HTTP request.
+* `fmgr_waf_profile_constraint_maxheaderline`  Maximum number of HTTP header line.
+* `fmgr_waf_profile_constraint_maxrangesegment`  Maximum number of range segments in HTTP range line.
+* `fmgr_waf_profile_constraint_maxurlparam`  Maximum number of parameters in URL.
+* `fmgr_waf_profile_constraint_method`  Enable/disable HTTP method check.
+* `fmgr_waf_profile_constraint_paramlength`  Maximum length of parameter in URL, HTTP POST request or HTTP body.
+* `fmgr_waf_profile_constraint_urlparamlength`  Maximum length of parameter in URL.
+* `fmgr_waf_profile_constraint_version`  Enable/disable HTTP version check.
+* `fmgr_waf_profile_constraint`  WAF HTTP protocol restrictions.
+* `fmgr_waf_profile_method_methodpolicy`  HTTP method policy.
+* `fmgr_waf_profile_method`  Method restriction.
+* `fmgr_waf_profile_signature_customsignature`  Custom signature.
+* `fmgr_waf_profile_signature_mainclass`  Main signature class.
+* `fmgr_waf_profile_signature`  WAF signatures.
+* `fmgr_waf_profile_urlaccess_accesspattern`  URL access pattern.
+* `fmgr_waf_profile_urlaccess`  URL access list
+* `fmgr_waf_profile`  Web application firewall configuration.
+* `fmgr_waf_signature`  Hidden table for datasource.
+* `fmgr_waf_subclass`  Hidden table for datasource.
+* `fmgr_wanopt_authgroup`  Configure WAN optimization authentication groups.
+* `fmgr_wanopt_peer`  Configure WAN optimization peers.
+* `fmgr_wanopt_profile_cifs`  Enable/disable CIFS (Windows sharing) WAN Optimization and configure CIFS WAN Optimization features.
+* `fmgr_wanopt_profile`  Configure WAN optimization profiles.
+* `fmgr_wanopt_profile_ftp`  Enable/disable FTP WAN Optimization and configure FTP WAN Optimization features.
+* `fmgr_wanopt_profile_http`  Enable/disable HTTP WAN Optimization and configure HTTP WAN Optimization features.
+* `fmgr_wanopt_profile_mapi`  Enable/disable MAPI email WAN Optimization and configure MAPI WAN Optimization features.
+* `fmgr_wanopt_profile_tcp`  Enable/disable TCP WAN Optimization and configure TCP WAN Optimization features.
+* `fmgr_wanprof_system_virtualwanlink`  Configure redundant internet connections using SD-WAN (formerly virtual WAN link).
+* `fmgr_wanprof_system_virtualwanlink_healthcheck`  SD-WAN status checking or health checking.
+* `fmgr_wanprof_system_virtualwanlink_healthcheck_sla`  Service level agreement (SLA).
+* `fmgr_wanprof_system_virtualwanlink_members`  Physical FortiGate interfaces added to the virtual-wan-link.
+* `fmgr_wanprof_system_virtualwanlink_service`  Create SD-WAN rules or priority rules (also called services) to control how sessions are distributed to physical interfaces in the SD-WAN.
+* `fmgr_wanprof_system_virtualwanlink_service_sla`  Service level agreement (SLA).
+* `fmgr_webfilter_categories`  No description
+* `fmgr_webfilter_content`  Configure Web filter banned word table.
+* `fmgr_webfilter_content_entries`  Configure banned word entries.
+* `fmgr_webfilter_contentheader`  Configure content types used by Web filter.
+* `fmgr_webfilter_contentheader_entries`  Configure content types used by web filter.
+* `fmgr_webfilter_ftgdlocalcat`  Configure FortiGuard Web Filter local categories.
+* `fmgr_webfilter_ftgdlocalrating`  Configure local FortiGuard Web Filter local ratings.
+* `fmgr_webfilter_profile`  Configure Web filter profiles.
+* `fmgr_webfilter_profile_ftgdwf_filters`  FortiGuard filters.
+* `fmgr_webfilter_profile_ftgdwf`  FortiGuard Web Filter settings.
+* `fmgr_webfilter_profile_ftgdwf_quota`  FortiGuard traffic quota settings.
+* `fmgr_webfilter_profile_override`  Web Filter override settings.
+* `fmgr_webfilter_profile_urlextraction`  Configure URL Extraction
+* `fmgr_webfilter_profile_web`  Web content filtering settings.
+* `fmgr_webfilter_profile_youtubechannelfilter`  YouTube channel filter.
+* `fmgr_webfilter_urlfilter`  Configure URL filter lists.
+* `fmgr_webfilter_urlfilter_entries`  URL filter entries.
+* `fmgr_webproxy_forwardserver`  Configure forward-server addresses.
+* `fmgr_webproxy_forwardservergroup`  Configure a forward server group consisting or multiple forward servers.
+* `fmgr_webproxy_forwardservergroup_serverlist`  Add web forward servers to a list to form a server group.
+* `fmgr_webproxy_profile`  Configure web proxy profiles.
+* `fmgr_webproxy_profile_headers`  Configure HTTP forwarded requests headers.
+* `fmgr_webproxy_wisp`  Configure Wireless Internet service provider (WISP) servers.
+* `fmgr_widsprofile`  Configure wireless intrusion detection system (WIDS) profiles.
+* `fmgr_wtpprofile`  Configure WTP profiles or FortiAP profiles that define radio settings for manageable FortiAP platforms.
+* `fmgr_wtpprofile_denymaclist`  List of MAC addresses that are denied access to this WTP, FortiAP, or AP.
+* `fmgr_wtpprofile_lan`  WTP LAN port mapping.
+* `fmgr_wtpprofile_lbs`  Set various location based service (LBS) options.
+* `fmgr_wtpprofile_platform`  WTP, FortiAP, or AP platform.
+* `fmgr_wtpprofile_radio1`  Configuration options for radio 1.
+* `fmgr_wtpprofile_radio2`  Configuration options for radio 2.
+* `fmgr_wtpprofile_splittunnelingacl`  Split tunneling ACL filter list.
 #### 6.2 per-object modules
-* `fmgr_cli_exec_fgfm_reclaim_dev_tunnel_per_object`  Reclaim management tunnel to device.
-* `fmgr_cli_fmupdate_fds_setting_push_override_to_client_announce_ip_per_object`  Announce IP addresses for the device.
-* `fmgr_cli_fmupdate_fds_setting_server_override_servlist_per_object`  Override server.
-* `fmgr_cli_fmupdate_server_access_priorities_private_server_per_object`  Configure multiple FortiManager units and private servers.
-* `fmgr_cli_fmupdate_web_spam_fgd_setting_server_override_servlist_per_object`  Override server.
-* `fmgr_cli_system_admin_group_member_per_object`  Group members.
-* `fmgr_cli_system_admin_group_per_object`  User group.
-* `fmgr_cli_system_admin_ldap_adom_per_object`  Admin domain.
-* `fmgr_cli_system_admin_ldap_per_object`  LDAP server entry configuration.
-* `fmgr_cli_system_admin_profile_datamask_custom_fields_per_object`  Customized datamask fields.
-* `fmgr_cli_system_admin_profile_per_object`  Admin profile.
-* `fmgr_cli_system_admin_radius_per_object`  Configure radius.
-* `fmgr_cli_system_admin_tacacs_per_object`  TACACS+ server entry configuration.
-* `fmgr_cli_system_admin_user_adom_exclude_per_object`  Excluding admin domain.
-* `fmgr_cli_system_admin_user_adom_per_object`  Admin domain.
-* `fmgr_cli_system_admin_user_app_filter_per_object`  App filter.
-* `fmgr_cli_system_admin_user_dashboard_per_object`  Custom dashboard widgets.
-* `fmgr_cli_system_admin_user_dashboard_tabs_per_object`  Custom dashboard.
-* `fmgr_cli_system_admin_user_ips_filter_per_object`  IPS filter.
-* `fmgr_cli_system_admin_user_meta_data_per_object`  Configure meta data.
-* `fmgr_cli_system_admin_user_per_object`  Admin user.
-* `fmgr_cli_system_admin_user_policy_package_per_object`  Policy package access.
-* `fmgr_cli_system_admin_user_restrict_dev_vdom_per_object`  Restricted to these devices/VDOMs.
-* `fmgr_cli_system_admin_user_web_filter_per_object`  Web filter.
-* `fmgr_cli_system_alert_event_alert_destination_per_object`  Alert destination.
-* `fmgr_cli_system_alert_event_per_object`  Alert events.
-* `fmgr_cli_system_certificate_ca_per_object`  CA certificate.
-* `fmgr_cli_system_certificate_crl_per_object`  Certificate Revocation List.
-* `fmgr_cli_system_certificate_local_per_object`  Local keys and certificates.
-* `fmgr_cli_system_certificate_remote_per_object`  Remote certificate.
-* `fmgr_cli_system_certificate_ssh_per_object`  SSH certificates and keys.
-* `fmgr_cli_system_ha_peer_per_object`  Peer.
-* `fmgr_cli_system_interface_per_object`  Interface configuration.
-* `fmgr_cli_system_log_fetch_client_profile_device_filter_per_object`  List of device filter.
-* `fmgr_cli_system_log_fetch_client_profile_log_filter_per_object`  Log content filters.
-* `fmgr_cli_system_log_fetch_client_profile_per_object`  Log-fetch client profile settings.
-* `fmgr_cli_system_log_mail_domain_per_object`  FortiMail domain setting.
-* `fmgr_cli_system_mail_per_object`  Alert emails.
-* `fmgr_cli_system_metadata_admins_per_object`  Configure admins.
-* `fmgr_cli_system_ntp_ntpserver_per_object`  NTP server.
-* `fmgr_cli_system_report_group_chart_alternative_per_object`  Chart alternatives.
-* `fmgr_cli_system_report_group_group_by_per_object`  Group-by variables.
-* `fmgr_cli_system_report_group_per_object`  Report group.
-* `fmgr_cli_system_route6_per_object`  Routing table configuration.
-* `fmgr_cli_system_route_per_object`  Routing table configuration.
-* `fmgr_cli_system_saml_service_providers_per_object`  Authorized service providers.
-* `fmgr_cli_system_snmp_community_hosts6_per_object`  Allow hosts configuration for IPv6.
-* `fmgr_cli_system_snmp_community_hosts_per_object`  Allow hosts configuration.
-* `fmgr_cli_system_snmp_community_per_object`  SNMP community configuration.
-* `fmgr_cli_system_snmp_user_per_object`  SNMP user configuration.
-* `fmgr_cli_system_sql_custom_index_per_object`  List of SQL index fields.
-* `fmgr_cli_system_sql_ts_index_field_per_object`  List of SQL text search index fields.
-* `fmgr_cli_system_syslog_per_object`  Syslog servers.
-* `fmgr_cli_system_workflow_approval_matrix_approver_per_object`  Approver.
-* `fmgr_cli_system_workflow_approval_matrix_per_object`  workflow approval matrix.
-* `fmgr_dvmdb_adom_per_object`  ADOM table, most attributes are read-only and can only be changed internally.
-* `fmgr_dvmdb_device_ha_slave_per_object`  HA Slave table, read-only.
-* `fmgr_dvmdb_device_per_object`  Device table, most attributes are read-only and can only be changed internally.
-* `fmgr_dvmdb_device_replace_sn_per_object`  Replace device's serial number with new value.
-* `fmgr_dvmdb_device_vdom_per_object`  Device VDOM table.
-* `fmgr_dvmdb_group_per_object`  Device group table.
-* `fmgr_dvmdb_revision_per_object`  ADOM revision table.
-* `fmgr_dvmdb_script_log_latest_device_per_object`  Get the latest script log of a device.
-* `fmgr_dvmdb_script_log_list_device_per_object`  Get the latest of script logs of a device.
-* `fmgr_dvmdb_script_log_output_device_logid_per_object`  Get a specific script log entry of a device.
-* `fmgr_dvmdb_script_log_output_logid_per_object`  Get a specific script log entry of an ADOM.
-* `fmgr_dvmdb_script_log_summary_device_per_object`  Get a list of script logs of a device.
-* `fmgr_dvmdb_script_per_object`  Script table.
-* `fmgr_dvmdb_script_script_schedule_per_object`  Script schedule table.
-* `fmgr_dvmdb_workflow_per_object`  Read workflow session information.
-* `fmgr_dvmdb_workflow_start_per_object`  Continue a workflow session.
-* `fmgr_dvmdb_workflow_wflog_per_object`  Read workflow session log.
-* `fmgr_dvmdb_workspace_commit_dev_per_object`  Commit change(s) of a device.
-* `fmgr_dvmdb_workspace_commit_obj_per_object`  Commit change(s) of a specific object, where the url contains the full path to the object (eg.
-* `fmgr_dvmdb_workspace_commit_pkg_per_object`  Commit change(s) of a specific package, where the url includes both the folder(s) and name of the policy package.
-* `fmgr_dvmdb_workspace_dirty_dev_per_object`  Get the dirty status of an device.
-* `fmgr_dvmdb_workspace_lock_dev_per_object`  Lock a device.
-* `fmgr_dvmdb_workspace_lockinfo_dev_per_object`  Get the lock information of a device.
-* `fmgr_dvmdb_workspace_lockinfo_obj_per_object`  Get the lock information of a specific object, where the url contains the full path to the object (eg.
-* `fmgr_dvmdb_workspace_lockinfo_pkg_per_object`  Get the lock information of a specific package, where the url includes both the folder(s) and name of the policy package.
-* `fmgr_dvmdb_workspace_lock_obj_per_object`  Lock a specific object, where the url contains the full path to the object (eg.
-* `fmgr_dvmdb_workspace_lock_pkg_per_object`  Lock a specific package, where the url includes both the folder(s) and name of the policy package.
-* `fmgr_dvmdb_workspace_unlock_dev_per_object`  Unlock a device.
-* `fmgr_dvmdb_workspace_unlock_obj_per_object`  Unlock a specific object, where the url contains the full path to the object (eg.
-* `fmgr_dvmdb_workspace_unlock_pkg_per_object`  Unlock a specific package, where the url includes both the folder(s) and name of the policy package.
-* `fmgr_pm_config_device_vdom_switch_controller_managed_switch_custom_command_per_object`  Configuration method to edit FortiSwitch commands to be pushed to this FortiSwitch device upon rebooting the FortiGate switch controller or the FortiSwitch.
-* `fmgr_pm_config_device_vdom_switch_controller_managed_switch_mirror_per_object`  Configuration method to edit FortiSwitch packet mirror.
-* `fmgr_pm_config_devprof_system_central_management_server_list_per_object`  Additional severs that the FortiGate can use for updates (for AV, IPS, updates) and ratings (for web filter and antispam ratings) servers.
-* `fmgr_pm_config_devprof_system_ntp_ntpserver_per_object`  Configure the FortiGate to connect to any available third-party NTP server.
-* `fmgr_pm_config_devprof_system_snmp_community_hosts6_per_object`  Configure IPv6 SNMP managers.
-* `fmgr_pm_config_devprof_system_snmp_community_hosts_per_object`  Configure IPv4 SNMP managers (hosts).
-* `fmgr_pm_config_devprof_system_snmp_community_per_object`  SNMP community configuration.
-* `fmgr_pm_config_devprof_system_snmp_user_per_object`  SNMP user configuration.
-* `fmgr_pm_config_obj_antivirus_mms_checksum_entries_per_object`  modify this MMS content checksum list
-* `fmgr_pm_config_obj_antivirus_mms_checksum_per_object`  Configure MMS content checksum list.
-* `fmgr_pm_config_obj_antivirus_notification_entries_per_object`  modify this antivirus notification list
-* `fmgr_pm_config_obj_antivirus_notification_per_object`  Configure AntiVirus notification lists.
-* `fmgr_pm_config_obj_antivirus_profile_per_object`  Configure AntiVirus profiles.
-* `fmgr_pm_config_obj_application_custom_per_object`  Configure custom application signatures.
-* `fmgr_pm_config_obj_application_group_per_object`  Configure firewall application groups.
-* `fmgr_pm_config_obj_application_list_entries_parameters_per_object`  Application parameters.
-* `fmgr_pm_config_obj_application_list_entries_per_object`  Application list entries.
-* `fmgr_pm_config_obj_application_list_per_object`  Configure application control lists.
-* `fmgr_pm_config_obj_dlp_filepattern_entries_per_object`  Configure file patterns used by DLP blocking.
-* `fmgr_pm_config_obj_dlp_filepattern_per_object`  Configure file patterns used by DLP blocking.
-* `fmgr_pm_config_obj_dlp_fp_sensitivity_per_object`  Create self-explanatory DLP sensitivity levels to be used when setting sensitivity under config fp-doc-source.
-* `fmgr_pm_config_obj_dlp_sensor_filter_per_object`  Set up DLP filters for this sensor.
-* `fmgr_pm_config_obj_dlp_sensor_per_object`  Configure DLP sensors.
-* `fmgr_pm_config_obj_dnsfilter_domain_filter_entries_per_object`  DNS domain filter entries.
-* `fmgr_pm_config_obj_dnsfilter_domain_filter_per_object`  Configure DNS domain filters.
-* `fmgr_pm_config_obj_dnsfilter_profile_ftgd_dns_filters_per_object`  FortiGuard DNS domain filters.
-* `fmgr_pm_config_obj_dnsfilter_profile_per_object`  Configure DNS domain filter profiles.
-* `fmgr_pm_config_obj_firewall_address6_list_per_object`  IP address list.
-* `fmgr_pm_config_obj_firewall_address6_per_object`  Configure IPv6 firewall addresses.
-* `fmgr_pm_config_obj_firewall_address6_subnet_segment_per_object`  IPv6 subnet segments.
-* `fmgr_pm_config_obj_firewall_address6_tagging_per_object`  Config object tagging
-* `fmgr_pm_config_obj_firewall_address6_template_per_object`  Configure IPv6 address templates.
-* `fmgr_pm_config_obj_firewall_address6_template_subnet_segment_per_object`  IPv6 subnet segments.
-* `fmgr_pm_config_obj_firewall_address6_template_subnet_segment_values_per_object`  Subnet segment values.
-* `fmgr_pm_config_obj_firewall_address_list_per_object`  IP address list.
-* `fmgr_pm_config_obj_firewall_address_per_object`  Configure IPv4 addresses.
-* `fmgr_pm_config_obj_firewall_address_tagging_per_object`  Config object tagging.
-* `fmgr_pm_config_obj_firewall_addrgrp6_per_object`  Configure IPv6 address groups.
-* `fmgr_pm_config_obj_firewall_addrgrp6_tagging_per_object`  Config object tagging.
-* `fmgr_pm_config_obj_firewall_addrgrp_per_object`  Configure IPv4 address groups.
-* `fmgr_pm_config_obj_firewall_addrgrp_tagging_per_object`  Config object tagging.
-* `fmgr_pm_config_obj_firewall_carrier_endpoint_bwl_entries_per_object`  Carrier end point black/white list.
-* `fmgr_pm_config_obj_firewall_carrier_endpoint_bwl_per_object`  Carrier end point black/white list tables.
-* `fmgr_pm_config_obj_firewall_gtp_apn_per_object`  APN.
-* `fmgr_pm_config_obj_firewall_gtp_ie_remove_policy_per_object`  IE remove policy.
-* `fmgr_pm_config_obj_firewall_gtp_imsi_per_object`  IMSI.
-* `fmgr_pm_config_obj_firewall_gtp_ip_policy_per_object`  IP policy.
-* `fmgr_pm_config_obj_firewall_gtp_noip_policy_per_object`  No IP policy.
-* `fmgr_pm_config_obj_firewall_gtp_per_apn_shaper_per_object`  Per APN shaper.
-* `fmgr_pm_config_obj_firewall_gtp_per_object`  Configure GTP.
-* `fmgr_pm_config_obj_firewall_gtp_policy_per_object`  Policy.
-* `fmgr_pm_config_obj_firewall_identity_based_route_per_object`  Configure identity based routing.
-* `fmgr_pm_config_obj_firewall_identity_based_route_rule_per_object`  Rule.
-* `fmgr_pm_config_obj_firewall_internet_service_custom_disable_entry_ip_range_per_object`  IP ranges in the disable entry.
-* `fmgr_pm_config_obj_firewall_internet_service_custom_disable_entry_per_object`  Disable entries in the Internet Service database.
-* `fmgr_pm_config_obj_firewall_internet_service_custom_entry_per_object`  Entries added to the Internet Service database and custom database.
-* `fmgr_pm_config_obj_firewall_internet_service_custom_entry_port_range_per_object`  Port ranges in the custom entry.
-* `fmgr_pm_config_obj_firewall_internet_service_custom_group_per_object`  Configure custom Internet Service group.
-* `fmgr_pm_config_obj_firewall_internet_service_custom_per_object`  Configure custom Internet Services.
-* `fmgr_pm_config_obj_firewall_internet_service_entry_per_object`  Entries in the Internet Service database.
-* `fmgr_pm_config_obj_firewall_internet_service_group_per_object`  Configure group of Internet Service.
-* `fmgr_pm_config_obj_firewall_ippool6_per_object`  Configure IPv6 IP pools.
-* `fmgr_pm_config_obj_firewall_ippool_per_object`  Configure IPv4 IP pools.
-* `fmgr_pm_config_obj_firewall_ldb_monitor_per_object`  Configure server load balancing health monitors.
-* `fmgr_pm_config_obj_firewall_mms_profile_notif_msisdn_per_object`  Notification for MSISDNs.
-* `fmgr_pm_config_obj_firewall_mms_profile_per_object`  Configure MMS profiles.
-* `fmgr_pm_config_obj_firewall_multicast_address6_per_object`  Configure IPv6 multicast address.
-* `fmgr_pm_config_obj_firewall_multicast_address6_tagging_per_object`  Config object tagging.
-* `fmgr_pm_config_obj_firewall_multicast_address_per_object`  Configure multicast addresses.
-* `fmgr_pm_config_obj_firewall_multicast_address_tagging_per_object`  Config object tagging.
-* `fmgr_pm_config_obj_firewall_profile_group_per_object`  Configure profile groups.
-* `fmgr_pm_config_obj_firewall_profile_protocol_options_per_object`  Configure protocol options.
-* `fmgr_pm_config_obj_firewall_proxy_address_header_group_per_object`  HTTP header group.
-* `fmgr_pm_config_obj_firewall_proxy_address_per_object`  Web proxy address configuration.
-* `fmgr_pm_config_obj_firewall_proxy_address_tagging_per_object`  Config object tagging.
-* `fmgr_pm_config_obj_firewall_proxy_addrgrp_per_object`  Web proxy address group configuration.
-* `fmgr_pm_config_obj_firewall_proxy_addrgrp_tagging_per_object`  Config object tagging.
-* `fmgr_pm_config_obj_firewall_schedule_group_per_object`  Schedule group configuration.
-* `fmgr_pm_config_obj_firewall_schedule_onetime_per_object`  Onetime schedule configuration.
-* `fmgr_pm_config_obj_firewall_schedule_recurring_per_object`  Recurring schedule configuration.
-* `fmgr_pm_config_obj_firewall_service_category_per_object`  Configure service categories.
-* `fmgr_pm_config_obj_firewall_service_custom_per_object`  Configure custom services.
-* `fmgr_pm_config_obj_firewall_service_group_per_object`  Configure service groups.
-* `fmgr_pm_config_obj_firewall_shaper_per_ip_shaper_per_object`  Configure per-IP traffic shaper.
-* `fmgr_pm_config_obj_firewall_shaper_traffic_shaper_per_object`  Configure shared traffic shaper.
-* `fmgr_pm_config_obj_firewall_shaping_profile_per_object`  Configure shaping profiles.
-* `fmgr_pm_config_obj_firewall_shaping_profile_shaping_entries_per_object`  Define shaping entries of this shaping profile.
-* `fmgr_pm_config_obj_firewall_ssl_ssh_profile_per_object`  Configure SSL/SSH protocol options.
-* `fmgr_pm_config_obj_firewall_ssl_ssh_profile_ssl_exempt_per_object`  Servers to exempt from SSL inspection.
-* `fmgr_pm_config_obj_firewall_ssl_ssh_profile_ssl_server_per_object`  SSL servers.
-* `fmgr_pm_config_obj_firewall_vip46_per_object`  Configure IPv4 to IPv6 virtual IPs.
-* `fmgr_pm_config_obj_firewall_vip46_realservers_per_object`  Real servers.
-* `fmgr_pm_config_obj_firewall_vip64_per_object`  Configure IPv6 to IPv4 virtual IPs.
-* `fmgr_pm_config_obj_firewall_vip64_realservers_per_object`  Real servers.
-* `fmgr_pm_config_obj_firewall_vip6_per_object`  Configure virtual IP for IPv6.
-* `fmgr_pm_config_obj_firewall_vip6_realservers_per_object`  Select the real servers that this server load balancing VIP will distribute traffic to.
-* `fmgr_pm_config_obj_firewall_vip6_ssl_cipher_suites_per_object`  SSL/TLS cipher suites acceptable from a client, ordered by priority.
-* `fmgr_pm_config_obj_firewall_vip6_ssl_server_cipher_suites_per_object`  SSL/TLS cipher suites to offer to a server, ordered by priority.
-* `fmgr_pm_config_obj_firewall_vipgrp46_per_object`  Configure IPv4 to IPv6 virtual IP groups.
-* `fmgr_pm_config_obj_firewall_vipgrp64_per_object`  Configure IPv6 to IPv4 virtual IP groups.
-* `fmgr_pm_config_obj_firewall_vipgrp6_per_object`  Configure IPv6 virtual IP groups.
-* `fmgr_pm_config_obj_firewall_vipgrp_per_object`  Configure IPv4 virtual IP groups.
-* `fmgr_pm_config_obj_firewall_vip_per_object`  Configure virtual IP for IPv4.
-* `fmgr_pm_config_obj_firewall_vip_realservers_per_object`  Select the real servers that this server load balancing VIP will distribute traffic to.
-* `fmgr_pm_config_obj_firewall_vip_ssl_cipher_suites_per_object`  SSL/TLS cipher suites acceptable from a client, ordered by priority.
-* `fmgr_pm_config_obj_firewall_vip_ssl_server_cipher_suites_per_object`  SSL/TLS cipher suites to offer to a server, ordered by priority.
-* `fmgr_pm_config_obj_firewall_wildcard_fqdn_custom_per_object`  Config global/VDOM Wildcard FQDN address.
-* `fmgr_pm_config_obj_firewall_wildcard_fqdn_group_per_object`  Config global Wildcard FQDN address groups.
-* `fmgr_pm_config_obj_gtp_apngrp_per_object`  Configure APN groups for GTP.
-* `fmgr_pm_config_obj_gtp_apn_per_object`  Configure APN for GTP.
-* `fmgr_pm_config_obj_gtp_ie_white_list_entries_per_object`  Entries of white list (to allow) for unknown or out-of-state IEs.
-* `fmgr_pm_config_obj_gtp_ie_white_list_per_object`  IE white list.
-* `fmgr_pm_config_obj_gtp_message_filter_v0v1_per_object`  Message filter for GTPv0/v1 messages.
-* `fmgr_pm_config_obj_gtp_message_filter_v2_per_object`  Message filter for GTPv2 messages.
-* `fmgr_pm_config_obj_gtp_tunnel_limit_per_object`  GTP tunnel limiter.
-* `fmgr_pm_config_obj_icap_profile_per_object`  Configure ICAP profiles.
-* `fmgr_pm_config_obj_icap_server_per_object`  Configure ICAP servers.
-* `fmgr_pm_config_obj_ips_custom_per_object`  Configure IPS custom signature.
-* `fmgr_pm_config_obj_ips_sensor_entries_exempt_ip_per_object`  Traffic from selected source or destination IP addresses is exempt from this signature.
-* `fmgr_pm_config_obj_ips_sensor_entries_per_object`  IPS sensor filter.
-* `fmgr_pm_config_obj_ips_sensor_filter_per_object`  IPS sensor filter.
-* `fmgr_pm_config_obj_ips_sensor_override_exempt_ip_per_object`  Exempted IP.
-* `fmgr_pm_config_obj_ips_sensor_override_per_object`  IPS override rule.
-* `fmgr_pm_config_obj_ips_sensor_per_object`  Configure IPS sensor.
-* `fmgr_pm_config_obj_log_custom_field_per_object`  Configure custom log fields.
-* `fmgr_pm_config_obj_spamfilter_bwl_entries_per_object`  Anti-spam black/white list entries.
-* `fmgr_pm_config_obj_spamfilter_bwl_per_object`  Configure anti-spam black/white list.
-* `fmgr_pm_config_obj_spamfilter_bword_entries_per_object`  Spam filter banned word.
-* `fmgr_pm_config_obj_spamfilter_bword_per_object`  Configure AntiSpam banned word list.
-* `fmgr_pm_config_obj_spamfilter_dnsbl_entries_per_object`  Spam filter DNSBL and ORBL server.
-* `fmgr_pm_config_obj_spamfilter_dnsbl_per_object`  Configure AntiSpam DNSBL/ORBL.
-* `fmgr_pm_config_obj_spamfilter_iptrust_entries_per_object`  Spam filter trusted IP addresses.
-* `fmgr_pm_config_obj_spamfilter_iptrust_per_object`  Configure AntiSpam IP trust.
-* `fmgr_pm_config_obj_spamfilter_mheader_entries_per_object`  Spam filter mime header content.
-* `fmgr_pm_config_obj_spamfilter_mheader_per_object`  Configure AntiSpam MIME header.
-* `fmgr_pm_config_obj_spamfilter_profile_per_object`  Configure AntiSpam profiles.
-* `fmgr_pm_config_obj_ssh_filter_profile_per_object`  SSH filter profile.
-* `fmgr_pm_config_obj_ssh_filter_profile_shell_commands_per_object`  SSH command filter.
-* `fmgr_pm_config_obj_switch_controller_lldp_profile_custom_tlvs_per_object`  Configuration method to edit custom TLV entries.
-* `fmgr_pm_config_obj_switch_controller_lldp_profile_med_network_policy_per_object`  Configuration method to edit Media Endpoint Discovery (MED) network policy type-length-value (TLV) categories.
-* `fmgr_pm_config_obj_switch_controller_lldp_profile_per_object`  Configure FortiSwitch LLDP profiles.
-* `fmgr_pm_config_obj_switch_controller_managed_switch_per_object`  Configure FortiSwitch devices that are managed by this FortiGate.
-* `fmgr_pm_config_obj_switch_controller_managed_switch_ports_per_object`  Managed-switch port list.
-* `fmgr_pm_config_obj_switch_controller_qos_dot1p_map_per_object`  Configure FortiSwitch QoS 802.
-* `fmgr_pm_config_obj_switch_controller_qos_ip_dscp_map_map_per_object`  Maps between IP-DSCP value to COS queue.
-* `fmgr_pm_config_obj_switch_controller_qos_ip_dscp_map_per_object`  Configure FortiSwitch QoS IP precedence/DSCP.
-* `fmgr_pm_config_obj_switch_controller_qos_qos_policy_per_object`  Configure FortiSwitch QoS policy.
-* `fmgr_pm_config_obj_switch_controller_qos_queue_policy_cos_queue_per_object`  COS queue configuration.
-* `fmgr_pm_config_obj_switch_controller_qos_queue_policy_per_object`  Configure FortiSwitch QoS egress queue policy.
-* `fmgr_pm_config_obj_switch_controller_security_policy_802_1x_per_object`  Configure 802.
-* `fmgr_pm_config_obj_switch_controller_security_policy_captive_portal_per_object`  Names of VLANs that use captive portal authentication.
-* `fmgr_pm_config_obj_system_custom_language_per_object`  Configure custom languages.
-* `fmgr_pm_config_obj_system_dhcp_server_exclude_range_per_object`  Exclude one or more ranges of IP addresses from being assigned to clients.
-* `fmgr_pm_config_obj_system_dhcp_server_ip_range_per_object`  DHCP IP range configuration.
-* `fmgr_pm_config_obj_system_dhcp_server_options_per_object`  DHCP options.
-* `fmgr_pm_config_obj_system_dhcp_server_per_object`  Configure DHCP servers.
-* `fmgr_pm_config_obj_system_dhcp_server_reserved_address_per_object`  Options for the DHCP server to assign IP settings to specific MAC addresses.
-* `fmgr_pm_config_obj_system_external_resource_per_object`  Configure external resource.
-* `fmgr_pm_config_obj_system_geoip_override_ip_range_per_object`  Table of IP ranges assigned to country.
-* `fmgr_pm_config_obj_system_geoip_override_per_object`  Configure geographical location mapping for IP address(es) to override mappings from FortiGuard.
-* `fmgr_pm_config_obj_system_object_tagging_per_object`  Configure object tagging.
-* `fmgr_pm_config_obj_system_replacemsg_group_admin_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_alertmail_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_auth_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_custom_message_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_device_detection_portal_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_ec_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_fortiguard_wf_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_ftp_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_http_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_icap_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_mail_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_mm1_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_mm3_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_mm4_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_mm7_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_mms_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_nac_quar_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_nntp_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_per_object`  Configure replacement message groups.
-* `fmgr_pm_config_obj_system_replacemsg_group_spam_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_sslvpn_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_traffic_quota_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_utm_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_group_webproxy_per_object`  Replacement message table entries.
-* `fmgr_pm_config_obj_system_replacemsg_image_per_object`  Configure replacement message images.
-* `fmgr_pm_config_obj_system_sdn_connector_external_ip_per_object`  Configure GCP external IP.
-* `fmgr_pm_config_obj_system_sdn_connector_nic_ip_per_object`  Configure IP configuration.
-* `fmgr_pm_config_obj_system_sdn_connector_nic_per_object`  Configure Azure network interface.
-* `fmgr_pm_config_obj_system_sdn_connector_per_object`  Configure connection to SDN Connector.
-* `fmgr_pm_config_obj_system_sdn_connector_route_per_object`  Configure GCP route.
-* `fmgr_pm_config_obj_system_sdn_connector_route_table_per_object`  Configure Azure route table.
-* `fmgr_pm_config_obj_system_sdn_connector_route_table_route_per_object`  Configure Azure route.
-* `fmgr_pm_config_obj_system_sms_server_per_object`  Configure SMS server for sending SMS messages to support user authentication.
-* `fmgr_pm_config_obj_system_virtual_wire_pair_per_object`  Configure virtual wire pairs.
-* `fmgr_pm_config_obj_user_adgrp_per_object`  Configure FSSO groups.
-* `fmgr_pm_config_obj_user_device_category_per_object`  Configure device categories.
-* `fmgr_pm_config_obj_user_device_group_per_object`  Configure device groups.
-* `fmgr_pm_config_obj_user_device_group_tagging_per_object`  Config object tagging.
-* `fmgr_pm_config_obj_user_device_per_object`  Configure devices.
-* `fmgr_pm_config_obj_user_device_tagging_per_object`  Config object tagging.
-* `fmgr_pm_config_obj_user_fortitoken_per_object`  Configure FortiToken.
-* `fmgr_pm_config_obj_user_fsso_per_object`  Configure Fortinet Single Sign On (FSSO) agents.
-* `fmgr_pm_config_obj_user_fsso_polling_adgrp_per_object`  LDAP Group Info.
-* `fmgr_pm_config_obj_user_fsso_polling_per_object`  Configure FSSO active directory servers for polling mode.
-* `fmgr_pm_config_obj_user_group_guest_per_object`  Guest User.
-* `fmgr_pm_config_obj_user_group_match_per_object`  Group matches.
-* `fmgr_pm_config_obj_user_group_per_object`  Configure user groups.
-* `fmgr_pm_config_obj_user_ldap_per_object`  Configure LDAP server entries.
-* `fmgr_pm_config_obj_user_local_per_object`  Configure local users.
-* `fmgr_pm_config_obj_user_password_policy_per_object`  Configure user password policy.
-* `fmgr_pm_config_obj_user_peergrp_per_object`  Configure peer groups.
-* `fmgr_pm_config_obj_user_peer_per_object`  Configure peer users.
-* `fmgr_pm_config_obj_user_pop3_per_object`  POP3 server entry configuration.
-* `fmgr_pm_config_obj_user_radius_accounting_server_per_object`  Additional accounting servers.
-* `fmgr_pm_config_obj_user_radius_per_object`  Configure RADIUS server entries.
-* `fmgr_pm_config_obj_user_security_exempt_list_per_object`  Configure security exemption list.
-* `fmgr_pm_config_obj_user_security_exempt_list_rule_per_object`  Configure rules for exempting users from captive portal authentication.
-* `fmgr_pm_config_obj_user_tacacs_per_object`  Configure TACACS+ server entries.
-* `fmgr_pm_config_obj_voip_profile_per_object`  Configure VoIP profiles.
-* `fmgr_pm_config_obj_vpn_certificate_ca_per_object`  CA certificate.
-* `fmgr_pm_config_obj_vpn_certificate_ocsp_server_per_object`  OCSP server configuration.
-* `fmgr_pm_config_obj_vpn_certificate_remote_per_object`  Remote certificate as a PEM file.
-* `fmgr_pm_config_obj_vpnmgr_node_per_object`  VPN node for VPN Manager.
-* `fmgr_pm_config_obj_vpn_ssl_web_host_check_software_check_item_list_per_object`  Check item list.
-* `fmgr_pm_config_obj_vpn_ssl_web_host_check_software_per_object`  SSL-VPN host check software.
-* `fmgr_pm_config_obj_vpn_ssl_web_portal_bookmark_group_bookmarks_form_data_per_object`  Form data.
-* `fmgr_pm_config_obj_vpn_ssl_web_portal_bookmark_group_bookmarks_per_object`  Bookmark table.
-* `fmgr_pm_config_obj_vpn_ssl_web_portal_bookmark_group_per_object`  Portal bookmark group.
-* `fmgr_pm_config_obj_vpn_ssl_web_portal_mac_addr_check_rule_per_object`  Client MAC address check rule.
-* `fmgr_pm_config_obj_vpn_ssl_web_portal_per_object`  Portal.
-* `fmgr_pm_config_obj_vpn_ssl_web_portal_split_dns_per_object`  Split DNS for SSL VPN.
-* `fmgr_pm_config_obj_vpn_ssl_web_realm_per_object`  Realm.
-* `fmgr_pm_config_obj_waf_main_class_per_object`  Hidden table for datasource.
-* `fmgr_pm_config_obj_waf_profile_constraint_exception_per_object`  HTTP constraint exception.
-* `fmgr_pm_config_obj_waf_profile_method_method_policy_per_object`  HTTP method policy.
-* `fmgr_pm_config_obj_waf_profile_per_object`  Web application firewall configuration.
-* `fmgr_pm_config_obj_waf_profile_signature_custom_signature_per_object`  Custom signature.
-* `fmgr_pm_config_obj_waf_profile_url_access_access_pattern_per_object`  URL access pattern.
-* `fmgr_pm_config_obj_waf_profile_url_access_per_object`  URL access list
-* `fmgr_pm_config_obj_waf_signature_per_object`  Hidden table for datasource.
-* `fmgr_pm_config_obj_waf_sub_class_per_object`  Hidden table for datasource.
-* `fmgr_pm_config_obj_wanopt_auth_group_per_object`  Configure WAN optimization authentication groups.
-* `fmgr_pm_config_obj_wanopt_peer_per_object`  Configure WAN optimization peers.
-* `fmgr_pm_config_obj_wanopt_profile_per_object`  Configure WAN optimization profiles.
-* `fmgr_pm_config_obj_webfilter_content_entries_per_object`  Configure banned word entries.
-* `fmgr_pm_config_obj_webfilter_content_header_entries_per_object`  Configure content types used by web filter.
-* `fmgr_pm_config_obj_webfilter_content_header_per_object`  Configure content types used by Web filter.
-* `fmgr_pm_config_obj_webfilter_content_per_object`  Configure Web filter banned word table.
-* `fmgr_pm_config_obj_webfilter_ftgd_local_cat_per_object`  Configure FortiGuard Web Filter local categories.
-* `fmgr_pm_config_obj_webfilter_ftgd_local_rating_per_object`  Configure local FortiGuard Web Filter local ratings.
-* `fmgr_pm_config_obj_webfilter_profile_ftgd_wf_filters_per_object`  FortiGuard filters.
-* `fmgr_pm_config_obj_webfilter_profile_ftgd_wf_quota_per_object`  FortiGuard traffic quota settings.
-* `fmgr_pm_config_obj_webfilter_profile_per_object`  Configure Web filter profiles.
-* `fmgr_pm_config_obj_webfilter_profile_youtube_channel_filter_per_object`  YouTube channel filter.
-* `fmgr_pm_config_obj_webfilter_urlfilter_entries_per_object`  URL filter entries.
-* `fmgr_pm_config_obj_webfilter_urlfilter_per_object`  Configure URL filter lists.
-* `fmgr_pm_config_obj_web_proxy_forward_server_group_per_object`  Configure a forward server group consisting or multiple forward servers.
-* `fmgr_pm_config_obj_web_proxy_forward_server_group_server_list_per_object`  Add web forward servers to a list to form a server group.
-* `fmgr_pm_config_obj_web_proxy_forward_server_per_object`  Configure forward-server addresses.
-* `fmgr_pm_config_obj_web_proxy_profile_headers_per_object`  Configure HTTP forwarded requests headers.
-* `fmgr_pm_config_obj_web_proxy_profile_per_object`  Configure web proxy profiles.
-* `fmgr_pm_config_obj_web_proxy_wisp_per_object`  Configure Wireless Internet service provider (WISP) servers.
-* `fmgr_pm_config_obj_wireless_controller_ble_profile_per_object`  Configure Bluetooth Low Energy profile.
-* `fmgr_pm_config_obj_wireless_controller_bonjour_profile_per_object`  Configure Bonjour profiles.
-* `fmgr_pm_config_obj_wireless_controller_bonjour_profile_policy_list_per_object`  Bonjour policy list.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_3gpp_cellular_mcc_mnc_list_per_object`  Mobile Country Code and Mobile Network Code configuration.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_3gpp_cellular_per_object`  Configure 3GPP public land mobile network (PLMN).
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_ip_address_type_per_object`  Configure IP address type availability.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_nai_realm_nai_list_eap_method_auth_param_per_object`  EAP auth param.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_nai_realm_nai_list_eap_method_per_object`  EAP Methods.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_nai_realm_nai_list_per_object`  NAI list.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_nai_realm_per_object`  Configure network access identifier (NAI) realm.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_network_auth_type_per_object`  Configure network authentication type.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_roaming_consortium_oi_list_per_object`  Organization identifier list.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_roaming_consortium_per_object`  Configure roaming consortium.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_venue_name_per_object`  Configure venue name duple.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_anqp_venue_name_value_list_per_object`  Name list.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_h2qp_conn_capability_per_object`  Configure connection capability.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_h2qp_operator_name_per_object`  Configure operator friendly name.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_h2qp_operator_name_value_list_per_object`  Name list.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_h2qp_osu_provider_friendly_name_per_object`  OSU provider friendly name.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_h2qp_osu_provider_per_object`  Configure online sign up (OSU) provider list.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_h2qp_osu_provider_service_description_per_object`  OSU service name.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_h2qp_wan_metric_per_object`  Configure WAN metrics.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_hs_profile_per_object`  Configure hotspot profile.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_qos_map_dscp_except_per_object`  Differentiated Services Code Point (DSCP) exceptions.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_qos_map_dscp_range_per_object`  Differentiated Services Code Point (DSCP) ranges.
-* `fmgr_pm_config_obj_wireless_controller_hotspot20_qos_map_per_object`  Configure QoS map set.
-* `fmgr_pm_config_obj_wireless_controller_qos_profile_per_object`  Configure WiFi quality of service (QoS) profiles.
-* `fmgr_pm_config_obj_wireless_controller_vap_group_per_object`  Configure virtual Access Point (VAP) groups.
-* `fmgr_pm_config_obj_wireless_controller_vap_mac_filter_list_per_object`  Create a list of MAC addresses for MAC address filtering.
-* `fmgr_pm_config_obj_wireless_controller_vap_mpsk_key_per_object`  Pre-shared keys that can be used to connect to this virtual access point.
-* `fmgr_pm_config_obj_wireless_controller_vap_per_object`  Configure Virtual Access Points (VAPs).
-* `fmgr_pm_config_obj_wireless_controller_vap_vlan_pool_per_object`  VLAN pool.
-* `fmgr_pm_config_obj_wireless_controller_wids_profile_per_object`  Configure wireless intrusion detection system (WIDS) profiles.
-* `fmgr_pm_config_obj_wireless_controller_wtp_profile_deny_mac_list_per_object`  List of MAC addresses that are denied access to this WTP, FortiAP, or AP.
-* `fmgr_pm_config_obj_wireless_controller_wtp_profile_per_object`  Configure WTP profiles or FortiAP profiles that define radio settings for manageable FortiAP platforms.
-* `fmgr_pm_config_obj_wireless_controller_wtp_profile_split_tunneling_acl_per_object`  Split tunneling ACL filter list.
-* `fmgr_pm_config_pkg_firewall_central_snat_map_per_object`  Configure central SNAT policies.
-* `fmgr_pm_config_pkg_firewall_dos_policy6_anomaly_per_object`  Anomaly name.
-* `fmgr_pm_config_pkg_firewall_dos_policy6_per_object`  Configure IPv6 DoS policies.
-* `fmgr_pm_config_pkg_firewall_dos_policy_anomaly_per_object`  Anomaly name.
-* `fmgr_pm_config_pkg_firewall_dos_policy_per_object`  Configure IPv4 DoS policies.
-* `fmgr_pm_config_pkg_firewall_interface_policy6_per_object`  Configure IPv6 interface policies.
-* `fmgr_pm_config_pkg_firewall_interface_policy_per_object`  Configure IPv4 interface policies.
-* `fmgr_pm_config_pkg_firewall_local_in_policy6_per_object`  Configure user defined IPv6 local-in policies.
-* `fmgr_pm_config_pkg_firewall_local_in_policy_per_object`  Configure user defined IPv4 local-in policies.
-* `fmgr_pm_config_pkg_firewall_multicast_policy6_per_object`  Configure IPv6 multicast NAT policies.
-* `fmgr_pm_config_pkg_firewall_multicast_policy_per_object`  Configure multicast NAT policies.
-* `fmgr_pm_config_pkg_firewall_policy46_per_object`  Configure IPv4 to IPv6 policies.
-* `fmgr_pm_config_pkg_firewall_policy64_per_object`  Configure IPv6 to IPv4 policies.
-* `fmgr_pm_config_pkg_firewall_policy6_per_object`  Configure IPv6 policies.
-* `fmgr_pm_config_pkg_firewall_policy_per_object`  Configure IPv4 policies.
-* `fmgr_pm_config_pkg_firewall_proxy_policy_per_object`  Configure proxy policies.
-* `fmgr_pm_config_pkg_firewall_shaping_policy_per_object`  Configure shaping policies.
-* `fmgr_pm_config_wanprof_system_virtual_wan_link_health_check_per_object`  SD-WAN status checking or health checking.
-* `fmgr_pm_config_wanprof_system_virtual_wan_link_health_check_sla_per_object`  Service level agreement (SLA).
-* `fmgr_pm_config_wanprof_system_virtual_wan_link_members_per_object`  Physical FortiGate interfaces added to the virtual-wan-link.
-* `fmgr_pm_config_wanprof_system_virtual_wan_link_service_per_object`  Create SD-WAN rules or priority rules (also called services) to control how sessions are distributed to physical interfaces in the SD-WAN.
-* `fmgr_pm_config_wanprof_system_virtual_wan_link_service_sla_per_object`  Service level agreement (SLA).
-* `fmgr_task_task_history_per_object`  Read-only table contains the history of task line with matching "name" and "vdom" attributes.
-* `fmgr_task_task_line_per_object`  Read-only table.
-* `fmgr_task_task_per_object`  Read-only table containing the 10000 most recent tasks of the system.
+* `fmgr_antivirus_mmschecksum_entries_obj`  modify this MMS content checksum list
+* `fmgr_antivirus_mmschecksum_obj`  Configure MMS content checksum list.
+* `fmgr_antivirus_notification_entries_obj`  modify this antivirus notification list
+* `fmgr_antivirus_notification_obj`  Configure AntiVirus notification lists.
+* `fmgr_antivirus_profile_obj`  Configure AntiVirus profiles.
+* `fmgr_application_categories_obj`  No description
+* `fmgr_application_custom_obj`  Configure custom application signatures.
+* `fmgr_application_group_obj`  Configure firewall application groups.
+* `fmgr_application_list_entries_obj`  Application list entries.
+* `fmgr_application_list_entries_parameters_obj`  Application parameters.
+* `fmgr_application_list_obj`  Configure application control lists.
+* `fmgr_bleprofile_obj`  Configure Bluetooth Low Energy profile.
+* `fmgr_bonjourprofile_obj`  Configure Bonjour profiles.
+* `fmgr_bonjourprofile_policylist_obj`  Bonjour policy list.
+* `fmgr_certificate_template_obj`  No description
+* `fmgr_devprof_system_centralmanagement_serverlist_obj`  Additional severs that the FortiGate can use for updates (for AV, IPS, updates) and ratings (for web filter and antispam ratings) servers.
+* `fmgr_devprof_system_ntp_ntpserver_obj`  Configure the FortiGate to connect to any available third-party NTP server.
+* `fmgr_devprof_system_snmp_community_hosts6_obj`  Configure IPv6 SNMP managers.
+* `fmgr_devprof_system_snmp_community_hosts_obj`  Configure IPv4 SNMP managers (hosts).
+* `fmgr_devprof_system_snmp_community_obj`  SNMP community configuration.
+* `fmgr_devprof_system_snmp_user_obj`  SNMP user configuration.
+* `fmgr_dlp_filepattern_entries_obj`  Configure file patterns used by DLP blocking.
+* `fmgr_dlp_filepattern_obj`  Configure file patterns used by DLP blocking.
+* `fmgr_dlp_fpsensitivity_obj`  Create self-explanatory DLP sensitivity levels to be used when setting sensitivity under config fp-doc-source.
+* `fmgr_dlp_sensor_filter_obj`  Set up DLP filters for this sensor.
+* `fmgr_dlp_sensor_obj`  Configure DLP sensors.
+* `fmgr_dnsfilter_domainfilter_entries_obj`  DNS domain filter entries.
+* `fmgr_dnsfilter_domainfilter_obj`  Configure DNS domain filters.
+* `fmgr_dnsfilter_profile_ftgddns_filters_obj`  FortiGuard DNS domain filters.
+* `fmgr_dnsfilter_profile_obj`  Configure DNS domain filter profiles.
+* `fmgr_dvmdb_adom_obj`  ADOM table, most attributes are read-only and can only be changed internally.
+* `fmgr_dvmdb_device_haslave_obj`  HA Slave table, read-only.
+* `fmgr_dvmdb_device_obj`  Device table, most attributes are read-only and can only be changed internally.
+* `fmgr_dvmdb_device_replace_sn_obj`  Replace device's serial number with new value.
+* `fmgr_dvmdb_device_vdom_obj`  Device VDOM table.
+* `fmgr_dvmdb_group_obj`  Device group table.
+* `fmgr_dvmdb_revision_obj`  ADOM revision table.
+* `fmgr_dvmdb_script_log_latest_device_obj`  Get the latest script log of a device.
+* `fmgr_dvmdb_script_log_list_device_obj`  Get the latest of script logs of a device.
+* `fmgr_dvmdb_script_log_output_device_logid_obj`  Get a specific script log entry of a device.
+* `fmgr_dvmdb_script_log_output_logid_obj`  Get a specific script log entry of an ADOM.
+* `fmgr_dvmdb_script_log_summary_device_obj`  Get a list of script logs of a device.
+* `fmgr_dvmdb_script_obj`  Script table.
+* `fmgr_dvmdb_script_scriptschedule_obj`  Script schedule table.
+* `fmgr_dvmdb_workflow_approve_obj`  No description
+* `fmgr_dvmdb_workflow_discard_obj`  No description
+* `fmgr_dvmdb_workflow_drop_obj`  No description
+* `fmgr_dvmdb_workflow_obj`  Read workflow session information.
+* `fmgr_dvmdb_workflow_reject_obj`  No description
+* `fmgr_dvmdb_workflow_repair_obj`  No description
+* `fmgr_dvmdb_workflow_revert_obj`  No description
+* `fmgr_dvmdb_workflow_review_obj`  No description
+* `fmgr_dvmdb_workflow_save_obj`  No description
+* `fmgr_dvmdb_workflow_start_obj`  Continue a workflow session.
+* `fmgr_dvmdb_workflow_submit_obj`  No description
+* `fmgr_dvmdb_workflow_wflog_obj`  Read workflow session log.
+* `fmgr_dvmdb_workspace_commit_dev_obj`  Commit change(s) of a device.
+* `fmgr_dvmdb_workspace_commit_obj_obj`  Commit change(s) of a specific object, where the url contains the full path to the object (eg.
+* `fmgr_dvmdb_workspace_commit_pkg_obj`  Commit change(s) of a specific package, where the url includes both the folder(s) and name of the policy package.
+* `fmgr_dvmdb_workspace_dirty_dev_obj`  Get the dirty status of an device.
+* `fmgr_dvmdb_workspace_lock_dev_obj`  Lock a device.
+* `fmgr_dvmdb_workspace_lockinfo_dev_obj`  Get the lock information of a device.
+* `fmgr_dvmdb_workspace_lockinfo_obj_obj`  Get the lock information of a specific object, where the url contains the full path to the object (eg.
+* `fmgr_dvmdb_workspace_lockinfo_pkg_obj`  Get the lock information of a specific package, where the url includes both the folder(s) and name of the policy package.
+* `fmgr_dvmdb_workspace_lock_obj_obj`  Lock a specific object, where the url contains the full path to the object (eg.
+* `fmgr_dvmdb_workspace_lock_pkg_obj`  Lock a specific package, where the url includes both the folder(s) and name of the policy package.
+* `fmgr_dvmdb_workspace_unlock_dev_obj`  Unlock a device.
+* `fmgr_dvmdb_workspace_unlock_obj_obj`  Unlock a specific object, where the url contains the full path to the object (eg.
+* `fmgr_dvmdb_workspace_unlock_pkg_obj`  Unlock a specific package, where the url includes both the folder(s) and name of the policy package.
+* `fmgr_dynamic_address_dynamicaddrmapping_obj`  No description
+* `fmgr_dynamic_address_obj`  No description
+* `fmgr_dynamic_certificate_local_dynamicmapping_obj`  No description
+* `fmgr_dynamic_certificate_local_obj`  No description
+* `fmgr_dynamic_interface_dynamicmapping_obj`  No description
+* `fmgr_dynamic_interface_obj`  No description
+* `fmgr_dynamic_ippool_obj`  No description
+* `fmgr_dynamic_multicast_interface_dynamicmapping_obj`  No description
+* `fmgr_dynamic_multicast_interface_obj`  No description
+* `fmgr_dynamic_vip_obj`  No description
+* `fmgr_dynamic_virtualwanlink_members_dynamicmapping_obj`  No description
+* `fmgr_dynamic_virtualwanlink_members_obj`  No description
+* `fmgr_dynamic_virtualwanlink_server_dynamicmapping_obj`  No description
+* `fmgr_dynamic_virtualwanlink_server_obj`  No description
+* `fmgr_dynamic_vpntunnel_dynamicmapping_obj`  No description
+* `fmgr_dynamic_vpntunnel_obj`  No description
+* `fmgr_exec_fgfm_reclaimdevtunnel_obj`  Reclaim management tunnel to device.
+* `fmgr_firewall_address6_dynamicmapping_obj`  No description
+* `fmgr_firewall_address6_list_obj`  IP address list.
+* `fmgr_firewall_address6_obj`  Configure IPv6 firewall addresses.
+* `fmgr_firewall_address6_subnetsegment_obj`  IPv6 subnet segments.
+* `fmgr_firewall_address6_tagging_obj`  Config object tagging
+* `fmgr_firewall_address6template_obj`  Configure IPv6 address templates.
+* `fmgr_firewall_address6template_subnetsegment_obj`  IPv6 subnet segments.
+* `fmgr_firewall_address6template_subnetsegment_values_obj`  Subnet segment values.
+* `fmgr_firewall_address_dynamicmapping_obj`  No description
+* `fmgr_firewall_address_list_obj`  IP address list.
+* `fmgr_firewall_address_obj`  Configure IPv4 addresses.
+* `fmgr_firewall_address_tagging_obj`  Config object tagging.
+* `fmgr_firewall_addrgrp6_dynamicmapping_obj`  No description
+* `fmgr_firewall_addrgrp6_obj`  Configure IPv6 address groups.
+* `fmgr_firewall_addrgrp6_tagging_obj`  Config object tagging.
+* `fmgr_firewall_addrgrp_dynamicmapping_obj`  No description
+* `fmgr_firewall_addrgrp_obj`  Configure IPv4 address groups.
+* `fmgr_firewall_addrgrp_tagging_obj`  Config object tagging.
+* `fmgr_firewall_carrierendpointbwl_entries_obj`  Carrier end point black/white list.
+* `fmgr_firewall_carrierendpointbwl_obj`  Carrier end point black/white list tables.
+* `fmgr_firewall_gtp_apn_obj`  APN.
+* `fmgr_firewall_gtp_ieremovepolicy_obj`  IE remove policy.
+* `fmgr_firewall_gtp_imsi_obj`  IMSI.
+* `fmgr_firewall_gtp_ippolicy_obj`  IP policy.
+* `fmgr_firewall_gtp_noippolicy_obj`  No IP policy.
+* `fmgr_firewall_gtp_obj`  Configure GTP.
+* `fmgr_firewall_gtp_perapnshaper_obj`  Per APN shaper.
+* `fmgr_firewall_gtp_policy_obj`  Policy.
+* `fmgr_firewall_identitybasedroute_obj`  Configure identity based routing.
+* `fmgr_firewall_identitybasedroute_rule_obj`  Rule.
+* `fmgr_firewall_internetservicecustom_disableentry_iprange_obj`  IP ranges in the disable entry.
+* `fmgr_firewall_internetservicecustom_disableentry_obj`  Disable entries in the Internet Service database.
+* `fmgr_firewall_internetservicecustom_entry_obj`  Entries added to the Internet Service database and custom database.
+* `fmgr_firewall_internetservicecustom_entry_portrange_obj`  Port ranges in the custom entry.
+* `fmgr_firewall_internetservicecustomgroup_obj`  Configure custom Internet Service group.
+* `fmgr_firewall_internetservicecustom_obj`  Configure custom Internet Services.
+* `fmgr_firewall_internetservice_entry_obj`  Entries in the Internet Service database.
+* `fmgr_firewall_internetservicegroup_obj`  Configure group of Internet Service.
+* `fmgr_firewall_ippool6_dynamicmapping_obj`  No description
+* `fmgr_firewall_ippool6_obj`  Configure IPv6 IP pools.
+* `fmgr_firewall_ippool_dynamicmapping_obj`  No description
+* `fmgr_firewall_ippool_obj`  Configure IPv4 IP pools.
+* `fmgr_firewall_ldbmonitor_obj`  Configure server load balancing health monitors.
+* `fmgr_firewall_mmsprofile_notifmsisdn_obj`  Notification for MSISDNs.
+* `fmgr_firewall_mmsprofile_obj`  Configure MMS profiles.
+* `fmgr_firewall_multicastaddress6_obj`  Configure IPv6 multicast address.
+* `fmgr_firewall_multicastaddress6_tagging_obj`  Config object tagging.
+* `fmgr_firewall_multicastaddress_obj`  Configure multicast addresses.
+* `fmgr_firewall_multicastaddress_tagging_obj`  Config object tagging.
+* `fmgr_firewall_profilegroup_obj`  Configure profile groups.
+* `fmgr_firewall_profileprotocoloptions_obj`  Configure protocol options.
+* `fmgr_firewall_proxyaddress_headergroup_obj`  HTTP header group.
+* `fmgr_firewall_proxyaddress_obj`  Web proxy address configuration.
+* `fmgr_firewall_proxyaddress_tagging_obj`  Config object tagging.
+* `fmgr_firewall_proxyaddrgrp_obj`  Web proxy address group configuration.
+* `fmgr_firewall_proxyaddrgrp_tagging_obj`  Config object tagging.
+* `fmgr_firewall_schedule_group_obj`  Schedule group configuration.
+* `fmgr_firewall_schedule_onetime_obj`  Onetime schedule configuration.
+* `fmgr_firewall_schedule_recurring_obj`  Recurring schedule configuration.
+* `fmgr_firewall_service_category_obj`  Configure service categories.
+* `fmgr_firewall_service_custom_obj`  Configure custom services.
+* `fmgr_firewall_service_group_obj`  Configure service groups.
+* `fmgr_firewall_shaper_peripshaper_obj`  Configure per-IP traffic shaper.
+* `fmgr_firewall_shaper_trafficshaper_obj`  Configure shared traffic shaper.
+* `fmgr_firewall_shapingprofile_obj`  Configure shaping profiles.
+* `fmgr_firewall_shapingprofile_shapingentries_obj`  Define shaping entries of this shaping profile.
+* `fmgr_firewall_sslsshprofile_obj`  Configure SSL/SSH protocol options.
+* `fmgr_firewall_sslsshprofile_sslexempt_obj`  Servers to exempt from SSL inspection.
+* `fmgr_firewall_sslsshprofile_sslserver_obj`  SSL servers.
+* `fmgr_firewall_vip46_dynamicmapping_obj`  No description
+* `fmgr_firewall_vip46_obj`  Configure IPv4 to IPv6 virtual IPs.
+* `fmgr_firewall_vip46_realservers_obj`  Real servers.
+* `fmgr_firewall_vip64_dynamicmapping_obj`  No description
+* `fmgr_firewall_vip64_obj`  Configure IPv6 to IPv4 virtual IPs.
+* `fmgr_firewall_vip64_realservers_obj`  Real servers.
+* `fmgr_firewall_vip6_dynamicmapping_obj`  No description
+* `fmgr_firewall_vip6_obj`  Configure virtual IP for IPv6.
+* `fmgr_firewall_vip6_realservers_obj`  Select the real servers that this server load balancing VIP will distribute traffic to.
+* `fmgr_firewall_vip6_sslciphersuites_obj`  SSL/TLS cipher suites acceptable from a client, ordered by priority.
+* `fmgr_firewall_vip6_sslserverciphersuites_obj`  SSL/TLS cipher suites to offer to a server, ordered by priority.
+* `fmgr_firewall_vip_dynamicmapping_obj`  No description
+* `fmgr_firewall_vip_dynamicmapping_realservers_obj`  No description
+* `fmgr_firewall_vip_dynamicmapping_sslciphersuites_obj`  No description
+* `fmgr_firewall_vipgrp46_obj`  Configure IPv4 to IPv6 virtual IP groups.
+* `fmgr_firewall_vipgrp64_obj`  Configure IPv6 to IPv4 virtual IP groups.
+* `fmgr_firewall_vipgrp6_obj`  Configure IPv6 virtual IP groups.
+* `fmgr_firewall_vipgrp_dynamicmapping_obj`  No description
+* `fmgr_firewall_vipgrp_obj`  Configure IPv4 virtual IP groups.
+* `fmgr_firewall_vip_obj`  Configure virtual IP for IPv4.
+* `fmgr_firewall_vip_realservers_obj`  Select the real servers that this server load balancing VIP will distribute traffic to.
+* `fmgr_firewall_vip_sslciphersuites_obj`  SSL/TLS cipher suites acceptable from a client, ordered by priority.
+* `fmgr_firewall_vip_sslserverciphersuites_obj`  SSL/TLS cipher suites to offer to a server, ordered by priority.
+* `fmgr_firewall_wildcardfqdn_custom_obj`  Config global/VDOM Wildcard FQDN address.
+* `fmgr_firewall_wildcardfqdn_group_obj`  Config global Wildcard FQDN address groups.
+* `fmgr_fmupdate_fdssetting_pushoverridetoclient_announceip_obj`  Announce IP addresses for the device.
+* `fmgr_fmupdate_fdssetting_serveroverride_servlist_obj`  Override server.
+* `fmgr_fmupdate_serveraccesspriorities_privateserver_obj`  Configure multiple FortiManager units and private servers.
+* `fmgr_fmupdate_webspam_fgdsetting_serveroverride_servlist_obj`  Override server.
+* `fmgr_footer_consolidated_policy_obj`  No description
+* `fmgr_footer_policy6_identitybasedpolicy6_obj`  No description
+* `fmgr_footer_policy6_obj`  No description
+* `fmgr_footer_policy_identitybasedpolicy_obj`  No description
+* `fmgr_footer_policy_obj`  No description
+* `fmgr_footer_shapingpolicy_obj`  No description
+* `fmgr_fsp_vlan_dhcpserver_excluderange_obj`  No description
+* `fmgr_fsp_vlan_dhcpserver_iprange_obj`  No description
+* `fmgr_fsp_vlan_dhcpserver_options_obj`  No description
+* `fmgr_fsp_vlan_dhcpserver_reservedaddress_obj`  No description
+* `fmgr_fsp_vlan_dynamicmapping_dhcpserver_excluderange_obj`  No description
+* `fmgr_fsp_vlan_dynamicmapping_dhcpserver_iprange_obj`  No description
+* `fmgr_fsp_vlan_dynamicmapping_dhcpserver_options_obj`  No description
+* `fmgr_fsp_vlan_dynamicmapping_dhcpserver_reservedaddress_obj`  No description
+* `fmgr_fsp_vlan_dynamicmapping_obj`  No description
+* `fmgr_fsp_vlan_interface_secondaryip_obj`  No description
+* `fmgr_fsp_vlan_interface_vrrp_obj`  No description
+* `fmgr_fsp_vlan_obj`  No description
+* `fmgr_gtp_apngrp_obj`  Configure APN groups for GTP.
+* `fmgr_gtp_apn_obj`  Configure APN for GTP.
+* `fmgr_gtp_iewhitelist_entries_obj`  Entries of white list (to allow) for unknown or out-of-state IEs.
+* `fmgr_gtp_iewhitelist_obj`  IE white list.
+* `fmgr_gtp_messagefilterv0v1_obj`  Message filter for GTPv0/v1 messages.
+* `fmgr_gtp_messagefilterv2_obj`  Message filter for GTPv2 messages.
+* `fmgr_gtp_tunnellimit_obj`  GTP tunnel limiter.
+* `fmgr_header_consolidated_policy_obj`  No description
+* `fmgr_header_policy6_identitybasedpolicy6_obj`  No description
+* `fmgr_header_policy6_obj`  No description
+* `fmgr_header_policy_identitybasedpolicy_obj`  No description
+* `fmgr_header_policy_obj`  No description
+* `fmgr_header_shapingpolicy_obj`  No description
+* `fmgr_hotspot20_anqp3gppcellular_mccmnclist_obj`  Mobile Country Code and Mobile Network Code configuration.
+* `fmgr_hotspot20_anqp3gppcellular_obj`  Configure 3GPP public land mobile network (PLMN).
+* `fmgr_hotspot20_anqpipaddresstype_obj`  Configure IP address type availability.
+* `fmgr_hotspot20_anqpnairealm_nailist_eapmethod_authparam_obj`  EAP auth param.
+* `fmgr_hotspot20_anqpnairealm_nailist_eapmethod_obj`  EAP Methods.
+* `fmgr_hotspot20_anqpnairealm_nailist_obj`  NAI list.
+* `fmgr_hotspot20_anqpnairealm_obj`  Configure network access identifier (NAI) realm.
+* `fmgr_hotspot20_anqpnetworkauthtype_obj`  Configure network authentication type.
+* `fmgr_hotspot20_anqproamingconsortium_obj`  Configure roaming consortium.
+* `fmgr_hotspot20_anqproamingconsortium_oilist_obj`  Organization identifier list.
+* `fmgr_hotspot20_anqpvenuename_obj`  Configure venue name duple.
+* `fmgr_hotspot20_anqpvenuename_valuelist_obj`  Name list.
+* `fmgr_hotspot20_h2qpconncapability_obj`  Configure connection capability.
+* `fmgr_hotspot20_h2qpoperatorname_obj`  Configure operator friendly name.
+* `fmgr_hotspot20_h2qpoperatorname_valuelist_obj`  Name list.
+* `fmgr_hotspot20_h2qposuprovider_friendlyname_obj`  OSU provider friendly name.
+* `fmgr_hotspot20_h2qposuprovider_obj`  Configure online sign up (OSU) provider list.
+* `fmgr_hotspot20_h2qposuprovider_servicedescription_obj`  OSU service name.
+* `fmgr_hotspot20_h2qpwanmetric_obj`  Configure WAN metrics.
+* `fmgr_hotspot20_hsprofile_obj`  Configure hotspot profile.
+* `fmgr_hotspot20_qosmap_dscpexcept_obj`  Differentiated Services Code Point (DSCP) exceptions.
+* `fmgr_hotspot20_qosmap_dscprange_obj`  Differentiated Services Code Point (DSCP) ranges.
+* `fmgr_hotspot20_qosmap_obj`  Configure QoS map set.
+* `fmgr_icap_profile_obj`  Configure ICAP profiles.
+* `fmgr_icap_server_obj`  Configure ICAP servers.
+* `fmgr_ips_custom_obj`  Configure IPS custom signature.
+* `fmgr_ips_sensor_entries_exemptip_obj`  Traffic from selected source or destination IP addresses is exempt from this signature.
+* `fmgr_ips_sensor_entries_obj`  IPS sensor filter.
+* `fmgr_ips_sensor_filter_obj`  IPS sensor filter.
+* `fmgr_ips_sensor_obj`  Configure IPS sensor.
+* `fmgr_ips_sensor_override_exemptip_obj`  Exempted IP.
+* `fmgr_ips_sensor_override_obj`  IPS override rule.
+* `fmgr_log_customfield_obj`  Configure custom log fields.
+* `fmgr_pkg_central_dnat_obj`  No description
+* `fmgr_pkg_firewall_centralsnatmap_obj`  Configure central SNAT policies.
+* `fmgr_pkg_firewall_dospolicy6_anomaly_obj`  Anomaly name.
+* `fmgr_pkg_firewall_dospolicy6_obj`  Configure IPv6 DoS policies.
+* `fmgr_pkg_firewall_dospolicy_anomaly_obj`  Anomaly name.
+* `fmgr_pkg_firewall_dospolicy_obj`  Configure IPv4 DoS policies.
+* `fmgr_pkg_firewall_interfacepolicy6_obj`  Configure IPv6 interface policies.
+* `fmgr_pkg_firewall_interfacepolicy_obj`  Configure IPv4 interface policies.
+* `fmgr_pkg_firewall_localinpolicy6_obj`  Configure user defined IPv6 local-in policies.
+* `fmgr_pkg_firewall_localinpolicy_obj`  Configure user defined IPv4 local-in policies.
+* `fmgr_pkg_firewall_multicastpolicy6_obj`  Configure IPv6 multicast NAT policies.
+* `fmgr_pkg_firewall_multicastpolicy_obj`  Configure multicast NAT policies.
+* `fmgr_pkg_firewall_policy46_obj`  Configure IPv4 to IPv6 policies.
+* `fmgr_pkg_firewall_policy64_obj`  Configure IPv6 to IPv4 policies.
+* `fmgr_pkg_firewall_policy6_obj`  Configure IPv6 policies.
+* `fmgr_pkg_firewall_policy_obj`  Configure IPv4 policies.
+* `fmgr_pkg_firewall_policy_vpndstnode_obj`  No description
+* `fmgr_pkg_firewall_policy_vpnsrcnode_obj`  No description
+* `fmgr_pkg_firewall_proxypolicy_obj`  Configure proxy policies.
+* `fmgr_pkg_firewall_shapingpolicy_obj`  Configure shaping policies.
+* `fmgr_pkg_footer_consolidated_policy_obj`  No description
+* `fmgr_pkg_footer_policy6_identitybasedpolicy6_obj`  No description
+* `fmgr_pkg_footer_policy6_obj`  No description
+* `fmgr_pkg_footer_policy_identitybasedpolicy_obj`  No description
+* `fmgr_pkg_footer_policy_obj`  No description
+* `fmgr_pkg_footer_shapingpolicy_obj`  No description
+* `fmgr_pkg_header_consolidated_policy_obj`  No description
+* `fmgr_pkg_header_policy6_identitybasedpolicy6_obj`  No description
+* `fmgr_pkg_header_policy6_obj`  No description
+* `fmgr_pkg_header_policy_identitybasedpolicy_obj`  No description
+* `fmgr_pkg_header_policy_obj`  No description
+* `fmgr_pkg_header_shapingpolicy_obj`  No description
+* `fmgr_pm_devprof_adom_obj`  No description
+* `fmgr_pm_devprof_obj`  No description
+* `fmgr_pm_pkg_adom_obj`  No description
+* `fmgr_pm_pkg_obj`  No description
+* `fmgr_pm_wanprof_adom_obj`  No description
+* `fmgr_pm_wanprof_obj`  No description
+* `fmgr_qosprofile_obj`  Configure WiFi quality of service (QoS) profiles.
+* `fmgr_spamfilter_bwl_entries_obj`  Anti-spam black/white list entries.
+* `fmgr_spamfilter_bwl_obj`  Configure anti-spam black/white list.
+* `fmgr_spamfilter_bword_entries_obj`  Spam filter banned word.
+* `fmgr_spamfilter_bword_obj`  Configure AntiSpam banned word list.
+* `fmgr_spamfilter_dnsbl_entries_obj`  Spam filter DNSBL and ORBL server.
+* `fmgr_spamfilter_dnsbl_obj`  Configure AntiSpam DNSBL/ORBL.
+* `fmgr_spamfilter_iptrust_entries_obj`  Spam filter trusted IP addresses.
+* `fmgr_spamfilter_iptrust_obj`  Configure AntiSpam IP trust.
+* `fmgr_spamfilter_mheader_entries_obj`  Spam filter mime header content.
+* `fmgr_spamfilter_mheader_obj`  Configure AntiSpam MIME header.
+* `fmgr_spamfilter_profile_obj`  Configure AntiSpam profiles.
+* `fmgr_sshfilter_profile_obj`  SSH filter profile.
+* `fmgr_sshfilter_profile_shellcommands_obj`  SSH command filter.
+* `fmgr_switchcontroller_lldpprofile_customtlvs_obj`  Configuration method to edit custom TLV entries.
+* `fmgr_switchcontroller_lldpprofile_mednetworkpolicy_obj`  Configuration method to edit Media Endpoint Discovery (MED) network policy type-length-value (TLV) categories.
+* `fmgr_switchcontroller_lldpprofile_obj`  Configure FortiSwitch LLDP profiles.
+* `fmgr_switchcontroller_managedswitch_customcommand_obj`  Configuration method to edit FortiSwitch commands to be pushed to this FortiSwitch device upon rebooting the FortiGate switch controller or the FortiSwitch.
+* `fmgr_switchcontroller_managedswitch_mirror_obj`  Configuration method to edit FortiSwitch packet mirror.
+* `fmgr_switchcontroller_managedswitch_obj`  Configure FortiSwitch devices that are managed by this FortiGate.
+* `fmgr_switchcontroller_managedswitch_ports_obj`  Managed-switch port list.
+* `fmgr_switchcontroller_qos_dot1pmap_obj`  Configure FortiSwitch QoS 802.
+* `fmgr_switchcontroller_qos_ipdscpmap_map_obj`  Maps between IP-DSCP value to COS queue.
+* `fmgr_switchcontroller_qos_ipdscpmap_obj`  Configure FortiSwitch QoS IP precedence/DSCP.
+* `fmgr_switchcontroller_qos_qospolicy_obj`  Configure FortiSwitch QoS policy.
+* `fmgr_switchcontroller_qos_queuepolicy_cosqueue_obj`  COS queue configuration.
+* `fmgr_switchcontroller_qos_queuepolicy_obj`  Configure FortiSwitch QoS egress queue policy.
+* `fmgr_switchcontroller_securitypolicy_8021x_obj`  Configure 802.
+* `fmgr_switchcontroller_securitypolicy_captiveportal_obj`  Names of VLANs that use captive portal authentication.
+* `fmgr_system_admin_group_member_obj`  Group members.
+* `fmgr_system_admin_group_obj`  User group.
+* `fmgr_system_admin_ldap_adom_obj`  Admin domain.
+* `fmgr_system_admin_ldap_obj`  LDAP server entry configuration.
+* `fmgr_system_admin_profile_datamaskcustomfields_obj`  Customized datamask fields.
+* `fmgr_system_admin_profile_obj`  Admin profile.
+* `fmgr_system_admin_radius_obj`  Configure radius.
+* `fmgr_system_admin_tacacs_obj`  TACACS+ server entry configuration.
+* `fmgr_system_admin_user_adomexclude_obj`  Excluding admin domain.
+* `fmgr_system_admin_user_adom_obj`  Admin domain.
+* `fmgr_system_admin_user_appfilter_obj`  App filter.
+* `fmgr_system_admin_user_dashboard_obj`  Custom dashboard widgets.
+* `fmgr_system_admin_user_dashboardtabs_obj`  Custom dashboard.
+* `fmgr_system_admin_user_ipsfilter_obj`  IPS filter.
+* `fmgr_system_admin_user_metadata_obj`  Configure meta data.
+* `fmgr_system_admin_user_obj`  Admin user.
+* `fmgr_system_admin_user_policypackage_obj`  Policy package access.
+* `fmgr_system_admin_user_restrictdevvdom_obj`  Restricted to these devices/VDOMs.
+* `fmgr_system_admin_user_webfilter_obj`  Web filter.
+* `fmgr_system_alertevent_alertdestination_obj`  Alert destination.
+* `fmgr_system_alertevent_obj`  Alert events.
+* `fmgr_system_certificate_ca_obj`  CA certificate.
+* `fmgr_system_certificate_crl_obj`  Certificate Revocation List.
+* `fmgr_system_certificate_local_obj`  Local keys and certificates.
+* `fmgr_system_certificate_remote_obj`  Remote certificate.
+* `fmgr_system_certificate_ssh_obj`  SSH certificates and keys.
+* `fmgr_system_customlanguage_obj`  Configure custom languages.
+* `fmgr_system_dhcp_server_excluderange_obj`  Exclude one or more ranges of IP addresses from being assigned to clients.
+* `fmgr_system_dhcp_server_iprange_obj`  DHCP IP range configuration.
+* `fmgr_system_dhcp_server_obj`  Configure DHCP servers.
+* `fmgr_system_dhcp_server_options_obj`  DHCP options.
+* `fmgr_system_dhcp_server_reservedaddress_obj`  Options for the DHCP server to assign IP settings to specific MAC addresses.
+* `fmgr_system_externalresource_obj`  Configure external resource.
+* `fmgr_system_geoipcountry_obj`  No description
+* `fmgr_system_geoipoverride_iprange_obj`  Table of IP ranges assigned to country.
+* `fmgr_system_geoipoverride_obj`  Configure geographical location mapping for IP address(es) to override mappings from FortiGuard.
+* `fmgr_system_ha_peer_obj`  Peer.
+* `fmgr_system_interface_obj`  Interface configuration.
+* `fmgr_system_logfetch_clientprofile_devicefilter_obj`  List of device filter.
+* `fmgr_system_logfetch_clientprofile_logfilter_obj`  Log content filters.
+* `fmgr_system_logfetch_clientprofile_obj`  Log-fetch client profile settings.
+* `fmgr_system_log_maildomain_obj`  FortiMail domain setting.
+* `fmgr_system_mail_obj`  Alert emails.
+* `fmgr_system_metadata_admins_obj`  Configure admins.
+* `fmgr_system_meta_obj`  No description
+* `fmgr_system_meta_sysmetafields_obj`  No description
+* `fmgr_system_ntp_ntpserver_obj`  NTP server.
+* `fmgr_system_objecttagging_obj`  Configure object tagging.
+* `fmgr_system_replacemsggroup_admin_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_alertmail_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_auth_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_custommessage_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_devicedetectionportal_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_ec_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_fortiguardwf_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_ftp_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_http_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_icap_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_mail_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_mm1_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_mm3_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_mm4_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_mm7_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_mms_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_nacquar_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_nntp_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_obj`  Configure replacement message groups.
+* `fmgr_system_replacemsggroup_spam_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_sslvpn_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_trafficquota_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_utm_obj`  Replacement message table entries.
+* `fmgr_system_replacemsggroup_webproxy_obj`  Replacement message table entries.
+* `fmgr_system_replacemsgimage_obj`  Configure replacement message images.
+* `fmgr_system_report_group_chartalternative_obj`  Chart alternatives.
+* `fmgr_system_report_group_groupby_obj`  Group-by variables.
+* `fmgr_system_report_group_obj`  Report group.
+* `fmgr_system_route6_obj`  Routing table configuration.
+* `fmgr_system_route_obj`  Routing table configuration.
+* `fmgr_system_saml_serviceproviders_obj`  Authorized service providers.
+* `fmgr_system_sdnconnector_externalip_obj`  Configure GCP external IP.
+* `fmgr_system_sdnconnector_nic_ip_obj`  Configure IP configuration.
+* `fmgr_system_sdnconnector_nic_obj`  Configure Azure network interface.
+* `fmgr_system_sdnconnector_obj`  Configure connection to SDN Connector.
+* `fmgr_system_sdnconnector_route_obj`  Configure GCP route.
+* `fmgr_system_sdnconnector_routetable_obj`  Configure Azure route table.
+* `fmgr_system_sdnconnector_routetable_route_obj`  Configure Azure route.
+* `fmgr_system_smsserver_obj`  Configure SMS server for sending SMS messages to support user authentication.
+* `fmgr_system_snmp_community_hosts6_obj`  Allow hosts configuration for IPv6.
+* `fmgr_system_snmp_community_hosts_obj`  Allow hosts configuration.
+* `fmgr_system_snmp_community_obj`  SNMP community configuration.
+* `fmgr_system_snmp_user_obj`  SNMP user configuration.
+* `fmgr_system_sql_customindex_obj`  List of SQL index fields.
+* `fmgr_system_sql_tsindexfield_obj`  List of SQL text search index fields.
+* `fmgr_system_syslog_obj`  Syslog servers.
+* `fmgr_system_virtualwirepair_obj`  Configure virtual wire pairs.
+* `fmgr_system_workflow_approvalmatrix_approver_obj`  Approver.
+* `fmgr_system_workflow_approvalmatrix_obj`  workflow approval matrix.
+* `fmgr_task_task_history_obj`  Read-only table contains the history of task line with matching "name" and "vdom" attributes.
+* `fmgr_task_task_line_obj`  Read-only table.
+* `fmgr_task_task_obj`  Read-only table containing the 10000 most recent tasks of the system.
+* `fmgr_templategroup_obj`  No description
+* `fmgr_template_obj`  No description
+* `fmgr_user_adgrp_obj`  Configure FSSO groups.
+* `fmgr_user_devicecategory_obj`  Configure device categories.
+* `fmgr_user_device_dynamicmapping_obj`  No description
+* `fmgr_user_devicegroup_dynamicmapping_obj`  No description
+* `fmgr_user_devicegroup_obj`  Configure device groups.
+* `fmgr_user_devicegroup_tagging_obj`  Config object tagging.
+* `fmgr_user_device_obj`  Configure devices.
+* `fmgr_user_device_tagging_obj`  Config object tagging.
+* `fmgr_user_fortitoken_obj`  Configure FortiToken.
+* `fmgr_user_fsso_dynamicmapping_obj`  No description
+* `fmgr_user_fsso_obj`  Configure Fortinet Single Sign On (FSSO) agents.
+* `fmgr_user_fssopolling_adgrp_obj`  LDAP Group Info.
+* `fmgr_user_fssopolling_obj`  Configure FSSO active directory servers for polling mode.
+* `fmgr_user_group_guest_obj`  Guest User.
+* `fmgr_user_group_match_obj`  Group matches.
+* `fmgr_user_group_obj`  Configure user groups.
+* `fmgr_user_ldap_dynamicmapping_obj`  No description
+* `fmgr_user_ldap_obj`  Configure LDAP server entries.
+* `fmgr_user_local_obj`  Configure local users.
+* `fmgr_user_passwordpolicy_obj`  Configure user password policy.
+* `fmgr_user_peergrp_obj`  Configure peer groups.
+* `fmgr_user_peer_obj`  Configure peer users.
+* `fmgr_user_pop3_obj`  POP3 server entry configuration.
+* `fmgr_user_pxgrid_obj`  No description
+* `fmgr_user_radius_accountingserver_obj`  Additional accounting servers.
+* `fmgr_user_radius_dynamicmapping_obj`  No description
+* `fmgr_user_radius_obj`  Configure RADIUS server entries.
+* `fmgr_user_securityexemptlist_obj`  Configure security exemption list.
+* `fmgr_user_securityexemptlist_rule_obj`  Configure rules for exempting users from captive portal authentication.
+* `fmgr_user_tacacs_dynamicmapping_obj`  No description
+* `fmgr_user_tacacs_obj`  Configure TACACS+ server entries.
+* `fmgr_vap_dynamicmapping_obj`  No description
+* `fmgr_vapgroup_obj`  Configure virtual Access Point (VAP) groups.
+* `fmgr_vap_macfilterlist_obj`  Create a list of MAC addresses for MAC address filtering.
+* `fmgr_vap_mpskkey_obj`  Pre-shared keys that can be used to connect to this virtual access point.
+* `fmgr_vap_obj`  Configure Virtual Access Points (VAPs).
+* `fmgr_vap_vlanpool_obj`  VLAN pool.
+* `fmgr_voip_profile_obj`  Configure VoIP profiles.
+* `fmgr_vpn_certificate_ca_obj`  CA certificate.
+* `fmgr_vpn_certificate_ocspserver_obj`  OCSP server configuration.
+* `fmgr_vpn_certificate_remote_obj`  Remote certificate as a PEM file.
+* `fmgr_vpnmgr_node_iprange_obj`  No description
+* `fmgr_vpnmgr_node_ipv4excluderange_obj`  No description
+* `fmgr_vpnmgr_node_obj`  VPN node for VPN Manager.
+* `fmgr_vpnmgr_node_protectedsubnet_obj`  No description
+* `fmgr_vpnmgr_node_summaryaddr_obj`  No description
+* `fmgr_vpnmgr_vpntable_obj`  No description
+* `fmgr_vpnsslweb_hostchecksoftware_checkitemlist_obj`  Check item list.
+* `fmgr_vpnsslweb_hostchecksoftware_obj`  SSL-VPN host check software.
+* `fmgr_vpnsslweb_portal_bookmarkgroup_bookmarks_formdata_obj`  Form data.
+* `fmgr_vpnsslweb_portal_bookmarkgroup_bookmarks_obj`  Bookmark table.
+* `fmgr_vpnsslweb_portal_bookmarkgroup_obj`  Portal bookmark group.
+* `fmgr_vpnsslweb_portal_macaddrcheckrule_obj`  Client MAC address check rule.
+* `fmgr_vpnsslweb_portal_obj`  Portal.
+* `fmgr_vpnsslweb_portal_splitdns_obj`  Split DNS for SSL VPN.
+* `fmgr_vpnsslweb_realm_obj`  Realm.
+* `fmgr_waf_mainclass_obj`  Hidden table for datasource.
+* `fmgr_waf_profile_constraint_exception_obj`  HTTP constraint exception.
+* `fmgr_waf_profile_method_methodpolicy_obj`  HTTP method policy.
+* `fmgr_waf_profile_obj`  Web application firewall configuration.
+* `fmgr_waf_profile_signature_customsignature_obj`  Custom signature.
+* `fmgr_waf_profile_urlaccess_accesspattern_obj`  URL access pattern.
+* `fmgr_waf_profile_urlaccess_obj`  URL access list
+* `fmgr_waf_signature_obj`  Hidden table for datasource.
+* `fmgr_waf_subclass_obj`  Hidden table for datasource.
+* `fmgr_wanopt_authgroup_obj`  Configure WAN optimization authentication groups.
+* `fmgr_wanopt_peer_obj`  Configure WAN optimization peers.
+* `fmgr_wanopt_profile_obj`  Configure WAN optimization profiles.
+* `fmgr_wanprof_system_virtualwanlink_healthcheck_obj`  SD-WAN status checking or health checking.
+* `fmgr_wanprof_system_virtualwanlink_healthcheck_sla_obj`  Service level agreement (SLA).
+* `fmgr_wanprof_system_virtualwanlink_members_obj`  Physical FortiGate interfaces added to the virtual-wan-link.
+* `fmgr_wanprof_system_virtualwanlink_service_obj`  Create SD-WAN rules or priority rules (also called services) to control how sessions are distributed to physical interfaces in the SD-WAN.
+* `fmgr_wanprof_system_virtualwanlink_service_sla_obj`  Service level agreement (SLA).
+* `fmgr_webfilter_categories_obj`  No description
+* `fmgr_webfilter_content_entries_obj`  Configure banned word entries.
+* `fmgr_webfilter_contentheader_entries_obj`  Configure content types used by web filter.
+* `fmgr_webfilter_contentheader_obj`  Configure content types used by Web filter.
+* `fmgr_webfilter_content_obj`  Configure Web filter banned word table.
+* `fmgr_webfilter_ftgdlocalcat_obj`  Configure FortiGuard Web Filter local categories.
+* `fmgr_webfilter_ftgdlocalrating_obj`  Configure local FortiGuard Web Filter local ratings.
+* `fmgr_webfilter_profile_ftgdwf_filters_obj`  FortiGuard filters.
+* `fmgr_webfilter_profile_ftgdwf_quota_obj`  FortiGuard traffic quota settings.
+* `fmgr_webfilter_profile_obj`  Configure Web filter profiles.
+* `fmgr_webfilter_profile_youtubechannelfilter_obj`  YouTube channel filter.
+* `fmgr_webfilter_urlfilter_entries_obj`  URL filter entries.
+* `fmgr_webfilter_urlfilter_obj`  Configure URL filter lists.
+* `fmgr_webproxy_forwardservergroup_obj`  Configure a forward server group consisting or multiple forward servers.
+* `fmgr_webproxy_forwardservergroup_serverlist_obj`  Add web forward servers to a list to form a server group.
+* `fmgr_webproxy_forwardserver_obj`  Configure forward-server addresses.
+* `fmgr_webproxy_profile_headers_obj`  Configure HTTP forwarded requests headers.
+* `fmgr_webproxy_profile_obj`  Configure web proxy profiles.
+* `fmgr_webproxy_wisp_obj`  Configure Wireless Internet service provider (WISP) servers.
+* `fmgr_widsprofile_obj`  Configure wireless intrusion detection system (WIDS) profiles.
+* `fmgr_wtpprofile_denymaclist_obj`  List of MAC addresses that are denied access to this WTP, FortiAP, or AP.
+* `fmgr_wtpprofile_obj`  Configure WTP profiles or FortiAP profiles that define radio settings for manageable FortiAP platforms.
+* `fmgr_wtpprofile_splittunnelingacl_obj`  Split tunneling ACL filter list.
