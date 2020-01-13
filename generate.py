@@ -50,15 +50,29 @@ def shorten_url(uri):
         for param in params:
             short_url = short_url.replace('/{' + param + '}', '')
         if uri.endswith('/{' + params[-1] + '}'):
-            short_url += '/per_object'
+            short_url += '/obj'
     return short_url
 
 def canonicalize_url_as_path(url):
+    # the token with which to strip in the url, the order matters.
+    tokens = {
+        '_pm_config_obj_wireless_controller_': '_wireless_',
+        '_pm_config_obj_': '_',
+        '_pm_config_devprof_': '_devprof_',
+        '_pm_config_pkg_': '_pkg_',
+        '_pm_config_wanprof_': '_wanprof_',
+        '_pm_config_device_vdom_': '_',
+        'fmgr_cli_': 'fmgr_',
+        '_vpn_ssl_web_': '_vpnsslweb_',
+        '_wirelesscontroller_': '_',
+        '+': '_',
+        '__': '_'
+    }
     url = url.replace('/adom/{adom}/', '/')
     url = url.replace('/global/', '/')
     url = shorten_url(url)
     canocial_url_path = 'fmgr'
-    fields = url.split('/')
+    fields = url.replace('-', '').replace('_', '').split('/')
     for field in fields:
         if field == '':
             continue
@@ -66,7 +80,10 @@ def canonicalize_url_as_path(url):
         field = field.strip('{')
         field = field.strip('}')
         canocial_url_path += '_' + field
-    return canocial_url_path.lower().replace('+', '').replace('__', '_')
+    canocial_url_path = canocial_url_path.lower().replace('+', '')
+    for token_key in tokens:
+        canocial_url_path = canocial_url_path.replace(token_key, tokens[token_key])
+    return canocial_url_path
 
 
 def canonicalize_text(raw_text):
@@ -762,10 +779,11 @@ def resolve_schema(url, schema, doc_template, code_template, multiurls):
                   'jrpc_urls': mutiurls_names,
                   'body_schemas': schema_beautify(transform_schema(body_schemas), 4, 1, False, True)}
     code_body = code_template.render(**code_rdata)
-
+    short_description = shorten_description(canonicalize_text(api_endpoint_tags[supported_methods[0]])[0], len('short_description: ')).replace('\'', '')
     doc_examples = generate_schema_document_examples(raw_body_schemas, canonical_path, url, the_one_in_path_params)
     doc_rdata = {'module_name': canonical_path,
                  'jrpc_urls': mutiurls_names,
+                 'short_description': 'no description' if short_description == '' else short_description,
                  'allowed_methods': supported_methods,
                  'doc_options': generate_schema_document_options(raw_body_schemas, the_one_in_path_params, api_endpoint_tags),
                  'doc_examples': doc_examples,
@@ -896,4 +914,6 @@ if __name__ == '__main__':
     # There should be no modules in conflict
     for mod in url_mod_tracking:
         urls = url_mod_tracking[mod]
+        if len(urls) != 1:
+            print(mod, urls)
         assert(len(urls) == 1)

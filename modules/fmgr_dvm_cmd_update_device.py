@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from __future__ import absolute_import, division, print_function
-# Copyright 2019 Fortinet, Inc.
+# Copyright 2019-2020 Fortinet, Inc.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,6 +24,7 @@ ANSIBLE_METADATA = {'status': ['preview'],
 DOCUMENTATION = '''
 ---
 module: fmgr_dvm_cmd_update_device
+short_description: Refresh the FGFM connection and system information of a device.
 description:
     - This module is able to configure a FortiManager device by allowing the
       user to [ exec ] the following apis.

@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from __future__ import absolute_import, division, print_function
-# Copyright 2019 Fortinet, Inc.
+# Copyright 2019-2020 Fortinet, Inc.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,6 +24,7 @@ ANSIBLE_METADATA = {'status': ['preview'],
 DOCUMENTATION = '''
 ---
 module: fmgr_sys_login_user
+short_description: Log into the device with user name and password. A new session cookies will be generated and returned as a property of the response object.
 description:
     - This module is able to configure a FortiManager device by allowing the
       user to [ exec ] the following apis.

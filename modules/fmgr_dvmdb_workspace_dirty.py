@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from __future__ import absolute_import, division, print_function
-# Copyright 2019 Fortinet, Inc.
+# Copyright 2019-2020 Fortinet, Inc.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,6 +24,7 @@ ANSIBLE_METADATA = {'status': ['preview'],
 DOCUMENTATION = '''
 ---
 module: fmgr_dvmdb_workspace_dirty
+short_description: Get the dirty status of an ADOM.<br/>To get the dirty status of a specific object, use <i>workspace/lockinfo</i> instead.
 description:
     - This module is able to configure a FortiManager device by allowing the
       user to [ get ] the following apis.
