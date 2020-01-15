@@ -1005,7 +1005,7 @@ def main():
     except Exception as e:
         raise FMGBaseException(e)
 
-    module.exit_json(**response[1])
+    module.exit_json(meta=response[1])
 
 
 if __name__ == '__main__':
