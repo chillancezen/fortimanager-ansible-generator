@@ -463,6 +463,8 @@ def generate_schema_document_examples(
         raw_body_schemas, module_name, jrpc_url, in_path_params):
     example_data = ''
     example_data += ' - ' + 'hosts: fortimanager-inventory\n'
+    example_data += ' ' * 3 + 'collections:\n'
+    example_data += ' ' * 3 + '  - fortinet.fortimanager\n'
     example_data += ' ' * 3 + 'connection: httpapi\n'
     example_data += ' ' * 3 + 'vars:\n'
     example_data += ' ' * 6 + 'ansible_httpapi_use_ssl: True\n'

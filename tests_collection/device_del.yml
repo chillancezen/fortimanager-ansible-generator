@@ -1,0 +1,21 @@
+- hosts: fortimanager01
+  collections:
+    - fortinet.fortimanager
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+   - name: REQUESTING /DVM/CMD/DEL/DEVICE
+     fmgr_dvm_cmd_del_device:
+        url_params:
+        method: exec
+        params:
+           -
+              data:
+                 adom: root
+                 device: FOODEVICE
+                 flags:
+                   - none

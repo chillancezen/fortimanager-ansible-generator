@@ -1,0 +1,28 @@
+- hosts: fortimanager01
+  collections:
+    - fortinett.fortimanager
+  connection: httpapi
+  vars:
+    adom: "root"
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+    -   name: 'update a script'
+        fmgr_dvmdb_script:
+            url_params:
+                adom: 'global'
+            method: "set"
+            params:
+                - data:
+                    - name: 'add_firewall_policy0'
+                      desc: 'the demo script to set'
+                      type: 'cli'
+                      filter_ostype: 'unknown'
+                      content: |
+                                config firewall policy
+                                    edit 1
+                                        set name foopolicy
+                                    next
+                                end
+ 

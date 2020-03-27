@@ -73,6 +73,8 @@ options:
 
 EXAMPLES = '''
  - hosts: fortimanager-inventory
+   collections:
+     - fortinet.fortimanager
    connection: httpapi
    vars:
       ansible_httpapi_use_ssl: True
@@ -123,11 +125,11 @@ return_of_api_category_0:
 '''
 from ansible.module_utils.basic import AnsibleModule
 from ansible.module_utils.connection import Connection
-from ansible_collections.chillancezen.fortimanager.plugins.module_utils.common import FAIL_SOCKET_MSG
-from ansible_collections.chillancezen.fortimanager.plugins.module_utils.common import DEFAULT_RESULT_OBJ
-from ansible_collections.chillancezen.fortimanager.plugins.module_utils.common import FMGRCommon
-from ansible_collections.chillancezen.fortimanager.plugins.module_utils.common import FMGBaseException
-from ansible_collections.chillancezen.fortimanager.plugins.module_utils.fortimanager import FortiManagerHandler
+from ansible_collections.fortinet.fortimanager.plugins.module_utils.common import FAIL_SOCKET_MSG
+from ansible_collections.fortinet.fortimanager.plugins.module_utils.common import DEFAULT_RESULT_OBJ
+from ansible_collections.fortinet.fortimanager.plugins.module_utils.common import FMGRCommon
+from ansible_collections.fortinet.fortimanager.plugins.module_utils.common import FMGBaseException
+from ansible_collections.fortinet.fortimanager.plugins.module_utils.fortimanager import FortiManagerHandler
 
 
 def main():

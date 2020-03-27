@@ -1,6 +1,6 @@
 - hosts: fortimanager01
   collections:
-    - chillancezen.fortimanager
+    - fortinet.fortimanager
   connection: httpapi
   vars:
     adom: "root"
@@ -9,6 +9,10 @@
     ansible_httpapi_port: 443
   tasks:
     -   name: 'update a script'
+        ##async: 600
+        ##poll: 0
+        async: 7200
+        poll: 0
         fmgr_dvmdb_script:
             url_params:
                 adom: 'global'
@@ -25,3 +29,88 @@
                                         set name foopolicy
                                     next
                                 end
+ 
+    -   name: 'update a script'
+        async: 7200
+        poll: 0
+        fmgr_dvmdb_script:
+            url_params:
+                adom: 'global'
+            method: "set"
+            params:
+                - data:
+                    - name: 'add_firewall_policy1'
+                      desc: 'the demo script to set'
+                      type: 'cli'
+                      filter_ostype: 'unknown'
+                      content: |
+                                config firewall policy
+                                    edit 1
+                                        set name foopolicy
+                                    next
+                                end
+
+    -   name: 'Update a seurity profile anti-virus entry'
+        async: 7200
+        poll: 0
+        fmgr_antivirus_profile:
+            method: 'update'
+            url_params:
+                adom: 'root'
+            params:
+                - data:
+                    - name: 'secprof_anti_virus0'
+                      comment: 'A seurity profile anti virus entry updated by Ansible'
+                      inspection-mode: 'flow-based'
+
+    -   name: 'Update a seurity profile anti-virus entry'
+        async: 7200
+        poll: 0
+        fmgr_antivirus_profile:
+            method: 'update'
+            url_params:
+                adom: 'root'
+            params:
+                - data:
+                    - name: 'secprof_anti_virus1'
+                      comment: 'A seurity profile anti virus entry updated by Ansible'
+                      inspection-mode: 'flow-based'
+
+    -   name: 'Update a seurity profile anti-virus entry'
+        async: 7200
+        poll: 0
+        fmgr_antivirus_profile:
+            method: 'update'
+            url_params:
+                adom: 'root'
+            params:
+                - data:
+                    - name: 'secprof_anti_virus2'
+                      comment: 'A seurity profile anti virus entry updated by Ansible'
+                      inspection-mode: 'flow-based'
+
+    -   name: 'Update a seurity profile anti-virus entry'
+        async: 7200
+        poll: 0
+        fmgr_antivirus_profile:
+            method: 'update'
+            url_params:
+                adom: 'root'
+            params:
+                - data:
+                    - name: 'secprof_anti_virus3'
+                      comment: 'A seurity profile anti virus entry updated by Ansible'
+                      inspection-mode: 'flow-based'
+
+    -   name: 'Update a seurity profile anti-virus entry'
+        async: 7200
+        poll: 0
+        fmgr_antivirus_profile:
+            method: 'update'
+            url_params:
+                adom: 'root'
+            params:
+                - data:
+                    - name: 'secprof_anti_virus4'
+                      comment: 'A seurity profile anti virus entry updated by Ansible'
+                      inspection-mode: 'flow-based'

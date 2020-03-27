@@ -1,4 +1,6 @@
 - hosts: fortimanager01
+  collections:
+    - chillancezen.fortimanager
   connection: httpapi
   vars:
     adom: "root"
@@ -7,7 +9,7 @@
     ansible_httpapi_port: 443
   tasks:
     -   name: 'delete a script'
-        fmgr_dvmdb_script_script:
+        fmgr_dvmdb_script_obj:
             method: "delete"
             url_params:
                 adom: 'none'
