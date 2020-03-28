@@ -261,6 +261,11 @@ def main():
     }
 
     module_arg_spec = {
+        'loose_validation': {
+            'type': 'bool',
+            'required': False,
+            'default': False
+        },
         'params': {
             'type': 'list',
             'required': False
@@ -284,6 +289,7 @@ def main():
     module = AnsibleModule(argument_spec=module_arg_spec,
                            supports_check_mode=False)
     method = module.params['method']
+    loose_validation = module.params['loose_validation']
 
     fmgr = None
     payload = None
@@ -292,7 +298,8 @@ def main():
     if module._socket_path:
         connection = Connection(module._socket_path)
         tools = FMGRCommon()
-        tools.validate_module_params(module, body_schema)
+        if loose_validation == False:
+            tools.validate_module_params(module, body_schema)
         tools.validate_module_url_params(module, jrpc_urls, url_schema)
         full_url = tools.get_full_url_path(module, jrpc_urls)
         payload = tools.get_full_payload(module, full_url)
