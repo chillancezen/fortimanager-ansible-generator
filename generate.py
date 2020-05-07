@@ -272,6 +272,11 @@ def generate_schema_document_options(
         raw_body_schemas, in_path_params, api_endpoint_tags):
     options_data = ''
     body_schema = transform_schema(raw_body_schemas)
+    options_data += ' ' * 4 + 'loose_validation:\n'
+    options_data += ' ' * 8 + 'description: Do parameter validation in a loose way\n'
+    options_data += ' ' * 8 + 'required: False\n'
+    options_data += ' ' * 8 + 'type: bool\n'
+    options_data += ' ' * 8 + 'default: false\n'
     options_data += ' ' * 4 + 'workspace_locking_adom:\n'
     options_data += ' ' * 8 + 'description: the adom to lock in case FortiManager running in workspace mode\n'
     options_data += ' ' * 8 + 'required: False\n'
@@ -373,7 +378,8 @@ def _generate_docgen_paramters_recursively(schema):
 
 def generate_docgen_parameters(raw_body_schemas, in_path_params, api_endpoint_tags):
     params_data = ' <ul>\n'
-    params_data +=  ' <li><span class="li-head">workspace_locking_adom</span> - Acquire the workspace lock if FortiManager is running in workspace mode <span class="li-normal">type: str</span> <span class="li-required">required: false</span> <span class="li-normal"> choices: global, custom dom</span> </li>\n'
+    params_data += ' <li><span class="li-head">loose_validation</span> - Do parameter validation in a loose way <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: false</span>  </li>\n'
+    params_data += ' <li><span class="li-head">workspace_locking_adom</span> - Acquire the workspace lock if FortiManager is running in workspace mode <span class="li-normal">type: str</span> <span class="li-required">required: false</span> <span class="li-normal"> choices: global, custom dom</span> </li>\n'
     params_data += ' <li><span class="li-head">workspace_locking_timeout</span> - The maximum time in seconds to wait for other users to release workspace lock <span class="li-normal">type: integer</span> <span class="li-required">required: false</span>  <span class="li-normal">default: 300</span> </li>\n'
     if len(in_path_params):
         params_data += ' <li><span class="li-head">url_params</span> - parameters in url path <span class="li-normal">type: dict</span> <span class="li-required">required: true</span></li>\n'
@@ -505,6 +511,7 @@ def generate_schema_document_examples(
             example_data += shorten_description(('requesting %s' % (jrpc_url.replace('/adom/{adom}/', '/').replace('/global/', '/'))).upper(), 3 + len(' - name: '))
             example_data += '\n'
             example_data += ' ' * 6 + module_name + ':\n'
+            example_data += ' ' * 9 + 'loose_validation: False\n'
             example_data += ' ' * 9 + 'workspace_locking_adom: <value in [global, custom adom]>\n'
             example_data += ' ' * 9 + 'workspace_locking_timeout: 300\n'
             example_data += ' ' * 9 + \

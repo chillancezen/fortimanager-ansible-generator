@@ -45,6 +45,11 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
+    loose_validation:
+        description: Do parameter validation in a loose way
+        required: False
+        type: bool
+        default: false
     workspace_locking_adom:
         description: the adom to lock in case FortiManager running in workspace mode
         required: False
@@ -192,6 +197,7 @@ EXAMPLES = '''
 
     - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/HOTSPOT20/ANQP-NAI-REALM/{ANQP-NAI-REALM}/NAI-LIST/{NAI-LIST}/EAP-METHOD/{EAP-METHOD}/AUTH-PARAM
       fmgr_hotspot20_anqpnairealm_nailist_eapmethod_authparam:
+         loose_validation: False
          workspace_locking_adom: <value in [global, custom adom]>
          workspace_locking_timeout: 300
          method: <value in [add, set, update]>
@@ -210,6 +216,7 @@ EXAMPLES = '''
 
     - name: REQUESTING /PM/CONFIG/OBJ/WIRELESS-CONTROLLER/HOTSPOT20/ANQP-NAI-REALM/{ANQP-NAI-REALM}/NAI-LIST/{NAI-LIST}/EAP-METHOD/{EAP-METHOD}/AUTH-PARAM
       fmgr_hotspot20_anqpnairealm_nailist_eapmethod_authparam:
+         loose_validation: False
          workspace_locking_adom: <value in [global, custom adom]>
          workspace_locking_timeout: 300
          method: <value in [get]>

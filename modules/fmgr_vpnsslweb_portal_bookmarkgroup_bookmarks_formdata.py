@@ -45,6 +45,11 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
+    loose_validation:
+        description: Do parameter validation in a loose way
+        required: False
+        type: bool
+        default: false
     workspace_locking_adom:
         description: the adom to lock in case FortiManager running in workspace mode
         required: False
@@ -152,6 +157,7 @@ EXAMPLES = '''
 
     - name: REQUESTING /PM/CONFIG/OBJ/VPN/SSL/WEB/PORTAL/{PORTAL}/BOOKMARK-GROUP/{BOOKMARK-GROUP}/BOOKMARKS/{BOOKMARKS}/FORM-DATA
       fmgr_vpnsslweb_portal_bookmarkgroup_bookmarks_formdata:
+         loose_validation: False
          workspace_locking_adom: <value in [global, custom adom]>
          workspace_locking_timeout: 300
          method: <value in [add, set, update]>
@@ -169,6 +175,7 @@ EXAMPLES = '''
 
     - name: REQUESTING /PM/CONFIG/OBJ/VPN/SSL/WEB/PORTAL/{PORTAL}/BOOKMARK-GROUP/{BOOKMARK-GROUP}/BOOKMARKS/{BOOKMARKS}/FORM-DATA
       fmgr_vpnsslweb_portal_bookmarkgroup_bookmarks_formdata:
+         loose_validation: False
          workspace_locking_adom: <value in [global, custom adom]>
          workspace_locking_timeout: 300
          method: <value in [get]>

@@ -44,6 +44,11 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
+    loose_validation:
+        description: Do parameter validation in a loose way
+        required: False
+        type: bool
+        default: false
     workspace_locking_adom:
         description: the adom to lock in case FortiManager running in workspace mode
         required: False
@@ -209,6 +214,7 @@ EXAMPLES = '''
 
     - name: REQUESTING /PM/CONFIG/PKG/{PKG}/HEADER/SHAPING-POLICY/{SHAPING-POLICY}
       fmgr_pkg_header_shapingpolicy_obj:
+         loose_validation: False
          workspace_locking_adom: <value in [global, custom adom]>
          workspace_locking_timeout: 300
          method: <value in [clone, set, update]>
@@ -262,6 +268,7 @@ EXAMPLES = '''
 
     - name: REQUESTING /PM/CONFIG/PKG/{PKG}/HEADER/SHAPING-POLICY/{SHAPING-POLICY}
       fmgr_pkg_header_shapingpolicy_obj:
+         loose_validation: False
          workspace_locking_adom: <value in [global, custom adom]>
          workspace_locking_timeout: 300
          method: <value in [get]>
