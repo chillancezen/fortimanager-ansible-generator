@@ -285,7 +285,7 @@ def generate_schema_document_options(
     options_data += ' ' * 8 + '  - global\n'
     options_data += ' ' * 8 + '  - custom adom\n'
     options_data += ' ' * 4 + 'workspace_locking_timeout:\n'
-    options_data += ' ' * 8 + 'description: teh maximum time in seconds to wait for other user to release the workspace lock\n'
+    options_data += ' ' * 8 + 'description: the maximum time in seconds to wait for other user to release the workspace lock\n'
     options_data += ' ' * 8 + 'required: False\n'
     options_data += ' ' * 8 + 'type: integer\n'
     options_data += ' ' * 8 + 'default: 300\n'
