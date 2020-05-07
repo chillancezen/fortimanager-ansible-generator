@@ -272,6 +272,18 @@ def generate_schema_document_options(
         raw_body_schemas, in_path_params, api_endpoint_tags):
     options_data = ''
     body_schema = transform_schema(raw_body_schemas)
+    options_data += ' ' * 4 + 'workspace_locking_adom:\n'
+    options_data += ' ' * 8 + 'description: the adom to lock in case FortiManager running in workspace mode\n'
+    options_data += ' ' * 8 + 'required: False\n'
+    options_data += ' ' * 8 + 'type: string\n'
+    options_data += ' ' * 8 + 'choices:\n'
+    options_data += ' ' * 8 + '  - global\n'
+    options_data += ' ' * 8 + '  - custom adom\n'
+    options_data += ' ' * 4 + 'workspace_locking_timeout:\n'
+    options_data += ' ' * 8 + 'description: teh maximum time in seconds to wait for other user to release the workspace lock\n'
+    options_data += ' ' * 8 + 'required: False\n'
+    options_data += ' ' * 8 + 'type: integer\n'
+    options_data += ' ' * 8 + 'default: 300\n'
     if len(in_path_params):
         options_data += ' ' * 4 + 'url_params:\n'
         options_data += ' ' * 8 + 'description: the parameters in url path\n'
@@ -361,6 +373,8 @@ def _generate_docgen_paramters_recursively(schema):
 
 def generate_docgen_parameters(raw_body_schemas, in_path_params, api_endpoint_tags):
     params_data = ' <ul>\n'
+    params_data +=  ' <li><span class="li-head">workspace_locking_adom</span> - Acquire the workspace lock if FortiManager is running in workspace mode <span class="li-normal">type: str</span> <span class="li-required">required: false</span> <span class="li-normal"> choices: global, custom dom</span> </li>\n'
+    params_data += ' <li><span class="li-head">workspace_locking_timeout</span> - The maximum time in seconds to wait for other users to release workspace lock <span class="li-normal">type: integer</span> <span class="li-required">required: false</span>  <span class="li-normal">default: 300</span> </li>\n'
     if len(in_path_params):
         params_data += ' <li><span class="li-head">url_params</span> - parameters in url path <span class="li-normal">type: dict</span> <span class="li-required">required: true</span></li>\n'
         params_data += ' <ul class="ul-self">\n'
@@ -491,6 +505,8 @@ def generate_schema_document_examples(
             example_data += shorten_description(('requesting %s' % (jrpc_url.replace('/adom/{adom}/', '/').replace('/global/', '/'))).upper(), 3 + len(' - name: '))
             example_data += '\n'
             example_data += ' ' * 6 + module_name + ':\n'
+            example_data += ' ' * 9 + 'workspace_locking_adom: <value in [global, custom adom]>\n'
+            example_data += ' ' * 9 + 'workspace_locking_timeout: 300\n'
             example_data += ' ' * 9 + \
                 'method: <value in %s>\n' % (str(method_list).replace('\'', ''))
             if len(in_path_params):
@@ -855,6 +871,7 @@ def resolve_schema(url, schema, doc_template, code_template, multiurls):
     docgen_data += '   - The module may supports multiple method, every method has different parameters definition\n\n'
     docgen_data += '   - One method may also have more than one parameter definition collection, each collection is dedicated to one API endpoint\n\n'
     docgen_data += '   - The module may include domain dependent urls, the domain can be specified in url_params as adom\n\n'
+    docgen_data += '   - To run in workspace mode, the paremeter workspace_locking_adom must be included in the task\n\n'
     # EXAMPLE IN DOCGEN
     docgen_data += 'Examples\n' + '--------\n\n'
     docgen_data += '.. code-block:: yaml+jinja\n\n'

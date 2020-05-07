@@ -37,6 +37,8 @@ Parameters
 .. raw:: html
 
  <ul>
+ <li><span class="li-head">workspace_locking_adom</span> - Acquire the workspace lock if FortiManager is running in workspace mode <span class="li-normal">type: str</span> <span class="li-required">required: false</span> <span class="li-normal"> choices: global, custom dom</span> </li>
+ <li><span class="li-head">workspace_locking_timeout</span> - The maximum time in seconds to wait for other users to release workspace lock <span class="li-normal">type: integer</span> <span class="li-required">required: false</span>  <span class="li-normal">default: 300</span> </li>
  <li><span class="li-head">parameters for method: [get]</span> - Automatic deletion policy for quarantined files.</li>
  <ul class="ul-self">
  </ul>
@@ -66,6 +68,8 @@ Notes
 
    - The module may include domain dependent urls, the domain can be specified in url_params as adom
 
+   - To run in workspace mode, the paremeter workspace_locking_adom must be included in the task
+
 Examples
 --------
 
@@ -83,6 +87,8 @@ Examples
 
     - name: REQUESTING /CLI/SYSTEM/AUTO-DELETE/QUARANTINE-FILES-AUTO-DELETION
       fmgr_system_autodelete_quarantinefilesautodeletion:
+         workspace_locking_adom: <value in [global, custom adom]>
+         workspace_locking_timeout: 300
          method: <value in [set, update]>
          params:
             -

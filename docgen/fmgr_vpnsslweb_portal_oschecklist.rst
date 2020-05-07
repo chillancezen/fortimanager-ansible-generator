@@ -38,6 +38,8 @@ Parameters
 .. raw:: html
 
  <ul>
+ <li><span class="li-head">workspace_locking_adom</span> - Acquire the workspace lock if FortiManager is running in workspace mode <span class="li-normal">type: str</span> <span class="li-required">required: false</span> <span class="li-normal"> choices: global, custom dom</span> </li>
+ <li><span class="li-head">workspace_locking_timeout</span> - The maximum time in seconds to wait for other users to release workspace lock <span class="li-normal">type: integer</span> <span class="li-required">required: false</span>  <span class="li-normal">default: 300</span> </li>
  <li><span class="li-head">url_params</span> - parameters in url path <span class="li-normal">type: dict</span> <span class="li-required">required: true</span></li>
  <ul class="ul-self">
  <li><span class="li-head">adom</span> - the domain prefix <span class="li-normal">type: str</span> <span class="li-normal"> choices: none, global, custom dom</span></li>
@@ -73,6 +75,8 @@ Notes
 
    - The module may include domain dependent urls, the domain can be specified in url_params as adom
 
+   - To run in workspace mode, the paremeter workspace_locking_adom must be included in the task
+
 Examples
 --------
 
@@ -90,6 +94,8 @@ Examples
 
     - name: REQUESTING /PM/CONFIG/OBJ/VPN/SSL/WEB/PORTAL/{PORTAL}/OS-CHECK-LIST
       fmgr_vpnsslweb_portal_oschecklist:
+         workspace_locking_adom: <value in [global, custom adom]>
+         workspace_locking_timeout: 300
          method: <value in [get]>
          url_params:
             adom: <value in [none, global, custom dom]>
@@ -100,6 +106,8 @@ Examples
 
     - name: REQUESTING /PM/CONFIG/OBJ/VPN/SSL/WEB/PORTAL/{PORTAL}/OS-CHECK-LIST
       fmgr_vpnsslweb_portal_oschecklist:
+         workspace_locking_adom: <value in [global, custom adom]>
+         workspace_locking_timeout: 300
          method: <value in [set, update]>
          url_params:
             adom: <value in [none, global, custom dom]>

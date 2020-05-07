@@ -44,6 +44,18 @@ notes:
       specification, but with the structure of fortimanager API schema, we need
       a trivial transformation when we are filling the ansible playbook
 options:
+    workspace_locking_adom:
+        description: the adom to lock in case FortiManager running in workspace mode
+        required: False
+        type: string
+        choices:
+          - global
+          - custom adom
+    workspace_locking_timeout:
+        description: teh maximum time in seconds to wait for other user to release the workspace lock
+        required: False
+        type: integer
+        default: 300
     schema_object0:
         methods: [add, set, update]
         description: 'SNMP user configuration.'
@@ -182,6 +194,8 @@ EXAMPLES = '''
 
     - name: REQUESTING /CLI/SYSTEM/SNMP/USER
       fmgr_system_snmp_user:
+         workspace_locking_adom: <value in [global, custom adom]>
+         workspace_locking_timeout: 300
          method: <value in [add, set, update]>
          params:
             -
@@ -204,6 +218,8 @@ EXAMPLES = '''
 
     - name: REQUESTING /CLI/SYSTEM/SNMP/USER
       fmgr_system_snmp_user:
+         workspace_locking_adom: <value in [global, custom adom]>
+         workspace_locking_timeout: 300
          method: <value in [get]>
          params:
             -
@@ -495,6 +511,15 @@ def main():
             'type': 'bool',
             'required': False,
             'default': False
+        },
+        'workspace_locking_adom': {
+            'type': 'str',
+            'required': False
+        },
+        'workspace_locking_timeout': {
+            'type': 'int',
+            'required': False,
+            'default': 300
         },
         'params': {
             'type': 'list',
