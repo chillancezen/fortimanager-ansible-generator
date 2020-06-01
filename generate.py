@@ -267,6 +267,51 @@ def _generate_schema_document_options_recursilve(schema, depth):
 
     return rdata
 
+def generate_unified_schema_document_options(all_methods):
+    options_data = ''
+    options_data += ' ' * 4 + 'loose_validation:\n'
+    options_data += ' ' * 8 + 'description:\n'
+    options_data += ' ' * 8 + '  - Do parameter validation in a loose way\n'
+    options_data += ' ' * 8 + 'type: bool\n'
+    options_data += ' ' * 8 + 'required: false\n'
+
+    options_data += ' ' * 4 + 'workspace_locking_adom:\n'
+    options_data += ' ' * 8 + 'description:\n'
+    options_data += ' ' * 8 + '  - the adom name to lock in case FortiManager running in workspace mode\n'
+    options_data += ' ' * 8 + '  - it can be global or any other custom adom names\n'
+    options_data += ' ' * 8 + 'required: false\n'
+    options_data += ' ' * 8 + 'type: str\n'
+
+    options_data += ' ' * 4 + 'workspace_locking_timeout:\n'
+    options_data += ' ' * 8 + 'description:\n'
+    options_data += ' ' * 8 + '  - the maximum time in seconds to wait for other user to release the workspace lock\n'
+    options_data += ' ' * 8 + 'required: false\n'
+    options_data += ' ' * 8 + 'type: int\n'
+    options_data += ' ' * 8 + 'default: 300\n'
+
+    options_data += ' ' * 4 + 'method:\n'
+    options_data += ' ' * 8 + 'description:\n'
+    options_data += ' ' * 8 + '  - The method in request\n'
+    options_data += ' ' * 8 + 'required: true\n'
+    options_data += ' ' * 8 + 'type: str\n'
+    options_data += ' ' * 8 + 'choices:\n'
+    for m in all_methods:
+        options_data += ' ' * 8 + ('  - %s\n' % (m))
+
+    options_data += ' ' * 4 + 'params:\n'
+    options_data += ' ' * 8 + 'description:\n'
+    options_data += ' ' * 8 + '  - The parameters for each method\n'
+    options_data += ' ' * 8 + '  - See full parameters list in https://ansible-galaxy-fortimanager-docs.readthedocs.io/en/latest\n'
+    options_data += ' ' * 8 + 'type: list\n'
+    options_data += ' ' * 8 + 'required: false\n'
+
+    options_data += ' ' * 4 + 'url_params:\n'
+    options_data += ' ' * 8 + 'description:\n'
+    options_data += ' ' * 8 + '  - The parameters for each API request URL\n'
+    options_data += ' ' * 8 + '  - Also see full URL parameters in https://ansible-galaxy-fortimanager-docs.readthedocs.io/en/latest\n'
+    options_data += ' ' * 8 + 'required: false\n'
+    options_data += ' ' * 8 + 'type: dict\n'
+    return options_data
 
 def generate_schema_document_options(
         raw_body_schemas, in_path_params, api_endpoint_tags):
@@ -462,10 +507,10 @@ def _generate_schema_document_examples_recursive(schema, depth):
                     enum_list.append(item)
                 enum_index += 1
             rdata += ' <value in %s%s>' % (str(enum_list).replace('\'', ''),
-                                          (' default: ' + quote + '%s' + quote) % (shorten_description(str(schema['default']), 80)) if 'default' in
+                                          (' default: ' + quote + '%s' + quote) % (shorten_description(str(schema['default']), 80)) if 'XXX_DONNOT_SET_default' in
                                           schema and schema['default'] != '' else '') + '\n'
         else:
-            rdata += ' <value of %s%s>' % (schema['type'], (' default: ' + quote + '%s' + quote) % (shorten_description(str(schema['default']), 80)) if 'default' in schema and schema['default'] != '' else '') + '\n'
+            rdata += ' <value of %s%s>' % (schema['type'], (' default: ' + quote + '%s' + quote) % (shorten_description(str(schema['default']), 80)) if 'XXX_DONNOT_SET_default' in schema and schema['default'] != '' else '') + '\n'
     elif schema['type'] is 'array':
         rdata += '\n'
         rdata += ' ' * (depth - 1) * 3 + '  -'
@@ -570,6 +615,26 @@ def _generate_schema_document_return_recursive(schema, depth):
     else:
         assert(False)
     return rdata
+
+
+def generate_unified_schema_document_return():
+    return_data = ''
+    return_data += 'url:\n'
+    return_data += '    description: The full url requested\n'
+    return_data += '    returned: always\n'
+    return_data += '    type: str\n'
+    return_data += '    sample: /sys/login/user\n'
+
+    return_data += 'status:\n'
+    return_data += '    description: The status of api request\n'
+    return_data += '    returned: always\n'
+    return_data += '    type: dict\n'
+
+    return_data += 'data:\n'
+    return_data += '    description: The payload returned in the request\n'
+    return_data += '    type: dict\n'
+    return_data += '    returned: always\n'
+    return return_data
 
 
 def generate_schema_document_return(raw_results_schemas):
@@ -810,9 +875,11 @@ def resolve_schema(url, schema, doc_template, code_template, multiurls):
                  'jrpc_urls': mutiurls_names,
                  'short_description': 'no description' if short_description == '' else short_description,
                  'allowed_methods': supported_methods,
-                 'doc_options': generate_schema_document_options(raw_body_schemas, the_one_in_path_params, api_endpoint_tags),
+                 #'doc_options': generate_schema_document_options(raw_body_schemas, the_one_in_path_params, api_endpoint_tags),
+                 'doc_options': generate_unified_schema_document_options(supported_methods),
                  'doc_examples': doc_examples,
-                 'doc_return': generate_schema_document_return(results_schemas)
+                 #'doc_return': generate_schema_document_return(results_schemas)
+                 'doc_return': generate_unified_schema_document_return()
                  }
     doc_body = doc_template.render(**doc_rdata)
 
