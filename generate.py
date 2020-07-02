@@ -797,7 +797,7 @@ def validate_multiurls_schema(url, schema, multiurls):
         assert(len(per_method_api_endpoint_tags) == 1)
 
 url_mod_tracking = dict()
-def resolve_schema(url, schema, doc_template, code_template, multiurls):
+def resolve_curd_schema(url, schema, doc_template, code_template, multiurls, peer_url):
     validate_multiurls_schema(url, schema, multiurls)
     body_schemas = dict()
     raw_body_schemas = dict()
@@ -862,6 +862,7 @@ def resolve_schema(url, schema, doc_template, code_template, multiurls):
     print('\t\033[36mfull.url.params:\033[0m \033[37m%s\033[0m' % (str([item['name'] for item in the_one_in_path_params]).replace('\'', '')))
     print('\t\033[36msupported.method:\033[0m \033[37m%s\033[0m' % (str(supported_methods).replace('\'', '')))
     if len(multiurls) > 1:
+        assert(adom_is_in_path_params)
         for _url in mutiurls_names:
             print('\t\033[36msub.url:\033[0m \033[37m%s\033[0m' % (_url))
     code_rdata = {'supported_methods': supported_methods,
@@ -984,9 +985,12 @@ if __name__ == '__main__':
     doc_template = jinja2_env.get_template('doc.j2')
     except_defs = dict()
     domain_independent_urls = dict()
+    curd_urls = dict()
     with open('./exceptional_definition_list.json') as f:
         except_defs = json.load(f)
     schema_directory = './fortimanager-schema/schemas'
+
+    # Categorize all domain independent urls.
     for schema_file in listdir(schema_directory):
         per_schema_except_def = None
         if schema_file in except_defs:
@@ -1000,10 +1004,38 @@ if __name__ == '__main__':
             if stripped_domain_url not in domain_independent_urls:
                 domain_independent_urls[stripped_domain_url] = list()
             domain_independent_urls[stripped_domain_url].append((url, schema))
+    # Merge those modules which have CRUD semantics
     for stripped_url in domain_independent_urls:
+        if not stripped_url.endswith('}'):
+            last_token = stripped_url.split('/')[-1]
+            perobj_stripped_url = stripped_url + '/{' + last_token + '}'
+            has_perobj = perobj_stripped_url in domain_independent_urls
+            if not has_perobj:
+                continue
+            nonperobj_url, nonperobj_schema = domain_independent_urls[stripped_url][0]
+            perobj_url, perobj_schema = domain_independent_urls[perobj_stripped_url][0]
+
+            nonperobj_methods = set(nonperobj_schema._digest[nonperobj_url].keys())
+            perobj_methods = set(perobj_schema._digest[perobj_url].keys())
+            all_methods = nonperobj_methods | perobj_methods
+            if 'get' in all_methods and \
+               'add' in all_methods and \
+               'delete' in all_methods and \
+               'update' in all_methods:
+                curd_urls[stripped_url] = perobj_stripped_url
+                curd_urls[perobj_stripped_url] = stripped_url
+                assert('add' in nonperobj_methods)
+                assert('get' in perobj_methods)
+                assert('delete' in perobj_methods)
+                assert('update' in perobj_methods)
+    # Now we have per-object url mapping, these modules will be applied with present/absent Ansible semantics
+    for stripped_url in curd_urls:
+        if stripped_url.endswith('}'):
+            continue
         url0, schema0 = domain_independent_urls[stripped_url][0]
-        print('\033[32mprocessing multi-domain url:\033[0m', stripped_url)
-        resolve_schema(url0, schema0, doc_template, code_template, domain_independent_urls[stripped_url])
+        print('\033[32mprocessing CURD multi-domain url:\033[0m', stripped_url)
+        print('\t\033[32m                peer url:\033[0m', curd_urls[stripped_url])
+        resolve_curd_schema(url0, schema0, doc_template, code_template, domain_independent_urls[stripped_url], curd_urls[stripped_url])
     # There should be no modules in conflict
     for mod in url_mod_tracking:
         urls = url_mod_tracking[mod]
