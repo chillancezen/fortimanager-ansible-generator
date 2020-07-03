@@ -1,10 +1,11 @@
 from ansible.module_utils.basic import AnsibleModule
 from ansible.module_utils.connection import Connection
-from ansible_collections.fortinet.fortimanager.plugins.module_utils.common import FAIL_SOCKET_MSG
-from ansible_collections.fortinet.fortimanager.plugins.module_utils.common import DEFAULT_RESULT_OBJ
-from ansible_collections.fortinet.fortimanager.plugins.module_utils.common import FMGRCommon
-from ansible_collections.fortinet.fortimanager.plugins.module_utils.common import FMGBaseException
-from ansible_collections.fortinet.fortimanager.plugins.module_utils.fortimanager import FortiManagerHandler
+#from ansible_collections.fortinet.fortimanager.plugins.module_utils.common import FAIL_SOCKET_MSG
+#from ansible_collections.fortinet.fortimanager.plugins.module_utils.common import DEFAULT_RESULT_OBJ
+#from ansible_collections.fortinet.fortimanager.plugins.module_utils.common import FMGRCommon
+#from ansible_collections.fortinet.fortimanager.plugins.module_utils.common import FMGBaseException
+#from ansible_collections.fortinet.fortimanager.plugins.module_utils.fortimanager import FortiManagerHandler
+from ansible_collections.fortinet.fortimanager.plugins.module_utils.NAPI import NAPIManager
 
 
 def main():
@@ -22,6 +23,8 @@ def main():
     {%- endfor %}
     ]
 
+    url_params = [{%- for param in in_path_params %}'{{param.name}}'{%- if loop.index != loop.length -%}, {%- endif %}{%- endfor %}]
+    module_primary_key = {% if mkey -%} '{{mkey}}' {% else -%} None {%- endif %}
     module_arg_spec = {
         'workspace_locking_adom': {
             'type': 'str',
@@ -55,36 +58,14 @@ def main():
     module = AnsibleModule(argument_spec=module_arg_spec,
                            supports_check_mode=False)
 
-    module.exit_json(params=module.params)
-
-'''
     fmgr = None
-    payload = None
-    response = DEFAULT_RESULT_OBJ
-
     if module._socket_path:
         connection = Connection(module._socket_path)
-        tools = FMGRCommon()
-        if loose_validation is False:
-            tools.validate_module_params(module, body_schema)
-        tools.validate_module_url_params(module, jrpc_urls, url_schema)
-        full_url = tools.get_full_url_path(module, jrpc_urls)
-        payload = tools.get_full_payload(module, full_url)
-        fmgr = FortiManagerHandler(connection, module)
-        fmgr.tools = tools
+        fmgr = NAPIManager(jrpc_urls, perobject_jrpc_urls, module_primary_key, url_params, module, connection)
+        fmgr.process_curd()
     else:
-        module.fail_json(**FAIL_SOCKET_MSG)
-
-    try:
-        response = fmgr._conn.send_request(method, payload)
-        fmgr.govern_response(module=module, results=response,
-                             msg='Operation Finished',
-                             ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
-    except Exception as e:
-        raise FMGBaseException(e)
-    module.exit_json(meta=response[1])
-'''
-
+        module.fail_json(msg = 'MUST RUN IN HTTPAPI MODE')
+    module.exit_json(meta = module.params)
 
 if __name__ == '__main__':
     main()

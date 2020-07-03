@@ -796,19 +796,21 @@ def validate_multiurls_schema(url, schema, multiurls):
                 assert(the_one_result_schema == result_schema)
         assert(len(per_method_api_endpoint_tags) == 1)
 
-def schema_to_layer2_params(schema):
+def schema_to_layer2_params(schema, to_search_mkey, mkey):
     pdata = dict()
     for item_name in schema:
         item = schema[item_name]
         pdata[item_name] = dict()
         pdata[item_name]['required'] = False
+        if to_search_mkey and mkey == item_name:
+            pdata[item_name]['required'] = True
         if 'enum' in item:
             pdata[item_name]['choices'] = [e for e in item['enum']]
         if 'default' in item:
             pdata[item_name]['default'] = item['default']
         if 'type' not in item or item['type'] not in ['string', 'integer', 'array']:
             pdata[item_name]['type'] = 'dict'
-            pdata[item_name]['options'] = schema_to_layer2_params(item)
+            pdata[item_name]['options'] = schema_to_layer2_params(item, False, None)
             continue
         if item['type'] == 'string':
             pdata[item_name]['type'] = 'str'
@@ -819,12 +821,12 @@ def schema_to_layer2_params(schema):
             pdata[item_name]['type'] = 'list'
             subitem = item['items']
             if 'type' not in subitem or subitem['type'] not in ['string', 'integer', 'array']:
-                pdata[item_name]['options'] = schema_to_layer2_params(subitem)
+                pdata[item_name]['options'] = schema_to_layer2_params(subitem, False, None)
             elif subitem['type'] in ['string', 'integer']:
                 if 'enum' not in subitem:
                     pdata[item_name]['type'] = 'str' if subitem['type'] is 'string' else 'int'
                     # XXX: set an warning here.
-                    print('\33[33mWARNING: list to atomic type conversion:' + item_name + '\033[0m')
+                    print('\t\33[33mWARNING: list to atomic type conversion:' + item_name + '\033[0m')
                 else:
                     pdata[item_name]['choices'] = [i for i in subitem['enum']]
             else:
@@ -833,6 +835,23 @@ def schema_to_layer2_params(schema):
             # Other type MUST NOT appear
             assert(False)
     return pdata
+
+mkey_dataset = None
+with open('module_primary_key.json', 'r') as f:
+    mkey_dataset = json.load(f)
+def module_primary_key(module_name, schema):
+    if module_name in mkey_dataset:
+        return mkey_dataset[module_name]
+    for item_name in schema:
+        if item_name == 'name':
+            return 'name'
+    for item_name in schema:
+        if item_name == 'id':
+            return 'id'
+    print('\t\033[33mWarning: Cannot find primary key, possible options:', list(schema.keys()), '\033[0m')
+    return None
+
+
 url_mod_tracking = dict()
 def resolve_curd_schema(url, schema, doc_template, code_template, multiurls, peer_url):
     validate_multiurls_schema(url, schema, multiurls)
@@ -908,7 +927,7 @@ def resolve_curd_schema(url, schema, doc_template, code_template, multiurls, pee
         for _url in perobject_mutiurls_names:
             print('\t\033[36msub.url:\033[0m \033[37m%s\033[0m' % (_url))
 
-    #Note method Add/Update share the same schema
+    # Note method Add/Update share the same schema
     the_unique_schema = None
     for top_schema in body_schemas['add']:
         if top_schema['name'] == 'data':
@@ -916,12 +935,17 @@ def resolve_curd_schema(url, schema, doc_template, code_template, multiurls, pee
             break
     assert(the_unique_schema)
     assert(the_unique_schema['type'] == 'array')
+    # Determine the primary key for the module
+    mkey = module_primary_key(canonical_path, the_unique_schema['items'])
+    if mkey:
+        print('\t\033[36mprimary key:\033[0m \033[37m', mkey, '\033[0m')
     code_rdata = {'supported_methods': supported_methods,
                   'in_path_params': the_one_in_path_params,
                   'jrpc_urls': mutiurls_names,
                   'perobject_jrpc_urls': perobject_mutiurls_names,
+                  'mkey': mkey,
                   'level2_name': canonical_path.lstrip('fmgr_'),
-                  'body_schemas': schema_beautify(schema_to_layer2_params(the_unique_schema['items']), 12, 1, False, True)}
+                  'body_schemas': schema_beautify(schema_to_layer2_params(the_unique_schema['items'], True, mkey), 12, 1, False, True)}
                   #'body_schemas': schema_beautify(transform_schema(body_schemas), 4, 1, False, True)}
     code_body = code_template.render(**code_rdata)
     short_description = shorten_description(canonicalize_text(api_endpoint_tags[supported_methods[0]])[0], len('short_description: ')).replace('\'', '')
