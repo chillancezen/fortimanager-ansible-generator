@@ -796,6 +796,43 @@ def validate_multiurls_schema(url, schema, multiurls):
                 assert(the_one_result_schema == result_schema)
         assert(len(per_method_api_endpoint_tags) == 1)
 
+def schema_to_layer2_params(schema):
+    pdata = dict()
+    for item_name in schema:
+        item = schema[item_name]
+        pdata[item_name] = dict()
+        pdata[item_name]['required'] = False
+        if 'enum' in item:
+            pdata[item_name]['choices'] = [e for e in item['enum']]
+        if 'default' in item:
+            pdata[item_name]['default'] = item['default']
+        if 'type' not in item or item['type'] not in ['string', 'integer', 'array']:
+            pdata[item_name]['type'] = 'dict'
+            pdata[item_name]['options'] = schema_to_layer2_params(item)
+            continue
+        if item['type'] == 'string':
+            pdata[item_name]['type'] = 'str'
+        elif item['type'] == 'integer':
+            pdata[item_name]['type'] = 'int'
+        elif item['type'] == 'array':
+            assert('items' in item)
+            pdata[item_name]['type'] = 'list'
+            subitem = item['items']
+            if 'type' not in subitem or subitem['type'] not in ['string', 'integer', 'array']:
+                pdata[item_name]['options'] = schema_to_layer2_params(subitem)
+            elif subitem['type'] in ['string', 'integer']:
+                if 'enum' not in subitem:
+                    pdata[item_name]['type'] = 'str' if subitem['type'] is 'string' else 'int'
+                    # XXX: set an warning here.
+                    print('\33[33mWARNING: list to atomic type conversion:' + item_name + '\033[0m')
+                else:
+                    pdata[item_name]['choices'] = [i for i in subitem['enum']]
+            else:
+                assert(False)
+        else:
+            # Other type MUST NOT appear
+            assert(False)
+    return pdata
 url_mod_tracking = dict()
 def resolve_curd_schema(url, schema, doc_template, code_template, multiurls, peer_url):
     validate_multiurls_schema(url, schema, multiurls)
@@ -851,13 +888,16 @@ def resolve_curd_schema(url, schema, doc_template, code_template, multiurls, pee
     canonical_path = canonicalize_url_as_path(url)
     supported_methods = list(schema._digest[url].keys())
 
+    #print(json.dumps(body_schemas))
     # Now we have all the parameters in path for all the urls which can be merged
     # dump lots of useful information to screen.
     global url_mod_tracking
     if canonical_path not in url_mod_tracking:
         url_mod_tracking[canonical_path] = list()
     url_mod_tracking[canonical_path].append(url)
+    last_token = url.split('/')[-1]
     mutiurls_names = [_url for _url, _schema in multiurls]
+    perobject_mutiurls_names = [_url + '/{' + last_token + '}' for _url in mutiurls_names]
     print('\t\033[36mmodule.name:\033[0m \033[37m%s\033[0m' % (canonical_path))
     print('\t\033[36mfull.url.params:\033[0m \033[37m%s\033[0m' % (str([item['name'] for item in the_one_in_path_params]).replace('\'', '')))
     print('\t\033[36msupported.method:\033[0m \033[37m%s\033[0m' % (str(supported_methods).replace('\'', '')))
@@ -865,10 +905,24 @@ def resolve_curd_schema(url, schema, doc_template, code_template, multiurls, pee
         assert(adom_is_in_path_params)
         for _url in mutiurls_names:
             print('\t\033[36msub.url:\033[0m \033[37m%s\033[0m' % (_url))
+        for _url in perobject_mutiurls_names:
+            print('\t\033[36msub.url:\033[0m \033[37m%s\033[0m' % (_url))
+
+    #Note method Add/Update share the same schema
+    the_unique_schema = None
+    for top_schema in body_schemas['add']:
+        if top_schema['name'] == 'data':
+            the_unique_schema = top_schema
+            break
+    assert(the_unique_schema)
+    assert(the_unique_schema['type'] == 'array')
     code_rdata = {'supported_methods': supported_methods,
                   'in_path_params': the_one_in_path_params,
                   'jrpc_urls': mutiurls_names,
-                  'body_schemas': schema_beautify(transform_schema(body_schemas), 4, 1, False, True)}
+                  'perobject_jrpc_urls': perobject_mutiurls_names,
+                  'level2_name': canonical_path.lstrip('fmgr_'),
+                  'body_schemas': schema_beautify(schema_to_layer2_params(the_unique_schema['items']), 12, 1, False, True)}
+                  #'body_schemas': schema_beautify(transform_schema(body_schemas), 4, 1, False, True)}
     code_body = code_template.render(**code_rdata)
     short_description = shorten_description(canonicalize_text(api_endpoint_tags[supported_methods[0]])[0], len('short_description: ')).replace('\'', '')
     doc_examples = generate_schema_document_examples(raw_body_schemas, canonical_path, url, the_one_in_path_params)

@@ -15,23 +15,14 @@ def main():
     {%- endfor %}
     ]
 
-    url_schema = [
-    {%- for param in in_path_params %}
-        {
-            'name': '{{param.name}}',
-            'type': '{{param.type}}'
-        }
+    perobject_jrpc_urls = [
+    {%- for url in perobject_jrpc_urls %}
+        '{{url}}'
         {%- if loop.index != loop.length -%}, {%- endif %}
     {%- endfor %}
     ]
 
-    body_schema ={{body_schemas}}
     module_arg_spec = {
-        'loose_validation': {
-            'type': 'bool',
-            'required': False,
-            'default': False
-        },
         'workspace_locking_adom': {
             'type': 'str',
             'required': False
@@ -41,32 +32,32 @@ def main():
             'required': False,
             'default': 300
         },
-        'params': {
-            'type': 'list',
-            'required': False
-        },
-        'method': {
+        'state': {
             'type': 'str',
             'required': True,
             'choices': [
-                {%- for method in supported_methods %}
-                '{{ method }}' 
-                    {%- if loop.index != loop.length -%}
-                        ,
-                    {%- endif -%}
-                {%- endfor %}
+                'present',
+                'absent'
             ]
         },
-        'url_params': {
+        {%- for param in in_path_params %}
+        '{{param.name}}': {
+            'required': True,
+            'type': {% if param.type == 'integer' -%}' 'int' {% else -%} 'str' {%- endif %}
+        },
+        {%- endfor %}
+        '{{level2_name}}': {
+            'required': False,
             'type': 'dict',
-            'required': False
+            'options':{{body_schemas}}
         }
     }
     module = AnsibleModule(argument_spec=module_arg_spec,
                            supports_check_mode=False)
-    method = module.params['method']
-    loose_validation = module.params['loose_validation']
 
+    module.exit_json(params=module.params)
+
+'''
     fmgr = None
     payload = None
     response = DEFAULT_RESULT_OBJ
@@ -91,8 +82,8 @@ def main():
                              ansible_facts=fmgr.construct_ansible_facts(response, module.params, module.params))
     except Exception as e:
         raise FMGBaseException(e)
-
     module.exit_json(meta=response[1])
+'''
 
 
 if __name__ == '__main__':
