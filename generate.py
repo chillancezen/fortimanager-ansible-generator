@@ -267,6 +267,7 @@ def _generate_schema_document_options_recursilve(schema, depth):
 
     return rdata
 
+
 def generate_unified_schema_document_options(all_methods):
     options_data = ''
     options_data += ' ' * 4 + 'loose_validation:\n'
@@ -311,6 +312,46 @@ def generate_unified_schema_document_options(all_methods):
     options_data += ' ' * 8 + '  - Also see full URL parameters in https://ansible-galaxy-fortimanager-docs.readthedocs.io/en/latest\n'
     options_data += ' ' * 8 + 'required: false\n'
     options_data += ' ' * 8 + 'type: dict\n'
+    return options_data
+
+def napi_generate_schema_document_options(in_path_schema, body_schema, level2_name):
+    options_data = ''
+    options_data += ' ' * 4 + 'workspace_locking_adom:\n'
+    options_data += ' ' * 8 + 'description: the adom to lock for FortiManager running in workspace mode, the value can be global and others including root\n'
+    options_data += ' ' * 8 + 'required: false\n'
+    options_data += ' ' * 8 + 'type: str\n'
+    options_data += ' ' * 4 + 'workspace_locking_timeout:\n'
+    options_data += ' ' * 8 + 'description: the maximum time in seconds to wait for other user to release the workspace lock\n'
+    options_data += ' ' * 8 + 'required: false\n'
+    options_data += ' ' * 8 + 'type: int\n'
+    options_data += ' ' * 8 + 'default: 300\n'
+    options_data += ' ' * 4 + 'state:\n'
+    options_data += ' ' * 8 + 'description: the directive to create, update or delete an object\n'
+    options_data += ' ' * 8 + 'type: str\n'
+    options_data += ' ' * 8 + 'required: true\n'
+    options_data += ' ' * 8 + 'choices:\n'
+    options_data += ' ' * 8 + '  - present\n'
+    options_data += ' ' * 8 + '  - absent\n'
+    options_data += ' ' * 4 + 'rc_succeeded:\n'
+    options_data += ' ' * 8 + 'description: the rc codes list with which the conditions to succeed will be overriden\n'
+    options_data += ' ' * 8 + 'type: list\n'
+    options_data += ' ' * 8 + 'required: false\n'
+    options_data += ' ' * 4 + 'rc_failed:\n'
+    options_data += ' ' * 8 + 'description: the rc codes list with which the conditions to fail will be overriden\n'
+    options_data += ' ' * 8 + 'type: list\n'
+    options_data += ' ' * 8 + 'required: false\n'
+    for param in in_path_schema:
+        assert('name' in param)
+        assert('type' in param)
+        options_data += ' ' * 4 + param['name'] + ':\n'
+        options_data += ' ' * 8 + 'type: ' + schematype_displayname_mapping[param['type']] + '\n'
+        options_data += ' ' * 8 + 'required: true\n'
+
+    options_data += ' ' * 4 + level2_name + ':\n'
+    options_data += ' ' * 8 + 'required: false\n'
+    options_data += ' ' * 8 + 'type: dict\n'
+    options_data += ' ' * 8 + 'suboptions:\n'
+    options_data += _generate_schema_document_options_recursilve(body_schema, 3)
     return options_data
 
 def generate_schema_document_options(
@@ -420,6 +461,22 @@ def _generate_docgen_paramters_recursively(schema):
         params_data += ' </ul>\n'
     return params_data
 
+def napi_generate_docgen_parameters(in_path_schema, body_schema, module_name, short_desc):
+    params_data = ' <ul>\n'
+    params_data += ' <li><span class="li-head">workspace_locking_adom</span> - Acquire the workspace lock if FortiManager is running in workspace mode <span class="li-normal">type: str</span> <span class="li-required">required: false</span> <span class="li-normal"> choices: global, custom adom including root</span> </li>\n'
+    params_data += ' <li><span class="li-head">workspace_locking_timeout</span> - The maximum time in seconds to wait for other users to release workspace lock <span class="li-normal">type: integer</span> <span class="li-required">required: false</span>  <span class="li-normal">default: 300</span> </li>\n'
+    params_data += ' <li><span class="li-head">rc_succeeded</span> - The rc codes list with which the conditions to succeed will be overriden <span class="li-normal">type: list</span> <span class="li-required">required: false</span> </li>\n'
+    params_data += ' <li><span class="li-head">rc_failed</span> - The rc codes list with which the conditions to fail will be overriden <span class="li-normal">type: list</span> <span class="li-required">required: false</span> </li>\n'
+    params_data += ' <li><span class="li-head">state</span> - The directive to create, update or delete an object <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal"> choices: present, absent</span> </li>\n'
+    for param in in_path_schema:
+        params_data += ' <li><span class="li-head">' + param['name'] + '</span> - The parameter in requested url <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>\n'
+    params_data += ' <li><span class="li-head">' + module_name[5:] +'</span> - ' + short_desc +' <span class="li-normal">type: dict</span></li>\n'
+    params_data += ' <ul class="ul-self">\n'
+    params_data += _generate_docgen_paramters_recursively(body_schema)
+    params_data += ' </ul>\n'
+    params_data += ' </ul>\n'
+    return params_data
+
 
 def generate_docgen_parameters(raw_body_schemas, in_path_params, api_endpoint_tags):
     params_data = ' <ul>\n'
@@ -523,7 +580,30 @@ def _generate_schema_document_examples_recursive(schema, depth):
         assert(False)
     return rdata
 
+def napi_generate_schema_document_examples(module_name, in_path_schema, body_schema, short_desc):
+    example_data = ''
+    example_data += ' - ' + 'hosts: fortimanager-inventory\n'
+    example_data += ' ' * 3 + 'collections:\n'
+    example_data += ' ' * 3 + '  - fortinet.fortimanager\n'
+    example_data += ' ' * 3 + 'connection: httpapi\n'
+    example_data += ' ' * 3 + 'vars:\n'
+    example_data += ' ' * 6 + 'ansible_httpapi_use_ssl: True\n'
+    example_data += ' ' * 6 + 'ansible_httpapi_validate_certs: False\n'
+    example_data += ' ' * 6 + 'ansible_httpapi_port: 443\n'
+    example_data += ' ' * 3 + 'tasks:\n'
+    example_data += ' ' * 3 + ' - name: ' + short_desc + '\n'
+    example_data += ' ' * 6 + module_name + ':\n'
+    example_data += ' ' * 9 + 'workspace_locking_adom: <value in [global, custom adom including root]>\n'
+    example_data += ' ' * 9 + 'workspace_locking_timeout: 300\n'
+    example_data += ' ' * 9 + 'rc_succeeded: [0, -2, -3, ...]\n'
+    example_data += ' ' * 9 + 'rc_failed: [-2, -3, ...]\n'
+    for param in in_path_schema:
+        example_data += ' ' * 9 + param['name'] + ': <your own value>\n'
+    example_data += ' ' * 9 + 'state: <value in [present, absent]>\n'
+    example_data += ' ' * 9 + module_name[5:] + ':'
+    example_data += _generate_schema_document_examples_recursive(body_schema, 4)
 
+    return example_data
 def generate_schema_document_examples(
         raw_body_schemas, module_name, jrpc_url, in_path_params):
     example_data = ''
@@ -619,21 +699,23 @@ def _generate_schema_document_return_recursive(schema, depth):
 
 def generate_unified_schema_document_return():
     return_data = ''
-    return_data += 'url:\n'
+    return_data += 'request_url:\n'
     return_data += '    description: The full url requested\n'
     return_data += '    returned: always\n'
     return_data += '    type: str\n'
     return_data += '    sample: /sys/login/user\n'
 
-    return_data += 'status:\n'
+    return_data += 'response_code:\n'
     return_data += '    description: The status of api request\n'
     return_data += '    returned: always\n'
-    return_data += '    type: dict\n'
+    return_data += '    type: int\n'
+    return_data += '    sample: 0\n'
 
-    return_data += 'data:\n'
-    return_data += '    description: The payload returned in the request\n'
-    return_data += '    type: dict\n'
+    return_data += 'response_message:\n'
+    return_data += '    description: The descriptive message of the api response\n'
+    return_data += '    type: str\n'
     return_data += '    returned: always\n'
+    return_data += '    sample: OK.\n'
     return return_data
 
 
@@ -708,7 +790,13 @@ def _generate_docgen_return_value_recursive(schema):
 
     return return_data
 
-
+def napi_generate_docgen_return_value():
+    return_data = ' <ul>\n'
+    return_data += ' <li> <span class="li-return">request_url</span> - The full url requested <span class="li-normal">returned: always</span> <span class="li-normal">type: str</span> <span class="li-normal">sample: /sys/login/user</span></li>\n'
+    return_data += ' <li> <span class="li-return">response_code</span> - The status of api request <span class="li-normal">returned: always</span> <span class="li-normal">type: int</span> <span class="li-normal">sample: 0</span></li>\n'
+    return_data += ' <li> <span class="li-return">response_message</span> - The descriptive message of the api response <span class="li-normal">returned: always</span> <span class="li-normal">type: str</span> <span class="li-normal">sample: OK</li>\n'
+    return_data += ' </ul>\n'
+    return return_data
 def generate_docgen_return_value(raw_results_schemas):
     return_data = ' <ul>\n'
     result_schemas = transform_schema(raw_results_schemas)
@@ -944,18 +1032,20 @@ def resolve_curd_schema(url, schema, doc_template, code_template, multiurls, pee
                   'jrpc_urls': mutiurls_names,
                   'perobject_jrpc_urls': perobject_mutiurls_names,
                   'mkey': mkey,
-                  'level2_name': canonical_path.lstrip('fmgr_'),
+                  'level2_name': canonical_path[5:],
                   'body_schemas': schema_beautify(schema_to_layer2_params(the_unique_schema['items'], True, mkey), 12, 1, False, True)}
                   #'body_schemas': schema_beautify(transform_schema(body_schemas), 4, 1, False, True)}
     code_body = code_template.render(**code_rdata)
     short_description = shorten_description(canonicalize_text(api_endpoint_tags[supported_methods[0]])[0], len('short_description: ')).replace('\'', '')
-    doc_examples = generate_schema_document_examples(raw_body_schemas, canonical_path, url, the_one_in_path_params)
+    #doc_examples = generate_schema_document_examples(raw_body_schemas, canonical_path, url, the_one_in_path_params)
+    doc_examples = napi_generate_schema_document_examples(canonical_path, the_one_in_path_params, the_unique_schema['items'], 'no description' if short_description == '' else short_description)
     doc_rdata = {'module_name': canonical_path,
                  'jrpc_urls': mutiurls_names,
                  'short_description': 'no description' if short_description == '' else short_description,
                  'allowed_methods': supported_methods,
                  #'doc_options': generate_schema_document_options(raw_body_schemas, the_one_in_path_params, api_endpoint_tags),
-                 'doc_options': generate_unified_schema_document_options(supported_methods),
+                 #'doc_options': generate_unified_schema_document_options(supported_methods),
+                 'doc_options': napi_generate_schema_document_options(the_one_in_path_params, the_unique_schema['items'], canonical_path[5:]),
                  'doc_examples': doc_examples,
                  #'doc_return': generate_schema_document_return(results_schemas)
                  'doc_return': generate_unified_schema_document_return()
@@ -997,34 +1087,31 @@ def resolve_curd_schema(url, schema, doc_template, code_template, multiurls, pee
     # SYNOPSIS IN DOCGEN
     docgen_data += 'Synopsis\n'
     docgen_data += '--------\n\n'
-    docgen_data += '- This module is able to configure a FortiManager device by '
-    docgen_data += 'allowing the user to **' + str(supported_methods).replace('\'', '')
-    docgen_data += '** the following FortiManager json-rpc urls.\n'
-    for url in mutiurls_names:
-        docgen_data += '- `' + url + '`\n'
+    docgen_data += '- This module is able to configure a FortiManager device.\n'
     docgen_data += '- Examples include all parameters and values need to be adjusted to data sources before usage.\n'
     # FIXME: need to decide which the fortimanager version is
-    docgen_data += '- Tested with FortiManager v6.0.0\n\n\n'
+    docgen_data += '- Tested with FortiManager v6.0.0.\n\n\n'
 
     # REQUIREMENT IN DOCGEN
     docgen_data += 'Requirements\n'
     docgen_data += '------------\n'
     docgen_data += 'The below requirements are needed on the host that executes this module.\n\n'
-    docgen_data += '- ansible>=2.10.0\n\n\n\n'
+    docgen_data += '- ansible>=2.9.0\n\n\n\n'
     # PARAMETERS IN DOCGEN
     docgen_data += 'Parameters\n'
     docgen_data += '----------\n\n'
     docgen_data += '.. raw:: html\n\n'
-    docgen_data += generate_docgen_parameters(raw_body_schemas, the_one_in_path_params, api_endpoint_tags)
+    #docgen_data += generate_docgen_parameters(raw_body_schemas, the_one_in_path_params, api_endpoint_tags)
+    docgen_data += napi_generate_docgen_parameters(the_one_in_path_params, the_unique_schema['items'], canonical_path, 'no description' if short_description == '' else short_description)
     docgen_data += '\n\n\n\n\n\n'
     # NOTES IN DOCGEN
     docgen_data += 'Notes\n'
     docgen_data += '-----\n'
     docgen_data += '.. note::\n\n'
-    docgen_data += '   - The module may supports multiple method, every method has different parameters definition\n\n'
-    docgen_data += '   - One method may also have more than one parameter definition collection, each collection is dedicated to one API endpoint\n\n'
-    docgen_data += '   - The module may include domain dependent urls, the domain can be specified in url_params as adom\n\n'
-    docgen_data += '   - To run in workspace mode, the paremeter workspace_locking_adom must be included in the task\n\n'
+    docgen_data += '   - Running in workspace locking mode is supported in this FortiManager module, the top level parameters workspace_locking_adom and workspace_locking_timeout help do the work.\n\n'
+    docgen_data += '   - To create or update an object, use state: present directive.\n\n'
+    docgen_data += '   - To delete an object, use state: absent directive\n\n'
+    docgen_data += '   - Normally, running one module can fail when a non-zero rc is returned. you can also override the conditions to fail or succeed with parameters rc_failed and rc_succeeded\n\n'
     # EXAMPLE IN DOCGEN
     docgen_data += 'Examples\n' + '--------\n\n'
     docgen_data += '.. code-block:: yaml+jinja\n\n'
@@ -1035,7 +1122,8 @@ def resolve_curd_schema(url, schema, doc_template, code_template, multiurls, pee
     docgen_data += '-------------\n\n\n'
     docgen_data += 'Common return values are documented: https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values, the following are the fields unique to this module:\n\n'
     docgen_data += '\n.. raw:: html\n\n'
-    docgen_data += generate_docgen_return_value(results_schemas)
+    #docgen_data += generate_docgen_return_value(results_schemas)
+    docgen_data += napi_generate_docgen_return_value()
     docgen_data += '\n\n\n\n\n'
 
     # STATUS IN DOCGEN
@@ -1045,8 +1133,10 @@ def resolve_curd_schema(url, schema, doc_template, code_template, multiurls, pee
     # AUTHORS IN DOCGEN
     docgen_data += 'Authors\n'
     docgen_data += '-------\n\n'
+    docgen_data += '- Link Zheng (@chillancezen)\n'
+    docgen_data += '- Jie Xue (@JieX19)\n'
     docgen_data += '- Frank Shen (@fshen01)\n'
-    docgen_data += '- Link Zheng (@zhengl)\n\n\n'
+    docgen_data += '- Hongbin Lu (@fgtdev-hblu)\n\n\n'
     # HINT IN DOCGEN
     docgen_data += '.. hint::\n\n'
     docgen_data += '    If you notice any issues in this documentation, you can create a pull request to improve it.\n'

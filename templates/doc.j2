@@ -26,25 +26,23 @@ DOCUMENTATION = '''
 module: {{ module_name }}
 short_description: {{short_description}}
 description:
-    - This module is able to configure a FortiManager device by allowing the
-      user to [{%- for method in allowed_methods %} {{method}} {%- endfor %} ] the following apis.
-    {%- for url in jrpc_urls %}
-    - {{url}}
-    {%- endfor %}
-    - Examples include all parameters and values need to be adjusted to data sources before usage.
+    - This module is able to configure a FortiManager device.
+    - Examples include all parameters and values which need to be adjusted to data sources before usage.
 
 version_added: "2.10"
 author:
+    - Link Zheng (@chillancezen)
+    - Jie Xue (@JieX19)
     - Frank Shen (@fshen01)
-    - Link Zheng (@zhengl)
+    - Hongbin Lu (@fgtdev-hblu)
 notes:
-    - There are only three top-level parameters where 'method' is always required
-      while other two 'params' and 'url_params' can be optional
-    - Due to the complexity of fortimanager api schema, the validation is done
-      out of Ansible native parameter validation procedure.
-    - The syntax of OPTIONS doen not comply with the standard Ansible argument
-      specification, but with the structure of fortimanager API schema, we need
-      a trivial transformation when we are filling the ansible playbook
+    - Running in workspace locking mode is supported in this FortiManager module, the top
+      level parameters workspace_locking_adom and workspace_locking_timeout help do the work.
+    - To create or update an object, use state: present directive.
+    - To delete an object, use state: absent directive.
+    - Normally, running one module can fail when a non-zero rc is returned. you can also override
+      the conditions to fail or succeed with parameters rc_failed and rc_succeeded
+
 options:
 {{doc_options}}
 '''

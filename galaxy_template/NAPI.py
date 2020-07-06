@@ -48,7 +48,7 @@ class NAPIManager(object):
         self.conn = conn
         self.process_workspace_lock()
         self.module_name = self.module._name
-        self.module_level2_name = self.module_name.lstrip('fmgr_')
+        self.module_level2_name = self.module_name[5:]
 
     def process_workspace_lock(self):
         self.conn.process_workspace_locking(self.module.params)
@@ -78,6 +78,8 @@ class NAPIManager(object):
                         break
                 if not the_url:
                     self.module.fail_json(msg='No url for the requested adom:%s, please use other adom.' % (adom))
+        else:
+            the_url = url_libs[0]
         assert(the_url)
         for uparam in self.url_params:
             token_hint = '/%s/{%s}/' % (uparam, uparam)
@@ -143,12 +145,32 @@ class NAPIManager(object):
         else:
             self.do_exit(self._process_without_mkey())
 
+    def _do_final_exit(self, rc, result):
+        # XXX: as with https://github.com/fortinet/ansible-fortimanager-generic.
+        # the failing conditions priority: failed_when > rc_failed > rc_succeeded.
+        failed = rc != 0
+        changed = rc == 0
+
+        assert('response_code' in result)
+        if self.module.params['rc_failed']:
+            for rc_code in self.module.params['rc_failed']:
+                if str(result['response_code']) == str(rc_code):
+                    failed = True
+                    result['result_code_overriding'] = 'rc code:%s is overridden to failure' % (rc_code)
+        elif self.module.params['rc_succeeded']:
+            for rc_code in self.module.params['rc_succeeded']:
+                if str(result['response_code']) == str(rc_code):
+                    failed = False
+                    result['result_code_overriding'] = 'rc code:%s is overridden to success' % (rc_code)
+        self.module.exit_json(rc=rc, meta=result, failed=failed, changed=changed)
+
     def do_nonexist_exit(self):
         rc = 0
         result = dict()
         result['response_code'] = -3
         result['response_message'] = 'object not exist'
-        self.module.exit_json(rc=rc, meta=result)
+        self._do_final_exit(rc, result)
+
 
     def do_exit(self, response):
         rc = response[0]
@@ -157,4 +179,4 @@ class NAPIManager(object):
         result['response_message'] = response[1]['status']['message']
         result['request_url'] = response[1]['url']
         # XXX:Do further status mapping
-        self.module.exit_json(rc=rc, meta=result)
+        self._do_final_exit(rc, result)
