@@ -1,0 +1,76 @@
+from ansible.module_utils.basic import AnsibleModule
+from ansible.module_utils.connection import Connection
+from ansible_collections.fortinet.fortimanager.plugins.module_utils.NAPI import NAPIManager
+
+
+def main():
+    facts_metadata = {
+    {%- for selector in metadata %}
+        '{{selector}}': {
+            'params': [
+            {%- for param in metadata[selector]['params'] %}
+                '{{param}}' {%- if loop.index != loop.length -%}, {%- endif %}
+            {%- endfor %}
+            ],
+            'urls': [
+            {%- for url in metadata[selector]['urls'] %}
+                '{{url}}' {%- if loop.index != loop.length -%}, {%- endif %}
+            {%- endfor %}
+            ]
+        }{%- if loop.index != loop.length -%}, {%- endif %}
+    {%- endfor %}
+    }
+
+    module_arg_spec = {
+        'workspace_locking_adom': {
+            'type': 'str',
+            'required': False
+        },
+        'workspace_locking_timeout': {
+            'type': 'int',
+            'required': False,
+            'default': 300
+        },
+        'rc_succeeded': {
+            'required': False,
+            'type': 'list'
+        },
+        'rc_failed': {
+            'required': False,
+            'type': 'list'
+        },
+        'facts': {
+            'required': False,
+            'type': 'dict',
+            'options': {
+                'selector': {
+                    'required': True,
+                    'type': 'str',
+                    'choices': [
+                    {%- for selector in metadata %}
+                        '{{selector}}'{%- if loop.index != loop.length -%}, {%- endif %}
+                    {%- endfor %}
+                    ]
+                },
+                'params': {
+                    'required': False,
+                    'type': 'dict'
+                }
+            }
+        }
+    }
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
+
+    fmgr = None
+    if module._socket_path:
+        connection = Connection(module._socket_path)
+        fmgr = NAPIManager(None, None, None, None, module, connection)
+        #fmgr.process_curd()
+    else:
+        module.fail_json(msg = 'MUST RUN IN HTTPAPI MODE')
+    module.exit_json(meta = module.params)
+
+if __name__ == '__main__':
+    main()
+

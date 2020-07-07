@@ -15,6 +15,12 @@ schematype_displayname_mapping = {
     'string': 'str'
 }
 
+def get_param_tokens(url):
+    rc = list()
+    for token in url.split('{'):
+        if '}' in token:
+            rc.append(token.split('}')[0])
+    return rc
 
 def underscore2hyphen(string):
     return string.replace('_', '-')
@@ -1151,6 +1157,8 @@ if __name__ == '__main__':
     jinja2_env = Environment(loader=jinja2_file_loader)
     code_template = jinja2_env.get_template('code.j2')
     doc_template = jinja2_env.get_template('doc.j2')
+    facts_template = jinja2_env.get_template('fact.j2')
+
     except_defs = dict()
     domain_independent_urls = dict()
     curd_urls = dict()
@@ -1172,6 +1180,36 @@ if __name__ == '__main__':
             if stripped_domain_url not in domain_independent_urls:
                 domain_independent_urls[stripped_domain_url] = list()
             domain_independent_urls[stripped_domain_url].append((url, schema))
+    # Find out all the urls with GET methods.
+    facts_metadata = dict()
+    for stripped_url in domain_independent_urls:
+        if not stripped_url.endswith('}'):
+            continue
+        perobj_url, perobj_schema = domain_independent_urls[stripped_url][0]
+        perobj_methods = set(perobj_schema._digest[perobj_url].keys())
+        perobj_allurls = [_url for _url, _schema in domain_independent_urls[stripped_url]]
+        if 'get' not in perobj_methods:
+            continue
+        selector = canonicalize_url_as_path(stripped_url)
+        assert(selector.startswith('fmgr_') and selector.endswith('_obj'))
+        selector = selector[5: -4]
+        all_params = get_param_tokens(stripped_url)
+        for url in perobj_allurls:
+            if '/adom/{adom}/' in url:
+                assert('adom' not in all_params)
+                all_params.append('adom')
+                break
+        facts_metadata[selector] = dict()
+        facts_metadata[selector]['params'] = all_params
+        facts_metadata[selector]['urls'] = perobj_allurls
+   
+    rdata = {
+        'metadata': facts_metadata   
+    }
+    rbody = facts_template.render(**rdata)
+    with open('modules/fmgr_fact.py', 'w') as f:
+        f.write(rbody)
+        f.flush()
     # Merge those modules which have CRUD semantics
     for stripped_url in domain_independent_urls:
         if not stripped_url.endswith('}'):
