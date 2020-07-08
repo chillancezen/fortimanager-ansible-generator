@@ -40,7 +40,7 @@ def main():
             'type': 'list'
         },
         'facts': {
-            'required': False,
+            'required': True,
             'type': 'dict',
             'options': {
                 'selector': {
@@ -66,7 +66,7 @@ def main():
     if module._socket_path:
         connection = Connection(module._socket_path)
         fmgr = NAPIManager(None, None, None, None, module, connection)
-        #fmgr.process_curd()
+        fmgr.process_fact(facts_metadata)
     else:
         module.fail_json(msg = 'MUST RUN IN HTTPAPI MODE')
     module.exit_json(meta = module.params)

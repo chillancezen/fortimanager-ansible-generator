@@ -136,6 +136,45 @@ class NAPIManager(object):
             self.module.fail_json(msg='this module doesn\'t not support state:absent because of no primary key.')
         return self.create_objejct()
 
+    def process_fact(self, metadata):
+        assert(self.module.params['facts']['selector'] in metadata)
+        selector = self.module.params['facts']['selector']
+        fact_params = metadata[selector]['params']
+        fact_urls = metadata[selector]['urls']
+        assert(len(fact_urls))
+
+        real_params_keys = set()
+        if self.module.params['facts']['params']:
+            real_params_keys = set(self.module.params['facts']['params'].keys())
+        if real_params_keys != set(fact_params):
+            self.module.fail_json(msg = 'expect params:%s, real params:%s' % (list(fact_params), list(real_params_keys)))
+        url = None
+        if 'adom' in fact_params and not fact_urls[0].endswith('{adom}'):
+            if self.module.params['facts']['params']['adom'] == 'global':
+                for _url in fact_urls:
+                    if '/global/' in _url:
+                        url = _url
+                        break
+            else:
+                for _url in fact_urls:
+                    if '/adom/{adom}/' in _url:
+                        url = _url
+                        #url = _url.replace('/adom/{adom}/', '/adom/%s/' % (self.module.params['facts']['params']['adom']))
+                        break
+        else:
+            url = fact_urls[0]
+        if not url:
+            self.module.fail_json(msg='can not find url in following sets:%s! please check params: adom' % (fact_urls))
+        for _param in fact_params:
+            token_hint = '/%s/{%s}' % (_param, _param)
+            token = '/%s/%s' % (_param, self.module.params['facts']['params'][_param])
+            url = url.replace(token_hint, token)
+
+        # Now issue the request.
+        api_params = [{'url': url}]
+        response = self.conn.send_request('get', api_params)
+        self.do_exit(response)
+
     def process_curd(self):
         assert('state' in self.module.params)
         has_mkey = self.module_primary_key is not None
@@ -175,6 +214,8 @@ class NAPIManager(object):
     def do_exit(self, response):
         rc = response[0]
         result = dict()
+        if 'data' in response[1]:
+            result['response_data'] = response[1]['data']
         result['response_code'] = response[1]['status']['code']
         result['response_message'] = response[1]['status']['message']
         result['request_url'] = response[1]['url']
