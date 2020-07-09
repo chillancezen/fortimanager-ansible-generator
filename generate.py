@@ -1158,6 +1158,7 @@ if __name__ == '__main__':
     code_template = jinja2_env.get_template('code.j2')
     doc_template = jinja2_env.get_template('doc.j2')
     facts_template = jinja2_env.get_template('fact.j2')
+    facts_rst_template = jinja2_env.get_template('fmgr_fact.rst.j2')
 
     except_defs = dict()
     domain_independent_urls = dict()
@@ -1207,9 +1208,16 @@ if __name__ == '__main__':
         'metadata': facts_metadata   
     }
     rbody = facts_template.render(**rdata)
+    rst_rbody = facts_rst_template.render(**rdata)
+
     with open('modules/fmgr_fact.py', 'w') as f:
         f.write(rbody)
         f.flush()
+
+    with open('fmgr_fact.rst', 'w') as f:
+        f.write(rst_rbody)
+        f.flush()
+
     # Merge those modules which have CRUD semantics
     for stripped_url in domain_independent_urls:
         if not stripped_url.endswith('}'):
