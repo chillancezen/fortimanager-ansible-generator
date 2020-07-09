@@ -62,7 +62,7 @@ class NAPIManager(object):
         for uparam in self.url_params:
             assert(self.module.params[uparam])
         the_url = None
-        if 'adom' in self.url_params:
+        if 'adom' in self.url_params and not url_libs[0].endswith('{adom}'):
             adom = self.module.params['adom']
             if adom == 'global':
                 for url in url_libs:
@@ -135,6 +135,31 @@ class NAPIManager(object):
         if self.module.params['state'] == 'absent':
             self.module.fail_json(msg='this module doesn\'t not support state:absent because of no primary key.')
         return self.create_objejct()
+
+    def process_exec(self):
+        the_url = self.jrpc_urls[0]
+        if 'adom' in self.url_params and not self.jrpc_urls[0].endswith('{adom}'):
+            if self.module.params['adom'] == 'global':
+                for _url in self.jrpc_urls:
+                    if '/global/' in _url:
+                        the_url = _url
+                        break
+            else:
+                for _url in self.jrpc_urls:
+                    if '/adom/{adom}/' in _url:
+                        the_url = _url
+                        break
+        for _param in self.url_params:
+            token_hint = '{%s}' % (_param)
+            token = '%s' % (self.module.params[_param])
+            the_url = the_url.replace(token_hint, token)
+
+        api_params = [{'url': the_url}]
+        if self.module_level2_name in self.module.params:
+            api_params[0]['data'] = self.module.params[self.module_level2_name]
+
+        response = self.conn.send_request('exec', api_params)
+        self.do_exit(response)
 
     def process_fact(self, metadata):
         assert(self.module.params['facts']['selector'] in metadata)

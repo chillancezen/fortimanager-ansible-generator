@@ -1,3 +1,4 @@
 modules/*
 docgen/*
+daemon_docgen/*
 fmgr_fact.rst

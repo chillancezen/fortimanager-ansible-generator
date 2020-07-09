@@ -59,7 +59,13 @@ def shorten_url(uri):
             short_url += '/obj'
     return short_url
 
-def canonicalize_url_as_path(url):
+def canonicalize_url_as_path(url, ignore_last_token=False):
+    if ignore_last_token:
+        url_tokens = url.split('/')
+        if url_tokens[-1].startswith('{') and url_tokens[-1].endswith('}'):
+            url = url[:-len(url_tokens[-1])]
+            if url[-1] == '/':
+                url = url[:-1]
     # the token with which to strip in the url, the order matters.
     tokens = {
         '_pm_config_obj_wireless_controller_': '_wireless_',
@@ -320,7 +326,7 @@ def generate_unified_schema_document_options(all_methods):
     options_data += ' ' * 8 + 'type: dict\n'
     return options_data
 
-def napi_generate_schema_document_options(in_path_schema, body_schema, level2_name):
+def napi_generate_schema_document_options(in_path_schema, body_schema, level2_name, is_exec=False):
     options_data = ''
     options_data += ' ' * 4 + 'workspace_locking_adom:\n'
     options_data += ' ' * 8 + 'description: the adom to lock for FortiManager running in workspace mode, the value can be global and others including root\n'
@@ -331,13 +337,14 @@ def napi_generate_schema_document_options(in_path_schema, body_schema, level2_na
     options_data += ' ' * 8 + 'required: false\n'
     options_data += ' ' * 8 + 'type: int\n'
     options_data += ' ' * 8 + 'default: 300\n'
-    options_data += ' ' * 4 + 'state:\n'
-    options_data += ' ' * 8 + 'description: the directive to create, update or delete an object\n'
-    options_data += ' ' * 8 + 'type: str\n'
-    options_data += ' ' * 8 + 'required: true\n'
-    options_data += ' ' * 8 + 'choices:\n'
-    options_data += ' ' * 8 + '  - present\n'
-    options_data += ' ' * 8 + '  - absent\n'
+    if not is_exec:
+        options_data += ' ' * 4 + 'state:\n'
+        options_data += ' ' * 8 + 'description: the directive to create, update or delete an object\n'
+        options_data += ' ' * 8 + 'type: str\n'
+        options_data += ' ' * 8 + 'required: true\n'
+        options_data += ' ' * 8 + 'choices:\n'
+        options_data += ' ' * 8 + '  - present\n'
+        options_data += ' ' * 8 + '  - absent\n'
     options_data += ' ' * 4 + 'rc_succeeded:\n'
     options_data += ' ' * 8 + 'description: the rc codes list with which the conditions to succeed will be overriden\n'
     options_data += ' ' * 8 + 'type: list\n'
@@ -353,11 +360,12 @@ def napi_generate_schema_document_options(in_path_schema, body_schema, level2_na
         options_data += ' ' * 8 + 'type: ' + schematype_displayname_mapping[param['type']] + '\n'
         options_data += ' ' * 8 + 'required: true\n'
 
-    options_data += ' ' * 4 + level2_name + ':\n'
-    options_data += ' ' * 8 + 'required: false\n'
-    options_data += ' ' * 8 + 'type: dict\n'
-    options_data += ' ' * 8 + 'suboptions:\n'
-    options_data += _generate_schema_document_options_recursilve(body_schema, 3)
+    if body_schema and len(body_schema) > 0:
+        options_data += ' ' * 4 + level2_name + ':\n'
+        options_data += ' ' * 8 + 'required: false\n'
+        options_data += ' ' * 8 + 'type: dict\n'
+        options_data += ' ' * 8 + 'suboptions:\n'
+        options_data += _generate_schema_document_options_recursilve(body_schema, 3)
     return options_data
 
 def generate_schema_document_options(
@@ -467,19 +475,21 @@ def _generate_docgen_paramters_recursively(schema):
         params_data += ' </ul>\n'
     return params_data
 
-def napi_generate_docgen_parameters(in_path_schema, body_schema, module_name, short_desc):
+def napi_generate_docgen_parameters(in_path_schema, body_schema, module_name, short_desc, is_exec=False):
     params_data = ' <ul>\n'
     params_data += ' <li><span class="li-head">workspace_locking_adom</span> - Acquire the workspace lock if FortiManager is running in workspace mode <span class="li-normal">type: str</span> <span class="li-required">required: false</span> <span class="li-normal"> choices: global, custom adom including root</span> </li>\n'
     params_data += ' <li><span class="li-head">workspace_locking_timeout</span> - The maximum time in seconds to wait for other users to release workspace lock <span class="li-normal">type: integer</span> <span class="li-required">required: false</span>  <span class="li-normal">default: 300</span> </li>\n'
     params_data += ' <li><span class="li-head">rc_succeeded</span> - The rc codes list with which the conditions to succeed will be overriden <span class="li-normal">type: list</span> <span class="li-required">required: false</span> </li>\n'
     params_data += ' <li><span class="li-head">rc_failed</span> - The rc codes list with which the conditions to fail will be overriden <span class="li-normal">type: list</span> <span class="li-required">required: false</span> </li>\n'
-    params_data += ' <li><span class="li-head">state</span> - The directive to create, update or delete an object <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal"> choices: present, absent</span> </li>\n'
+    if not is_exec:
+        params_data += ' <li><span class="li-head">state</span> - The directive to create, update or delete an object <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal"> choices: present, absent</span> </li>\n'
     for param in in_path_schema:
         params_data += ' <li><span class="li-head">' + param['name'] + '</span> - The parameter in requested url <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>\n'
-    params_data += ' <li><span class="li-head">' + module_name[5:] +'</span> - ' + short_desc +' <span class="li-normal">type: dict</span></li>\n'
-    params_data += ' <ul class="ul-self">\n'
-    params_data += _generate_docgen_paramters_recursively(body_schema)
-    params_data += ' </ul>\n'
+    if body_schema and len(body_schema) >0:
+        params_data += ' <li><span class="li-head">' + module_name[5:] +'</span> - ' + short_desc +' <span class="li-normal">type: dict</span></li>\n'
+        params_data += ' <ul class="ul-self">\n'
+        params_data += _generate_docgen_paramters_recursively(body_schema)
+        params_data += ' </ul>\n'
     params_data += ' </ul>\n'
     return params_data
 
@@ -586,7 +596,7 @@ def _generate_schema_document_examples_recursive(schema, depth):
         assert(False)
     return rdata
 
-def napi_generate_schema_document_examples(module_name, in_path_schema, body_schema, short_desc):
+def napi_generate_schema_document_examples(module_name, in_path_schema, body_schema, short_desc, is_exec=False):
     example_data = ''
     example_data += ' - ' + 'hosts: fortimanager-inventory\n'
     example_data += ' ' * 3 + 'collections:\n'
@@ -605,9 +615,11 @@ def napi_generate_schema_document_examples(module_name, in_path_schema, body_sch
     example_data += ' ' * 9 + 'rc_failed: [-2, -3, ...]\n'
     for param in in_path_schema:
         example_data += ' ' * 9 + param['name'] + ': <your own value>\n'
-    example_data += ' ' * 9 + 'state: <value in [present, absent]>\n'
-    example_data += ' ' * 9 + module_name[5:] + ':'
-    example_data += _generate_schema_document_examples_recursive(body_schema, 4)
+    if not is_exec:
+        example_data += ' ' * 9 + 'state: <value in [present, absent]>\n'
+    if body_schema and len(body_schema) > 0:
+        example_data += ' ' * 9 + module_name[5:] + ':'
+        example_data += _generate_schema_document_examples_recursive(body_schema, 4)
 
     return example_data
 def generate_schema_document_examples(
@@ -946,8 +958,9 @@ def module_primary_key(module_name, schema):
     return None
 
 
+exec_mod_tracking = list()
 url_mod_tracking = dict()
-def resolve_curd_schema(url, schema, doc_template, code_template, multiurls, peer_url):
+def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, peer_url, is_exec=False):
     validate_multiurls_schema(url, schema, multiurls)
     body_schemas = dict()
     raw_body_schemas = dict()
@@ -998,9 +1011,10 @@ def resolve_curd_schema(url, schema, doc_template, code_template, multiurls, pee
             adom_is_in_path_params = True
             break
 
-    canonical_path = canonicalize_url_as_path(url)
+    canonical_path = canonicalize_url_as_path(url, ignore_last_token=False if not is_exec else True)
     supported_methods = list(schema._digest[url].keys())
-
+    if is_exec:
+        exec_mod_tracking.append(canonical_path)
     #print(json.dumps(body_schemas))
     # Now we have all the parameters in path for all the urls which can be merged
     # dump lots of useful information to screen.
@@ -1015,7 +1029,8 @@ def resolve_curd_schema(url, schema, doc_template, code_template, multiurls, pee
     print('\t\033[36mfull.url.params:\033[0m \033[37m%s\033[0m' % (str([item['name'] for item in the_one_in_path_params]).replace('\'', '')))
     print('\t\033[36msupported.method:\033[0m \033[37m%s\033[0m' % (str(supported_methods).replace('\'', '')))
     if len(multiurls) > 1:
-        assert(adom_is_in_path_params)
+        if not is_exec:
+            assert(adom_is_in_path_params)
         for _url in mutiurls_names:
             print('\t\033[36msub.url:\033[0m \033[37m%s\033[0m' % (_url))
         for _url in perobject_mutiurls_names:
@@ -1023,14 +1038,20 @@ def resolve_curd_schema(url, schema, doc_template, code_template, multiurls, pee
 
     # Note method Add/Update share the same schema
     the_unique_schema = None
-    for top_schema in body_schemas['add']:
+    the_unique_method = 'add' if not is_exec else 'exec'
+    the_unique_type = 'array' if not is_exec else 'dict'
+    the_unique_subitem = 'items' if not is_exec else 'dict'
+    for top_schema in body_schemas[the_unique_method]:
         if top_schema['name'] == 'data':
             the_unique_schema = top_schema
             break
-    assert(the_unique_schema)
-    assert(the_unique_schema['type'] == 'array')
+    #assert(the_unique_schema)
+    if the_unique_schema:
+        assert(the_unique_schema['type'] == the_unique_type)
     # Determine the primary key for the module
-    mkey = module_primary_key(canonical_path, the_unique_schema['items'])
+    mkey = None
+    if not is_exec and the_unique_schema:
+        mkey = module_primary_key(canonical_path, the_unique_schema[the_unique_subitem])
     if mkey:
         print('\t\033[36mprimary key:\033[0m \033[37m', mkey, '\033[0m')
     code_rdata = {'supported_methods': supported_methods,
@@ -1039,19 +1060,19 @@ def resolve_curd_schema(url, schema, doc_template, code_template, multiurls, pee
                   'perobject_jrpc_urls': perobject_mutiurls_names,
                   'mkey': mkey,
                   'level2_name': canonical_path[5:],
-                  'body_schemas': schema_beautify(schema_to_layer2_params(the_unique_schema['items'], True, mkey), 12, 1, False, True)}
+                  'body_schemas': schema_beautify(schema_to_layer2_params(the_unique_schema[the_unique_subitem], True, mkey), 12, 1, False, True) if the_unique_schema else {}}
                   #'body_schemas': schema_beautify(transform_schema(body_schemas), 4, 1, False, True)}
     code_body = code_template.render(**code_rdata)
     short_description = shorten_description(canonicalize_text(api_endpoint_tags[supported_methods[0]])[0], len('short_description: ')).replace('\'', '')
     #doc_examples = generate_schema_document_examples(raw_body_schemas, canonical_path, url, the_one_in_path_params)
-    doc_examples = napi_generate_schema_document_examples(canonical_path, the_one_in_path_params, the_unique_schema['items'], 'no description' if short_description == '' else short_description)
+    doc_examples = napi_generate_schema_document_examples(canonical_path, the_one_in_path_params, the_unique_schema[the_unique_subitem] if the_unique_schema else {}, 'no description' if short_description == '' else short_description, is_exec=is_exec)
     doc_rdata = {'module_name': canonical_path,
                  'jrpc_urls': mutiurls_names,
                  'short_description': 'no description' if short_description == '' else short_description,
                  'allowed_methods': supported_methods,
                  #'doc_options': generate_schema_document_options(raw_body_schemas, the_one_in_path_params, api_endpoint_tags),
                  #'doc_options': generate_unified_schema_document_options(supported_methods),
-                 'doc_options': napi_generate_schema_document_options(the_one_in_path_params, the_unique_schema['items'], canonical_path[5:]),
+                 'doc_options': napi_generate_schema_document_options(the_one_in_path_params, the_unique_schema[the_unique_subitem] if the_unique_schema else {}, canonical_path[5:], is_exec=is_exec),
                  'doc_examples': doc_examples,
                  #'doc_return': generate_schema_document_return(results_schemas)
                  'doc_return': generate_unified_schema_document_return()
@@ -1108,7 +1129,7 @@ def resolve_curd_schema(url, schema, doc_template, code_template, multiurls, pee
     docgen_data += '----------\n\n'
     docgen_data += '.. raw:: html\n\n'
     #docgen_data += generate_docgen_parameters(raw_body_schemas, the_one_in_path_params, api_endpoint_tags)
-    docgen_data += napi_generate_docgen_parameters(the_one_in_path_params, the_unique_schema['items'], canonical_path, 'no description' if short_description == '' else short_description)
+    docgen_data += napi_generate_docgen_parameters(the_one_in_path_params, the_unique_schema[the_unique_subitem] if the_unique_schema else {}, canonical_path, 'no description' if short_description == '' else short_description, is_exec=is_exec)
     docgen_data += '\n\n\n\n\n\n'
     # NOTES IN DOCGEN
     docgen_data += 'Notes\n'
@@ -1147,7 +1168,8 @@ def resolve_curd_schema(url, schema, doc_template, code_template, multiurls, pee
     docgen_data += '.. hint::\n\n'
     docgen_data += '    If you notice any issues in this documentation, you can create a pull request to improve it.\n'
     docgen_data += '\n\n\n'
-    with open('docgen/%s.rst' % (canonical_path), 'w') as f:
+    doc_prefix = 'docgen' if not is_exec else 'daemon_docgen'
+    with open('%s/%s.rst' % (doc_prefix, canonical_path), 'w') as f:
         f.write(docgen_data)
         f.flush()
 
@@ -1156,6 +1178,7 @@ if __name__ == '__main__':
     jinja2_file_loader = FileSystemLoader('templates')
     jinja2_env = Environment(loader=jinja2_file_loader)
     code_template = jinja2_env.get_template('code.j2')
+    exec_code_template = jinja2_env.get_template('exec_code.j2')
     doc_template = jinja2_env.get_template('doc.j2')
     facts_template = jinja2_env.get_template('fact.j2')
     facts_rst_template = jinja2_env.get_template('fmgr_fact.rst.j2')
@@ -1181,6 +1204,14 @@ if __name__ == '__main__':
             if stripped_domain_url not in domain_independent_urls:
                 domain_independent_urls[stripped_domain_url] = list()
             domain_independent_urls[stripped_domain_url].append((url, schema))
+    # Find out all the urls with EXEC methods.
+    for stripped_url in domain_independent_urls:
+        _url, _schema = domain_independent_urls[stripped_url][0]
+        _methods = set(_schema._digest[_url].keys())
+        if 'exec' not in _methods:
+            continue
+        print('\033[32mprocessing EXEC multi-domain url:\033[0m', stripped_url)
+        resolve_generic_schema(_url, _schema, doc_template, exec_code_template, domain_independent_urls[stripped_url], None, is_exec=True)
     # Find out all the urls with GET methods.
     facts_metadata = dict()
     for stripped_url in domain_independent_urls:
@@ -1249,7 +1280,7 @@ if __name__ == '__main__':
         url0, schema0 = domain_independent_urls[stripped_url][0]
         print('\033[32mprocessing CURD multi-domain url:\033[0m', stripped_url)
         print('\t\033[32m                peer url:\033[0m', curd_urls[stripped_url])
-        resolve_curd_schema(url0, schema0, doc_template, code_template, domain_independent_urls[stripped_url], curd_urls[stripped_url])
+        resolve_generic_schema(url0, schema0, doc_template, code_template, domain_independent_urls[stripped_url], curd_urls[stripped_url])
     # There should be no modules in conflict
     for mod in url_mod_tracking:
         urls = url_mod_tracking[mod]

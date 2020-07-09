@@ -1,0 +1,68 @@
+from ansible.module_utils.basic import AnsibleModule
+from ansible.module_utils.connection import Connection
+from ansible_collections.fortinet.fortimanager.plugins.module_utils.NAPI import NAPIManager
+
+
+def main():
+    jrpc_urls = [
+    {%- for url in jrpc_urls %}
+        '{{url}}'
+        {%- if loop.index != loop.length -%}, {%- endif %}
+    {%- endfor %}
+    ]
+
+    perobject_jrpc_urls = [
+    {%- for url in perobject_jrpc_urls %}
+        '{{url}}'
+        {%- if loop.index != loop.length -%}, {%- endif %}
+    {%- endfor %}
+    ]
+
+    url_params = [{%- for param in in_path_params %}'{{param.name}}'{%- if loop.index != loop.length -%}, {%- endif %}{%- endfor %}]
+    module_arg_spec = {
+        'workspace_locking_adom': {
+            'type': 'str',
+            'required': False
+        },
+        'workspace_locking_timeout': {
+            'type': 'int',
+            'required': False,
+            'default': 300
+        },
+        'rc_succeeded': {
+            'required': False,
+            'type': 'list'
+        },
+        'rc_failed': {
+            'required': False,
+            'type': 'list'
+        }
+        {%- for param in in_path_params %},
+        '{{param.name}}': {
+            'required': True,
+            'type': {% if param.type == 'integer' -%}' 'int' {% else -%} 'str' {%- endif %}
+        }
+        {%- endfor %}
+        {%- if body_schemas -%},
+        '{{level2_name}}': {
+            'required': False,
+            'type': 'dict',
+            'options':{{body_schemas}}
+        }
+        {%- endif %}
+    }
+    module = AnsibleModule(argument_spec=module_arg_spec,
+                           supports_check_mode=False)
+
+    fmgr = None
+    if module._socket_path:
+        connection = Connection(module._socket_path)
+        fmgr = NAPIManager(jrpc_urls, perobject_jrpc_urls, None, url_params, module, connection)
+        fmgr.process_exec()
+    else:
+        module.fail_json(msg = 'MUST RUN IN HTTPAPI MODE')
+    module.exit_json(meta = module.params)
+
+if __name__ == '__main__':
+    main()
+
