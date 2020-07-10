@@ -161,7 +161,8 @@ def tailor_schema(in_body_params):
     elif isinstance(in_body_params, dict):
         dct = dict()
         for param_key in in_body_params:
-            if param_key in ['in', 'format', 'description', 'example', 'default']:
+            #if param_key in ['in', 'format', 'description', 'example', 'default']:
+            if param_key in ['in', 'format', 'example', 'default']:
                 if isinstance(in_body_params[param_key], str):
                     continue
             dct[param_key] = tailor_schema(in_body_params[param_key])
@@ -253,7 +254,8 @@ def _generate_schema_document_options_recursilve(schema, depth):
             default_value = shorten_description(default_value, depth * 4 + len('default: ') + 2)
             rdata += ' ' * depth * 4 + 'default: ' + quote + default_value + quote + '\n'
         # FIXED: some characters in description are not recognized by yaml.
-        if 'description' in schema:
+        # XXX: DO NOT PUT ANY DESCRIPTION IN IN-FILE OPTIONS
+        if False and 'description' in schema:
             desc_list = canonicalize_text(schema['description'])
             if (len(desc_list) > 1):
                 rdata += ' ' * depth * 4 + 'description:\n'
@@ -271,9 +273,23 @@ def _generate_schema_document_options_recursilve(schema, depth):
         rdata += _generate_schema_document_options_recursilve(schema['dict'], depth)
 
     elif schema['type'] is 'array':
-        rdata += ' ' * depth * 4 + '-\n'
         assert('items' in schema)
-        rdata += _generate_schema_document_options_recursilve(schema['items'], depth + 1)
+        subitem = schema['items']
+        if 'type' not in subitem or subitem['type'] not in ['string', 'integer', 'array']:
+            rdata += ' ' * depth * 4 + 'type: list\n'
+            rdata += ' ' * depth * 4 + 'suboptions:\n'
+            rdata += _generate_schema_document_options_recursilve(schema['items'], depth + 1)
+        elif subitem['type'] in ['string', 'integer']:
+            if 'enum' in subitem:
+                rdata += ' ' * depth * 4 + 'type: list\n'
+                rdata += ' ' * depth * 4 + 'choices:\n'
+                for _item in subitem['enum']:
+                    rdata += ' ' * depth * 4 + ' - %s\n' % (_item)
+            else:
+                rdata += ' ' * depth * 4 + 'type: %s\n' % (schematype_displayname_mapping[subitem['type']])
+        else:
+            assert(False)
+
     else:
         assert(False)
 
@@ -439,7 +455,13 @@ def _generate_docgen_paramters_recursively(schema):
         for discrete_schema_key in schema:
             discrete_schema = schema[discrete_schema_key]
             params_data += ' <li><span class="li-head">%s</span>' % (discrete_schema_key)
+            is_dict = 'type' not in discrete_schema or discrete_schema['type'] not in ['string', 'integer', 'array', 'dict']
+            if is_dict:
+                params_data += ' <span class="li-normal">type: dict</span> </li>\n'
+                params_data += ' <ul class="ul-self">\n'
             params_data += _generate_docgen_paramters_recursively(discrete_schema)
+            if is_dict:
+                params_data += ' </ul>\n'
         return params_data
 
     if schema['type'] in ['string', 'integer']:
@@ -459,20 +481,36 @@ def _generate_docgen_paramters_recursively(schema):
             params_data += ' <span class="li-normal">default: %s</span> ' % (schema['default'])
         params_data += '</li>\n'
     elif schema['type'] is 'dict':
+        assert(False)
         fold = 'type' not in schema['dict'] or schema['dict']['type'] not in ['string', 'integer', 'array', 'dict']
         params_data += ' - No description for the parameter' if fold else ''
-        params_data += ' <span class="li-normal">type: dict</span>' if fold else ''
+        params_data += ' <span class="li-normal">type: dict</span> </li>\n' if fold else '<li>\n'
         params_data += ' <ul class="ul-self">\n' if fold else ''
         params_data += _generate_docgen_paramters_recursively(schema['dict'])
-        params_data += ' </ul>\n' if fold else ''
+        params_data += ' </ul>\n' if fold else '\n'
     elif schema['type'] is 'array':
+        assert('items' in schema)
+        subitem = schema['items']
         params_data += ' - No description for the parameter'
-        params_data += ' <span class="li-normal">type: array</span>'
-        params_data += ' <ul class="ul-self">\n'
-        if 'type' in schema['items'] and schema['items']['type'] in ['string', 'integer', 'array', 'dict']:
-            params_data += ' <li><span class="li-head">{no-name}</span>'
-        params_data += _generate_docgen_paramters_recursively(schema['items'])
-        params_data += ' </ul>\n'
+        if 'type' not in subitem or subitem['type'] not in ['string', 'integer', 'array']:
+            params_data += ' <span class="li-normal">type: array</span>'
+            params_data += ' <ul class="ul-self">\n'
+            #if 'type' in schema['items'] and schema['items']['type'] in ['string', 'integer', 'array', 'dict']:
+            #    params_data += ' <li><span class="li-head">{no-name}</span>'
+            params_data += _generate_docgen_paramters_recursively(schema['items'])
+            params_data += ' </ul>\n'
+        elif subitem['type'] in ['string', 'integer']:
+            if 'enum' not in subitem:
+                params_data += ' <span class="li-normal">type: %s</span>' % (schematype_displayname_mapping[subitem['type']])
+                params_data += '</li>\n'
+            else:
+                params_data += ' <span class="li-normal">type: array</span>'
+                params_data += ' <span class="li-normal">choices: %s</span> ' % (str([str(item) for item in subitem['enum']]).replace('\'', ''))
+                params_data += '</li>\n'
+        else:
+            assert(False)
+    else:
+        assert(False)
     return params_data
 
 def napi_generate_docgen_parameters(in_path_schema, body_schema, module_name, short_desc, is_exec=False):
@@ -585,10 +623,21 @@ def _generate_schema_document_examples_recursive(schema, depth):
         else:
             rdata += ' <value of %s%s>' % (schema['type'], (' default: ' + quote + '%s' + quote) % (shorten_description(str(schema['default']), 80)) if 'XXX_DONNOT_SET_default' in schema and schema['default'] != '' else '') + '\n'
     elif schema['type'] is 'array':
-        rdata += '\n'
-        rdata += ' ' * (depth - 1) * 3 + '  -'
         assert('items' in schema)
-        rdata += _generate_schema_document_examples_recursive(schema['items'], depth + 1)
+        subitem = schema['items']
+        if 'type' not in subitem or subitem['type'] not in ['string', 'integer', 'array']:
+            rdata += '\n'
+            rdata += ' ' * (depth - 1) * 3 + '  -'
+            rdata += _generate_schema_document_examples_recursive(schema['items'], depth + 1)
+        elif subitem['type'] in ['string', 'integer']:
+            if 'enum' not in subitem:
+                rdata += ' <value of %s>\n' % (subitem['type'])
+            else:
+                rdata += '\n'
+                for _item in subitem['enum']:
+                    rdata += ' ' * (depth - 1) * 3 + '  - %s\n' % (_item)
+        else:
+            assert(False)
     elif schema['type'] is 'dict':
         assert('dict' in schema)
         rdata += _generate_schema_document_examples_recursive(schema['dict'], depth)
@@ -813,6 +862,7 @@ def napi_generate_docgen_return_value():
     return_data += ' <li> <span class="li-return">request_url</span> - The full url requested <span class="li-normal">returned: always</span> <span class="li-normal">type: str</span> <span class="li-normal">sample: /sys/login/user</span></li>\n'
     return_data += ' <li> <span class="li-return">response_code</span> - The status of api request <span class="li-normal">returned: always</span> <span class="li-normal">type: int</span> <span class="li-normal">sample: 0</span></li>\n'
     return_data += ' <li> <span class="li-return">response_message</span> - The descriptive message of the api response <span class="li-normal">returned: always</span> <span class="li-normal">type: str</span> <span class="li-normal">sample: OK</li>\n'
+    return_data += ' <li> <span class="li-return">response_data</span> - The data body of the api response <span class="li-normal">returned: optional</span> <span class="li-normal">type: list or dict</span></li>\n'
     return_data += ' </ul>\n'
     return return_data
 def generate_docgen_return_value(raw_results_schemas):
@@ -914,6 +964,9 @@ def schema_to_layer2_params(schema, to_search_mkey, mkey):
             pdata[item_name]['choices'] = [e for e in item['enum']]
         if 'default' in item:
             pdata[item_name]['default'] = item['default']
+        if to_search_mkey and mkey == item_name and 'default' in pdata[item_name]:
+            del pdata[item_name]['default']
+
         if 'type' not in item or item['type'] not in ['string', 'integer', 'array']:
             pdata[item_name]['type'] = 'dict'
             pdata[item_name]['options'] = schema_to_layer2_params(item, False, None)
@@ -930,7 +983,7 @@ def schema_to_layer2_params(schema, to_search_mkey, mkey):
                 pdata[item_name]['options'] = schema_to_layer2_params(subitem, False, None)
             elif subitem['type'] in ['string', 'integer']:
                 if 'enum' not in subitem:
-                    pdata[item_name]['type'] = 'str' if subitem['type'] is 'string' else 'int'
+                    pdata[item_name]['type'] = 'str' if subitem['type'] == 'string' else 'int'
                     # XXX: set an warning here.
                     print('\t\33[33mWARNING: list to atomic type conversion:' + item_name + '\033[0m')
                 else:
