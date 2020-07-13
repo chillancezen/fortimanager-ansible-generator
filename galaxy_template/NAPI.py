@@ -136,6 +136,10 @@ class NAPIManager(object):
             self.module.fail_json(msg='this module doesn\'t not support state:absent because of no primary key.')
         return self.create_objejct()
 
+    def process_generic(self, method, param):
+        response = self.conn.send_request(method, param)
+        self.do_exit(response)
+
     def process_exec(self):
         the_url = self.jrpc_urls[0]
         if 'adom' in self.url_params and not self.jrpc_urls[0].endswith('{adom}'):
