@@ -60,6 +60,15 @@ def shorten_url(uri):
     return short_url
 
 def canonicalize_url_as_path(url, ignore_last_token=False):
+    exceptional_map = {
+        '/pm/pkg/adom/{adom}/{pkg_path}': 'fmgr_pm_pkg',
+        '/pm/pkg/global/{pkg_path}': 'fmgr_pm_pkg',
+        '/pm/devprof/adom/{adom}/{pkg_path}': 'fmgr_pm_devprof_pkg',
+        '/pm/wanprof/adom/{adom}/{pkg_path}': 'fmgr_pm_wanprof_pkg'
+    }
+    if url in exceptional_map:
+        return exceptional_map[url]
+
     if ignore_last_token:
         url_tokens = url.split('/')
         if url_tokens[-1].startswith('{') and url_tokens[-1].endswith('}'):
@@ -513,13 +522,13 @@ def _generate_docgen_paramters_recursively(schema):
         assert(False)
     return params_data
 
-def napi_generate_docgen_parameters(in_path_schema, body_schema, module_name, short_desc, is_exec=False):
+def napi_generate_docgen_parameters(in_path_schema, body_schema, module_name, short_desc, is_exec=False, is_partial=False):
     params_data = ' <ul>\n'
     params_data += ' <li><span class="li-head">workspace_locking_adom</span> - Acquire the workspace lock if FortiManager is running in workspace mode <span class="li-normal">type: str</span> <span class="li-required">required: false</span> <span class="li-normal"> choices: global, custom adom including root</span> </li>\n'
     params_data += ' <li><span class="li-head">workspace_locking_timeout</span> - The maximum time in seconds to wait for other users to release workspace lock <span class="li-normal">type: integer</span> <span class="li-required">required: false</span>  <span class="li-normal">default: 300</span> </li>\n'
     params_data += ' <li><span class="li-head">rc_succeeded</span> - The rc codes list with which the conditions to succeed will be overriden <span class="li-normal">type: list</span> <span class="li-required">required: false</span> </li>\n'
     params_data += ' <li><span class="li-head">rc_failed</span> - The rc codes list with which the conditions to fail will be overriden <span class="li-normal">type: list</span> <span class="li-required">required: false</span> </li>\n'
-    if not is_exec:
+    if not is_exec and not is_partial:
         params_data += ' <li><span class="li-head">state</span> - The directive to create, update or delete an object <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal"> choices: present, absent</span> </li>\n'
     for param in in_path_schema:
         params_data += ' <li><span class="li-head">' + param['name'] + '</span> - The parameter in requested url <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>\n'
@@ -645,7 +654,7 @@ def _generate_schema_document_examples_recursive(schema, depth):
         assert(False)
     return rdata
 
-def napi_generate_schema_document_examples(module_name, in_path_schema, body_schema, short_desc, is_exec=False):
+def napi_generate_schema_document_examples(module_name, in_path_schema, body_schema, short_desc, is_exec=False, is_partial=False):
     example_data = ''
     example_data += ' - ' + 'hosts: fortimanager-inventory\n'
     example_data += ' ' * 3 + 'collections:\n'
@@ -664,7 +673,7 @@ def napi_generate_schema_document_examples(module_name, in_path_schema, body_sch
     example_data += ' ' * 9 + 'rc_failed: [-2, -3, ...]\n'
     for param in in_path_schema:
         example_data += ' ' * 9 + param['name'] + ': <your own value>\n'
-    if not is_exec:
+    if not is_exec and not is_partial:
         example_data += ' ' * 9 + 'state: <value in [present, absent]>\n'
     if body_schema and len(body_schema) > 0:
         example_data += ' ' * 9 + module_name[5:] + ':'
@@ -1013,7 +1022,7 @@ def module_primary_key(module_name, schema):
 
 exec_mod_tracking = list()
 url_mod_tracking = dict()
-def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, peer_url, is_exec=False):
+def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, peer_url, is_exec=False, is_partial=False):
     validate_multiurls_schema(url, schema, multiurls)
     body_schemas = dict()
     raw_body_schemas = dict()
@@ -1063,8 +1072,10 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
         if item['name'] == 'adom':
             adom_is_in_path_params = True
             break
-
-    canonical_path = canonicalize_url_as_path(url, ignore_last_token=False if not is_exec else True)
+    ignore_last_token = False if not is_exec else True
+    if is_partial:
+        ignore_last_token = True
+    canonical_path = canonicalize_url_as_path(url, ignore_last_token=ignore_last_token)
     supported_methods = list(schema._digest[url].keys())
     if is_exec:
         exec_mod_tracking.append(canonical_path)
@@ -1092,6 +1103,9 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
     # Note method Add/Update share the same schema
     the_unique_schema = None
     the_unique_method = 'add' if not is_exec else 'exec'
+    if the_unique_method == 'add' and the_unique_method not in body_schemas:
+        assert('set' in body_schemas)
+        the_unique_method = 'set'
     the_unique_type = 'array' if not is_exec else 'dict'
     the_unique_subitem = 'items' if not is_exec else 'dict'
     for top_schema in body_schemas[the_unique_method]:
@@ -1100,10 +1114,13 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
             break
     #assert(the_unique_schema)
     if the_unique_schema:
-        assert(the_unique_schema['type'] == the_unique_type)
+        the_unique_type = the_unique_schema['type']
+        the_unique_subitem = 'items' if 'items' in the_unique_schema else 'dict'
+        assert(the_unique_type in ['array', 'dict'])
+        assert(the_unique_subitem in ['items', 'dict'])
     # Determine the primary key for the module
     mkey = None
-    if not is_exec and the_unique_schema:
+    if not is_exec and the_unique_schema and not is_partial:
         mkey = module_primary_key(canonical_path, the_unique_schema[the_unique_subitem])
     if mkey:
         print('\t\033[36mprimary key:\033[0m \033[37m', mkey, '\033[0m')
@@ -1112,13 +1129,14 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
                   'jrpc_urls': mutiurls_names,
                   'perobject_jrpc_urls': perobject_mutiurls_names,
                   'mkey': mkey,
+                  'is_partial': is_partial,
                   'level2_name': canonical_path[5:],
                   'body_schemas': schema_beautify(schema_to_layer2_params(the_unique_schema[the_unique_subitem], True, mkey), 12, 1, False, True) if the_unique_schema else {}}
                   #'body_schemas': schema_beautify(transform_schema(body_schemas), 4, 1, False, True)}
     code_body = code_template.render(**code_rdata)
     short_description = shorten_description(canonicalize_text(api_endpoint_tags[supported_methods[0]])[0], len('short_description: ')).replace('\'', '')
     #doc_examples = generate_schema_document_examples(raw_body_schemas, canonical_path, url, the_one_in_path_params)
-    doc_examples = napi_generate_schema_document_examples(canonical_path, the_one_in_path_params, the_unique_schema[the_unique_subitem] if the_unique_schema else {}, 'no description' if short_description == '' else short_description, is_exec=is_exec)
+    doc_examples = napi_generate_schema_document_examples(canonical_path, the_one_in_path_params, the_unique_schema[the_unique_subitem] if the_unique_schema else {}, 'no description' if short_description == '' else short_description, is_exec=is_exec, is_partial=is_partial)
     doc_rdata = {'module_name': canonical_path,
                  'jrpc_urls': mutiurls_names,
                  'short_description': 'no description' if short_description == '' else short_description,
@@ -1182,7 +1200,7 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
     docgen_data += '----------\n\n'
     docgen_data += '.. raw:: html\n\n'
     #docgen_data += generate_docgen_parameters(raw_body_schemas, the_one_in_path_params, api_endpoint_tags)
-    docgen_data += napi_generate_docgen_parameters(the_one_in_path_params, the_unique_schema[the_unique_subitem] if the_unique_schema else {}, canonical_path, 'no description' if short_description == '' else short_description, is_exec=is_exec)
+    docgen_data += napi_generate_docgen_parameters(the_one_in_path_params, the_unique_schema[the_unique_subitem] if the_unique_schema else {}, canonical_path, 'no description' if short_description == '' else short_description, is_exec=is_exec, is_partial=is_partial)
     docgen_data += '\n\n\n\n\n\n'
     # NOTES IN DOCGEN
     docgen_data += 'Notes\n'
@@ -1239,6 +1257,7 @@ if __name__ == '__main__':
     except_defs = dict()
     domain_independent_urls = dict()
     curd_urls = dict()
+    partial_curd_urls = dict()
     with open('./exceptional_definition_list.json') as f:
         except_defs = json.load(f)
     schema_directory = './fortimanager-schema/schemas'
@@ -1309,6 +1328,7 @@ if __name__ == '__main__':
             perobj_stripped_url = stripped_url + '/{' + last_token + '}'
             has_perobj = perobj_stripped_url in domain_independent_urls
             if not has_perobj:
+                print('does not have peer:' + stripped_url)
                 continue
             nonperobj_url, nonperobj_schema = domain_independent_urls[stripped_url][0]
             perobj_url, perobj_schema = domain_independent_urls[perobj_stripped_url][0]
@@ -1326,6 +1346,20 @@ if __name__ == '__main__':
                 assert('get' in perobj_methods)
                 assert('delete' in perobj_methods)
                 assert('update' in perobj_methods)
+            else:
+                print('have incomplete peer:' + str(set([nonperobj_url, perobj_url])) + str(nonperobj_methods) + str(perobj_methods))
+    # Find those modules who have partial CRUD semantics: every module of this category must have update/get method
+    for stripped_url in domain_independent_urls:
+        if stripped_url in curd_urls:
+            continue
+        _url, _schema = domain_independent_urls[stripped_url][0]
+        _methods = set(_schema._digest[_url].keys())
+        if 'set' not in _methods or 'get' not in _methods:
+            continue
+        _module_name = canonicalize_url_as_path(stripped_url, True)
+        partial_curd_urls[_module_name] = stripped_url
+        print('\033[32mprocessing partial CURD multi-domain url:\033[0m', stripped_url)
+        resolve_generic_schema(_url, _schema, doc_template, code_template, domain_independent_urls[stripped_url], None, is_partial=True)
     # Now we have per-object url mapping, these modules will be applied with present/absent Ansible semantics
     for stripped_url in curd_urls:
         if stripped_url.endswith('}'):
@@ -1334,9 +1368,3 @@ if __name__ == '__main__':
         print('\033[32mprocessing CURD multi-domain url:\033[0m', stripped_url)
         print('\t\033[32m                peer url:\033[0m', curd_urls[stripped_url])
         resolve_generic_schema(url0, schema0, doc_template, code_template, domain_independent_urls[stripped_url], curd_urls[stripped_url])
-    # There should be no modules in conflict
-    for mod in url_mod_tracking:
-        urls = url_mod_tracking[mod]
-        if len(urls) != 1:
-            print(mod, urls)
-        assert(len(urls) == 1)

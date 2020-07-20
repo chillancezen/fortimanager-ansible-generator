@@ -37,7 +37,7 @@ def main():
         'rc_failed': {
             'required': False,
             'type': 'list'
-        },
+        }{%- if not is_partial -%},
         'state': {
             'type': 'str',
             'required': True,
@@ -45,7 +45,7 @@ def main():
                 'present',
                 'absent'
             ]
-        },
+        }{%- endif %},
         {%- for param in in_path_params %}
         '{{param.name}}': {
             'required': True,
@@ -65,7 +65,11 @@ def main():
     if module._socket_path:
         connection = Connection(module._socket_path)
         fmgr = NAPIManager(jrpc_urls, perobject_jrpc_urls, module_primary_key, url_params, module, connection)
+        {%- if not is_partial %}
         fmgr.process_curd()
+        {%- else %}
+        fmgr.process_partial_curd()
+        {%- endif %}
     else:
         module.fail_json(msg = 'MUST RUN IN HTTPAPI MODE')
     module.exit_json(meta = module.params)

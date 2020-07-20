@@ -102,13 +102,13 @@ class NAPIManager(object):
 
     def update_object(self, mvalue):
         url_updating = self._get_base_perobject_url(mvalue)
-        params = [{'url': url_updating, 'data': self.module.params[self.module_level2_name]}]
+        params = [{'url': url_updating, 'data': self.__tailor_attributes(self.module.params[self.module_level2_name])}]
         response = self.conn.send_request('update', params)
         return response
 
     def create_objejct(self):
         url_creating = self._get_basic_url(False)
-        params = [{'url': url_creating, 'data': self.module.params[self.module_level2_name]}]
+        params = [{'url': url_creating, 'data': self.__tailor_attributes(self.module.params[self.module_level2_name])}]
         return self.conn.send_request('add', params)
     
     def delete_object(self, mvalue):
@@ -160,7 +160,7 @@ class NAPIManager(object):
 
         api_params = [{'url': the_url}]
         if self.module_level2_name in self.module.params:
-            api_params[0]['data'] = self.module.params[self.module_level2_name]
+            api_params[0]['data'] = self.__tailor_attributes(self.module.params[self.module_level2_name])
 
         response = self.conn.send_request('exec', api_params)
         self.do_exit(response)
@@ -212,6 +212,50 @@ class NAPIManager(object):
             self.do_exit(self._process_with_mkey(mvalue))
         else:
             self.do_exit(self._process_without_mkey())
+
+    def __tailor_attributes(self, data):
+        if type(data) == dict:
+            rdata = dict()
+            for key in data:
+                value = data[key]
+                if value is None:
+                    continue
+                rdata[key] = self.__tailor_attributes(value)
+            return rdata
+        elif type(data) == list:
+            rdata = list()
+            for item in data:
+                if item is None:
+                    continue
+                rdata.append(self.__tailor_attributes(item))
+            return rdata
+        else:
+            assert(data is not None)
+            return data
+
+    def process_partial_curd(self):
+        the_url = self.jrpc_urls[0]
+        if 'adom' in self.url_params and not self.jrpc_urls[0].endswith('{adom}'):
+            if self.module.params['adom'] == 'global':
+                for _url in self.jrpc_urls:
+                    if '/global/' in _url:
+                        the_url = _url
+                        break
+            else:
+                for _url in self.jrpc_urls:
+                    if '/adom/{adom}/' in _url:
+                        the_url = _url
+                        break
+        for _param in self.url_params:
+            token_hint = '{%s}' % (_param)
+            token = '%s' % (self.module.params[_param])
+            the_url = the_url.replace(token_hint, token)
+        the_url = the_url.rstrip('/')
+        api_params = [{'url': the_url}]
+        if self.module_level2_name in self.module.params:
+            api_params[0]['data'] = self.__tailor_attributes(self.module.params[self.module_level2_name])
+        response = self.conn.send_request('set', api_params)
+        self.do_exit(response)
 
     def _do_final_exit(self, rc, result):
         # XXX: as with https://github.com/fortinet/ansible-fortimanager-generic.
