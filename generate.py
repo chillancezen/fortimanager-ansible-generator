@@ -1109,9 +1109,9 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
     the_unique_type = 'array' if not is_exec else 'dict'
     the_unique_subitem = 'items' if not is_exec else 'dict'
     for top_schema in body_schemas[the_unique_method]:
-        if top_schema['name'] == 'data':
+        if top_schema['name'] != 'url':
+            assert(not the_unique_schema)
             the_unique_schema = top_schema
-            break
     #assert(the_unique_schema)
     if the_unique_schema:
         the_unique_type = the_unique_schema['type']
@@ -1129,6 +1129,7 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
                   'jrpc_urls': mutiurls_names,
                   'perobject_jrpc_urls': perobject_mutiurls_names,
                   'mkey': mkey,
+                  'top_level_schema_name': the_unique_schema['name'] if the_unique_schema else None,
                   'is_partial': is_partial,
                   'level2_name': canonical_path[5:],
                   'body_schemas': schema_beautify(schema_to_layer2_params(the_unique_schema[the_unique_subitem], True, mkey), 12, 1, False, True) if the_unique_schema else {}}

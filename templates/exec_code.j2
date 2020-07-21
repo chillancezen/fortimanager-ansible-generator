@@ -57,7 +57,7 @@ def main():
     fmgr = None
     if module._socket_path:
         connection = Connection(module._socket_path)
-        fmgr = NAPIManager(jrpc_urls, perobject_jrpc_urls, None, url_params, module, connection)
+        fmgr = NAPIManager(jrpc_urls, perobject_jrpc_urls, None, url_params, module, connection, top_level_schema_name={% if top_level_schema_name -%}'{{top_level_schema_name}}'{% else -%}None{%- endif %})
         fmgr.process_exec()
     else:
         module.fail_json(msg = 'MUST RUN IN HTTPAPI MODE')

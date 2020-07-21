@@ -64,7 +64,7 @@ def main():
     fmgr = None
     if module._socket_path:
         connection = Connection(module._socket_path)
-        fmgr = NAPIManager(jrpc_urls, perobject_jrpc_urls, module_primary_key, url_params, module, connection)
+        fmgr = NAPIManager(jrpc_urls, perobject_jrpc_urls, module_primary_key, url_params, module, connection, top_level_schema_name={% if top_level_schema_name -%}'{{top_level_schema_name}}'{% else -%}None{%- endif %})
         {%- if not is_partial %}
         fmgr.process_curd()
         {%- else %}

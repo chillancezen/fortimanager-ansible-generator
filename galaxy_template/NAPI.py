@@ -38,8 +38,9 @@ class NAPIManager(object):
     conn = None
     module_name = None
     module_level2_name = None
+    top_level_schema_name = None
 
-    def __init__(self, jrpc_urls, perobject_jrpc_urls, module_primary_key, url_params, module, conn):
+    def __init__(self, jrpc_urls, perobject_jrpc_urls, module_primary_key, url_params, module, conn, top_level_schema_name=None):
         self.jrpc_urls = jrpc_urls
         self.perobject_jrpc_urls = perobject_jrpc_urls
         self.module_primary_key = module_primary_key
@@ -48,7 +49,8 @@ class NAPIManager(object):
         self.conn = conn
         self.process_workspace_lock()
         self.module_name = self.module._name
-        self.module_level2_name = self.module_name[5:]
+        self.module_level2_name = self.module_name.split('.')[-1][5:]
+        self.top_level_schema_name=top_level_schema_name
 
     def process_workspace_lock(self):
         self.conn.process_workspace_locking(self.module.params)
@@ -102,13 +104,15 @@ class NAPIManager(object):
 
     def update_object(self, mvalue):
         url_updating = self._get_base_perobject_url(mvalue)
-        params = [{'url': url_updating, 'data': self.__tailor_attributes(self.module.params[self.module_level2_name])}]
+        assert(self.top_level_schema_name)
+        params = [{'url': url_updating, self.top_level_schema_name: self.__tailor_attributes(self.module.params[self.module_level2_name])}]
         response = self.conn.send_request('update', params)
         return response
 
     def create_objejct(self):
         url_creating = self._get_basic_url(False)
-        params = [{'url': url_creating, 'data': self.__tailor_attributes(self.module.params[self.module_level2_name])}]
+        assert(self.top_level_schema_name)
+        params = [{'url': url_creating, self.top_level_schema_name: self.__tailor_attributes(self.module.params[self.module_level2_name])}]
         return self.conn.send_request('add', params)
     
     def delete_object(self, mvalue):
@@ -160,7 +164,8 @@ class NAPIManager(object):
 
         api_params = [{'url': the_url}]
         if self.module_level2_name in self.module.params:
-            api_params[0]['data'] = self.__tailor_attributes(self.module.params[self.module_level2_name])
+            assert(self.top_level_schema_name)
+            api_params[0][self.top_level_schema_name] = self.__tailor_attributes(self.module.params[self.module_level2_name])
 
         response = self.conn.send_request('exec', api_params)
         self.do_exit(response)
@@ -253,7 +258,8 @@ class NAPIManager(object):
         the_url = the_url.rstrip('/')
         api_params = [{'url': the_url}]
         if self.module_level2_name in self.module.params:
-            api_params[0]['data'] = self.__tailor_attributes(self.module.params[self.module_level2_name])
+            assert(self.top_level_schema_name)
+            api_params[0][self.top_level_schema_name] = self.__tailor_attributes(self.module.params[self.module_level2_name])
         response = self.conn.send_request('set', api_params)
         self.do_exit(response)
 
@@ -287,6 +293,7 @@ class NAPIManager(object):
     def do_exit(self, response):
         rc = response[0]
         result = dict()
+        result['response_data'] = list()
         if 'data' in response[1]:
             result['response_data'] = response[1]['data']
         result['response_code'] = response[1]['status']['code']
