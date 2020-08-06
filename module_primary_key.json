@@ -4,6 +4,7 @@
    "fmgr_system_objecttagging": "tags",
    "fmgr_switchcontroller_managedswitch_ports": "port-name",
    "fmgr_pkg_firewall_proxypolicy": "policyid",
+   "fmgr_pkg_firewall_policy": "policyid",
    "fmgr_pkg_firewall_policy64": "policyid",
    "fmgr_pkg_firewall_policy46": "policyid",
    "fmgr_pkg_firewall_policy_vpnsrcnode": "seq",

@@ -353,6 +353,11 @@ def generate_unified_schema_document_options(all_methods):
 
 def napi_generate_schema_document_options(in_path_schema, body_schema, level2_name, is_exec=False):
     options_data = ''
+    options_data += ' ' * 4 + 'bypass_validation:\n'
+    options_data += ' ' * 8 + 'description: only set to True when module schema diffs with FortiManager API structure, module continues to execute without validating parameters\n'
+    options_data += ' ' * 8 + 'required: false\n'
+    options_data += ' ' * 8 + 'type: bool\n'
+    options_data += ' ' * 8 + 'default: false\n'
     options_data += ' ' * 4 + 'workspace_locking_adom:\n'
     options_data += ' ' * 8 + 'description: the adom to lock for FortiManager running in workspace mode, the value can be global and others including root\n'
     options_data += ' ' * 8 + 'required: false\n'
@@ -524,6 +529,7 @@ def _generate_docgen_paramters_recursively(schema):
 
 def napi_generate_docgen_parameters(in_path_schema, body_schema, module_name, short_desc, is_exec=False, is_partial=False):
     params_data = ' <ul>\n'
+    params_data += ' <li><span class="li-head">bypass_validation</span> - Only set to True when module schema diffs with FortiManager API structure, module continues to execute without validating parameters <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal"> default: False</span> </li>\n'
     params_data += ' <li><span class="li-head">workspace_locking_adom</span> - Acquire the workspace lock if FortiManager is running in workspace mode <span class="li-normal">type: str</span> <span class="li-required">required: false</span> <span class="li-normal"> choices: global, custom adom including root</span> </li>\n'
     params_data += ' <li><span class="li-head">workspace_locking_timeout</span> - The maximum time in seconds to wait for other users to release workspace lock <span class="li-normal">type: integer</span> <span class="li-required">required: false</span>  <span class="li-normal">default: 300</span> </li>\n'
     params_data += ' <li><span class="li-head">rc_succeeded</span> - The rc codes list with which the conditions to succeed will be overriden <span class="li-normal">type: list</span> <span class="li-required">required: false</span> </li>\n'
@@ -667,6 +673,7 @@ def napi_generate_schema_document_examples(module_name, in_path_schema, body_sch
     example_data += ' ' * 3 + 'tasks:\n'
     example_data += ' ' * 3 + ' - name: ' + short_desc + '\n'
     example_data += ' ' * 6 + module_name + ':\n'
+    example_data += ' ' * 9 + 'bypass_validation: False\n'
     example_data += ' ' * 9 + 'workspace_locking_adom: <value in [global, custom adom including root]>\n'
     example_data += ' ' * 9 + 'workspace_locking_timeout: 300\n'
     example_data += ' ' * 9 + 'rc_succeeded: [0, -2, -3, ...]\n'
@@ -1095,10 +1102,10 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
     if len(multiurls) > 1:
         if not is_exec:
             assert(adom_is_in_path_params)
-        for _url in mutiurls_names:
-            print('\t\033[36msub.url:\033[0m \033[37m%s\033[0m' % (_url))
-        for _url in perobject_mutiurls_names:
-            print('\t\033[36msub.url:\033[0m \033[37m%s\033[0m' % (_url))
+    for _url in mutiurls_names:
+        print('\t\033[36msub.url:\033[0m \033[37m%s\033[0m' % (_url))
+    for _url in perobject_mutiurls_names:
+        print('\t\033[36msub.url:\033[0m \033[37m%s\033[0m' % (_url))
 
     # Note method Add/Update share the same schema
     the_unique_schema = None

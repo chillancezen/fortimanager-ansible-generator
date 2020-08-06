@@ -27,7 +27,29 @@
 # USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
+from ansible.module_utils.basic import _load_params
+import sys
 
+def check_galaxy_version(schema):
+    params = _load_params()
+    params_keys = list(params.keys())
+    if 'method' in params_keys and 'method' not in schema:
+        sys.stderr.write('Legacy playbook detected, please revise the playbook or install latest legacy fortimanager galaxy collection: #ansible-galaxy collection install -f fortinet.fortimanager:1.0.4')
+        sys.exit(1)
+
+def check_parameter_bypass(schema, module_level2_name):
+    params = _load_params()
+    if 'bypass_validation' in params and params['bypass_validation'] == True:
+        top_level_schema = dict()
+        for key in schema:
+            if key != module_level2_name:
+                top_level_schema[key] = schema[key]
+            else:
+                top_level_schema[module_level2_name] = dict()
+                top_level_schema[module_level2_name]['required'] = False
+                top_level_schema[module_level2_name]['type'] = 'dict'
+        return top_level_schema
+    return schema
 
 class NAPIManager(object):
     jrpc_urls = None
