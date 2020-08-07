@@ -1026,6 +1026,9 @@ def module_primary_key(module_name, schema):
     print('\t\033[33mWarning: Cannot find primary key, possible options:', list(schema.keys()), '\033[0m')
     return None
 
+wrapper_dataset = None
+with open('module_toplevel_wrapper.json', 'r') as f:
+    wrapper_dataset = json.load(f)
 
 exec_mod_tracking = list()
 url_mod_tracking = dict()
@@ -1136,7 +1139,7 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
                   'jrpc_urls': mutiurls_names,
                   'perobject_jrpc_urls': perobject_mutiurls_names,
                   'mkey': mkey,
-                  'top_level_schema_name': the_unique_schema['name'] if the_unique_schema else None,
+                  'top_level_schema_name': wrapper_dataset[canonical_path] if canonical_path in wrapper_dataset else (the_unique_schema['name'] if the_unique_schema else None),
                   'is_partial': is_partial,
                   'level2_name': canonical_path[5:],
                   'body_schemas': schema_beautify(schema_to_layer2_params(the_unique_schema[the_unique_subitem], True, mkey), 12, 1, False, True) if the_unique_schema else {}}
