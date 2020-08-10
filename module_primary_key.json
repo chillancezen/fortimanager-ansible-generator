@@ -54,5 +54,7 @@
    "fmgr_fsp_vlan_interface_vrrp": "vrid",
    "fmgr_wanopt_peer": "peer-host-id",
    "fmgr_vpnmgr_node_summaryaddr": "seq",
-   "fmgr_vpnmgr_node_protectedsubnet": "seq"
+   "fmgr_vpnmgr_node_protectedsubnet": "seq",
+   "fmgr_antivirus_mmschecksum": "id",
+   "fmgr_application_custom": "tag"
 }

@@ -135,7 +135,7 @@ class NAPIManager(object):
         url_creating = self._get_basic_url(False)
         assert(self.top_level_schema_name)
         params = [{'url': url_creating, self.top_level_schema_name: self.__tailor_attributes(self.module.params[self.module_level2_name])}]
-        return self.conn.send_request('add', params)
+        return self.conn.send_request('set', params)
     
     def delete_object(self, mvalue):
         url_deleting = self._get_base_perobject_url(mvalue)
@@ -150,10 +150,11 @@ class NAPIManager(object):
             else:
                 return self.create_objejct()
         elif self.module.params['state'] == 'absent':
-            if mobject[0] == 0:
-                return self.delete_object(mvalue)
-            else:
-                self.do_nonexist_exit()
+            # in case the `GET` method returns nothing... see module `fmgr_antivirus_mmschecksum`
+            #if mobject[0] == 0:
+            return self.delete_object(mvalue)
+            #else:
+            #    self.do_nonexist_exit()
         else:
             assert(False)
 

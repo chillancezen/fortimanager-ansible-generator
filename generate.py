@@ -1018,11 +1018,11 @@ def module_primary_key(module_name, schema):
     if module_name in mkey_dataset:
         return mkey_dataset[module_name]
     for item_name in schema:
-        if item_name == 'name':
-            return 'name'
-    for item_name in schema:
         if item_name == 'id':
             return 'id'
+    for item_name in schema:
+        if item_name == 'name':
+            return 'name'
     print('\t\033[33mWarning: Cannot find primary key, possible options:', list(schema.keys()), '\033[0m')
     return None
 
