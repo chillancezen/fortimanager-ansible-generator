@@ -227,8 +227,20 @@ class NAPIManager(object):
             token = '/%s/%s' % (_param, self.module.params['facts']['params'][_param])
             url = url.replace(token_hint, token)
 
-        # Now issue the request.
+        # Other Filters and Sorters
+        filters = self.module.params['facts']['filters']
+        sortings = self.module.params['facts']['sortings']
+        fields = self.module.params['facts']['fields']
+
         api_params = [{'url': url}]
+        if filters:
+            api_params[0]['filter'] = filters
+        if sortings:
+            api_params[0]['sortings'] = sortings
+        if fields:
+            api_params[0]['fields'] = fields
+
+        # Now issue the request.
         response = self.conn.send_request('get', api_params)
         self.do_exit(response)
 
