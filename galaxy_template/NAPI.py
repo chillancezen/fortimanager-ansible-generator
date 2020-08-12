@@ -228,9 +228,10 @@ class NAPIManager(object):
             url = url.replace(token_hint, token)
 
         # Other Filters and Sorters
-        filters = self.module.params['facts']['filters']
+        filters = self.module.params['facts']['filter']
         sortings = self.module.params['facts']['sortings']
         fields = self.module.params['facts']['fields']
+        options = self.module.params['facts']['option']
 
         api_params = [{'url': url}]
         if filters:
@@ -239,6 +240,8 @@ class NAPIManager(object):
             api_params[0]['sortings'] = sortings
         if fields:
             api_params[0]['fields'] = fields
+        if options:
+            api_params[0]['option'] = options
 
         # Now issue the request.
         response = self.conn.send_request('get', api_params)
