@@ -60,7 +60,7 @@ class FMGApiSchema:
         for _key in definition:
             if _key in ['name', 'in', 'api_tag']:
                 plain_collection[_key] = definition[_key]
-        #recesively expand the reference point
+        #recursively expand the reference point
         if '$ref' in definition:
             return self.resolve_reference(definition['$ref'])
 
@@ -78,8 +78,12 @@ class FMGApiSchema:
         elif definition['type'] == 'object':
             if 'properties' not in definition:
                 assert('additionalProperties' in definition)
-                for _field in definition['additionalProperties']:
-                    plain_collection[_field] =  definition['additionalProperties'][_field]
+                assert(len(definition['additionalProperties'].keys()) == 1)
+                assert('type' in definition['additionalProperties'])
+                assert(definition['additionalProperties']['type'] == 'string')
+                plain_collection['type'] = 'dict'
+                #for _field in definition['additionalProperties']:
+                #    plain_collection[_field] =  definition['additionalProperties'][_field]
             else:
                 for prop in definition['properties']:
                     plain_collection[prop] = self.__resolve_reference(definition['properties'][prop])

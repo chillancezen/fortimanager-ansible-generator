@@ -278,8 +278,11 @@ def _generate_schema_document_options_recursilve(schema, depth):
             for item in schema['enum']:
                 rdata += ' ' * (depth + 1) * 4 + '- ' + quote + str(item) + quote + '\n'
     elif schema['type'] is 'dict':
-        assert('dict' in schema)
-        rdata += _generate_schema_document_options_recursilve(schema['dict'], depth)
+        #assert('dict' in schema)
+        if 'dict' in schema:
+            rdata += _generate_schema_document_options_recursilve(schema['dict'], depth)
+        else:
+            rdata += ' ' * depth * 4 + 'type: dict\n'
 
     elif schema['type'] is 'array':
         assert('items' in schema)
@@ -495,13 +498,14 @@ def _generate_docgen_paramters_recursively(schema):
             params_data += ' <span class="li-normal">default: %s</span> ' % (schema['default'])
         params_data += '</li>\n'
     elif schema['type'] is 'dict':
-        assert(False)
-        fold = 'type' not in schema['dict'] or schema['dict']['type'] not in ['string', 'integer', 'array', 'dict']
+        #assert(False)
+        fold = True
+        #fold = 'type' not in schema['dict'] or schema['dict']['type'] not in ['string', 'integer', 'array', 'dict']
         params_data += ' - No description for the parameter' if fold else ''
         params_data += ' <span class="li-normal">type: dict</span> </li>\n' if fold else '<li>\n'
-        params_data += ' <ul class="ul-self">\n' if fold else ''
-        params_data += _generate_docgen_paramters_recursively(schema['dict'])
-        params_data += ' </ul>\n' if fold else '\n'
+        #params_data += ' <ul class="ul-self">\n' if fold else ''
+        #params_data += _generate_docgen_paramters_recursively(schema['dict'])
+        #params_data += ' </ul>\n' if fold else '\n'
     elif schema['type'] is 'array':
         assert('items' in schema)
         subitem = schema['items']
@@ -654,8 +658,11 @@ def _generate_schema_document_examples_recursive(schema, depth):
         else:
             assert(False)
     elif schema['type'] is 'dict':
-        assert('dict' in schema)
-        rdata += _generate_schema_document_examples_recursive(schema['dict'], depth)
+        #assert('dict' in schema)
+        if 'dict' in schema:
+            rdata += _generate_schema_document_examples_recursive(schema['dict'], depth)
+        else:
+            rdata += ' <value of dict>\n'
     else:
         assert(False)
     return rdata
@@ -984,8 +991,12 @@ def schema_to_layer2_params(schema, to_search_mkey, mkey):
             del pdata[item_name]['default']
 
         if 'type' not in item or item['type'] not in ['string', 'integer', 'array']:
+            if 'type' in item:
+                assert(item['type'] == 'dict')
+                assert(len(item.keys()) == 1)
             pdata[item_name]['type'] = 'dict'
-            pdata[item_name]['options'] = schema_to_layer2_params(item, False, None)
+            if 'type' not in item or len(item.keys()) > 1:
+                pdata[item_name]['options'] = schema_to_layer2_params(item, False, None)
             continue
         if item['type'] == 'string':
             pdata[item_name]['type'] = 'str'
