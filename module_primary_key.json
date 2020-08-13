@@ -1,7 +1,7 @@
 {
    "fmgr_pkg_firewall_dospolicy": "policyid",
    "fmgr_system_workflow_approvalmatrix_approver": "seq_num",
-   "fmgr_system_objecttagging": "tags",
+   "fmgr_system_objecttagging": "category",
    "fmgr_switchcontroller_managedswitch_ports": "port-name",
    "fmgr_pkg_firewall_proxypolicy": "policyid",
    "fmgr_pkg_firewall_policy": "policyid",
@@ -56,5 +56,7 @@
    "fmgr_vpnmgr_node_summaryaddr": "seq",
    "fmgr_vpnmgr_node_protectedsubnet": "seq",
    "fmgr_antivirus_mmschecksum": "id",
-   "fmgr_application_custom": "tag"
+   "fmgr_application_custom": "tag",
+   "fmgr_user_local": "id",
+   "fmgr_firewall_address6_list": "ip"
 }
