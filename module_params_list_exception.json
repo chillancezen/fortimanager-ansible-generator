@@ -1,0 +1,10 @@
+{
+    "fmgr_firewall_addrgrp": [
+        ["member"],
+        ["dynamic_mapping", "member"]
+    ],
+    "fmgr_user_devicegroup": [
+        ["member"],
+        ["dynamic_mapping", "member"]
+    ]
+}

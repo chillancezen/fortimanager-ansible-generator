@@ -298,7 +298,10 @@ def _generate_schema_document_options_recursilve(schema, depth):
                 for _item in subitem['enum']:
                     rdata += ' ' * depth * 4 + ' - %s\n' % (_item)
             else:
-                rdata += ' ' * depth * 4 + 'type: %s\n' % (schematype_displayname_mapping[subitem['type']])
+                if '_donot_convert' not in subitem:
+                    rdata += ' ' * depth * 4 + 'type: %s\n' % (schematype_displayname_mapping[subitem['type']])
+                else:
+                    rdata += ' ' * depth * 4 + 'type: list\n'
         else:
             assert(False)
 
@@ -519,7 +522,10 @@ def _generate_docgen_paramters_recursively(schema):
             params_data += ' </ul>\n'
         elif subitem['type'] in ['string', 'integer']:
             if 'enum' not in subitem:
-                params_data += ' <span class="li-normal">type: %s</span>' % (schematype_displayname_mapping[subitem['type']])
+                if '_donot_convert' not in subitem:
+                    params_data += ' <span class="li-normal">type: %s</span>' % (schematype_displayname_mapping[subitem['type']])
+                else:
+                    params_data += ' <span class="li-normal">type: list</span>'
                 params_data += '</li>\n'
             else:
                 params_data += ' <span class="li-normal">type: array</span>'
@@ -650,7 +656,10 @@ def _generate_schema_document_examples_recursive(schema, depth):
             rdata += _generate_schema_document_examples_recursive(schema['items'], depth + 1)
         elif subitem['type'] in ['string', 'integer']:
             if 'enum' not in subitem:
-                rdata += ' <value of %s>\n' % (subitem['type'])
+                if '_donot_convert' not in subitem:
+                    rdata += ' <value of %s>\n' % (subitem['type'])
+                else:
+                    rdata += ' <value of list>\n'
             else:
                 rdata += '\n'
                 for _item in subitem['enum']:
@@ -1010,9 +1019,10 @@ def schema_to_layer2_params(schema, to_search_mkey, mkey):
                 pdata[item_name]['options'] = schema_to_layer2_params(subitem, False, None)
             elif subitem['type'] in ['string', 'integer']:
                 if 'enum' not in subitem:
-                    pdata[item_name]['type'] = 'str' if subitem['type'] == 'string' else 'int'
-                    # XXX: set an warning here.
-                    print('\t\33[33mWARNING: list to atomic type conversion:' + item_name + '\033[0m')
+                    if '_donot_convert' not in subitem:
+                        pdata[item_name]['type'] = 'str' if subitem['type'] == 'string' else 'int'
+                        # XXX: set a warning message here.
+                        print('\t\33[33mWARNING: list to atomic type conversion:' + item_name + '\033[0m')
                 else:
                     pdata[item_name]['choices'] = [i for i in subitem['enum']]
             else:
@@ -1040,6 +1050,39 @@ def module_primary_key(module_name, schema):
 wrapper_dataset = None
 with open('module_toplevel_wrapper.json', 'r') as f:
     wrapper_dataset = json.load(f)
+
+string_to_list_dataset = None
+with open('module_params_list_exception.json', 'r') as f:
+    string_to_list_dataset = json.load(f)
+
+def process_string2list_parameters(module_name, schema):
+    if module_name not in string_to_list_dataset:
+        return schema
+    for params in string_to_list_dataset[module_name]:
+        assert(len(params) >= 1)
+        # process 1st parameter.
+        pointer = None
+        ptype = None
+        assert(params[0] in schema)
+        if len(params) == 1:
+            pointer = schema[params[0]]
+            assert('type' in pointer)
+            assert(pointer['type'] == 'string')
+            ptype = pointer['type']
+            pointer['type'] = 'array'
+        else:
+            pointer = schema[params[0]]
+            for _item in params[1:]:
+                assert('type' in pointer and pointer['type'] == 'array')
+                assert('items' in pointer)
+                assert(_item in pointer['items'])
+                pointer = pointer['items'][_item]
+            ptype = pointer['type']
+            pointer['type'] = 'array'
+        assert(pointer and ptype in ['string', 'integer'])
+        pointer['items'] = dict()
+        pointer['items']['type'] = ptype
+        pointer['items']['_donot_convert'] =  True
 
 exec_mod_tracking = list()
 url_mod_tracking = dict()
@@ -1145,6 +1188,9 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
         mkey = module_primary_key(canonical_path, the_unique_schema[the_unique_subitem])
     if mkey:
         print('\t\033[36mprimary key:\033[0m \033[37m', mkey, '\033[0m')
+    if the_unique_schema:
+        process_string2list_parameters(canonical_path, the_unique_schema[the_unique_subitem])
+
     code_rdata = {'supported_methods': supported_methods,
                   'in_path_params': the_one_in_path_params,
                   'jrpc_urls': mutiurls_names,
