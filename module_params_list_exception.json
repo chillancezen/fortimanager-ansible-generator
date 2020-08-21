@@ -6,5 +6,8 @@
     "fmgr_user_devicegroup": [
         ["member"],
         ["dynamic_mapping", "member"]
+    ],
+    "fmgr_system_virtualwirepair": [
+        ["member"]
     ]
 }

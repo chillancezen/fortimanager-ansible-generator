@@ -58,5 +58,15 @@
    "fmgr_antivirus_mmschecksum": "id",
    "fmgr_application_custom": "tag",
    "fmgr_user_local": "id",
-   "fmgr_firewall_address6_list": "ip"
+   "fmgr_firewall_address6_list": "ip",
+   "fmgr_firewall_vip": "name",
+   "fmgr_firewall_vip46": "name",
+   "fmgr_firewall_vip6": "name",
+   "fmgr_firewall_vip64": "name",
+   "fmgr_firewall_vip6_sslciphersuites": "priority",
+   "fmgr_firewall_vip6_sslserverciphersuites": "priority",
+   "fmgr_firewall_vip_sslserverciphersuites": "priority",
+   "fmgr_pkg_firewall_policy6": "policyid",
+   "fmgr_pkg_footer_policy": "policyid",
+   "fmgr_pkg_footer_policy6": "policyid"
 }
