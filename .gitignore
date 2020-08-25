@@ -3,3 +3,4 @@ docgen/*
 daemon_docgen/*
 fmgr_fact.rst
 *.pyc
+fortimanager-schema/__pycache__/*

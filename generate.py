@@ -1344,6 +1344,14 @@ if __name__ == '__main__':
             if stripped_domain_url not in domain_independent_urls:
                 domain_independent_urls[stripped_domain_url] = list()
             domain_independent_urls[stripped_domain_url].append((url, schema))
+    # modules with Object Member
+    for stripped_url in domain_independent_urls:
+        _url, _schema = domain_independent_urls[stripped_url][0]
+        _methods = set(_schema._digest[_url].keys())
+        if 'set' not in _methods or 'delete' not in _methods:
+            continue
+        #print(stripped_url, _schema._digest[_url])
+    #sys.exit(0)
     # Find out all the urls with EXEC methods.
     for stripped_url in domain_independent_urls:
         _url, _schema = domain_independent_urls[stripped_url][0]

@@ -251,7 +251,14 @@ class NAPIManager(object):
         assert('state' in self.module.params)
         has_mkey = self.module_primary_key is not None
         if has_mkey:
-            mvalue = self.module.params[self.module_level2_name][self.module_primary_key]
+            mvalue = ''
+            if self.module_primary_key.startswith('complex:'):
+                mvalue_exec_string = self.module_primary_key[len('complex:'):]
+                mvalue_exec_string = mvalue_exec_string.replace('{{module}}', 'self.module.params[self.module_level2_name]')
+                mvalue_exec_string = 'mvalue = %s' % (mvalue_exec_string)
+                exec(mvalue_exec_string)
+            else:
+                mvalue = self.module.params[self.module_level2_name][self.module_primary_key]
             self.do_exit(self._process_with_mkey(mvalue))
         else:
             self.do_exit(self._process_without_mkey())
