@@ -1086,7 +1086,7 @@ def process_string2list_parameters(module_name, schema):
 
 exec_mod_tracking = list()
 url_mod_tracking = dict()
-def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, peer_url, is_exec=False, is_partial=False):
+def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, peer_url, is_exec=False, is_partial=False, api_tag=0, is_object_member=False, url_sufix=None):
     validate_multiurls_schema(url, schema, multiurls)
     body_schemas = dict()
     raw_body_schemas = dict()
@@ -1103,26 +1103,28 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
         api_endpoint_tags[method] = api_endpoint_tag
         in_body_params_without_apitags = list()
         for item in in_path_params:
-            if item['api_tag'] != 0:
+            if item['api_tag'] != api_tag:
                 continue
             in_body_params_without_apitags.append(item)
         if url not in multiurls_in_path_params:
             multiurls_in_path_params[url] = in_body_params_without_apitags
         else:
-            assert(multiurls_in_path_params[url] == in_body_params_without_apitags)
-
+            pass
+            # for object member / section value, the get has only one api_tag..
+            #assert(multiurls_in_path_params[url] == in_body_params_without_apitags)
     for _url, _schema in multiurls[1:]:
         for _method in _schema._digest[_url]:
             in_path_params, in_body_params, result_schema, api_endpoint_tag = schema.get_function_schema(_url, _method)
             in_body_params_without_apitags = list()
             for item in in_path_params:
-                if item['api_tag'] != 0:
+                if item['api_tag'] != api_tag:
                     continue
                 in_body_params_without_apitags.append(item)
             if _url not in multiurls_in_path_params:
                 multiurls_in_path_params[_url] = in_body_params_without_apitags
             else:
-                assert(multiurls_in_path_params[_url] == in_body_params_without_apitags)
+                pass
+                #assert(multiurls_in_path_params[_url] == in_body_params_without_apitags)
     for _url in multiurls_in_path_params:
         _in_path_params = multiurls_in_path_params[_url]
         if not the_one_in_path_params or len(the_one_in_path_params) < len(_in_path_params):
@@ -1140,6 +1142,11 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
     if is_partial:
         ignore_last_token = True
     canonical_path = canonicalize_url_as_path(url, ignore_last_token=ignore_last_token)
+    if is_object_member:
+        assert(url_sufix)
+        if canonical_path.endswith('_obj'):
+            canonical_path = canonical_path[:-4]
+        canonical_path += '_' + url_sufix.replace(' ', '')
     supported_methods = list(schema._digest[url].keys())
     if is_exec:
         exec_mod_tracking.append(canonical_path)
@@ -1174,7 +1181,7 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
     the_unique_subitem = 'items' if not is_exec else 'dict'
     for top_schema in body_schemas[the_unique_method]:
         if top_schema['name'] != 'url':
-            assert(not the_unique_schema)
+            #assert(not the_unique_schema)
             the_unique_schema = top_schema
     #assert(the_unique_schema)
     if the_unique_schema:
@@ -1191,10 +1198,13 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
     if the_unique_schema:
         process_string2list_parameters(canonical_path, the_unique_schema[the_unique_subitem])
 
+    if is_object_member and 'items' in the_unique_schema[the_unique_subitem]:
+        #assert('items' in the_unique_schema[the_unique_subitem])
+        the_unique_schema[the_unique_subitem] = the_unique_schema[the_unique_subitem]['items']
     code_rdata = {'supported_methods': supported_methods,
                   'in_path_params': the_one_in_path_params,
-                  'jrpc_urls': mutiurls_names,
-                  'perobject_jrpc_urls': perobject_mutiurls_names,
+                  'jrpc_urls': mutiurls_names if not is_object_member else [e + '/' + url_sufix for e in mutiurls_names],
+                  'perobject_jrpc_urls': perobject_mutiurls_names if not is_object_member else [e + '/' + url_sufix for e in perobject_mutiurls_names],
                   'mkey': mkey,
                   'top_level_schema_name': wrapper_dataset[canonical_path] if canonical_path in wrapper_dataset else (the_unique_schema['name'] if the_unique_schema else None),
                   'is_partial': is_partial,
@@ -1350,8 +1360,13 @@ if __name__ == '__main__':
         _methods = set(_schema._digest[_url].keys())
         if 'set' not in _methods or 'delete' not in _methods:
             continue
-        #print(stripped_url, _schema._digest[_url])
-    #sys.exit(0)
+        if len(_schema._digest[_url]['set']) > 1:
+            assert(len(_schema._digest[_url]['delete']) > 1)
+            urls_descs = _schema._digest[_url]['set']
+            long_url = urls_descs[0] if len(urls_descs[0]) > len(urls_descs[1]) else urls_descs[1]
+            token = long_url.split('/')[-1][:-len(' (set)')]
+            print('\033[32mprocessing object-member/section value url:\033[0m', stripped_url)
+            resolve_generic_schema(_url, _schema, doc_template, code_template, domain_independent_urls[stripped_url], None, is_partial=False, api_tag=1, is_object_member=True, url_sufix=token)
     # Find out all the urls with EXEC methods.
     for stripped_url in domain_independent_urls:
         _url, _schema = domain_independent_urls[stripped_url][0]
