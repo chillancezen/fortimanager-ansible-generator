@@ -9,5 +9,8 @@
     ],
     "fmgr_system_virtualwirepair": [
         ["member"]
+    ],
+    "fmgr_sys_proxy_json":  [
+        ["target"]
     ]
 }
