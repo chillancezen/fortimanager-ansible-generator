@@ -255,8 +255,10 @@ class NAPIManager(object):
             if self.module_primary_key.startswith('complex:'):
                 mvalue_exec_string = self.module_primary_key[len('complex:'):]
                 mvalue_exec_string = mvalue_exec_string.replace('{{module}}', 'self.module.params[self.module_level2_name]')
-                mvalue_exec_string = 'mvalue = %s' % (mvalue_exec_string)
-                exec(mvalue_exec_string)
+                #mvalue_exec_string = 'mvalue = %s' % (mvalue_exec_string)
+                #exec(mvalue_exec_string)
+                # On Windows Platform, exec() call doesn't take effect.
+                mvalue = eval(mvalue_exec_string)
             else:
                 mvalue = self.module.params[self.module_level2_name][self.module_primary_key]
             self.do_exit(self._process_with_mkey(mvalue))
