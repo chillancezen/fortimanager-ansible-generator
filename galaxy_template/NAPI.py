@@ -193,6 +193,45 @@ class NAPIManager(object):
         response = self.conn.send_request('exec', api_params)
         self.do_exit(response)
 
+    def process_move(self, metadata):
+        assert(self.module.params['move']['selector'] in metadata)
+        selector = self.module.params['move']['selector']
+        move_params = metadata[selector]['params']
+        move_urls = metadata[selector]['urls']
+        assert(len(move_urls))
+        real_params_keys = set()
+        if self.module.params['move']['self']:
+            real_params_keys = set(self.module.params['move']['self'].keys())
+        if real_params_keys != set(move_params):
+            self.module.fail_json(msg = 'expect params in self:%s, real params:%s' % (list(move_params), list(real_params_keys)))
+
+        url = None
+        if 'adom' in move_params and not move_urls[0].endswith('{adom}'):
+            if self.module.params['move']['self']['adom'] == 'global':
+                for _url in move_urls:
+                    if '/global/' in _url:
+                        url = _url
+                        break
+            else:
+                for _url in move_urls:
+                    if '/adom/{adom}/' in _url:
+                        url = _url
+                        break
+        else:
+            url = move_urls[0]
+        if not url:
+            self.module.fail_json(msg='can not find url in following sets:%s! please check params: adom' % (move_urls))
+        for _param in move_params:
+            token_hint = '/%s/{%s}' % (_param, _param)
+            token = '/%s/%s' % (_param, self.module.params['move']['self'][_param])
+            url = url.replace(token_hint, token)
+
+        api_params = [{'url': url,
+                       'option': self.module.params['move']['action'],
+                       'target': self.module.params['move']['target']}]
+        response = self.conn.send_request('move', api_params)
+        self.do_exit(response)
+
     def process_fact(self, metadata):
         assert(self.module.params['facts']['selector'] in metadata)
         selector = self.module.params['facts']['selector']

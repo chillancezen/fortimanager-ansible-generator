@@ -1104,6 +1104,7 @@ def process_string2list_parameters(module_name, schema):
                 if _key == 'type':
                     continue
                 del pointer[_key]
+
 exec_mod_tracking = list()
 url_mod_tracking = dict()
 def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, peer_url, is_exec=False, is_partial=False, api_tag=0, is_object_member=False, url_sufix=None):
@@ -1343,6 +1344,17 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
         f.flush()
 
 
+def __validate_schema_for_method_move(path_schema, body_schema):
+    assert(len(body_schema) == 3)
+    flag = dict()
+    for _schema in body_schema:
+        assert('name' in _schema)
+        flag[_schema['name']] = True
+    assert('option' in flag)
+    assert('target' in flag)
+    assert('url' in flag)
+    assert(len(path_schema))
+
 if __name__ == '__main__':
     jinja2_file_loader = FileSystemLoader('templates')
     jinja2_env = Environment(loader=jinja2_file_loader)
@@ -1351,6 +1363,8 @@ if __name__ == '__main__':
     doc_template = jinja2_env.get_template('doc.j2')
     facts_template = jinja2_env.get_template('fact.j2')
     facts_rst_template = jinja2_env.get_template('fmgr_fact.rst.j2')
+    move_template = jinja2_env.get_template('move.j2')
+    move_rst_template = jinja2_env.get_template('fmgr_move.rst.j2')
 
     except_defs = dict()
     domain_independent_urls = dict()
@@ -1374,6 +1388,38 @@ if __name__ == '__main__':
             if stripped_domain_url not in domain_independent_urls:
                 domain_independent_urls[stripped_domain_url] = list()
             domain_independent_urls[stripped_domain_url].append((url, schema))
+    # module with move/clone methods
+    move_metadata = dict()
+    for stripped_url in domain_independent_urls:
+        _url, _schema = domain_independent_urls[stripped_url][0]
+        _methods = set(_schema._digest[_url].keys())
+        if 'move' not in _methods:
+            continue
+        _schemas = _schema.get_function_schema(_url, 'move')
+        _path_schema = _schemas[0]
+        _body_schema = _schemas[1]
+        __validate_schema_for_method_move(_path_schema, _body_schema)
+        _allurls = [_url for _url, _schema in domain_independent_urls[stripped_url]]
+        metadata = dict()
+        metadata['urls'] = _allurls
+        metadata['params'] = [_item['name'] for _item in _path_schema]
+        assert('adom' in metadata['params'])
+        selector = canonicalize_url_as_path(stripped_url)
+        assert(selector.startswith('fmgr_') and selector.endswith('_obj'))
+        selector = selector[5: -4]
+        metadata['selector'] = selector
+        move_metadata[selector] = metadata
+    rdata = {
+        'metadata': move_metadata
+    }
+    rbody = move_template.render(**rdata)
+    rst_rbody = move_rst_template.render(**rdata)
+    with open('modules/fmgr_move.py', 'w') as f:
+        f.write(rbody)
+        f.flush()
+    with open('fmgr_move.rst', 'w') as f:
+        f.write(rst_rbody)
+        f.flush()
     # modules with Object Member
     for stripped_url in domain_independent_urls:
         _url, _schema = domain_independent_urls[stripped_url][0]

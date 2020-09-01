@@ -2,5 +2,6 @@ modules/*
 docgen/*
 daemon_docgen/*
 fmgr_fact.rst
+fmgr_move.rst
 *.pyc
 fortimanager-schema/__pycache__/*
