@@ -12,5 +12,8 @@
     ],
     "fmgr_sys_proxy_json":  [
         ["target"]
+    ],
+    "fmgr_dvm_cmd_add_device": [
+        ["device", "meta fields:dict"]
     ]
 }

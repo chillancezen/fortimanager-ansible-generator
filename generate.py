@@ -277,14 +277,14 @@ def _generate_schema_document_options_recursilve(schema, depth):
             rdata += ' ' * depth * 4 + 'choices:\n'
             for item in schema['enum']:
                 rdata += ' ' * (depth + 1) * 4 + '- ' + quote + str(item) + quote + '\n'
-    elif schema['type'] is 'dict':
+    elif schema['type'] == 'dict':
         #assert('dict' in schema)
         if 'dict' in schema:
             rdata += _generate_schema_document_options_recursilve(schema['dict'], depth)
         else:
             rdata += ' ' * depth * 4 + 'type: dict\n'
 
-    elif schema['type'] is 'array':
+    elif schema['type'] == 'array':
         assert('items' in schema)
         subitem = schema['items']
         if 'type' not in subitem or subitem['type'] not in ['string', 'integer', 'array']:
@@ -500,7 +500,7 @@ def _generate_docgen_paramters_recursively(schema):
         if 'default' in schema:
             params_data += ' <span class="li-normal">default: %s</span> ' % (schema['default'])
         params_data += '</li>\n'
-    elif schema['type'] is 'dict':
+    elif schema['type'] == 'dict':
         #assert(False)
         fold = True
         #fold = 'type' not in schema['dict'] or schema['dict']['type'] not in ['string', 'integer', 'array', 'dict']
@@ -509,7 +509,7 @@ def _generate_docgen_paramters_recursively(schema):
         #params_data += ' <ul class="ul-self">\n' if fold else ''
         #params_data += _generate_docgen_paramters_recursively(schema['dict'])
         #params_data += ' </ul>\n' if fold else '\n'
-    elif schema['type'] is 'array':
+    elif schema['type'] == 'array':
         assert('items' in schema)
         subitem = schema['items']
         params_data += ' - No description for the parameter'
@@ -647,7 +647,7 @@ def _generate_schema_document_examples_recursive(schema, depth):
                                           schema and schema['default'] != '' else '') + '\n'
         else:
             rdata += ' <value of %s%s>' % (schema['type'], (' default: ' + quote + '%s' + quote) % (shorten_description(str(schema['default']), 80)) if 'XXX_DONNOT_SET_default' in schema and schema['default'] != '' else '') + '\n'
-    elif schema['type'] is 'array':
+    elif schema['type'] == 'array':
         assert('items' in schema)
         subitem = schema['items']
         if 'type' not in subitem or subitem['type'] not in ['string', 'integer', 'array']:
@@ -666,7 +666,7 @@ def _generate_schema_document_examples_recursive(schema, depth):
                     rdata += ' ' * (depth - 1) * 3 + '  - %s\n' % (_item)
         else:
             assert(False)
-    elif schema['type'] is 'dict':
+    elif schema['type'] == 'dict':
         #assert('dict' in schema)
         if 'dict' in schema:
             rdata += _generate_schema_document_examples_recursive(schema['dict'], depth)
@@ -1063,27 +1063,47 @@ def process_string2list_parameters(module_name, schema):
         # process 1st parameter.
         pointer = None
         ptype = None
-        assert(params[0] in schema)
+        assert(params[0].split(':')[0] in schema)
         if len(params) == 1:
-            pointer = schema[params[0]]
+            final_key = params[0].split(':')[0]
+            final_target_type = 'array'
+            if len(params[0].split(':')) == 2:
+                final_target_type = params[0].split(':')[1]
+                assert(final_target_type in ['arrary', 'dict'])
+            pointer = schema[final_key]
             assert('type' in pointer)
             assert(pointer['type'] == 'string')
             ptype = pointer['type']
-            pointer['type'] = 'array'
+            pointer['type'] = final_target_type
         else:
             pointer = schema[params[0]]
             for _item in params[1:]:
-                assert('type' in pointer and pointer['type'] == 'array')
-                assert('items' in pointer)
-                assert(_item in pointer['items'])
-                pointer = pointer['items'][_item]
-            ptype = pointer['type']
-            pointer['type'] = 'array'
-        assert(pointer and ptype in ['string', 'integer'])
-        pointer['items'] = dict()
-        pointer['items']['type'] = ptype
-        pointer['items']['_donot_convert'] =  True
+                _item_key = _item.split(':')[0]
+                _item_target_type = 'array'
+                if len(_item.split(':')) == 2:
+                    _item_target_type = _item.split(':')[1]
+                    assert(_item_target_type in ['arrary', 'dict'])
 
+                if 'type' in pointer and pointer['type'] == 'array':
+                    assert('items' in pointer)
+                    assert(_item_key in pointer['items'])
+                    pointer = pointer['items'][_item_key]
+                else:
+                    pointer = pointer[_item_key]
+
+            ptype = pointer['type']
+            pointer['type'] = _item_target_type
+        assert(pointer and ptype in ['string', 'integer'])
+        if pointer['type'] =='array':
+            pointer['items'] = dict()
+            pointer['items']['type'] = ptype
+            pointer['items']['_donot_convert'] =  True
+        else:
+            all_keys = list(pointer.keys())
+            for _key in all_keys:
+                if _key == 'type':
+                    continue
+                del pointer[_key]
 exec_mod_tracking = list()
 url_mod_tracking = dict()
 def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, peer_url, is_exec=False, is_partial=False, api_tag=0, is_object_member=False, url_sufix=None):
