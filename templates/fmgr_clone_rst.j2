@@ -44,6 +44,12 @@ Parameters
  <li><span class="li-head">clone</span> - Clone An Object. <span class="li-normal">type: dict</span></li>
  <ul class="ul-self">
  <li><span class="li-head">target</span> - Attribute to override for target object. <span class="li-normal">type: dict</span> <span class="li-required">required: true</span></li>
+   <li style="list-style: none;"><section class="accordion">
+   <input type="checkbox" name="collapse" id="handle1">
+   <h2 class="handle">
+        <label for="handle1"><u>More details about parameter: <b>target</b>...</u></label>
+    </h2>
+    <div class="content">
     <ul class="ul-self">
     {%- for selector in metadata %}
         <li><span class="li-normal">params for {{selector}}:</span></li>
@@ -55,13 +61,31 @@ Parameters
         </ul>
     {%- endfor %}
     </ul>
+    </div>
+    </section>
+
  <li><span class="li-head">selector</span> - selector of the moved object <span class="li-normal">type: str</span> <span class="li-required">choices:</span></li>
+    <li style="list-style: none;"><section class="accordion">
+    <input type="checkbox" name="collapse" id="handle2">
+    <h2 class="handle">
+        <label for="handle2"><u>Show full selector list...</u></label>
+    </h2>
+    <div class="content">
     <ul class="ul-self">
         {%- for selector in metadata %}
         <li><span class="li-normal">{{selector}}</span> </li>
         {%- endfor %}
     </ul>
+    </div>
+    </section>
+
  <li><span class="li-head">self</span> - the parameter for each selector <span class="li-normal">type: dict</span> <span class="li-required">choices:</span></li>
+   <li style="list-style: none;"><section class="accordion">
+   <input type="checkbox" name="collapse" id="handle3">
+    <h2 class="handle">
+        <label for="handle3"><u>More details about parameter: <b>self</b>...</u></label>
+    </h2>
+    <div class="content">
     <ul class="ul-self">
         {%- for selector in metadata %}
         <li><span class="li-normal">params for {{selector}}:</span></li>
@@ -72,6 +96,8 @@ Parameters
         </ul>
         {%- endfor %}
     </ul>
+    </div>
+    </section>
  </ul>
  </ul>
  </ul>
