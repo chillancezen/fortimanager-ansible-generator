@@ -193,6 +193,44 @@ class NAPIManager(object):
         response = self.conn.send_request('exec', api_params)
         self.do_exit(response)
 
+    def process_clone(self, metadata):
+        assert(self.module.params['clone']['selector'] in metadata)
+        selector = self.module.params['clone']['selector']
+        clone_params_schema = metadata[selector]['params']
+        clone_urls = metadata[selector]['urls']
+        real_params_keys = set()
+        if self.module.params['clone']['self']:
+            real_params_keys = set(self.module.params['clone']['self'].keys())
+        if real_params_keys != set(clone_params_schema):
+            self.module.fail_json(msg = 'expect params in self:%s, real params:%s' % (list(clone_params_schema), list(real_params_keys)))
+        url = None
+        if 'adom' in clone_params_schema and not clone_urls[0].endswith('{adom}'):
+            if self.module.params['clone']['self']['adom'] == 'global':
+                for _url in clone_urls:
+                    if '/global/' in _url:
+                        url = _url
+                        break
+            else:
+                for _url in clone_urls:
+                    if '/adom/{adom}/' in _url:
+                        url = _url
+                        break
+        else:
+            url = clone_urls[0]
+        if not url:
+            self.module.fail_json(msg='can not find url in following sets:%s! please check params: adom' % (clone_urls))
+        for _param in clone_params_schema:
+            token_hint = '/%s/{%s}' % (_param, _param)
+            token = '/%s/%s' % (_param, self.module.params['clone']['self'][_param])
+            url = url.replace(token_hint, token)
+        mkey = metadata[selector]['mkey']
+        if mkey and mkey not in self.module.params['clone']['target']:
+            self.module.fail_json(msg='Must give the primary key/value in target: %s!' % (mkey))
+        api_params = [{'url': url,
+                       'data': self.module.params['clone']['target']}]
+        response = self.conn.send_request('clone', api_params)
+        self.do_exit(response)
+
     def process_move(self, metadata):
         assert(self.module.params['move']['selector'] in metadata)
         selector = self.module.params['move']['selector']

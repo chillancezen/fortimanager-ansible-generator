@@ -1365,6 +1365,8 @@ if __name__ == '__main__':
     facts_rst_template = jinja2_env.get_template('fmgr_fact.rst.j2')
     move_template = jinja2_env.get_template('move.j2')
     move_rst_template = jinja2_env.get_template('fmgr_move.rst.j2')
+    clone_template = jinja2_env.get_template('clone.j2')
+    clone_rst_template =jinja2_env.get_template('fmgr_clone_rst.j2')
 
     except_defs = dict()
     domain_independent_urls = dict()
@@ -1389,6 +1391,54 @@ if __name__ == '__main__':
                 domain_independent_urls[stripped_domain_url] = list()
             domain_independent_urls[stripped_domain_url].append((url, schema))
     # module with move/clone methods
+    clone_metadata = dict()
+    for stripped_url in domain_independent_urls:
+        _url, _schema = domain_independent_urls[stripped_url][0]
+        _methods = set(_schema._digest[_url].keys())
+        if 'clone' not in _methods:
+            continue
+        _schemas = _schema.get_function_schema(_url, 'clone')
+        _path_schema = _schemas[0]
+        _body_schema = _schemas[1]
+        _the_unique_schema = None
+        for _item in _body_schema:
+            if _item['name'] == 'data':
+                _the_unique_schema = _item
+                break
+        assert(_the_unique_schema)
+        assert(_the_unique_schema['type'] == 'dict')
+        assert('dict' in _the_unique_schema)
+        selector = canonicalize_url_as_path(stripped_url)
+        assert(selector.startswith('fmgr_') and selector.endswith('_obj'))
+        selector = selector[5: -4]
+        mkey = module_primary_key('fmgr_' + selector, _the_unique_schema['dict'])
+        complex_mkey_mapping = {
+            'complex:{{module}}["_scope"][0]["name"]+"/"+{{module}}["_scope"][0]["vdom"]': '_scope'
+        }
+        if mkey and mkey.startswith('complex:'):
+            if mkey in complex_mkey_mapping:
+                mkey = complex_mkey_mapping[mkey]
+        metadata = dict()
+        metadata['urls'] = [_url for _url, _schema in domain_independent_urls[stripped_url]]
+        metadata['params'] = [_item['name'] for _item in _path_schema]
+        if len(metadata['urls']) > 1:
+            assert('adom' in metadata['params'])
+        metadata['selector'] = selector
+        metadata['mkey'] = mkey
+        clone_metadata[selector] = metadata
+    rdata = {
+        'metadata': clone_metadata
+    }
+    rbody = clone_template.render(**rdata)
+    rst_rbody = clone_rst_template.render(**rdata)
+
+    with open('modules/fmgr_clone.py', 'w') as f:
+        f.write(rbody)
+        f.flush()
+    with open('fmgr_clone.rst', 'w') as f:
+        f.write(rst_rbody)
+        f.flush()
+
     move_metadata = dict()
     for stripped_url in domain_independent_urls:
         _url, _schema = domain_independent_urls[stripped_url][0]

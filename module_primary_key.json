@@ -93,5 +93,6 @@
    "fmgr_user_devicegroup_dynamicmapping": "complex:{{module}}[\"_scope\"][0][\"name\"]+\"/\"+{{module}}[\"_scope\"][0][\"vdom\"]",
    "fmgr_user_ldap_dynamicmapping": "complex:{{module}}[\"_scope\"][0][\"name\"]+\"/\"+{{module}}[\"_scope\"][0][\"vdom\"]",
    "fmgr_user_radius_dynamicmapping": "complex:{{module}}[\"_scope\"][0][\"name\"]+\"/\"+{{module}}[\"_scope\"][0][\"vdom\"]",
-   "fmgr_user_tacacs_dynamicmapping": "complex:{{module}}[\"_scope\"][0][\"name\"]+\"/\"+{{module}}[\"_scope\"][0][\"vdom\"]"
+   "fmgr_user_tacacs_dynamicmapping": "complex:{{module}}[\"_scope\"][0][\"name\"]+\"/\"+{{module}}[\"_scope\"][0][\"vdom\"]",
+   "fmgr_dynamic_certificate_local_dynamicmapping": "complex:{{module}}[\"_scope\"][0][\"name\"]+\"/\"+{{module}}[\"_scope\"][0][\"vdom\"]"
 }
