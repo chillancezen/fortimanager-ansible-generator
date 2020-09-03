@@ -1,19 +1,37 @@
 {
     "fmgr_firewall_addrgrp": [
-        ["member"],
-        ["dynamic_mapping", "member"]
+        ["member:array"],
+        ["dynamic_mapping", "member:array"]
     ],
     "fmgr_user_devicegroup": [
-        ["member"],
-        ["dynamic_mapping", "member"]
+        ["member:array"],
+        ["dynamic_mapping", "member:array"]
     ],
     "fmgr_system_virtualwirepair": [
-        ["member"]
+        ["member:array"]
     ],
     "fmgr_sys_proxy_json":  [
-        ["target"]
+        ["target:array"]
     ],
     "fmgr_dvm_cmd_add_device": [
         ["device", "meta fields:dict"]
+    ],
+    "fmgr_firewall_service_custom": [
+        ["comment:string"]
+    ],
+    "fmgr_firewall_service_group": [
+        ["comment:string"]
+    ],
+    "fmgr_pkg_firewall_policy": [
+        ["comments:string"]
+    ],
+    "fmgr_pkg_footer_policy": [
+        ["comments:string"]
+    ],
+    "fmgr_pkg_footer_policy6": [
+        ["comments:string"]
+    ],
+    "fmgr_pkg_header_policy": [
+        ["comments:string"]
     ]
 }

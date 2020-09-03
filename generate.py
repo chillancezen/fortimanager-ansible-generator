@@ -1066,23 +1066,22 @@ def process_string2list_parameters(module_name, schema):
         assert(params[0].split(':')[0] in schema)
         if len(params) == 1:
             final_key = params[0].split(':')[0]
-            final_target_type = 'array'
+            final_target_type = None
             if len(params[0].split(':')) == 2:
                 final_target_type = params[0].split(':')[1]
-                assert(final_target_type in ['arrary', 'dict'])
+                assert(final_target_type in ['array', 'dict', 'string', 'integer'])
             pointer = schema[final_key]
             assert('type' in pointer)
-            assert(pointer['type'] == 'string')
             ptype = pointer['type']
             pointer['type'] = final_target_type
         else:
             pointer = schema[params[0]]
             for _item in params[1:]:
                 _item_key = _item.split(':')[0]
-                _item_target_type = 'array'
+                _item_target_type = None
                 if len(_item.split(':')) == 2:
                     _item_target_type = _item.split(':')[1]
-                    assert(_item_target_type in ['arrary', 'dict'])
+                    assert(_item_target_type in ['array', 'dict', 'string', 'integer'])
 
                 if 'type' in pointer and pointer['type'] == 'array':
                     assert('items' in pointer)
@@ -1090,20 +1089,24 @@ def process_string2list_parameters(module_name, schema):
                     pointer = pointer['items'][_item_key]
                 else:
                     pointer = pointer[_item_key]
-
+            assert('type' in pointer)
             ptype = pointer['type']
             pointer['type'] = _item_target_type
-        assert(pointer and ptype in ['string', 'integer'])
+
+        assert(pointer)
         if pointer['type'] =='array':
+            assert(ptype in ['string', 'integer'])
             pointer['items'] = dict()
             pointer['items']['type'] = ptype
             pointer['items']['_donot_convert'] =  True
-        else:
+        elif pointer['type'] in ['dict', 'string', 'integer']:
             all_keys = list(pointer.keys())
             for _key in all_keys:
                 if _key == 'type':
                     continue
                 del pointer[_key]
+        else:
+            assert(False)
 
 exec_mod_tracking = list()
 url_mod_tracking = dict()
