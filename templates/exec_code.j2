@@ -1,7 +1,8 @@
 from ansible.module_utils.basic import AnsibleModule
 from ansible.module_utils.connection import Connection
 from ansible_collections.fortinet.fortimanager.plugins.module_utils.NAPI import NAPIManager
-
+from ansible_collections.fortinet.fortimanager.plugins.module_utils.NAPI import check_galaxy_version
+from ansible_collections.fortinet.fortimanager.plugins.module_utils.NAPI import check_parameter_bypass
 
 def main():
     jrpc_urls = [
@@ -20,6 +21,11 @@ def main():
 
     url_params = [{%- for param in in_path_params %}'{{param.name}}'{%- if loop.index != loop.length -%}, {%- endif %}{%- endfor %}]
     module_arg_spec = {
+        'bypass_validation': {
+            'type': 'bool',
+            'required': False,
+            'default': False
+        },
         'workspace_locking_adom': {
             'type': 'str',
             'required': False
@@ -51,7 +57,9 @@ def main():
         }
         {%- endif %}
     }
-    module = AnsibleModule(argument_spec=module_arg_spec,
+
+    check_galaxy_version(module_arg_spec)
+    module = AnsibleModule(argument_spec=check_parameter_bypass(module_arg_spec, '{{level2_name}}'),
                            supports_check_mode=False)
 
     fmgr = None
