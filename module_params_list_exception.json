@@ -33,5 +33,28 @@
     ],
     "fmgr_pkg_header_policy": [
         ["comments:string"]
-    ]
+    ],
+    "fmgr_system_admin_user_dashboard": [
+        ["res-cpu-display:ref$res-cpu-display"],
+        ["log-rate-period:ref$log-rate-period"],
+        ["res-period:ref$res-period"],
+        ["res-view-type:ref$res-view-type"]
+    ],
+    "fmgr_system_admin_user_dashboard$res-cpu-display": {
+        "enum": ["average", "each"],
+        "default": "average",
+        "type": "string"
+    },
+    "fmgr_system_admin_user_dashboard$log-rate-period": {
+        "type": "string",
+        "enum": ["2min", "1hour", "6hours"]
+    },
+    "fmgr_system_admin_user_dashboard$res-period": {
+        "type": "string",
+        "enum": ["10min", "hour", "day"]
+    },
+    "fmgr_system_admin_user_dashboard$res-view-type": {
+        "type": "string",
+        "enum": ["real-time", "history"]
+    }
 }
