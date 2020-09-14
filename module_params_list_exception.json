@@ -56,5 +56,8 @@
     "fmgr_system_admin_user_dashboard$res-view-type": {
         "type": "string",
         "enum": ["real-time", "history"]
-    }
+    },
+    "fmgr_pkg_footer_shapingpolicy": [
+        ["name:removed"]
+    ]
 }

@@ -1061,6 +1061,8 @@ def process_string2list_parameters(module_name, schema):
     for params in string_to_list_dataset[module_name]:
         assert(len(params) >= 1)
         # process 1st parameter.
+        ppointer = None
+        pkey = None
         pointer = None
         ptype = None
         assert(params[0].split(':')[0] in schema)
@@ -1069,8 +1071,10 @@ def process_string2list_parameters(module_name, schema):
             final_target_type = None
             if len(params[0].split(':')) == 2:
                 final_target_type = params[0].split(':')[1]
-                assert(final_target_type in ['array', 'dict', 'string', 'integer'] or \
+                assert(final_target_type in ['array', 'dict', 'string', 'integer', 'removed'] or \
                        final_target_type.startswith('ref$'))
+            ppointer = schema
+            pkey = final_key
             pointer = schema[final_key]
             assert('type' in pointer)
             ptype = pointer['type']
@@ -1082,13 +1086,17 @@ def process_string2list_parameters(module_name, schema):
                 _item_target_type = None
                 if len(_item.split(':')) == 2:
                     _item_target_type = _item.split(':')[1]
-                    assert(_item_target_type in ['array', 'dict', 'string', 'integer'] or \
+                    assert(_item_target_type in ['array', 'dict', 'string', 'integer', 'removed'] or \
                            _item_target_type.startswith('ref$'))
                 if 'type' in pointer and pointer['type'] == 'array':
                     assert('items' in pointer)
                     assert(_item_key in pointer['items'])
+                    ppointer = pointer['items']
+                    pkey = _item_key
                     pointer = pointer['items'][_item_key]
                 else:
+                    ppointer = pointer
+                    pkey = _item_key
                     pointer = pointer[_item_key]
             assert('type' in pointer)
             ptype = pointer['type']
@@ -1105,6 +1113,11 @@ def process_string2list_parameters(module_name, schema):
                 if _key == 'type':
                     continue
                 del pointer[_key]
+        elif pointer['type'] == 'removed':
+            assert(ppointer)
+            assert(pkey)
+            assert(pkey in ppointer)
+            del ppointer[pkey]
         elif pointer['type'].startswith('ref$'):
             ref = pointer['type'].split('$')[1]
             ref = module_name + '$' + ref
