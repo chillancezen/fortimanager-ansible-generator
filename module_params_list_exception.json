@@ -59,5 +59,8 @@
     },
     "fmgr_pkg_footer_shapingpolicy": [
         ["name:removed"]
+    ],
+    "fmgr_pkg_header_shapingpolicy": [
+        ["name:removed"]
     ]
 }
