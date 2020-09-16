@@ -170,8 +170,9 @@ def tailor_schema(in_body_params):
     elif isinstance(in_body_params, dict):
         dct = dict()
         for param_key in in_body_params:
-            #if param_key in ['in', 'format', 'description', 'example', 'default']:
-            if param_key in ['in', 'format', 'example', 'default']:
+            # if param_key in ['in', 'format', 'description', 'example', 'default']:
+            # if param_key in ['in', 'format', 'example', 'default']:
+            if param_key in ['in', 'format', 'example']:
                 if isinstance(in_body_params[param_key], str):
                     continue
             dct[param_key] = tailor_schema(in_body_params[param_key])
@@ -250,8 +251,16 @@ def _generate_schema_document_options_recursilve(schema, depth):
                 discrete_schema_key = discrete_schema_key.replace('}', '')
                 discrete_schema_key = 'varidic.' + discrete_schema_key
             rdata += ' ' * depth * 4 + discrete_schema_key + ':\n'
+            depth_inc = 1
+            if 'type' not in discrete_schema or discrete_schema['type'] not in [
+                'string', 'integer', 'array', 'dict']:
+                rdata += ' ' * (depth + 1) * 4 + 'description: no description\n'
+                rdata += ' ' * (depth + 1) * 4 + 'type: dict\n'
+                rdata += ' ' * (depth + 1) * 4 + 'required: false\n'
+                rdata += ' ' * (depth + 1) * 4 + 'suboptions:\n'
+                depth_inc += 1
             rdata += _generate_schema_document_options_recursilve(
-                discrete_schema, depth + 1)
+                discrete_schema, depth + depth_inc)
         return rdata
 
     if schema['type'] in ['string', 'integer']:
@@ -264,7 +273,7 @@ def _generate_schema_document_options_recursilve(schema, depth):
             rdata += ' ' * depth * 4 + 'default: ' + quote + default_value + quote + '\n'
         # FIXED: some characters in description are not recognized by yaml.
         # XXX: DO NOT PUT ANY DESCRIPTION IN IN-FILE OPTIONS
-        if False and 'description' in schema:
+        if 'description' in schema:
             desc_list = canonicalize_text(schema['description'])
             if (len(desc_list) > 1):
                 rdata += ' ' * depth * 4 + 'description:\n'
@@ -273,6 +282,8 @@ def _generate_schema_document_options_recursilve(schema, depth):
             else:
                 rdata += ' ' * depth * 4 + 'description: '
                 rdata += '\n' if not len(desc_list) else (shorten_description(desc_list[0], depth * 4 + len('description: ')) + '\n')
+        else:
+            rdata += ' ' * depth * 4 + 'description: no description\n'
         if 'enum' in schema:
             rdata += ' ' * depth * 4 + 'choices:\n'
             for item in schema['enum']:
@@ -282,11 +293,13 @@ def _generate_schema_document_options_recursilve(schema, depth):
         if 'dict' in schema:
             rdata += _generate_schema_document_options_recursilve(schema['dict'], depth)
         else:
+            rdata += ' ' * depth * 4 + 'description: no description\n'
             rdata += ' ' * depth * 4 + 'type: dict\n'
 
     elif schema['type'] == 'array':
         assert('items' in schema)
         subitem = schema['items']
+        rdata += ' ' * depth * 4 + 'description: no description\n'
         if 'type' not in subitem or subitem['type'] not in ['string', 'integer', 'array']:
             rdata += ' ' * depth * 4 + 'type: list\n'
             rdata += ' ' * depth * 4 + 'suboptions:\n'
@@ -393,11 +406,13 @@ def napi_generate_schema_document_options(in_path_schema, body_schema, level2_na
         assert('name' in param)
         assert('type' in param)
         options_data += ' ' * 4 + param['name'] + ':\n'
+        options_data += ' ' * 8 + 'description: the parameter (%s) in requested url\n' % (param['name'])
         options_data += ' ' * 8 + 'type: ' + schematype_displayname_mapping[param['type']] + '\n'
         options_data += ' ' * 8 + 'required: true\n'
 
     if body_schema and len(body_schema) > 0:
         options_data += ' ' * 4 + level2_name + ':\n'
+        options_data += ' ' * 8 + 'description: the top level parameters set\n'
         options_data += ' ' * 8 + 'required: false\n'
         options_data += ' ' * 8 + 'type: dict\n'
         options_data += ' ' * 8 + 'suboptions:\n'
@@ -1275,7 +1290,6 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
                  'doc_return': generate_unified_schema_document_return()
                  }
     doc_body = doc_template.render(**doc_rdata)
-
     with open('modules/%s.py' % (canonical_path), 'w') as f:
         f.write(doc_body)
         f.write(code_body)

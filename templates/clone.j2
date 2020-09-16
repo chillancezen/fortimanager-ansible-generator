@@ -21,6 +21,94 @@ ANSIBLE_METADATA = {'status': ['preview'],
                     'supported_by': 'community',
                     'metadata_version': '1.1'}
 
+DOCUMENTATION = '''
+---
+module: fmgr_clone
+short_description: Clone an object in FortiManager.
+description:
+    - This module is able to configure a FortiManager device.
+    - Examples include all parameters and values which need to be adjusted to data sources before usage.
+
+version_added: "2.10"
+author:
+    - Link Zheng (@chillancezen)
+    - Jie Xue (@JieX19)
+    - Frank Shen (@fshen01)
+    - Hongbin Lu (@fgtdev-hblu)
+notes:
+    - Running in workspace locking mode is supported in this FortiManager module, the top
+      level parameters workspace_locking_adom and workspace_locking_timeout help do the work.
+    - Normally, running one module can fail when a non-zero rc is returned. you can also override
+      the conditions to fail or succeed with parameters rc_failed and rc_succeeded
+options:
+    bypass_validation:
+        description: only set to True when module schema diffs with FortiManager API structure, module continues to execute without validating parameters
+        required: false
+        type: bool
+        default: false
+    workspace_locking_adom:
+        description: the adom to lock for FortiManager running in workspace mode, the value can be global and others including root
+        required: false
+        type: str
+    workspace_locking_timeout:
+        description: the maximum time in seconds to wait for other user to release the workspace lock
+        required: false
+        type: int
+        default: 300
+    rc_succeeded:
+        description: the rc codes list with which the conditions to succeed will be overriden
+        type: list
+        required: false
+    rc_failed:
+        description: the rc codes list with which the conditions to fail will be overriden
+        type: list
+        required: false
+    clone:
+        description: the top level parameters set
+        type: dict
+        required: false
+'''
+
+EXAMPLES = '''
+- hosts: fortimanager01
+  collections:
+   - fortinet.fortimanager
+  connection: httpapi
+  vars:
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
+  tasks:
+   - name: clone an vip object using fmgr_clone module.
+     fmgr_clone:
+       clone:
+        selector: 'firewall_vip'
+        self:
+          adom: 'root'
+          vip: 'ansible-test-vip_first'
+        target:
+          name: 'ansible-test-vip_fourth'
+'''
+
+RETURN = '''
+request_url:
+    description: The full url requested
+    returned: always
+    type: str
+    sample: /sys/login/user
+response_code:
+    description: The status of api request
+    returned: always
+    type: int
+    sample: 0
+response_message:
+    description: The descriptive message of the api response
+    type: str
+    returned: always
+    sample: OK.
+
+'''
+
 from ansible.module_utils.basic import AnsibleModule
 from ansible.module_utils.connection import Connection
 from ansible_collections.fortinet.fortimanager.plugins.module_utils.NAPI import NAPIManager
