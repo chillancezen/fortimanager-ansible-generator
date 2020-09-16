@@ -1076,8 +1076,8 @@ def process_string2list_parameters(module_name, schema):
             ppointer = schema
             pkey = final_key
             pointer = schema[final_key]
-            assert('type' in pointer)
-            ptype = pointer['type']
+            if 'type' in pointer:
+                ptype = pointer['type']
             pointer['type'] = final_target_type
         else:
             pointer = schema[params[0]]
@@ -1098,8 +1098,8 @@ def process_string2list_parameters(module_name, schema):
                     ppointer = pointer
                     pkey = _item_key
                     pointer = pointer[_item_key]
-            assert('type' in pointer)
-            ptype = pointer['type']
+            if 'type' in pointer:
+                ptype = pointer['type']
             pointer['type'] = _item_target_type
         assert(pointer)
         if pointer['type'] =='array':

@@ -11,7 +11,8 @@
         ["member:array"]
     ],
     "fmgr_sys_proxy_json":  [
-        ["target:array"]
+        ["target:array"],
+        ["payload:dict"]
     ],
     "fmgr_dvm_cmd_add_device": [
         ["device", "meta fields:dict"]
@@ -62,5 +63,15 @@
     ],
     "fmgr_pkg_header_shapingpolicy": [
         ["name:removed"]
-    ]
+    ],
+    "fmgr_system_alertevent": [
+        ["severity-level-comp:ref$severity-level-comp"]
+    ],
+    "fmgr_system_alertevent$severity-level-comp": {
+        "type": "array",
+        "items": {
+            "type": "string",
+            "enum": ["string of >=", "string of =", "string of <="]
+        }
+    }
 }

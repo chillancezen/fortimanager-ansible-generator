@@ -41,8 +41,8 @@ author:
 notes:
     - two parameters schemes are supported, either in raw json format or in
       ansible recognnizable top-level parameters format.
-    - 'json' is defined as string, user is response for make it json-formatted
-    - 'method' and 'params' should be specified by users if 'json' is not present
+    - json is defined as string, user is response for make it json-formatted
+    - method and params should be specified by users if 'json' is not present
     - if all three parameters are provided, the 'json' is preferred.
 options:
    method:
@@ -57,6 +57,7 @@ options:
    json:
       description:
         - the raw json-formatted payload to send to fortimanager
+
 '''
 
 EXAMPLES = '''
@@ -75,7 +76,7 @@ EXAMPLES = '''
                 - url: 'sys/login/user'
                   data:
                    - user: 'APIUser'
-                     passwd: 'Fortinet1!e
+                     passwd: 'Fortinet1!e'
     -   name: 'login another user'
         fmgr_generic:
              json: |
@@ -160,7 +161,8 @@ def main():
         except Exception as e:
             module.fail_json(msg='invalid json content: %s' % (e))
     else:
-        assert(module.params['method'] and module.params['params'])
+        if not module.params['method'] or not module.params['params']:
+            raise AssertionError('method and params must be given!')
         method = module.params['method']
         params = module.params['params']
 

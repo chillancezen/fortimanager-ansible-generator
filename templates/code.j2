@@ -4,6 +4,7 @@ from ansible_collections.fortinet.fortimanager.plugins.module_utils.NAPI import 
 from ansible_collections.fortinet.fortimanager.plugins.module_utils.NAPI import check_galaxy_version
 from ansible_collections.fortinet.fortimanager.plugins.module_utils.NAPI import check_parameter_bypass
 
+
 def main():
     jrpc_urls = [
     {%- for url in jrpc_urls %}
@@ -19,8 +20,8 @@ def main():
     {%- endfor %}
     ]
 
-    url_params = [{%- for param in in_path_params %}'{{param.name}}'{%- if loop.index != loop.length -%}, {%- endif %}{%- endfor %}]
-    module_primary_key = {% if mkey -%} '{{mkey}}' {% else -%} None {%- endif %}
+    url_params = [{%- for param in in_path_params %}'{{param.name}}'{%- if loop.index != loop.length -%}, {% endif %}{%- endfor %}]
+    module_primary_key = {% if mkey -%} '{{mkey}}' {%- else -%} None {%- endif %}
     module_arg_spec = {
         'bypass_validation': {
             'type': 'bool',
@@ -79,8 +80,9 @@ def main():
         fmgr.process_partial_curd()
         {%- endif %}
     else:
-        module.fail_json(msg = 'MUST RUN IN HTTPAPI MODE')
-    module.exit_json(meta = module.params)
+        module.fail_json(msg='MUST RUN IN HTTPAPI MODE')
+    module.exit_json(meta=module.params)
+
 
 if __name__ == '__main__':
     main()

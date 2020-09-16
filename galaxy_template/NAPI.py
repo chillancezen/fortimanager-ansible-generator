@@ -30,16 +30,20 @@ __metaclass__ = type
 from ansible.module_utils.basic import _load_params
 import sys
 
+
 def check_galaxy_version(schema):
     params = _load_params()
     params_keys = list(params.keys())
     if 'method' in params_keys and 'method' not in schema:
-        sys.stderr.write('Legacy playbook detected, please revise the playbook or install latest legacy fortimanager galaxy collection: #ansible-galaxy collection install -f fortinet.fortimanager:1.0.4')
+        error_message = 'Legacy playbook detected, please revise the playbook or install latest legacy'
+        error_message += ' fortimanager galaxy collection: #ansible-galaxy collection install -f fortinet.fortimanager:1.0.5'
+        sys.stderr.write(error_message)
         sys.exit(1)
+
 
 def check_parameter_bypass(schema, module_level2_name):
     params = _load_params()
-    if 'bypass_validation' in params and params['bypass_validation'] == True:
+    if 'bypass_validation' in params and params['bypass_validation'] is True:
         top_level_schema = dict()
         for key in schema:
             if key != module_level2_name:
@@ -50,6 +54,7 @@ def check_parameter_bypass(schema, module_level2_name):
                 top_level_schema[module_level2_name]['type'] = 'dict'
         return top_level_schema
     return schema
+
 
 class NAPIManager(object):
     jrpc_urls = None
@@ -72,7 +77,7 @@ class NAPIManager(object):
         self.process_workspace_lock()
         self.module_name = self.module._name
         self.module_level2_name = self.module_name.split('.')[-1][5:]
-        self.top_level_schema_name=top_level_schema_name
+        self.top_level_schema_name = top_level_schema_name
 
     def process_workspace_lock(self):
         self.conn.process_workspace_locking(self.module.params)
@@ -84,7 +89,8 @@ class NAPIManager(object):
         else:
             url_libs = [i for i in self.jrpc_urls]
         for uparam in self.url_params:
-            assert(self.module.params[uparam])
+            if not self.module.params[uparam]:
+                raise AssertionError('param %s MUST NOT be empty' % (uparam))
         the_url = None
         if 'adom' in self.url_params and not url_libs[0].endswith('{adom}'):
             adom = self.module.params['adom']
@@ -104,7 +110,8 @@ class NAPIManager(object):
                     self.module.fail_json(msg='No url for the requested adom:%s, please use other adom.' % (adom))
         else:
             the_url = url_libs[0]
-        assert(the_url)
+        if not the_url:
+            raise AssertionError('the_url is not expected to be NULL')
         for uparam in self.url_params:
             token_hint = '/%s/{%s}/' % (uparam, uparam)
             token = '/%s/%s/' % (uparam, self.module.params[uparam])
@@ -115,7 +122,8 @@ class NAPIManager(object):
         url_getting = self._get_basic_url(True)
         last_token = url_getting.split('/')[-1]
         second_last_token = url_getting.split('/')[-2]
-        assert(last_token == ('{' + second_last_token + '}'))
+        if last_token != '{' + second_last_token + '}':
+            raise AssertionError('wrong last_token received')
         return url_getting.replace('{' + second_last_token + '}', str(mvalue))
 
     def get_object(self, mvalue):
@@ -126,17 +134,19 @@ class NAPIManager(object):
 
     def update_object(self, mvalue):
         url_updating = self._get_base_perobject_url(mvalue)
-        assert(self.top_level_schema_name)
+        if not self.top_level_schema_name:
+            raise AssertionError('top level schema name MUST NOT be NULL')
         params = [{'url': url_updating, self.top_level_schema_name: self.__tailor_attributes(self.module.params[self.module_level2_name])}]
         response = self.conn.send_request('update', params)
         return response
 
     def create_objejct(self):
         url_creating = self._get_basic_url(False)
-        assert(self.top_level_schema_name)
+        if not self.top_level_schema_name:
+            raise AssertionError('top level schema name MUST NOT be NULL')
         params = [{'url': url_creating, self.top_level_schema_name: self.__tailor_attributes(self.module.params[self.module_level2_name])}]
         return self.conn.send_request('set', params)
-    
+
     def delete_object(self, mvalue):
         url_deleting = self._get_base_perobject_url(mvalue)
         params = [{'url': url_deleting}]
@@ -151,12 +161,12 @@ class NAPIManager(object):
                 return self.create_objejct()
         elif self.module.params['state'] == 'absent':
             # in case the `GET` method returns nothing... see module `fmgr_antivirus_mmschecksum`
-            #if mobject[0] == 0:
+            # if mobject[0] == 0:
             return self.delete_object(mvalue)
-            #else:
+            # else:
             #    self.do_nonexist_exit()
         else:
-            assert(False)
+            raise AssertionError('Not Reachable')
 
     def _process_without_mkey(self):
         if self.module.params['state'] == 'absent':
@@ -187,14 +197,16 @@ class NAPIManager(object):
 
         api_params = [{'url': the_url}]
         if self.module_level2_name in self.module.params:
-            assert(self.top_level_schema_name)
+            if not self.top_level_schema_name:
+                raise AssertionError('top level schema name MUST NOT be NULL')
             api_params[0][self.top_level_schema_name] = self.__tailor_attributes(self.module.params[self.module_level2_name])
 
         response = self.conn.send_request('exec', api_params)
         self.do_exit(response)
 
     def process_clone(self, metadata):
-        assert(self.module.params['clone']['selector'] in metadata)
+        if self.module.params['clone']['selector'] not in metadata:
+            raise AssertionError('selector is expected in parameters')
         selector = self.module.params['clone']['selector']
         clone_params_schema = metadata[selector]['params']
         clone_urls = metadata[selector]['urls']
@@ -202,7 +214,7 @@ class NAPIManager(object):
         if self.module.params['clone']['self']:
             real_params_keys = set(self.module.params['clone']['self'].keys())
         if real_params_keys != set(clone_params_schema):
-            self.module.fail_json(msg = 'expect params in self:%s, real params:%s' % (list(clone_params_schema), list(real_params_keys)))
+            self.module.fail_json(msg='expect params in self:%s, real params:%s' % (list(clone_params_schema), list(real_params_keys)))
         url = None
         if 'adom' in clone_params_schema and not clone_urls[0].endswith('{adom}'):
             if self.module.params['clone']['self']['adom'] == 'global':
@@ -232,16 +244,18 @@ class NAPIManager(object):
         self.do_exit(response)
 
     def process_move(self, metadata):
-        assert(self.module.params['move']['selector'] in metadata)
+        if self.module.params['move']['selector'] not in metadata:
+            raise AssertionError('selector is expected in parameters')
         selector = self.module.params['move']['selector']
         move_params = metadata[selector]['params']
         move_urls = metadata[selector]['urls']
-        assert(len(move_urls))
+        if not len(move_urls):
+            raise AssertionError('unexpected move urls set')
         real_params_keys = set()
         if self.module.params['move']['self']:
             real_params_keys = set(self.module.params['move']['self'].keys())
         if real_params_keys != set(move_params):
-            self.module.fail_json(msg = 'expect params in self:%s, real params:%s' % (list(move_params), list(real_params_keys)))
+            self.module.fail_json(msg='expect params in self:%s, real params:%s' % (list(move_params), list(real_params_keys)))
 
         url = None
         if 'adom' in move_params and not move_urls[0].endswith('{adom}'):
@@ -271,17 +285,18 @@ class NAPIManager(object):
         self.do_exit(response)
 
     def process_fact(self, metadata):
-        assert(self.module.params['facts']['selector'] in metadata)
+        if self.module.params['facts']['selector'] not in metadata:
+            raise AssertionError('selector is expected in parameters')
         selector = self.module.params['facts']['selector']
         fact_params = metadata[selector]['params']
         fact_urls = metadata[selector]['urls']
-        assert(len(fact_urls))
-
+        if not len(fact_urls):
+            raise AssertionError('unexpected fact urls set')
         real_params_keys = set()
         if self.module.params['facts']['params']:
             real_params_keys = set(self.module.params['facts']['params'].keys())
         if real_params_keys != set(fact_params):
-            self.module.fail_json(msg = 'expect params:%s, real params:%s' % (list(fact_params), list(real_params_keys)))
+            self.module.fail_json(msg='expect params:%s, real params:%s' % (list(fact_params), list(real_params_keys)))
         url = None
         if 'adom' in fact_params and not fact_urls[0].endswith('{adom}'):
             if self.module.params['facts']['params']['adom'] == 'global':
@@ -293,7 +308,7 @@ class NAPIManager(object):
                 for _url in fact_urls:
                     if '/adom/{adom}/' in _url:
                         url = _url
-                        #url = _url.replace('/adom/{adom}/', '/adom/%s/' % (self.module.params['facts']['params']['adom']))
+                        # url = _url.replace('/adom/{adom}/', '/adom/%s/' % (self.module.params['facts']['params']['adom']))
                         break
         else:
             url = fact_urls[0]
@@ -325,15 +340,16 @@ class NAPIManager(object):
         self.do_exit(response)
 
     def process_curd(self):
-        assert('state' in self.module.params)
+        if 'state' not in self.module.params:
+            raise AssertionError('parameter state is expected')
         has_mkey = self.module_primary_key is not None
         if has_mkey:
             mvalue = ''
             if self.module_primary_key.startswith('complex:'):
                 mvalue_exec_string = self.module_primary_key[len('complex:'):]
                 mvalue_exec_string = mvalue_exec_string.replace('{{module}}', 'self.module.params[self.module_level2_name]')
-                #mvalue_exec_string = 'mvalue = %s' % (mvalue_exec_string)
-                #exec(mvalue_exec_string)
+                # mvalue_exec_string = 'mvalue = %s' % (mvalue_exec_string)
+                # exec(mvalue_exec_string)
                 # On Windows Platform, exec() call doesn't take effect.
                 mvalue = eval(mvalue_exec_string)
             else:
@@ -359,7 +375,8 @@ class NAPIManager(object):
                 rdata.append(self.__tailor_attributes(item))
             return rdata
         else:
-            assert(data is not None)
+            if data is None:
+                raise AssertionError('data is expected to be not none')
             return data
 
     def process_partial_curd(self):
@@ -382,7 +399,8 @@ class NAPIManager(object):
         the_url = the_url.rstrip('/')
         api_params = [{'url': the_url}]
         if self.module_level2_name in self.module.params:
-            assert(self.top_level_schema_name)
+            if not self.top_level_schema_name:
+                raise AssertionError('top level schem name is not supposed to be empty')
             api_params[0][self.top_level_schema_name] = self.__tailor_attributes(self.module.params[self.module_level2_name])
         response = self.conn.send_request('set', api_params)
         self.do_exit(response)
@@ -393,7 +411,8 @@ class NAPIManager(object):
         failed = rc != 0
         changed = rc == 0
 
-        assert('response_code' in result)
+        if 'response_code' not in result:
+            raise AssertionError('response_code should be in result')
         if self.module.params['rc_failed']:
             for rc_code in self.module.params['rc_failed']:
                 if str(result['response_code']) == str(rc_code):
@@ -412,7 +431,6 @@ class NAPIManager(object):
         result['response_code'] = -3
         result['response_message'] = 'object not exist'
         self._do_final_exit(rc, result)
-
 
     def do_exit(self, response):
         rc = response[0]
