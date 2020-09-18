@@ -104,6 +104,7 @@
    "fmgr_user_group": "name",
    "fmgr_user_group_guest": "user-id",
    "fmgr_user_local": "name",
+   "fmgr_ips_custom": "tag",
    "fmgr_vap_dynamicmapping": "complex:{{module}}[\"_scope\"][0][\"name\"]+\"/\"+{{module}}[\"_scope\"][0][\"vdom\"]",
    "fmgr_user_fsso_dynamicmapping": "complex:{{module}}[\"_scope\"][0][\"name\"]+\"/\"+{{module}}[\"_scope\"][0][\"vdom\"]",
    "fmgr_firewall_address6_dynamicmapping": "complex:{{module}}[\"_scope\"][0][\"name\"]+\"/\"+{{module}}[\"_scope\"][0][\"vdom\"]",

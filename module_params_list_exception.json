@@ -73,5 +73,14 @@
             "type": "string",
             "enum": ["string of >=", "string of =", "string of <="]
         }
-    }
+    },
+    "fmgr_firewall_mmsprofile": [
+        ["extended-utm-log:removed"]
+    ],
+    "fmgr_system_geoipoverride": [
+        ["country-id:removed"]
+    ],
+    "fmgr_system_ha_peer": [
+        ["status:removed"]
+    ]
 }
