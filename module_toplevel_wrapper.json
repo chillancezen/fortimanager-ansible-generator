@@ -1,3 +1,4 @@
 {
-    "fmgr_dvmdb_script_execute": "data"
+    "fmgr_dvmdb_script_execute": "data",
+    "fmgr_dvmdb_device_replace_sn": "data"
 }
