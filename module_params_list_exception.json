@@ -1,7 +1,9 @@
 {
     "fmgr_firewall_addrgrp": [
         ["member:array"],
-        ["dynamic_mapping", "member:array"]
+        ["dynamic_mapping", "member:array"],
+        ["comment:string"],
+        ["dynamic_mapping", "comment:string"]
     ],
     "fmgr_user_devicegroup": [
         ["member:array"],
