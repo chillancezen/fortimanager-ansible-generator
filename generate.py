@@ -1074,6 +1074,10 @@ pvbs = None
 with open('module_params_validation.json', 'r') as f:
     pvbs = json.load(f)
 
+mrl = None
+with open('module_removal_list.json', 'r') as f:
+    mrl = json.load(f)
+
 def process_string2list_parameters(module_name, schema):
     if module_name not in string_to_list_dataset:
         return schema
@@ -1238,6 +1242,9 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
     for _url in perobject_mutiurls_names:
         print('\t\033[36msub.url:\033[0m \033[37m%s\033[0m' % (_url))
 
+    if canonical_path in mrl:
+        print('\tmodule removed')
+        return
     # Note method Add/Update share the same schema
     the_unique_schema = None
     the_unique_method = 'add' if not is_exec else 'exec'
