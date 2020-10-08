@@ -1070,6 +1070,10 @@ string_to_list_dataset = None
 with open('module_params_list_exception.json', 'r') as f:
     string_to_list_dataset = json.load(f)
 
+pvbs = None
+with open('module_params_validation.json', 'r') as f:
+    pvbs = json.load(f)
+
 def process_string2list_parameters(module_name, schema):
     if module_name not in string_to_list_dataset:
         return schema
@@ -1269,6 +1273,7 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
                   'jrpc_urls': mutiurls_names if not is_object_member else [e + '/' + url_sufix for e in mutiurls_names],
                   'perobject_jrpc_urls': perobject_mutiurls_names if not is_object_member else [e + '/' + url_sufix for e in perobject_mutiurls_names],
                   'mkey': mkey,
+                  'pvb': schema_beautify(pvbs[canonical_path], 4, 1, False, True) if canonical_path in pvbs else [],
                   'top_level_schema_name': wrapper_dataset[canonical_path] if canonical_path in wrapper_dataset else (the_unique_schema['name'] if the_unique_schema else None),
                   'is_partial': is_partial,
                   'level2_name': canonical_path[5:],

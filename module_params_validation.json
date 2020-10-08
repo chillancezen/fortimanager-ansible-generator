@@ -1,0 +1,50 @@
+{
+    "fmgr_pkg_footer_policy": [
+        {
+            "attribute_path": ["pkg_footer_policy", "policyid"],
+            "lambda": "int($) >= 1073741824",
+            "fail_action": "warn",
+            "hint_message": "policyid should be larger than 2^30, i.e. 1073741824, otherwise it will be ignored."
+        }
+    ],
+	"fmgr_pkg_footer_policy6": [
+        {
+            "attribute_path": ["pkg_footer_policy6", "policyid"],
+            "lambda": "int($) >= 1073741824",
+            "fail_action": "warn",
+            "hint_message": "policyid should be larger than 2^30, i.e. 1073741824, otherwise it will be ignored."
+        }
+    ],
+	"fmgr_pkg_header_policy": [
+        {
+            "attribute_path": ["pkg_header_policy", "policyid"],
+            "lambda": "int($) >= 1073741824",
+            "fail_action": "warn",
+            "hint_message": "policyid should be larger than 2^30, i.e. 1073741824, otherwise it will be ignored."
+        }
+    ],
+	"fmgr_pkg_header_policy6": [
+        {
+            "attribute_path": ["pkg_header_policy6", "policyid"],
+            "lambda": "int($) >= 1073741824",
+            "fail_action": "warn",
+            "hint_message": "policyid should be larger than 2^30, i.e. 1073741824, otherwise it will be ignored."
+        }
+    ],
+	"fmgr_pkg_footer_shapingpolicy": [
+        {
+            "attribute_path": ["pkg_footer_shapingpolicy", "id"],
+            "lambda": "int($) >= 1073741824",
+            "fail_action": "warn",
+            "hint_message": "id should be larger than 2^30, i.e. 1073741824, otherwise it will be ignored."
+        }
+    ],
+	"fmgr_pkg_header_shapingpolicy": [
+        {
+            "attribute_path": ["pkg_header_shapingpolicy", "id"],
+            "lambda": "int($) >= 1073741824",
+            "fail_action": "warn",
+            "hint_message": "id should be larger than 2^30, i.e. 1073741824, otherwise it will be ignored."
+        }
+    ]	
+}
