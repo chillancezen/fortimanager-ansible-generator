@@ -66,7 +66,7 @@ def main():
         }
     }
 
-    params_validation_blob = {{ pvb }}
+    params_validation_blob ={% if pvb == [] %} []{% else %}{{ pvb }}{% endif %}
     check_galaxy_version(module_arg_spec)
     module = AnsibleModule(argument_spec=check_parameter_bypass(module_arg_spec, '{{level2_name}}'),
                            supports_check_mode=False)
