@@ -84,5 +84,21 @@
     ],
     "fmgr_system_ha_peer": [
         ["status:removed"]
-    ]
+    ],
+    "fmgr_firewall_address": [
+        ["type:ref$type"],
+        ["dynamic_mapping", "type:ref$type"]
+    ],
+    "fmgr_firewall_address$type": {
+        "type": "string",
+        "enum": ["ipmask", "iprange", "fqdn", "wildcard", "geography", "wildcard-fqdn", "dynamic"]
+    },
+    "fmgr_firewall_address6": [
+        ["type:ref$type"],
+        ["dynamic_mapping", "type:ref$type"]
+    ],
+    "fmgr_firewall_address6$type": {
+        "type": "string",
+        "enum": ["ipprefix", "iprange", "dynamic", "fqdn", "template"]
+    }
 }
