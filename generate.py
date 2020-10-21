@@ -171,8 +171,8 @@ def tailor_schema(in_body_params):
         dct = dict()
         for param_key in in_body_params:
             # if param_key in ['in', 'format', 'description', 'example', 'default']:
-            # if param_key in ['in', 'format', 'example', 'default']:
-            if param_key in ['in', 'format', 'example']:
+            # remove default value, see https://github.com/fortinet-ansible-dev/ansible-galaxy-fortimanager-collection/issues/9
+            if param_key in ['in', 'format', 'example', 'default']:
                 if isinstance(in_body_params[param_key], str):
                     continue
             dct[param_key] = tailor_schema(in_body_params[param_key])
