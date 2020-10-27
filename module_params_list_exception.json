@@ -100,5 +100,22 @@
     "fmgr_firewall_address6$type": {
         "type": "string",
         "enum": ["ipprefix", "iprange", "dynamic", "fqdn", "template"]
+    },
+    "fmgr_vpnmgr_node": [
+        ["scope member:added"]
+    ],
+    "fmgr_vpnmgr_node$scope member": {
+        "description": "The scope member array of vpnmgr node",
+        "type": "array",
+        "items": {
+            "name": {
+                "type": "string",
+                "description": "name of scope member"
+            },
+            "vdom": {
+                "type": "string",
+                "description": "vdom of scope member"
+            }
+        }
     }
 }

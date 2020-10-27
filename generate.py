@@ -1088,8 +1088,13 @@ def process_string2list_parameters(module_name, schema):
         pkey = None
         pointer = None
         ptype = None
-        assert(params[0].split(':')[0] in schema)
         if len(params) == 1:
+            if params[0].split(':')[0] not in schema:
+                assert(params[0].split(':')[1] == 'added')
+                sub_schema_path = module_name + '$' + params[0].split(':')[0]
+                assert(sub_schema_path in string_to_list_dataset)
+                schema[params[0].split(':')[0]] = string_to_list_dataset[sub_schema_path]
+                continue
             final_key = params[0].split(':')[0]
             final_target_type = None
             if len(params[0].split(':')) == 2:
