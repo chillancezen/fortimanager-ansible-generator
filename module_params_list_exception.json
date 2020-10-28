@@ -87,7 +87,9 @@
     ],
     "fmgr_firewall_address": [
         ["type:ref$type"],
-        ["dynamic_mapping", "type:ref$type"]
+        ["dynamic_mapping", "type:ref$type"],
+        ["comment:string"],
+        ["dynamic_mapping", "comment:string"]
     ],
     "fmgr_firewall_address$type": {
         "type": "string",
