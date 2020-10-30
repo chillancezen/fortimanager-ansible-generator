@@ -1552,16 +1552,19 @@ if __name__ == '__main__':
     # Find out all the urls with GET methods.
     facts_metadata = dict()
     for stripped_url in domain_independent_urls:
-        if not stripped_url.endswith('}'):
-            continue
+        # if not stripped_url.endswith('}'):
+            # continue
         perobj_url, perobj_schema = domain_independent_urls[stripped_url][0]
         perobj_methods = set(perobj_schema._digest[perobj_url].keys())
         perobj_allurls = [_url for _url, _schema in domain_independent_urls[stripped_url]]
         if 'get' not in perobj_methods:
             continue
         selector = canonicalize_url_as_path(stripped_url)
-        assert(selector.startswith('fmgr_') and selector.endswith('_obj'))
-        selector = selector[5: -4]
+        assert(selector.startswith('fmgr_'))
+        if selector.endswith('_obj'):
+            selector = selector[5: -4]
+        else:
+            selector = selector[5:]
         all_params = get_param_tokens(stripped_url)
         for url in perobj_allurls:
             if '/adom/{adom}/' in url:
@@ -1571,7 +1574,7 @@ if __name__ == '__main__':
         facts_metadata[selector] = dict()
         facts_metadata[selector]['params'] = all_params
         facts_metadata[selector]['urls'] = perobj_allurls
-   
+
     rdata = {
         'metadata': facts_metadata   
     }
