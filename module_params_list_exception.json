@@ -17,8 +17,14 @@
         ["payload:dict"]
     ],
     "fmgr_dvm_cmd_add_device": [
-        ["device", "meta fields:dict"]
+        ["device", "meta fields:dict"],
+        ["device", "os_ver:ref$device.os_ver"]
     ],
+    "fmgr_dvm_cmd_add_device$device.os_ver": {
+        "type": "string",
+        "enum": ["unknown", "0.0", "1.0", "2.0", "3.0", "4.0", "5.0", "6.0"],
+        "description": "os version"
+    },
     "fmgr_firewall_service_custom": [
         ["comment:string"]
     ],
