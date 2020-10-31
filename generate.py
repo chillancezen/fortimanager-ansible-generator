@@ -172,8 +172,9 @@ def tailor_schema(in_body_params):
         for param_key in in_body_params:
             # if param_key in ['in', 'format', 'description', 'example', 'default']:
             # remove default value, see https://github.com/fortinet-ansible-dev/ansible-galaxy-fortimanager-collection/issues/9
-            if param_key in ['in', 'format', 'example', 'default']:
-                if isinstance(in_body_params[param_key], str):
+            # keep the default in document, but not in ansible argument specfication
+            if param_key in ['in', 'format', 'example']:
+                if isinstance(in_body_params[param_key], str) or isinstance(in_body_params[param_key], int) or isinstance(in_body_params[param_key], float):
                     continue
             dct[param_key] = tailor_schema(in_body_params[param_key])
         return dct
@@ -1009,10 +1010,10 @@ def schema_to_layer2_params(schema, to_search_mkey, mkey):
             pdata[item_name]['required'] = True
         if 'enum' in item:
             pdata[item_name]['choices'] = [e for e in item['enum']]
-        if 'default' in item:
-            pdata[item_name]['default'] = item['default']
-        if to_search_mkey and mkey == item_name and 'default' in pdata[item_name]:
-            del pdata[item_name]['default']
+        # if 'default' in item:
+        #    pdata[item_name]['default'] = item['default']
+        # if to_search_mkey and mkey == item_name and 'default' in pdata[item_name]:
+        #    del pdata[item_name]['default']
 
         if 'type' not in item or item['type'] not in ['string', 'integer', 'array']:
             if 'type' in item:
