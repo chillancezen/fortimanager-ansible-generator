@@ -125,5 +125,8 @@
                 "description": "vdom of scope member"
             }
         }
-    }
+    },
+    "fmgr_templategroup": [
+        ["member:array"]
+    ]
 }
