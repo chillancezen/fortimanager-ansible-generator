@@ -1236,7 +1236,11 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
     url_mod_tracking[canonical_path].append(url)
     last_token = url.split('/')[-1]
     mutiurls_names = [_url for _url, _schema in multiurls]
-    perobject_mutiurls_names = [_url + '/{' + last_token + '}' for _url in mutiurls_names]
+    # perobject_mutiurls_names = [_url + '/{' + last_token + '}' for _url in mutiurls_names]
+    perobject_mutiurls_names = []
+    for _url in mutiurls_names:
+        _url_tokens = _url.split('/')
+        perobject_mutiurls_names.append(_url if _url.endswith('}') else '%s/{%s}' % (_url, _url_tokens[-1]))
     print('\t\033[36mmodule.name:\033[0m \033[37m%s\033[0m' % (canonical_path))
     print('\t\033[36mfull.url.params:\033[0m \033[37m%s\033[0m' % (str([item['name'] for item in the_one_in_path_params]).replace('\'', '')))
     print('\t\033[36msupported.method:\033[0m \033[37m%s\033[0m' % (str(supported_methods).replace('\'', '')))
@@ -1591,10 +1595,22 @@ if __name__ == '__main__':
         f.flush()
 
     # Merge those modules which have CRUD semantics
-    for stripped_url in domain_independent_urls:
-        if not stripped_url.endswith('}'):
-            last_token = stripped_url.split('/')[-1]
-            perobj_stripped_url = stripped_url + '/{' + last_token + '}'
+    for _stripped_url in domain_independent_urls:
+        _url_tokens = _stripped_url.split('/')
+        last_token_paired = True if len(_url_tokens) >= 2 and _url_tokens[-1] == '{%s}' % (_url_tokens[-2]) else False
+        if last_token_paired:
+            perobj_stripped_url = _stripped_url
+            stripped_url = '/'.join(_url_tokens[: -1])
+            if stripped_url not in domain_independent_urls:
+                stripped_url = _stripped_url
+                print('self-paired url: %s' % (stripped_url))
+        elif not last_token_paired and _url_tokens[-1].endswith('}'):
+            # check it one more time in case of APIs like: /pm/pkg/{pkg_path}
+            last_token_paired = True
+            stripped_url = _stripped_url
+            perobj_stripped_url = _stripped_url
+            print('self-paired url: %s' % (stripped_url))
+        if last_token_paired:
             has_perobj = perobj_stripped_url in domain_independent_urls
             if not has_perobj:
                 print('does not have peer:' + stripped_url)
@@ -1605,16 +1621,18 @@ if __name__ == '__main__':
             nonperobj_methods = set(nonperobj_schema._digest[nonperobj_url].keys())
             perobj_methods = set(perobj_schema._digest[perobj_url].keys())
             all_methods = nonperobj_methods | perobj_methods
+            # method:add is not essential in CRUD semantics.
             if 'get' in all_methods and \
-               'add' in all_methods and \
                'delete' in all_methods and \
-               'update' in all_methods:
+               ('update' in all_methods or 'set' in all_methods):
                 curd_urls[stripped_url] = perobj_stripped_url
                 curd_urls[perobj_stripped_url] = stripped_url
-                assert('add' in nonperobj_methods)
+                #assert('add' in nonperobj_methods)
                 assert('get' in perobj_methods)
                 assert('delete' in perobj_methods)
                 assert('update' in perobj_methods)
+                assert('set' in perobj_methods)
+                print('full-curd url: %s' % (stripped_url))
             else:
                 print('have incomplete peer:' + str(set([nonperobj_url, perobj_url])) + str(nonperobj_methods) + str(perobj_methods))
     # Find those modules who have partial CRUD semantics: every module of this category must have update/get method
@@ -1630,9 +1648,15 @@ if __name__ == '__main__':
         print('\033[32mprocessing partial CURD multi-domain url:\033[0m', stripped_url)
         resolve_generic_schema(_url, _schema, doc_template, code_template, domain_independent_urls[stripped_url], None, is_partial=True)
     # Now we have per-object url mapping, these modules will be applied with present/absent Ansible semantics
-    for stripped_url in curd_urls:
-        if stripped_url.endswith('}'):
+    for _stripped_url in curd_urls:
+        _url_tokens = _stripped_url.split('/')
+        literaly_last_token_paired = True if len(_url_tokens) >= 2 and '{%s}' % (_url_tokens[-2]) == _url_tokens[-1] else False
+        stripped_url = _stripped_url
+        if literaly_last_token_paired:
+            stripped_url = '/'.join(_url_tokens[:-1])
+            assert(stripped_url in curd_urls)
             continue
+
         url0, schema0 = domain_independent_urls[stripped_url][0]
         print('\033[32mprocessing CURD multi-domain url:\033[0m', stripped_url)
         print('\t\033[32m                peer url:\033[0m', curd_urls[stripped_url])
