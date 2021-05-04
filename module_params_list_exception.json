@@ -32,7 +32,8 @@
         ["comment:string"]
     ],
     "fmgr_pkg_firewall_policy": [
-        ["comments:string"]
+        ["comments:string"],
+        ["object position:added"]
     ],
     "fmgr_pkg_footer_policy": [
         ["comments:string"]
@@ -128,5 +129,13 @@
     },
     "fmgr_templategroup": [
         ["member:array"]
-    ]
+    ],
+    "fmgr_pkg_firewall_policy$object position": {
+        "type": "array",
+        "items": {
+            "type": "string",
+            "description": "The position of the object.",
+            "_donot_convert": true
+        }
+    }
 }
