@@ -23,6 +23,11 @@ def main():
     url_params = [{%- for param in in_path_params %}'{{param.name}}'{%- if loop.index != loop.length -%}, {% endif %}{%- endfor %}]
     module_primary_key = {% if mkey -%} '{{mkey}}' {%- else -%} None {%- endif %}
     module_arg_spec = {
+        'enable_log': {
+            'type': 'bool',
+            'required': False,
+            'default': False
+        },
         'bypass_validation': {
             'type': 'bool',
             'required': False,
@@ -74,6 +79,7 @@ def main():
     fmgr = None
     if module._socket_path:
         connection = Connection(module._socket_path)
+        connection.set_option('enable_log', module.params['enable_log'] if 'enable_log' in module.params else False)
         fmgr = NAPIManager(jrpc_urls, perobject_jrpc_urls, module_primary_key, url_params, module, connection, top_level_schema_name={% if top_level_schema_name -%}'{{top_level_schema_name}}'{% else -%}None{%- endif %})
         fmgr.validate_parameters(params_validation_blob)
         {%- if not is_partial %}
