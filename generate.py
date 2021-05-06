@@ -380,7 +380,7 @@ def napi_generate_schema_document_options(in_path_schema, body_schema, level2_na
     options_data += ' ' * 8 + 'default: false\n'
     if not is_exec:
         options_data += ' ' * 4 + 'proposed_method:\n'
-        options_data += ' ' * 8 + 'description: The overridden method of the underlying Json RPC request\n'
+        options_data += ' ' * 8 + 'description: The overridden method for the underlying Json RPC request\n'
         options_data += ' ' * 8 + 'required: false\n'
         options_data += ' ' * 8 + 'type: str\n'
         options_data += ' ' * 8 + 'choices:\n'
@@ -571,7 +571,7 @@ def napi_generate_docgen_parameters(in_path_schema, body_schema, module_name, sh
     params_data = ' <ul>\n'
     params_data += ' <li><span class="li-head">enable_log</span> - Enable/Disable logging for task <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal"> default: False</span> </li>\n'
     if not is_exec:
-        params_data += ' <li><span class="li-head">proposed_method</span> - The overridden method of the underlying Json RPC request <span class="li-normal">type: str</span> <span class="li-required">required: false</span> <span class="li-normal"> choices: set, update, add</span> </li>\n'
+        params_data += ' <li><span class="li-head">proposed_method</span> - The overridden method for the underlying Json RPC request <span class="li-normal">type: str</span> <span class="li-required">required: false</span> <span class="li-normal"> choices: set, update, add</span> </li>\n'
     params_data += ' <li><span class="li-head">bypass_validation</span> - Only set to True when module schema diffs with FortiManager API structure, module continues to execute without validating parameters <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal"> default: False</span> </li>\n'
     params_data += ' <li><span class="li-head">workspace_locking_adom</span> - Acquire the workspace lock if FortiManager is running in workspace mode <span class="li-normal">type: str</span> <span class="li-required">required: false</span> <span class="li-normal"> choices: global, custom adom including root</span> </li>\n'
     params_data += ' <li><span class="li-head">workspace_locking_timeout</span> - The maximum time in seconds to wait for other users to release workspace lock <span class="li-normal">type: integer</span> <span class="li-required">required: false</span>  <span class="li-normal">default: 300</span> </li>\n'
