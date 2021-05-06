@@ -28,6 +28,15 @@ def main():
             'required': False,
             'default': False
         },
+        'proposed_method': {
+            'type': 'str',
+            'required': False,
+            'choices': [
+                'set',
+                'update',
+                'add'
+            ]
+        },
         'bypass_validation': {
             'type': 'bool',
             'required': False,
