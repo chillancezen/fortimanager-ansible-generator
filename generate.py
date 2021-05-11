@@ -1180,6 +1180,21 @@ def process_string2list_parameters(module_name, schema):
 
 exec_mod_tracking = list()
 url_mod_tracking = dict()
+
+def _extract_path_params_in_url(url):
+    url_tokens = url.split('/')
+    params = list()
+    for token in url_tokens:
+        if token.startswith('{') and token.endswith('}'):
+            param = dict()
+            param['in'] = 'path'
+            param['type'] = 'string'
+            param['required'] = True
+            param['api_tag'] = 1
+            param['name'] = token[1:-1]
+            params.append(param)
+    return params
+
 def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, peer_url, is_exec=False, is_partial=False, api_tag=0, is_object_member=False, url_sufix=None):
     validate_multiurls_schema(url, schema, multiurls)
     body_schemas = dict()
@@ -1228,6 +1243,8 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
         for _param in _in_path_params:
             assert(_param in the_one_in_path_params)
     adom_is_in_path_params = False
+    if (not the_one_in_path_params or not len(the_one_in_path_params)) and is_object_member:
+        the_one_in_path_params = _extract_path_params_in_url(url)
     for item in the_one_in_path_params:
         if item['name'] == 'adom':
             adom_is_in_path_params = True
