@@ -1,6 +1,6 @@
-COOKIE='ips4_device_key=b6881f156e528cfcdd5ec75b50df742a; CookieScriptConsent={"action":"accept"}; ips4_ipsTimezone=Asia/Shanghai; ips4_hasJS=true; ips4_IPSSessionFront=d9gri210bk1udold1ahc88c28k; ips4_member_id=16887; ips4_login_key=0c5758a06ca36521c1b8fc308a83ed91'
+#COOKIE='ips4_device_key=b6881f156e528cfcdd5ec75b50df742a; CookieScriptConsent={"action":"accept"}; ips4_ipsTimezone=Asia/Shanghai; ips4_hasJS=true; ips4_IPSSessionFront=d9gri210bk1udold1ahc88c28k; ips4_member_id=16887; ips4_login_key=0c5758a06ca36521c1b8fc308a83ed91'
 
-CSRFKEY=17e36557be95960dbba2097636a0cd8e
+#CSRFKEY=17e36557be95960dbba2097636a0cd8e
 
 if [ ! $# -eq 2 ]; then
     echo "Please speficy the API path and handler"
