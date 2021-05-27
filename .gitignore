@@ -5,4 +5,4 @@ fmgr_fact.rst
 fmgr_move.rst
 fmgr_clone.rst
 *.pyc
-fortimanager-schema/__pycache__
+fortimanager-schema/__pycache__/api_schema_parser.cpython-36.pyc
