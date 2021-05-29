@@ -7,8 +7,8 @@ class FMGApiSchema:
     def __init__(self, data, exceptional_defs = None):
         self._data = data
         self._paths = data['swaggerData']['paths']
-        self._defs = data['swaggerData']['definitions']
-        self._tags = data['swaggerData']['tags']
+        self._defs = data['swaggerData']['definitions'] if 'definitions' in data['swaggerData'] else {}
+        self._tags = data['swaggerData']['tags'] if 'tags' in data['swaggerData'] else []
         self._digest = self.get_api_digest()
         if exceptional_defs:
             self._except_defs = exceptional_defs
@@ -18,6 +18,8 @@ class FMGApiSchema:
                 assert('properties' in self._defs[def_key])
                 assert(def_sub_key in self._defs[def_key]['properties'])
                 del self._defs[def_key]['properties'][def_sub_key]
+        with open('default_reference.json', 'r') as f:
+            self._missing_refs = json.load(f)
 
     def get_api_summary_keys(self):
         return [api_key for api_key in self._paths]
@@ -90,7 +92,9 @@ class FMGApiSchema:
         return plain_collection
                 
     def resolve_reference(self, reference_name):
-        return self.__resolve_reference(self._defs[reference_name.split('/')[-1]])
+        ref_name = reference_name.split('/')[-1]
+        ref = self._defs[ref_name] if ref_name in self._defs else self._missing_refs[ref_name]
+        return self.__resolve_reference(ref)
 
     def get_function_schema(self, function_url, method):
         assert(function_url in self._digest)
