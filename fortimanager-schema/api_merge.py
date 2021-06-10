@@ -7,13 +7,13 @@ from api_schema_parser import load_schema
 
 to_validate_schema = False
 
-def load_schemas_per_version(version_directory, exception_def=None):
+def load_schemas_per_version(version_directory, exception_def=None, default_ref=None):
     schema_per_version = dict()
     digest_blob = dict()
     for schema_file in listdir(version_directory):
         full_path = '%s/%s' % (version_directory, schema_file)
         print('loading \033[4m\033[36m%s\033[0m' % (full_path))
-        schema_per_file = load_schema(full_path, exception_def[schema_file] if exception_def and schema_file in exception_def else None)
+        schema_per_file = load_schema(full_path, exception_def[schema_file] if exception_def and schema_file in exception_def else None, default_ref)
         schema_per_file_digest = schema_per_file.get_api_digest()
         for _url in schema_per_file_digest:
             if _url not in schema_per_version:
