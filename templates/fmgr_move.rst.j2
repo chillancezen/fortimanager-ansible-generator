@@ -55,7 +55,11 @@ Parameters
     <div class="content"> 
     <ul class="ul-self">
         {%- for selector in metadata %}
-        <li><span class="li-normal">{{selector}}</span> </li>
+        <li><span class="li-required">{{selector}}</span> - available versions:
+            {%- for version in metadata[selector]['revision'] %}
+                    <span class="li-normal">{{version}}</span>
+            {%- endfor %}
+        </li>
         {%- endfor %}
     </ul>
     </div>

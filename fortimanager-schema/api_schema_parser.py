@@ -4,7 +4,7 @@ import sys
 
 class FMGApiSchema:    
  
-    def __init__(self, data, exceptional_defs = None):
+    def __init__(self, data, exceptional_defs = None, default_ref=None):
         self._data = data
         self._paths = data['swaggerData']['paths']
         self._defs = data['swaggerData']['definitions'] if 'definitions' in data['swaggerData'] else {}
@@ -18,7 +18,7 @@ class FMGApiSchema:
                 assert('properties' in self._defs[def_key])
                 assert(def_sub_key in self._defs[def_key]['properties'])
                 del self._defs[def_key]['properties'][def_sub_key]
-        with open('default_reference.json', 'r') as f:
+        with open(default_ref if default_ref else 'default_reference.json', 'r') as f:
             self._missing_refs = json.load(f)
 
     def get_api_summary_keys(self):
@@ -174,11 +174,11 @@ class FMGApiSchema:
                 api_endpoint_description = tag_item['description']
         return in_path_params, expanded_body_params, expanded_result_params, api_endpoint_description
 
-def load_schema(schema_file, exceptional_defs = None):
+def load_schema(schema_file, exceptional_defs = None, default_ref=None):
     data = None
     with open(schema_file) as f:
         data = json.load(f)
-    return FMGApiSchema(data, exceptional_defs)
+    return FMGApiSchema(data, exceptional_defs, default_ref)
 
 if __name__ == '__main__':
     #except_def = {"pm.pkg":"subobj"}

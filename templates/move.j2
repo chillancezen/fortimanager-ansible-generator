@@ -132,6 +132,11 @@ def main():
             {%- for url in metadata[selector]['urls'] %}
                 '{{url}}' {%- if loop.index != loop.length -%}, {%- endif %}
             {%- endfor %}
+            ],
+            'revision': [
+            {%- for version in metadata[selector]['revision'] %}
+                '{{version}}' {%- if loop.index != loop.length -%}, {%- endif %}
+            {%- endfor %}
             ]
         }{%- if loop.index != loop.length -%}, {%- endif %}
     {%- endfor %}

@@ -4,9 +4,12 @@ import sys
 from jinja2 import Environment, FileSystemLoader
 sys.path.insert(1, './fortimanager-schema')
 from api_schema_parser import load_schema
+from api_merge import load_schemas_per_version
+from api_merge import merge_digest
+from api_merge import get_api_definition
 from pprint import pformat
 from os import listdir
-
+import os
 
 schematype_displayname_mapping = {
     'array': 'list',
@@ -1469,11 +1472,32 @@ if __name__ == '__main__':
     domain_independent_urls = dict()
     curd_urls = dict()
     partial_curd_urls = dict()
+
     with open('./exceptional_definition_list.json') as f:
         except_defs = json.load(f)
-    schema_directory = './fortimanager-schema/schemas'
+    version_dirs = list()
+    super_schema = dict()
+    for item in listdir('./fortimanager-schema'):
+        if not os.path.isdir('./fortimanager-schema/' + item) or not item.startswith('schemas.'):
+            continue
+        version_dirs.append(item)
+    version_dirs.sort()
+
+    for version_dir in version_dirs:
+        version = version_dir[8:]
+        schema_per_version, digest_blob = load_schemas_per_version('./fortimanager-schema/'+ version_dir, except_defs, './fortimanager-schema/default_reference.json')
+        super_schema[version] = (schema_per_version, digest_blob)
+    super_digest = merge_digest(super_schema)
+
+    for url in super_digest:
+        stripped_domain_url = url.replace('/adom/{adom}/', '/')
+        stripped_domain_url = stripped_domain_url.replace('/global/', '/')
+        if stripped_domain_url not in domain_independent_urls:
+            domain_independent_urls[stripped_domain_url] = list()
+        domain_independent_urls[stripped_domain_url].append((url, None))
 
     # Categorize all domain independent urls.
+    '''
     for schema_file in listdir(schema_directory):
         per_schema_except_def = None
         if schema_file in except_defs:
@@ -1487,14 +1511,15 @@ if __name__ == '__main__':
             if stripped_domain_url not in domain_independent_urls:
                 domain_independent_urls[stripped_domain_url] = list()
             domain_independent_urls[stripped_domain_url].append((url, schema))
+    '''
     # module with move/clone methods
     clone_metadata = dict()
     for stripped_url in domain_independent_urls:
-        _url, _schema = domain_independent_urls[stripped_url][0]
-        _methods = set(_schema._digest[_url].keys())
+        _url, _ = domain_independent_urls[stripped_url][0]
+        _methods = set(super_digest[_url]['digests'].keys())
         if 'clone' not in _methods:
             continue
-        _schemas = _schema.get_function_schema(_url, 'clone')
+        _schemas = get_api_definition(super_schema, _url, 'clone')
         _path_schema = _schemas[0]
         _body_schema = _schemas[1]
         _the_unique_schema = None
@@ -1519,9 +1544,19 @@ if __name__ == '__main__':
         metadata['urls'] = [_url for _url, _schema in domain_independent_urls[stripped_url]]
         metadata['params'] = [_item['name'] for _item in _path_schema]
         if len(metadata['urls']) > 1:
+            if 'adom' not in metadata['params']:
+                # fix adom for the last time
+                adom_in_params = False
+                for url in metadata['urls']:
+                    if '/adom/{adom}/' in url:
+                        adom_in_params = True
+                        break
+                if adom_in_params:
+                    metadata['params'].append('adom')
             assert('adom' in metadata['params'])
         metadata['selector'] = selector
         metadata['mkey'] = mkey
+        metadata['revision'] = super_digest[_url]['revision']
         clone_metadata[selector] = metadata
     rdata = {
         'metadata': clone_metadata
@@ -1538,11 +1573,11 @@ if __name__ == '__main__':
 
     move_metadata = dict()
     for stripped_url in domain_independent_urls:
-        _url, _schema = domain_independent_urls[stripped_url][0]
-        _methods = set(_schema._digest[_url].keys())
+        _url, _ = domain_independent_urls[stripped_url][0]
+        _methods = set(super_digest[_url]['digests'].keys())
         if 'move' not in _methods:
             continue
-        _schemas = _schema.get_function_schema(_url, 'move')
+        _schemas = get_api_definition(super_schema, _url, 'move')
         _path_schema = _schemas[0]
         _body_schema = _schemas[1]
         __validate_schema_for_method_move(_path_schema, _body_schema)
@@ -1550,11 +1585,22 @@ if __name__ == '__main__':
         metadata = dict()
         metadata['urls'] = _allurls
         metadata['params'] = [_item['name'] for _item in _path_schema]
-        assert('adom' in metadata['params'])
+        if len(metadata['urls']) > 1:
+            if 'adom' not in metadata['params']:
+                # fix adom for the last time
+                adom_in_params = False
+                for url in metadata['urls']:
+                    if '/adom/{adom}/' in url:
+                        adom_in_params = True
+                        break
+                if adom_in_params:
+                    metadata['params'].append('adom')
+            assert('adom' in metadata['params'])
         selector = canonicalize_url_as_path(stripped_url)
         assert(selector.startswith('fmgr_') and selector.endswith('_obj'))
         selector = selector[5: -4]
         metadata['selector'] = selector
+        metadata['revision'] = super_digest[_url]['revision']
         move_metadata[selector] = metadata
     rdata = {
         'metadata': move_metadata
@@ -1567,6 +1613,7 @@ if __name__ == '__main__':
     with open('fmgr_move.rst', 'w') as f:
         f.write(rst_rbody)
         f.flush()
+    sys.exit(1)
     # modules with Object Member
     for stripped_url in domain_independent_urls:
         _url, _schema = domain_independent_urls[stripped_url][0]
