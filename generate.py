@@ -971,11 +971,11 @@ def resolve_schema_file(schema_path, per_schema_except, doc_template, code_templ
         resolve_schema(url, schema, doc_template, code_template, [(url, schema)])
 
 
-def validate_multiurls_schema(url, schema, multiurls):
+def validate_multiurls_schema(url, _not_used_schema, multiurls, super_digest, super_schema):
     # Validate schemas which have multiple domains dependent urls.
-    multiurls_allowed_methods_set = set(schema._digest[url].keys())
+    multiurls_allowed_methods_set = set(super_digest[url]['digests'].keys())
     for _url, _schema in multiurls[1:]:
-        assert(multiurls_allowed_methods_set == set(_schema._digest[_url].keys()))
+        assert(multiurls_allowed_methods_set == set(super_digest[_url]['digests'].keys()))
     multiurls_in_path_params = dict()
     multiurls_in_body_params = dict()
     multiurls_result_schema = dict()
@@ -986,7 +986,7 @@ def validate_multiurls_schema(url, schema, multiurls):
         multiurls_result_schema[method] = dict()
         multiurls_api_endpoint_tag[method] = dict()
         for _url, _schema in multiurls:
-            _in_path_params, _in_body_params, _result_schema, _api_endpoint_tag = _schema.get_function_schema(_url, method)
+            _in_path_params, _in_body_params, _result_schema, _api_endpoint_tag = get_api_definition(super_schema, _url, method)
             multiurls_in_path_params[method][_url] = _in_path_params
             multiurls_in_body_params[method][_url] = _in_body_params
             multiurls_result_schema[method][_url] = _result_schema
@@ -1198,8 +1198,9 @@ def _extract_path_params_in_url(url):
             params.append(param)
     return params
 
-def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, peer_url, is_exec=False, is_partial=False, api_tag=0, is_object_member=False, url_sufix=None):
-    validate_multiurls_schema(url, schema, multiurls)
+def resolve_generic_schema(url, _not_used_schema, doc_template, code_template, multiurls, peer_url,
+                           is_exec=False, is_partial=False, api_tag=0, is_object_member=False, url_sufix=None, super_schema=None, super_digest=None):
+    validate_multiurls_schema(url, _not_used_schema, multiurls, super_digest, super_schema)
     body_schemas = dict()
     raw_body_schemas = dict()
     results_schemas = dict()
@@ -1207,8 +1208,8 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
     multiurls_in_path_params = dict()
     the_one_in_path_params = None
 
-    for method in schema._digest[url]:
-        in_path_params, in_body_params, result_schema, api_endpoint_tag = schema.get_function_schema(url, method)
+    for method in super_digest[url]['digests']:
+        in_path_params, in_body_params, result_schema, api_endpoint_tag = get_api_definition(super_schema, url, method)
         raw_body_schemas[method] = in_body_params
         body_schemas[method] = tailor_schema(in_body_params)
         results_schemas[method] = result_schema
@@ -1225,8 +1226,8 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
             # for object member / section value, the get has only one api_tag..
             #assert(multiurls_in_path_params[url] == in_body_params_without_apitags)
     for _url, _schema in multiurls[1:]:
-        for _method in _schema._digest[_url]:
-            in_path_params, in_body_params, result_schema, api_endpoint_tag = schema.get_function_schema(_url, _method)
+        for _method in super_digest[_url]['digests']:
+            in_path_params, in_body_params, result_schema, api_endpoint_tag = get_api_definition(super_schema, _url, _method)
             in_body_params_without_apitags = list()
             for item in in_path_params:
                 if item['api_tag'] != api_tag:
@@ -1261,7 +1262,7 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
         if canonical_path.endswith('_obj'):
             canonical_path = canonical_path[:-4]
         canonical_path += '_' + url_sufix.replace(' ', '')
-    supported_methods = list(schema._digest[url].keys())
+    supported_methods = list(super_digest[url]['digests'].keys())
     if is_exec:
         exec_mod_tracking.append(canonical_path)
     #print(json.dumps(body_schemas))
@@ -1613,20 +1614,21 @@ if __name__ == '__main__':
     with open('fmgr_move.rst', 'w') as f:
         f.write(rst_rbody)
         f.flush()
-    sys.exit(1)
     # modules with Object Member
     for stripped_url in domain_independent_urls:
-        _url, _schema = domain_independent_urls[stripped_url][0]
-        _methods = set(_schema._digest[_url].keys())
+        _url, _ = domain_independent_urls[stripped_url][0]
+        _methods = set(super_digest[_url]['digests'].keys())
         if 'set' not in _methods or 'delete' not in _methods:
             continue
-        if len(_schema._digest[_url]['set']) > 1:
-            assert(len(_schema._digest[_url]['delete']) > 1)
-            urls_descs = _schema._digest[_url]['set']
+        if len(super_digest[_url]['digests']['set']) > 1:
+            assert(len(super_digest[_url]['digests']['delete']) > 1)
+            urls_descs = super_digest[_url]['digests']['set']
             long_url = urls_descs[0] if len(urls_descs[0]) > len(urls_descs[1]) else urls_descs[1]
             token = long_url.split('/')[-1][:-len(' (set)')]
             print('\033[32mprocessing object-member/section value url:\033[0m', stripped_url)
-            resolve_generic_schema(_url, _schema, doc_template, code_template, domain_independent_urls[stripped_url], None, is_partial=False, api_tag=1, is_object_member=True, url_sufix=token)
+            resolve_generic_schema(_url, _, doc_template, code_template, domain_independent_urls[stripped_url], None,
+                                   is_partial=False, api_tag=1, is_object_member=True, url_sufix=token, super_schema=super_schema, super_digest=super_digest)
+    sys.exit(1)
     # Find out all the urls with EXEC methods.
     for stripped_url in domain_independent_urls:
         _url, _schema = domain_independent_urls[stripped_url][0]
