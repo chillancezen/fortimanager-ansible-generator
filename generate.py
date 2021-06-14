@@ -501,11 +501,25 @@ def generate_schema_document_options(
                 options_data += _generate_schema_document_options_recursilve(param, 4)
     return options_data
 
+label_counter=0
 
+def __reset_label_counter():
+    global label_counter
+    label_counter = 0
+
+def __get_label():
+    global label_counter
+    ret = 'label%s' % (label_counter)
+    label_counter += 1
+    return ret
+
+last_param_name = ''
 def _generate_docgen_paramters_recursively(schema):
+    global last_param_name
     params_data = ''
     if 'type' not in schema or schema['type'] not in ['string', 'integer', 'array', 'dict']:
         for discrete_schema_key in schema:
+            last_param_name = discrete_schema_key
             discrete_schema = schema[discrete_schema_key]
             params_data += ' <li><span class="li-head">%s</span>' % (discrete_schema_key)
             is_dict = 'type' not in discrete_schema or discrete_schema['type'] not in ['string', 'integer', 'array', 'dict']
@@ -532,13 +546,50 @@ def _generate_docgen_paramters_recursively(schema):
             params_data += ' <span class="li-normal">choices: %s</span> ' % (str([str(item) for item in schema['enum']]).replace('\'', ''))
         if 'default' in schema:
             params_data += ' <span class="li-normal">default: %s</span> ' % (schema['default'])
-        params_data += '</li>\n'
+        if 'revision' in schema:
+            a_label = __get_label()
+            div_label = __get_label()
+            params_data += ' <a id=\'%s\' href="javascript:ContentClick(\'%s\', \'%s\');" onmouseover="ContentPreview(\'%s\');" onmouseout="ContentUnpreview(\'%s\');" title="click to collapse or expand..."> more... </a>\n' % (a_label, div_label, a_label, div_label, div_label)
+            params_data += ' <div id="%s" style="display:none">\n' % (div_label)
+            params_data += ' <table border="1">\n'
+            params_data += ' <tr>\n'
+            params_data += ' <td></td>\n'
+            for _version in schema['revision']:
+                params_data += ' <td><code class="docutils literal notranslate">%s </code></td>\n' % (_version)
+            params_data += ' </tr>\n'
+            params_data += ' <tr>\n'
+            params_data += ' <td>%s</td>\n' % (last_param_name)
+            for _version in schema['revision']:
+                params_data += ' <td>%s</td>\n' % (schema['revision'][_version])
+            params_data += ' </tr>\n'
+            params_data += ' </table>\n'
+            params_data += ' </div>\n'
+        params_data += ' </li>\n'
     elif schema['type'] == 'dict':
         #assert(False)
         fold = True
         #fold = 'type' not in schema['dict'] or schema['dict']['type'] not in ['string', 'integer', 'array', 'dict']
         params_data += ' - No description for the parameter' if fold else ''
-        params_data += ' <span class="li-normal">type: dict</span> </li>\n' if fold else '<li>\n'
+        params_data += ' <span class="li-normal">type: dict</span>\n' if fold else '\n'
+        if 'revision' in schema:
+            a_label = __get_label()
+            div_label = __get_label()
+            params_data += ' <a id=\'%s\' href="javascript:ContentClick(\'%s\', \'%s\');" onmouseover="ContentPreview(\'%s\');" onmouseout="ContentUnpreview(\'%s\');" title="click to collapse or expand..."> more... </a>\n' % (a_label, div_label, a_label, div_label, div_label)
+            params_data += ' <div id="%s" style="display:none">\n' % (div_label)
+            params_data += ' <table border="1">\n'
+            params_data += ' <tr>\n'
+            params_data += ' <td></td>\n'
+            for _version in schema['revision']:
+                params_data += ' <td><code class="docutils literal notranslate">%s </code></td>\n' % (_version)
+            params_data += ' </tr>\n'
+            params_data += ' <tr>\n'
+            params_data += ' <td>%s</td>\n' % (last_param_name)
+            for _version in schema['revision']:
+                params_data += ' <td>%s</td>\n' % (schema['revision'][_version])
+            params_data += ' </tr>\n'
+            params_data += ' </table>\n'
+            params_data += ' </div>\n'
+        params_data += ' </li>\n'
         #params_data += ' <ul class="ul-self">\n' if fold else ''
         #params_data += _generate_docgen_paramters_recursively(schema['dict'])
         #params_data += ' </ul>\n' if fold else '\n'
@@ -547,7 +598,25 @@ def _generate_docgen_paramters_recursively(schema):
         subitem = schema['items']
         params_data += ' - No description for the parameter'
         if 'type' not in subitem or subitem['type'] not in ['string', 'integer', 'array']:
-            params_data += ' <span class="li-normal">type: array</span>'
+            params_data += ' <span class="li-normal">type: array</span>\n'
+            if 'revision' in schema:
+                a_label = __get_label()
+                div_label = __get_label()
+                params_data += ' <a id=\'%s\' href="javascript:ContentClick(\'%s\', \'%s\');" onmouseover="ContentPreview(\'%s\');" onmouseout="ContentUnpreview(\'%s\');" title="click to collapse or expand..."> more... </a>\n' % (a_label, div_label, a_label, div_label, div_label)
+                params_data += ' <div id="%s" style="display:none">\n' % (div_label)
+                params_data += ' <table border="1">\n'
+                params_data += ' <tr>\n'
+                params_data += ' <td></td>\n'
+                for _version in schema['revision']:
+                    params_data += ' <td><code class="docutils literal notranslate">%s </code></td>\n' % (_version)
+                params_data += ' </tr>\n'
+                params_data += ' <tr>\n'
+                params_data += ' <td>%s</td>\n' % (last_param_name)
+                for _version in schema['revision']:
+                    params_data += ' <td>%s</td>\n' % (schema['revision'][_version])
+                params_data += ' </tr>\n'
+                params_data += ' </table>\n'
+                params_data += ' </div>\n'
             params_data += ' <ul class="ul-self">\n'
             #if 'type' in schema['items'] and schema['items']['type'] in ['string', 'integer', 'array', 'dict']:
             #    params_data += ' <li><span class="li-head">{no-name}</span>'
@@ -559,11 +628,28 @@ def _generate_docgen_paramters_recursively(schema):
                     params_data += ' <span class="li-normal">type: %s</span>' % (schematype_displayname_mapping[subitem['type']])
                 else:
                     params_data += ' <span class="li-normal">type: list</span>'
-                params_data += '</li>\n'
             else:
                 params_data += ' <span class="li-normal">type: array</span>'
                 params_data += ' <span class="li-normal">choices: %s</span> ' % (str([str(item) for item in subitem['enum']]).replace('\'', ''))
-                params_data += '</li>\n'
+            if 'revision' in schema:
+                a_label = __get_label()
+                div_label = __get_label()
+                params_data += ' <a id=\'%s\' href="javascript:ContentClick(\'%s\', \'%s\');" onmouseover="ContentPreview(\'%s\');" onmouseout="ContentUnpreview(\'%s\');" title="click to collapse or expand..."> more... </a>\n' % (a_label, div_label, a_label, div_label, div_label)
+                params_data += ' <div id="%s" style="display:none">\n' % (div_label)
+                params_data += ' <table border="1">\n'
+                params_data += ' <tr>\n'
+                params_data += ' <td></td>\n'
+                for _version in schema['revision']:
+                    params_data += ' <td><code class="docutils literal notranslate">%s </code></td>\n' % (_version)
+                params_data += ' </tr>\n'
+                params_data += ' <tr>\n'
+                params_data += ' <td>%s</td>\n' % (last_param_name)
+                for _version in schema['revision']:
+                    params_data += ' <td>%s</td>\n' % (schema['revision'][_version])
+                params_data += ' </tr>\n'
+                params_data += ' </table>\n'
+                params_data += ' </div>\n'
+            params_data += ' </li>\n'
         else:
             assert(False)
     else:
@@ -587,6 +673,7 @@ def napi_generate_docgen_parameters(in_path_schema, body_schema, module_name, sh
     if body_schema and len(body_schema) >0:
         params_data += ' <li><span class="li-head">' + module_name[5:] +'</span> - ' + short_desc +' <span class="li-normal">type: dict</span></li>\n'
         params_data += ' <ul class="ul-self">\n'
+        __reset_label_counter()
         params_data += _generate_docgen_paramters_recursively(body_schema)
         params_data += ' </ul>\n'
     params_data += ' </ul>\n'
@@ -1399,6 +1486,26 @@ def resolve_generic_schema(url, _not_used_schema, doc_template, code_template, m
     docgen_data += '------------\n'
     docgen_data += 'The below requirements are needed on the host that executes this module.\n\n'
     docgen_data += '- ansible>=2.9.0\n\n\n\n'
+
+    # FORTIMANAGER VERSIONING IN DOCGEN
+    docgen_data += 'FortiManager Version Compatibility\n'
+    docgen_data += '----------------------------------\n'
+    docgen_data += '.. raw:: html\n\n'
+    docgen_data += ' <br>\n'
+    docgen_data += ' <table>\n'
+    docgen_data += ' <tr>\n'
+    docgen_data += ' <td></td>\n'
+    for ver in super_digest[url]['revision']:
+        docgen_data += ' <td><code class="docutils literal notranslate">%s </code></td>\n' % (ver)
+    docgen_data += ' </tr>\n'
+    docgen_data += ' <tr>\n'
+    docgen_data += ' <td>%s</td>\n' % (canonical_path[5:])
+    for ver in super_digest[url]['revision']:
+        docgen_data += ' <td>%s</td>\n' % ('yes')
+    docgen_data += ' </tr>\n'
+    docgen_data += ' </table>\n'
+    docgen_data += ' <p>\n'
+    docgen_data += '\n\n\n'
     # PARAMETERS IN DOCGEN
     docgen_data += 'Parameters\n'
     docgen_data += '----------\n\n'
