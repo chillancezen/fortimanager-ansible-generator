@@ -1026,6 +1026,10 @@ def schema_to_layer2_params(schema, to_search_mkey, mkey):
         item = schema[item_name]
         pdata[item_name] = dict()
         pdata[item_name]['required'] = False
+        if 'revision' not in item:
+            print('one item without revision found')
+        if 'revision' in item:
+            pdata[item_name]['revision'] = item['revision']
         if to_search_mkey and mkey == item_name:
             pdata[item_name]['required'] = True
         if 'enum' in item:
@@ -1036,12 +1040,12 @@ def schema_to_layer2_params(schema, to_search_mkey, mkey):
         #    del pdata[item_name]['default']
 
         if 'type' not in item or item['type'] not in ['string', 'integer', 'array']:
-            if 'type' in item:
-                assert(item['type'] == 'dict')
-                assert(len(item.keys()) == 1)
             pdata[item_name]['type'] = 'dict'
-            if 'type' not in item or len(item.keys()) > 1:
+            if 'type' not in item or list(item['type']) is dict:
                 pdata[item_name]['options'] = schema_to_layer2_params(item, False, None)
+            elif 'dict' in item:
+                assert(item['type'] == 'dict')
+                pdata[item_name]['options'] = schema_to_layer2_params(item['dict'], False, None)
             continue
         if item['type'] == 'string':
             pdata[item_name]['type'] = 'str'
@@ -1628,22 +1632,22 @@ if __name__ == '__main__':
             print('\033[32mprocessing object-member/section value url:\033[0m', stripped_url)
             resolve_generic_schema(_url, _, doc_template, code_template, domain_independent_urls[stripped_url], None,
                                    is_partial=False, api_tag=1, is_object_member=True, url_sufix=token, super_schema=super_schema, super_digest=super_digest)
-    sys.exit(1)
     # Find out all the urls with EXEC methods.
     for stripped_url in domain_independent_urls:
-        _url, _schema = domain_independent_urls[stripped_url][0]
-        _methods = set(_schema._digest[_url].keys())
+        _url, _ = domain_independent_urls[stripped_url][0]
+        _methods = set(super_digest[_url]['digests'].keys())
         if 'exec' not in _methods:
             continue
         print('\033[32mprocessing EXEC multi-domain url:\033[0m', stripped_url)
-        resolve_generic_schema(_url, _schema, doc_template, exec_code_template, domain_independent_urls[stripped_url], None, is_exec=True)
+        resolve_generic_schema(_url, _, doc_template, exec_code_template, domain_independent_urls[stripped_url], None,
+                               is_exec=True, super_schema=super_schema, super_digest=super_digest)
     # Find out all the urls with GET methods.
     facts_metadata = dict()
     for stripped_url in domain_independent_urls:
         # if not stripped_url.endswith('}'):
             # continue
-        perobj_url, perobj_schema = domain_independent_urls[stripped_url][0]
-        perobj_methods = set(perobj_schema._digest[perobj_url].keys())
+        perobj_url, _ = domain_independent_urls[stripped_url][0]
+        perobj_methods = set(super_digest[perobj_url]['digests'].keys())
         perobj_allurls = [_url for _url, _schema in domain_independent_urls[stripped_url]]
         if 'get' not in perobj_methods:
             continue
@@ -1662,7 +1666,7 @@ if __name__ == '__main__':
         facts_metadata[selector] = dict()
         facts_metadata[selector]['params'] = all_params
         facts_metadata[selector]['urls'] = perobj_allurls
-
+        facts_metadata[selector]['revision'] = super_digest[perobj_url]['revision']
     rdata = {
         'metadata': facts_metadata   
     }
@@ -1676,7 +1680,6 @@ if __name__ == '__main__':
     with open('fmgr_fact.rst', 'w') as f:
         f.write(rst_rbody)
         f.flush()
-
     # Merge those modules which have CRUD semantics
     for _stripped_url in domain_independent_urls:
         _url_tokens = _stripped_url.split('/')
@@ -1698,11 +1701,11 @@ if __name__ == '__main__':
             if not has_perobj:
                 print('does not have peer:' + stripped_url)
                 continue
-            nonperobj_url, nonperobj_schema = domain_independent_urls[stripped_url][0]
-            perobj_url, perobj_schema = domain_independent_urls[perobj_stripped_url][0]
+            nonperobj_url, _ = domain_independent_urls[stripped_url][0]
+            perobj_url, _ = domain_independent_urls[perobj_stripped_url][0]
 
-            nonperobj_methods = set(nonperobj_schema._digest[nonperobj_url].keys())
-            perobj_methods = set(perobj_schema._digest[perobj_url].keys())
+            nonperobj_methods = set(super_digest[nonperobj_url]['digests'].keys())
+            perobj_methods = set(super_digest[perobj_url]['digests'].keys())
             all_methods = nonperobj_methods | perobj_methods
             # method:add is not essential in CRUD semantics.
             if 'get' in all_methods and \
@@ -1722,14 +1725,15 @@ if __name__ == '__main__':
     for stripped_url in domain_independent_urls:
         if stripped_url in curd_urls:
             continue
-        _url, _schema = domain_independent_urls[stripped_url][0]
-        _methods = set(_schema._digest[_url].keys())
+        _url, _ = domain_independent_urls[stripped_url][0]
+        _methods = set(super_digest[_url]['digests'].keys())
         if 'set' not in _methods or 'get' not in _methods:
             continue
         _module_name = canonicalize_url_as_path(stripped_url, True)
         partial_curd_urls[_module_name] = stripped_url
         print('\033[32mprocessing partial CURD multi-domain url:\033[0m', stripped_url)
-        resolve_generic_schema(_url, _schema, doc_template, code_template, domain_independent_urls[stripped_url], None, is_partial=True)
+        resolve_generic_schema(_url, _, doc_template, code_template, domain_independent_urls[stripped_url], None,
+                               is_partial=True, super_digest=super_digest, super_schema=super_schema)
     # Now we have per-object url mapping, these modules will be applied with present/absent Ansible semantics
     for _stripped_url in curd_urls:
         _url_tokens = _stripped_url.split('/')
@@ -1743,4 +1747,5 @@ if __name__ == '__main__':
         url0, schema0 = domain_independent_urls[stripped_url][0]
         print('\033[32mprocessing CURD multi-domain url:\033[0m', stripped_url)
         print('\t\033[32m                peer url:\033[0m', curd_urls[stripped_url])
-        resolve_generic_schema(url0, schema0, doc_template, code_template, domain_independent_urls[stripped_url], curd_urls[stripped_url])
+        resolve_generic_schema(url0, _, doc_template, code_template, domain_independent_urls[stripped_url], curd_urls[stripped_url],
+                               super_digest=super_digest, super_schema=super_schema)
