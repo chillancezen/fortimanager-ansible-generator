@@ -133,11 +133,11 @@ def main():
                 '{{url}}' {%- if loop.index != loop.length -%}, {%- endif %}
             {%- endfor %}
             ],
-            'revision': [
+            'revision': {
             {%- for version in metadata[selector]['revision'] %}
-                '{{version}}' {%- if loop.index != loop.length -%}, {%- endif %}
+                '{{version}}': True {%- if loop.index != loop.length -%}, {%- endif %}
             {%- endfor %}
-            ],
+            },
             'mkey': {%if metadata[selector]['mkey'] -%}'{%- endif %}{{metadata[selector]['mkey']}}{%- if metadata[selector]['mkey'] -%}'{%- endif %}
         }{%- if loop.index != loop.length -%}, {%- endif %}
     {%- endfor %}

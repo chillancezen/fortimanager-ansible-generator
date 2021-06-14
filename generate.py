@@ -501,11 +501,25 @@ def generate_schema_document_options(
                 options_data += _generate_schema_document_options_recursilve(param, 4)
     return options_data
 
+label_counter=0
 
+def __reset_label_counter():
+    global label_counter
+    label_counter = 0
+
+def __get_label():
+    global label_counter
+    ret = 'label%s' % (label_counter)
+    label_counter += 1
+    return ret
+
+last_param_name = ''
 def _generate_docgen_paramters_recursively(schema):
+    global last_param_name
     params_data = ''
     if 'type' not in schema or schema['type'] not in ['string', 'integer', 'array', 'dict']:
         for discrete_schema_key in schema:
+            last_param_name = discrete_schema_key
             discrete_schema = schema[discrete_schema_key]
             params_data += ' <li><span class="li-head">%s</span>' % (discrete_schema_key)
             is_dict = 'type' not in discrete_schema or discrete_schema['type'] not in ['string', 'integer', 'array', 'dict']
@@ -532,13 +546,50 @@ def _generate_docgen_paramters_recursively(schema):
             params_data += ' <span class="li-normal">choices: %s</span> ' % (str([str(item) for item in schema['enum']]).replace('\'', ''))
         if 'default' in schema:
             params_data += ' <span class="li-normal">default: %s</span> ' % (schema['default'])
-        params_data += '</li>\n'
+        if 'revision' in schema:
+            a_label = __get_label()
+            div_label = __get_label()
+            params_data += ' <a id=\'%s\' href="javascript:ContentClick(\'%s\', \'%s\');" onmouseover="ContentPreview(\'%s\');" onmouseout="ContentUnpreview(\'%s\');" title="click to collapse or expand..."> more... </a>\n' % (a_label, div_label, a_label, div_label, div_label)
+            params_data += ' <div id="%s" style="display:none">\n' % (div_label)
+            params_data += ' <table border="1">\n'
+            params_data += ' <tr>\n'
+            params_data += ' <td></td>\n'
+            for _version in schema['revision']:
+                params_data += ' <td><code class="docutils literal notranslate">%s </code></td>\n' % (_version)
+            params_data += ' </tr>\n'
+            params_data += ' <tr>\n'
+            params_data += ' <td>%s</td>\n' % (last_param_name)
+            for _version in schema['revision']:
+                params_data += ' <td>%s</td>\n' % (schema['revision'][_version])
+            params_data += ' </tr>\n'
+            params_data += ' </table>\n'
+            params_data += ' </div>\n'
+        params_data += ' </li>\n'
     elif schema['type'] == 'dict':
         #assert(False)
         fold = True
         #fold = 'type' not in schema['dict'] or schema['dict']['type'] not in ['string', 'integer', 'array', 'dict']
         params_data += ' - No description for the parameter' if fold else ''
-        params_data += ' <span class="li-normal">type: dict</span> </li>\n' if fold else '<li>\n'
+        params_data += ' <span class="li-normal">type: dict</span>\n' if fold else '\n'
+        if 'revision' in schema:
+            a_label = __get_label()
+            div_label = __get_label()
+            params_data += ' <a id=\'%s\' href="javascript:ContentClick(\'%s\', \'%s\');" onmouseover="ContentPreview(\'%s\');" onmouseout="ContentUnpreview(\'%s\');" title="click to collapse or expand..."> more... </a>\n' % (a_label, div_label, a_label, div_label, div_label)
+            params_data += ' <div id="%s" style="display:none">\n' % (div_label)
+            params_data += ' <table border="1">\n'
+            params_data += ' <tr>\n'
+            params_data += ' <td></td>\n'
+            for _version in schema['revision']:
+                params_data += ' <td><code class="docutils literal notranslate">%s </code></td>\n' % (_version)
+            params_data += ' </tr>\n'
+            params_data += ' <tr>\n'
+            params_data += ' <td>%s</td>\n' % (last_param_name)
+            for _version in schema['revision']:
+                params_data += ' <td>%s</td>\n' % (schema['revision'][_version])
+            params_data += ' </tr>\n'
+            params_data += ' </table>\n'
+            params_data += ' </div>\n'
+        params_data += ' </li>\n'
         #params_data += ' <ul class="ul-self">\n' if fold else ''
         #params_data += _generate_docgen_paramters_recursively(schema['dict'])
         #params_data += ' </ul>\n' if fold else '\n'
@@ -547,7 +598,25 @@ def _generate_docgen_paramters_recursively(schema):
         subitem = schema['items']
         params_data += ' - No description for the parameter'
         if 'type' not in subitem or subitem['type'] not in ['string', 'integer', 'array']:
-            params_data += ' <span class="li-normal">type: array</span>'
+            params_data += ' <span class="li-normal">type: array</span>\n'
+            if 'revision' in schema:
+                a_label = __get_label()
+                div_label = __get_label()
+                params_data += ' <a id=\'%s\' href="javascript:ContentClick(\'%s\', \'%s\');" onmouseover="ContentPreview(\'%s\');" onmouseout="ContentUnpreview(\'%s\');" title="click to collapse or expand..."> more... </a>\n' % (a_label, div_label, a_label, div_label, div_label)
+                params_data += ' <div id="%s" style="display:none">\n' % (div_label)
+                params_data += ' <table border="1">\n'
+                params_data += ' <tr>\n'
+                params_data += ' <td></td>\n'
+                for _version in schema['revision']:
+                    params_data += ' <td><code class="docutils literal notranslate">%s </code></td>\n' % (_version)
+                params_data += ' </tr>\n'
+                params_data += ' <tr>\n'
+                params_data += ' <td>%s</td>\n' % (last_param_name)
+                for _version in schema['revision']:
+                    params_data += ' <td>%s</td>\n' % (schema['revision'][_version])
+                params_data += ' </tr>\n'
+                params_data += ' </table>\n'
+                params_data += ' </div>\n'
             params_data += ' <ul class="ul-self">\n'
             #if 'type' in schema['items'] and schema['items']['type'] in ['string', 'integer', 'array', 'dict']:
             #    params_data += ' <li><span class="li-head">{no-name}</span>'
@@ -559,11 +628,28 @@ def _generate_docgen_paramters_recursively(schema):
                     params_data += ' <span class="li-normal">type: %s</span>' % (schematype_displayname_mapping[subitem['type']])
                 else:
                     params_data += ' <span class="li-normal">type: list</span>'
-                params_data += '</li>\n'
             else:
                 params_data += ' <span class="li-normal">type: array</span>'
                 params_data += ' <span class="li-normal">choices: %s</span> ' % (str([str(item) for item in subitem['enum']]).replace('\'', ''))
-                params_data += '</li>\n'
+            if 'revision' in schema:
+                a_label = __get_label()
+                div_label = __get_label()
+                params_data += ' <a id=\'%s\' href="javascript:ContentClick(\'%s\', \'%s\');" onmouseover="ContentPreview(\'%s\');" onmouseout="ContentUnpreview(\'%s\');" title="click to collapse or expand..."> more... </a>\n' % (a_label, div_label, a_label, div_label, div_label)
+                params_data += ' <div id="%s" style="display:none">\n' % (div_label)
+                params_data += ' <table border="1">\n'
+                params_data += ' <tr>\n'
+                params_data += ' <td></td>\n'
+                for _version in schema['revision']:
+                    params_data += ' <td><code class="docutils literal notranslate">%s </code></td>\n' % (_version)
+                params_data += ' </tr>\n'
+                params_data += ' <tr>\n'
+                params_data += ' <td>%s</td>\n' % (last_param_name)
+                for _version in schema['revision']:
+                    params_data += ' <td>%s</td>\n' % (schema['revision'][_version])
+                params_data += ' </tr>\n'
+                params_data += ' </table>\n'
+                params_data += ' </div>\n'
+            params_data += ' </li>\n'
         else:
             assert(False)
     else:
@@ -587,6 +673,7 @@ def napi_generate_docgen_parameters(in_path_schema, body_schema, module_name, sh
     if body_schema and len(body_schema) >0:
         params_data += ' <li><span class="li-head">' + module_name[5:] +'</span> - ' + short_desc +' <span class="li-normal">type: dict</span></li>\n'
         params_data += ' <ul class="ul-self">\n'
+        __reset_label_counter()
         params_data += _generate_docgen_paramters_recursively(body_schema)
         params_data += ' </ul>\n'
     params_data += ' </ul>\n'
@@ -971,11 +1058,11 @@ def resolve_schema_file(schema_path, per_schema_except, doc_template, code_templ
         resolve_schema(url, schema, doc_template, code_template, [(url, schema)])
 
 
-def validate_multiurls_schema(url, schema, multiurls):
+def validate_multiurls_schema(url, _not_used_schema, multiurls, super_digest, super_schema):
     # Validate schemas which have multiple domains dependent urls.
-    multiurls_allowed_methods_set = set(schema._digest[url].keys())
+    multiurls_allowed_methods_set = set(super_digest[url]['digests'].keys())
     for _url, _schema in multiurls[1:]:
-        assert(multiurls_allowed_methods_set == set(_schema._digest[_url].keys()))
+        assert(multiurls_allowed_methods_set == set(super_digest[_url]['digests'].keys()))
     multiurls_in_path_params = dict()
     multiurls_in_body_params = dict()
     multiurls_result_schema = dict()
@@ -986,7 +1073,7 @@ def validate_multiurls_schema(url, schema, multiurls):
         multiurls_result_schema[method] = dict()
         multiurls_api_endpoint_tag[method] = dict()
         for _url, _schema in multiurls:
-            _in_path_params, _in_body_params, _result_schema, _api_endpoint_tag = _schema.get_function_schema(_url, method)
+            _in_path_params, _in_body_params, _result_schema, _api_endpoint_tag = get_api_definition(super_schema, _url, method)
             multiurls_in_path_params[method][_url] = _in_path_params
             multiurls_in_body_params[method][_url] = _in_body_params
             multiurls_result_schema[method][_url] = _result_schema
@@ -1026,6 +1113,10 @@ def schema_to_layer2_params(schema, to_search_mkey, mkey):
         item = schema[item_name]
         pdata[item_name] = dict()
         pdata[item_name]['required'] = False
+        if 'revision' not in item:
+            print('one item without revision found')
+        if 'revision' in item:
+            pdata[item_name]['revision'] = item['revision']
         if to_search_mkey and mkey == item_name:
             pdata[item_name]['required'] = True
         if 'enum' in item:
@@ -1036,12 +1127,12 @@ def schema_to_layer2_params(schema, to_search_mkey, mkey):
         #    del pdata[item_name]['default']
 
         if 'type' not in item or item['type'] not in ['string', 'integer', 'array']:
-            if 'type' in item:
-                assert(item['type'] == 'dict')
-                assert(len(item.keys()) == 1)
             pdata[item_name]['type'] = 'dict'
-            if 'type' not in item or len(item.keys()) > 1:
+            if 'type' not in item or list(item['type']) is dict:
                 pdata[item_name]['options'] = schema_to_layer2_params(item, False, None)
+            elif 'dict' in item:
+                assert(item['type'] == 'dict')
+                pdata[item_name]['options'] = schema_to_layer2_params(item['dict'], False, None)
             continue
         if item['type'] == 'string':
             pdata[item_name]['type'] = 'str'
@@ -1198,8 +1289,9 @@ def _extract_path_params_in_url(url):
             params.append(param)
     return params
 
-def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, peer_url, is_exec=False, is_partial=False, api_tag=0, is_object_member=False, url_sufix=None):
-    validate_multiurls_schema(url, schema, multiurls)
+def resolve_generic_schema(url, _not_used_schema, doc_template, code_template, multiurls, peer_url,
+                           is_exec=False, is_partial=False, api_tag=0, is_object_member=False, url_sufix=None, super_schema=None, super_digest=None):
+    validate_multiurls_schema(url, _not_used_schema, multiurls, super_digest, super_schema)
     body_schemas = dict()
     raw_body_schemas = dict()
     results_schemas = dict()
@@ -1207,8 +1299,8 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
     multiurls_in_path_params = dict()
     the_one_in_path_params = None
 
-    for method in schema._digest[url]:
-        in_path_params, in_body_params, result_schema, api_endpoint_tag = schema.get_function_schema(url, method)
+    for method in super_digest[url]['digests']:
+        in_path_params, in_body_params, result_schema, api_endpoint_tag = get_api_definition(super_schema, url, method)
         raw_body_schemas[method] = in_body_params
         body_schemas[method] = tailor_schema(in_body_params)
         results_schemas[method] = result_schema
@@ -1225,8 +1317,8 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
             # for object member / section value, the get has only one api_tag..
             #assert(multiurls_in_path_params[url] == in_body_params_without_apitags)
     for _url, _schema in multiurls[1:]:
-        for _method in _schema._digest[_url]:
-            in_path_params, in_body_params, result_schema, api_endpoint_tag = schema.get_function_schema(_url, _method)
+        for _method in super_digest[_url]['digests']:
+            in_path_params, in_body_params, result_schema, api_endpoint_tag = get_api_definition(super_schema, _url, _method)
             in_body_params_without_apitags = list()
             for item in in_path_params:
                 if item['api_tag'] != api_tag:
@@ -1261,7 +1353,7 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
         if canonical_path.endswith('_obj'):
             canonical_path = canonical_path[:-4]
         canonical_path += '_' + url_sufix.replace(' ', '')
-    supported_methods = list(schema._digest[url].keys())
+    supported_methods = list(super_digest[url]['digests'].keys())
     if is_exec:
         exec_mod_tracking.append(canonical_path)
     #print(json.dumps(body_schemas))
@@ -1394,6 +1486,26 @@ def resolve_generic_schema(url, schema, doc_template, code_template, multiurls, 
     docgen_data += '------------\n'
     docgen_data += 'The below requirements are needed on the host that executes this module.\n\n'
     docgen_data += '- ansible>=2.9.0\n\n\n\n'
+
+    # FORTIMANAGER VERSIONING IN DOCGEN
+    docgen_data += 'FortiManager Version Compatibility\n'
+    docgen_data += '----------------------------------\n'
+    docgen_data += '.. raw:: html\n\n'
+    docgen_data += ' <br>\n'
+    docgen_data += ' <table>\n'
+    docgen_data += ' <tr>\n'
+    docgen_data += ' <td></td>\n'
+    for ver in super_digest[url]['revision']:
+        docgen_data += ' <td><code class="docutils literal notranslate">%s </code></td>\n' % (ver)
+    docgen_data += ' </tr>\n'
+    docgen_data += ' <tr>\n'
+    docgen_data += ' <td>%s</td>\n' % (canonical_path[5:])
+    for ver in super_digest[url]['revision']:
+        docgen_data += ' <td>%s</td>\n' % ('yes')
+    docgen_data += ' </tr>\n'
+    docgen_data += ' </table>\n'
+    docgen_data += ' <p>\n'
+    docgen_data += '\n\n\n'
     # PARAMETERS IN DOCGEN
     docgen_data += 'Parameters\n'
     docgen_data += '----------\n\n'
@@ -1613,35 +1725,36 @@ if __name__ == '__main__':
     with open('fmgr_move.rst', 'w') as f:
         f.write(rst_rbody)
         f.flush()
-    sys.exit(1)
     # modules with Object Member
     for stripped_url in domain_independent_urls:
-        _url, _schema = domain_independent_urls[stripped_url][0]
-        _methods = set(_schema._digest[_url].keys())
+        _url, _ = domain_independent_urls[stripped_url][0]
+        _methods = set(super_digest[_url]['digests'].keys())
         if 'set' not in _methods or 'delete' not in _methods:
             continue
-        if len(_schema._digest[_url]['set']) > 1:
-            assert(len(_schema._digest[_url]['delete']) > 1)
-            urls_descs = _schema._digest[_url]['set']
+        if len(super_digest[_url]['digests']['set']) > 1:
+            assert(len(super_digest[_url]['digests']['delete']) > 1)
+            urls_descs = super_digest[_url]['digests']['set']
             long_url = urls_descs[0] if len(urls_descs[0]) > len(urls_descs[1]) else urls_descs[1]
             token = long_url.split('/')[-1][:-len(' (set)')]
             print('\033[32mprocessing object-member/section value url:\033[0m', stripped_url)
-            resolve_generic_schema(_url, _schema, doc_template, code_template, domain_independent_urls[stripped_url], None, is_partial=False, api_tag=1, is_object_member=True, url_sufix=token)
+            resolve_generic_schema(_url, _, doc_template, code_template, domain_independent_urls[stripped_url], None,
+                                   is_partial=False, api_tag=1, is_object_member=True, url_sufix=token, super_schema=super_schema, super_digest=super_digest)
     # Find out all the urls with EXEC methods.
     for stripped_url in domain_independent_urls:
-        _url, _schema = domain_independent_urls[stripped_url][0]
-        _methods = set(_schema._digest[_url].keys())
+        _url, _ = domain_independent_urls[stripped_url][0]
+        _methods = set(super_digest[_url]['digests'].keys())
         if 'exec' not in _methods:
             continue
         print('\033[32mprocessing EXEC multi-domain url:\033[0m', stripped_url)
-        resolve_generic_schema(_url, _schema, doc_template, exec_code_template, domain_independent_urls[stripped_url], None, is_exec=True)
+        resolve_generic_schema(_url, _, doc_template, exec_code_template, domain_independent_urls[stripped_url], None,
+                               is_exec=True, super_schema=super_schema, super_digest=super_digest)
     # Find out all the urls with GET methods.
     facts_metadata = dict()
     for stripped_url in domain_independent_urls:
         # if not stripped_url.endswith('}'):
             # continue
-        perobj_url, perobj_schema = domain_independent_urls[stripped_url][0]
-        perobj_methods = set(perobj_schema._digest[perobj_url].keys())
+        perobj_url, _ = domain_independent_urls[stripped_url][0]
+        perobj_methods = set(super_digest[perobj_url]['digests'].keys())
         perobj_allurls = [_url for _url, _schema in domain_independent_urls[stripped_url]]
         if 'get' not in perobj_methods:
             continue
@@ -1660,7 +1773,7 @@ if __name__ == '__main__':
         facts_metadata[selector] = dict()
         facts_metadata[selector]['params'] = all_params
         facts_metadata[selector]['urls'] = perobj_allurls
-
+        facts_metadata[selector]['revision'] = super_digest[perobj_url]['revision']
     rdata = {
         'metadata': facts_metadata   
     }
@@ -1674,7 +1787,6 @@ if __name__ == '__main__':
     with open('fmgr_fact.rst', 'w') as f:
         f.write(rst_rbody)
         f.flush()
-
     # Merge those modules which have CRUD semantics
     for _stripped_url in domain_independent_urls:
         _url_tokens = _stripped_url.split('/')
@@ -1696,11 +1808,11 @@ if __name__ == '__main__':
             if not has_perobj:
                 print('does not have peer:' + stripped_url)
                 continue
-            nonperobj_url, nonperobj_schema = domain_independent_urls[stripped_url][0]
-            perobj_url, perobj_schema = domain_independent_urls[perobj_stripped_url][0]
+            nonperobj_url, _ = domain_independent_urls[stripped_url][0]
+            perobj_url, _ = domain_independent_urls[perobj_stripped_url][0]
 
-            nonperobj_methods = set(nonperobj_schema._digest[nonperobj_url].keys())
-            perobj_methods = set(perobj_schema._digest[perobj_url].keys())
+            nonperobj_methods = set(super_digest[nonperobj_url]['digests'].keys())
+            perobj_methods = set(super_digest[perobj_url]['digests'].keys())
             all_methods = nonperobj_methods | perobj_methods
             # method:add is not essential in CRUD semantics.
             if 'get' in all_methods and \
@@ -1720,14 +1832,15 @@ if __name__ == '__main__':
     for stripped_url in domain_independent_urls:
         if stripped_url in curd_urls:
             continue
-        _url, _schema = domain_independent_urls[stripped_url][0]
-        _methods = set(_schema._digest[_url].keys())
+        _url, _ = domain_independent_urls[stripped_url][0]
+        _methods = set(super_digest[_url]['digests'].keys())
         if 'set' not in _methods or 'get' not in _methods:
             continue
         _module_name = canonicalize_url_as_path(stripped_url, True)
         partial_curd_urls[_module_name] = stripped_url
         print('\033[32mprocessing partial CURD multi-domain url:\033[0m', stripped_url)
-        resolve_generic_schema(_url, _schema, doc_template, code_template, domain_independent_urls[stripped_url], None, is_partial=True)
+        resolve_generic_schema(_url, _, doc_template, code_template, domain_independent_urls[stripped_url], None,
+                               is_partial=True, super_digest=super_digest, super_schema=super_schema)
     # Now we have per-object url mapping, these modules will be applied with present/absent Ansible semantics
     for _stripped_url in curd_urls:
         _url_tokens = _stripped_url.split('/')
@@ -1741,4 +1854,5 @@ if __name__ == '__main__':
         url0, schema0 = domain_independent_urls[stripped_url][0]
         print('\033[32mprocessing CURD multi-domain url:\033[0m', stripped_url)
         print('\t\033[32m                peer url:\033[0m', curd_urls[stripped_url])
-        resolve_generic_schema(url0, schema0, doc_template, code_template, domain_independent_urls[stripped_url], curd_urls[stripped_url])
+        resolve_generic_schema(url0, _, doc_template, code_template, domain_independent_urls[stripped_url], curd_urls[stripped_url],
+                               super_digest=super_digest, super_schema=super_schema)
