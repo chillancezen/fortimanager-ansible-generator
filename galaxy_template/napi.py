@@ -401,7 +401,7 @@ class NAPIManager(object):
     def process_curd(self):
         if 'state' not in self.module.params:
             raise AssertionError('parameter state is expected')
-        has_mkey = self.module_primary_key is not None
+        has_mkey = self.module_primary_key is not None and type(self.module.params[self.module_level2_name]) is dict
         if has_mkey:
             mvalue = ''
             if self.module_primary_key.startswith('complex:'):
