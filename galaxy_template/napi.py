@@ -84,6 +84,7 @@ class NAPIManager(object):
         self.module_name = self.module._name
         self.module_level2_name = self.module_name.split('.')[-1][5:]
         self.top_level_schema_name = top_level_schema_name
+        self.system_status = self.get_system_status()
 
     def process_workspace_lock(self):
         self.conn.process_workspace_locking(self.module.params)
@@ -174,6 +175,14 @@ class NAPIManager(object):
         url_deleting = self._get_base_perobject_url(mvalue)
         params = [{'url': url_deleting}]
         return self.conn.send_request('delete', params)
+
+    def get_system_status(self):
+        params = [{'url': '/cli/global/system/status'}]
+        response = self.conn.send_request('get', params)
+        if response[0] == 0:
+            assert('data' in response[1])
+            return response[1]['data']
+        return None
 
     def _process_with_mkey(self, mvalue):
         mobject = self.get_object(mvalue)
@@ -505,6 +514,8 @@ class NAPIManager(object):
                 if str(result['response_code']) == str(rc_code):
                     failed = False
                     result['result_code_overriding'] = 'rc code:%s is overridden to success' % (rc_code)
+        if self.system_status:
+            result['system_information'] = self.system_status
         self.module.exit_json(rc=rc, meta=result, failed=failed, changed=changed)
 
     def do_nonexist_exit(self):
