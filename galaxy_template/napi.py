@@ -96,8 +96,7 @@ class NAPIManager(object):
         return default_method
 
     def _version_matched(self, revisions):
-        assert(revisions)
-        if not self.system_status:
+        if not revisions or not self.system_status:
             # if system version is not determined, give up version checking
             return True, None
 
@@ -244,7 +243,11 @@ class NAPIManager(object):
         response = self.conn.send_request(method, param)
         self.do_exit(response)
 
-    def process_exec(self):
+    def process_exec(self, argument_specs=None):
+        track = [self.module_level2_name]
+        self.check_versioning_mismatch(track,
+                                       argument_specs[self.module_level2_name] if self.module_level2_name in argument_specs else None,
+                                       self.module.params[self.module_level2_name] if self.module_level2_name in self.module.params else None)
         the_url = self.jrpc_urls[0]
         if 'adom' in self.url_params and not self.jrpc_urls[0].endswith('{adom}'):
             if self.module.params['adom'] == 'global':
@@ -454,9 +457,13 @@ class NAPIManager(object):
         response = self.conn.send_request('get', api_params)
         self.do_exit(response)
 
-    def process_curd(self):
+    def process_curd(self, argument_specs=None):
         if 'state' not in self.module.params:
             raise AssertionError('parameter state is expected')
+        track = [self.module_level2_name]
+        self.check_versioning_mismatch(track,
+                                       argument_specs[self.module_level2_name] if self.module_level2_name in argument_specs else None,
+                                       self.module.params[self.module_level2_name] if self.module_level2_name in self.module.params else None)
         has_mkey = self.module_primary_key is not None and type(self.module.params[self.module_level2_name]) is dict
         if has_mkey:
             mvalue = ''
@@ -494,7 +501,11 @@ class NAPIManager(object):
                 raise AssertionError('data is expected to be not none')
             return data
 
-    def process_partial_curd(self):
+    def process_partial_curd(self, argument_specs=None):
+        track = [self.module_level2_name]
+        self.check_versioning_mismatch(track,
+                                       argument_specs[self.module_level2_name] if self.module_level2_name in argument_specs else None,
+                                       self.module.params[self.module_level2_name] if self.module_level2_name in self.module.params else None)
         the_url = self.jrpc_urls[0]
         if 'adom' in self.url_params and not self.jrpc_urls[0].endswith('{adom}'):
             if self.module.params['adom'] == 'global':
@@ -519,6 +530,42 @@ class NAPIManager(object):
             api_params[0][self.top_level_schema_name] = self.__tailor_attributes(self.module.params[self.module_level2_name])
         response = self.conn.send_request(self._propose_method('set'), api_params)
         self.do_exit(response)
+
+    def check_versioning_mismatch(self, track, schema, params):
+        if not params or not schema:
+            return
+        if 'bypass_validation' in params and params['bypass_validation'] is True:
+            # ignore checking when the bypass_validation is switched on
+            return
+        param_type = schema['type'] if 'type' in schema else None
+        revisions = schema['revision'] if 'revision' in schema else None
+
+        matched, checking_message = self._version_matched(revisions)
+        if not matched:
+            param_path = track[0]
+            for _param in track[1:]:
+                param_path += '-->%s' % (_param)
+            self.version_check_warnings.append('param: %s %s' % (param_path, checking_message))
+        if param_type == 'dict' and 'options' in schema:
+            assert(type(params) is dict)
+            for sub_param_key in params:
+                sub_param = params[sub_param_key]
+                if sub_param_key in schema['options']:
+                    sub_schema = schema['options'][sub_param_key]
+                    track.append(sub_param_key)
+                    self.check_versioning_mismatch(track, sub_schema, sub_param)
+                    del track[-1]
+        elif param_type == 'list' and 'options' in schema:
+            assert(type(params) is list)
+            for grouped_param in params:
+                assert(type(grouped_param) is dict)
+                for sub_param_key in grouped_param:
+                    sub_param = params[sub_param_key]
+                    if sub_param_key in schema['options']:
+                        sub_schema = schema['options'][sub_param_key]
+                        track.append(sub_param_key)
+                        self.check_versioning_mismatch(track, sub_schema, sub_param)
+                        del track[-1]
 
     def validate_parameters(self, pvb):
         for blob in pvb:
