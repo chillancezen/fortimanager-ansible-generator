@@ -59,6 +59,12 @@ def main():
         '{{level2_name}}': {
             'required': False,
             'type': 'dict',
+            'revision': {
+                {%- for ver in revisions %}
+                '{{ ver }}': True
+                {%- if loop.index != loop.length -%}, {%- endif %}
+                {%- endfor %}
+            },
             'options':{{body_schemas}}
         }
         {%- endif %}

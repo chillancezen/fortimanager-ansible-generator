@@ -1418,6 +1418,7 @@ def resolve_generic_schema(url, _not_used_schema, doc_template, code_template, m
                   'in_path_params': the_one_in_path_params,
                   'jrpc_urls': mutiurls_names if not is_object_member else [e + '/' + url_sufix for e in mutiurls_names],
                   'perobject_jrpc_urls': perobject_mutiurls_names if not is_object_member else [e + '/' + url_sufix for e in perobject_mutiurls_names],
+                  'revisions': super_digest[url]['revision'],
                   'mkey': mkey,
                   'pvb': schema_beautify(pvbs[canonical_path], 4, 1, False, True) if canonical_path in pvbs else [],
                   'top_level_schema_name': wrapper_dataset[canonical_path] if canonical_path in wrapper_dataset else (the_unique_schema['name'] if the_unique_schema else None),
