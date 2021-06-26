@@ -214,7 +214,8 @@ class NAPIManager(object):
         params = [{'url': '/cli/global/system/status'}]
         response = self.conn.send_request('get', params)
         if response[0] == 0:
-            assert('data' in response[1])
+            if 'data' not in response[1]:
+                raise AssertionError()
             return response[1]['data']
         return None
 
@@ -245,9 +246,10 @@ class NAPIManager(object):
 
     def process_exec(self, argument_specs=None):
         track = [self.module_level2_name]
-        self.check_versioning_mismatch(track,
-                                       argument_specs[self.module_level2_name] if self.module_level2_name in argument_specs else None,
-                                       self.module.params[self.module_level2_name] if self.module_level2_name in self.module.params else None)
+        if 'bypass_validation' not in self.module.params or self.module.params['bypass_validation'] is False:
+            self.check_versioning_mismatch(track,
+                                           argument_specs[self.module_level2_name] if self.module_level2_name in argument_specs else None,
+                                           self.module.params[self.module_level2_name] if self.module_level2_name in self.module.params else None)
         the_url = self.jrpc_urls[0]
         if 'adom' in self.url_params and not self.jrpc_urls[0].endswith('{adom}'):
             if self.module.params['adom'] == 'global':
@@ -461,9 +463,10 @@ class NAPIManager(object):
         if 'state' not in self.module.params:
             raise AssertionError('parameter state is expected')
         track = [self.module_level2_name]
-        self.check_versioning_mismatch(track,
-                                       argument_specs[self.module_level2_name] if self.module_level2_name in argument_specs else None,
-                                       self.module.params[self.module_level2_name] if self.module_level2_name in self.module.params else None)
+        if 'bypass_validation' not in self.module.params or self.module.params['bypass_validation'] is False:
+            self.check_versioning_mismatch(track,
+                                           argument_specs[self.module_level2_name] if self.module_level2_name in argument_specs else None,
+                                           self.module.params[self.module_level2_name] if self.module_level2_name in self.module.params else None)
         has_mkey = self.module_primary_key is not None and type(self.module.params[self.module_level2_name]) is dict
         if has_mkey:
             mvalue = ''
@@ -503,9 +506,10 @@ class NAPIManager(object):
 
     def process_partial_curd(self, argument_specs=None):
         track = [self.module_level2_name]
-        self.check_versioning_mismatch(track,
-                                       argument_specs[self.module_level2_name] if self.module_level2_name in argument_specs else None,
-                                       self.module.params[self.module_level2_name] if self.module_level2_name in self.module.params else None)
+        if 'bypass_validation' not in self.module.params or self.module.params['bypass_validation'] is False:
+            self.check_versioning_mismatch(track,
+                                           argument_specs[self.module_level2_name] if self.module_level2_name in argument_specs else None,
+                                           self.module.params[self.module_level2_name] if self.module_level2_name in self.module.params else None)
         the_url = self.jrpc_urls[0]
         if 'adom' in self.url_params and not self.jrpc_urls[0].endswith('{adom}'):
             if self.module.params['adom'] == 'global':
@@ -534,9 +538,6 @@ class NAPIManager(object):
     def check_versioning_mismatch(self, track, schema, params):
         if not params or not schema:
             return
-        if type(params) is dict and 'bypass_validation' in params and params['bypass_validation'] is True:
-            # ignore checking when the bypass_validation is switched on
-            return
         param_type = schema['type'] if 'type' in schema else None
         revisions = schema['revision'] if 'revision' in schema else None
 
@@ -547,7 +548,8 @@ class NAPIManager(object):
                 param_path += '-->%s' % (_param)
             self.version_check_warnings.append('param: %s %s' % (param_path, checking_message))
         if param_type == 'dict' and 'options' in schema:
-            assert(type(params) is dict)
+            if type(params) is not dict:
+                raise AssertionError()
             for sub_param_key in params:
                 sub_param = params[sub_param_key]
                 if sub_param_key in schema['options']:
@@ -556,9 +558,11 @@ class NAPIManager(object):
                     self.check_versioning_mismatch(track, sub_schema, sub_param)
                     del track[-1]
         elif param_type == 'list' and 'options' in schema:
-            assert(type(params) is list)
+            if type(params) is not list:
+                raise AssertionError()
             for grouped_param in params:
-                assert(type(grouped_param) is dict)
+                if type(grouped_param) is not dict:
+                    raise AssertionError()
                 for sub_param_key in grouped_param:
                     sub_param = grouped_param[sub_param_key]
                     if sub_param_key in schema['options']:
@@ -613,7 +617,8 @@ class NAPIManager(object):
         if len(self.version_check_warnings):
             version_check_warning = dict()
             version_check_warning['mismatches'] = self.version_check_warnings
-            assert(self.system_status)
+            if not self.system_status:
+                raise AssertionError()
             version_check_warning['system_version'] = 'v%s.%s.%s' % (self.system_status['Major'],
                                                                      self.system_status['Minor'],
                                                                      self.system_status['Patch'])
