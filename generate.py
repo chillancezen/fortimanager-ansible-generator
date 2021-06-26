@@ -130,7 +130,25 @@ def canonicalize_text(raw_text):
         stripped_data = stripped_data.replace('\'', '')
         ret_lst.append('\'' + stripped_data + '\'')
     return ret_lst
-def shorten_description(raw_desc, nr_start_pos):
+
+def shorten_description(raw_desc, nr_start_pos, is_short_desc=False):
+    if is_short_desc:
+        text_index = raw_desc.find('.')
+        if text_index > 0:
+            raw_desc = raw_desc[:text_index+1]
+        text_index = raw_desc.find('(')
+        if text_index > 0:
+            raw_desc = raw_desc[:text_index]
+        text_index = raw_desc.find('<')
+        if text_index > 0:
+            raw_desc = raw_desc[:text_index]
+        raw_desc = raw_desc.strip(' ')
+        text_index = raw_desc.find(':')
+        if text_index > 0:
+            raw_desc = raw_desc[:text_index]
+        if raw_desc[0] == '\'' and raw_desc[-1] != '\'':
+            raw_desc += '\''
+    raw_desc = raw_desc.replace(' \\2F ', ' 2F ')
     nr_left = 160 - nr_start_pos
     if len(raw_desc) <= nr_left:
         return raw_desc
@@ -1427,7 +1445,7 @@ def resolve_generic_schema(url, _not_used_schema, doc_template, code_template, m
                   'body_schemas': schema_beautify(schema_to_layer2_params(the_unique_schema[the_unique_subitem], True, mkey), 12, 1, False, True) if the_unique_schema else {}}
                   #'body_schemas': schema_beautify(transform_schema(body_schemas), 4, 1, False, True)}
     code_body = code_template.render(**code_rdata)
-    short_description = shorten_description(canonicalize_text(api_endpoint_tags[supported_methods[0]])[0], len('short_description: ')).replace('\'', '')
+    short_description = shorten_description(canonicalize_text(api_endpoint_tags[supported_methods[0]])[0], len('short_description: '), is_short_desc=True).replace('\'', '')
     #doc_examples = generate_schema_document_examples(raw_body_schemas, canonical_path, url, the_one_in_path_params)
     doc_examples = napi_generate_schema_document_examples(canonical_path, the_one_in_path_params, the_unique_schema[the_unique_subitem] if the_unique_schema else {}, 'no description' if short_description == '' else short_description, is_exec=is_exec, is_partial=is_partial)
     doc_rdata = {'module_name': canonical_path,
