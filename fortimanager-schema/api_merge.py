@@ -190,7 +190,7 @@ def _mark_inbody_param(m_inbody_params, new_inbody_params, version, is_present):
                         m_subitem['enum'] = list()
                     for _enum_item in new_subitem['enum']:
                         assert(type(_enum_item) in [int, str])
-                        if m_subitem != new_subitem:
+                        if m_subitem != new_subitem and _enum_item not in m_subitem['enum']:
                             m_subitem['enum'].append(_enum_item)
             else:
                 assert(False)
