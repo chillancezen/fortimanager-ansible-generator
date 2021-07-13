@@ -12,6 +12,9 @@
     "fmgr_system_virtualwirepair": [
         ["member:array"]
     ],
+    "fmgr_user_group": [
+        ["member:array"]
+    ],
     "fmgr_sys_proxy_json":  [
         ["target:array"],
         ["payload:dict"]
@@ -80,7 +83,7 @@
         "type": "array",
         "items": {
             "type": "string",
-            "enum": ["string of >=", "string of =", "string of <="]
+            "enum": [">=", "=", "<="]
         }
     },
     "fmgr_firewall_mmsprofile": [

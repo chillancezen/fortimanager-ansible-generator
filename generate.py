@@ -1125,7 +1125,7 @@ def validate_multiurls_schema(url, _not_used_schema, multiurls, super_digest, su
                 assert(the_one_result_schema == result_schema)
         assert(len(per_method_api_endpoint_tags) == 1)
 
-def schema_to_layer2_params(schema, to_search_mkey, mkey):
+def schema_to_layer2_params(schema, to_search_mkey, mkey, digest_revision=None):
     pdata = dict()
     for item_name in schema:
         item = schema[item_name]
@@ -1133,9 +1133,15 @@ def schema_to_layer2_params(schema, to_search_mkey, mkey):
         pdata[item_name]['required'] = False
         if 'revision' not in item:
             print('one item without revision found')
+        fully_supported = True
         if 'revision' in item:
             pdata[item_name]['revision'] = item['revision']
-        if to_search_mkey and mkey == item_name:
+            if digest_revision:
+                for _version in digest_revision:
+                    if _version not in pdata[item_name]['revision']:
+                        fully_supported = False
+                        break
+        if to_search_mkey and mkey == item_name and fully_supported:
             pdata[item_name]['required'] = True
         if 'enum' in item:
             pdata[item_name]['choices'] = [e for e in item['enum']]
@@ -1442,7 +1448,7 @@ def resolve_generic_schema(url, _not_used_schema, doc_template, code_template, m
                   'top_level_schema_name': wrapper_dataset[canonical_path] if canonical_path in wrapper_dataset else (the_unique_schema['name'] if the_unique_schema else None),
                   'is_partial': is_partial,
                   'level2_name': canonical_path[5:],
-                  'body_schemas': schema_beautify(schema_to_layer2_params(the_unique_schema[the_unique_subitem], True, mkey), 12, 1, False, True) if the_unique_schema else {}}
+                  'body_schemas': schema_beautify(schema_to_layer2_params(the_unique_schema[the_unique_subitem], True, mkey, super_digest[url]['revision']), 12, 1, False, True) if the_unique_schema else {}}
                   #'body_schemas': schema_beautify(transform_schema(body_schemas), 4, 1, False, True)}
     code_body = code_template.render(**code_rdata)
     short_description = shorten_description(canonicalize_text(api_endpoint_tags[supported_methods[0]])[0], len('short_description: '), is_short_desc=True).replace('\'', '')
